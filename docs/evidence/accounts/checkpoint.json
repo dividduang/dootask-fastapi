@@ -1,0 +1,231 @@
+{
+  "status": "IMPLEMENTED_NOT_INTEGRATED_NOT_VERIFIED",
+  "owner": "DomainAccounts",
+  "handler_count": 101,
+  "scope": {
+    "shared_identity_review": 10,
+    "own_explicit_route_entries": 91
+  },
+  "files": [
+    {
+      "path": "backend/domains/accounts.py",
+      "size": 23376,
+      "sha256": "e7e0be1cd3c582b93ff724c1718b1a502cfafe2bac5672b33d6b2ef0fbd4e798"
+    },
+    {
+      "path": "backend/domains/system.py",
+      "size": 23438,
+      "sha256": "cc16cfba7307b4e16eef282315f1f5147e573d1a387e95e95a7dc2ff85bd6464"
+    },
+    {
+      "path": "backend/domains/account_common.py",
+      "size": 4254,
+      "sha256": "708116b019fcf1de21b5424983b5554dbdf611a6e17a52911fa09e18afcdce51"
+    },
+    {
+      "path": "backend/domains/account_integrations.py",
+      "size": 9362,
+      "sha256": "bc46f67e6742c9bc98f0562c8fc815a3091541c52fab98061efa81b298fda7bd"
+    },
+    {
+      "path": "backend/domains/account_admin.py",
+      "size": 17548,
+      "sha256": "72e85bc84a94b861f22ce06d5b5ae95186d2bb6ced9315b3ed65116c753ccd2d"
+    },
+    {
+      "path": "backend/domains/account_import.py",
+      "size": 5285,
+      "sha256": "d59549f619d7ef8725ba53bc8f85809b956ce1180d74fa93ff51f85d61118bf8"
+    },
+    {
+      "path": "backend/domains/account_meetings.py",
+      "size": 9929,
+      "sha256": "29057c0370248a05120371b65cba36ae992bce1140dfd818ee9e16bda34a8d9a"
+    },
+    {
+      "path": "backend/domains/account_checkin.py",
+      "size": 6071,
+      "sha256": "b7ff9862a00fb31121ef4bc9d751364e908691e39b4f9135e3fc2dbbd74fdb17"
+    },
+    {
+      "path": "backend/domains/account_history.py",
+      "size": 11671,
+      "sha256": "42ad0660ae159d30935af9472b05a4bd9e419cfb720a30b32912fa51704fd964"
+    },
+    {
+      "path": "backend/domains/account_misc.py",
+      "size": 9176,
+      "sha256": "06fd07c11a7483c5198512556739c9c63b969b5c4f95fe3e4922d0e87787fc1e"
+    },
+    {
+      "path": "backend/domains/account_jobs.py",
+      "size": 4542,
+      "sha256": "93342e8ecccda6f2ff5172ad934f112850d5434506e770d817625cfe48b61adb"
+    },
+    {
+      "path": "backend/domains/account_bot_jobs.py",
+      "size": 10388,
+      "sha256": "58f59a059ae98b76a4998ad3b37ca57a290684b7c12d35404c97be16063f378a"
+    },
+    {
+      "path": "backend/domains/account_system_files.py",
+      "size": 9483,
+      "sha256": "731d2acf9e73de4880a9ca26c1dae832ba86853d574d8824356d0909d863ec6b"
+    },
+    {
+      "path": "backend/domains/accounts.sql",
+      "size": 464,
+      "sha256": "1a0862b2ec0ad8cf387ded19578f6d605806f5208e8f1cc434bfd2103e95f959"
+    },
+    {
+      "path": "backend/domains/accounts_cn_ips.txt",
+      "size": 140125,
+      "sha256": "d71b0615cef7d75978fc43767d4dfadc8033ac50419f2280783cd7c73b941e24"
+    },
+    {
+      "path": "backend/domains/accounts_upstream_changelog.txt",
+      "size": 60299,
+      "sha256": "a0e4b5b323f1270cd5176d24298cfddd6b9825d291440b0a2707695d994a9d3f"
+    },
+    {
+      "path": "tests/test_accounts_contract.py",
+      "size": 3089,
+      "sha256": "58f3e2da5f9d40a8e902761b26cc3540ca03a1357ffb212340cb3ea20291a7fb"
+    },
+    {
+      "path": "docs/2026101210-账号组织与系统全量迁移-feat.md",
+      "size": 6987,
+      "sha256": "5b513991f3d7bc7e48ff769305347b830e169cede6cc81b80310c89196707c87"
+    },
+    {
+      "path": "docs/evidence/accounts/integration-contract.json",
+      "size": 6268,
+      "sha256": "2c7e75534f57ecd5d47e36a7a1d4fa752a11924bb9801079b109af740a5012f0"
+    },
+    {
+      "path": "docs/evidence/accounts/endpoint-coverage.json",
+      "size": 218998,
+      "sha256": "6544e074c8baddd271a177360573f5bc47836554668f696500846c475663d0f2"
+    }
+  ],
+  "source_provenance": [
+    {
+      "path": "app/Http/Controllers/Api/UsersController.php",
+      "sha256": "d3480aae25371d1e5f2d9a32a93e8a13519e0355604ab13a745fe1cfb062fd3f"
+    },
+    {
+      "path": "app/Http/Controllers/Api/ContactsController.php",
+      "sha256": "fa569b7935f2472f0575112d066ffcf4d1c846f9c30e0ca4130e4f64bad49b88"
+    },
+    {
+      "path": "app/Http/Controllers/Api/SystemController.php",
+      "sha256": "a1c5691d0c22d837c61d7e8e000baa13525a0784d4e2a65661e39f2bbb7b0cd2"
+    },
+    {
+      "path": "app/Models/User.php",
+      "sha256": "59563a996db2397f5d95e6368ea685e48b20ac1022100c72bf917c4b0aa915de"
+    },
+    {
+      "path": "app/Models/UserDepartment.php",
+      "sha256": "7b20795f4397d19b69a39b624479be95f8c58c3fa43dec900e886b249ba4a540"
+    },
+    {
+      "path": "app/Models/UserTag.php",
+      "sha256": "5c25826faf70c933964a7938ba1dfc2fd4fd1eeee62cf88ee84e669fdcfa5e13"
+    },
+    {
+      "path": "app/Models/UserFavorite.php",
+      "sha256": "45cb8746fede46cebdeeec2f35590643278a7fcfbe3ebc2d1023b3c4c8777c9d"
+    },
+    {
+      "path": "app/Models/UserCheckinRecord.php",
+      "sha256": "fbcc5e2f54144fd964df0d0e76c983e3eb11879e70c98d6d92a5cf4cd1640f78"
+    },
+    {
+      "path": "app/Models/UserCheckinFace.php",
+      "sha256": "6cb2e65766e8ddffe63de21e076855bdc7b83c2cd97986e3f7f912023aa70012"
+    },
+    {
+      "path": "app/Models/UserCheckinMac.php",
+      "sha256": "a58799e09b3b64e092b6d8341f9ba6f6137fd415df7d076c5c15cac493c5aa9f"
+    },
+    {
+      "path": "app/Models/UserBot.php",
+      "sha256": "f611b31496b1d099242da508920725838bc051a635a431ecc6c201a6ce42486d"
+    },
+    {
+      "path": "app/Models/UserEmailVerification.php",
+      "sha256": "0b6841f9f788f9111cfc58c1adc99e30c18188fcb8e8101a075081ead227e863"
+    },
+    {
+      "path": "app/Models/UserTaskBrowse.php",
+      "sha256": "ac97cb5767089c83f171956912fe3f104051158eed466a96ea915fd3890619f2"
+    },
+    {
+      "path": "app/Models/UserAppSort.php",
+      "sha256": "61c36582cd1c038b98da1ca3ccacf4052dbcdebecf1655146e74fe7dc9fd789b"
+    },
+    {
+      "path": "app/Models/UserTransfer.php",
+      "sha256": "d613338d081f2468668d60581fddc7fc7185886db0a9499c3e41cd28f0f82acf"
+    },
+    {
+      "path": "app/Models/Meeting.php",
+      "sha256": "d6ebb445f95950a414f98905a817e4c2f37a197d4b5b96cad483a3373df58872"
+    },
+    {
+      "path": "app/Models/Setting.php",
+      "sha256": "0d031387dd354f9984c039468637a15ec37a94000dd1b12d69c3303e9dfc7cbb"
+    },
+    {
+      "path": "app/Module/ContactsDepartment.php",
+      "sha256": "794d5a5ea58f50c093bf08203652aa0bb53d379e80073f28fd367b5bcdd0bb54"
+    },
+    {
+      "path": "app/Ldap/LdapUser.php",
+      "sha256": "acb702bea5d5ef820b64cf7aed261a3b774a97007ea5b2bbacceebdc0e0dc146"
+    },
+    {
+      "path": "app/Module/AgoraIO/AccessToken.php",
+      "sha256": "00cfac90b8647838e8c271d1b27cb8f49632f5dcda069464a434bb7371c81834"
+    },
+    {
+      "path": "app/Module/AgoraIO/Message.php",
+      "sha256": "7b58d14d038ecec84e56b8174dd2e5bd63e6b13574231ddff6f170c038595fb4"
+    },
+    {
+      "path": "app/Module/AgoraIO/AgoraTokenGenerator.php",
+      "sha256": "72fff4a6504bdd09b97b0c9305705397244365660acddf51f5cb940b5f86bf0f"
+    },
+    {
+      "path": "app/Tasks/BotReceiveMsgTask.php",
+      "sha256": "34fd8f5e7d71a4948ef5d55cd8d55a83693451b53d22d5a7278dcb7e5b61f988"
+    },
+    {
+      "path": "app/Tasks/CloseMeetingRoomTask.php",
+      "sha256": "2525fca9d402683554eed8ebd7f3b92694792e8adeee5275ac09998d73482ce2"
+    },
+    {
+      "path": "app/Tasks/CheckinRemindTask.php",
+      "sha256": "1f1d4c4ec72ebf7feaea6e2e4080d58c8ef0f0ca862e9210ab26e43b809996ce"
+    },
+    {
+      "path": "app/Observers/UserObserver.php",
+      "sha256": "60edd4e1332b2b144a14f3a521423c99a1f01e740a5057927e7dd6fbd18c53e7"
+    },
+    {
+      "path": "app/Module/SystemUpdate.php",
+      "sha256": "70f83c8394b52db23e4e8dbb5f6c495478f88c97be6c183a144a20a5b83e6052"
+    }
+  ],
+  "checks_executed": [],
+  "remaining_integration": "See integration-contract.json: route/schema/dependency/job installation and shared auth hook integration belong to unique integration owner.",
+  "blocking_prerequisites": [
+    "Official trusted license verifier / authorized identity creation policy",
+    "Valid external service credentials and controlled test accounts",
+    "PM-approved FastAPI online update policy"
+  ],
+  "source_edits": false,
+  "git_commands": false,
+  "coordination_resolution": "CheckinRemindTask uniquely owned by DomainProjects/checkin.remind; duplicate account reminder functions/registration/schedule removed. No checks executed."
+}

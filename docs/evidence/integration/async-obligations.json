@@ -1,0 +1,2794 @@
+{
+  "status": "SOURCE_ONLY_NOT_VERIFIED",
+  "counts": {
+    "tasks": 22,
+    "observers": 15,
+    "events": 1
+  },
+  "obligations": [
+    {
+      "source": "app/Events/WorkerStartEvent.php",
+      "kind": "event",
+      "methods": [
+        {
+          "name": "__construct",
+          "start_line": 13,
+          "end_line": 15,
+          "static_calls": [],
+          "events": []
+        },
+        {
+          "name": "handle",
+          "start_line": 17,
+          "end_line": 24,
+          "static_calls": [],
+          "events": []
+        },
+        {
+          "name": "handleFirstWorkerTasks",
+          "start_line": 26,
+          "end_line": 30,
+          "static_calls": [
+            "RequestContext::clearBaseUrlCache",
+            "WebSocket::query"
+          ],
+          "events": []
+        }
+      ],
+      "source_sha256": "0cbc7e6ab973b2d19f184adca500f523669b5d0e8e8c6bf894b2d3f7a32adee0",
+      "implementation": [
+        {
+          "file": "backend/main.py",
+          "function": "lifespan",
+          "sha256": "11ff357df00077cb198ea8ca50ccb61f9ebc31d5c41388f571a658b7d13daa93",
+          "lines": [
+            [
+              240,
+              249
+            ]
+          ],
+          "binding": "SOURCE_BOUND"
+        },
+        {
+          "file": "backend/domains/messaging_jobs.py",
+          "function": "maintenance",
+          "sha256": "67b658922f03dd9f3a8aee16615efa68964218ef415ead7b73b0ecdf8c1880ab",
+          "lines": [
+            [
+              204,
+              218
+            ]
+          ],
+          "binding": "SOURCE_BOUND"
+        }
+      ],
+      "installation": "Explicit domain registrars in main lifespan; inline observer calls use shared transaction",
+      "status": "IMPLEMENTED_BINDINGS_NOT_BEHAVIORALLY_VERIFIED",
+      "unknowns": [
+        "No end-to-end branch equivalence or side-effect timing acceptance executed"
+      ],
+      "verification": "NOT_RUN"
+    },
+    {
+      "source": "app/Observers/AbstractObserver.php",
+      "kind": "observer",
+      "methods": [
+        {
+          "name": "taskDeliver",
+          "start_line": 22,
+          "end_line": 47,
+          "static_calls": [
+            "Cache::has",
+            "Cache::put",
+            "Task::deliver"
+          ],
+          "events": []
+        }
+      ],
+      "source_sha256": "2209c16f22fd6967c1ba9c0298738f10db1583cf74f464c4d76908fa8ac8fb10",
+      "implementation": [
+        {
+          "file": "backend/jobs.py",
+          "function": "enqueue",
+          "sha256": "c1e7e90f7edd16dfa96a0cec460f3201d341c78519418be33b2f514aa5ae6b96",
+          "lines": [
+            [
+              34,
+              44
+            ]
+          ],
+          "binding": "SOURCE_BOUND"
+        }
+      ],
+      "installation": "Explicit domain registrars in main lifespan; inline observer calls use shared transaction",
+      "status": "IMPLEMENTED_BINDINGS_NOT_BEHAVIORALLY_VERIFIED",
+      "unknowns": [
+        "No end-to-end branch equivalence or side-effect timing acceptance executed"
+      ],
+      "verification": "NOT_RUN"
+    },
+    {
+      "source": "app/Observers/FileObserver.php",
+      "kind": "observer",
+      "methods": [
+        {
+          "name": "created",
+          "start_line": 16,
+          "end_line": 23,
+          "static_calls": [],
+          "events": []
+        },
+        {
+          "name": "updated",
+          "start_line": 31,
+          "end_line": 56,
+          "static_calls": [
+            "File::where"
+          ],
+          "events": []
+        },
+        {
+          "name": "deleted",
+          "start_line": 64,
+          "end_line": 67,
+          "static_calls": [],
+          "events": []
+        },
+        {
+          "name": "restored",
+          "start_line": 75,
+          "end_line": 82,
+          "static_calls": [],
+          "events": []
+        },
+        {
+          "name": "forceDeleted",
+          "start_line": 90,
+          "end_line": 93,
+          "static_calls": [],
+          "events": []
+        }
+      ],
+      "source_sha256": "77d115b55b3bd1730abe0e5b1dc807bd6600f37a31703c99cd3095c9f8915fee",
+      "implementation": [
+        {
+          "file": "backend/domains/files.py",
+          "function": "notify",
+          "sha256": "433354fe301457dd9bdacfa09c4908a20d75ab1c354b313a35097bb463a1e1d2",
+          "lines": [
+            [
+              109,
+              113
+            ]
+          ],
+          "binding": "SOURCE_BOUND"
+        }
+      ],
+      "installation": "Explicit domain registrars in main lifespan; inline observer calls use shared transaction",
+      "status": "IMPLEMENTED_BINDINGS_NOT_BEHAVIORALLY_VERIFIED",
+      "unknowns": [
+        "No end-to-end branch equivalence or side-effect timing acceptance executed"
+      ],
+      "verification": "NOT_RUN"
+    },
+    {
+      "source": "app/Observers/FileUserObserver.php",
+      "kind": "observer",
+      "methods": [
+        {
+          "name": "created",
+          "start_line": 19,
+          "end_line": 25,
+          "static_calls": [],
+          "events": []
+        },
+        {
+          "name": "updated",
+          "start_line": 33,
+          "end_line": 39,
+          "static_calls": [],
+          "events": []
+        },
+        {
+          "name": "deleted",
+          "start_line": 47,
+          "end_line": 53,
+          "static_calls": [],
+          "events": []
+        }
+      ],
+      "source_sha256": "358d0dce76b77956728f56c075dc837f094b3b10c3df6effe924402c49f2c745",
+      "implementation": [
+        {
+          "file": "backend/domains/files.py",
+          "function": "notify",
+          "sha256": "433354fe301457dd9bdacfa09c4908a20d75ab1c354b313a35097bb463a1e1d2",
+          "lines": [
+            [
+              109,
+              113
+            ]
+          ],
+          "binding": "SOURCE_BOUND"
+        }
+      ],
+      "installation": "Explicit domain registrars in main lifespan; inline observer calls use shared transaction",
+      "status": "IMPLEMENTED_BINDINGS_NOT_BEHAVIORALLY_VERIFIED",
+      "unknowns": [
+        "No end-to-end branch equivalence or side-effect timing acceptance executed"
+      ],
+      "verification": "NOT_RUN"
+    },
+    {
+      "source": "app/Observers/ProjectObserver.php",
+      "kind": "observer",
+      "methods": [
+        {
+          "name": "created",
+          "start_line": 18,
+          "end_line": 21,
+          "static_calls": [],
+          "events": []
+        },
+        {
+          "name": "updated",
+          "start_line": 29,
+          "end_line": 57,
+          "static_calls": [
+            "Deleted::forget",
+            "Deleted::record"
+          ],
+          "events": []
+        },
+        {
+          "name": "deleted",
+          "start_line": 65,
+          "end_line": 69,
+          "static_calls": [
+            "Deleted::record"
+          ],
+          "events": []
+        },
+        {
+          "name": "restored",
+          "start_line": 77,
+          "end_line": 81,
+          "static_calls": [
+            "Deleted::forget"
+          ],
+          "events": []
+        },
+        {
+          "name": "forceDeleted",
+          "start_line": 89,
+          "end_line": 92,
+          "static_calls": [],
+          "events": []
+        },
+        {
+          "name": "userids",
+          "start_line": 98,
+          "end_line": 101,
+          "static_calls": [
+            "ProjectUser::whereProjectId"
+          ],
+          "events": []
+        }
+      ],
+      "source_sha256": "e32129cc9f3505692b1b8dd1ecace28e695d31f2fe097f8409e5f03128e7fa00",
+      "implementation": [
+        {
+          "file": "backend/domains/project_core.py",
+          "function": "push_project",
+          "sha256": "bad29f3bde7214e3cdfbf381c9fae6414d139c340de538db46866c47d4b81a15",
+          "lines": [
+            [
+              298,
+              312
+            ]
+          ],
+          "binding": "SOURCE_BOUND"
+        }
+      ],
+      "installation": "Explicit domain registrars in main lifespan; inline observer calls use shared transaction",
+      "status": "IMPLEMENTED_BINDINGS_NOT_BEHAVIORALLY_VERIFIED",
+      "unknowns": [
+        "No end-to-end branch equivalence or side-effect timing acceptance executed"
+      ],
+      "verification": "NOT_RUN"
+    },
+    {
+      "source": "app/Observers/ProjectTaskContentObserver.php",
+      "kind": "observer",
+      "methods": [
+        {
+          "name": "created",
+          "start_line": 18,
+          "end_line": 21,
+          "static_calls": [],
+          "events": []
+        },
+        {
+          "name": "updated",
+          "start_line": 30,
+          "end_line": 36,
+          "static_calls": [],
+          "events": []
+        },
+        {
+          "name": "deleted",
+          "start_line": 45,
+          "end_line": 48,
+          "static_calls": [],
+          "events": []
+        },
+        {
+          "name": "syncTaskToManticore",
+          "start_line": 56,
+          "end_line": 68,
+          "static_calls": [
+            "ProjectTask::find"
+          ],
+          "events": []
+        }
+      ],
+      "source_sha256": "932b9b575d7713d551a6c03c101ac3e1b80ca0bc8ea3958591d3700018470c07",
+      "implementation": [
+        {
+          "file": "backend/domains/project_core.py",
+          "function": "observe_task",
+          "sha256": "bad29f3bde7214e3cdfbf381c9fae6414d139c340de538db46866c47d4b81a15",
+          "lines": [
+            [
+              328,
+              347
+            ]
+          ],
+          "binding": "SOURCE_BOUND"
+        }
+      ],
+      "installation": "Explicit domain registrars in main lifespan; inline observer calls use shared transaction",
+      "status": "IMPLEMENTED_BINDINGS_NOT_BEHAVIORALLY_VERIFIED",
+      "unknowns": [
+        "No end-to-end branch equivalence or side-effect timing acceptance executed"
+      ],
+      "verification": "NOT_RUN"
+    },
+    {
+      "source": "app/Observers/ProjectTaskObserver.php",
+      "kind": "observer",
+      "methods": [
+        {
+          "name": "created",
+          "start_line": 21,
+          "end_line": 24,
+          "static_calls": [],
+          "events": []
+        },
+        {
+          "name": "updated",
+          "start_line": 32,
+          "end_line": 67,
+          "static_calls": [
+            "Deleted::forget",
+            "Deleted::record",
+            "ProjectTaskHandoffRecord::updated"
+          ],
+          "events": []
+        },
+        {
+          "name": "deleted",
+          "start_line": 75,
+          "end_line": 79,
+          "static_calls": [
+            "Deleted::record"
+          ],
+          "events": []
+        },
+        {
+          "name": "restored",
+          "start_line": 87,
+          "end_line": 91,
+          "static_calls": [
+            "Deleted::forget"
+          ],
+          "events": []
+        },
+        {
+          "name": "forceDeleted",
+          "start_line": 99,
+          "end_line": 102,
+          "static_calls": [],
+          "events": []
+        },
+        {
+          "name": "userids",
+          "start_line": 109,
+          "end_line": 130,
+          "static_calls": [
+            "ProjectTaskUser::whereTaskId",
+            "ProjectTaskVisibilityUser::whereTaskId",
+            "ProjectUser::whereProjectId"
+          ],
+          "events": []
+        },
+        {
+          "name": "visibilityUpdate",
+          "start_line": 136,
+          "end_line": 154,
+          "static_calls": [
+            "Deleted::forget",
+            "Deleted::record",
+            "ProjectTask::whereParentId"
+          ],
+          "events": []
+        }
+      ],
+      "source_sha256": "12a9cab7f7a4c05d4c266998d4bea558ddcb93eaa507a2a56a9420f8c596ee29",
+      "implementation": [
+        {
+          "file": "backend/domains/project_core.py",
+          "function": "observe_task",
+          "sha256": "bad29f3bde7214e3cdfbf381c9fae6414d139c340de538db46866c47d4b81a15",
+          "lines": [
+            [
+              328,
+              347
+            ]
+          ],
+          "binding": "SOURCE_BOUND"
+        }
+      ],
+      "installation": "Explicit domain registrars in main lifespan; inline observer calls use shared transaction",
+      "status": "IMPLEMENTED_BINDINGS_NOT_BEHAVIORALLY_VERIFIED",
+      "unknowns": [
+        "No end-to-end branch equivalence or side-effect timing acceptance executed"
+      ],
+      "verification": "NOT_RUN"
+    },
+    {
+      "source": "app/Observers/ProjectTaskUserObserver.php",
+      "kind": "observer",
+      "methods": [
+        {
+          "name": "created",
+          "start_line": 18,
+          "end_line": 35,
+          "static_calls": [
+            "Deleted::forget"
+          ],
+          "events": []
+        },
+        {
+          "name": "updated",
+          "start_line": 43,
+          "end_line": 57,
+          "static_calls": [],
+          "events": []
+        },
+        {
+          "name": "deleted",
+          "start_line": 65,
+          "end_line": 75,
+          "static_calls": [
+            "Deleted::record",
+            "ProjectUser::whereProjectId"
+          ],
+          "events": []
+        },
+        {
+          "name": "restored",
+          "start_line": 83,
+          "end_line": 86,
+          "static_calls": [],
+          "events": []
+        },
+        {
+          "name": "forceDeleted",
+          "start_line": 94,
+          "end_line": 97,
+          "static_calls": [],
+          "events": []
+        }
+      ],
+      "source_sha256": "ef626a89ed82c3b81293d2d98ff3da70f6eb37337a98ca0c190cae2b0a147d31",
+      "implementation": [
+        {
+          "file": "backend/domains/project_core.py",
+          "function": "observe_task",
+          "sha256": "bad29f3bde7214e3cdfbf381c9fae6414d139c340de538db46866c47d4b81a15",
+          "lines": [
+            [
+              328,
+              347
+            ]
+          ],
+          "binding": "SOURCE_BOUND"
+        }
+      ],
+      "installation": "Explicit domain registrars in main lifespan; inline observer calls use shared transaction",
+      "status": "IMPLEMENTED_BINDINGS_NOT_BEHAVIORALLY_VERIFIED",
+      "unknowns": [
+        "No end-to-end branch equivalence or side-effect timing acceptance executed"
+      ],
+      "verification": "NOT_RUN"
+    },
+    {
+      "source": "app/Observers/ProjectTaskVisibilityUserObserver.php",
+      "kind": "observer",
+      "methods": [
+        {
+          "name": "created",
+          "start_line": 21,
+          "end_line": 27,
+          "static_calls": [],
+          "events": []
+        },
+        {
+          "name": "updated",
+          "start_line": 35,
+          "end_line": 41,
+          "static_calls": [],
+          "events": []
+        },
+        {
+          "name": "deleted",
+          "start_line": 49,
+          "end_line": 55,
+          "static_calls": [],
+          "events": []
+        },
+        {
+          "name": "restored",
+          "start_line": 63,
+          "end_line": 66,
+          "static_calls": [],
+          "events": []
+        },
+        {
+          "name": "forceDeleted",
+          "start_line": 74,
+          "end_line": 77,
+          "static_calls": [],
+          "events": []
+        }
+      ],
+      "source_sha256": "ad58789f0a04f3e222564b1d004a0f74e8919f1ec248b74ac426dea902eb217a",
+      "implementation": [
+        {
+          "file": "backend/domains/project_core.py",
+          "function": "observe_task",
+          "sha256": "bad29f3bde7214e3cdfbf381c9fae6414d139c340de538db46866c47d4b81a15",
+          "lines": [
+            [
+              328,
+              347
+            ]
+          ],
+          "binding": "SOURCE_BOUND"
+        }
+      ],
+      "installation": "Explicit domain registrars in main lifespan; inline observer calls use shared transaction",
+      "status": "IMPLEMENTED_BINDINGS_NOT_BEHAVIORALLY_VERIFIED",
+      "unknowns": [
+        "No end-to-end branch equivalence or side-effect timing acceptance executed"
+      ],
+      "verification": "NOT_RUN"
+    },
+    {
+      "source": "app/Observers/ProjectUserObserver.php",
+      "kind": "observer",
+      "methods": [
+        {
+          "name": "created",
+          "start_line": 17,
+          "end_line": 29,
+          "static_calls": [
+            "Deleted::forget"
+          ],
+          "events": []
+        },
+        {
+          "name": "updated",
+          "start_line": 37,
+          "end_line": 48,
+          "static_calls": [],
+          "events": []
+        },
+        {
+          "name": "deleted",
+          "start_line": 56,
+          "end_line": 68,
+          "static_calls": [
+            "Deleted::record"
+          ],
+          "events": []
+        },
+        {
+          "name": "restored",
+          "start_line": 76,
+          "end_line": 79,
+          "static_calls": [],
+          "events": []
+        },
+        {
+          "name": "forceDeleted",
+          "start_line": 87,
+          "end_line": 90,
+          "static_calls": [],
+          "events": []
+        }
+      ],
+      "source_sha256": "6a1563d688900ca405d814cb7c63ccf07f44015fa98d3f4d068c5320a03f29c8",
+      "implementation": [
+        {
+          "file": "backend/domains/projects.py",
+          "function": "sync_project_members",
+          "sha256": "6ce1bd31f51f4cbacab9155e84da24f8e7f57a278a5b63068ede291982a5df17",
+          "lines": [
+            [
+              163,
+              208
+            ]
+          ],
+          "binding": "SOURCE_BOUND"
+        }
+      ],
+      "installation": "Explicit domain registrars in main lifespan; inline observer calls use shared transaction",
+      "status": "IMPLEMENTED_BINDINGS_NOT_BEHAVIORALLY_VERIFIED",
+      "unknowns": [
+        "No end-to-end branch equivalence or side-effect timing acceptance executed"
+      ],
+      "verification": "NOT_RUN"
+    },
+    {
+      "source": "app/Observers/UserObserver.php",
+      "kind": "observer",
+      "methods": [
+        {
+          "name": "created",
+          "start_line": 33,
+          "end_line": 40,
+          "static_calls": [],
+          "events": []
+        },
+        {
+          "name": "updated",
+          "start_line": 48,
+          "end_line": 111,
+          "static_calls": [
+            "Apps::dispatchUserHook",
+            "Badge::clearByUser",
+            "User::userid"
+          ],
+          "events": []
+        },
+        {
+          "name": "deleted",
+          "start_line": 119,
+          "end_line": 131,
+          "static_calls": [
+            "Apps::dispatchUserHook",
+            "Badge::clearByUser"
+          ],
+          "events": []
+        }
+      ],
+      "source_sha256": "60edd4e1332b2b144a14f3a521423c99a1f01e740a5057927e7dd6fbd18c53e7",
+      "implementation": [
+        {
+          "file": "backend/domains/accounts.py",
+          "function": "changed",
+          "sha256": "58e4b10ae9a731040af28e9e80cc6fd1eeeed99e665a8a089949930b6cf08168",
+          "lines": [
+            [
+              74,
+              77
+            ]
+          ],
+          "binding": "SOURCE_BOUND"
+        },
+        {
+          "file": "backend/domains/account_jobs.py",
+          "function": "changed_job",
+          "sha256": "c56407f1c5e9c6ba9bca80decbb1d8ce4c1e3bbdd34d1531a20b4d266b19ddcb",
+          "lines": [
+            [
+              24,
+              43
+            ]
+          ],
+          "binding": "SOURCE_BOUND"
+        },
+        {
+          "file": "backend/domains/account_jobs.py",
+          "function": "created_job",
+          "sha256": "c56407f1c5e9c6ba9bca80decbb1d8ce4c1e3bbdd34d1531a20b4d266b19ddcb",
+          "lines": [
+            [
+              16,
+              21
+            ]
+          ],
+          "binding": "SOURCE_BOUND"
+        }
+      ],
+      "installation": "Explicit domain registrars in main lifespan; inline observer calls use shared transaction",
+      "status": "IMPLEMENTED_BINDINGS_NOT_BEHAVIORALLY_VERIFIED",
+      "unknowns": [
+        "No end-to-end branch equivalence or side-effect timing acceptance executed"
+      ],
+      "verification": "NOT_RUN"
+    },
+    {
+      "source": "app/Observers/UserTagObserver.php",
+      "kind": "observer",
+      "methods": [
+        {
+          "name": "created",
+          "start_line": 18,
+          "end_line": 21,
+          "static_calls": [],
+          "events": []
+        },
+        {
+          "name": "updated",
+          "start_line": 30,
+          "end_line": 36,
+          "static_calls": [],
+          "events": []
+        },
+        {
+          "name": "deleted",
+          "start_line": 45,
+          "end_line": 48,
+          "static_calls": [],
+          "events": []
+        },
+        {
+          "name": "syncUserToManticore",
+          "start_line": 56,
+          "end_line": 68,
+          "static_calls": [
+            "User::find"
+          ],
+          "events": []
+        }
+      ],
+      "source_sha256": "3c99e1aba83850f5ec696a25f9f8f0ea15a21d32032406a3c4197ee6a06532e7",
+      "implementation": [
+        {
+          "file": "backend/domains/accounts.py",
+          "function": "tags_add",
+          "sha256": "58e4b10ae9a731040af28e9e80cc6fd1eeeed99e665a8a089949930b6cf08168",
+          "lines": [
+            [
+              275,
+              285
+            ]
+          ],
+          "binding": "SOURCE_BOUND"
+        },
+        {
+          "file": "backend/domains/accounts.py",
+          "function": "tag_mutation",
+          "sha256": "58e4b10ae9a731040af28e9e80cc6fd1eeeed99e665a8a089949930b6cf08168",
+          "lines": [
+            [
+              288,
+              309
+            ]
+          ],
+          "binding": "SOURCE_BOUND"
+        }
+      ],
+      "installation": "Explicit domain registrars in main lifespan; inline observer calls use shared transaction",
+      "status": "IMPLEMENTED_BINDINGS_NOT_BEHAVIORALLY_VERIFIED",
+      "unknowns": [
+        "No end-to-end branch equivalence or side-effect timing acceptance executed"
+      ],
+      "verification": "NOT_RUN"
+    },
+    {
+      "source": "app/Observers/UserTagRecognitionObserver.php",
+      "kind": "observer",
+      "methods": [
+        {
+          "name": "created",
+          "start_line": 19,
+          "end_line": 22,
+          "static_calls": [],
+          "events": []
+        },
+        {
+          "name": "deleted",
+          "start_line": 31,
+          "end_line": 34,
+          "static_calls": [],
+          "events": []
+        },
+        {
+          "name": "syncUserByTagId",
+          "start_line": 42,
+          "end_line": 59,
+          "static_calls": [
+            "User::find",
+            "UserTag::find"
+          ],
+          "events": []
+        }
+      ],
+      "source_sha256": "2bba98ac84574f7797150f3761ecd4e6a953228a8d56f27825ffccc5f5ef18c3",
+      "implementation": [
+        {
+          "file": "backend/domains/accounts.py",
+          "function": "tag_mutation",
+          "sha256": "58e4b10ae9a731040af28e9e80cc6fd1eeeed99e665a8a089949930b6cf08168",
+          "lines": [
+            [
+              288,
+              309
+            ]
+          ],
+          "binding": "SOURCE_BOUND"
+        }
+      ],
+      "installation": "Explicit domain registrars in main lifespan; inline observer calls use shared transaction",
+      "status": "IMPLEMENTED_BINDINGS_NOT_BEHAVIORALLY_VERIFIED",
+      "unknowns": [
+        "No end-to-end branch equivalence or side-effect timing acceptance executed"
+      ],
+      "verification": "NOT_RUN"
+    },
+    {
+      "source": "app/Observers/WebSocketDialogMsgObserver.php",
+      "kind": "observer",
+      "methods": [
+        {
+          "name": "created",
+          "start_line": 18,
+          "end_line": 24,
+          "static_calls": [
+            "Apps::isInstalled",
+            "ManticoreMsg::shouldIndex"
+          ],
+          "events": []
+        },
+        {
+          "name": "updated",
+          "start_line": 32,
+          "end_line": 38,
+          "static_calls": [
+            "Apps::isInstalled"
+          ],
+          "events": []
+        },
+        {
+          "name": "deleted",
+          "start_line": 46,
+          "end_line": 52,
+          "static_calls": [
+            "Apps::isInstalled"
+          ],
+          "events": []
+        },
+        {
+          "name": "restored",
+          "start_line": 60,
+          "end_line": 63,
+          "static_calls": [],
+          "events": []
+        },
+        {
+          "name": "forceDeleted",
+          "start_line": 71,
+          "end_line": 77,
+          "static_calls": [
+            "Apps::isInstalled"
+          ],
+          "events": []
+        }
+      ],
+      "source_sha256": "7923e4223b633a457d9900e1fdd2d536125ea1f504932a02dea5acb1a80dcf90",
+      "implementation": [
+        {
+          "file": "backend/domains/dialog_core.py",
+          "function": "send_message",
+          "sha256": "2b5d878e74a71d1ecf8718f69ffddf2fdbce5e92ba8b341310152fb9ea225470",
+          "lines": [
+            [
+              224,
+              322
+            ]
+          ],
+          "binding": "SOURCE_BOUND"
+        },
+        {
+          "file": "backend/domains/messaging_jobs.py",
+          "function": "message_effects",
+          "sha256": "67b658922f03dd9f3a8aee16615efa68964218ef415ead7b73b0ecdf8c1880ab",
+          "lines": [
+            [
+              27,
+              44
+            ]
+          ],
+          "binding": "SOURCE_BOUND"
+        }
+      ],
+      "installation": "Explicit domain registrars in main lifespan; inline observer calls use shared transaction",
+      "status": "IMPLEMENTED_BINDINGS_NOT_BEHAVIORALLY_VERIFIED",
+      "unknowns": [
+        "No end-to-end branch equivalence or side-effect timing acceptance executed"
+      ],
+      "verification": "NOT_RUN"
+    },
+    {
+      "source": "app/Observers/WebSocketDialogObserver.php",
+      "kind": "observer",
+      "methods": [
+        {
+          "name": "created",
+          "start_line": 17,
+          "end_line": 20,
+          "static_calls": [],
+          "events": []
+        },
+        {
+          "name": "updated",
+          "start_line": 28,
+          "end_line": 31,
+          "static_calls": [],
+          "events": []
+        },
+        {
+          "name": "deleted",
+          "start_line": 39,
+          "end_line": 42,
+          "static_calls": [
+            "Deleted::record"
+          ],
+          "events": []
+        },
+        {
+          "name": "restored",
+          "start_line": 50,
+          "end_line": 54,
+          "static_calls": [
+            "Deleted::forget"
+          ],
+          "events": []
+        },
+        {
+          "name": "forceDeleted",
+          "start_line": 62,
+          "end_line": 65,
+          "static_calls": [],
+          "events": []
+        },
+        {
+          "name": "userids",
+          "start_line": 71,
+          "end_line": 74,
+          "static_calls": [
+            "WebSocketDialogUser::whereDialogId"
+          ],
+          "events": []
+        }
+      ],
+      "source_sha256": "f56e311afcc3914056aa3f22a47b85f68805b56f9e68dfddac65234a4ba19dc9",
+      "implementation": [
+        {
+          "file": "backend/domains/dialog_core.py",
+          "function": "create_group",
+          "sha256": "2b5d878e74a71d1ecf8718f69ffddf2fdbce5e92ba8b341310152fb9ea225470",
+          "lines": [
+            [
+              75,
+              88
+            ]
+          ],
+          "binding": "SOURCE_BOUND"
+        },
+        {
+          "file": "backend/domains/dialog_core.py",
+          "function": "push_dialog",
+          "sha256": "2b5d878e74a71d1ecf8718f69ffddf2fdbce5e92ba8b341310152fb9ea225470",
+          "lines": [
+            [
+              329,
+              333
+            ]
+          ],
+          "binding": "SOURCE_BOUND"
+        }
+      ],
+      "installation": "Explicit domain registrars in main lifespan; inline observer calls use shared transaction",
+      "status": "IMPLEMENTED_BINDINGS_NOT_BEHAVIORALLY_VERIFIED",
+      "unknowns": [
+        "No end-to-end branch equivalence or side-effect timing acceptance executed"
+      ],
+      "verification": "NOT_RUN"
+    },
+    {
+      "source": "app/Observers/WebSocketDialogUserObserver.php",
+      "kind": "observer",
+      "methods": [
+        {
+          "name": "created",
+          "start_line": 20,
+          "end_line": 48,
+          "static_calls": [
+            "Apps::isInstalled",
+            "Carbon::now",
+            "Deleted::forget",
+            "WebSocketDialogUser::whereDialogId"
+          ],
+          "events": []
+        },
+        {
+          "name": "updated",
+          "start_line": 56,
+          "end_line": 59,
+          "static_calls": [],
+          "events": []
+        },
+        {
+          "name": "deleted",
+          "start_line": 67,
+          "end_line": 84,
+          "static_calls": [
+            "Apps::isInstalled",
+            "Deleted::record"
+          ],
+          "events": []
+        },
+        {
+          "name": "restored",
+          "start_line": 92,
+          "end_line": 95,
+          "static_calls": [],
+          "events": []
+        },
+        {
+          "name": "forceDeleted",
+          "start_line": 103,
+          "end_line": 106,
+          "static_calls": [],
+          "events": []
+        }
+      ],
+      "source_sha256": "e9a0bfaa1e36dff3c02ba1d775e2970dcf809e50a2b4efa9a123a2e16c9618b7",
+      "implementation": [
+        {
+          "file": "backend/domains/dialog_core.py",
+          "function": "sync_members",
+          "sha256": "2b5d878e74a71d1ecf8718f69ffddf2fdbce5e92ba8b341310152fb9ea225470",
+          "lines": [
+            [
+              91,
+              126
+            ]
+          ],
+          "binding": "SOURCE_BOUND"
+        },
+        {
+          "file": "backend/domains/search.py",
+          "function": "sync_dialog_members",
+          "sha256": "6714c3d7ef923237e22eb04670800c61ed778310ae72e9875d938335427c425a",
+          "lines": [
+            [
+              253,
+              266
+            ]
+          ],
+          "binding": "SOURCE_BOUND"
+        }
+      ],
+      "installation": "Explicit domain registrars in main lifespan; inline observer calls use shared transaction",
+      "status": "IMPLEMENTED_BINDINGS_NOT_BEHAVIORALLY_VERIFIED",
+      "unknowns": [
+        "No end-to-end branch equivalence or side-effect timing acceptance executed"
+      ],
+      "verification": "NOT_RUN"
+    },
+    {
+      "source": "app/Tasks/AbstractTask.php",
+      "kind": "task",
+      "methods": [
+        {
+          "name": "__construct",
+          "start_line": 19,
+          "end_line": 30,
+          "static_calls": [
+            "TaskWorker::createInstance"
+          ],
+          "events": []
+        },
+        {
+          "name": "task",
+          "start_line": 37,
+          "end_line": 43,
+          "static_calls": [],
+          "events": []
+        },
+        {
+          "name": "handle",
+          "start_line": 58,
+          "end_line": 67,
+          "static_calls": [
+            "Carbon::now",
+            "TaskWorker::whereId"
+          ],
+          "events": []
+        },
+        {
+          "name": "finish",
+          "start_line": 72,
+          "end_line": 82,
+          "static_calls": [
+            "Carbon::now",
+            "TaskWorker::whereId"
+          ],
+          "events": []
+        },
+        {
+          "name": "failed",
+          "start_line": 89,
+          "end_line": 101,
+          "static_calls": [
+            "Base::array2json",
+            "Carbon::now",
+            "TaskWorker::whereId"
+          ],
+          "events": []
+        }
+      ],
+      "source_sha256": "945100c5c419340ee4463174e68b89c0a9b82c97c5cf7a7fb6a7fa9221061e27",
+      "implementation": [
+        {
+          "file": "backend/jobs.py",
+          "function": "run_once",
+          "sha256": "c1e7e90f7edd16dfa96a0cec460f3201d341c78519418be33b2f514aa5ae6b96",
+          "lines": [
+            [
+              95,
+              120
+            ]
+          ],
+          "binding": "SOURCE_BOUND"
+        }
+      ],
+      "installation": "Explicit domain registrars in main lifespan; inline observer calls use shared transaction",
+      "status": "IMPLEMENTED_BINDINGS_NOT_BEHAVIORALLY_VERIFIED",
+      "unknowns": [
+        "No end-to-end branch equivalence or side-effect timing acceptance executed"
+      ],
+      "verification": "NOT_RUN"
+    },
+    {
+      "source": "app/Tasks/AiTaskAnalyzeTask.php",
+      "kind": "task",
+      "methods": [
+        {
+          "name": "__construct",
+          "start_line": 17,
+          "end_line": 21,
+          "static_calls": [],
+          "events": []
+        },
+        {
+          "name": "start",
+          "start_line": 23,
+          "end_line": 104,
+          "static_calls": [
+            "AiTaskSuggestion::sendSuggestionMessage",
+            "AiTaskSuggestion::shouldExecute",
+            "Log::error",
+            "ProjectTask::with",
+            "ProjectTaskAiEvent::getEventTypes",
+            "ProjectTaskAiEvent::where"
+          ],
+          "events": []
+        },
+        {
+          "name": "executeAnalysis",
+          "start_line": 111,
+          "end_line": 129,
+          "static_calls": [
+            "AiTaskSuggestion::findSimilarTasks",
+            "AiTaskSuggestion::generateAssignee",
+            "AiTaskSuggestion::generateDescription",
+            "AiTaskSuggestion::generateSubtasks"
+          ],
+          "events": []
+        },
+        {
+          "name": "end",
+          "start_line": 131,
+          "end_line": 133,
+          "static_calls": [],
+          "events": []
+        }
+      ],
+      "source_sha256": "2ad8638be81810374b17f0b2c4385bf39f2370029a18e4ae632d3c500089cee1",
+      "implementation": [
+        {
+          "file": "backend/domains/project_ai.py",
+          "function": "analyze",
+          "sha256": "c4fb845be28b7a23472d4c61f08ba4a06bfe4f16481cb326f821ab877fd685b3",
+          "lines": [
+            [
+              121,
+              193
+            ]
+          ],
+          "binding": "SOURCE_BOUND"
+        }
+      ],
+      "installation": "Explicit domain registrars in main lifespan; inline observer calls use shared transaction",
+      "status": "IMPLEMENTED_BINDINGS_NOT_BEHAVIORALLY_VERIFIED",
+      "unknowns": [
+        "No end-to-end branch equivalence or side-effect timing acceptance executed"
+      ],
+      "verification": "NOT_RUN"
+    },
+    {
+      "source": "app/Tasks/AiTaskLoopTask.php",
+      "kind": "task",
+      "methods": [
+        {
+          "name": "__construct",
+          "start_line": 28,
+          "end_line": 31,
+          "static_calls": [],
+          "events": []
+        },
+        {
+          "name": "start",
+          "start_line": 33,
+          "end_line": 60,
+          "static_calls": [
+            "Apps::isInstalled",
+            "Base::settingFind",
+            "Task::deliver"
+          ],
+          "events": []
+        },
+        {
+          "name": "findPendingTasks",
+          "start_line": 65,
+          "end_line": 101,
+          "static_calls": [
+            "Carbon::now",
+            "ProjectTask::with",
+            "ProjectTaskAiEvent::select",
+            "ProjectTaskAiEvent::where"
+          ],
+          "events": []
+        },
+        {
+          "name": "createEventRecords",
+          "start_line": 106,
+          "end_line": 120,
+          "static_calls": [
+            "ProjectTaskAiEvent::firstOrCreate",
+            "ProjectTaskAiEvent::getEventTypes"
+          ],
+          "events": []
+        },
+        {
+          "name": "end",
+          "start_line": 122,
+          "end_line": 124,
+          "static_calls": [],
+          "events": []
+        }
+      ],
+      "source_sha256": "98044fdbf82642a23bc7c107bf4578ef33dc4ef2c125619f3c799234584da34b",
+      "implementation": [
+        {
+          "file": "backend/domains/project_ai.py",
+          "function": "scan",
+          "sha256": "c4fb845be28b7a23472d4c61f08ba4a06bfe4f16481cb326f821ab877fd685b3",
+          "lines": [
+            [
+              24,
+              42
+            ]
+          ],
+          "binding": "SOURCE_BOUND"
+        }
+      ],
+      "installation": "Explicit domain registrars in main lifespan; inline observer calls use shared transaction",
+      "status": "IMPLEMENTED_BINDINGS_NOT_BEHAVIORALLY_VERIFIED",
+      "unknowns": [
+        "No end-to-end branch equivalence or side-effect timing acceptance executed"
+      ],
+      "verification": "NOT_RUN"
+    },
+    {
+      "source": "app/Tasks/AppPushTask.php",
+      "kind": "task",
+      "methods": [
+        {
+          "name": "__construct",
+          "start_line": 11,
+          "end_line": 14,
+          "static_calls": [],
+          "events": []
+        },
+        {
+          "name": "start",
+          "start_line": 16,
+          "end_line": 44,
+          "static_calls": [
+            "Base::setting",
+            "Carbon::now",
+            "ProjectTask::whereNull"
+          ],
+          "events": []
+        },
+        {
+          "name": "end",
+          "start_line": 46,
+          "end_line": 49,
+          "static_calls": [],
+          "events": []
+        }
+      ],
+      "source_sha256": "2e82be5ae6868b4e045ac35b4538034d24edf7be64674f2940ba45cc7201d579",
+      "implementation": [
+        {
+          "file": "backend/domains/project_jobs.py",
+          "function": "maintenance",
+          "sha256": "967f61b7b658062a49b149b34e9cfee0461c4aaa99aec6aa5d41f5ab12158e71",
+          "lines": [
+            [
+              204,
+              232
+            ]
+          ],
+          "binding": "SOURCE_BOUND"
+        },
+        {
+          "file": "backend/domains/messaging_jobs.py",
+          "function": "mobile_push",
+          "sha256": "67b658922f03dd9f3a8aee16615efa68964218ef415ead7b73b0ecdf8c1880ab",
+          "lines": [
+            [
+              221,
+              251
+            ]
+          ],
+          "binding": "SOURCE_BOUND"
+        }
+      ],
+      "installation": "Explicit domain registrars in main lifespan; inline observer calls use shared transaction",
+      "status": "IMPLEMENTED_BINDINGS_NOT_BEHAVIORALLY_VERIFIED",
+      "unknowns": [
+        "No end-to-end branch equivalence or side-effect timing acceptance executed"
+      ],
+      "verification": "NOT_RUN"
+    },
+    {
+      "source": "app/Tasks/AutoArchivedTask.php",
+      "kind": "task",
+      "methods": [
+        {
+          "name": "__construct",
+          "start_line": 16,
+          "end_line": 19,
+          "static_calls": [],
+          "events": []
+        },
+        {
+          "name": "start",
+          "start_line": 21,
+          "end_line": 25,
+          "static_calls": [],
+          "events": []
+        },
+        {
+          "name": "systemAutoArchived",
+          "start_line": 30,
+          "end_line": 54,
+          "static_calls": [
+            "Base::setting",
+            "Carbon::now",
+            "ProjectTask::select"
+          ],
+          "events": []
+        },
+        {
+          "name": "projectAutoArchived",
+          "start_line": 59,
+          "end_line": 81,
+          "static_calls": [
+            "Carbon::now",
+            "DB::getTablePrefix",
+            "ProjectTask::select"
+          ],
+          "events": []
+        },
+        {
+          "name": "end",
+          "start_line": 83,
+          "end_line": 86,
+          "static_calls": [],
+          "events": []
+        }
+      ],
+      "source_sha256": "49d9dcfba12756b96a17f157a2e5aabfe0d6e52e758c2c9e4b08e1043740cb4c",
+      "implementation": [
+        {
+          "file": "backend/domains/project_jobs.py",
+          "function": "maintenance",
+          "sha256": "967f61b7b658062a49b149b34e9cfee0461c4aaa99aec6aa5d41f5ab12158e71",
+          "lines": [
+            [
+              204,
+              232
+            ]
+          ],
+          "binding": "SOURCE_BOUND"
+        }
+      ],
+      "installation": "Explicit domain registrars in main lifespan; inline observer calls use shared transaction",
+      "status": "IMPLEMENTED_BINDINGS_NOT_BEHAVIORALLY_VERIFIED",
+      "unknowns": [
+        "No end-to-end branch equivalence or side-effect timing acceptance executed"
+      ],
+      "verification": "NOT_RUN"
+    },
+    {
+      "source": "app/Tasks/BotReceiveMsgTask.php",
+      "kind": "task",
+      "methods": [
+        {
+          "name": "__construct",
+          "start_line": 48,
+          "end_line": 56,
+          "static_calls": [],
+          "events": []
+        },
+        {
+          "name": "start",
+          "start_line": 62,
+          "end_line": 86,
+          "static_calls": [
+            "User::whereUserid",
+            "WebSocketDialogMsg::with"
+          ],
+          "events": []
+        },
+        {
+          "name": "end",
+          "start_line": 92,
+          "end_line": 95,
+          "static_calls": [],
+          "events": []
+        },
+        {
+          "name": "processMessage",
+          "start_line": 105,
+          "end_line": 416,
+          "static_calls": [
+            "Base::cn2pinyin",
+            "Base::generatePassword",
+            "Base::getFirstCharter",
+            "Base::getVersion",
+            "Base::isError",
+            "Base::newTrim",
+            "Carbon::now",
+            "DB::table",
+            "Doo::md5s",
+            "User::generateToken",
+            "User::select",
+            "UserBot::anonBotQuickMsg",
+            "UserBot::checkinBotQuickMsg",
+            "UserBot::newBot",
+            "UserBot::whereBotId",
+            "WebSocketDialog::find",
+            "WebSocketDialog::synthesizeData",
+            "WebSocketDialogMsg::find",
+            "WebSocketDialogMsg::sendMsg"
+          ],
+          "events": [
+            "content"
+          ]
+        },
+        {
+          "name": "handleWebhookRequest",
+          "start_line": 429,
+          "end_line": 603,
+          "static_calls": [
+            "Apps::isInstalled",
+            "Base::array2json",
+            "Base::getVersion",
+            "Base::json2array",
+            "Base::judgeClientVersion",
+            "Base::setting",
+            "Base::strRandom",
+            "Base::val",
+            "Ihttp::ihttp_post",
+            "Setting::AIBotModelThinking",
+            "User::find",
+            "User::generateToken",
+            "User::generateTokenNoDevice",
+            "UserBot::whereBotId",
+            "WebSocketDialogMsg::sendMsg"
+          ],
+          "events": [
+            "content"
+          ]
+        },
+        {
+          "name": "generateSystemPromptForAI",
+          "start_line": 615,
+          "end_line": 688,
+          "static_calls": [
+            "Carbon::now",
+            "Project::whereDialogId",
+            "ProjectTask::with",
+            "PromptPlaceholder::buildOptionalPrompts",
+            "UserDepartment::whereDialogId",
+            "WebSocketDialogConfig::where"
+          ],
+          "events": [
+            "ai_prompt"
+          ]
+        },
+        {
+          "name": "getRecentChatHistory",
+          "start_line": 696,
+          "end_line": 732,
+          "static_calls": [
+            "WebSocketDialogMsg::with"
+          ],
+          "events": []
+        },
+        {
+          "name": "getBotInfo",
+          "start_line": 742,
+          "end_line": 761,
+          "static_calls": [
+            "User::select"
+          ],
+          "events": []
+        }
+      ],
+      "source_sha256": "34fd8f5e7d71a4948ef5d55cd8d55a83693451b53d22d5a7278dcb7e5b61f988",
+      "implementation": [
+        {
+          "file": "backend/domains/messaging_jobs.py",
+          "function": "bot_prepare",
+          "sha256": "67b658922f03dd9f3a8aee16615efa68964218ef415ead7b73b0ecdf8c1880ab",
+          "lines": [
+            [
+              47,
+              111
+            ]
+          ],
+          "binding": "SOURCE_BOUND"
+        },
+        {
+          "file": "backend/domains/messaging_jobs.py",
+          "function": "webhook",
+          "sha256": "67b658922f03dd9f3a8aee16615efa68964218ef415ead7b73b0ecdf8c1880ab",
+          "lines": [
+            [
+              114,
+              131
+            ]
+          ],
+          "binding": "SOURCE_BOUND"
+        },
+        {
+          "file": "backend/domains/account_bot_jobs.py",
+          "function": "bot_command",
+          "sha256": "3e1c9f3dd47586b7198a53bdc4d56bb50af40859e4e933b9786b2eaf53f42110",
+          "lines": [
+            [
+              58,
+              115
+            ]
+          ],
+          "binding": "SOURCE_BOUND"
+        }
+      ],
+      "installation": "Explicit domain registrars in main lifespan; inline observer calls use shared transaction",
+      "status": "IMPLEMENTED_BINDINGS_NOT_BEHAVIORALLY_VERIFIED",
+      "unknowns": [
+        "No end-to-end branch equivalence or side-effect timing acceptance executed"
+      ],
+      "verification": "NOT_RUN"
+    },
+    {
+      "source": "app/Tasks/CheckinRemindTask.php",
+      "kind": "task",
+      "methods": [
+        {
+          "name": "__construct",
+          "start_line": 17,
+          "end_line": 20,
+          "static_calls": [],
+          "events": []
+        },
+        {
+          "name": "start",
+          "start_line": 22,
+          "end_line": 54,
+          "static_calls": [
+            "Base::json2array",
+            "Base::setting",
+            "Extranet::isHoliday",
+            "Timer::time"
+          ],
+          "events": []
+        },
+        {
+          "name": "end",
+          "start_line": 56,
+          "end_line": 59,
+          "static_calls": [],
+          "events": []
+        },
+        {
+          "name": "remind",
+          "start_line": 61,
+          "end_line": 110,
+          "static_calls": [
+            "Cache::get",
+            "Cache::put",
+            "Carbon::now",
+            "User::botGetOrCreate",
+            "User::whereBot",
+            "UserCheckinRecord::whereUserid",
+            "WebSocketDialog::checkUserDialog",
+            "WebSocketDialogMsg::sendMsg"
+          ],
+          "events": [
+            "content"
+          ]
+        }
+      ],
+      "source_sha256": "1f1d4c4ec72ebf7feaea6e2e4080d58c8ef0f0ca862e9210ab26e43b809996ce",
+      "implementation": [
+        {
+          "file": "backend/domains/checkin.py",
+          "function": "remind",
+          "sha256": "fe4546af256328c0887dec59c968500978347c432c2a37cf7ea7c9ed20224a05",
+          "lines": [
+            [
+              157,
+              175
+            ]
+          ],
+          "binding": "SOURCE_BOUND"
+        }
+      ],
+      "installation": "Explicit domain registrars in main lifespan; inline observer calls use shared transaction",
+      "status": "IMPLEMENTED_BINDINGS_NOT_BEHAVIORALLY_VERIFIED",
+      "unknowns": [
+        "No end-to-end branch equivalence or side-effect timing acceptance executed"
+      ],
+      "verification": "NOT_RUN"
+    },
+    {
+      "source": "app/Tasks/CloseMeetingRoomTask.php",
+      "kind": "task",
+      "methods": [
+        {
+          "name": "__construct",
+          "start_line": 14,
+          "end_line": 17,
+          "static_calls": [],
+          "events": []
+        },
+        {
+          "name": "start",
+          "start_line": 19,
+          "end_line": 89,
+          "static_calls": [
+            "Base::array2json",
+            "Base::json2array",
+            "Base::setting",
+            "Cache::get",
+            "Cache::put",
+            "Carbon::now",
+            "Meeting::whereNull",
+            "WebSocketDialog::find",
+            "WebSocketDialogMsg::select"
+          ],
+          "events": []
+        },
+        {
+          "name": "end",
+          "start_line": 91,
+          "end_line": 93,
+          "static_calls": [],
+          "events": []
+        },
+        {
+          "name": "isEmptyChannel",
+          "start_line": 102,
+          "end_line": 129,
+          "static_calls": [
+            "Base::json2array"
+          ],
+          "events": []
+        }
+      ],
+      "source_sha256": "2525fca9d402683554eed8ebd7f3b92694792e8adeee5275ac09998d73482ce2",
+      "implementation": [
+        {
+          "file": "backend/domains/account_bot_jobs.py",
+          "function": "close_meetings",
+          "sha256": "3e1c9f3dd47586b7198a53bdc4d56bb50af40859e4e933b9786b2eaf53f42110",
+          "lines": [
+            [
+              118,
+              133
+            ]
+          ],
+          "binding": "SOURCE_BOUND"
+        }
+      ],
+      "installation": "Explicit domain registrars in main lifespan; inline observer calls use shared transaction",
+      "status": "IMPLEMENTED_BINDINGS_NOT_BEHAVIORALLY_VERIFIED",
+      "unknowns": [
+        "No end-to-end branch equivalence or side-effect timing acceptance executed"
+      ],
+      "verification": "NOT_RUN"
+    },
+    {
+      "source": "app/Tasks/DeleteBotMsgTask.php",
+      "kind": "task",
+      "methods": [
+        {
+          "name": "__construct",
+          "start_line": 15,
+          "end_line": 18,
+          "static_calls": [],
+          "events": []
+        },
+        {
+          "name": "start",
+          "start_line": 20,
+          "end_line": 36,
+          "static_calls": [
+            "Carbon::now",
+            "UserBot::where",
+            "WebSocketDialogMsg::deleteMsgs",
+            "WebSocketDialogMsg::whereUserid"
+          ],
+          "events": []
+        },
+        {
+          "name": "end",
+          "start_line": 38,
+          "end_line": 41,
+          "static_calls": [],
+          "events": []
+        }
+      ],
+      "source_sha256": "05abb84000cb82c2b3dde6a4e8a817dc681110c50e461d4fdac347e384e635f0",
+      "implementation": [
+        {
+          "file": "backend/domains/messaging_jobs.py",
+          "function": "delete_bot_messages",
+          "sha256": "67b658922f03dd9f3a8aee16615efa68964218ef415ead7b73b0ecdf8c1880ab",
+          "lines": [
+            [
+              185,
+              201
+            ]
+          ],
+          "binding": "SOURCE_BOUND"
+        }
+      ],
+      "installation": "Explicit domain registrars in main lifespan; inline observer calls use shared transaction",
+      "status": "IMPLEMENTED_BINDINGS_NOT_BEHAVIORALLY_VERIFIED",
+      "unknowns": [
+        "No end-to-end branch equivalence or side-effect timing acceptance executed"
+      ],
+      "verification": "NOT_RUN"
+    },
+    {
+      "source": "app/Tasks/DeleteTmpTask.php",
+      "kind": "task",
+      "methods": [
+        {
+          "name": "__construct",
+          "start_line": 28,
+          "end_line": 33,
+          "static_calls": [],
+          "events": []
+        },
+        {
+          "name": "start",
+          "start_line": 35,
+          "end_line": 140,
+          "static_calls": [
+            "Base::deleteDirAndFile",
+            "Base::recursiveFiles",
+            "Carbon::now",
+            "File::onlyTrashed",
+            "TaskWorker::onlyTrashed",
+            "Tmp::where",
+            "UmengLog::where",
+            "UserDevice::forget",
+            "UserDevice::where",
+            "WebSocketTmpMsg::where"
+          ],
+          "events": []
+        },
+        {
+          "name": "end",
+          "start_line": 142,
+          "end_line": 145,
+          "static_calls": [],
+          "events": []
+        }
+      ],
+      "source_sha256": "11630f6227babdd0c283fe2b91f494ddd0d677de54a8aec9c009da61029f499b",
+      "implementation": [
+        {
+          "file": "backend/domains/files_jobs.py",
+          "function": "expire",
+          "sha256": "8ddbd2e7d5f2835c8c6ad8998854f3e6a0e7243014816d6f320028e100c4c0f4",
+          "lines": [
+            [
+              67,
+              102
+            ]
+          ],
+          "binding": "SOURCE_BOUND"
+        },
+        {
+          "file": "backend/domains/account_jobs.py",
+          "function": "expire_job",
+          "sha256": "c56407f1c5e9c6ba9bca80decbb1d8ce4c1e3bbdd34d1531a20b4d266b19ddcb",
+          "lines": [
+            [
+              82,
+              89
+            ]
+          ],
+          "binding": "SOURCE_BOUND"
+        }
+      ],
+      "installation": "Explicit domain registrars in main lifespan; inline observer calls use shared transaction",
+      "status": "IMPLEMENTED_BINDINGS_NOT_BEHAVIORALLY_VERIFIED",
+      "unknowns": [
+        "No end-to-end branch equivalence or side-effect timing acceptance executed"
+      ],
+      "verification": "NOT_RUN"
+    },
+    {
+      "source": "app/Tasks/EmailNoticeTask.php",
+      "kind": "task",
+      "methods": [
+        {
+          "name": "__construct",
+          "start_line": 31,
+          "end_line": 35,
+          "static_calls": [
+            "Base::setting"
+          ],
+          "events": []
+        },
+        {
+          "name": "start",
+          "start_line": 37,
+          "end_line": 49,
+          "static_calls": [
+            "DB::statement"
+          ],
+          "events": []
+        },
+        {
+          "name": "canSendEmails",
+          "start_line": 55,
+          "end_line": 66,
+          "static_calls": [
+            "Timer::isTimeInRanges"
+          ],
+          "events": []
+        },
+        {
+          "name": "processMessages",
+          "start_line": 72,
+          "end_line": 119,
+          "static_calls": [
+            "Base::setting",
+            "Base::settingFind",
+            "Carbon::now",
+            "Carbon::parse",
+            "Carbon::today",
+            "WebSocketDialogMsgRead::select"
+          ],
+          "events": []
+        },
+        {
+          "name": "sendUserEmail",
+          "start_line": 124,
+          "end_line": 154,
+          "static_calls": [
+            "Base::isEmail",
+            "Doo::setLanguage",
+            "User::whereDisableAt",
+            "WebSocketDialogMsgRead::whereIn"
+          ],
+          "events": []
+        },
+        {
+          "name": "getUnreadMessages",
+          "start_line": 159,
+          "end_line": 178,
+          "static_calls": [
+            "WebSocketDialogMsg::select"
+          ],
+          "events": []
+        },
+        {
+          "name": "generateEmailContent",
+          "start_line": 183,
+          "end_line": 241,
+          "static_calls": [
+            "Doo::setLanguage",
+            "Doo::translate",
+            "User::userid2basic",
+            "WebSocketDialogMsg::previewMsg"
+          ],
+          "events": [
+            "content",
+            "head"
+          ]
+        },
+        {
+          "name": "getDialogName",
+          "start_line": 246,
+          "end_line": 254,
+          "static_calls": [],
+          "events": []
+        },
+        {
+          "name": "sendEmail",
+          "start_line": 259,
+          "end_line": 275,
+          "static_calls": [
+            "Base::settingFind",
+            "Setting::validateAddr",
+            "Transport::fromDsn"
+          ],
+          "events": []
+        },
+        {
+          "name": "end",
+          "start_line": 277,
+          "end_line": 280,
+          "static_calls": [],
+          "events": []
+        }
+      ],
+      "source_sha256": "41b91f6adef8179afddd7873a09851b85971544ad46dc9c8419da973c7999051",
+      "implementation": [
+        {
+          "file": "backend/domains/messaging_jobs.py",
+          "function": "email_notice",
+          "sha256": "67b658922f03dd9f3a8aee16615efa68964218ef415ead7b73b0ecdf8c1880ab",
+          "lines": [
+            [
+              254,
+              296
+            ]
+          ],
+          "binding": "SOURCE_BOUND"
+        }
+      ],
+      "installation": "Explicit domain registrars in main lifespan; inline observer calls use shared transaction",
+      "status": "IMPLEMENTED_BINDINGS_NOT_BEHAVIORALLY_VERIFIED",
+      "unknowns": [
+        "No end-to-end branch equivalence or side-effect timing acceptance executed"
+      ],
+      "verification": "NOT_RUN"
+    },
+    {
+      "source": "app/Tasks/JokeSoupTask.php",
+      "kind": "task",
+      "methods": [
+        {
+          "name": "keyName",
+          "start_line": 17,
+          "end_line": 20,
+          "static_calls": [],
+          "events": []
+        },
+        {
+          "name": "__construct",
+          "start_line": 22,
+          "end_line": 25,
+          "static_calls": [],
+          "events": []
+        },
+        {
+          "name": "start",
+          "start_line": 27,
+          "end_line": 50,
+          "static_calls": [
+            "AI::generateJokeAndSoup",
+            "Base::array2json",
+            "Base::isError",
+            "Base::json2array",
+            "Cache::forever",
+            "Cache::forget",
+            "Cache::get",
+            "Cache::put",
+            "Carbon::now"
+          ],
+          "events": []
+        },
+        {
+          "name": "end",
+          "start_line": 52,
+          "end_line": 55,
+          "static_calls": [],
+          "events": []
+        }
+      ],
+      "source_sha256": "d650e693a83cc36875f4d84a180dea1313b6c27b689a7950a03f30b584f1443e",
+      "implementation": [
+        {
+          "file": "backend/domains/messaging_jobs.py",
+          "function": "joke_soup",
+          "sha256": "67b658922f03dd9f3a8aee16615efa68964218ef415ead7b73b0ecdf8c1880ab",
+          "lines": [
+            [
+              299,
+              316
+            ]
+          ],
+          "binding": "SOURCE_BOUND"
+        }
+      ],
+      "installation": "Explicit domain registrars in main lifespan; inline observer calls use shared transaction",
+      "status": "IMPLEMENTED_BINDINGS_NOT_BEHAVIORALLY_VERIFIED",
+      "unknowns": [
+        "No end-to-end branch equivalence or side-effect timing acceptance executed"
+      ],
+      "verification": "NOT_RUN"
+    },
+    {
+      "source": "app/Tasks/LineTask.php",
+      "kind": "task",
+      "methods": [
+        {
+          "name": "__construct",
+          "start_line": 23,
+          "end_line": 28,
+          "static_calls": [],
+          "events": []
+        },
+        {
+          "name": "start",
+          "start_line": 30,
+          "end_line": 50,
+          "static_calls": [
+            "WebSocket::where"
+          ],
+          "events": [
+            "line"
+          ]
+        },
+        {
+          "name": "end",
+          "start_line": 52,
+          "end_line": 55,
+          "static_calls": [
+            "PushTask::push"
+          ],
+          "events": []
+        }
+      ],
+      "source_sha256": "8c121795b44288493ae68f38e8ec8fc0f77b87097a0895d1de3456b5f78c2b2a",
+      "implementation": [
+        {
+          "file": "backend/realtime.py",
+          "function": "_line",
+          "sha256": "70f9c9863cccccbcf64b62cd7db9d83397699d2af60c4a6a422308881ec3a431",
+          "lines": [
+            [
+              121,
+              126
+            ]
+          ],
+          "binding": "SOURCE_BOUND"
+        },
+        {
+          "file": "backend/domains/messaging_jobs.py",
+          "function": "maintenance",
+          "sha256": "67b658922f03dd9f3a8aee16615efa68964218ef415ead7b73b0ecdf8c1880ab",
+          "lines": [
+            [
+              204,
+              218
+            ]
+          ],
+          "binding": "SOURCE_BOUND"
+        }
+      ],
+      "installation": "Explicit domain registrars in main lifespan; inline observer calls use shared transaction",
+      "status": "IMPLEMENTED_BINDINGS_NOT_BEHAVIORALLY_VERIFIED",
+      "unknowns": [
+        "No end-to-end branch equivalence or side-effect timing acceptance executed"
+      ],
+      "verification": "NOT_RUN"
+    },
+    {
+      "source": "app/Tasks/LoopTask.php",
+      "kind": "task",
+      "methods": [
+        {
+          "name": "__construct",
+          "start_line": 20,
+          "end_line": 23,
+          "static_calls": [],
+          "events": []
+        },
+        {
+          "name": "start",
+          "start_line": 25,
+          "end_line": 49,
+          "static_calls": [
+            "Carbon::now",
+            "ProjectTask::where",
+            "ProjectTask::withTrashed"
+          ],
+          "events": []
+        },
+        {
+          "name": "createLoopTask",
+          "start_line": 57,
+          "end_line": 129,
+          "static_calls": [
+            "AbstractModel::transaction",
+            "Carbon::parse",
+            "ProjectFlow::whereProjectId",
+            "ProjectFlowItem::whereFlowId",
+            "ProjectTask::whereKey",
+            "ProjectTaskHandoffRecord::track",
+            "ProjectTaskRelation::createRelation",
+            "ProjectTaskUser::updateInsert"
+          ],
+          "events": []
+        },
+        {
+          "name": "end",
+          "start_line": 131,
+          "end_line": 134,
+          "static_calls": [],
+          "events": []
+        }
+      ],
+      "source_sha256": "d45656455de576a5c3a0c43d857574d1d099b7d569deb4e4a5b12801e687bfa3",
+      "implementation": [
+        {
+          "file": "backend/domains/project_jobs.py",
+          "function": "recurring",
+          "sha256": "967f61b7b658062a49b149b34e9cfee0461c4aaa99aec6aa5d41f5ab12158e71",
+          "lines": [
+            [
+              235,
+              271
+            ]
+          ],
+          "binding": "SOURCE_BOUND"
+        }
+      ],
+      "installation": "Explicit domain registrars in main lifespan; inline observer calls use shared transaction",
+      "status": "IMPLEMENTED_BINDINGS_NOT_BEHAVIORALLY_VERIFIED",
+      "unknowns": [
+        "No end-to-end branch equivalence or side-effect timing acceptance executed"
+      ],
+      "verification": "NOT_RUN"
+    },
+    {
+      "source": "app/Tasks/ManticoreSyncTask.php",
+      "kind": "task",
+      "methods": [
+        {
+          "name": "__construct",
+          "start_line": 32,
+          "end_line": 37,
+          "static_calls": [],
+          "events": []
+        },
+        {
+          "name": "getAction",
+          "start_line": 44,
+          "end_line": 47,
+          "static_calls": [],
+          "events": []
+        },
+        {
+          "name": "getDataId",
+          "start_line": 54,
+          "end_line": 69,
+          "static_calls": [],
+          "events": []
+        },
+        {
+          "name": "start",
+          "start_line": 71,
+          "end_line": 219,
+          "static_calls": [
+            "Apps::isInstalled",
+            "File::find",
+            "ManticoreBase::batchUpdatePshare",
+            "ManticoreFile::delete",
+            "ManticoreFile::sync",
+            "ManticoreFile::updateAllowedUsers",
+            "ManticoreMsg::delete",
+            "ManticoreMsg::sync",
+            "ManticoreMsg::updateDialogAllowedUsers",
+            "ManticoreProject::delete",
+            "ManticoreProject::sync",
+            "ManticoreProject::updateAllowedUsers",
+            "ManticoreTask::cascadeToChildren",
+            "ManticoreTask::cascadeUpdateByProject",
+            "ManticoreTask::delete",
+            "ManticoreTask::sync",
+            "ManticoreTask::updateAllowedUsers",
+            "ManticoreUser::delete",
+            "ManticoreUser::sync",
+            "Project::find",
+            "ProjectTask::find",
+            "User::find",
+            "WebSocketDialogMsg::find"
+          ],
+          "events": []
+        },
+        {
+          "name": "incrementalUpdate",
+          "start_line": 229,
+          "end_line": 240,
+          "static_calls": [
+            "Cache::get",
+            "Cache::put",
+            "Carbon::now"
+          ],
+          "events": []
+        },
+        {
+          "name": "runIncrementalSync",
+          "start_line": 248,
+          "end_line": 259,
+          "static_calls": [],
+          "events": []
+        },
+        {
+          "name": "end",
+          "start_line": 261,
+          "end_line": 263,
+          "static_calls": [],
+          "events": []
+        }
+      ],
+      "source_sha256": "4c1bca496d389b549df73174f1ad0ece4bbece75cb8aeaf891f07a4ca2134386",
+      "implementation": [
+        {
+          "file": "backend/domains/search.py",
+          "function": "sync",
+          "sha256": "6714c3d7ef923237e22eb04670800c61ed778310ae72e9875d938335427c425a",
+          "lines": [
+            [
+              226,
+              250
+            ]
+          ],
+          "binding": "SOURCE_BOUND"
+        }
+      ],
+      "installation": "Explicit domain registrars in main lifespan; inline observer calls use shared transaction",
+      "status": "IMPLEMENTED_BINDINGS_NOT_BEHAVIORALLY_VERIFIED",
+      "unknowns": [
+        "No end-to-end branch equivalence or side-effect timing acceptance executed"
+      ],
+      "verification": "NOT_RUN"
+    },
+    {
+      "source": "app/Tasks/MessageAttachmentBackfillTask.php",
+      "kind": "task",
+      "methods": [
+        {
+          "name": "__construct",
+          "start_line": 9,
+          "end_line": 12,
+          "static_calls": [],
+          "events": []
+        },
+        {
+          "name": "start",
+          "start_line": 14,
+          "end_line": 17,
+          "static_calls": [
+            "MessageAttachmentBackfillService::processAutomatic"
+          ],
+          "events": []
+        },
+        {
+          "name": "end",
+          "start_line": 19,
+          "end_line": 21,
+          "static_calls": [],
+          "events": []
+        }
+      ],
+      "source_sha256": "f45c12daba5c26102cf253d2bea485432c58d33e2e711f061491eea967f15349",
+      "implementation": [
+        {
+          "file": "backend/domains/files_jobs.py",
+          "function": "attachment_backfill",
+          "sha256": "8ddbd2e7d5f2835c8c6ad8998854f3e6a0e7243014816d6f320028e100c4c0f4",
+          "lines": [
+            [
+              105,
+              118
+            ]
+          ],
+          "binding": "SOURCE_BOUND"
+        }
+      ],
+      "installation": "Explicit domain registrars in main lifespan; inline observer calls use shared transaction",
+      "status": "IMPLEMENTED_BINDINGS_NOT_BEHAVIORALLY_VERIFIED",
+      "unknowns": [
+        "No end-to-end branch equivalence or side-effect timing acceptance executed"
+      ],
+      "verification": "NOT_RUN"
+    },
+    {
+      "source": "app/Tasks/PushTask.php",
+      "kind": "task",
+      "methods": [
+        {
+          "name": "__construct",
+          "start_line": 27,
+          "end_line": 32,
+          "static_calls": [],
+          "events": []
+        },
+        {
+          "name": "start",
+          "start_line": 34,
+          "end_line": 50,
+          "static_calls": [
+            "Base::leftDelete",
+            "Base::leftExists",
+            "Cache::pull"
+          ],
+          "events": []
+        },
+        {
+          "name": "end",
+          "start_line": 52,
+          "end_line": 55,
+          "static_calls": [],
+          "events": []
+        },
+        {
+          "name": "sendTmpMsgForUserid",
+          "start_line": 61,
+          "end_line": 79,
+          "static_calls": [
+            "Base::json2array",
+            "Carbon::now",
+            "WebSocketTmpMsg::whereCreateId"
+          ],
+          "events": []
+        },
+        {
+          "name": "addTmpMsg",
+          "start_line": 86,
+          "end_line": 102,
+          "static_calls": [
+            "Base::array2json",
+            "Carbon::now",
+            "WebSocketTmpMsg::insertOrIgnore",
+            "WebSocketTmpMsg::whereMd5"
+          ],
+          "events": []
+        },
+        {
+          "name": "push",
+          "start_line": 111,
+          "end_line": 198,
+          "static_calls": [
+            "Base::isTwoArray",
+            "Cache::put",
+            "Task::deliver",
+            "WebSocket::select",
+            "WebSocketTmpMsg::whereId"
+          ],
+          "events": []
+        },
+        {
+          "name": "pushMsgFormat",
+          "start_line": 206,
+          "end_line": 219,
+          "static_calls": [
+            "Base::array2json",
+            "Base::json2array",
+            "Cache::get",
+            "Doo::pgpEncryptApi"
+          ],
+          "events": [
+            "encrypt"
+          ]
+        }
+      ],
+      "source_sha256": "e164d2e1e0604f76492b1f2f18bb808f55f196e48c16220e776c35dad28e7cb0",
+      "implementation": [
+        {
+          "file": "backend/jobs.py",
+          "function": "_push",
+          "sha256": "c1e7e90f7edd16dfa96a0cec460f3201d341c78519418be33b2f514aa5ae6b96",
+          "lines": [
+            [
+              63,
+              92
+            ]
+          ],
+          "binding": "SOURCE_BOUND"
+        },
+        {
+          "file": "backend/realtime.py",
+          "function": "socket_endpoint",
+          "sha256": "70f9c9863cccccbcf64b62cd7db9d83397699d2af60c4a6a422308881ec3a431",
+          "lines": [
+            [
+              156,
+              288
+            ]
+          ],
+          "binding": "SOURCE_BOUND"
+        }
+      ],
+      "installation": "Explicit domain registrars in main lifespan; inline observer calls use shared transaction",
+      "status": "IMPLEMENTED_BINDINGS_NOT_BEHAVIORALLY_VERIFIED",
+      "unknowns": [
+        "No end-to-end branch equivalence or side-effect timing acceptance executed"
+      ],
+      "verification": "NOT_RUN"
+    },
+    {
+      "source": "app/Tasks/PushUmengMsg.php",
+      "kind": "task",
+      "methods": [
+        {
+          "name": "__construct",
+          "start_line": 23,
+          "end_line": 28,
+          "static_calls": [],
+          "events": []
+        },
+        {
+          "name": "start",
+          "start_line": 30,
+          "end_line": 90,
+          "static_calls": [
+            "Base::setting",
+            "Cache::get",
+            "UmengAlias::pushMsgToUserid",
+            "WebSocketDialogMsgRead::whereMsgId"
+          ],
+          "events": []
+        },
+        {
+          "name": "end",
+          "start_line": 92,
+          "end_line": 102,
+          "static_calls": [
+            "Task::deliver"
+          ],
+          "events": []
+        }
+      ],
+      "source_sha256": "3ad79dc6884e2cfa4c273de13a759a65c15a562c15657408ed7fa6ba23b1a5c7",
+      "implementation": [
+        {
+          "file": "backend/domains/messaging_jobs.py",
+          "function": "mobile_push",
+          "sha256": "67b658922f03dd9f3a8aee16615efa68964218ef415ead7b73b0ecdf8c1880ab",
+          "lines": [
+            [
+              221,
+              251
+            ]
+          ],
+          "binding": "SOURCE_BOUND"
+        }
+      ],
+      "installation": "Explicit domain registrars in main lifespan; inline observer calls use shared transaction",
+      "status": "IMPLEMENTED_BINDINGS_NOT_BEHAVIORALLY_VERIFIED",
+      "unknowns": [
+        "No end-to-end branch equivalence or side-effect timing acceptance executed"
+      ],
+      "verification": "NOT_RUN"
+    },
+    {
+      "source": "app/Tasks/TodoRemindTask.php",
+      "kind": "task",
+      "methods": [
+        {
+          "name": "__construct",
+          "start_line": 18,
+          "end_line": 21,
+          "static_calls": [],
+          "events": []
+        },
+        {
+          "name": "buildRemindText",
+          "start_line": 28,
+          "end_line": 37,
+          "static_calls": [
+            "Doo::translate",
+            "User::whereIn"
+          ],
+          "events": []
+        },
+        {
+          "name": "start",
+          "start_line": 39,
+          "end_line": 81,
+          "static_calls": [
+            "Base::isSuccess",
+            "Carbon::now",
+            "User::botGetOrCreate",
+            "WebSocketDialog::find",
+            "WebSocketDialogMsg::find",
+            "WebSocketDialogMsg::sendMsg",
+            "WebSocketDialogMsgTodo::dueReminders",
+            "WebSocketDialogMsgTodo::whereIn"
+          ],
+          "events": []
+        },
+        {
+          "name": "end",
+          "start_line": 83,
+          "end_line": 85,
+          "static_calls": [],
+          "events": []
+        }
+      ],
+      "source_sha256": "7e41f540d39d04bdf8692569c677fa24ac7fe2859085242886321372b96fc753",
+      "implementation": [
+        {
+          "file": "backend/domains/messaging_jobs.py",
+          "function": "todo_remind",
+          "sha256": "67b658922f03dd9f3a8aee16615efa68964218ef415ead7b73b0ecdf8c1880ab",
+          "lines": [
+            [
+              147,
+              169
+            ]
+          ],
+          "binding": "SOURCE_BOUND"
+        }
+      ],
+      "installation": "Explicit domain registrars in main lifespan; inline observer calls use shared transaction",
+      "status": "IMPLEMENTED_BINDINGS_NOT_BEHAVIORALLY_VERIFIED",
+      "unknowns": [
+        "No end-to-end branch equivalence or side-effect timing acceptance executed"
+      ],
+      "verification": "NOT_RUN"
+    },
+    {
+      "source": "app/Tasks/UnclaimedTaskRemindTask.php",
+      "kind": "task",
+      "methods": [
+        {
+          "name": "__construct",
+          "start_line": 15,
+          "end_line": 18,
+          "static_calls": [],
+          "events": []
+        },
+        {
+          "name": "start",
+          "start_line": 20,
+          "end_line": 77,
+          "static_calls": [
+            "Base::setting",
+            "Cache::get",
+            "Cache::put",
+            "Carbon::now",
+            "Project::whereNull",
+            "ProjectTask::select",
+            "User::botGetOrCreate",
+            "WebSocketDialogMsg::sendMsg"
+          ],
+          "events": [
+            "task_list"
+          ]
+        },
+        {
+          "name": "end",
+          "start_line": 79,
+          "end_line": 81,
+          "static_calls": [],
+          "events": []
+        }
+      ],
+      "source_sha256": "9be0b14e9a3ea78967a0247b4b36096c9fb3f7b5e6f9e6901ca1bb317c13ea09",
+      "implementation": [
+        {
+          "file": "backend/domains/project_jobs.py",
+          "function": "unclaimed",
+          "sha256": "967f61b7b658062a49b149b34e9cfee0461c4aaa99aec6aa5d41f5ab12158e71",
+          "lines": [
+            [
+              274,
+              288
+            ]
+          ],
+          "binding": "SOURCE_BOUND"
+        }
+      ],
+      "installation": "Explicit domain registrars in main lifespan; inline observer calls use shared transaction",
+      "status": "IMPLEMENTED_BINDINGS_NOT_BEHAVIORALLY_VERIFIED",
+      "unknowns": [
+        "No end-to-end branch equivalence or side-effect timing acceptance executed"
+      ],
+      "verification": "NOT_RUN"
+    },
+    {
+      "source": "app/Tasks/UpdateSessionTitleViaAiTask.php",
+      "kind": "task",
+      "methods": [
+        {
+          "name": "__construct",
+          "start_line": 17,
+          "end_line": 22,
+          "static_calls": [],
+          "events": []
+        },
+        {
+          "name": "start",
+          "start_line": 24,
+          "end_line": 45,
+          "static_calls": [
+            "AI::generateTitle",
+            "Base::cutStr",
+            "Base::isError",
+            "WebSocketDialogSession::whereId"
+          ],
+          "events": []
+        },
+        {
+          "name": "end",
+          "start_line": 47,
+          "end_line": 50,
+          "static_calls": [],
+          "events": []
+        }
+      ],
+      "source_sha256": "685cb5cf263fa0c5c1bb87820442c525761dcd3f7193b8c739810b8c351e4812",
+      "implementation": [
+        {
+          "file": "backend/domains/messaging_jobs.py",
+          "function": "session_title",
+          "sha256": "67b658922f03dd9f3a8aee16615efa68964218ef415ead7b73b0ecdf8c1880ab",
+          "lines": [
+            [
+              172,
+              182
+            ]
+          ],
+          "binding": "SOURCE_BOUND"
+        }
+      ],
+      "installation": "Explicit domain registrars in main lifespan; inline observer calls use shared transaction",
+      "status": "IMPLEMENTED_BINDINGS_NOT_BEHAVIORALLY_VERIFIED",
+      "unknowns": [
+        "No end-to-end branch equivalence or side-effect timing acceptance executed"
+      ],
+      "verification": "NOT_RUN"
+    },
+    {
+      "source": "app/Tasks/WebSocketDialogMsgTask.php",
+      "kind": "task",
+      "methods": [
+        {
+          "name": "__construct",
+          "start_line": 37,
+          "end_line": 52,
+          "static_calls": [
+            "Base::headerOrInput",
+            "Request::header"
+          ],
+          "events": []
+        },
+        {
+          "name": "setIgnoreFd",
+          "start_line": 57,
+          "end_line": 60,
+          "static_calls": [],
+          "events": []
+        },
+        {
+          "name": "setMsgNotExistRetry",
+          "start_line": 65,
+          "end_line": 68,
+          "static_calls": [],
+          "events": []
+        },
+        {
+          "name": "setSilence",
+          "start_line": 73,
+          "end_line": 76,
+          "static_calls": [],
+          "events": []
+        },
+        {
+          "name": "start",
+          "start_line": 78,
+          "end_line": 256,
+          "static_calls": [
+            "Base::setting",
+            "Carbon::now",
+            "Carbon::parse",
+            "Doo::setLanguage",
+            "Doo::translate",
+            "PushTask::push",
+            "RequestContext::set",
+            "User::select",
+            "User::userid2nickname",
+            "User::whereTaskDialogId",
+            "User::whereUserid",
+            "WebSocketDialog::find",
+            "WebSocketDialogMsg::find",
+            "WebSocketDialogMsg::previewMsg",
+            "WebSocketDialogMsgRead::createInstance",
+            "WebSocketDialogMsgRead::whereMsgId"
+          ],
+          "events": [
+            "dialog"
+          ]
+        },
+        {
+          "name": "end",
+          "start_line": 258,
+          "end_line": 264,
+          "static_calls": [
+            "PushTask::push",
+            "Task::deliver"
+          ],
+          "events": []
+        }
+      ],
+      "source_sha256": "4a8495d2bbf30f31d81e86128c3af4704f54fecd3870042da7837c2b102d5e39",
+      "implementation": [
+        {
+          "file": "backend/domains/messaging_jobs.py",
+          "function": "message_effects",
+          "sha256": "67b658922f03dd9f3a8aee16615efa68964218ef415ead7b73b0ecdf8c1880ab",
+          "lines": [
+            [
+              27,
+              44
+            ]
+          ],
+          "binding": "SOURCE_BOUND"
+        }
+      ],
+      "installation": "Explicit domain registrars in main lifespan; inline observer calls use shared transaction",
+      "status": "IMPLEMENTED_BINDINGS_NOT_BEHAVIORALLY_VERIFIED",
+      "unknowns": [
+        "No end-to-end branch equivalence or side-effect timing acceptance executed"
+      ],
+      "verification": "NOT_RUN"
+    }
+  ]
+}

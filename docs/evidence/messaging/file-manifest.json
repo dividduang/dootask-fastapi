@@ -1,0 +1,66 @@
+{
+  "status": "IMPLEMENTED_NOT_REGISTERED_NOT_VERIFIED",
+  "files": [
+    {
+      "path": "backend/domains/dialog.py",
+      "sha256": "d75bcae6bd921553fe3012edb4c00f7943c432137432a075e1d64ce4261da718",
+      "bytes": 75900
+    },
+    {
+      "path": "backend/domains/dialog_core.py",
+      "sha256": "5cf1abbdc4a276b851699e54ed6ba23ec7867345197b9e6f72c922a1a16adf06",
+      "bytes": 23746
+    },
+    {
+      "path": "backend/domains/assistant.py",
+      "sha256": "f023523964df5caff74cd69a093ee8e5df464a8c9629e064cf2a32c80efe8e88",
+      "bytes": 16863
+    },
+    {
+      "path": "backend/domains/apps.py",
+      "sha256": "2a2056b855c713cb5b4cfded3a625c6e7c3283263ba31753c611192077122c29",
+      "bytes": 7805
+    },
+    {
+      "path": "backend/domains/messaging_ai.py",
+      "sha256": "b2d55258bb3e05de0d3c24d36d3acbdcebea3af76458d87eb0c02f7172837289",
+      "bytes": 4335
+    },
+    {
+      "path": "backend/domains/messaging_jobs.py",
+      "sha256": "a2305b3aa27f03cc8e50274a5e7d3395a60ad6fb213585c9d1fa121a69cbe373",
+      "bytes": 20952
+    },
+    {
+      "path": "backend/domains/messaging_push.py",
+      "sha256": "f2303cb82d70abc5d721ce7210d127b16080d84c4f2c7f767de31b5752793484",
+      "bytes": 3995
+    },
+    {
+      "path": "backend/domains/messaging_markup.py",
+      "sha256": "cc6d9b1bc94005b8d17d70061b38522778ba0c44090309d188042b57bd5cfccd",
+      "bytes": 8311
+    },
+    {
+      "path": "backend/realtime.py",
+      "sha256": "370268ec98506fd09a0abac9cb58bb3ec4ac29cbdb77f047793d319cdd4ac831",
+      "bytes": 12421
+    },
+    {
+      "path": "backend/jobs.py",
+      "sha256": "c1e7e90f7edd16dfa96a0cec460f3201d341c78519418be33b2f514aa5ae6b96",
+      "bytes": 6611
+    },
+    {
+      "path": "backend/outbox.sql",
+      "sha256": "bd9e9694daf8b3d94f3ec421b2699d7fac5b00cf128a1c6d2b5aceff9be3aa44",
+      "bytes": 1459
+    },
+    {
+      "path": "backend/tests_messaging.py",
+      "sha256": "eb1c757a177e4027d2173e76db98de28b8b148bf8394e7d49a495d917ea3081c",
+      "bytes": 3765
+    }
+  ],
+  "verification": "NOT_RUN"
+}

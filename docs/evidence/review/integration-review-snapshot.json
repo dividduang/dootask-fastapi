@@ -1,0 +1,498 @@
+{
+  "observed_at": "2026-10-12T10:00:55.310116+00:00",
+  "phase": "review checkpoint; subsequent owner edits can make hashes stale; not a test",
+  "files": [
+    {
+      "path": "D:\\rpa\\202610\\dootask-fastapi\\backend\\auth.py",
+      "sha256": "eda6a24fec4dac9ac2249a754ef68e8acb3ce92d91fa90541154eeeb354c1020",
+      "bytes": 20130,
+      "lines": 364
+    },
+    {
+      "path": "D:\\rpa\\202610\\dootask-fastapi\\backend\\avatar.py",
+      "sha256": "89b31b44dc98041ce6d86ee362d59b959bffe39d2f6733894ef0670f33d3793e",
+      "bytes": 4431,
+      "lines": 78
+    },
+    {
+      "path": "D:\\rpa\\202610\\dootask-fastapi\\backend\\collaboration.py",
+      "sha256": "84eb8213b74ee493b719ab3e9c104e4459a38fc0acd493d3c9426ba1a96e33c5",
+      "bytes": 1880,
+      "lines": 33
+    },
+    {
+      "path": "D:\\rpa\\202610\\dootask-fastapi\\backend\\config.py",
+      "sha256": "28b72df8accfb79563ea15d0fe2778633b5b3ab49f3e48c25a7945408ee3e002",
+      "bytes": 2789,
+      "lines": 65
+    },
+    {
+      "path": "D:\\rpa\\202610\\dootask-fastapi\\backend\\context.py",
+      "sha256": "9e10676dced76cfe767931244fffb9c0f9116c880e0d21c82537cecc61f52461",
+      "bytes": 733,
+      "lines": 28
+    },
+    {
+      "path": "D:\\rpa\\202610\\dootask-fastapi\\backend\\crypto.py",
+      "sha256": "2d456fc96642f08af041ed09c236b44eda8d9202946863e179218d54605be4e4",
+      "bytes": 4813,
+      "lines": 98
+    },
+    {
+      "path": "D:\\rpa\\202610\\dootask-fastapi\\backend\\dav.py",
+      "sha256": "8887d7274beaf6d35c86c4009d145d651b59712631a7a47e87eb1f20667ac9a4",
+      "bytes": 29678,
+      "lines": 575
+    },
+    {
+      "path": "D:\\rpa\\202610\\dootask-fastapi\\backend\\db.py",
+      "sha256": "1535442a497428aa166a22a3a5f418c35c8120f2ae6fe31e8c01b43840ac3482",
+      "bytes": 2862,
+      "lines": 71
+    },
+    {
+      "path": "D:\\rpa\\202610\\dootask-fastapi\\backend\\errors.py",
+      "sha256": "bf68780cf64a5f2df148d004ba5a679bf3289e6733804c483d7c52b071b967d0",
+      "bytes": 1266,
+      "lines": 43
+    },
+    {
+      "path": "D:\\rpa\\202610\\dootask-fastapi\\backend\\host.py",
+      "sha256": "f5e12ff12ec0c8b4eb40527bd7ee5e4ec78342f4d5076ba5ad4498a44dc2bd56",
+      "bytes": 9553,
+      "lines": 208
+    },
+    {
+      "path": "D:\\rpa\\202610\\dootask-fastapi\\backend\\jobs.py",
+      "sha256": "c1e7e90f7edd16dfa96a0cec460f3201d341c78519418be33b2f514aa5ae6b96",
+      "bytes": 6611,
+      "lines": 147
+    },
+    {
+      "path": "D:\\rpa\\202610\\dootask-fastapi\\backend\\main.py",
+      "sha256": "11ff357df00077cb198ea8ca50ccb61f9ebc31d5c41388f571a658b7d13daa93",
+      "bytes": 14429,
+      "lines": 289
+    },
+    {
+      "path": "D:\\rpa\\202610\\dootask-fastapi\\backend\\manage.py",
+      "sha256": "5132a437e2632424503ddb30beb26b8527931a202f65821e16a4b0b2ea40d081",
+      "bytes": 3151,
+      "lines": 87
+    },
+    {
+      "path": "D:\\rpa\\202610\\dootask-fastapi\\backend\\realtime.py",
+      "sha256": "7d834b81d6dd7deeb434d256769ee59e0935f0a0626ef5bb3fa551f8b546a3a0",
+      "bytes": 13441,
+      "lines": 302
+    },
+    {
+      "path": "D:\\rpa\\202610\\dootask-fastapi\\backend\\security.py",
+      "sha256": "c8a0f6436b73b2a7a07cefedd6872f19abd34abd1176cb32f18af6713388603e",
+      "bytes": 4667,
+      "lines": 106
+    },
+    {
+      "path": "D:\\rpa\\202610\\dootask-fastapi\\backend\\storage.py",
+      "sha256": "7738c498ece9562d93500efc354e63b98ae3c64b0edf223f3ac59853ebebb113",
+      "bytes": 1520,
+      "lines": 38
+    },
+    {
+      "path": "D:\\rpa\\202610\\dootask-fastapi\\backend\\tests_files.py",
+      "sha256": "3450d750c947d778c1bf9b9238b106c418345b83b9706fa35e578685cb38343b",
+      "bytes": 3613,
+      "lines": 73
+    },
+    {
+      "path": "D:\\rpa\\202610\\dootask-fastapi\\backend\\tests_independent.py",
+      "sha256": "083b57f5fcdb6e39d82fa672c902001b030b9ad98c8729ad5efbfc2327f3374a",
+      "bytes": 8417,
+      "lines": 139
+    },
+    {
+      "path": "D:\\rpa\\202610\\dootask-fastapi\\backend\\tests_integration.py",
+      "sha256": "4541aa24f82aa4f4ac3921dd43f92e1539f2430d280ec11cffc1b2dd9c33f9f9",
+      "bytes": 7740,
+      "lines": 147
+    },
+    {
+      "path": "D:\\rpa\\202610\\dootask-fastapi\\backend\\tests_messaging.py",
+      "sha256": "5955a265e2e3f9671385b4ad1fc758b5342a6c7b50c7d3905c28d5776b315484",
+      "bytes": 3913,
+      "lines": 77
+    },
+    {
+      "path": "D:\\rpa\\202610\\dootask-fastapi\\backend\\tests_projects.py",
+      "sha256": "d0e2d39af0e9538c397c24ea9992e98c2b18612aa3306da2cb760988dac97b9b",
+      "bytes": 8515,
+      "lines": 129
+    },
+    {
+      "path": "D:\\rpa\\202610\\dootask-fastapi\\backend\\tests_shared.py",
+      "sha256": "e567f9d8cdbddff19554058057a6715470b3bf81505cf5cb6cfc913b22e2cc65",
+      "bytes": 7278,
+      "lines": 125
+    },
+    {
+      "path": "D:\\rpa\\202610\\dootask-fastapi\\backend\\__init__.py",
+      "sha256": "31f5d9ab2db4a272779017eb1f6b2104bdc6a1233adaeaa7ebf8daea06b795b9",
+      "bytes": 62,
+      "lines": 1
+    },
+    {
+      "path": "D:\\rpa\\202610\\dootask-fastapi\\backend\\domains\\accounts.py",
+      "sha256": "58e4b10ae9a731040af28e9e80cc6fd1eeeed99e665a8a089949930b6cf08168",
+      "bytes": 23902,
+      "lines": 453
+    },
+    {
+      "path": "D:\\rpa\\202610\\dootask-fastapi\\backend\\domains\\account_admin.py",
+      "sha256": "f80a18b72782d9932d050be84141c8ccc76459e34c8df9e5a728e8db29cd4ac7",
+      "bytes": 18005,
+      "lines": 264
+    },
+    {
+      "path": "D:\\rpa\\202610\\dootask-fastapi\\backend\\domains\\account_bot_jobs.py",
+      "sha256": "3e1c9f3dd47586b7198a53bdc4d56bb50af40859e4e933b9786b2eaf53f42110",
+      "bytes": 10376,
+      "lines": 144
+    },
+    {
+      "path": "D:\\rpa\\202610\\dootask-fastapi\\backend\\domains\\account_checkin.py",
+      "sha256": "b7ff9862a00fb31121ef4bc9d751364e908691e39b4f9135e3fc2dbbd74fdb17",
+      "bytes": 6071,
+      "lines": 119
+    },
+    {
+      "path": "D:\\rpa\\202610\\dootask-fastapi\\backend\\domains\\account_common.py",
+      "sha256": "708116b019fcf1de21b5424983b5554dbdf611a6e17a52911fa09e18afcdce51",
+      "bytes": 4254,
+      "lines": 133
+    },
+    {
+      "path": "D:\\rpa\\202610\\dootask-fastapi\\backend\\domains\\account_history.py",
+      "sha256": "42ad0660ae159d30935af9472b05a4bd9e419cfb720a30b32912fa51704fd964",
+      "bytes": 11671,
+      "lines": 192
+    },
+    {
+      "path": "D:\\rpa\\202610\\dootask-fastapi\\backend\\domains\\account_import.py",
+      "sha256": "699e06f15b75b352ff192c57bff57ae5c28a149fff7c5c2f89113d941e8eb4be",
+      "bytes": 5352,
+      "lines": 105
+    },
+    {
+      "path": "D:\\rpa\\202610\\dootask-fastapi\\backend\\domains\\account_integrations.py",
+      "sha256": "ab4570f9512d9c74ca060deebf91be593ee9248e7680a46b2affbed2e78cd9f9",
+      "bytes": 11551,
+      "lines": 227
+    },
+    {
+      "path": "D:\\rpa\\202610\\dootask-fastapi\\backend\\domains\\account_jobs.py",
+      "sha256": "c56407f1c5e9c6ba9bca80decbb1d8ce4c1e3bbdd34d1531a20b4d266b19ddcb",
+      "bytes": 4925,
+      "lines": 94
+    },
+    {
+      "path": "D:\\rpa\\202610\\dootask-fastapi\\backend\\domains\\account_meetings.py",
+      "sha256": "f0eee9a79c73b6f6efd8c268595bf3da310a63390d1a152e730542321fe9ae8d",
+      "bytes": 10590,
+      "lines": 206
+    },
+    {
+      "path": "D:\\rpa\\202610\\dootask-fastapi\\backend\\domains\\account_misc.py",
+      "sha256": "06fd07c11a7483c5198512556739c9c63b969b5c4f95fe3e4922d0e87787fc1e",
+      "bytes": 9176,
+      "lines": 83
+    },
+    {
+      "path": "D:\\rpa\\202610\\dootask-fastapi\\backend\\domains\\account_system_files.py",
+      "sha256": "e40cf01bd699b56c657a4497c5c0cd22978dce0b4a7b25f6814bde5426a1bdae",
+      "bytes": 9870,
+      "lines": 141
+    },
+    {
+      "path": "D:\\rpa\\202610\\dootask-fastapi\\backend\\domains\\apps.py",
+      "sha256": "2a2056b855c713cb5b4cfded3a625c6e7c3283263ba31753c611192077122c29",
+      "bytes": 7805,
+      "lines": 157
+    },
+    {
+      "path": "D:\\rpa\\202610\\dootask-fastapi\\backend\\domains\\assistant.py",
+      "sha256": "f023523964df5caff74cd69a093ee8e5df464a8c9629e064cf2a32c80efe8e88",
+      "bytes": 16863,
+      "lines": 320
+    },
+    {
+      "path": "D:\\rpa\\202610\\dootask-fastapi\\backend\\domains\\checkin.py",
+      "sha256": "fe4546af256328c0887dec59c968500978347c432c2a37cf7ea7c9ed20224a05",
+      "bytes": 10942,
+      "lines": 198
+    },
+    {
+      "path": "D:\\rpa\\202610\\dootask-fastapi\\backend\\domains\\complaints.py",
+      "sha256": "d16a279b1c8e265b4cd1666175760e6a2d94841c1a8a6fb7f02ad2acd2f427c7",
+      "bytes": 3314,
+      "lines": 79
+    },
+    {
+      "path": "D:\\rpa\\202610\\dootask-fastapi\\backend\\domains\\dashboard.py",
+      "sha256": "0891486035410dbfa225aaba11724a9a87f69c9edb0d24bcc3e65492062eb59e",
+      "bytes": 8325,
+      "lines": 133
+    },
+    {
+      "path": "D:\\rpa\\202610\\dootask-fastapi\\backend\\domains\\dialog.py",
+      "sha256": "c796d05a1712804f0dcdff3600c7df304dbec6bdf42546dbeb30705a9b0e8917",
+      "bytes": 75958,
+      "lines": 1345
+    },
+    {
+      "path": "D:\\rpa\\202610\\dootask-fastapi\\backend\\domains\\dialog_core.py",
+      "sha256": "2b5d878e74a71d1ecf8718f69ffddf2fdbce5e92ba8b341310152fb9ea225470",
+      "bytes": 23866,
+      "lines": 387
+    },
+    {
+      "path": "D:\\rpa\\202610\\dootask-fastapi\\backend\\domains\\filedav.py",
+      "sha256": "3e91b73db69f5a5561e74315a61302ba2b58eee8ac96eb24aa74d0c7e19b3bc8",
+      "bytes": 13793,
+      "lines": 236
+    },
+    {
+      "path": "D:\\rpa\\202610\\dootask-fastapi\\backend\\domains\\files.py",
+      "sha256": "433354fe301457dd9bdacfa09c4908a20d75ab1c354b313a35097bb463a1e1d2",
+      "bytes": 37030,
+      "lines": 755
+    },
+    {
+      "path": "D:\\rpa\\202610\\dootask-fastapi\\backend\\domains\\files_collaboration.py",
+      "sha256": "856b71f0178b478ffdf776aad63e413fb183e0560032c96776e534404c688a93",
+      "bytes": 12490,
+      "lines": 193
+    },
+    {
+      "path": "D:\\rpa\\202610\\dootask-fastapi\\backend\\domains\\files_config.py",
+      "sha256": "4e7fcb1b93d1349a27f958d577eefca8eb7af07765ef7b1a9cb6ef7a3a36a3d3",
+      "bytes": 1273,
+      "lines": 33
+    },
+    {
+      "path": "D:\\rpa\\202610\\dootask-fastapi\\backend\\domains\\files_external.py",
+      "sha256": "0861e5c7aa2a40b8b2a98f2b4e9d27666c432193df1ea93e8dddb440ab8d56b5",
+      "bytes": 7091,
+      "lines": 143
+    },
+    {
+      "path": "D:\\rpa\\202610\\dootask-fastapi\\backend\\domains\\files_jobs.py",
+      "sha256": "8ddbd2e7d5f2835c8c6ad8998854f3e6a0e7243014816d6f320028e100c4c0f4",
+      "bytes": 7067,
+      "lines": 126
+    },
+    {
+      "path": "D:\\rpa\\202610\\dootask-fastapi\\backend\\domains\\files_locks.py",
+      "sha256": "3f8a3e043a37c7b6cad29ea59fd5f70873efd204e268c31ee6ff35d518ede1c2",
+      "bytes": 1425,
+      "lines": 30
+    },
+    {
+      "path": "D:\\rpa\\202610\\dootask-fastapi\\backend\\domains\\files_support.py",
+      "sha256": "16c353ca2be93c1e333dd14e73451b92e238a637eef2c6a77255e69f8689a068",
+      "bytes": 4587,
+      "lines": 123
+    },
+    {
+      "path": "D:\\rpa\\202610\\dootask-fastapi\\backend\\domains\\index.py",
+      "sha256": "0314d5cb6b38017d9f9af083b6c1802cf80869c6ec9fbcd9b847a73992320e17",
+      "bytes": 14751,
+      "lines": 245
+    },
+    {
+      "path": "D:\\rpa\\202610\\dootask-fastapi\\backend\\domains\\messaging_ai.py",
+      "sha256": "b2d55258bb3e05de0d3c24d36d3acbdcebea3af76458d87eb0c02f7172837289",
+      "bytes": 4335,
+      "lines": 83
+    },
+    {
+      "path": "D:\\rpa\\202610\\dootask-fastapi\\backend\\domains\\messaging_jobs.py",
+      "sha256": "67b658922f03dd9f3a8aee16615efa68964218ef415ead7b73b0ecdf8c1880ab",
+      "bytes": 20303,
+      "lines": 330
+    },
+    {
+      "path": "D:\\rpa\\202610\\dootask-fastapi\\backend\\domains\\messaging_markup.py",
+      "sha256": "cc6d9b1bc94005b8d17d70061b38522778ba0c44090309d188042b57bd5cfccd",
+      "bytes": 8311,
+      "lines": 166
+    },
+    {
+      "path": "D:\\rpa\\202610\\dootask-fastapi\\backend\\domains\\messaging_push.py",
+      "sha256": "f2303cb82d70abc5d721ce7210d127b16080d84c4f2c7f767de31b5752793484",
+      "bytes": 3995,
+      "lines": 63
+    },
+    {
+      "path": "D:\\rpa\\202610\\dootask-fastapi\\backend\\domains\\projects.py",
+      "sha256": "6ce1bd31f51f4cbacab9155e84da24f8e7f57a278a5b63068ede291982a5df17",
+      "bytes": 36410,
+      "lines": 635
+    },
+    {
+      "path": "D:\\rpa\\202610\\dootask-fastapi\\backend\\domains\\project_ai.py",
+      "sha256": "c4fb845be28b7a23472d4c61f08ba4a06bfe4f16481cb326f821ab877fd685b3",
+      "bytes": 15387,
+      "lines": 199
+    },
+    {
+      "path": "D:\\rpa\\202610\\dootask-fastapi\\backend\\domains\\project_configuration.py",
+      "sha256": "b115683654123f98dfb6b0cad18a6e4a1a5a60cda6ed490904f4a07fcd3730fa",
+      "bytes": 27516,
+      "lines": 476
+    },
+    {
+      "path": "D:\\rpa\\202610\\dootask-fastapi\\backend\\domains\\project_core.py",
+      "sha256": "bad29f3bde7214e3cdfbf381c9fae6414d139c340de538db46866c47d4b81a15",
+      "bytes": 18560,
+      "lines": 372
+    },
+    {
+      "path": "D:\\rpa\\202610\\dootask-fastapi\\backend\\domains\\project_jobs.py",
+      "sha256": "967f61b7b658062a49b149b34e9cfee0461c4aaa99aec6aa5d41f5ab12158e71",
+      "bytes": 19561,
+      "lines": 306
+    },
+    {
+      "path": "D:\\rpa\\202610\\dootask-fastapi\\backend\\domains\\project_queries.py",
+      "sha256": "c09420293902f638c5a8e3b9b9e24069cd9d8bfc4220caa7841d51a83da751c9",
+      "bytes": 19100,
+      "lines": 346
+    },
+    {
+      "path": "D:\\rpa\\202610\\dootask-fastapi\\backend\\domains\\project_tasks.py",
+      "sha256": "8922ee1e2e992950c7d62baa47112b56a5691f9e8a4fa23d7e87b6853cc14aa8",
+      "bytes": 45612,
+      "lines": 751
+    },
+    {
+      "path": "D:\\rpa\\202610\\dootask-fastapi\\backend\\domains\\reports.py",
+      "sha256": "9e0248304381ed93d6b8bcdf9722a32667e736839cf8f67b5beb0d81c9f912c8",
+      "bytes": 19327,
+      "lines": 368
+    },
+    {
+      "path": "D:\\rpa\\202610\\dootask-fastapi\\backend\\domains\\search.py",
+      "sha256": "96a810d3fba57ab8bf37bdf5be92129242c2faf63b68f822fe043b02593f6a69",
+      "bytes": 19686,
+      "lines": 403
+    },
+    {
+      "path": "D:\\rpa\\202610\\dootask-fastapi\\backend\\domains\\system.py",
+      "sha256": "5e285ff1eddb3c8ae047f40229190999d62806db53ffabc4f91f29578b662647",
+      "bytes": 23554,
+      "lines": 347
+    },
+    {
+      "path": "D:\\rpa\\202610\\dootask-fastapi\\backend\\domains\\upload.py",
+      "sha256": "d7265fa5075a7c6c0d3ff0c20de45b393bdd71dc59d523043e50857788224824",
+      "bytes": 8942,
+      "lines": 182
+    },
+    {
+      "path": "D:\\rpa\\202610\\dootask-fastapi\\backend\\templates\\tests_host.py",
+      "sha256": "459b3a4bead5b904a1ed4bb54e9db79d2a74f578416fc508118383882f062afa",
+      "bytes": 5740,
+      "lines": 109
+    },
+    {
+      "path": "D:\\rpa\\202610\\dootask-fastapi\\backend\\outbox.sql",
+      "sha256": "cac559bd1c0c883de117503274160fc65281580edbf40fe893482b4a8da7cf0b",
+      "bytes": 1564,
+      "lines": 41
+    },
+    {
+      "path": "D:\\rpa\\202610\\dootask-fastapi\\backend\\schema.sql",
+      "sha256": "a18b77cbc31dc239c961170456404b4cb06f26ba3b336d93ce4c3181b797776a",
+      "bytes": 62965,
+      "lines": 1217
+    },
+    {
+      "path": "D:\\rpa\\202610\\dootask-fastapi\\backend\\schema_seed.sql",
+      "sha256": "74e843435f3f1b0b4b58d06637ce38265ee977fa04f67821971dbd392709b9cd",
+      "bytes": 1606,
+      "lines": 19
+    },
+    {
+      "path": "D:\\rpa\\202610\\dootask-fastapi\\backend\\security.sql",
+      "sha256": "14d5960aebd7959b858668f92e44cafcb1fc74374a4e59f83fac623516411285",
+      "bytes": 2470,
+      "lines": 45
+    },
+    {
+      "path": "D:\\rpa\\202610\\dootask-fastapi\\backend\\domains\\accounts.sql",
+      "sha256": "09e8e68a984f5737a235a6fe0f0f0f775b190f449471d66915104d5959d3c41c",
+      "bytes": 786,
+      "lines": 19
+    },
+    {
+      "path": "D:\\rpa\\202610\\dootask-fastapi\\backend\\domains\\files.sql",
+      "sha256": "5b5c30cbd6f1391932c8e18e0fc5d4a2fbc400d5cd60f7bde6c62aa65c9b44d8",
+      "bytes": 1096,
+      "lines": 31
+    },
+    {
+      "path": "D:\\rpa\\202610\\dootask-fastapi\\frontend\\resources\\assets\\js\\store\\actions.js",
+      "sha256": "633d67be1b565de5cfbdc1a3eb9a0e315469b23357ae9b805378539bb4344502",
+      "bytes": 205905,
+      "lines": 5588
+    },
+    {
+      "path": "D:\\rpa\\202610\\dootask-fastapi\\frontend\\resources\\assets\\js\\components\\OnlyOffice.vue",
+      "sha256": "8e0a8296de153ac38b3d6a58a03df284dbd241ee985fc2e83d97927d0c447288",
+      "bytes": 9552,
+      "lines": 292
+    },
+    {
+      "path": "D:\\rpa\\202610\\dootask\\app\\Tasks\\BotReceiveMsgTask.php",
+      "sha256": "34fd8f5e7d71a4948ef5d55cd8d55a83693451b53d22d5a7278dcb7e5b61f988",
+      "bytes": 31453,
+      "lines": 762
+    },
+    {
+      "path": "D:\\rpa\\202610\\dootask\\app\\Observers\\WebSocketDialogUserObserver.php",
+      "sha256": "e9a0bfaa1e36dff3c02ba1d775e2970dcf809e50a2b4efa9a123a2e16c9618b7",
+      "bytes": 3587,
+      "lines": 107
+    },
+    {
+      "path": "D:\\rpa\\202610\\dootask\\app\\Http\\Controllers\\Api\\FileController.php",
+      "sha256": "e52f7fb5ddf66e97f6257cbe3742dd0f15e771d8aed6de95d669250d59bef884",
+      "bytes": 49114,
+      "lines": 1338
+    },
+    {
+      "path": "D:\\rpa\\202610\\dootask\\app\\Http\\Controllers\\Api\\SystemController.php",
+      "sha256": "a1c5691d0c22d837c61d7e8e000baa13525a0784d4e2a65661e39f2bbb7b0cd2",
+      "bytes": 73739,
+      "lines": 1737
+    },
+    {
+      "path": "D:\\rpa\\202610\\dootask\\app\\Services\\WebDav\\WebDavAuthenticator.php",
+      "sha256": "fb9d4cee41e784599960a75a14e4c946c19923a5091ce5a275969f9a574cfa54",
+      "bytes": 1797,
+      "lines": 52
+    },
+    {
+      "path": "D:\\rpa\\202610\\dootask\\app\\Tasks\\PushTask.php",
+      "sha256": "e164d2e1e0604f76492b1f2f18bb808f55f196e48c16220e776c35dad28e7cb0",
+      "bytes": 7366,
+      "lines": 220
+    },
+    {
+      "path": "D:\\rpa\\202610\\dootask\\app\\Services\\WebSocketService.php",
+      "sha256": "edf000be266be871cb03ecc6bb76561c48a1a36f4f15aa1b79009039415863f2",
+      "bytes": 8285,
+      "lines": 259
+    }
+  ]
+}

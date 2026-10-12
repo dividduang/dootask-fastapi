@@ -1,0 +1,10 @@
+{
+  "name": "websockets",
+  "version": "16.1.1",
+  "sha256": "b436f6ec4fc3a6b4237c84d3f83170ed2b40bb584222f0ac47a0c8a5921980c7",
+  "official_matches": [
+    "websockets-16.1.1-cp312-cp312-win_amd64.whl"
+  ],
+  "download_url": "https://pypi.tuna.tsinghua.edu.cn/packages/d9/de/6abe251d28c3a3f217096575400b27750b18e0b1d2fff3a2a239960fea07/websockets-16.1.1-cp312-cp312-win_amd64.whl",
+  "status": "INSTALLED_OFFICIAL_PYPI_HASH_MATCH"
+}

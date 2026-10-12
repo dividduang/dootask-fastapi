@@ -15,6 +15,10 @@ from .context import RequestContext, current_context
 from .errors import ApiError, failure, success, json_default, load_translations
 from .host import install_host
 from .avatar import install_avatar
+from . import realtime
+from .dav import install_dav
+from .domains import accounts, system, projects, dialog, assistant, apps
+from .domains import files, filedav, upload, reports, search, index
 
 log = logging.getLogger(__name__)
 MAX_BODY = 2 * 1024 * 1024
@@ -27,10 +31,35 @@ ALLOWLIST = {
     "users/login/needcode": "needcode", "users/login/codejson": "codejson",
     "users/login/codeimg": "codeimg",
 }
+
+def route_aliases(path):
+    canonical = path.lower().replace("__", "/")
+    aliases = {canonical, path.lower()}
+    resource, _, action = canonical.partition("/")
+    if "/" in action:
+        aliases.add(resource + "/" + action.replace("/", "__", 1))
+    if canonical == "assistant/match_elements":
+        aliases.add("assistant/match-elements")
+    return aliases
+
+
+DOMAIN_ROUTES = {}
+for _module, _mode in ((accounts, "envelope"), (system, "envelope"),
+                       (projects, "data"), (dialog, "data"), (assistant, "data"),
+                       (apps, "data"), (files, "data"), (filedav, "data"),
+                       (upload, "data"), (reports, "data"), (search, "data")):
+    for _path, _handler in _module.ROUTES.items():
+        for _alias in route_aliases(_path):
+            if _alias in DOMAIN_ROUTES:
+                raise RuntimeError(f"Duplicate explicit API route: {_alias}")
+            DOMAIN_ROUTES[_alias] = (_handler, "raw" if _path in files.RAW_ROUTES else _mode, _path)
+for _path, _handler in files.EXTRA_ROUTES.items():
+    DOMAIN_ROUTES[_path] = (_handler, "raw", _path)
 for _path, _handler in tuple(ALLOWLIST.items()):
-    if _path.count("/") == 2:
-        _resource, _method, _action = _path.split("/")
-        ALLOWLIST[f"{_resource}/{_method}__{_action}"] = _handler
+    for _alias in route_aliases(_path):
+        if _alias in DOMAIN_ROUTES:
+            raise RuntimeError(f"Domain overrides shared identity route: {_alias}")
+        ALLOWLIST[_alias] = _handler
 
 
 def field(data, key, default=""):
@@ -57,6 +86,26 @@ def input_pairs(pairs):
 
 async def read_inputs(request):
     data = input_pairs(request.query_params.multi_items())
+    media = request.headers.get("content-type", "").split(";", 1)[0].strip().lower()
+    if media == "multipart/form-data":
+        # Starlette spools files to disk; never copy a multi-GB upload into RAM.
+        total = 0
+        async def receive():
+            nonlocal total
+            message = await request.receive()
+            total += len(message.get("body", b""))
+            if total > 10 * 1024**3 + MAX_BODY:
+                raise ApiError("请求内容过大")
+            return message
+        bounded = Request(request.scope, receive)
+        try:
+            form = await bounded.form(max_files=10, max_fields=1000, max_part_size=MAX_BODY)
+        except Exception:
+            await bounded.close()
+            raise
+        request.state.upload_form = form
+        data.update(input_pairs(form.multi_items()))
+        return data
     raw = bytearray()
     async for chunk in request.stream():
         if len(raw) + len(chunk) > MAX_BODY:
@@ -64,7 +113,6 @@ async def read_inputs(request):
         raw.extend(chunk)
     if not raw:
         return data
-    media = request.headers.get("content-type", "").split(";", 1)[0].strip().lower()
     version = request.headers.get("version", "")
     old_form = bool(re.fullmatch(r"\d+\.\d+\.\d+", version) and tuple(map(int, version.split("."))) < (0, 25, 48))
     try:
@@ -74,11 +122,6 @@ async def read_inputs(request):
             body = json.loads(raw)
             if not isinstance(body, dict):
                 raise ApiError("请求内容必须是对象")
-        elif media == "multipart/form-data":
-            async def receive():
-                return {"type": "http.request", "body": bytes(raw), "more_body": False}
-            bounded = Request(request.scope, receive)
-            body = input_pairs((await bounded.form(max_files=10, max_fields=1000, max_part_size=MAX_BODY)).multi_items())
         else:
             raise ApiError("不支持的请求格式")
     except (ValueError, UnicodeError) as exc:
@@ -88,8 +131,8 @@ async def read_inputs(request):
 
 
 def token_input(request, data):
-    return (request.headers.get("dootask-token") or field(data, "dootask-token")
-            or request.headers.get("token") or field(data, "token"))
+    return (request.headers.get("dootask-token") or request.query_params.get("dootask-token")
+            or field(data, "dootask-token") or request.headers.get("token") or field(data, "token"))
 
 
 def handle(handler, data, ctx, settings, captcha_cookie):
@@ -117,12 +160,15 @@ def handle(handler, data, ctx, settings, captcha_cookie):
     try:
         with db.transaction() as connection:
             if handler == "login":
-                return success(auth.login(connection, ctx, email, field(data, "password"), registration=registration,
-                                          invite=field(data, "invite")), "注册成功" if registration else "登录成功")
+                result = auth.login(connection, ctx, email, field(data, "password"), registration=registration,
+                                    invite=field(data, "invite"), settings=settings)
+                if isinstance(result, auth.EmailVerificationRequired):
+                    return failure(ApiError(result.message, data=result.data))
+                return success(result, "注册成功" if registration else "登录成功")
             if handler == "info":
                 return success(auth.info(connection, ctx), "success")
             if handler == "editpass":
-                return success(auth.change_password(connection, ctx, field(data, "oldpass"), field(data, "newpass")), "修改成功")
+                return success(auth.change_password(connection, ctx, field(data, "oldpass"), field(data, "newpass"), settings=settings), "修改成功")
             if handler == "logout":
                 auth.logout(connection, ctx)
                 return success(message="退出成功")
@@ -162,7 +208,20 @@ def dispatch(handler, data, ctx, settings, request):
         ctx.token = token_input(request, data)
         if len(ctx.token) > 512:
             raise ApiError("身份已失效,请重新登录", -1)
-        payload = handle(handler, data, ctx, settings, request.cookies.get("dootask_captcha", ""))
+        if isinstance(handler, tuple):
+            function, mode, canonical = handler
+            if canonical in projects.POST_ONLY_ROUTES and request.method != "POST":
+                return Response(status_code=405, headers={"Allow": "POST"})
+            with db.transaction() as connection:
+                if canonical in projects.ROUTES and canonical not in projects.PUBLIC_ROUTES:
+                    auth.authenticate(connection, ctx)
+                payload = function(connection, ctx, data, settings)
+            if payload is None:
+                return Response(media_type="text/html")
+            if mode == "data" and not isinstance(payload, Response):
+                payload = success(payload)
+        else:
+            payload = handle(handler, data, ctx, settings, request.cookies.get("dootask_captcha", ""))
     except ApiError as exc:
         payload = failure(exc)
     if isinstance(payload, Response):
@@ -181,17 +240,21 @@ def create_app(settings=None):
     async def lifespan(app):
         engine = await run_in_threadpool(db.configure, settings)
         try:
-            yield
+            for registrar in (accounts.register_jobs, projects.register_jobs, dialog.register_jobs,
+                              assistant.register_jobs, files.register_jobs, reports.register_jobs, search.register_jobs):
+                registrar()
+            async with realtime.job_lifecycle(settings):
+                yield
         finally:
             await run_in_threadpool(engine.dispose)
 
-    app = FastAPI(title="DooTask FastAPI shared backend", version=settings.version,
+    app = FastAPI(title="DooTask independent FastAPI backend", version=settings.version,
                   lifespan=lifespan, docs_url=None, redoc_url=None, openapi_url=None)
     app.state.settings = settings
 
     @app.api_route("/api/{path:path}", methods=METHODS, include_in_schema=False)
     async def api(request: Request, path: str):
-        handler = ALLOWLIST.get(path.lower())
+        handler = ALLOWLIST.get(path.lower()) or DOMAIN_ROUTES.get(path.lower())
         if not handler:
             if request.headers.get("content-type") == "application/json":
                 return JSONResponse(failure(ApiError("接口不存在")))
@@ -213,8 +276,14 @@ def create_app(settings=None):
             log.exception("Database failure request_id=%s", ctx.request_id)
             return JSONResponse(failure(ApiError("数据服务暂不可用")), status_code=503)
         finally:
+            if hasattr(request.state, "upload_form"):
+                await request.state.upload_form.close()
             current_context.reset(context_token)
 
     install_avatar(app, settings)
+    realtime.install_realtime(app, settings)
+    assistant.install_sse(app, settings)
+    install_dav(app, settings)
+    index.install_index(app, settings)
     install_host(app, settings)
     return app

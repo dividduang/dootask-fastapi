@@ -1,5 +1,5 @@
 param(
-    [ValidateSet('serve', 'init-db', 'secrets')]
+    [ValidateSet('serve', 'init-db', 'secrets', 'runtime-up', 'runtime-down')]
     [string]$Command = 'serve',
     [string]$ListenHost = '127.0.0.1',
     [int]$Port = 18080
@@ -7,6 +7,18 @@ param(
 $ErrorActionPreference = 'Stop'
 $Root = $PSScriptRoot
 Set-Location $Root
+if ($Command -in @('runtime-up', 'runtime-down')) {
+    if (!(Test-Path (Join-Path $Root '.runtime/runtime.env')) -or !(Test-Path (Join-Path $Root '.runtime/redis.conf'))) {
+        throw 'Missing private isolated runtime.env or redis.conf; see runtime-plan.json.'
+    }
+    $LinuxRoot = (& wsl.exe -d Ubuntu-22.04 -- wslpath -a $Root).Trim()
+    if ($LASTEXITCODE -ne 0) { throw 'Cannot resolve project path in isolated WSL distribution.' }
+    $Arguments = @('-d', 'Ubuntu-22.04', '--', 'docker', 'compose', '--project-directory', "$LinuxRoot/.runtime", '--env-file', "$LinuxRoot/.runtime/runtime.env", '-f', "$LinuxRoot/.runtime/compose.yaml")
+    if ($Command -eq 'runtime-up') { $Arguments += @('up', '-d', '--wait') }
+    else { $Arguments += @('down') } # Never remove database volumes.
+    & wsl.exe @Arguments
+    exit $LASTEXITCODE
+}
 $Python = Join-Path $Root '.venv/Scripts/python.exe'
 if (!(Test-Path $Python)) { throw 'Create .venv with py -3.12 -m venv .venv and install requirements.lock first.' }
 if ($Command -eq 'secrets') {

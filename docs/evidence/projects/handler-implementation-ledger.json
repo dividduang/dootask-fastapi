@@ -1,0 +1,5407 @@
+{
+  "status": "IMPLEMENTED_NOT_VERIFIED_NOT_INSTALLED",
+  "source_commit": "6f111cd97dcbdaea23bf28768cd15dfa38bcae63",
+  "verification": "No build, lint, tests, formatter, import smoke, service startup or database execution performed.",
+  "endpoint_count": 82,
+  "mapped_count": 82,
+  "route_owner": "backend.domains.projects.ROUTES (explicit known-module merge)",
+  "files": [
+    {
+      "path": "backend/domains/projects.py",
+      "sha256": "6ce1bd31f51f4cbacab9155e84da24f8e7f57a278a5b63068ede291982a5df17",
+      "lines": 635
+    },
+    {
+      "path": "backend/domains/project_tasks.py",
+      "sha256": "8922ee1e2e992950c7d62baa47112b56a5691f9e8a4fa23d7e87b6853cc14aa8",
+      "lines": 751
+    },
+    {
+      "path": "backend/domains/project_queries.py",
+      "sha256": "c09420293902f638c5a8e3b9b9e24069cd9d8bfc4220caa7841d51a83da751c9",
+      "lines": 346
+    },
+    {
+      "path": "backend/domains/project_configuration.py",
+      "sha256": "b115683654123f98dfb6b0cad18a6e4a1a5a60cda6ed490904f4a07fcd3730fa",
+      "lines": 476
+    },
+    {
+      "path": "backend/domains/project_jobs.py",
+      "sha256": "967f61b7b658062a49b149b34e9cfee0461c4aaa99aec6aa5d41f5ab12158e71",
+      "lines": 306
+    },
+    {
+      "path": "backend/domains/dashboard.py",
+      "sha256": "0891486035410dbfa225aaba11724a9a87f69c9edb0d24bcc3e65492062eb59e",
+      "lines": 133
+    },
+    {
+      "path": "backend/domains/complaints.py",
+      "sha256": "d16a279b1c8e265b4cd1666175760e6a2d94841c1a8a6fb7f02ad2acd2f427c7",
+      "lines": 79
+    },
+    {
+      "path": "backend/domains/checkin.py",
+      "sha256": "fe4546af256328c0887dec59c968500978347c432c2a37cf7ea7c9ed20224a05",
+      "lines": 198
+    },
+    {
+      "path": "backend/domains/project_core.py",
+      "sha256": "bad29f3bde7214e3cdfbf381c9fae6414d139c340de538db46866c47d4b81a15",
+      "lines": 372
+    },
+    {
+      "path": "backend/domains/project_ai.py",
+      "sha256": "c4fb845be28b7a23472d4c61f08ba4a06bfe4f16481cb326f821ab877fd685b3",
+      "lines": 199
+    }
+  ],
+  "handlers": [
+    {
+      "id": "ComplaintController::lists",
+      "canonical_url": "api/complaint/lists",
+      "aliases": [],
+      "source": "app/Http/Controllers/Api/ComplaintController.php",
+      "source_sha256": "2bf37082f713d07249fbcb634ce3076fe42b277491eb91340845a1132d18dcbf",
+      "start_line": 65,
+      "end_line": 84,
+      "source_body_sha256": "701aa1e7a272b67f60a0e60a291e51aff1555a552284c8f7e7912a0a4428a38a",
+      "source_branches": [],
+      "source_guard_evidence": [
+        {
+          "line": 67,
+          "text": "$user = User::auth();"
+        },
+        {
+          "line": 68,
+          "text": "$user->identity('admin');"
+        }
+      ],
+      "implementation": {
+        "module": "backend.domains.complaints",
+        "function": "lists",
+        "line": 10
+      },
+      "signature": "(connection, context, data, settings)",
+      "return": "raw data; integration wraps backend.errors.success",
+      "authentication": "backend.auth.authenticate or supplied authenticated RequestContext.actor",
+      "methods": [
+        "GET",
+        "HEAD",
+        "POST",
+        "PUT",
+        "PATCH",
+        "DELETE",
+        "OPTIONS"
+      ],
+      "implementation_status": "IMPLEMENTED_NOT_VERIFIED",
+      "runtime_dependencies": [
+        "MariaDB shared schema",
+        "backend.jobs durable outbox",
+        "registered project/task realtime scope"
+      ],
+      "verification": "NOT_RUN",
+      "independent_identity": "Local independent accounts/bots; no vendor commercial license gate. See 2026101215 decision."
+    },
+    {
+      "id": "ComplaintController::submit",
+      "canonical_url": "api/complaint/submit",
+      "aliases": [],
+      "source": "app/Http/Controllers/Api/ComplaintController.php",
+      "source_sha256": "2bf37082f713d07249fbcb634ce3076fe42b277491eb91340845a1132d18dcbf",
+      "start_line": 107,
+      "end_line": 157,
+      "source_body_sha256": "54004b54b4bc34f0f60e006985f30bf8dd83520c9209a76320fc4a07e0337dd9",
+      "source_branches": [
+        {
+          "line": 118,
+          "source": "if (!$type) {"
+        },
+        {
+          "line": 121,
+          "source": "if (!$reason) {"
+        },
+        {
+          "line": 126,
+          "source": "if (!empty($imgs) && is_array($imgs)) {"
+        },
+        {
+          "line": 147,
+          "source": "if ($dialog) {"
+        }
+      ],
+      "source_guard_evidence": [
+        {
+          "line": 109,
+          "text": "$user = User::auth();"
+        }
+      ],
+      "implementation": {
+        "module": "backend.domains.complaints",
+        "function": "submit",
+        "line": 24
+      },
+      "signature": "(connection, context, data, settings)",
+      "return": "raw data; integration wraps backend.errors.success",
+      "authentication": "backend.auth.authenticate or supplied authenticated RequestContext.actor",
+      "methods": [
+        "GET",
+        "HEAD",
+        "POST",
+        "PUT",
+        "PATCH",
+        "DELETE",
+        "OPTIONS"
+      ],
+      "implementation_status": "IMPLEMENTED_NOT_VERIFIED",
+      "runtime_dependencies": [
+        "MariaDB shared schema",
+        "backend.jobs durable outbox",
+        "registered project/task realtime scope",
+        "authorized system-msg bot for notifications"
+      ],
+      "verification": "NOT_RUN",
+      "independent_identity": "Local independent accounts/bots; no vendor commercial license gate. See 2026101215 decision."
+    },
+    {
+      "id": "ComplaintController::action",
+      "canonical_url": "api/complaint/action",
+      "aliases": [],
+      "source": "app/Http/Controllers/Api/ComplaintController.php",
+      "source_sha256": "2bf37082f713d07249fbcb634ce3076fe42b277491eb91340845a1132d18dcbf",
+      "start_line": 177,
+      "end_line": 195,
+      "source_body_sha256": "101d8a5305ee9a6821dcf2f246c208745390c6b11d0fb64a629470e2e8871f7f",
+      "source_branches": [
+        {
+          "line": 185,
+          "source": "if ($type == 'handle') {"
+        },
+        {
+          "line": 190,
+          "source": "if ($type == 'delete') {"
+        }
+      ],
+      "source_guard_evidence": [
+        {
+          "line": 179,
+          "text": "$user = User::auth();"
+        },
+        {
+          "line": 180,
+          "text": "$user->identity('admin');"
+        }
+      ],
+      "implementation": {
+        "module": "backend.domains.complaints",
+        "function": "action",
+        "line": 46
+      },
+      "signature": "(connection, context, data, settings)",
+      "return": "raw data; integration wraps backend.errors.success",
+      "authentication": "backend.auth.authenticate or supplied authenticated RequestContext.actor",
+      "methods": [
+        "GET",
+        "HEAD",
+        "POST",
+        "PUT",
+        "PATCH",
+        "DELETE",
+        "OPTIONS"
+      ],
+      "implementation_status": "IMPLEMENTED_NOT_VERIFIED",
+      "runtime_dependencies": [
+        "MariaDB shared schema",
+        "backend.jobs durable outbox",
+        "registered project/task realtime scope"
+      ],
+      "verification": "NOT_RUN",
+      "independent_identity": "Local independent accounts/bots; no vendor commercial license gate. See 2026101215 decision."
+    },
+    {
+      "id": "DashboardController::team__stats",
+      "canonical_url": "api/dashboard/team/stats",
+      "aliases": [
+        "api/dashboard/team__stats"
+      ],
+      "source": "app/Http/Controllers/Api/DashboardController.php",
+      "source_sha256": "dd456dd52368d429407063ef04d73f8068429bf961d4cb8843e7e97d29bbfa9c",
+      "start_line": 32,
+      "end_line": 37,
+      "source_body_sha256": "af2fdb8087100252c205ead8994f251141d8c959b90cf3a1d2e4e73a5d1ad5ec",
+      "source_branches": [],
+      "source_guard_evidence": [
+        {
+          "line": 34,
+          "text": "$user = User::auth();"
+        }
+      ],
+      "implementation": {
+        "module": "backend.domains.dashboard",
+        "function": "team_stats",
+        "line": 48
+      },
+      "signature": "(connection, context, data, settings)",
+      "return": "raw data; integration wraps backend.errors.success",
+      "authentication": "backend.auth.authenticate or supplied authenticated RequestContext.actor",
+      "methods": [
+        "GET",
+        "HEAD",
+        "POST",
+        "PUT",
+        "PATCH",
+        "DELETE",
+        "OPTIONS"
+      ],
+      "implementation_status": "IMPLEMENTED_NOT_VERIFIED",
+      "runtime_dependencies": [
+        "MariaDB shared schema",
+        "backend.jobs durable outbox",
+        "registered project/task realtime scope"
+      ],
+      "verification": "NOT_RUN",
+      "independent_identity": "Local independent accounts/bots; no vendor commercial license gate. See 2026101215 decision."
+    },
+    {
+      "id": "DashboardController::team__tasks",
+      "canonical_url": "api/dashboard/team/tasks",
+      "aliases": [
+        "api/dashboard/team__tasks"
+      ],
+      "source": "app/Http/Controllers/Api/DashboardController.php",
+      "source_sha256": "dd456dd52368d429407063ef04d73f8068429bf961d4cb8843e7e97d29bbfa9c",
+      "start_line": 58,
+      "end_line": 85,
+      "source_body_sha256": "97c29ecddb2bfbac645335dbc19d98c82674679fe90f52017bd4b7a73425edb4",
+      "source_branches": [
+        {
+          "line": 68,
+          "source": "if ($memberId > 0) {"
+        },
+        {
+          "line": 69,
+          "source": "if (!in_array($memberId, $context['member_userids'], true)) {"
+        },
+        {
+          "line": 72,
+          "source": "} elseif ($level !== null) {"
+        },
+        {
+          "line": 73,
+          "source": "if ($level !== -1 && !in_array($level, DashboardTeam::priorityLevels(), true)) {"
+        },
+        {
+          "line": 76,
+          "source": "} elseif (!in_array($type, ['uncompleted', 'overdue', 'soon', 'hi', 'noowner'], true)) {"
+        }
+      ],
+      "source_guard_evidence": [
+        {
+          "line": 60,
+          "text": "$user = User::auth();"
+        }
+      ],
+      "implementation": {
+        "module": "backend.domains.dashboard",
+        "function": "team_tasks",
+        "line": 92
+      },
+      "signature": "(connection, context, data, settings)",
+      "return": "raw data; integration wraps backend.errors.success",
+      "authentication": "backend.auth.authenticate or supplied authenticated RequestContext.actor",
+      "methods": [
+        "GET",
+        "HEAD",
+        "POST",
+        "PUT",
+        "PATCH",
+        "DELETE",
+        "OPTIONS"
+      ],
+      "implementation_status": "IMPLEMENTED_NOT_VERIFIED",
+      "runtime_dependencies": [
+        "MariaDB shared schema",
+        "backend.jobs durable outbox",
+        "registered project/task realtime scope"
+      ],
+      "verification": "NOT_RUN",
+      "independent_identity": "Local independent accounts/bots; no vendor commercial license gate. See 2026101215 decision."
+    },
+    {
+      "id": "ProjectController::lists",
+      "canonical_url": "api/project/lists",
+      "aliases": [],
+      "source": "app/Http/Controllers/Api/ProjectController.php",
+      "source_sha256": "a3d03cabc38d9e2a2b414340111770c243bfa151486706681666f0e1ce451e92",
+      "start_line": 128,
+      "end_line": 206,
+      "source_body_sha256": "db28138a8cc7386c24ba3c4d50750a20ff451f45fe9b563303793b716d32a04a",
+      "source_branches": [
+        {
+          "line": 142,
+          "source": "if ($all) {"
+        },
+        {
+          "line": 145,
+          "source": "} elseif ($departmentView['enabled']) {"
+        },
+        {
+          "line": 148,
+          "source": "} else {"
+        },
+        {
+          "line": 152,
+          "source": "if ($getcolumn == 'yes') {"
+        },
+        {
+          "line": 156,
+          "source": "if ($type === 'team') {"
+        },
+        {
+          "line": 158,
+          "source": "} elseif ($type === 'personal') {"
+        },
+        {
+          "line": 162,
+          "source": "if ($archived == 'yes') {"
+        },
+        {
+          "line": 164,
+          "source": "} elseif ($archived == 'no') {"
+        },
+        {
+          "line": 168,
+          "source": "if (is_array($keys) || $timerange->updated) {"
+        },
+        {
+          "line": 172,
+          "source": "if (is_array($keys)) {"
+        },
+        {
+          "line": 173,
+          "source": "if ($keys['name']) {"
+        },
+        {
+          "line": 178,
+          "source": "if ($timerange->updated) {"
+        },
+        {
+          "line": 190,
+          "source": "if ($getuserid == 'yes') {"
+        },
+        {
+          "line": 193,
+          "source": "if ($getstatistics == 'yes') {"
+        },
+        {
+          "line": 201,
+          "source": "if ($list->currentPage() === 1) {"
+        }
+      ],
+      "source_guard_evidence": [
+        {
+          "line": 130,
+          "text": "$user = User::auth();"
+        },
+        {
+          "line": 143,
+          "text": "$user->identity('admin');"
+        },
+        {
+          "line": 149,
+          "text": "$builder = Project::authData();"
+        }
+      ],
+      "implementation": {
+        "module": "backend.domains.projects",
+        "function": "lists",
+        "line": 42
+      },
+      "signature": "(connection, context, data, settings)",
+      "return": "raw data; integration wraps backend.errors.success",
+      "authentication": "backend.auth.authenticate or supplied authenticated RequestContext.actor",
+      "methods": [
+        "GET",
+        "HEAD",
+        "POST",
+        "PUT",
+        "PATCH",
+        "DELETE",
+        "OPTIONS"
+      ],
+      "implementation_status": "IMPLEMENTED_NOT_VERIFIED",
+      "runtime_dependencies": [
+        "MariaDB shared schema",
+        "backend.jobs durable outbox",
+        "registered project/task realtime scope"
+      ],
+      "verification": "NOT_RUN",
+      "independent_identity": "Local independent accounts/bots; no vendor commercial license gate. See 2026101215 decision."
+    },
+    {
+      "id": "ProjectController::one",
+      "canonical_url": "api/project/one",
+      "aliases": [],
+      "source": "app/Http/Controllers/Api/ProjectController.php",
+      "source_sha256": "a3d03cabc38d9e2a2b414340111770c243bfa151486706681666f0e1ce451e92",
+      "start_line": 255,
+      "end_line": 269,
+      "source_body_sha256": "57e971c4d8833f342f4b088d32db68b2d961f2181322575458dc69dd482ce73d",
+      "source_branches": [],
+      "source_guard_evidence": [
+        {
+          "line": 257,
+          "text": "$user = User::auth();"
+        }
+      ],
+      "implementation": {
+        "module": "backend.domains.projects",
+        "function": "one",
+        "line": 76
+      },
+      "signature": "(connection, context, data, settings)",
+      "return": "raw data; integration wraps backend.errors.success",
+      "authentication": "backend.auth.authenticate or supplied authenticated RequestContext.actor",
+      "methods": [
+        "GET",
+        "HEAD",
+        "POST",
+        "PUT",
+        "PATCH",
+        "DELETE",
+        "OPTIONS"
+      ],
+      "implementation_status": "IMPLEMENTED_NOT_VERIFIED",
+      "runtime_dependencies": [
+        "MariaDB shared schema",
+        "backend.jobs durable outbox",
+        "registered project/task realtime scope"
+      ],
+      "verification": "NOT_RUN",
+      "independent_identity": "Local independent accounts/bots; no vendor commercial license gate. See 2026101215 decision."
+    },
+    {
+      "id": "ProjectController::add",
+      "canonical_url": "api/project/add",
+      "aliases": [],
+      "source": "app/Http/Controllers/Api/ProjectController.php",
+      "source_sha256": "a3d03cabc38d9e2a2b414340111770c243bfa151486706681666f0e1ce451e92",
+      "start_line": 291,
+      "end_line": 296,
+      "source_body_sha256": "876186080400a7f02216db02668102500b64b054167c9cfd1a3c10f97936bfa0",
+      "source_branches": [],
+      "source_guard_evidence": [
+        {
+          "line": 293,
+          "text": "$user = User::auth();"
+        }
+      ],
+      "implementation": {
+        "module": "backend.domains.projects",
+        "function": "add",
+        "line": 90
+      },
+      "signature": "(connection, context, data, settings)",
+      "return": "raw data; integration wraps backend.errors.success",
+      "authentication": "backend.auth.authenticate or supplied authenticated RequestContext.actor",
+      "methods": [
+        "GET",
+        "HEAD",
+        "POST",
+        "PUT",
+        "PATCH",
+        "DELETE",
+        "OPTIONS"
+      ],
+      "implementation_status": "IMPLEMENTED_NOT_VERIFIED",
+      "runtime_dependencies": [
+        "MariaDB shared schema",
+        "backend.jobs durable outbox",
+        "registered project/task realtime scope"
+      ],
+      "verification": "NOT_RUN",
+      "independent_identity": "Local independent accounts/bots; no vendor commercial license gate. See 2026101215 decision."
+    },
+    {
+      "id": "ProjectController::update",
+      "canonical_url": "api/project/update",
+      "aliases": [],
+      "source": "app/Http/Controllers/Api/ProjectController.php",
+      "source_sha256": "a3d03cabc38d9e2a2b414340111770c243bfa151486706681666f0e1ce451e92",
+      "start_line": 319,
+      "end_line": 395,
+      "source_body_sha256": "6fca52040b528d554ee98d55c09f32a52fa53060d06fda1d6aacaa1007d1ff5b",
+      "source_branches": [
+        {
+          "line": 331,
+          "source": "if (mb_strlen($name) < 2) {"
+        },
+        {
+          "line": 333,
+          "source": "} elseif (mb_strlen($name) > 32) {"
+        },
+        {
+          "line": 336,
+          "source": "if (mb_strlen($desc) > 255) {"
+        },
+        {
+          "line": 339,
+          "source": "if ($archive_method == 'custom') {"
+        },
+        {
+          "line": 340,
+          "source": "if ($archive_days < 1 || $archive_days > 365) {"
+        },
+        {
+          "line": 347,
+          "source": "if ($project->name != $name) {"
+        },
+        {
+          "line": 352,
+          "source": "if ($project->dialog_id) {"
+        },
+        {
+          "line": 356,
+          "source": "if ($project->desc != $desc) {"
+        },
+        {
+          "line": 360,
+          "source": "if ($project->archive_method != $archive_method) {"
+        },
+        {
+          "line": 366,
+          "source": "if ($project->archive_method == 'custom') {"
+        },
+        {
+          "line": 372,
+          "source": "if (in_array($ai_auto_analyze, ['open', 'close']) && $project->ai_auto_analyze != $ai_auto_analyze) {"
+        },
+        {
+          "line": 378,
+          "source": "if (in_array($task_template_share, ['open', 'close']) && $project->task_template_share != $task_template_share) {"
+        },
+        {
+          "line": 384,
+          "source": "if (in_array($department_owner_view, ['open', 'close']) && $project->department_owner_view != $department_owner_view) {"
+        }
+      ],
+      "source_guard_evidence": [
+        {
+          "line": 321,
+          "text": "User::auth();"
+        }
+      ],
+      "implementation": {
+        "module": "backend.domains.projects",
+        "function": "update",
+        "line": 125
+      },
+      "signature": "(connection, context, data, settings)",
+      "return": "raw data; integration wraps backend.errors.success",
+      "authentication": "backend.auth.authenticate or supplied authenticated RequestContext.actor",
+      "methods": [
+        "GET",
+        "HEAD",
+        "POST",
+        "PUT",
+        "PATCH",
+        "DELETE",
+        "OPTIONS"
+      ],
+      "implementation_status": "IMPLEMENTED_NOT_VERIFIED",
+      "runtime_dependencies": [
+        "MariaDB shared schema",
+        "backend.jobs durable outbox",
+        "registered project/task realtime scope"
+      ],
+      "verification": "NOT_RUN",
+      "independent_identity": "Local independent accounts/bots; no vendor commercial license gate. See 2026101215 decision."
+    },
+    {
+      "id": "ProjectController::user",
+      "canonical_url": "api/project/user",
+      "aliases": [],
+      "source": "app/Http/Controllers/Api/ProjectController.php",
+      "source_sha256": "a3d03cabc38d9e2a2b414340111770c243bfa151486706681666f0e1ce451e92",
+      "start_line": 413,
+      "end_line": 516,
+      "source_body_sha256": "90b06c876c859148e4b41891f46459665755d5a93ab88fe8c8eeae447ea25e8a",
+      "source_branches": [
+        {
+          "line": 423,
+          "source": "if ($deputy_userid !== null) {"
+        },
+        {
+          "line": 428,
+          "source": "if (count($userid) > 100) {"
+        },
+        {
+          "line": 444,
+          "source": "if (count($primaryOwnerIds) !== 1) {"
+        },
+        {
+          "line": 448,
+          "source": "if (!in_array($primaryOwnerId, $userid, true)) {"
+        },
+        {
+          "line": 452,
+          "source": "if (!$isPrimary) {"
+        },
+        {
+          "line": 458,
+          "source": "if (!empty(array_diff($currentDeputyIds, $userid))) {"
+        },
+        {
+          "line": 463,
+          "source": "if ($applyDeputy) {"
+        },
+        {
+          "line": 464,
+          "source": "if (!empty(array_diff($deputy_userid, $userid))) {"
+        },
+        {
+          "line": 467,
+          "source": "if (in_array((int)$project->owner_userid, $deputy_userid, true)) {"
+        },
+        {
+          "line": 475,
+          "source": "if ($project->joinProject($uid)) {"
+        },
+        {
+          "line": 486,
+          "source": "if ($applyDeputy) {"
+        },
+        {
+          "line": 492,
+          "source": "if (!empty($toPromote)) {"
+        },
+        {
+          "line": 498,
+          "source": "if (!empty($toDemote)) {"
+        }
+      ],
+      "source_guard_evidence": [
+        {
+          "line": 415,
+          "text": "User::auth();"
+        }
+      ],
+      "implementation": {
+        "module": "backend.domains.projects",
+        "function": "user",
+        "line": 211
+      },
+      "signature": "(connection, context, data, settings)",
+      "return": "raw data; integration wraps backend.errors.success",
+      "authentication": "backend.auth.authenticate or supplied authenticated RequestContext.actor",
+      "methods": [
+        "GET",
+        "HEAD",
+        "POST",
+        "PUT",
+        "PATCH",
+        "DELETE",
+        "OPTIONS"
+      ],
+      "implementation_status": "IMPLEMENTED_NOT_VERIFIED",
+      "runtime_dependencies": [
+        "MariaDB shared schema",
+        "backend.jobs durable outbox",
+        "registered project/task realtime scope"
+      ],
+      "verification": "NOT_RUN",
+      "independent_identity": "Local independent accounts/bots; no vendor commercial license gate. See 2026101215 decision."
+    },
+    {
+      "id": "ProjectController::invite",
+      "canonical_url": "api/project/invite",
+      "aliases": [],
+      "source": "app/Http/Controllers/Api/ProjectController.php",
+      "source_sha256": "a3d03cabc38d9e2a2b414340111770c243bfa151486706681666f0e1ce451e92",
+      "start_line": 535,
+      "end_line": 566,
+      "source_body_sha256": "ed8f6afc27322113cae7195aec8a0335807f8194023212d0d2f75916fd179f5e",
+      "source_branches": [
+        {
+          "line": 545,
+          "source": "if ($invite == 'close') {"
+        },
+        {
+          "line": 550,
+          "source": "if (empty($projectInvite)) {"
+        },
+        {
+          "line": 556,
+          "source": "} else {"
+        },
+        {
+          "line": 557,
+          "source": "if ($refresh == 'yes') {"
+        }
+      ],
+      "source_guard_evidence": [
+        {
+          "line": 537,
+          "text": "$user = User::auth();"
+        }
+      ],
+      "implementation": {
+        "module": "backend.domains.projects",
+        "function": "invite",
+        "line": 267
+      },
+      "signature": "(connection, context, data, settings)",
+      "return": "raw data; integration wraps backend.errors.success",
+      "authentication": "backend.auth.authenticate or supplied authenticated RequestContext.actor",
+      "methods": [
+        "GET",
+        "HEAD",
+        "POST",
+        "PUT",
+        "PATCH",
+        "DELETE",
+        "OPTIONS"
+      ],
+      "implementation_status": "IMPLEMENTED_NOT_VERIFIED",
+      "runtime_dependencies": [
+        "MariaDB shared schema",
+        "backend.jobs durable outbox",
+        "registered project/task realtime scope"
+      ],
+      "verification": "NOT_RUN",
+      "independent_identity": "Local independent accounts/bots; no vendor commercial license gate. See 2026101215 decision."
+    },
+    {
+      "id": "ProjectController::invite__info",
+      "canonical_url": "api/project/invite/info",
+      "aliases": [
+        "api/project/invite__info"
+      ],
+      "source": "app/Http/Controllers/Api/ProjectController.php",
+      "source_sha256": "a3d03cabc38d9e2a2b414340111770c243bfa151486706681666f0e1ce451e92",
+      "start_line": 582,
+      "end_line": 598,
+      "source_body_sha256": "b59c938f4bbe7a3425427381fff6291274861366f2cab4050ec7785196968d16",
+      "source_branches": [
+        {
+          "line": 589,
+          "source": "if ($invite == 'close') {"
+        },
+        {
+          "line": 594,
+          "source": "if (empty($projectInvite)) {"
+        }
+      ],
+      "source_guard_evidence": [
+        {
+          "line": 584,
+          "text": "User::auth();"
+        }
+      ],
+      "implementation": {
+        "module": "backend.domains.projects",
+        "function": "invite_info",
+        "line": 284
+      },
+      "signature": "(connection, context, data, settings)",
+      "return": "raw data; integration wraps backend.errors.success",
+      "authentication": "backend.auth.authenticate or supplied authenticated RequestContext.actor",
+      "methods": [
+        "GET",
+        "HEAD",
+        "POST",
+        "PUT",
+        "PATCH",
+        "DELETE",
+        "OPTIONS"
+      ],
+      "implementation_status": "IMPLEMENTED_NOT_VERIFIED",
+      "runtime_dependencies": [
+        "MariaDB shared schema",
+        "backend.jobs durable outbox",
+        "registered project/task realtime scope"
+      ],
+      "verification": "NOT_RUN",
+      "independent_identity": "Local independent accounts/bots; no vendor commercial license gate. See 2026101215 decision."
+    },
+    {
+      "id": "ProjectController::invite__join",
+      "canonical_url": "api/project/invite/join",
+      "aliases": [
+        "api/project/invite__join"
+      ],
+      "source": "app/Http/Controllers/Api/ProjectController.php",
+      "source_sha256": "a3d03cabc38d9e2a2b414340111770c243bfa151486706681666f0e1ce451e92",
+      "start_line": 614,
+      "end_line": 644,
+      "source_body_sha256": "e6dae16607f064974227af7ea33bc6fb0f33240764aa8e535c3efdb11a195fce",
+      "source_branches": [
+        {
+          "line": 621,
+          "source": "if ($invite == 'close') {"
+        },
+        {
+          "line": 626,
+          "source": "if (empty($projectInvite)) {"
+        },
+        {
+          "line": 629,
+          "source": "if ($projectInvite->already) {"
+        },
+        {
+          "line": 632,
+          "source": "if (!$projectInvite->project?->joinProject($user->userid)) {"
+        }
+      ],
+      "source_guard_evidence": [
+        {
+          "line": 616,
+          "text": "$user = User::auth();"
+        }
+      ],
+      "implementation": {
+        "module": "backend.domains.projects",
+        "function": "invite_join",
+        "line": 297
+      },
+      "signature": "(connection, context, data, settings)",
+      "return": "raw data; integration wraps backend.errors.success",
+      "authentication": "backend.auth.authenticate or supplied authenticated RequestContext.actor",
+      "methods": [
+        "GET",
+        "HEAD",
+        "POST",
+        "PUT",
+        "PATCH",
+        "DELETE",
+        "OPTIONS"
+      ],
+      "implementation_status": "IMPLEMENTED_NOT_VERIFIED",
+      "runtime_dependencies": [
+        "MariaDB shared schema",
+        "backend.jobs durable outbox",
+        "registered project/task realtime scope"
+      ],
+      "verification": "NOT_RUN",
+      "independent_identity": "Local independent accounts/bots; no vendor commercial license gate. See 2026101215 decision."
+    },
+    {
+      "id": "ProjectController::transfer",
+      "canonical_url": "api/project/transfer",
+      "aliases": [],
+      "source": "app/Http/Controllers/Api/ProjectController.php",
+      "source_sha256": "a3d03cabc38d9e2a2b414340111770c243bfa151486706681666f0e1ce451e92",
+      "start_line": 661,
+      "end_line": 705,
+      "source_body_sha256": "0017d1cb4476e331257c0ef417101b517ce5454bf1fbe013e8826d4d6e077de6",
+      "source_branches": [
+        {
+          "line": 670,
+          "source": "if (!User::whereUserid($owner_userid)->exists()) {"
+        },
+        {
+          "line": 687,
+          "source": "if ($project->dialog_id > 0) {"
+        },
+        {
+          "line": 689,
+          "source": "if ($dialog) {"
+        }
+      ],
+      "source_guard_evidence": [
+        {
+          "line": 663,
+          "text": "User::auth();"
+        },
+        {
+          "line": 670,
+          "text": "if (!User::whereUserid($owner_userid)->exists()) {"
+        }
+      ],
+      "implementation": {
+        "module": "backend.domains.projects",
+        "function": "transfer",
+        "line": 235
+      },
+      "signature": "(connection, context, data, settings)",
+      "return": "raw data; integration wraps backend.errors.success",
+      "authentication": "backend.auth.authenticate or supplied authenticated RequestContext.actor",
+      "methods": [
+        "GET",
+        "HEAD",
+        "POST",
+        "PUT",
+        "PATCH",
+        "DELETE",
+        "OPTIONS"
+      ],
+      "implementation_status": "IMPLEMENTED_NOT_VERIFIED",
+      "runtime_dependencies": [
+        "MariaDB shared schema",
+        "backend.jobs durable outbox",
+        "registered project/task realtime scope"
+      ],
+      "verification": "NOT_RUN",
+      "independent_identity": "Local independent accounts/bots; no vendor commercial license gate. See 2026101215 decision."
+    },
+    {
+      "id": "ProjectController::adddeputy",
+      "canonical_url": "api/project/adddeputy",
+      "aliases": [],
+      "source": "app/Http/Controllers/Api/ProjectController.php",
+      "source_sha256": "a3d03cabc38d9e2a2b414340111770c243bfa151486706681666f0e1ce451e92",
+      "start_line": 722,
+      "end_line": 755,
+      "source_body_sha256": "397e18e0f27ea764dfe32bc425eeb734cb1b95c6d3efa7ebf20eee575b3ec1ea",
+      "source_branches": [
+        {
+          "line": 728,
+          "source": "if ($userid <= 0) {"
+        },
+        {
+          "line": 736,
+          "source": "if (!$member) {"
+        },
+        {
+          "line": 739,
+          "source": "if ((int)$member->owner === ProjectUser::OWNER_PRIMARY) {"
+        },
+        {
+          "line": 742,
+          "source": "if ((int)$member->owner !== ProjectUser::OWNER_DEPUTY) {"
+        }
+      ],
+      "source_guard_evidence": [
+        {
+          "line": 724,
+          "text": "User::auth();"
+        }
+      ],
+      "implementation": {
+        "module": "backend.domains.projects",
+        "function": "adddeputy",
+        "line": 259
+      },
+      "signature": "(connection, context, data, settings)",
+      "return": "raw data; integration wraps backend.errors.success",
+      "authentication": "backend.auth.authenticate or supplied authenticated RequestContext.actor",
+      "methods": [
+        "GET",
+        "HEAD",
+        "POST",
+        "PUT",
+        "PATCH",
+        "DELETE",
+        "OPTIONS"
+      ],
+      "implementation_status": "IMPLEMENTED_NOT_VERIFIED",
+      "runtime_dependencies": [
+        "MariaDB shared schema",
+        "backend.jobs durable outbox",
+        "registered project/task realtime scope"
+      ],
+      "verification": "NOT_RUN",
+      "independent_identity": "Local independent accounts/bots; no vendor commercial license gate. See 2026101215 decision."
+    },
+    {
+      "id": "ProjectController::deldeputy",
+      "canonical_url": "api/project/deldeputy",
+      "aliases": [],
+      "source": "app/Http/Controllers/Api/ProjectController.php",
+      "source_sha256": "a3d03cabc38d9e2a2b414340111770c243bfa151486706681666f0e1ce451e92",
+      "start_line": 768,
+      "end_line": 798,
+      "source_body_sha256": "3283ffa9874807c737a545e7afaaa1f0f6090f0f16e387810bcd723d9950f1e2",
+      "source_branches": [
+        {
+          "line": 774,
+          "source": "if ($userid <= 0) {"
+        },
+        {
+          "line": 782,
+          "source": "if (!$member) {"
+        },
+        {
+          "line": 785,
+          "source": "if ((int)$member->owner === ProjectUser::OWNER_DEPUTY) {"
+        }
+      ],
+      "source_guard_evidence": [
+        {
+          "line": 770,
+          "text": "User::auth();"
+        }
+      ],
+      "implementation": {
+        "module": "backend.domains.projects",
+        "function": "deldeputy",
+        "line": 263
+      },
+      "signature": "(connection, context, data, settings)",
+      "return": "raw data; integration wraps backend.errors.success",
+      "authentication": "backend.auth.authenticate or supplied authenticated RequestContext.actor",
+      "methods": [
+        "GET",
+        "HEAD",
+        "POST",
+        "PUT",
+        "PATCH",
+        "DELETE",
+        "OPTIONS"
+      ],
+      "implementation_status": "IMPLEMENTED_NOT_VERIFIED",
+      "runtime_dependencies": [
+        "MariaDB shared schema",
+        "backend.jobs durable outbox",
+        "registered project/task realtime scope"
+      ],
+      "verification": "NOT_RUN",
+      "independent_identity": "Local independent accounts/bots; no vendor commercial license gate. See 2026101215 decision."
+    },
+    {
+      "id": "ProjectController::sort",
+      "canonical_url": "api/project/sort",
+      "aliases": [],
+      "source": "app/Http/Controllers/Api/ProjectController.php",
+      "source_sha256": "a3d03cabc38d9e2a2b414340111770c243bfa151486706681666f0e1ce451e92",
+      "start_line": 816,
+      "end_line": 867,
+      "source_body_sha256": "d4f0eaf90bc023ea3f65608015aa6a5fcd39305603977e79dcabc31f6d4940e0",
+      "source_branches": [
+        {
+          "line": 826,
+          "source": "if ($only_column) {"
+        },
+        {
+          "line": 832,
+          "source": "if (!is_array($item)) continue;"
+        },
+        {
+          "line": 833,
+          "source": "if (!intval($item['id'])) continue;"
+        },
+        {
+          "line": 840,
+          "source": "} else {"
+        },
+        {
+          "line": 843,
+          "source": "if (!is_array($item)) continue;"
+        },
+        {
+          "line": 844,
+          "source": "if (!intval($item['id'])) continue;"
+        },
+        {
+          "line": 845,
+          "source": "if (!is_array($item['task'])) continue;"
+        },
+        {
+          "line": 849,
+          "source": "if ($task && intval($task->column_id) !== intval($item['id'])) {"
+        },
+        {
+          "line": 852,
+          "source": "if (ProjectTask::whereId($task_id)->whereProjectId($project->id)->whereCompleteAt(null)->change(["
+        }
+      ],
+      "source_guard_evidence": [
+        {
+          "line": 818,
+          "text": "User::auth();"
+        },
+        {
+          "line": 828,
+          "text": "ProjectPermission::userTaskPermission($project, ProjectPermission::TASK_LIST_SORT);"
+        },
+        {
+          "line": 850,
+          "text": "ProjectPermission::userTaskPermission($project, ProjectPermission::TASK_MOVE, $task);"
+        }
+      ],
+      "implementation": {
+        "module": "backend.domains.projects",
+        "function": "sort",
+        "line": 445
+      },
+      "signature": "(connection, context, data, settings)",
+      "return": "raw data; integration wraps backend.errors.success",
+      "authentication": "backend.auth.authenticate or supplied authenticated RequestContext.actor",
+      "methods": [
+        "GET",
+        "HEAD",
+        "POST",
+        "PUT",
+        "PATCH",
+        "DELETE",
+        "OPTIONS"
+      ],
+      "implementation_status": "IMPLEMENTED_NOT_VERIFIED",
+      "runtime_dependencies": [
+        "MariaDB shared schema",
+        "backend.jobs durable outbox",
+        "registered project/task realtime scope"
+      ],
+      "verification": "NOT_RUN",
+      "independent_identity": "Local independent accounts/bots; no vendor commercial license gate. See 2026101215 decision."
+    },
+    {
+      "id": "ProjectController::user__sort",
+      "canonical_url": "api/project/user/sort",
+      "aliases": [
+        "api/project/user__sort"
+      ],
+      "source": "app/Http/Controllers/Api/ProjectController.php",
+      "source_sha256": "a3d03cabc38d9e2a2b414340111770c243bfa151486706681666f0e1ce451e92",
+      "start_line": 883,
+      "end_line": 900,
+      "source_body_sha256": "4ca56f521e8e60b005a5e8cdf165f248f197803ad7e59d7abfca37b42a8c146b",
+      "source_branches": [
+        {
+          "line": 887,
+          "source": "if (!is_array($list)) {"
+        },
+        {
+          "line": 893,
+          "source": "if ($projectId <= 0) continue;"
+        }
+      ],
+      "source_guard_evidence": [
+        {
+          "line": 885,
+          "text": "$user = User::auth();"
+        },
+        {
+          "line": 894,
+          "text": "ProjectUser::whereUserid($user->userid)"
+        }
+      ],
+      "implementation": {
+        "module": "backend.domains.projects",
+        "function": "user_sort",
+        "line": 481
+      },
+      "signature": "(connection, context, data, settings)",
+      "return": "raw data; integration wraps backend.errors.success",
+      "authentication": "backend.auth.authenticate or supplied authenticated RequestContext.actor",
+      "methods": [
+        "GET",
+        "HEAD",
+        "POST",
+        "PUT",
+        "PATCH",
+        "DELETE",
+        "OPTIONS"
+      ],
+      "implementation_status": "IMPLEMENTED_NOT_VERIFIED",
+      "runtime_dependencies": [
+        "MariaDB shared schema",
+        "backend.jobs durable outbox",
+        "registered project/task realtime scope"
+      ],
+      "verification": "NOT_RUN",
+      "independent_identity": "Local independent accounts/bots; no vendor commercial license gate. See 2026101215 decision."
+    },
+    {
+      "id": "ProjectController::exit",
+      "canonical_url": "api/project/exit",
+      "aliases": [],
+      "source": "app/Http/Controllers/Api/ProjectController.php",
+      "source_sha256": "a3d03cabc38d9e2a2b414340111770c243bfa151486706681666f0e1ce451e92",
+      "start_line": 916,
+      "end_line": 932,
+      "source_body_sha256": "be3897ff73faac610a6cc8f78800c03377287910054aabacd60fb6893644df58",
+      "source_branches": [],
+      "source_guard_evidence": [
+        {
+          "line": 918,
+          "text": "$user = User::auth();"
+        },
+        {
+          "line": 925,
+          "text": "$row = ProjectUser::whereProjectId($project->id)->whereUserid($user->userid)->first();"
+        }
+      ],
+      "implementation": {
+        "module": "backend.domains.projects",
+        "function": "exit",
+        "line": 316
+      },
+      "signature": "(connection, context, data, settings)",
+      "return": "raw data; integration wraps backend.errors.success",
+      "authentication": "backend.auth.authenticate or supplied authenticated RequestContext.actor",
+      "methods": [
+        "GET",
+        "HEAD",
+        "POST",
+        "PUT",
+        "PATCH",
+        "DELETE",
+        "OPTIONS"
+      ],
+      "implementation_status": "IMPLEMENTED_NOT_VERIFIED",
+      "runtime_dependencies": [
+        "MariaDB shared schema",
+        "backend.jobs durable outbox",
+        "registered project/task realtime scope"
+      ],
+      "verification": "NOT_RUN",
+      "independent_identity": "Local independent accounts/bots; no vendor commercial license gate. See 2026101215 decision."
+    },
+    {
+      "id": "ProjectController::archived",
+      "canonical_url": "api/project/archived",
+      "aliases": [],
+      "source": "app/Http/Controllers/Api/ProjectController.php",
+      "source_sha256": "a3d03cabc38d9e2a2b414340111770c243bfa151486706681666f0e1ce451e92",
+      "start_line": 951,
+      "end_line": 966,
+      "source_body_sha256": "50234a741420d037958a4541aaec751166a625b53c7e3de2b9c07b2f8cd03a8e",
+      "source_branches": [
+        {
+          "line": 960,
+          "source": "if ($type == 'recovery') {"
+        },
+        {
+          "line": 962,
+          "source": "} elseif ($type == 'add') {"
+        }
+      ],
+      "source_guard_evidence": [
+        {
+          "line": 953,
+          "text": "User::auth();"
+        }
+      ],
+      "implementation": {
+        "module": "backend.domains.projects",
+        "function": "archived",
+        "line": 332
+      },
+      "signature": "(connection, context, data, settings)",
+      "return": "raw data; integration wraps backend.errors.success",
+      "authentication": "backend.auth.authenticate or supplied authenticated RequestContext.actor",
+      "methods": [
+        "GET",
+        "HEAD",
+        "POST",
+        "PUT",
+        "PATCH",
+        "DELETE",
+        "OPTIONS"
+      ],
+      "implementation_status": "IMPLEMENTED_NOT_VERIFIED",
+      "runtime_dependencies": [
+        "MariaDB shared schema",
+        "backend.jobs durable outbox",
+        "registered project/task realtime scope"
+      ],
+      "verification": "NOT_RUN",
+      "independent_identity": "Local independent accounts/bots; no vendor commercial license gate. See 2026101215 decision."
+    },
+    {
+      "id": "ProjectController::remove",
+      "canonical_url": "api/project/remove",
+      "aliases": [],
+      "source": "app/Http/Controllers/Api/ProjectController.php",
+      "source_sha256": "a3d03cabc38d9e2a2b414340111770c243bfa151486706681666f0e1ce451e92",
+      "start_line": 982,
+      "end_line": 992,
+      "source_body_sha256": "afcb3356ddc3072211a82ae40d80316b42f10053bfca22c0bdcd87a2eb0e3454",
+      "source_branches": [],
+      "source_guard_evidence": [
+        {
+          "line": 984,
+          "text": "User::auth();"
+        }
+      ],
+      "implementation": {
+        "module": "backend.domains.projects",
+        "function": "remove",
+        "line": 353
+      },
+      "signature": "(connection, context, data, settings)",
+      "return": "raw data; integration wraps backend.errors.success",
+      "authentication": "backend.auth.authenticate or supplied authenticated RequestContext.actor",
+      "methods": [
+        "GET",
+        "HEAD",
+        "POST",
+        "PUT",
+        "PATCH",
+        "DELETE",
+        "OPTIONS"
+      ],
+      "implementation_status": "IMPLEMENTED_NOT_VERIFIED",
+      "runtime_dependencies": [
+        "MariaDB shared schema",
+        "backend.jobs durable outbox",
+        "registered project/task realtime scope"
+      ],
+      "verification": "NOT_RUN",
+      "independent_identity": "Local independent accounts/bots; no vendor commercial license gate. See 2026101215 decision."
+    },
+    {
+      "id": "ProjectController::column__lists",
+      "canonical_url": "api/project/column/lists",
+      "aliases": [
+        "api/project/column__lists"
+      ],
+      "source": "app/Http/Controllers/Api/ProjectController.php",
+      "source_sha256": "a3d03cabc38d9e2a2b414340111770c243bfa151486706681666f0e1ce451e92",
+      "start_line": 1011,
+      "end_line": 1025,
+      "source_body_sha256": "b5cd23e0acf17a078398da336ef8c14900db85baa7b70c6225b6f92dfc8db6a1",
+      "source_branches": [],
+      "source_guard_evidence": [
+        {
+          "line": 1013,
+          "text": "User::auth();"
+        }
+      ],
+      "implementation": {
+        "module": "backend.domains.projects",
+        "function": "column_lists",
+        "line": 371
+      },
+      "signature": "(connection, context, data, settings)",
+      "return": "raw data; integration wraps backend.errors.success",
+      "authentication": "backend.auth.authenticate or supplied authenticated RequestContext.actor",
+      "methods": [
+        "GET",
+        "HEAD",
+        "POST",
+        "PUT",
+        "PATCH",
+        "DELETE",
+        "OPTIONS"
+      ],
+      "implementation_status": "IMPLEMENTED_NOT_VERIFIED",
+      "runtime_dependencies": [
+        "MariaDB shared schema",
+        "backend.jobs durable outbox",
+        "registered project/task realtime scope"
+      ],
+      "verification": "NOT_RUN",
+      "independent_identity": "Local independent accounts/bots; no vendor commercial license gate. See 2026101215 decision."
+    },
+    {
+      "id": "ProjectController::column__add",
+      "canonical_url": "api/project/column/add",
+      "aliases": [
+        "api/project/column__add"
+      ],
+      "source": "app/Http/Controllers/Api/ProjectController.php",
+      "source_sha256": "a3d03cabc38d9e2a2b414340111770c243bfa151486706681666f0e1ce451e92",
+      "start_line": 1042,
+      "end_line": 1072,
+      "source_body_sha256": "a377e094ef4f1a128c1f96c5e13d4fc9ce25bbfcb76185c3e32b3d29ae701eda",
+      "source_branches": [
+        {
+          "line": 1053,
+          "source": "if (empty($name)) {"
+        },
+        {
+          "line": 1056,
+          "source": "if (ProjectColumn::whereProjectId($project->id)->count() > 50) {"
+        }
+      ],
+      "source_guard_evidence": [
+        {
+          "line": 1044,
+          "text": "User::auth();"
+        },
+        {
+          "line": 1051,
+          "text": "ProjectPermission::userTaskPermission($project, ProjectPermission::TASK_LIST_ADD);"
+        }
+      ],
+      "implementation": {
+        "module": "backend.domains.projects",
+        "function": "column_add",
+        "line": 401
+      },
+      "signature": "(connection, context, data, settings)",
+      "return": "raw data; integration wraps backend.errors.success",
+      "authentication": "backend.auth.authenticate or supplied authenticated RequestContext.actor",
+      "methods": [
+        "GET",
+        "HEAD",
+        "POST",
+        "PUT",
+        "PATCH",
+        "DELETE",
+        "OPTIONS"
+      ],
+      "implementation_status": "IMPLEMENTED_NOT_VERIFIED",
+      "runtime_dependencies": [
+        "MariaDB shared schema",
+        "backend.jobs durable outbox",
+        "registered project/task realtime scope"
+      ],
+      "verification": "NOT_RUN",
+      "independent_identity": "Local independent accounts/bots; no vendor commercial license gate. See 2026101215 decision."
+    },
+    {
+      "id": "ProjectController::column__update",
+      "canonical_url": "api/project/column/update",
+      "aliases": [
+        "api/project/column__update"
+      ],
+      "source": "app/Http/Controllers/Api/ProjectController.php",
+      "source_sha256": "a3d03cabc38d9e2a2b414340111770c243bfa151486706681666f0e1ce451e92",
+      "start_line": 1090,
+      "end_line": 1117,
+      "source_body_sha256": "584b7c3efbce4d161009f745f93c3d198b61d40fe7ced6d02afdf5372e378428",
+      "source_branches": [
+        {
+          "line": 1098,
+          "source": "if (empty($column)) {"
+        },
+        {
+          "line": 1106,
+          "source": "if (Arr::exists($data, 'name') && $column->name != $data['name']) {"
+        },
+        {
+          "line": 1110,
+          "source": "if (Arr::exists($data, 'color') && $column->color != $data['color']) {"
+        }
+      ],
+      "source_guard_evidence": [
+        {
+          "line": 1092,
+          "text": "User::auth();"
+        },
+        {
+          "line": 1104,
+          "text": "ProjectPermission::userTaskPermission($project, ProjectPermission::TASK_LIST_UPDATE);"
+        }
+      ],
+      "implementation": {
+        "module": "backend.domains.projects",
+        "function": "column_update",
+        "line": 415
+      },
+      "signature": "(connection, context, data, settings)",
+      "return": "raw data; integration wraps backend.errors.success",
+      "authentication": "backend.auth.authenticate or supplied authenticated RequestContext.actor",
+      "methods": [
+        "GET",
+        "HEAD",
+        "POST",
+        "PUT",
+        "PATCH",
+        "DELETE",
+        "OPTIONS"
+      ],
+      "implementation_status": "IMPLEMENTED_NOT_VERIFIED",
+      "runtime_dependencies": [
+        "MariaDB shared schema",
+        "backend.jobs durable outbox",
+        "registered project/task realtime scope"
+      ],
+      "verification": "NOT_RUN",
+      "independent_identity": "Local independent accounts/bots; no vendor commercial license gate. See 2026101215 decision."
+    },
+    {
+      "id": "ProjectController::column__remove",
+      "canonical_url": "api/project/column/remove",
+      "aliases": [
+        "api/project/column__remove"
+      ],
+      "source": "app/Http/Controllers/Api/ProjectController.php",
+      "source_sha256": "a3d03cabc38d9e2a2b414340111770c243bfa151486706681666f0e1ce451e92",
+      "start_line": 1133,
+      "end_line": 1150,
+      "source_body_sha256": "332f7e497697db8d67c685fbec5e36b791a1a60f9a81e03b001aa0a7743bbfdb",
+      "source_branches": [
+        {
+          "line": 1140,
+          "source": "if (empty($column)) {"
+        }
+      ],
+      "source_guard_evidence": [
+        {
+          "line": 1135,
+          "text": "User::auth();"
+        },
+        {
+          "line": 1146,
+          "text": "ProjectPermission::userTaskPermission($project, ProjectPermission::TASK_LIST_REMOVE);"
+        }
+      ],
+      "implementation": {
+        "module": "backend.domains.projects",
+        "function": "column_remove",
+        "line": 431
+      },
+      "signature": "(connection, context, data, settings)",
+      "return": "raw data; integration wraps backend.errors.success",
+      "authentication": "backend.auth.authenticate or supplied authenticated RequestContext.actor",
+      "methods": [
+        "GET",
+        "HEAD",
+        "POST",
+        "PUT",
+        "PATCH",
+        "DELETE",
+        "OPTIONS"
+      ],
+      "implementation_status": "IMPLEMENTED_NOT_VERIFIED",
+      "runtime_dependencies": [
+        "MariaDB shared schema",
+        "backend.jobs durable outbox",
+        "registered project/task realtime scope"
+      ],
+      "verification": "NOT_RUN",
+      "independent_identity": "Local independent accounts/bots; no vendor commercial license gate. See 2026101215 decision."
+    },
+    {
+      "id": "ProjectController::column__one",
+      "canonical_url": "api/project/column/one",
+      "aliases": [
+        "api/project/column__one"
+      ],
+      "source": "app/Http/Controllers/Api/ProjectController.php",
+      "source_sha256": "a3d03cabc38d9e2a2b414340111770c243bfa151486706681666f0e1ce451e92",
+      "start_line": 1170,
+      "end_line": 1189,
+      "source_body_sha256": "abf143b554016241b41cc1e1494dd19a2e3441854311f2744375e751873db1df",
+      "source_branches": [
+        {
+          "line": 1178,
+          "source": "if ($deleted == 'all') {"
+        },
+        {
+          "line": 1180,
+          "source": "} elseif ($deleted == 'yes') {"
+        },
+        {
+          "line": 1184,
+          "source": "if (empty($column)) {"
+        }
+      ],
+      "source_guard_evidence": [
+        {
+          "line": 1172,
+          "text": "User::auth();"
+        }
+      ],
+      "implementation": {
+        "module": "backend.domains.projects",
+        "function": "column_one",
+        "line": 406
+      },
+      "signature": "(connection, context, data, settings)",
+      "return": "raw data; integration wraps backend.errors.success",
+      "authentication": "backend.auth.authenticate or supplied authenticated RequestContext.actor",
+      "methods": [
+        "GET",
+        "HEAD",
+        "POST",
+        "PUT",
+        "PATCH",
+        "DELETE",
+        "OPTIONS"
+      ],
+      "implementation_status": "IMPLEMENTED_NOT_VERIFIED",
+      "runtime_dependencies": [
+        "MariaDB shared schema",
+        "backend.jobs durable outbox",
+        "registered project/task realtime scope"
+      ],
+      "verification": "NOT_RUN",
+      "independent_identity": "Local independent accounts/bots; no vendor commercial license gate. See 2026101215 decision."
+    },
+    {
+      "id": "ProjectController::task__lists",
+      "canonical_url": "api/project/task/lists",
+      "aliases": [
+        "api/project/task__lists"
+      ],
+      "source": "app/Http/Controllers/Api/ProjectController.php",
+      "source_sha256": "a3d03cabc38d9e2a2b414340111770c243bfa151486706681666f0e1ce451e92",
+      "start_line": 1244,
+      "end_line": 1490,
+      "source_body_sha256": "ddfd4a1882f7dfd034f4907bd0e9416274cd88f58e82b2e0713f1e37be365508",
+      "source_branches": [
+        {
+          "line": 1267,
+          "source": "if (in_array('project_name', $with_extend)) {"
+        },
+        {
+          "line": 1270,
+          "source": "if (in_array('column_name', $with_extend)) {"
+        },
+        {
+          "line": 1275,
+          "source": "if ($keys['name']) {"
+        },
+        {
+          "line": 1276,
+          "source": "if (Base::isNumber($keys['name'])) {"
+        },
+        {
+          "line": 1282,
+          "source": "} else {"
+        },
+        {
+          "line": 1289,
+          "source": "if ($keys['tag']) {"
+        },
+        {
+          "line": 1294,
+          "source": "if ($keys['status']) {"
+        },
+        {
+          "line": 1295,
+          "source": "if ($keys['status'] == 'completed') {"
+        },
+        {
+          "line": 1297,
+          "source": "} elseif ($keys['status'] == 'uncompleted') {"
+        },
+        {
+          "line": 1299,
+          "source": "} elseif (str_starts_with($keys['status'], 'flow-')) {"
+        },
+        {
+          "line": 1301,
+          "source": "if (Base::isNumber($flow)) {"
+        },
+        {
+          "line": 1303,
+          "source": "} elseif ($flow) {"
+        },
+        {
+          "line": 1310,
+          "source": "if ($parent_id > 0) {"
+        },
+        {
+          "line": 1317,
+          "source": "} elseif ($parent_id === -1) {"
+        },
+        {
+          "line": 1320,
+          "source": "if ($project_id > 0) {"
+        },
+        {
+          "line": 1321,
+          "source": "if (!UserDepartment::isDepartmentReadonlyProject($departmentView, $project_id)) {"
+        },
+        {
+          "line": 1327,
+          "source": "if (!$scopeAll && $scope === 'all_project') {"
+        },
+        {
+          "line": 1329,
+          "source": "if ($departmentView['enabled']) {"
+        },
+        {
+          "line": 1331,
+          "source": "} else {"
+        },
+        {
+          "line": 1339,
+          "source": "if ($scopeAll) {"
+        },
+        {
+          "line": 1341,
+          "source": "if ($owner !== null) {"
+        },
+        {
+          "line": 1344,
+          "source": "} else {"
+        },
+        {
+          "line": 1348,
+          "source": "if ($name) {"
+        },
+        {
+          "line": 1354,
+          "source": "if (is_string($time) && $time) {"
+        },
+        {
+          "line": 1355,
+          "source": "switch ($time) {"
+        },
+        {
+          "line": 1356,
+          "source": "case 'today':"
+        },
+        {
+          "line": 1359,
+          "source": "case 'week':"
+        },
+        {
+          "line": 1362,
+          "source": "case 'month':"
+        },
+        {
+          "line": 1365,
+          "source": "case 'year':"
+        },
+        {
+          "line": 1369,
+          "source": "if (str_contains($time, ',')) {"
+        },
+        {
+          "line": 1371,
+          "source": "if (Timer::isDateOrTime($times[0]) && Timer::isDateOrTime($times[1])) {"
+        },
+        {
+          "line": 1376,
+          "source": "} elseif (is_array($time)) {"
+        },
+        {
+          "line": 1377,
+          "source": "if (Timer::isDateOrTime($time[0]) && Timer::isDateOrTime($time[1])) {"
+        },
+        {
+          "line": 1381,
+          "source": "if ($timerange->updated) {"
+        },
+        {
+          "line": 1385,
+          "source": "if ($archived == 'yes') {"
+        },
+        {
+          "line": 1387,
+          "source": "} elseif ($archived == 'no') {"
+        },
+        {
+          "line": 1391,
+          "source": "if ($deleted == 'all') {"
+        },
+        {
+          "line": 1393,
+          "source": "} elseif ($deleted == 'yes') {"
+        },
+        {
+          "line": 1398,
+          "source": "if (!in_array($column, ['complete_at', 'archived_at', 'end_at', 'deleted_at'])) continue;"
+        },
+        {
+          "line": 1399,
+          "source": "if (!in_array($direction, ['asc', 'desc'])) continue;"
+        },
+        {
+          "line": 1475,
+          "source": "if (in_array('project_name', $with_extend)) {"
+        },
+        {
+          "line": 1479,
+          "source": "if (in_array('column_name', $with_extend)) {"
+        },
+        {
+          "line": 1485,
+          "source": "if ($list->currentPage() === 1) {"
+        }
+      ],
+      "source_guard_evidence": [
+        {
+          "line": 1246,
+          "text": "$user = User::auth();"
+        },
+        {
+          "line": 1345,
+          "text": "$builder->authData(null, $owner);"
+        }
+      ],
+      "implementation": {
+        "module": "backend.domains.project_queries",
+        "function": "task_lists",
+        "line": 101
+      },
+      "signature": "(connection, context, data, settings)",
+      "return": "raw data; integration wraps backend.errors.success",
+      "authentication": "backend.auth.authenticate or supplied authenticated RequestContext.actor",
+      "methods": [
+        "GET",
+        "HEAD",
+        "POST",
+        "PUT",
+        "PATCH",
+        "DELETE",
+        "OPTIONS"
+      ],
+      "implementation_status": "IMPLEMENTED_NOT_VERIFIED",
+      "runtime_dependencies": [
+        "MariaDB shared schema",
+        "backend.jobs durable outbox",
+        "registered project/task realtime scope"
+      ],
+      "verification": "NOT_RUN",
+      "independent_identity": "Local independent accounts/bots; no vendor commercial license gate. See 2026101215 decision."
+    },
+    {
+      "id": "ProjectController::user__projects",
+      "canonical_url": "api/project/user/projects",
+      "aliases": [
+        "api/project/user__projects"
+      ],
+      "source": "app/Http/Controllers/Api/ProjectController.php",
+      "source_sha256": "a3d03cabc38d9e2a2b414340111770c243bfa151486706681666f0e1ce451e92",
+      "start_line": 1510,
+      "end_line": 1555,
+      "source_body_sha256": "ba7c5101452d5846ad555a33b738d2f3da2ab080ad9dd7761b510f4e1229791f",
+      "source_branches": [
+        {
+          "line": 1515,
+          "source": "if (!$context['allowed']) {"
+        },
+        {
+          "line": 1529,
+          "source": "if ($readonly) {"
+        },
+        {
+          "line": 1533,
+          "source": "if ($archived == 'yes') {"
+        },
+        {
+          "line": 1535,
+          "source": "} elseif ($archived == 'no') {"
+        },
+        {
+          "line": 1538,
+          "source": "if (is_array($keys) && !empty($keys['name'])) {"
+        }
+      ],
+      "source_guard_evidence": [
+        {
+          "line": 1512,
+          "text": "$viewer = User::auth();"
+        },
+        {
+          "line": 1515,
+          "text": "if (!$context['allowed']) {"
+        }
+      ],
+      "implementation": {
+        "module": "backend.domains.project_queries",
+        "function": "user_projects",
+        "line": 153
+      },
+      "signature": "(connection, context, data, settings)",
+      "return": "raw data; integration wraps backend.errors.success",
+      "authentication": "backend.auth.authenticate or supplied authenticated RequestContext.actor",
+      "methods": [
+        "GET",
+        "HEAD",
+        "POST",
+        "PUT",
+        "PATCH",
+        "DELETE",
+        "OPTIONS"
+      ],
+      "implementation_status": "IMPLEMENTED_NOT_VERIFIED",
+      "runtime_dependencies": [
+        "MariaDB shared schema",
+        "backend.jobs durable outbox",
+        "registered project/task realtime scope"
+      ],
+      "verification": "NOT_RUN",
+      "independent_identity": "Local independent accounts/bots; no vendor commercial license gate. See 2026101215 decision."
+    },
+    {
+      "id": "ProjectController::user__tasks",
+      "canonical_url": "api/project/user/tasks",
+      "aliases": [
+        "api/project/user__tasks"
+      ],
+      "source": "app/Http/Controllers/Api/ProjectController.php",
+      "source_sha256": "a3d03cabc38d9e2a2b414340111770c243bfa151486706681666f0e1ce451e92",
+      "start_line": 1576,
+      "end_line": 1635,
+      "source_body_sha256": "54d3d708fe8e872d2e3e9648c94465fd4cf3da7fb28a99cf74426865878bd71a",
+      "source_branches": [
+        {
+          "line": 1581,
+          "source": "if (!$context['allowed']) {"
+        },
+        {
+          "line": 1598,
+          "source": "if ($owner !== null) {"
+        },
+        {
+          "line": 1602,
+          "source": "if ($readonly) {"
+        },
+        {
+          "line": 1606,
+          "source": "if ($project_id > 0) {"
+        },
+        {
+          "line": 1609,
+          "source": "if (!empty($keys['name'])) {"
+        },
+        {
+          "line": 1615,
+          "source": "if (!empty($keys['status'])) {"
+        },
+        {
+          "line": 1616,
+          "source": "if ($keys['status'] == 'completed') {"
+        },
+        {
+          "line": 1618,
+          "source": "} elseif ($keys['status'] == 'uncompleted') {"
+        }
+      ],
+      "source_guard_evidence": [
+        {
+          "line": 1578,
+          "text": "$viewer = User::auth();"
+        },
+        {
+          "line": 1581,
+          "text": "if (!$context['allowed']) {"
+        }
+      ],
+      "implementation": {
+        "module": "backend.domains.project_queries",
+        "function": "user_tasks",
+        "line": 189
+      },
+      "signature": "(connection, context, data, settings)",
+      "return": "raw data; integration wraps backend.errors.success",
+      "authentication": "backend.auth.authenticate or supplied authenticated RequestContext.actor",
+      "methods": [
+        "GET",
+        "HEAD",
+        "POST",
+        "PUT",
+        "PATCH",
+        "DELETE",
+        "OPTIONS"
+      ],
+      "implementation_status": "IMPLEMENTED_NOT_VERIFIED",
+      "runtime_dependencies": [
+        "MariaDB shared schema",
+        "backend.jobs durable outbox",
+        "registered project/task realtime scope"
+      ],
+      "verification": "NOT_RUN",
+      "independent_identity": "Local independent accounts/bots; no vendor commercial license gate. See 2026101215 decision."
+    },
+    {
+      "id": "ProjectController::user__counts",
+      "canonical_url": "api/project/user/counts",
+      "aliases": [
+        "api/project/user__counts"
+      ],
+      "source": "app/Http/Controllers/Api/ProjectController.php",
+      "source_sha256": "a3d03cabc38d9e2a2b414340111770c243bfa151486706681666f0e1ce451e92",
+      "start_line": 1653,
+      "end_line": 1698,
+      "source_body_sha256": "6b4aef00fea76ac459dce902b6c9ab3ce588da5ad86edcb4db5ecabdc7bb57a0",
+      "source_branches": [
+        {
+          "line": 1658,
+          "source": "if (!$context['allowed']) {"
+        },
+        {
+          "line": 1670,
+          "source": "if ($readonly) {"
+        },
+        {
+          "line": 1681,
+          "source": "if ($owner !== null) {"
+        },
+        {
+          "line": 1684,
+          "source": "if ($readonly) {"
+        }
+      ],
+      "source_guard_evidence": [
+        {
+          "line": 1655,
+          "text": "$viewer = User::auth();"
+        },
+        {
+          "line": 1658,
+          "text": "if (!$context['allowed']) {"
+        }
+      ],
+      "implementation": {
+        "module": "backend.domains.project_queries",
+        "function": "user_counts",
+        "line": 198
+      },
+      "signature": "(connection, context, data, settings)",
+      "return": "raw data; integration wraps backend.errors.success",
+      "authentication": "backend.auth.authenticate or supplied authenticated RequestContext.actor",
+      "methods": [
+        "GET",
+        "HEAD",
+        "POST",
+        "PUT",
+        "PATCH",
+        "DELETE",
+        "OPTIONS"
+      ],
+      "implementation_status": "IMPLEMENTED_NOT_VERIFIED",
+      "runtime_dependencies": [
+        "MariaDB shared schema",
+        "backend.jobs durable outbox",
+        "registered project/task realtime scope"
+      ],
+      "verification": "NOT_RUN",
+      "independent_identity": "Local independent accounts/bots; no vendor commercial license gate. See 2026101215 decision."
+    },
+    {
+      "id": "ProjectController::task__easylists",
+      "canonical_url": "api/project/task/easylists",
+      "aliases": [
+        "api/project/task__easylists"
+      ],
+      "source": "app/Http/Controllers/Api/ProjectController.php",
+      "source_sha256": "a3d03cabc38d9e2a2b414340111770c243bfa151486706681666f0e1ce451e92",
+      "start_line": 1716,
+      "end_line": 1756,
+      "source_body_sha256": "1549229f050642c243bd93f2d698364fa5bac8eaf88c46e15e36d3ccc64c2225",
+      "source_branches": [],
+      "source_guard_evidence": [
+        {
+          "line": 1718,
+          "text": "User::auth();"
+        }
+      ],
+      "implementation": {
+        "module": "backend.domains.project_queries",
+        "function": "task_easylists",
+        "line": 122
+      },
+      "signature": "(connection, context, data, settings)",
+      "return": "raw data; integration wraps backend.errors.success",
+      "authentication": "backend.auth.authenticate or supplied authenticated RequestContext.actor",
+      "methods": [
+        "GET",
+        "HEAD",
+        "POST",
+        "PUT",
+        "PATCH",
+        "DELETE",
+        "OPTIONS"
+      ],
+      "implementation_status": "IMPLEMENTED_NOT_VERIFIED",
+      "runtime_dependencies": [
+        "MariaDB shared schema",
+        "backend.jobs durable outbox",
+        "registered project/task realtime scope"
+      ],
+      "verification": "NOT_RUN",
+      "independent_identity": "Local independent accounts/bots; no vendor commercial license gate. See 2026101215 decision."
+    },
+    {
+      "id": "ProjectController::task__export",
+      "canonical_url": "api/project/task/export",
+      "aliases": [
+        "api/project/task__export"
+      ],
+      "source": "app/Http/Controllers/Api/ProjectController.php",
+      "source_sha256": "a3d03cabc38d9e2a2b414340111770c243bfa151486706681666f0e1ce451e92",
+      "start_line": 1776,
+      "end_line": 2040,
+      "source_body_sha256": "d66930a63ba274868c135a9210abc3b79012f0ce0c16732e09a686865d7c7166",
+      "source_branches": [
+        {
+          "line": 1783,
+          "source": "if (empty($userid) || empty($time)) {"
+        },
+        {
+          "line": 1786,
+          "source": "if (count($userid) > 100) {"
+        },
+        {
+          "line": 1789,
+          "source": "if (!(is_array($time) && Timer::isDateOrTime($time[0]) && Timer::isDateOrTime($time[1]))) {"
+        },
+        {
+          "line": 1792,
+          "source": "if (Carbon::parse($time[1])->timestamp - Carbon::parse($time[0])->timestamp > 90 * 86400) {"
+        },
+        {
+          "line": 1796,
+          "source": "if (empty($botUser)) {"
+        },
+        {
+          "line": 1840,
+          "source": "if ($type === 'createdTime') {"
+        },
+        {
+          "line": 1842,
+          "source": "} else {"
+        },
+        {
+          "line": 1863,
+          "source": "if (str_starts_with($change->before_flow_item_name, 'end')) {"
+        },
+        {
+          "line": 1867,
+          "source": "if ($upOne) {"
+        },
+        {
+          "line": 1868,
+          "source": "if (str_starts_with($change->before_flow_item_name, 'test')) {"
+        },
+        {
+          "line": 1876,
+          "source": "if (!$task->complete_at) {"
+        },
+        {
+          "line": 1880,
+          "source": "if (str_starts_with($lastChange->after_flow_item_name, 'test')) {"
+        },
+        {
+          "line": 1887,
+          "source": "if ($task->end_at) {"
+        },
+        {
+          "line": 1892,
+          "source": "if ($residueTime < 0) {"
+        },
+        {
+          "line": 1902,
+          "source": "if (str_starts_with($task->flow_item_name, 'end')) {"
+        },
+        {
+          "line": 1904,
+          "source": "if (ProjectTask::isCanceledFlowName($task->flow_item_name)) {"
+        },
+        {
+          "line": 1911,
+          "source": "} elseif ($task->complete_at) {"
+        },
+        {
+          "line": 1914,
+          "source": "if (!isset($datas[$task->ownerid])) {"
+        },
+        {
+          "line": 1923,
+          "source": "if ($statusText === '未完成') {"
+        },
+        {
+          "line": 1925,
+          "source": "} elseif ($statusText === '已完成' && $task->end_at && Carbon::parse($task->complete_at)->gt($task->end_at)) {"
+        },
+        {
+          "line": 1951,
+          "source": "if (empty($datas)) {"
+        },
+        {
+          "line": 1976,
+          "source": "if (count($userid) > 1) {"
+        },
+        {
+          "line": 1978,
+          "source": "} else {"
+        },
+        {
+          "line": 1985,
+          "source": "if ($res != 1) {"
+        },
+        {
+          "line": 2001,
+          "source": "if (file_exists($zipPath)) {"
+        },
+        {
+          "line": 2006,
+          "source": "} catch (\\Throwable) {"
+        },
+        {
+          "line": 2009,
+          "source": "if (file_exists($zipPath)) {"
+        },
+        {
+          "line": 2021,
+          "source": "} else {"
+        }
+      ],
+      "source_guard_evidence": [
+        {
+          "line": 1778,
+          "text": "$user = User::auth('admin');"
+        }
+      ],
+      "implementation": {
+        "module": "backend.domains.project_jobs",
+        "function": "task_export",
+        "line": 81
+      },
+      "signature": "(connection, context, data, settings)",
+      "return": "raw data; integration wraps backend.errors.success",
+      "authentication": "backend.auth.authenticate or supplied authenticated RequestContext.actor",
+      "methods": [
+        "GET",
+        "HEAD",
+        "POST",
+        "PUT",
+        "PATCH",
+        "DELETE",
+        "OPTIONS"
+      ],
+      "implementation_status": "IMPLEMENTED_NOT_VERIFIED",
+      "runtime_dependencies": [
+        "MariaDB shared schema",
+        "backend.jobs durable outbox",
+        "registered project/task realtime scope",
+        "xlwt==1.3.0 not installed/locked in this assignment",
+        "files domain download grants/blob storage",
+        "authorized system-msg bot"
+      ],
+      "verification": "NOT_RUN",
+      "independent_identity": "Local independent accounts/bots; no vendor commercial license gate. See 2026101215 decision."
+    },
+    {
+      "id": "ProjectController::task__exportoverdue",
+      "canonical_url": "api/project/task/exportoverdue",
+      "aliases": [
+        "api/project/task__exportoverdue"
+      ],
+      "source": "app/Http/Controllers/Api/ProjectController.php",
+      "source_sha256": "a3d03cabc38d9e2a2b414340111770c243bfa151486706681666f0e1ce451e92",
+      "start_line": 2054,
+      "end_line": 2208,
+      "source_body_sha256": "eede60b606336b185c59c86e41d1b3eb5723e5baac95775f6147743eea9d8e1a",
+      "source_branches": [
+        {
+          "line": 2059,
+          "source": "if (empty($botUser)) {"
+        },
+        {
+          "line": 2100,
+          "source": "if ($task->end_at) {"
+        },
+        {
+          "line": 2105,
+          "source": "if ($residueTime < 0) {"
+        },
+        {
+          "line": 2132,
+          "source": "if (empty($data)) {"
+        },
+        {
+          "line": 2154,
+          "source": "if ($res != 1) {"
+        },
+        {
+          "line": 2169,
+          "source": "if (file_exists($zipPath)) {"
+        },
+        {
+          "line": 2174,
+          "source": "} catch (\\Throwable) {"
+        },
+        {
+          "line": 2177,
+          "source": "if (file_exists($zipPath)) {"
+        },
+        {
+          "line": 2189,
+          "source": "} else {"
+        }
+      ],
+      "source_guard_evidence": [
+        {
+          "line": 2056,
+          "text": "$user = User::auth('admin');"
+        }
+      ],
+      "implementation": {
+        "module": "backend.domains.project_jobs",
+        "function": "task_exportoverdue",
+        "line": 85
+      },
+      "signature": "(connection, context, data, settings)",
+      "return": "raw data; integration wraps backend.errors.success",
+      "authentication": "backend.auth.authenticate or supplied authenticated RequestContext.actor",
+      "methods": [
+        "GET",
+        "HEAD",
+        "POST",
+        "PUT",
+        "PATCH",
+        "DELETE",
+        "OPTIONS"
+      ],
+      "implementation_status": "IMPLEMENTED_NOT_VERIFIED",
+      "runtime_dependencies": [
+        "MariaDB shared schema",
+        "backend.jobs durable outbox",
+        "registered project/task realtime scope",
+        "xlwt==1.3.0 not installed/locked in this assignment",
+        "files domain download grants/blob storage",
+        "authorized system-msg bot"
+      ],
+      "verification": "NOT_RUN",
+      "independent_identity": "Local independent accounts/bots; no vendor commercial license gate. See 2026101215 decision."
+    },
+    {
+      "id": "ProjectController::task__down",
+      "canonical_url": "api/project/task/down",
+      "aliases": [
+        "api/project/task__down"
+      ],
+      "source": "app/Http/Controllers/Api/ProjectController.php",
+      "source_sha256": "a3d03cabc38d9e2a2b414340111770c243bfa151486706681666f0e1ce451e92",
+      "start_line": 2221,
+      "end_line": 2229,
+      "source_body_sha256": "1d919005941ea418455cb1b77c5b34fdab73a323341d8a7660d632dc48101054",
+      "source_branches": [
+        {
+          "line": 2225,
+          "source": "if (empty($file) || !file_exists(storage_path($file))) {"
+        }
+      ],
+      "source_guard_evidence": [],
+      "implementation": {
+        "module": "backend.domains.project_jobs",
+        "function": "task_down",
+        "line": 89
+      },
+      "signature": "(connection, context, data, settings)",
+      "return": "Response unchanged",
+      "authentication": "public shared-secret/bearer/version branch",
+      "methods": [
+        "GET",
+        "HEAD",
+        "POST",
+        "PUT",
+        "PATCH",
+        "DELETE",
+        "OPTIONS"
+      ],
+      "implementation_status": "IMPLEMENTED_NOT_VERIFIED",
+      "runtime_dependencies": [
+        "MariaDB shared schema",
+        "backend.jobs durable outbox",
+        "registered project/task realtime scope",
+        "xlwt==1.3.0 not installed/locked in this assignment",
+        "files domain download grants/blob storage",
+        "authorized system-msg bot"
+      ],
+      "verification": "NOT_RUN",
+      "independent_identity": "Local independent accounts/bots; no vendor commercial license gate. See 2026101215 decision."
+    },
+    {
+      "id": "ProjectController::task__one",
+      "canonical_url": "api/project/task/one",
+      "aliases": [
+        "api/project/task__one"
+      ],
+      "source": "app/Http/Controllers/Api/ProjectController.php",
+      "source_sha256": "a3d03cabc38d9e2a2b414340111770c243bfa151486706681666f0e1ce451e92",
+      "start_line": 2249,
+      "end_line": 2282,
+      "source_body_sha256": "8c307440c7ef77145c0db31b26b137c807034d62cd12ae11f53eda69eb346226",
+      "source_branches": [
+        {
+          "line": 2263,
+          "source": "if ($task->visibility != 1 && !in_array($user->userid, $projectOwnerids)) {"
+        },
+        {
+          "line": 2268,
+          "source": "if (!in_array($user->userid, $visibleUserids)) {"
+        }
+      ],
+      "source_guard_evidence": [
+        {
+          "line": 2251,
+          "text": "$user = User::auth();"
+        }
+      ],
+      "implementation": {
+        "module": "backend.domains.project_queries",
+        "function": "task_one",
+        "line": 110
+      },
+      "signature": "(connection, context, data, settings)",
+      "return": "raw data; integration wraps backend.errors.success",
+      "authentication": "backend.auth.authenticate or supplied authenticated RequestContext.actor",
+      "methods": [
+        "GET",
+        "HEAD",
+        "POST",
+        "PUT",
+        "PATCH",
+        "DELETE",
+        "OPTIONS"
+      ],
+      "implementation_status": "IMPLEMENTED_NOT_VERIFIED",
+      "runtime_dependencies": [
+        "MariaDB shared schema",
+        "backend.jobs durable outbox",
+        "registered project/task realtime scope"
+      ],
+      "verification": "NOT_RUN",
+      "independent_identity": "Local independent accounts/bots; no vendor commercial license gate. See 2026101215 decision."
+    },
+    {
+      "id": "ProjectController::task__subdata",
+      "canonical_url": "api/project/task/subdata",
+      "aliases": [
+        "api/project/task__subdata"
+      ],
+      "source": "app/Http/Controllers/Api/ProjectController.php",
+      "source_sha256": "a3d03cabc38d9e2a2b414340111770c243bfa151486706681666f0e1ce451e92",
+      "start_line": 2298,
+      "end_line": 2314,
+      "source_body_sha256": "6faddfd4ed6056e41736f85c4535943a0be89d5e1673a0c7a830d13ea58458b8",
+      "source_branches": [
+        {
+          "line": 2302,
+          "source": "if ($task_id <= 0) {"
+        }
+      ],
+      "source_guard_evidence": [
+        {
+          "line": 2300,
+          "text": "User::auth();"
+        }
+      ],
+      "implementation": {
+        "module": "backend.domains.project_queries",
+        "function": "task_subdata",
+        "line": 116
+      },
+      "signature": "(connection, context, data, settings)",
+      "return": "raw data; integration wraps backend.errors.success",
+      "authentication": "backend.auth.authenticate or supplied authenticated RequestContext.actor",
+      "methods": [
+        "GET",
+        "HEAD",
+        "POST",
+        "PUT",
+        "PATCH",
+        "DELETE",
+        "OPTIONS"
+      ],
+      "implementation_status": "IMPLEMENTED_NOT_VERIFIED",
+      "runtime_dependencies": [
+        "MariaDB shared schema",
+        "backend.jobs durable outbox",
+        "registered project/task realtime scope"
+      ],
+      "verification": "NOT_RUN",
+      "independent_identity": "Local independent accounts/bots; no vendor commercial license gate. See 2026101215 decision."
+    },
+    {
+      "id": "ProjectController::task__related",
+      "canonical_url": "api/project/task/related",
+      "aliases": [
+        "api/project/task__related"
+      ],
+      "source": "app/Http/Controllers/Api/ProjectController.php",
+      "source_sha256": "a3d03cabc38d9e2a2b414340111770c243bfa151486706681666f0e1ce451e92",
+      "start_line": 2330,
+      "end_line": 2420,
+      "source_body_sha256": "1e79b80f9cd503faa5790257c93ce0ebf679dfe2d65fe18748b13f224c00175c",
+      "source_branches": [
+        {
+          "line": 2334,
+          "source": "if ($task_id <= 0) {"
+        },
+        {
+          "line": 2345,
+          "source": "if ($relations->isEmpty()) {"
+        },
+        {
+          "line": 2368,
+          "source": "} catch (\\Throwable $e) {"
+        },
+        {
+          "line": 2376,
+          "source": "if (!$relatedTask) {"
+        },
+        {
+          "line": 2380,
+          "source": "if (!isset($list[$relation->related_task_id])) {"
+        },
+        {
+          "line": 2404,
+          "source": "if ($relation->direction === ProjectTaskRelation::DIRECTION_MENTION) {"
+        },
+        {
+          "line": 2406,
+          "source": "} elseif ($relation->direction === ProjectTaskRelation::DIRECTION_MENTIONED_BY) {"
+        },
+        {
+          "line": 2410,
+          "source": "if ($relation->updated_at && ($list[$relation->related_task_id]['latest_at'] === null || Carbon::parse($list[$relation->related_task_id]['latest_at'])->lt($relation->updated_at))) {"
+        }
+      ],
+      "source_guard_evidence": [
+        {
+          "line": 2332,
+          "text": "User::auth();"
+        }
+      ],
+      "implementation": {
+        "module": "backend.domains.project_queries",
+        "function": "task_related",
+        "line": 209
+      },
+      "signature": "(connection, context, data, settings)",
+      "return": "raw data; integration wraps backend.errors.success",
+      "authentication": "backend.auth.authenticate or supplied authenticated RequestContext.actor",
+      "methods": [
+        "GET",
+        "HEAD",
+        "POST",
+        "PUT",
+        "PATCH",
+        "DELETE",
+        "OPTIONS"
+      ],
+      "implementation_status": "IMPLEMENTED_NOT_VERIFIED",
+      "runtime_dependencies": [
+        "MariaDB shared schema",
+        "backend.jobs durable outbox",
+        "registered project/task realtime scope"
+      ],
+      "verification": "NOT_RUN",
+      "independent_identity": "Local independent accounts/bots; no vendor commercial license gate. See 2026101215 decision."
+    },
+    {
+      "id": "ProjectController::task__related_delete",
+      "canonical_url": "api/project/task/related_delete",
+      "aliases": [
+        "api/project/task__related_delete"
+      ],
+      "source": "app/Http/Controllers/Api/ProjectController.php",
+      "source_sha256": "a3d03cabc38d9e2a2b414340111770c243bfa151486706681666f0e1ce451e92",
+      "start_line": 2437,
+      "end_line": 2458,
+      "source_body_sha256": "b5d0d0249271542b2d34447fcd161726fe6f91950703c2d0aec210003c4e8c9b",
+      "source_branches": [
+        {
+          "line": 2443,
+          "source": "if ($task_id <= 0 || $related_task_id <= 0) {"
+        },
+        {
+          "line": 2453,
+          "source": "if (!$success) {"
+        }
+      ],
+      "source_guard_evidence": [
+        {
+          "line": 2439,
+          "text": "User::auth();"
+        },
+        {
+          "line": 2450,
+          "text": "ProjectPermission::userTaskPermission($project, ProjectPermission::TASK_UPDATE, $task);"
+        }
+      ],
+      "implementation": {
+        "module": "backend.domains.project_tasks",
+        "function": "task_related_delete",
+        "line": 706
+      },
+      "signature": "(connection, context, data, settings)",
+      "return": "raw data; integration wraps backend.errors.success",
+      "authentication": "backend.auth.authenticate or supplied authenticated RequestContext.actor",
+      "methods": [
+        "GET",
+        "HEAD",
+        "POST",
+        "PUT",
+        "PATCH",
+        "DELETE",
+        "OPTIONS"
+      ],
+      "implementation_status": "IMPLEMENTED_NOT_VERIFIED",
+      "runtime_dependencies": [
+        "MariaDB shared schema",
+        "backend.jobs durable outbox",
+        "registered project/task realtime scope"
+      ],
+      "verification": "NOT_RUN",
+      "independent_identity": "Local independent accounts/bots; no vendor commercial license gate. See 2026101215 decision."
+    },
+    {
+      "id": "ProjectController::task__content",
+      "canonical_url": "api/project/task/content",
+      "aliases": [
+        "api/project/task__content"
+      ],
+      "source": "app/Http/Controllers/Api/ProjectController.php",
+      "source_sha256": "a3d03cabc38d9e2a2b414340111770c243bfa151486706681666f0e1ce451e92",
+      "start_line": 2475,
+      "end_line": 2497,
+      "source_body_sha256": "274da4670e5b2734c6c1be6651b069679f7f0702c48430172cccef15dd0d656a",
+      "source_branches": [
+        {
+          "line": 2484,
+          "source": "if ($history_id > 0) {"
+        },
+        {
+          "line": 2486,
+          "source": "if (empty($taskContent)) {"
+        },
+        {
+          "line": 2493,
+          "source": "if (empty($task->content)) {"
+        }
+      ],
+      "source_guard_evidence": [
+        {
+          "line": 2477,
+          "text": "User::auth();"
+        }
+      ],
+      "implementation": {
+        "module": "backend.domains.project_queries",
+        "function": "task_content",
+        "line": 231
+      },
+      "signature": "(connection, context, data, settings)",
+      "return": "raw data; integration wraps backend.errors.success",
+      "authentication": "backend.auth.authenticate or supplied authenticated RequestContext.actor",
+      "methods": [
+        "GET",
+        "HEAD",
+        "POST",
+        "PUT",
+        "PATCH",
+        "DELETE",
+        "OPTIONS"
+      ],
+      "implementation_status": "IMPLEMENTED_NOT_VERIFIED",
+      "runtime_dependencies": [
+        "MariaDB shared schema",
+        "backend.jobs durable outbox",
+        "registered project/task realtime scope"
+      ],
+      "verification": "NOT_RUN",
+      "independent_identity": "Local independent accounts/bots; no vendor commercial license gate. See 2026101215 decision."
+    },
+    {
+      "id": "ProjectController::task__content_history",
+      "canonical_url": "api/project/task/content_history",
+      "aliases": [
+        "api/project/task__content_history"
+      ],
+      "source": "app/Http/Controllers/Api/ProjectController.php",
+      "source_sha256": "a3d03cabc38d9e2a2b414340111770c243bfa151486706681666f0e1ce451e92",
+      "start_line": 2516,
+      "end_line": 2529,
+      "source_body_sha256": "546ac63d74df199250ed74bf3b23f4bc5d9550f28c39adc8b8c1cf06dc6ad08d",
+      "source_branches": [],
+      "source_guard_evidence": [
+        {
+          "line": 2518,
+          "text": "User::auth();"
+        }
+      ],
+      "implementation": {
+        "module": "backend.domains.project_queries",
+        "function": "task_content_history",
+        "line": 249
+      },
+      "signature": "(connection, context, data, settings)",
+      "return": "raw data; integration wraps backend.errors.success",
+      "authentication": "backend.auth.authenticate or supplied authenticated RequestContext.actor",
+      "methods": [
+        "GET",
+        "HEAD",
+        "POST",
+        "PUT",
+        "PATCH",
+        "DELETE",
+        "OPTIONS"
+      ],
+      "implementation_status": "IMPLEMENTED_NOT_VERIFIED",
+      "runtime_dependencies": [
+        "MariaDB shared schema",
+        "backend.jobs durable outbox",
+        "registered project/task realtime scope"
+      ],
+      "verification": "NOT_RUN",
+      "independent_identity": "Local independent accounts/bots; no vendor commercial license gate. See 2026101215 decision."
+    },
+    {
+      "id": "ProjectController::task__files",
+      "canonical_url": "api/project/task/files",
+      "aliases": [
+        "api/project/task__files"
+      ],
+      "source": "app/Http/Controllers/Api/ProjectController.php",
+      "source_sha256": "a3d03cabc38d9e2a2b414340111770c243bfa151486706681666f0e1ce451e92",
+      "start_line": 2545,
+      "end_line": 2554,
+      "source_body_sha256": "51a59bc9fc758ecaf1782b1b1de7e16a5dc9443a32cc850a4232ba12cb754272",
+      "source_branches": [],
+      "source_guard_evidence": [
+        {
+          "line": 2547,
+          "text": "User::auth();"
+        }
+      ],
+      "implementation": {
+        "module": "backend.domains.project_queries",
+        "function": "task_files",
+        "line": 255
+      },
+      "signature": "(connection, context, data, settings)",
+      "return": "raw data; integration wraps backend.errors.success",
+      "authentication": "backend.auth.authenticate or supplied authenticated RequestContext.actor",
+      "methods": [
+        "GET",
+        "HEAD",
+        "POST",
+        "PUT",
+        "PATCH",
+        "DELETE",
+        "OPTIONS"
+      ],
+      "implementation_status": "IMPLEMENTED_NOT_VERIFIED",
+      "runtime_dependencies": [
+        "MariaDB shared schema",
+        "backend.jobs durable outbox",
+        "registered project/task realtime scope",
+        "DomainFiles attachment storage/preview integration"
+      ],
+      "verification": "NOT_RUN",
+      "independent_identity": "Local independent accounts/bots; no vendor commercial license gate. See 2026101215 decision."
+    },
+    {
+      "id": "ProjectController::task__filedelete",
+      "canonical_url": "api/project/task/filedelete",
+      "aliases": [
+        "api/project/task__filedelete"
+      ],
+      "source": "app/Http/Controllers/Api/ProjectController.php",
+      "source_sha256": "a3d03cabc38d9e2a2b414340111770c243bfa151486706681666f0e1ce451e92",
+      "start_line": 2570,
+      "end_line": 2598,
+      "source_body_sha256": "4edcd3f1a83e708388a82c7ca086fae124be6e2c8bf6f6679d73068d114eab76",
+      "source_branches": [
+        {
+          "line": 2577,
+          "source": "if (empty($file)) {"
+        }
+      ],
+      "source_guard_evidence": [
+        {
+          "line": 2572,
+          "text": "User::auth();"
+        },
+        {
+          "line": 2583,
+          "text": "ProjectPermission::userTaskPermission(Project::userProject($task->project_id), ProjectPermission::TASK_REMOVE, $task);"
+        }
+      ],
+      "implementation": {
+        "module": "backend.domains.project_queries",
+        "function": "task_filedelete",
+        "line": 269
+      },
+      "signature": "(connection, context, data, settings)",
+      "return": "raw data; integration wraps backend.errors.success",
+      "authentication": "backend.auth.authenticate or supplied authenticated RequestContext.actor",
+      "methods": [
+        "GET",
+        "HEAD",
+        "POST",
+        "PUT",
+        "PATCH",
+        "DELETE",
+        "OPTIONS"
+      ],
+      "implementation_status": "IMPLEMENTED_NOT_VERIFIED",
+      "runtime_dependencies": [
+        "MariaDB shared schema",
+        "backend.jobs durable outbox",
+        "registered project/task realtime scope",
+        "DomainFiles attachment storage/preview integration"
+      ],
+      "verification": "NOT_RUN",
+      "independent_identity": "Local independent accounts/bots; no vendor commercial license gate. See 2026101215 decision."
+    },
+    {
+      "id": "ProjectController::task__filedetail",
+      "canonical_url": "api/project/task/filedetail",
+      "aliases": [
+        "api/project/task__filedetail"
+      ],
+      "source": "app/Http/Controllers/Api/ProjectController.php",
+      "source_sha256": "a3d03cabc38d9e2a2b414340111770c243bfa151486706681666f0e1ce451e92",
+      "start_line": 2617,
+      "end_line": 2651,
+      "source_body_sha256": "79be7280e5d60625171498a9ab8d4f007705f6a4a83bd7aab12c4ddc2b325ff2",
+      "source_branches": [
+        {
+          "line": 2625,
+          "source": "if (empty($file)) {"
+        },
+        {
+          "line": 2629,
+          "source": "if ($only_update_at == 'yes') {"
+        }
+      ],
+      "source_guard_evidence": [
+        {
+          "line": 2619,
+          "text": "$user = User::auth();"
+        }
+      ],
+      "implementation": {
+        "module": "backend.domains.project_queries",
+        "function": "task_filedetail",
+        "line": 285
+      },
+      "signature": "(connection, context, data, settings)",
+      "return": "raw data; integration wraps backend.errors.success",
+      "authentication": "backend.auth.authenticate or supplied authenticated RequestContext.actor",
+      "methods": [
+        "GET",
+        "HEAD",
+        "POST",
+        "PUT",
+        "PATCH",
+        "DELETE",
+        "OPTIONS"
+      ],
+      "implementation_status": "IMPLEMENTED_NOT_VERIFIED",
+      "runtime_dependencies": [
+        "MariaDB shared schema",
+        "backend.jobs durable outbox",
+        "registered project/task realtime scope",
+        "DomainFiles attachment storage/preview integration"
+      ],
+      "verification": "NOT_RUN",
+      "independent_identity": "Local independent accounts/bots; no vendor commercial license gate. See 2026101215 decision."
+    },
+    {
+      "id": "ProjectController::task__filedown",
+      "canonical_url": "api/project/task/filedown",
+      "aliases": [
+        "api/project/task__filedown"
+      ],
+      "source": "app/Http/Controllers/Api/ProjectController.php",
+      "source_sha256": "a3d03cabc38d9e2a2b414340111770c243bfa151486706681666f0e1ce451e92",
+      "start_line": 2670,
+      "end_line": 2696,
+      "source_body_sha256": "2851d6df20033cad562f4ad2a3b6850cf20be5cb7ad492a51c1be5b936d49801",
+      "source_branches": [
+        {
+          "line": 2682,
+          "source": "} catch (\\Throwable $e) {"
+        },
+        {
+          "line": 2686,
+          "source": "if ($down === 'preview') {"
+        }
+      ],
+      "source_guard_evidence": [
+        {
+          "line": 2672,
+          "text": "User::auth();"
+        }
+      ],
+      "implementation": {
+        "module": "backend.domains.project_queries",
+        "function": "task_filedown",
+        "line": 296
+      },
+      "signature": "(connection, context, data, settings)",
+      "return": "Response unchanged",
+      "authentication": "backend.auth.authenticate or supplied authenticated RequestContext.actor",
+      "methods": [
+        "GET",
+        "HEAD",
+        "POST",
+        "PUT",
+        "PATCH",
+        "DELETE",
+        "OPTIONS"
+      ],
+      "implementation_status": "IMPLEMENTED_NOT_VERIFIED",
+      "runtime_dependencies": [
+        "MariaDB shared schema",
+        "backend.jobs durable outbox",
+        "registered project/task realtime scope",
+        "DomainFiles attachment storage/preview integration"
+      ],
+      "verification": "NOT_RUN",
+      "independent_identity": "Local independent accounts/bots; no vendor commercial license gate. See 2026101215 decision."
+    },
+    {
+      "id": "ProjectController::task__add",
+      "canonical_url": "api/project/task/add",
+      "aliases": [
+        "api/project/task__add"
+      ],
+      "source": "app/Http/Controllers/Api/ProjectController.php",
+      "source_sha256": "a3d03cabc38d9e2a2b414340111770c243bfa151486706681666f0e1ce451e92",
+      "start_line": 2719,
+      "end_line": 2800,
+      "source_body_sha256": "64348f69aebe36d0121895dfcc8497554f476a1c55379b7c73561ae13916c4ea",
+      "source_branches": [
+        {
+          "line": 2733,
+          "source": "if ($column_id) {"
+        },
+        {
+          "line": 2734,
+          "source": "if (intval($column_id) > 0) {"
+        },
+        {
+          "line": 2737,
+          "source": "if (empty($column)) {"
+        },
+        {
+          "line": 2740,
+          "source": "} else {"
+        },
+        {
+          "line": 2743,
+          "source": "if (empty($column)) {"
+        },
+        {
+          "line": 2754,
+          "source": "if (empty($column)) {"
+        },
+        {
+          "line": 2765,
+          "source": "if ($newColumn) {"
+        },
+        {
+          "line": 2771,
+          "source": "if ($data['visibility'] == 1) {"
+        },
+        {
+          "line": 2773,
+          "source": "} else {"
+        },
+        {
+          "line": 2787,
+          "source": "if ($templateId > 0) {"
+        },
+        {
+          "line": 2789,
+          "source": "if ($tpl) {"
+        },
+        {
+          "line": 2793,
+          "source": "if ($isMember && ($tpl->project_id == $project->id || $shareEnabled)) {"
+        }
+      ],
+      "source_guard_evidence": [
+        {
+          "line": 2721,
+          "text": "$user = User::auth();"
+        },
+        {
+          "line": 2729,
+          "text": "ProjectPermission::userTaskPermission($project, ProjectPermission::TASK_ADD);"
+        },
+        {
+          "line": 2790,
+          "text": "$isMember = ProjectUser::where('project_id', $tpl->project_id)"
+        },
+        {
+          "line": 2793,
+          "text": "if ($isMember && ($tpl->project_id == $project->id || $shareEnabled)) {"
+        }
+      ],
+      "implementation": {
+        "module": "backend.domains.project_tasks",
+        "function": "task_add",
+        "line": 226
+      },
+      "signature": "(connection, context, data, settings)",
+      "return": "raw data; integration wraps backend.errors.success",
+      "authentication": "backend.auth.authenticate or supplied authenticated RequestContext.actor",
+      "methods": [
+        "GET",
+        "HEAD",
+        "POST",
+        "PUT",
+        "PATCH",
+        "DELETE",
+        "OPTIONS"
+      ],
+      "implementation_status": "IMPLEMENTED_NOT_VERIFIED",
+      "runtime_dependencies": [
+        "MariaDB shared schema",
+        "backend.jobs durable outbox",
+        "registered project/task realtime scope"
+      ],
+      "verification": "NOT_RUN",
+      "independent_identity": "Local independent accounts/bots; no vendor commercial license gate. See 2026101215 decision."
+    },
+    {
+      "id": "ProjectController::task__addsub",
+      "canonical_url": "api/project/task/addsub",
+      "aliases": [
+        "api/project/task__addsub"
+      ],
+      "source": "app/Http/Controllers/Api/ProjectController.php",
+      "source_sha256": "a3d03cabc38d9e2a2b414340111770c243bfa151486706681666f0e1ce451e92",
+      "start_line": 2817,
+      "end_line": 2850,
+      "source_body_sha256": "8b9a9d880b7858f5d84ed0bd191456c04f843559a8562ce00a1a842a82f6c7de",
+      "source_branches": [
+        {
+          "line": 2825,
+          "source": "if ($task->complete_at) {"
+        }
+      ],
+      "source_guard_evidence": [
+        {
+          "line": 2819,
+          "text": "User::auth();"
+        },
+        {
+          "line": 2829,
+          "text": "ProjectPermission::userTaskPermission(Project::userProject($task->project_id), ProjectPermission::TASK_ADD);"
+        }
+      ],
+      "implementation": {
+        "module": "backend.domains.project_tasks",
+        "function": "task_addsub",
+        "line": 249
+      },
+      "signature": "(connection, context, data, settings)",
+      "return": "raw data; integration wraps backend.errors.success",
+      "authentication": "backend.auth.authenticate or supplied authenticated RequestContext.actor",
+      "methods": [
+        "GET",
+        "HEAD",
+        "POST",
+        "PUT",
+        "PATCH",
+        "DELETE",
+        "OPTIONS"
+      ],
+      "implementation_status": "IMPLEMENTED_NOT_VERIFIED",
+      "runtime_dependencies": [
+        "MariaDB shared schema",
+        "backend.jobs durable outbox",
+        "registered project/task realtime scope"
+      ],
+      "verification": "NOT_RUN",
+      "independent_identity": "Local independent accounts/bots; no vendor commercial license gate. See 2026101215 decision."
+    },
+    {
+      "id": "ProjectController::task__upgrade",
+      "canonical_url": "api/project/task/upgrade",
+      "aliases": [
+        "api/project/task__upgrade"
+      ],
+      "source": "app/Http/Controllers/Api/ProjectController.php",
+      "source_sha256": "a3d03cabc38d9e2a2b414340111770c243bfa151486706681666f0e1ce451e92",
+      "start_line": 2866,
+      "end_line": 2975,
+      "source_body_sha256": "eda4757b638e6eacf8ed19723c3f467d8023f359bbea8f4ec1ab7f704423f97b",
+      "source_branches": [
+        {
+          "line": 2873,
+          "source": "if ($task->parent_id == 0) {"
+        },
+        {
+          "line": 2882,
+          "source": "if ($task->visibility == 3) {"
+        },
+        {
+          "line": 2884,
+          "source": "if (empty($visibilityUserids) && $parentTask) {"
+        },
+        {
+          "line": 2892,
+          "source": "if ($parentTask) {"
+        },
+        {
+          "line": 2899,
+          "source": "if ($task->visibility == 3 && !empty($visibilityUserids)) {"
+        },
+        {
+          "line": 2902,
+          "source": "if (!$userid) {"
+        },
+        {
+          "line": 2912,
+          "source": "if ($parentTask) {"
+        },
+        {
+          "line": 2924,
+          "source": "if ($task->visibility != 1) {"
+        },
+        {
+          "line": 2929,
+          "source": "if ($parentTask && !$parentTask->trashed()) {"
+        },
+        {
+          "line": 2936,
+          "source": "if ($taskArray) {"
+        },
+        {
+          "line": 2939,
+          "source": "if ($parentArray && $parentTask) {"
+        },
+        {
+          "line": 2942,
+          "source": "if ($parentTask && !$parentTask->trashed()) {"
+        },
+        {
+          "line": 2963,
+          "source": "if ($mentionRelation->wasRecentlyCreated || $mentionRelation->wasChanged()) {"
+        },
+        {
+          "line": 2966,
+          "source": "if ($mentionedByRelation->wasRecentlyCreated || $mentionedByRelation->wasChanged()) {"
+        }
+      ],
+      "source_guard_evidence": [
+        {
+          "line": 2868,
+          "text": "$user = User::auth();"
+        },
+        {
+          "line": 2878,
+          "text": "ProjectPermission::userTaskPermission($project, ProjectPermission::TASK_MOVE, $task);"
+        }
+      ],
+      "implementation": {
+        "module": "backend.domains.project_tasks",
+        "function": "task_upgrade",
+        "line": 514
+      },
+      "signature": "(connection, context, data, settings)",
+      "return": "raw data; integration wraps backend.errors.success",
+      "authentication": "backend.auth.authenticate or supplied authenticated RequestContext.actor",
+      "methods": [
+        "GET",
+        "HEAD",
+        "POST",
+        "PUT",
+        "PATCH",
+        "DELETE",
+        "OPTIONS"
+      ],
+      "implementation_status": "IMPLEMENTED_NOT_VERIFIED",
+      "runtime_dependencies": [
+        "MariaDB shared schema",
+        "backend.jobs durable outbox",
+        "registered project/task realtime scope"
+      ],
+      "verification": "NOT_RUN",
+      "independent_identity": "Local independent accounts/bots; no vendor commercial license gate. See 2026101215 decision."
+    },
+    {
+      "id": "ProjectController::task__update",
+      "canonical_url": "api/project/task/update",
+      "aliases": [
+        "api/project/task__update"
+      ],
+      "source": "app/Http/Controllers/Api/ProjectController.php",
+      "source_sha256": "a3d03cabc38d9e2a2b414340111770c243bfa151486706681666f0e1ce451e92",
+      "start_line": 3008,
+      "end_line": 3089,
+      "source_body_sha256": "8cd52fc25a7d843ef839f924517b2161db6ff4b99c13ae4106e54a33abb617b2",
+      "source_branches": [
+        {
+          "line": 3018,
+          "source": "if ($task->hasOwner()) {"
+        },
+        {
+          "line": 3022,
+          "source": "if (Arr::exists($param, 'times')) {"
+        },
+        {
+          "line": 3024,
+          "source": "} else if (Arr::exists($param, 'flow_item_id')) {"
+        },
+        {
+          "line": 3043,
+          "source": "if ($task->parent_id == 0) {"
+        },
+        {
+          "line": 3045,
+          "source": "if (Arr::exists($param, 'visibility') || Arr::exists($param, 'visibility_appointor')) {"
+        },
+        {
+          "line": 3046,
+          "source": "if ($data['visibility'] == 1) {"
+        },
+        {
+          "line": 3049,
+          "source": "if ($param['visibility_appointor']) {"
+        },
+        {
+          "line": 3055,
+          "source": "if ($data['visibility'] != 1 && empty($param['visibility_appointor'])) {"
+        },
+        {
+          "line": 3059,
+          "source": "if (Arr::exists($param, 'owner') && $data['visibility'] != 1) {"
+        },
+        {
+          "line": 3061,
+          "source": "if ($diff) {"
+        },
+        {
+          "line": 3065,
+          "source": "if (Arr::exists($param, 'assist') && $data['visibility'] != 1) {"
+        },
+        {
+          "line": 3067,
+          "source": "if ($diff) {"
+        },
+        {
+          "line": 3071,
+          "source": "} else {"
+        },
+        {
+          "line": 3072,
+          "source": "if (Arr::exists($param, 'owner')) {"
+        },
+        {
+          "line": 3074,
+          "source": "if ($diff) {"
+        },
+        {
+          "line": 3079,
+          "source": "if ($parentTask && $parentTask->visibility != 1 && empty($subUserids)) {"
+        },
+        {
+          "line": 3081,
+          "source": "if ($diff) {"
+        }
+      ],
+      "source_guard_evidence": [
+        {
+          "line": 3010,
+          "text": "User::auth();"
+        },
+        {
+          "line": 3021,
+          "text": "$permissionKey = ProjectPermission::TASK_UPDATE;"
+        },
+        {
+          "line": 3023,
+          "text": "$permissionKey = ProjectPermission::TASK_TIME;"
+        },
+        {
+          "line": 3025,
+          "text": "$permissionKey = ProjectPermission::TASK_STATUS;"
+        },
+        {
+          "line": 3027,
+          "text": "ProjectPermission::userTaskPermission($project, $permissionKey, $task);"
+        }
+      ],
+      "implementation": {
+        "module": "backend.domains.project_tasks",
+        "function": "task_update",
+        "line": 442
+      },
+      "signature": "(connection, context, data, settings)",
+      "return": "raw data; integration wraps backend.errors.success",
+      "authentication": "backend.auth.authenticate or supplied authenticated RequestContext.actor",
+      "methods": [
+        "GET",
+        "HEAD",
+        "POST",
+        "PUT",
+        "PATCH",
+        "DELETE",
+        "OPTIONS"
+      ],
+      "implementation_status": "IMPLEMENTED_NOT_VERIFIED",
+      "runtime_dependencies": [
+        "MariaDB shared schema",
+        "backend.jobs durable outbox",
+        "registered project/task realtime scope"
+      ],
+      "verification": "NOT_RUN",
+      "independent_identity": "Local independent accounts/bots; no vendor commercial license gate. See 2026101215 decision."
+    },
+    {
+      "id": "ProjectController::task__dialog",
+      "canonical_url": "api/project/task/dialog",
+      "aliases": [
+        "api/project/task__dialog"
+      ],
+      "source": "app/Http/Controllers/Api/ProjectController.php",
+      "source_sha256": "a3d03cabc38d9e2a2b414340111770c243bfa151486706681666f0e1ce451e92",
+      "start_line": 3105,
+      "end_line": 3138,
+      "source_body_sha256": "d3d2addad9d8cbb056df2ab7a1937fa496b73df8d8b26dbe64f7990249ec48fa",
+      "source_branches": [
+        {
+          "line": 3113,
+          "source": "if ($task->parent_id > 0) {"
+        },
+        {
+          "line": 3118,
+          "source": "if (empty($task->dialog_id)) {"
+        },
+        {
+          "line": 3121,
+          "source": "if ($dialog) {"
+        },
+        {
+          "line": 3126,
+          "source": "if (empty($task->dialog_id)) {"
+        }
+      ],
+      "source_guard_evidence": [
+        {
+          "line": 3107,
+          "text": "$user = User::auth();"
+        }
+      ],
+      "implementation": {
+        "module": "backend.domains.project_tasks",
+        "function": "task_dialog",
+        "line": 545
+      },
+      "signature": "(connection, context, data, settings)",
+      "return": "raw data; integration wraps backend.errors.success",
+      "authentication": "backend.auth.authenticate or supplied authenticated RequestContext.actor",
+      "methods": [
+        "GET",
+        "HEAD",
+        "POST",
+        "PUT",
+        "PATCH",
+        "DELETE",
+        "OPTIONS"
+      ],
+      "implementation_status": "IMPLEMENTED_NOT_VERIFIED",
+      "runtime_dependencies": [
+        "MariaDB shared schema",
+        "backend.jobs durable outbox",
+        "registered project/task realtime scope"
+      ],
+      "verification": "NOT_RUN",
+      "independent_identity": "Local independent accounts/bots; no vendor commercial license gate. See 2026101215 decision."
+    },
+    {
+      "id": "ProjectController::task__archived",
+      "canonical_url": "api/project/task/archived",
+      "aliases": [
+        "api/project/task__archived"
+      ],
+      "source": "app/Http/Controllers/Api/ProjectController.php",
+      "source_sha256": "a3d03cabc38d9e2a2b414340111770c243bfa151486706681666f0e1ce451e92",
+      "start_line": 3157,
+      "end_line": 3183,
+      "source_body_sha256": "ba7f6b0dbc502666c4961c6fae261ed73712f609e99156165a7598c38ad3e661",
+      "source_branches": [
+        {
+          "line": 3166,
+          "source": "if ($task->parent_id > 0) {"
+        },
+        {
+          "line": 3173,
+          "source": "if ($type == 'recovery') {"
+        },
+        {
+          "line": 3175,
+          "source": "} elseif ($type == 'add') {"
+        }
+      ],
+      "source_guard_evidence": [
+        {
+          "line": 3159,
+          "text": "User::auth();"
+        },
+        {
+          "line": 3171,
+          "text": "ProjectPermission::userTaskPermission($project, ProjectPermission::TASK_ARCHIVED, $task);"
+        }
+      ],
+      "implementation": {
+        "module": "backend.domains.project_tasks",
+        "function": "task_archived",
+        "line": 502
+      },
+      "signature": "(connection, context, data, settings)",
+      "return": "raw data; integration wraps backend.errors.success",
+      "authentication": "backend.auth.authenticate or supplied authenticated RequestContext.actor",
+      "methods": [
+        "GET",
+        "HEAD",
+        "POST",
+        "PUT",
+        "PATCH",
+        "DELETE",
+        "OPTIONS"
+      ],
+      "implementation_status": "IMPLEMENTED_NOT_VERIFIED",
+      "runtime_dependencies": [
+        "MariaDB shared schema",
+        "backend.jobs durable outbox",
+        "registered project/task realtime scope"
+      ],
+      "verification": "NOT_RUN",
+      "independent_identity": "Local independent accounts/bots; no vendor commercial license gate. See 2026101215 decision."
+    },
+    {
+      "id": "ProjectController::task__remove",
+      "canonical_url": "api/project/task/remove",
+      "aliases": [
+        "api/project/task__remove"
+      ],
+      "source": "app/Http/Controllers/Api/ProjectController.php",
+      "source_sha256": "a3d03cabc38d9e2a2b414340111770c243bfa151486706681666f0e1ce451e92",
+      "start_line": 3202,
+      "end_line": 3240,
+      "source_body_sha256": "48886da27d588fc377b0e42f7418fd77c7e861a4831ed336315e5760c650c8e0",
+      "source_branches": [
+        {
+          "line": 3214,
+          "source": "} catch (\\Throwable $e) {"
+        },
+        {
+          "line": 3215,
+          "source": "if ($type == 'recovery') {"
+        },
+        {
+          "line": 3221,
+          "source": "if (!$projectInvalid) {"
+        },
+        {
+          "line": 3228,
+          "source": "if (!$isProjectOwner && !$task->permission(3)) {"
+        },
+        {
+          "line": 3233,
+          "source": "if ($type == 'recovery') {"
+        },
+        {
+          "line": 3236,
+          "source": "} else {"
+        }
+      ],
+      "source_guard_evidence": [
+        {
+          "line": 3204,
+          "text": "User::auth();"
+        },
+        {
+          "line": 3213,
+          "text": "ProjectPermission::userTaskPermission($project, ProjectPermission::TASK_REMOVE, $task);"
+        },
+        {
+          "line": 3225,
+          "text": "->whereUserid(Doo::userId())"
+        },
+        {
+          "line": 3228,
+          "text": "if (!$isProjectOwner && !$task->permission(3)) {"
+        }
+      ],
+      "implementation": {
+        "module": "backend.domains.project_tasks",
+        "function": "task_remove",
+        "line": 464
+      },
+      "signature": "(connection, context, data, settings)",
+      "return": "raw data; integration wraps backend.errors.success",
+      "authentication": "backend.auth.authenticate or supplied authenticated RequestContext.actor",
+      "methods": [
+        "GET",
+        "HEAD",
+        "POST",
+        "PUT",
+        "PATCH",
+        "DELETE",
+        "OPTIONS"
+      ],
+      "implementation_status": "IMPLEMENTED_NOT_VERIFIED",
+      "runtime_dependencies": [
+        "MariaDB shared schema",
+        "backend.jobs durable outbox",
+        "registered project/task realtime scope"
+      ],
+      "verification": "NOT_RUN",
+      "independent_identity": "Local independent accounts/bots; no vendor commercial license gate. See 2026101215 decision."
+    },
+    {
+      "id": "ProjectController::task__resetfromlog",
+      "canonical_url": "api/project/task/resetfromlog",
+      "aliases": [
+        "api/project/task__resetfromlog"
+      ],
+      "source": "app/Http/Controllers/Api/ProjectController.php",
+      "source_sha256": "a3d03cabc38d9e2a2b414340111770c243bfa151486706681666f0e1ce451e92",
+      "start_line": 3256,
+      "end_line": 3299,
+      "source_body_sha256": "ed38c5bd513e6444366826816e6c8ea32c031b4fbd7b87da962c0bdda8a30648",
+      "source_branches": [
+        {
+          "line": 3263,
+          "source": "if (empty($projectLog) || empty($projectLog->task_id)) {"
+        },
+        {
+          "line": 3270,
+          "source": "if ($record['flow'] && is_array($record['flow'])) {"
+        },
+        {
+          "line": 3273,
+          "source": "if (empty($newFlowItem)) {"
+        },
+        {
+          "line": 3296,
+          "source": "} else {"
+        }
+      ],
+      "source_guard_evidence": [
+        {
+          "line": 3258,
+          "text": "User::auth();"
+        }
+      ],
+      "implementation": {
+        "module": "backend.domains.project_tasks",
+        "function": "task_resetfromlog",
+        "line": 673
+      },
+      "signature": "(connection, context, data, settings)",
+      "return": "raw data; integration wraps backend.errors.success",
+      "authentication": "backend.auth.authenticate or supplied authenticated RequestContext.actor",
+      "methods": [
+        "GET",
+        "HEAD",
+        "POST",
+        "PUT",
+        "PATCH",
+        "DELETE",
+        "OPTIONS"
+      ],
+      "implementation_status": "IMPLEMENTED_NOT_VERIFIED",
+      "runtime_dependencies": [
+        "MariaDB shared schema",
+        "backend.jobs durable outbox",
+        "registered project/task realtime scope"
+      ],
+      "verification": "NOT_RUN",
+      "independent_identity": "Local independent accounts/bots; no vendor commercial license gate. See 2026101215 decision."
+    },
+    {
+      "id": "ProjectController::task__flow",
+      "canonical_url": "api/project/task/flow",
+      "aliases": [
+        "api/project/task__flow"
+      ],
+      "source": "app/Http/Controllers/Api/ProjectController.php",
+      "source_sha256": "a3d03cabc38d9e2a2b414340111770c243bfa151486706681666f0e1ce451e92",
+      "start_line": 3316,
+      "end_line": 3388,
+      "source_body_sha256": "3cec93e21796d9c5cafb6ce765ab12fd2f1e43f03e7889e74bb7fcc104553859",
+      "source_branches": [
+        {
+          "line": 3324,
+          "source": "if (empty($projectTask)) {"
+        },
+        {
+          "line": 3329,
+          "source": "if ($project_id) {"
+        },
+        {
+          "line": 3331,
+          "source": "} else {"
+        },
+        {
+          "line": 3333,
+          "source": "if ($projectFlowItem?->projectFlow) {"
+        },
+        {
+          "line": 3335,
+          "source": "} else {"
+        },
+        {
+          "line": 3339,
+          "source": "if (empty($projectFlow)) {"
+        },
+        {
+          "line": 3348,
+          "source": "if (empty($projectFlowItem)) {"
+        },
+        {
+          "line": 3354,
+          "source": "if ($projectTask->complete_at) {"
+        },
+        {
+          "line": 3357,
+          "source": "if ($turn->status == 'end' || preg_match(\"/complete|done|完成/i\", $turn->name)) {"
+        },
+        {
+          "line": 3362,
+          "source": "if (empty($data['flow_item_id'])) {"
+        },
+        {
+          "line": 3364,
+          "source": "if ($turn->status == 'end') {"
+        },
+        {
+          "line": 3370,
+          "source": "} else {"
+        },
+        {
+          "line": 3373,
+          "source": "if ($turn->status == 'start') {"
+        },
+        {
+          "line": 3379,
+          "source": "} else {"
+        }
+      ],
+      "source_guard_evidence": [
+        {
+          "line": 3318,
+          "text": "User::auth();"
+        }
+      ],
+      "implementation": {
+        "module": "backend.domains.project_configuration",
+        "function": "task_flow",
+        "line": 111
+      },
+      "signature": "(connection, context, data, settings)",
+      "return": "raw data; integration wraps backend.errors.success",
+      "authentication": "backend.auth.authenticate or supplied authenticated RequestContext.actor",
+      "methods": [
+        "GET",
+        "HEAD",
+        "POST",
+        "PUT",
+        "PATCH",
+        "DELETE",
+        "OPTIONS"
+      ],
+      "implementation_status": "IMPLEMENTED_NOT_VERIFIED",
+      "runtime_dependencies": [
+        "MariaDB shared schema",
+        "backend.jobs durable outbox",
+        "registered project/task realtime scope"
+      ],
+      "verification": "NOT_RUN",
+      "independent_identity": "Local independent accounts/bots; no vendor commercial license gate. See 2026101215 decision."
+    },
+    {
+      "id": "ProjectController::task__move",
+      "canonical_url": "api/project/task/move",
+      "aliases": [
+        "api/project/task__move"
+      ],
+      "source": "app/Http/Controllers/Api/ProjectController.php",
+      "source_sha256": "a3d03cabc38d9e2a2b414340111770c243bfa151486706681666f0e1ce451e92",
+      "start_line": 3414,
+      "end_line": 3474,
+      "source_body_sha256": "f5393a7da12441633e9cf5a0c0c9a5be5fc544f01c9db472cb91275acf49f834",
+      "source_branches": [
+        {
+          "line": 3432,
+          "source": "if ($task->project_id == $project_id && $task->column_id == $column_id) {"
+        },
+        {
+          "line": 3438,
+          "source": "if (empty($column)) {"
+        },
+        {
+          "line": 3441,
+          "source": "if ($flow_item_id) {"
+        },
+        {
+          "line": 3443,
+          "source": "if (empty($flowItem)) {"
+        },
+        {
+          "line": 3446,
+          "source": "} else {"
+        },
+        {
+          "line": 3447,
+          "source": "if (projectFlowItem::whereProjectId($project->id)->count() > 0) {"
+        },
+        {
+          "line": 3456,
+          "source": "if ($mainTask) {"
+        }
+      ],
+      "source_guard_evidence": [
+        {
+          "line": 3417,
+          "text": "User::auth();"
+        },
+        {
+          "line": 3430,
+          "text": "ProjectPermission::userTaskPermission($project, ProjectPermission::TASK_MOVE, $task);"
+        }
+      ],
+      "implementation": {
+        "module": "backend.domains.project_tasks",
+        "function": "task_move",
+        "line": 575
+      },
+      "signature": "(connection, context, data, settings)",
+      "return": "raw data; integration wraps backend.errors.success",
+      "authentication": "backend.auth.authenticate or supplied authenticated RequestContext.actor",
+      "methods": [
+        "GET",
+        "HEAD",
+        "POST",
+        "PUT",
+        "PATCH",
+        "DELETE",
+        "OPTIONS"
+      ],
+      "implementation_status": "IMPLEMENTED_NOT_VERIFIED",
+      "runtime_dependencies": [
+        "MariaDB shared schema",
+        "backend.jobs durable outbox",
+        "registered project/task realtime scope"
+      ],
+      "verification": "NOT_RUN",
+      "independent_identity": "Local independent accounts/bots; no vendor commercial license gate. See 2026101215 decision."
+    },
+    {
+      "id": "ProjectController::task__copy",
+      "canonical_url": "api/project/task/copy",
+      "aliases": [
+        "api/project/task__copy"
+      ],
+      "source": "app/Http/Controllers/Api/ProjectController.php",
+      "source_sha256": "a3d03cabc38d9e2a2b414340111770c243bfa151486706681666f0e1ce451e92",
+      "start_line": 3496,
+      "end_line": 3605,
+      "source_body_sha256": "148eb1a85b337ec968481914ce152e7c33b2087bc6b0d7ae68d76bc4bde4cd9c",
+      "source_branches": [
+        {
+          "line": 3517,
+          "source": "if (empty($column)) {"
+        },
+        {
+          "line": 3520,
+          "source": "if (ProjectTask::whereProjectId($project->id)"
+        },
+        {
+          "line": 3526,
+          "source": "if (ProjectTask::whereColumnId($column->id)"
+        },
+        {
+          "line": 3533,
+          "source": "if ($flow_item_id) {"
+        },
+        {
+          "line": 3535,
+          "source": "if (empty($flowItem)) {"
+        },
+        {
+          "line": 3538,
+          "source": "} else {"
+        },
+        {
+          "line": 3539,
+          "source": "if (ProjectFlowItem::whereProjectId($project->id)->count() > 0) {"
+        },
+        {
+          "line": 3560,
+          "source": "if ($copy->content) {"
+        },
+        {
+          "line": 3579,
+          "source": "if ($copy->parent_id === 0) {"
+        },
+        {
+          "line": 3582,
+          "source": "if ($flowItem) {"
+        },
+        {
+          "line": 3584,
+          "source": "} elseif ($completed !== null) {"
+        }
+      ],
+      "source_guard_evidence": [
+        {
+          "line": 3498,
+          "text": "User::auth();"
+        },
+        {
+          "line": 3511,
+          "text": "ProjectPermission::userTaskPermission($sourceProject, ProjectPermission::TASK_MOVE, $task);"
+        },
+        {
+          "line": 3514,
+          "text": "ProjectPermission::userTaskPermission($project, ProjectPermission::TASK_ADD);"
+        }
+      ],
+      "implementation": {
+        "module": "backend.domains.project_tasks",
+        "function": "task_copy",
+        "line": 663
+      },
+      "signature": "(connection, context, data, settings)",
+      "return": "raw data; integration wraps backend.errors.success",
+      "authentication": "backend.auth.authenticate or supplied authenticated RequestContext.actor",
+      "methods": [
+        "GET",
+        "HEAD",
+        "POST",
+        "PUT",
+        "PATCH",
+        "DELETE",
+        "OPTIONS"
+      ],
+      "implementation_status": "IMPLEMENTED_NOT_VERIFIED",
+      "runtime_dependencies": [
+        "MariaDB shared schema",
+        "backend.jobs durable outbox",
+        "registered project/task realtime scope"
+      ],
+      "verification": "NOT_RUN",
+      "independent_identity": "Local independent accounts/bots; no vendor commercial license gate. See 2026101215 decision."
+    },
+    {
+      "id": "ProjectController::task__ai_generate",
+      "canonical_url": "api/project/task/ai_generate",
+      "aliases": [
+        "api/project/task__ai_generate"
+      ],
+      "source": "app/Http/Controllers/Api/ProjectController.php",
+      "source_sha256": "a3d03cabc38d9e2a2b414340111770c243bfa151486706681666f0e1ce451e92",
+      "start_line": 3612,
+      "end_line": 3615,
+      "source_body_sha256": "94c823cb223ac6d7e57895710fd6cfde5bd5b36407bc856e18b97f6c86cb668e",
+      "source_branches": [],
+      "source_guard_evidence": [],
+      "implementation": {
+        "module": "backend.domains.project_configuration",
+        "function": "obsolete_ai_generate",
+        "line": 456
+      },
+      "signature": "(connection, context, data, settings)",
+      "return": "Response unchanged",
+      "authentication": "public shared-secret/bearer/version branch",
+      "methods": [
+        "GET",
+        "HEAD",
+        "POST",
+        "PUT",
+        "PATCH",
+        "DELETE",
+        "OPTIONS"
+      ],
+      "implementation_status": "IMPLEMENTED_NOT_VERIFIED",
+      "runtime_dependencies": [
+        "MariaDB shared schema",
+        "backend.jobs durable outbox",
+        "registered project/task realtime scope"
+      ],
+      "verification": "NOT_RUN",
+      "independent_identity": "Local independent accounts/bots; no vendor commercial license gate. See 2026101215 decision."
+    },
+    {
+      "id": "ProjectController::ai__generate",
+      "canonical_url": "api/project/ai/generate",
+      "aliases": [
+        "api/project/ai__generate"
+      ],
+      "source": "app/Http/Controllers/Api/ProjectController.php",
+      "source_sha256": "a3d03cabc38d9e2a2b414340111770c243bfa151486706681666f0e1ce451e92",
+      "start_line": 3622,
+      "end_line": 3625,
+      "source_body_sha256": "94c823cb223ac6d7e57895710fd6cfde5bd5b36407bc856e18b97f6c86cb668e",
+      "source_branches": [],
+      "source_guard_evidence": [],
+      "implementation": {
+        "module": "backend.domains.project_configuration",
+        "function": "obsolete_ai_generate",
+        "line": 456
+      },
+      "signature": "(connection, context, data, settings)",
+      "return": "Response unchanged",
+      "authentication": "public shared-secret/bearer/version branch",
+      "methods": [
+        "GET",
+        "HEAD",
+        "POST",
+        "PUT",
+        "PATCH",
+        "DELETE",
+        "OPTIONS"
+      ],
+      "implementation_status": "IMPLEMENTED_NOT_VERIFIED",
+      "runtime_dependencies": [
+        "MariaDB shared schema",
+        "backend.jobs durable outbox",
+        "registered project/task realtime scope"
+      ],
+      "verification": "NOT_RUN",
+      "independent_identity": "Local independent accounts/bots; no vendor commercial license gate. See 2026101215 decision."
+    },
+    {
+      "id": "ProjectController::flow__list",
+      "canonical_url": "api/project/flow/list",
+      "aliases": [
+        "api/project/flow__list"
+      ],
+      "source": "app/Http/Controllers/Api/ProjectController.php",
+      "source_sha256": "a3d03cabc38d9e2a2b414340111770c243bfa151486706681666f0e1ce451e92",
+      "start_line": 3641,
+      "end_line": 3651,
+      "source_body_sha256": "eb87c970850b6e009dad321711bb4f5db9049789552928d912d74b2d962b04da",
+      "source_branches": [],
+      "source_guard_evidence": [
+        {
+          "line": 3643,
+          "text": "User::auth();"
+        }
+      ],
+      "implementation": {
+        "module": "backend.domains.project_configuration",
+        "function": "flow_list",
+        "line": 88
+      },
+      "signature": "(connection, context, data, settings)",
+      "return": "raw data; integration wraps backend.errors.success",
+      "authentication": "backend.auth.authenticate or supplied authenticated RequestContext.actor",
+      "methods": [
+        "GET",
+        "HEAD",
+        "POST",
+        "PUT",
+        "PATCH",
+        "DELETE",
+        "OPTIONS"
+      ],
+      "implementation_status": "IMPLEMENTED_NOT_VERIFIED",
+      "runtime_dependencies": [
+        "MariaDB shared schema",
+        "backend.jobs durable outbox",
+        "registered project/task realtime scope"
+      ],
+      "verification": "NOT_RUN",
+      "independent_identity": "Local independent accounts/bots; no vendor commercial license gate. See 2026101215 decision."
+    },
+    {
+      "id": "ProjectController::flow__save",
+      "canonical_url": "api/project/flow/save",
+      "aliases": [
+        "api/project/flow__save"
+      ],
+      "source": "app/Http/Controllers/Api/ProjectController.php",
+      "source_sha256": "a3d03cabc38d9e2a2b414340111770c243bfa151486706681666f0e1ce451e92",
+      "start_line": 3668,
+      "end_line": 3685,
+      "source_body_sha256": "ff3479c10c8ab4e74c576df7a6fa812c526db50b54ae92fcbf00f6369a5cb4cb",
+      "source_branches": [
+        {
+          "line": 3675,
+          "source": "if (!is_array($flows)) {"
+        },
+        {
+          "line": 3678,
+          "source": "if (count($flows) > 10) {"
+        }
+      ],
+      "source_guard_evidence": [
+        {
+          "line": 3670,
+          "text": "User::auth();"
+        }
+      ],
+      "implementation": {
+        "module": "backend.domains.project_configuration",
+        "function": "flow_save",
+        "line": 93
+      },
+      "signature": "(connection, context, data, settings)",
+      "return": "raw data; integration wraps backend.errors.success",
+      "authentication": "backend.auth.authenticate or supplied authenticated RequestContext.actor",
+      "methods": [
+        "GET",
+        "HEAD",
+        "POST",
+        "PUT",
+        "PATCH",
+        "DELETE",
+        "OPTIONS"
+      ],
+      "implementation_status": "IMPLEMENTED_NOT_VERIFIED",
+      "runtime_dependencies": [
+        "MariaDB shared schema",
+        "backend.jobs durable outbox",
+        "registered project/task realtime scope"
+      ],
+      "verification": "NOT_RUN",
+      "independent_identity": "Local independent accounts/bots; no vendor commercial license gate. See 2026101215 decision."
+    },
+    {
+      "id": "ProjectController::flow__delete",
+      "canonical_url": "api/project/flow/delete",
+      "aliases": [
+        "api/project/flow__delete"
+      ],
+      "source": "app/Http/Controllers/Api/ProjectController.php",
+      "source_sha256": "a3d03cabc38d9e2a2b414340111770c243bfa151486706681666f0e1ce451e92",
+      "start_line": 3701,
+      "end_line": 3717,
+      "source_body_sha256": "0c860d590e28b6444536a31dee86592be59d778764502ca718290067b2008293",
+      "source_branches": [],
+      "source_guard_evidence": [
+        {
+          "line": 3703,
+          "text": "User::auth();"
+        }
+      ],
+      "implementation": {
+        "module": "backend.domains.project_configuration",
+        "function": "flow_delete",
+        "line": 98
+      },
+      "signature": "(connection, context, data, settings)",
+      "return": "raw data; integration wraps backend.errors.success",
+      "authentication": "backend.auth.authenticate or supplied authenticated RequestContext.actor",
+      "methods": [
+        "GET",
+        "HEAD",
+        "POST",
+        "PUT",
+        "PATCH",
+        "DELETE",
+        "OPTIONS"
+      ],
+      "implementation_status": "IMPLEMENTED_NOT_VERIFIED",
+      "runtime_dependencies": [
+        "MariaDB shared schema",
+        "backend.jobs durable outbox",
+        "registered project/task realtime scope"
+      ],
+      "verification": "NOT_RUN",
+      "independent_identity": "Local independent accounts/bots; no vendor commercial license gate. See 2026101215 decision."
+    },
+    {
+      "id": "ProjectController::log__lists",
+      "canonical_url": "api/project/log/lists",
+      "aliases": [
+        "api/project/log__lists"
+      ],
+      "source": "app/Http/Controllers/Api/ProjectController.php",
+      "source_sha256": "a3d03cabc38d9e2a2b414340111770c243bfa151486706681666f0e1ce451e92",
+      "start_line": 3737,
+      "end_line": 3785,
+      "source_body_sha256": "a3c7e4b9765917e7dcc04685b745edfa6a0c23f30ae3b145ebdc0cbfc1106f02",
+      "source_branches": [
+        {
+          "line": 3745,
+          "source": "if ($task_id > 0) {"
+        },
+        {
+          "line": 3748,
+          "source": "} else {"
+        },
+        {
+          "line": 3756,
+          "source": "if ($task_id === 0) {"
+        },
+        {
+          "line": 3767,
+          "source": "if (is_array($record['change'])) {"
+        },
+        {
+          "line": 3773,
+          "source": "if (date(\"Y\") === date(\"Y\", $time)) {"
+        }
+      ],
+      "source_guard_evidence": [
+        {
+          "line": 3739,
+          "text": "User::auth();"
+        }
+      ],
+      "implementation": {
+        "module": "backend.domains.project_queries",
+        "function": "log_lists",
+        "line": 311
+      },
+      "signature": "(connection, context, data, settings)",
+      "return": "raw data; integration wraps backend.errors.success",
+      "authentication": "backend.auth.authenticate or supplied authenticated RequestContext.actor",
+      "methods": [
+        "GET",
+        "HEAD",
+        "POST",
+        "PUT",
+        "PATCH",
+        "DELETE",
+        "OPTIONS"
+      ],
+      "implementation_status": "IMPLEMENTED_NOT_VERIFIED",
+      "runtime_dependencies": [
+        "MariaDB shared schema",
+        "backend.jobs durable outbox",
+        "registered project/task realtime scope"
+      ],
+      "verification": "NOT_RUN",
+      "independent_identity": "Local independent accounts/bots; no vendor commercial license gate. See 2026101215 decision."
+    },
+    {
+      "id": "ProjectController::top",
+      "canonical_url": "api/project/top",
+      "aliases": [],
+      "source": "app/Http/Controllers/Api/ProjectController.php",
+      "source_sha256": "a3d03cabc38d9e2a2b414340111770c243bfa151486706681666f0e1ce451e92",
+      "start_line": 3801,
+      "end_line": 3819,
+      "source_body_sha256": "4bd2678f7e25f807a43323a30560cf963ac1f461e1965b7e12487d627fc0c4af",
+      "source_branches": [
+        {
+          "line": 3806,
+          "source": "if (!$projectUser) {"
+        },
+        {
+          "line": 3811,
+          "source": "if ($projectUser->project) {"
+        }
+      ],
+      "source_guard_evidence": [
+        {
+          "line": 3803,
+          "text": "$user = User::auth();"
+        },
+        {
+          "line": 3805,
+          "text": "$projectUser = ProjectUser::whereUserid($user->userid)->whereProjectId($projectId)->first();"
+        }
+      ],
+      "implementation": {
+        "module": "backend.domains.projects",
+        "function": "top",
+        "line": 489
+      },
+      "signature": "(connection, context, data, settings)",
+      "return": "raw data; integration wraps backend.errors.success",
+      "authentication": "backend.auth.authenticate or supplied authenticated RequestContext.actor",
+      "methods": [
+        "GET",
+        "HEAD",
+        "POST",
+        "PUT",
+        "PATCH",
+        "DELETE",
+        "OPTIONS"
+      ],
+      "implementation_status": "IMPLEMENTED_NOT_VERIFIED",
+      "runtime_dependencies": [
+        "MariaDB shared schema",
+        "backend.jobs durable outbox",
+        "registered project/task realtime scope"
+      ],
+      "verification": "NOT_RUN",
+      "independent_identity": "Local independent accounts/bots; no vendor commercial license gate. See 2026101215 decision."
+    },
+    {
+      "id": "ProjectController::permission",
+      "canonical_url": "api/project/permission",
+      "aliases": [],
+      "source": "app/Http/Controllers/Api/ProjectController.php",
+      "source_sha256": "a3d03cabc38d9e2a2b414340111770c243bfa151486706681666f0e1ce451e92",
+      "start_line": 3835,
+      "end_line": 3845,
+      "source_body_sha256": "32a5e6845d2476871502211c8aac4bbd9fed730deb1f4a34068b29db5d8117a4",
+      "source_branches": [
+        {
+          "line": 3840,
+          "source": "if (!$projectUser) {"
+        }
+      ],
+      "source_guard_evidence": [
+        {
+          "line": 3837,
+          "text": "$user = User::auth();"
+        },
+        {
+          "line": 3839,
+          "text": "$projectUser = ProjectUser::whereUserid($user->userid)->whereProjectId($projectId)->first();"
+        },
+        {
+          "line": 3843,
+          "text": "$projectPermission = ProjectPermission::initPermissions($projectId);"
+        },
+        {
+          "line": 3844,
+          "text": "return Base::retSuccess(\"success\",  $projectPermission);"
+        }
+      ],
+      "implementation": {
+        "module": "backend.domains.projects",
+        "function": "permission",
+        "line": 499
+      },
+      "signature": "(connection, context, data, settings)",
+      "return": "raw data; integration wraps backend.errors.success",
+      "authentication": "backend.auth.authenticate or supplied authenticated RequestContext.actor",
+      "methods": [
+        "GET",
+        "HEAD",
+        "POST",
+        "PUT",
+        "PATCH",
+        "DELETE",
+        "OPTIONS"
+      ],
+      "implementation_status": "IMPLEMENTED_NOT_VERIFIED",
+      "runtime_dependencies": [
+        "MariaDB shared schema",
+        "backend.jobs durable outbox",
+        "registered project/task realtime scope"
+      ],
+      "verification": "NOT_RUN",
+      "independent_identity": "Local independent accounts/bots; no vendor commercial license gate. See 2026101215 decision."
+    },
+    {
+      "id": "ProjectController::permission__update",
+      "canonical_url": "api/project/permission/update",
+      "aliases": [
+        "api/project/permission__update"
+      ],
+      "source": "app/Http/Controllers/Api/ProjectController.php",
+      "source_sha256": "a3d03cabc38d9e2a2b414340111770c243bfa151486706681666f0e1ce451e92",
+      "start_line": 3867,
+      "end_line": 3890,
+      "source_body_sha256": "974a68841cf1c79cc3e2b8fad242fc6de844758e3e312acbb85d8dd99bec1379",
+      "source_branches": [
+        {
+          "line": 3872,
+          "source": "if (!$projectUser) {"
+        }
+      ],
+      "source_guard_evidence": [
+        {
+          "line": 3869,
+          "text": "$user = User::auth();"
+        },
+        {
+          "line": 3871,
+          "text": "$projectUser = ProjectUser::whereUserid($user->userid)->whereProjectId($projectId)->first();"
+        },
+        {
+          "line": 3875,
+          "text": "$permissions = Request::only(["
+        },
+        {
+          "line": 3876,
+          "text": "ProjectPermission::TASK_LIST_ADD,"
+        },
+        {
+          "line": 3877,
+          "text": "ProjectPermission::TASK_LIST_UPDATE,"
+        },
+        {
+          "line": 3878,
+          "text": "ProjectPermission::TASK_LIST_REMOVE,"
+        },
+        {
+          "line": 3879,
+          "text": "ProjectPermission::TASK_LIST_SORT,"
+        },
+        {
+          "line": 3880,
+          "text": "ProjectPermission::TASK_ADD,"
+        },
+        {
+          "line": 3881,
+          "text": "ProjectPermission::TASK_UPDATE,"
+        },
+        {
+          "line": 3882,
+          "text": "ProjectPermission::TASK_TIME,"
+        },
+        {
+          "line": 3883,
+          "text": "ProjectPermission::TASK_STATUS,"
+        },
+        {
+          "line": 3884,
+          "text": "ProjectPermission::TASK_REMOVE,"
+        },
+        {
+          "line": 3885,
+          "text": "ProjectPermission::TASK_ARCHIVED,"
+        },
+        {
+          "line": 3886,
+          "text": "ProjectPermission::TASK_MOVE,"
+        },
+        {
+          "line": 3888,
+          "text": "$projectPermission = ProjectPermission::updatePermissions($projectId, Base::newArrayRecursive('intval', $permissions));"
+        },
+        {
+          "line": 3889,
+          "text": "return Base::retSuccess(\"success\",  $projectPermission);"
+        }
+      ],
+      "implementation": {
+        "module": "backend.domains.projects",
+        "function": "permission_update",
+        "line": 504
+      },
+      "signature": "(connection, context, data, settings)",
+      "return": "raw data; integration wraps backend.errors.success",
+      "authentication": "backend.auth.authenticate or supplied authenticated RequestContext.actor",
+      "methods": [
+        "GET",
+        "HEAD",
+        "POST",
+        "PUT",
+        "PATCH",
+        "DELETE",
+        "OPTIONS"
+      ],
+      "implementation_status": "IMPLEMENTED_NOT_VERIFIED",
+      "runtime_dependencies": [
+        "MariaDB shared schema",
+        "backend.jobs durable outbox",
+        "registered project/task realtime scope"
+      ],
+      "verification": "NOT_RUN",
+      "independent_identity": "Local independent accounts/bots; no vendor commercial license gate. See 2026101215 decision."
+    },
+    {
+      "id": "ProjectController::task__template_list",
+      "canonical_url": "api/project/task/template_list",
+      "aliases": [
+        "api/project/task__template_list"
+      ],
+      "source": "app/Http/Controllers/Api/ProjectController.php",
+      "source_sha256": "a3d03cabc38d9e2a2b414340111770c243bfa151486706681666f0e1ce451e92",
+      "start_line": 3906,
+      "end_line": 3919,
+      "source_body_sha256": "971f3f08a4a57fa4f1c8619ca009cabf85d00e3b07b2d287267d070ced74653d",
+      "source_branches": [
+        {
+          "line": 3911,
+          "source": "if (!$projectId) {"
+        }
+      ],
+      "source_guard_evidence": [
+        {
+          "line": 3908,
+          "text": "User::auth();"
+        }
+      ],
+      "implementation": {
+        "module": "backend.domains.project_configuration",
+        "function": "template_list",
+        "line": 124
+      },
+      "signature": "(connection, context, data, settings)",
+      "return": "raw data; integration wraps backend.errors.success",
+      "authentication": "backend.auth.authenticate or supplied authenticated RequestContext.actor",
+      "methods": [
+        "GET",
+        "HEAD",
+        "POST",
+        "PUT",
+        "PATCH",
+        "DELETE",
+        "OPTIONS"
+      ],
+      "implementation_status": "IMPLEMENTED_NOT_VERIFIED",
+      "runtime_dependencies": [
+        "MariaDB shared schema",
+        "backend.jobs durable outbox",
+        "registered project/task realtime scope"
+      ],
+      "verification": "NOT_RUN",
+      "independent_identity": "Local independent accounts/bots; no vendor commercial license gate. See 2026101215 decision."
+    },
+    {
+      "id": "ProjectController::task__template_visible",
+      "canonical_url": "api/project/task/template_visible",
+      "aliases": [
+        "api/project/task__template_visible"
+      ],
+      "source": "app/Http/Controllers/Api/ProjectController.php",
+      "source_sha256": "a3d03cabc38d9e2a2b414340111770c243bfa151486706681666f0e1ce451e92",
+      "start_line": 3935,
+      "end_line": 3969,
+      "source_body_sha256": "fce5755a838ab61bbed6f3dfb658725db167a922389555522153e91b6727fdb9",
+      "source_branches": [
+        {
+          "line": 3942,
+          "source": "if ($currentProject && ($currentProject->task_template_share ?: 'open') === 'close') {"
+        }
+      ],
+      "source_guard_evidence": [
+        {
+          "line": 3937,
+          "text": "$user = User::auth();"
+        }
+      ],
+      "implementation": {
+        "module": "backend.domains.project_configuration",
+        "function": "template_visible",
+        "line": 141
+      },
+      "signature": "(connection, context, data, settings)",
+      "return": "raw data; integration wraps backend.errors.success",
+      "authentication": "backend.auth.authenticate or supplied authenticated RequestContext.actor",
+      "methods": [
+        "GET",
+        "HEAD",
+        "POST",
+        "PUT",
+        "PATCH",
+        "DELETE",
+        "OPTIONS"
+      ],
+      "implementation_status": "IMPLEMENTED_NOT_VERIFIED",
+      "runtime_dependencies": [
+        "MariaDB shared schema",
+        "backend.jobs durable outbox",
+        "registered project/task realtime scope"
+      ],
+      "verification": "NOT_RUN",
+      "independent_identity": "Local independent accounts/bots; no vendor commercial license gate. See 2026101215 decision."
+    },
+    {
+      "id": "ProjectController::task__template_search",
+      "canonical_url": "api/project/task/template_search",
+      "aliases": [
+        "api/project/task__template_search"
+      ],
+      "source": "app/Http/Controllers/Api/ProjectController.php",
+      "source_sha256": "a3d03cabc38d9e2a2b414340111770c243bfa151486706681666f0e1ce451e92",
+      "start_line": 3987,
+      "end_line": 4040,
+      "source_body_sha256": "42d51356337320fc13e4b44238eb9cccb21455670dc8c235a3cffeeca64270ae",
+      "source_branches": [
+        {
+          "line": 3997,
+          "source": "if ($currentProject && ($currentProject->task_template_share ?: 'open') === 'close') {"
+        },
+        {
+          "line": 4004,
+          "source": "if ($keyword !== '') {"
+        }
+      ],
+      "source_guard_evidence": [
+        {
+          "line": 3989,
+          "text": "$user = User::auth();"
+        }
+      ],
+      "implementation": {
+        "module": "backend.domains.project_configuration",
+        "function": "template_search",
+        "line": 147
+      },
+      "signature": "(connection, context, data, settings)",
+      "return": "raw data; integration wraps backend.errors.success",
+      "authentication": "backend.auth.authenticate or supplied authenticated RequestContext.actor",
+      "methods": [
+        "GET",
+        "HEAD",
+        "POST",
+        "PUT",
+        "PATCH",
+        "DELETE",
+        "OPTIONS"
+      ],
+      "implementation_status": "IMPLEMENTED_NOT_VERIFIED",
+      "runtime_dependencies": [
+        "MariaDB shared schema",
+        "backend.jobs durable outbox",
+        "registered project/task realtime scope"
+      ],
+      "verification": "NOT_RUN",
+      "independent_identity": "Local independent accounts/bots; no vendor commercial license gate. See 2026101215 decision."
+    },
+    {
+      "id": "ProjectController::task__template_save",
+      "canonical_url": "api/project/task/template_save",
+      "aliases": [
+        "api/project/task__template_save"
+      ],
+      "source": "app/Http/Controllers/Api/ProjectController.php",
+      "source_sha256": "a3d03cabc38d9e2a2b414340111770c243bfa151486706681666f0e1ce451e92",
+      "start_line": 4060,
+      "end_line": 4106,
+      "source_body_sha256": "4af9e97c0eb5dbaf530f082fa05bac50f942e5461e06d5ebc03c1e09b2bc6b35",
+      "source_branches": [
+        {
+          "line": 4065,
+          "source": "if (!$projectId) {"
+        },
+        {
+          "line": 4074,
+          "source": "if (empty($name)) {"
+        },
+        {
+          "line": 4077,
+          "source": "if (empty($title) && empty($content)) {"
+        },
+        {
+          "line": 4087,
+          "source": "if ($id > 0) {"
+        },
+        {
+          "line": 4091,
+          "source": "if (!$template) {"
+        },
+        {
+          "line": 4095,
+          "source": "} else {"
+        },
+        {
+          "line": 4097,
+          "source": "if ($templateCount >= 50) {"
+        }
+      ],
+      "source_guard_evidence": [
+        {
+          "line": 4062,
+          "text": "$user = User::auth();"
+        }
+      ],
+      "implementation": {
+        "module": "backend.domains.project_configuration",
+        "function": "template_save",
+        "line": 158
+      },
+      "signature": "(connection, context, data, settings)",
+      "return": "raw data; integration wraps backend.errors.success",
+      "authentication": "backend.auth.authenticate or supplied authenticated RequestContext.actor",
+      "methods": [
+        "GET",
+        "HEAD",
+        "POST",
+        "PUT",
+        "PATCH",
+        "DELETE",
+        "OPTIONS"
+      ],
+      "implementation_status": "IMPLEMENTED_NOT_VERIFIED",
+      "runtime_dependencies": [
+        "MariaDB shared schema",
+        "backend.jobs durable outbox",
+        "registered project/task realtime scope"
+      ],
+      "verification": "NOT_RUN",
+      "independent_identity": "Local independent accounts/bots; no vendor commercial license gate. See 2026101215 decision."
+    },
+    {
+      "id": "ProjectController::task__template_sort",
+      "canonical_url": "api/project/task/template_sort",
+      "aliases": [
+        "api/project/task__template_sort"
+      ],
+      "source": "app/Http/Controllers/Api/ProjectController.php",
+      "source_sha256": "a3d03cabc38d9e2a2b414340111770c243bfa151486706681666f0e1ce451e92",
+      "start_line": 4123,
+      "end_line": 4158,
+      "source_body_sha256": "cd7960d1c5b45c4050c2bf2e2b64dc6f01e2d8b4b64c7da88a8f85a8df2ad12b",
+      "source_branches": [
+        {
+          "line": 4128,
+          "source": "if ($projectId <= 0 || !is_array($list)) {"
+        },
+        {
+          "line": 4136,
+          "source": "if ($templateId <= 0) continue;"
+        },
+        {
+          "line": 4140,
+          "source": "if ($updated) {"
+        }
+      ],
+      "source_guard_evidence": [
+        {
+          "line": 4125,
+          "text": "User::auth();"
+        }
+      ],
+      "implementation": {
+        "module": "backend.domains.project_configuration",
+        "function": "template_sort",
+        "line": 196
+      },
+      "signature": "(connection, context, data, settings)",
+      "return": "raw data; integration wraps backend.errors.success",
+      "authentication": "backend.auth.authenticate or supplied authenticated RequestContext.actor",
+      "methods": [
+        "GET",
+        "HEAD",
+        "POST",
+        "PUT",
+        "PATCH",
+        "DELETE",
+        "OPTIONS"
+      ],
+      "implementation_status": "IMPLEMENTED_NOT_VERIFIED",
+      "runtime_dependencies": [
+        "MariaDB shared schema",
+        "backend.jobs durable outbox",
+        "registered project/task realtime scope"
+      ],
+      "verification": "NOT_RUN",
+      "independent_identity": "Local independent accounts/bots; no vendor commercial license gate. See 2026101215 decision."
+    },
+    {
+      "id": "ProjectController::task__template_delete",
+      "canonical_url": "api/project/task/template_delete",
+      "aliases": [
+        "api/project/task__template_delete"
+      ],
+      "source": "app/Http/Controllers/Api/ProjectController.php",
+      "source_sha256": "a3d03cabc38d9e2a2b414340111770c243bfa151486706681666f0e1ce451e92",
+      "start_line": 4174,
+      "end_line": 4189,
+      "source_body_sha256": "fea1cc7c7a681e97b9ee5fb4e842dcfcc76ecf3fd4c19d19649254f14b3dd8f3",
+      "source_branches": [
+        {
+          "line": 4179,
+          "source": "if (!$id) {"
+        },
+        {
+          "line": 4183,
+          "source": "if (!$template) {"
+        }
+      ],
+      "source_guard_evidence": [
+        {
+          "line": 4176,
+          "text": "User::auth();"
+        }
+      ],
+      "implementation": {
+        "module": "backend.domains.project_configuration",
+        "function": "template_delete",
+        "line": 200
+      },
+      "signature": "(connection, context, data, settings)",
+      "return": "raw data; integration wraps backend.errors.success",
+      "authentication": "backend.auth.authenticate or supplied authenticated RequestContext.actor",
+      "methods": [
+        "GET",
+        "HEAD",
+        "POST",
+        "PUT",
+        "PATCH",
+        "DELETE",
+        "OPTIONS"
+      ],
+      "implementation_status": "IMPLEMENTED_NOT_VERIFIED",
+      "runtime_dependencies": [
+        "MariaDB shared schema",
+        "backend.jobs durable outbox",
+        "registered project/task realtime scope"
+      ],
+      "verification": "NOT_RUN",
+      "independent_identity": "Local independent accounts/bots; no vendor commercial license gate. See 2026101215 decision."
+    },
+    {
+      "id": "ProjectController::task__template_default",
+      "canonical_url": "api/project/task/template_default",
+      "aliases": [
+        "api/project/task__template_default"
+      ],
+      "source": "app/Http/Controllers/Api/ProjectController.php",
+      "source_sha256": "a3d03cabc38d9e2a2b414340111770c243bfa151486706681666f0e1ce451e92",
+      "start_line": 4206,
+      "end_line": 4231,
+      "source_body_sha256": "54c792da016cec807ece5d15fba732935367c66ce93ae0d248393adb2bbdf14f",
+      "source_branches": [
+        {
+          "line": 4212,
+          "source": "if (!$id || !$projectId) {"
+        },
+        {
+          "line": 4220,
+          "source": "if (!$template) {"
+        },
+        {
+          "line": 4223,
+          "source": "if ($template->is_default) {"
+        }
+      ],
+      "source_guard_evidence": [
+        {
+          "line": 4208,
+          "text": "User::auth();"
+        }
+      ],
+      "implementation": {
+        "module": "backend.domains.project_configuration",
+        "function": "template_default",
+        "line": 209
+      },
+      "signature": "(connection, context, data, settings)",
+      "return": "raw data; integration wraps backend.errors.success",
+      "authentication": "backend.auth.authenticate or supplied authenticated RequestContext.actor",
+      "methods": [
+        "GET",
+        "HEAD",
+        "POST",
+        "PUT",
+        "PATCH",
+        "DELETE",
+        "OPTIONS"
+      ],
+      "implementation_status": "IMPLEMENTED_NOT_VERIFIED",
+      "runtime_dependencies": [
+        "MariaDB shared schema",
+        "backend.jobs durable outbox",
+        "registered project/task realtime scope"
+      ],
+      "verification": "NOT_RUN",
+      "independent_identity": "Local independent accounts/bots; no vendor commercial license gate. See 2026101215 decision."
+    },
+    {
+      "id": "ProjectController::tag__save",
+      "canonical_url": "api/project/tag/save",
+      "aliases": [
+        "api/project/tag__save"
+      ],
+      "source": "app/Http/Controllers/Api/ProjectController.php",
+      "source_sha256": "a3d03cabc38d9e2a2b414340111770c243bfa151486706681666f0e1ce451e92",
+      "start_line": 4251,
+      "end_line": 4344,
+      "source_body_sha256": "f3d624ca8e3d33e0b15f48d03ec488f41103d0abc9f79037c82cb6f58221161c",
+      "source_branches": [
+        {
+          "line": 4256,
+          "source": "if (!$projectId) {"
+        },
+        {
+          "line": 4264,
+          "source": "if (empty($name)) {"
+        },
+        {
+          "line": 4267,
+          "source": "if (empty($color)) {"
+        },
+        {
+          "line": 4278,
+          "source": "if ($id > 0) {"
+        },
+        {
+          "line": 4282,
+          "source": "if (!$project->owner && $tag->userid != $user->userid) {"
+        },
+        {
+          "line": 4285,
+          "source": "if (!$tag) {"
+        },
+        {
+          "line": 4296,
+          "source": "if (!empty($taskIds)) {"
+        },
+        {
+          "line": 4321,
+          "source": "} else {"
+        },
+        {
+          "line": 4323,
+          "source": "if ($tagCount >= 100) {"
+        },
+        {
+          "line": 4326,
+          "source": "if (ProjectTag::where(["
+        }
+      ],
+      "source_guard_evidence": [
+        {
+          "line": 4253,
+          "text": "$user = User::auth();"
+        }
+      ],
+      "implementation": {
+        "module": "backend.domains.project_configuration",
+        "function": "tag_save",
+        "line": 227
+      },
+      "signature": "(connection, context, data, settings)",
+      "return": "raw data; integration wraps backend.errors.success",
+      "authentication": "backend.auth.authenticate or supplied authenticated RequestContext.actor",
+      "methods": [
+        "GET",
+        "HEAD",
+        "POST",
+        "PUT",
+        "PATCH",
+        "DELETE",
+        "OPTIONS"
+      ],
+      "implementation_status": "IMPLEMENTED_NOT_VERIFIED",
+      "runtime_dependencies": [
+        "MariaDB shared schema",
+        "backend.jobs durable outbox",
+        "registered project/task realtime scope"
+      ],
+      "verification": "NOT_RUN",
+      "independent_identity": "Local independent accounts/bots; no vendor commercial license gate. See 2026101215 decision."
+    },
+    {
+      "id": "ProjectController::tag__sort",
+      "canonical_url": "api/project/tag/sort",
+      "aliases": [
+        "api/project/tag__sort"
+      ],
+      "source": "app/Http/Controllers/Api/ProjectController.php",
+      "source_sha256": "a3d03cabc38d9e2a2b414340111770c243bfa151486706681666f0e1ce451e92",
+      "start_line": 4361,
+      "end_line": 4396,
+      "source_body_sha256": "bab2f2d5f56b3b794648d48006f5a5c069e444875929291ad100b7ed6f53ea6b",
+      "source_branches": [
+        {
+          "line": 4366,
+          "source": "if ($projectId <= 0 || !is_array($list)) {"
+        },
+        {
+          "line": 4374,
+          "source": "if ($tagId <= 0) continue;"
+        },
+        {
+          "line": 4378,
+          "source": "if ($updated) {"
+        }
+      ],
+      "source_guard_evidence": [
+        {
+          "line": 4363,
+          "text": "User::auth();"
+        }
+      ],
+      "implementation": {
+        "module": "backend.domains.project_configuration",
+        "function": "tag_sort",
+        "line": 259
+      },
+      "signature": "(connection, context, data, settings)",
+      "return": "raw data; integration wraps backend.errors.success",
+      "authentication": "backend.auth.authenticate or supplied authenticated RequestContext.actor",
+      "methods": [
+        "GET",
+        "HEAD",
+        "POST",
+        "PUT",
+        "PATCH",
+        "DELETE",
+        "OPTIONS"
+      ],
+      "implementation_status": "IMPLEMENTED_NOT_VERIFIED",
+      "runtime_dependencies": [
+        "MariaDB shared schema",
+        "backend.jobs durable outbox",
+        "registered project/task realtime scope"
+      ],
+      "verification": "NOT_RUN",
+      "independent_identity": "Local independent accounts/bots; no vendor commercial license gate. See 2026101215 decision."
+    },
+    {
+      "id": "ProjectController::tag__delete",
+      "canonical_url": "api/project/tag/delete",
+      "aliases": [
+        "api/project/tag__delete"
+      ],
+      "source": "app/Http/Controllers/Api/ProjectController.php",
+      "source_sha256": "a3d03cabc38d9e2a2b414340111770c243bfa151486706681666f0e1ce451e92",
+      "start_line": 4412,
+      "end_line": 4453,
+      "source_body_sha256": "2fe217d32e2c5876385a0bab9123565c50aaa4bb13e80bdcb6060f8ff13dc338",
+      "source_branches": [
+        {
+          "line": 4417,
+          "source": "if (!$id) {"
+        },
+        {
+          "line": 4421,
+          "source": "if (!$tag) {"
+        },
+        {
+          "line": 4425,
+          "source": "if (!$project->owner && $tag->userid != $user->userid) {"
+        },
+        {
+          "line": 4437,
+          "source": "if (!empty($taskIds)) {"
+        }
+      ],
+      "source_guard_evidence": [
+        {
+          "line": 4414,
+          "text": "$user = User::auth();"
+        }
+      ],
+      "implementation": {
+        "module": "backend.domains.project_configuration",
+        "function": "tag_delete",
+        "line": 263
+      },
+      "signature": "(connection, context, data, settings)",
+      "return": "raw data; integration wraps backend.errors.success",
+      "authentication": "backend.auth.authenticate or supplied authenticated RequestContext.actor",
+      "methods": [
+        "GET",
+        "HEAD",
+        "POST",
+        "PUT",
+        "PATCH",
+        "DELETE",
+        "OPTIONS"
+      ],
+      "implementation_status": "IMPLEMENTED_NOT_VERIFIED",
+      "runtime_dependencies": [
+        "MariaDB shared schema",
+        "backend.jobs durable outbox",
+        "registered project/task realtime scope"
+      ],
+      "verification": "NOT_RUN",
+      "independent_identity": "Local independent accounts/bots; no vendor commercial license gate. See 2026101215 decision."
+    },
+    {
+      "id": "ProjectController::tag__list",
+      "canonical_url": "api/project/tag/list",
+      "aliases": [
+        "api/project/tag__list"
+      ],
+      "source": "app/Http/Controllers/Api/ProjectController.php",
+      "source_sha256": "a3d03cabc38d9e2a2b414340111770c243bfa151486706681666f0e1ce451e92",
+      "start_line": 4469,
+      "end_line": 4482,
+      "source_body_sha256": "473010ad5ce89ca6ece1a28870bbb2ddd2f33f5c642dfed56da390b1edd62c0b",
+      "source_branches": [
+        {
+          "line": 4474,
+          "source": "if (!$projectId) {"
+        }
+      ],
+      "source_guard_evidence": [
+        {
+          "line": 4471,
+          "text": "User::auth();"
+        }
+      ],
+      "implementation": {
+        "module": "backend.domains.project_configuration",
+        "function": "tag_list",
+        "line": 221
+      },
+      "signature": "(connection, context, data, settings)",
+      "return": "raw data; integration wraps backend.errors.success",
+      "authentication": "backend.auth.authenticate or supplied authenticated RequestContext.actor",
+      "methods": [
+        "GET",
+        "HEAD",
+        "POST",
+        "PUT",
+        "PATCH",
+        "DELETE",
+        "OPTIONS"
+      ],
+      "implementation_status": "IMPLEMENTED_NOT_VERIFIED",
+      "runtime_dependencies": [
+        "MariaDB shared schema",
+        "backend.jobs durable outbox",
+        "registered project/task realtime scope"
+      ],
+      "verification": "NOT_RUN",
+      "independent_identity": "Local independent accounts/bots; no vendor commercial license gate. See 2026101215 decision."
+    },
+    {
+      "id": "ProjectController::task__ai_apply",
+      "canonical_url": "api/project/task/ai_apply",
+      "aliases": [
+        "api/project/task__ai_apply"
+      ],
+      "source": "app/Http/Controllers/Api/ProjectController.php",
+      "source_sha256": "a3d03cabc38d9e2a2b414340111770c243bfa151486706681666f0e1ce451e92",
+      "start_line": 4506,
+      "end_line": 4576,
+      "source_body_sha256": "b248b5a2e0ff3de602ad7396bcdba54fe7b810623c519f3736f9d0f30a381725",
+      "source_branches": [
+        {
+          "line": 4517,
+          "source": "if (!in_array($type, ProjectTaskAiEvent::getEventTypes())) {"
+        },
+        {
+          "line": 4523,
+          "source": "if (!$task) {"
+        },
+        {
+          "line": 4533,
+          "source": "if (!$event) {"
+        },
+        {
+          "line": 4538,
+          "source": "if (empty($result)) {"
+        },
+        {
+          "line": 4546,
+          "source": "if ($type === 'similar' && $related > 0) {"
+        },
+        {
+          "line": 4557,
+          "source": "if ($type === 'assignee' && $userid > 0) {"
+        },
+        {
+          "line": 4560,
+          "source": "} elseif ($type === 'similar' && $related > 0) {"
+        },
+        {
+          "line": 4562,
+          "source": "} else {"
+        }
+      ],
+      "source_guard_evidence": [
+        {
+          "line": 4508,
+          "text": "User::auth();"
+        }
+      ],
+      "implementation": {
+        "module": "backend.domains.project_configuration",
+        "function": "ai_apply",
+        "line": 448
+      },
+      "signature": "(connection, context, data, settings)",
+      "return": "raw data; integration wraps backend.errors.success",
+      "authentication": "backend.auth.authenticate or supplied authenticated RequestContext.actor",
+      "methods": [
+        "GET",
+        "HEAD",
+        "POST",
+        "PUT",
+        "PATCH",
+        "DELETE",
+        "OPTIONS"
+      ],
+      "implementation_status": "IMPLEMENTED_NOT_VERIFIED",
+      "runtime_dependencies": [
+        "MariaDB shared schema",
+        "backend.jobs durable outbox",
+        "registered project/task realtime scope"
+      ],
+      "verification": "NOT_RUN",
+      "independent_identity": "Local independent accounts/bots; no vendor commercial license gate. See 2026101215 decision."
+    },
+    {
+      "id": "ProjectController::task__ai_dismiss",
+      "canonical_url": "api/project/task/ai_dismiss",
+      "aliases": [
+        "api/project/task__ai_dismiss"
+      ],
+      "source": "app/Http/Controllers/Api/ProjectController.php",
+      "source_sha256": "a3d03cabc38d9e2a2b414340111770c243bfa151486706681666f0e1ce451e92",
+      "start_line": 4595,
+      "end_line": 4636,
+      "source_body_sha256": "de2b25afc45c6ee3eb15d8c99f25cda0dfb1a96131cebce094fb2749e1fd1875",
+      "source_branches": [
+        {
+          "line": 4606,
+          "source": "if (!in_array($type, ProjectTaskAiEvent::getEventTypes())) {"
+        },
+        {
+          "line": 4612,
+          "source": "if (!$task) {"
+        },
+        {
+          "line": 4622,
+          "source": "if (!$event) {"
+        }
+      ],
+      "source_guard_evidence": [
+        {
+          "line": 4597,
+          "text": "User::auth();"
+        }
+      ],
+      "implementation": {
+        "module": "backend.domains.project_configuration",
+        "function": "ai_dismiss",
+        "line": 452
+      },
+      "signature": "(connection, context, data, settings)",
+      "return": "raw data; integration wraps backend.errors.success",
+      "authentication": "backend.auth.authenticate or supplied authenticated RequestContext.actor",
+      "methods": [
+        "GET",
+        "HEAD",
+        "POST",
+        "PUT",
+        "PATCH",
+        "DELETE",
+        "OPTIONS"
+      ],
+      "implementation_status": "IMPLEMENTED_NOT_VERIFIED",
+      "runtime_dependencies": [
+        "MariaDB shared schema",
+        "backend.jobs durable outbox",
+        "registered project/task realtime scope"
+      ],
+      "verification": "NOT_RUN",
+      "independent_identity": "Local independent accounts/bots; no vendor commercial license gate. See 2026101215 decision."
+    },
+    {
+      "id": "ProjectTaskHandoffController::lists",
+      "canonical_url": "api/projecttaskhandoff/lists",
+      "aliases": [],
+      "source": "app/Http/Controllers/Api/ProjectTaskHandoffController.php",
+      "source_sha256": "424448f595e4c86dbf3192a310d4bc558a9f6bc1498ee505593836a100c11199",
+      "start_line": 24,
+      "end_line": 45,
+      "source_body_sha256": "fabdaf5d1d7be7ee6757cd24b1e2ea14f2050aef6ec25a54cff64528f19ae6b5",
+      "source_branches": [
+        {
+          "line": 30,
+          "source": "if ($beforeId > 0) {"
+        },
+        {
+          "line": 37,
+          "source": "} catch (ApiException $e) {"
+        }
+      ],
+      "source_guard_evidence": [
+        {
+          "line": 26,
+          "text": "User::auth();"
+        }
+      ],
+      "implementation": {
+        "module": "backend.domains.project_configuration",
+        "function": "handoff_lists",
+        "line": 336
+      },
+      "signature": "(connection, context, data, settings)",
+      "return": "raw data; integration wraps backend.errors.success",
+      "authentication": "backend.auth.authenticate or supplied authenticated RequestContext.actor",
+      "methods": [
+        "GET",
+        "HEAD",
+        "POST",
+        "PUT",
+        "PATCH",
+        "DELETE",
+        "OPTIONS"
+      ],
+      "implementation_status": "IMPLEMENTED_NOT_VERIFIED",
+      "runtime_dependencies": [
+        "MariaDB shared schema",
+        "backend.jobs durable outbox",
+        "registered project/task realtime scope"
+      ],
+      "verification": "NOT_RUN",
+      "independent_identity": "Local independent accounts/bots; no vendor commercial license gate. See 2026101215 decision."
+    },
+    {
+      "id": "ProjectTaskHandoffController::options",
+      "canonical_url": "api/projecttaskhandoff/options",
+      "aliases": [],
+      "source": "app/Http/Controllers/Api/ProjectTaskHandoffController.php",
+      "source_sha256": "424448f595e4c86dbf3192a310d4bc558a9f6bc1498ee505593836a100c11199",
+      "start_line": 53,
+      "end_line": 58,
+      "source_body_sha256": "53d9f145c94b9f863d44eb5bc0aa1a24d9e871dd52338174becf90fee4152189",
+      "source_branches": [],
+      "source_guard_evidence": [
+        {
+          "line": 55,
+          "text": "User::auth();"
+        }
+      ],
+      "implementation": {
+        "module": "backend.domains.project_configuration",
+        "function": "handoff_options",
+        "line": 353
+      },
+      "signature": "(connection, context, data, settings)",
+      "return": "raw data; integration wraps backend.errors.success",
+      "authentication": "backend.auth.authenticate or supplied authenticated RequestContext.actor",
+      "methods": [
+        "GET",
+        "HEAD",
+        "POST",
+        "PUT",
+        "PATCH",
+        "DELETE",
+        "OPTIONS"
+      ],
+      "implementation_status": "IMPLEMENTED_NOT_VERIFIED",
+      "runtime_dependencies": [
+        "MariaDB shared schema",
+        "backend.jobs durable outbox",
+        "registered project/task realtime scope"
+      ],
+      "verification": "NOT_RUN",
+      "independent_identity": "Local independent accounts/bots; no vendor commercial license gate. See 2026101215 decision."
+    },
+    {
+      "id": "ProjectTaskHandoffController::assign",
+      "canonical_url": "api/projecttaskhandoff/assign",
+      "aliases": [],
+      "source": "app/Http/Controllers/Api/ProjectTaskHandoffController.php",
+      "source_sha256": "424448f595e4c86dbf3192a310d4bc558a9f6bc1498ee505593836a100c11199",
+      "start_line": 69,
+      "end_line": 90,
+      "source_body_sha256": "bbd59fb0d0b73298555b359689d2ad01c28e65be591d43f1c792f9634408124d",
+      "source_branches": [
+        {
+          "line": 75,
+          "source": "if (!Request::isMethod('post')"
+        },
+        {
+          "line": 84,
+          "source": "if ((!is_int($id) && !is_string($id)) || !ctype_digit((string)$id) || (int)$id <= 0) {"
+        }
+      ],
+      "source_guard_evidence": [
+        {
+          "line": 71,
+          "text": "User::auth();"
+        }
+      ],
+      "implementation": {
+        "module": "backend.domains.project_configuration",
+        "function": "handoff_assign",
+        "line": 362
+      },
+      "signature": "(connection, context, data, settings)",
+      "return": "raw data; integration wraps backend.errors.success",
+      "authentication": "backend.auth.authenticate or supplied authenticated RequestContext.actor",
+      "methods": [
+        "POST"
+      ],
+      "implementation_status": "IMPLEMENTED_NOT_VERIFIED",
+      "runtime_dependencies": [
+        "MariaDB shared schema",
+        "backend.jobs durable outbox",
+        "registered project/task realtime scope"
+      ],
+      "verification": "NOT_RUN",
+      "independent_identity": "Local independent accounts/bots; no vendor commercial license gate. See 2026101215 decision."
+    },
+    {
+      "id": "PublicController::checkin__install",
+      "canonical_url": "api/public/checkin/install",
+      "aliases": [
+        "api/public/checkin__install"
+      ],
+      "source": "app/Http/Controllers/Api/PublicController.php",
+      "source_sha256": "d9b742e4c96440d4a69df3dae1450ca05ecc54f1fa0ac18adf8886fe1a9ddf43",
+      "start_line": 23,
+      "end_line": 65,
+      "source_body_sha256": "b626f18ffc90e311fd87d53c8a6f1966be3051e74c7c1da52adaf01e7375f884",
+      "source_branches": [
+        {
+          "line": 28,
+          "source": "if ($setting['open'] !== 'open') {"
+        },
+        {
+          "line": 34,
+          "source": "if ($key != $setting['key']) {"
+        }
+      ],
+      "source_guard_evidence": [],
+      "implementation": {
+        "module": "backend.domains.checkin",
+        "function": "checkin_install",
+        "line": 78
+      },
+      "signature": "(connection, context, data, settings)",
+      "return": "Response unchanged",
+      "authentication": "public shared-secret/bearer/version branch",
+      "methods": [
+        "GET",
+        "HEAD",
+        "POST",
+        "PUT",
+        "PATCH",
+        "DELETE",
+        "OPTIONS"
+      ],
+      "implementation_status": "IMPLEMENTED_NOT_VERIFIED",
+      "runtime_dependencies": [
+        "MariaDB shared schema",
+        "backend.jobs durable outbox",
+        "registered project/task realtime scope",
+        "checkinSetting legitimate key/modes/time",
+        "authorized check-in bot for notifications"
+      ],
+      "verification": "NOT_RUN",
+      "independent_identity": "Local independent accounts/bots; no vendor commercial license gate. See 2026101215 decision."
+    },
+    {
+      "id": "PublicController::checkin__report",
+      "canonical_url": "api/public/checkin/report",
+      "aliases": [
+        "api/public/checkin__report"
+      ],
+      "source": "app/Http/Controllers/Api/PublicController.php",
+      "source_sha256": "d9b742e4c96440d4a69df3dae1450ca05ecc54f1fa0ac18adf8886fe1a9ddf43",
+      "start_line": 78,
+      "end_line": 108,
+      "source_body_sha256": "42f4f6158adb623c5e172a38f70ee362d4b0ece86eca3a4e1dbbe3abefa79ede",
+      "source_branches": [
+        {
+          "line": 86,
+          "source": "if ($setting['open'] !== 'open') {"
+        },
+        {
+          "line": 90,
+          "source": "if ($type === 'face') {"
+        },
+        {
+          "line": 91,
+          "source": "if (!in_array('face', $setting['modes'])) {"
+        },
+        {
+          "line": 94,
+          "source": "if ($key != $setting['face_key']) {"
+        },
+        {
+          "line": 98,
+          "source": "} else {"
+        },
+        {
+          "line": 99,
+          "source": "if (!in_array('auto', $setting['modes'])) {"
+        },
+        {
+          "line": 102,
+          "source": "if ($key != $setting['key']) {"
+        }
+      ],
+      "source_guard_evidence": [],
+      "implementation": {
+        "module": "backend.domains.checkin",
+        "function": "checkin_report",
+        "line": 101
+      },
+      "signature": "(connection, context, data, settings)",
+      "return": "Response unchanged",
+      "authentication": "public shared-secret/bearer/version branch",
+      "methods": [
+        "GET",
+        "HEAD",
+        "POST",
+        "PUT",
+        "PATCH",
+        "DELETE",
+        "OPTIONS"
+      ],
+      "implementation_status": "IMPLEMENTED_NOT_VERIFIED",
+      "runtime_dependencies": [
+        "MariaDB shared schema",
+        "backend.jobs durable outbox",
+        "registered project/task realtime scope",
+        "checkinSetting legitimate key/modes/time",
+        "authorized check-in bot for notifications"
+      ],
+      "verification": "NOT_RUN",
+      "independent_identity": "Local independent accounts/bots; no vendor commercial license gate. See 2026101215 decision."
+    }
+  ],
+  "identity_decision": "2026101215 independent local identity; vendor license/native ABI is not a prerequisite"
+}

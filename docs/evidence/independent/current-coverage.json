@@ -1,0 +1,2349 @@
+{
+  "status": "IMPLEMENTED_NOT_RUNTIME_VERIFIED",
+  "authority": "docs/2026101215-独立版本授权边界纠正-feat.md and user-approved vendor licensing UI removal",
+  "source_commit": "6f111cd97dcbdaea23bf28768cd15dfa38bcae63",
+  "historical_business_handlers": 334,
+  "active_business_handlers": 326,
+  "retired_business_handlers": [
+    "system/license",
+    "license/email/send",
+    "license/login",
+    "license/login/confirm",
+    "license/trial",
+    "license/status",
+    "license/refresh",
+    "license/logout"
+  ],
+  "retirement_status": "USER_APPROVED_REMOVED_VENDOR_LICENSE",
+  "accounts_source_handlers": 101,
+  "accounts_active_handlers": 100,
+  "accounts_coverage": [
+    {
+      "id": "ContactsController::departments",
+      "canonical_url": "api/contacts/departments",
+      "aliases": [],
+      "source": {
+        "file": "app/Http/Controllers/Api/ContactsController.php",
+        "sha256": "fa569b7935f2472f0575112d066ffcf4d1c846f9c30e0ca4130e4f64bad49b88",
+        "start_line": 31,
+        "end_line": 36,
+        "body_sha256": "041f19bd06b263b2b7802c2cf045fafa0fa5b34df43a8369c6c7bea998b08eb1"
+      },
+      "verification": "NOT_RUN",
+      "status": "IMPLEMENTED_NOT_RUNTIME_VERIFIED",
+      "external_prerequisites": [],
+      "implementation": {
+        "file": "backend/domains/accounts.py",
+        "function": "departments",
+        "sha256": "58e4b10ae9a731040af28e9e80cc6fd1eeeed99e665a8a089949930b6cf08168",
+        "line": 47
+      }
+    },
+    {
+      "id": "SystemController::setting",
+      "canonical_url": "api/system/setting",
+      "aliases": [],
+      "source": {
+        "file": "app/Http/Controllers/Api/SystemController.php",
+        "sha256": "a1c5691d0c22d837c61d7e8e000baa13525a0784d4e2a65661e39f2bbb7b0cd2",
+        "start_line": 56,
+        "end_line": 187,
+        "body_sha256": "506ba6f3975dda6dc136fc67625823dda6c263efe9f4a5ba809a6c38bb5b3ced"
+      },
+      "verification": "NOT_RUN",
+      "status": "IMPLEMENTED_NOT_RUNTIME_VERIFIED",
+      "external_prerequisites": [],
+      "implementation": {
+        "file": "backend/domains/system.py",
+        "function": "setting",
+        "sha256": "5e285ff1eddb3c8ae047f40229190999d62806db53ffabc4f91f29578b662647",
+        "line": 35
+      }
+    },
+    {
+      "id": "SystemController::setting__email",
+      "canonical_url": "api/system/setting/email",
+      "aliases": [
+        "api/system/setting__email"
+      ],
+      "source": {
+        "file": "app/Http/Controllers/Api/SystemController.php",
+        "sha256": "a1c5691d0c22d837c61d7e8e000baa13525a0784d4e2a65661e39f2bbb7b0cd2",
+        "start_line": 203,
+        "end_line": 257,
+        "body_sha256": "2c85697e7e0f6361dba1b13a015578b8d744da817bf024c786df764ca31a83f8"
+      },
+      "verification": "NOT_RUN",
+      "status": "IMPLEMENTED_NOT_RUNTIME_VERIFIED",
+      "external_prerequisites": [
+        "BLOCKED_VERIFICATION_SMTP: legitimate SMTP host/account/password + controlled receiving mailbox; real SMTP client implemented"
+      ],
+      "implementation": {
+        "file": "backend/domains/system.py",
+        "function": "setting_email",
+        "sha256": "5e285ff1eddb3c8ae047f40229190999d62806db53ffabc4f91f29578b662647",
+        "line": 89
+      }
+    },
+    {
+      "id": "SystemController::setting__meeting",
+      "canonical_url": "api/system/setting/meeting",
+      "aliases": [
+        "api/system/setting__meeting"
+      ],
+      "source": {
+        "file": "app/Http/Controllers/Api/SystemController.php",
+        "sha256": "a1c5691d0c22d837c61d7e8e000baa13525a0784d4e2a65661e39f2bbb7b0cd2",
+        "start_line": 273,
+        "end_line": 311,
+        "body_sha256": "35bc078e59a9da95551ece3a09df585daabf326e9ccc40db94b9b945a2ea26b7"
+      },
+      "verification": "NOT_RUN",
+      "status": "IMPLEMENTED_NOT_RUNTIME_VERIFIED",
+      "external_prerequisites": [
+        "BLOCKED_VERIFICATION_AGORA: legitimate appid/app_certificate/API key/API secret and live channel; source Agora006 bytes implemented"
+      ],
+      "implementation": {
+        "file": "backend/domains/system.py",
+        "function": "setting_meeting",
+        "sha256": "5e285ff1eddb3c8ae047f40229190999d62806db53ffabc4f91f29578b662647",
+        "line": 94
+      }
+    },
+    {
+      "id": "SystemController::setting__ai",
+      "canonical_url": "api/system/setting/ai",
+      "aliases": [
+        "api/system/setting__ai"
+      ],
+      "source": {
+        "file": "app/Http/Controllers/Api/SystemController.php",
+        "sha256": "a1c5691d0c22d837c61d7e8e000baa13525a0784d4e2a65661e39f2bbb7b0cd2",
+        "start_line": 318,
+        "end_line": 321,
+        "body_sha256": "94c823cb223ac6d7e57895710fd6cfde5bd5b36407bc856e18b97f6c86cb668e"
+      },
+      "verification": "NOT_RUN",
+      "status": "IMPLEMENTED_NOT_RUNTIME_VERIFIED",
+      "external_prerequisites": [],
+      "implementation": {
+        "file": "backend/domains/system.py",
+        "function": "historical_ai",
+        "sha256": "5e285ff1eddb3c8ae047f40229190999d62806db53ffabc4f91f29578b662647",
+        "line": 117
+      }
+    },
+    {
+      "id": "SystemController::setting__aibot",
+      "canonical_url": "api/system/setting/aibot",
+      "aliases": [
+        "api/system/setting__aibot"
+      ],
+      "source": {
+        "file": "app/Http/Controllers/Api/SystemController.php",
+        "sha256": "a1c5691d0c22d837c61d7e8e000baa13525a0784d4e2a65661e39f2bbb7b0cd2",
+        "start_line": 339,
+        "end_line": 383,
+        "body_sha256": "a63ba2e3d104bbd305002dbf2e0de253e5db720a73af596fdfaff23fb3f3f432"
+      },
+      "verification": "NOT_RUN",
+      "status": "IMPLEMENTED_NOT_RUNTIME_VERIFIED",
+      "external_prerequisites": [],
+      "implementation": {
+        "file": "backend/domains/system.py",
+        "function": "setting_aibot",
+        "sha256": "5e285ff1eddb3c8ae047f40229190999d62806db53ffabc4f91f29578b662647",
+        "line": 105
+      }
+    },
+    {
+      "id": "SystemController::setting__aibot_models",
+      "canonical_url": "api/system/setting/aibot_models",
+      "aliases": [
+        "api/system/setting__aibot_models"
+      ],
+      "source": {
+        "file": "app/Http/Controllers/Api/SystemController.php",
+        "sha256": "a1c5691d0c22d837c61d7e8e000baa13525a0784d4e2a65661e39f2bbb7b0cd2",
+        "start_line": 390,
+        "end_line": 393,
+        "body_sha256": "94c823cb223ac6d7e57895710fd6cfde5bd5b36407bc856e18b97f6c86cb668e"
+      },
+      "verification": "NOT_RUN",
+      "status": "IMPLEMENTED_NOT_RUNTIME_VERIFIED",
+      "external_prerequisites": [],
+      "implementation": {
+        "file": "backend/domains/system.py",
+        "function": "historical_ai",
+        "sha256": "5e285ff1eddb3c8ae047f40229190999d62806db53ffabc4f91f29578b662647",
+        "line": 117
+      }
+    },
+    {
+      "id": "SystemController::setting__aibot_defmodels",
+      "canonical_url": "api/system/setting/aibot_defmodels",
+      "aliases": [
+        "api/system/setting__aibot_defmodels"
+      ],
+      "source": {
+        "file": "app/Http/Controllers/Api/SystemController.php",
+        "sha256": "a1c5691d0c22d837c61d7e8e000baa13525a0784d4e2a65661e39f2bbb7b0cd2",
+        "start_line": 400,
+        "end_line": 403,
+        "body_sha256": "94c823cb223ac6d7e57895710fd6cfde5bd5b36407bc856e18b97f6c86cb668e"
+      },
+      "verification": "NOT_RUN",
+      "status": "IMPLEMENTED_NOT_RUNTIME_VERIFIED",
+      "external_prerequisites": [],
+      "implementation": {
+        "file": "backend/domains/system.py",
+        "function": "historical_ai",
+        "sha256": "5e285ff1eddb3c8ae047f40229190999d62806db53ffabc4f91f29578b662647",
+        "line": 117
+      }
+    },
+    {
+      "id": "SystemController::setting__checkin",
+      "canonical_url": "api/system/setting/checkin",
+      "aliases": [
+        "api/system/setting__checkin"
+      ],
+      "source": {
+        "file": "app/Http/Controllers/Api/SystemController.php",
+        "sha256": "a1c5691d0c22d837c61d7e8e000baa13525a0784d4e2a65661e39f2bbb7b0cd2",
+        "start_line": 419,
+        "end_line": 552,
+        "body_sha256": "68d7d1b930078e4ed9096b271af529e11998bb8dd4be5eee861262a4330b28cb"
+      },
+      "verification": "NOT_RUN",
+      "status": "IMPLEMENTED_NOT_RUNTIME_VERIFIED",
+      "external_prerequisites": [
+        "BLOCKED_VERIFICATION_FACE: installed face plugin, authorized camera/device endpoint and retained upload bytes"
+      ],
+      "implementation": {
+        "file": "backend/domains/system.py",
+        "function": "setting_checkin",
+        "sha256": "5e285ff1eddb3c8ae047f40229190999d62806db53ffabc4f91f29578b662647",
+        "line": 122
+      }
+    },
+    {
+      "id": "SystemController::setting__apppush",
+      "canonical_url": "api/system/setting/apppush",
+      "aliases": [
+        "api/system/setting__apppush"
+      ],
+      "source": {
+        "file": "app/Http/Controllers/Api/SystemController.php",
+        "sha256": "a1c5691d0c22d837c61d7e8e000baa13525a0784d4e2a65661e39f2bbb7b0cd2",
+        "start_line": 568,
+        "end_line": 597,
+        "body_sha256": "762fb1d6a15ed2f6f6865db712d9eefff38fb55995f092d208918e5c8a9a7b20"
+      },
+      "verification": "NOT_RUN",
+      "status": "IMPLEMENTED_NOT_RUNTIME_VERIFIED",
+      "external_prerequisites": [],
+      "implementation": {
+        "file": "backend/domains/system.py",
+        "function": "setting_apppush",
+        "sha256": "5e285ff1eddb3c8ae047f40229190999d62806db53ffabc4f91f29578b662647",
+        "line": 97
+      }
+    },
+    {
+      "id": "SystemController::setting__thirdaccess",
+      "canonical_url": "api/system/setting/thirdaccess",
+      "aliases": [
+        "api/system/setting__thirdaccess"
+      ],
+      "source": {
+        "file": "app/Http/Controllers/Api/SystemController.php",
+        "sha256": "a1c5691d0c22d837c61d7e8e000baa13525a0784d4e2a65661e39f2bbb7b0cd2",
+        "start_line": 614,
+        "end_line": 669,
+        "body_sha256": "b19996287689408bc460d08540f0ff4d7b349248eca1e717bd99480f82f70ba4"
+      },
+      "verification": "NOT_RUN",
+      "status": "IMPLEMENTED_NOT_RUNTIME_VERIFIED",
+      "external_prerequisites": [
+        "BLOCKED_VERIFICATION_LDAP: LDAP server/service DN/base DN/login attribute/test user; ldap3 real binding/search/update implemented; shared auth now calls real LDAP functions; runtime integration unverified"
+      ],
+      "implementation": {
+        "file": "backend/domains/system.py",
+        "function": "setting_thirdaccess",
+        "sha256": "5e285ff1eddb3c8ae047f40229190999d62806db53ffabc4f91f29578b662647",
+        "line": 99
+      }
+    },
+    {
+      "id": "SystemController::setting__file",
+      "canonical_url": "api/system/setting/file",
+      "aliases": [
+        "api/system/setting__file"
+      ],
+      "source": {
+        "file": "app/Http/Controllers/Api/SystemController.php",
+        "sha256": "a1c5691d0c22d837c61d7e8e000baa13525a0784d4e2a65661e39f2bbb7b0cd2",
+        "start_line": 685,
+        "end_line": 709,
+        "body_sha256": "9d99389be7f483c20fb1ff96bb0ccd25e18c48070e18e08618436efa206ce49a"
+      },
+      "verification": "NOT_RUN",
+      "status": "IMPLEMENTED_NOT_RUNTIME_VERIFIED",
+      "external_prerequisites": [],
+      "implementation": {
+        "file": "backend/domains/system.py",
+        "function": "setting_file",
+        "sha256": "5e285ff1eddb3c8ae047f40229190999d62806db53ffabc4f91f29578b662647",
+        "line": 98
+      }
+    },
+    {
+      "id": "SystemController::demo",
+      "canonical_url": "api/system/demo",
+      "aliases": [],
+      "source": {
+        "file": "app/Http/Controllers/Api/SystemController.php",
+        "sha256": "a1c5691d0c22d837c61d7e8e000baa13525a0784d4e2a65661e39f2bbb7b0cd2",
+        "start_line": 722,
+        "end_line": 733,
+        "body_sha256": "ecf7791fa93892c4e7790548d91f8ddf88ed5f263684040c0726a8d7debd8b4c"
+      },
+      "verification": "NOT_RUN",
+      "status": "IMPLEMENTED_NOT_RUNTIME_VERIFIED",
+      "external_prerequisites": [],
+      "implementation": {
+        "file": "backend/domains/system.py",
+        "function": "demo",
+        "sha256": "5e285ff1eddb3c8ae047f40229190999d62806db53ffabc4f91f29578b662647",
+        "line": 237
+      }
+    },
+    {
+      "id": "SystemController::priority",
+      "canonical_url": "api/system/priority",
+      "aliases": [],
+      "source": {
+        "file": "app/Http/Controllers/Api/SystemController.php",
+        "sha256": "a1c5691d0c22d837c61d7e8e000baa13525a0784d4e2a65661e39f2bbb7b0cd2",
+        "start_line": 752,
+        "end_line": 771,
+        "body_sha256": "309719fb5b5e13e92288b0a1f4a94b2341f2101a5852de291e630b976cf64d22"
+      },
+      "verification": "NOT_RUN",
+      "status": "IMPLEMENTED_NOT_RUNTIME_VERIFIED",
+      "external_prerequisites": [],
+      "implementation": {
+        "file": "backend/domains/system.py",
+        "function": "priority",
+        "sha256": "5e285ff1eddb3c8ae047f40229190999d62806db53ffabc4f91f29578b662647",
+        "line": 173
+      }
+    },
+    {
+      "id": "SystemController::microapp_menu",
+      "canonical_url": "api/system/microapp_menu",
+      "aliases": [],
+      "source": {
+        "file": "app/Http/Controllers/Api/SystemController.php",
+        "sha256": "a1c5691d0c22d837c61d7e8e000baa13525a0784d4e2a65661e39f2bbb7b0cd2",
+        "start_line": 790,
+        "end_line": 812,
+        "body_sha256": "1cfa57400ef9109bb54e2dec43980a5378a77b9a57de2ca302e41bb770e42514"
+      },
+      "verification": "NOT_RUN",
+      "status": "IMPLEMENTED_NOT_RUNTIME_VERIFIED",
+      "external_prerequisites": [],
+      "implementation": {
+        "file": "backend/domains/system.py",
+        "function": "microapp_menu",
+        "sha256": "5e285ff1eddb3c8ae047f40229190999d62806db53ffabc4f91f29578b662647",
+        "line": 218
+      }
+    },
+    {
+      "id": "SystemController::column__template",
+      "canonical_url": "api/system/column/template",
+      "aliases": [
+        "api/system/column__template"
+      ],
+      "source": {
+        "file": "app/Http/Controllers/Api/SystemController.php",
+        "sha256": "a1c5691d0c22d837c61d7e8e000baa13525a0784d4e2a65661e39f2bbb7b0cd2",
+        "start_line": 831,
+        "end_line": 859,
+        "body_sha256": "d6fe5c52d14e1ec62ec8ec6d4381235a51b6e36fa3902271564205d4d01f24ec"
+      },
+      "verification": "NOT_RUN",
+      "status": "IMPLEMENTED_NOT_RUNTIME_VERIFIED",
+      "external_prerequisites": [],
+      "implementation": {
+        "file": "backend/domains/system.py",
+        "function": "column_template",
+        "sha256": "5e285ff1eddb3c8ae047f40229190999d62806db53ffabc4f91f29578b662647",
+        "line": 185
+      }
+    },
+    {
+      "id": "SystemController::license",
+      "canonical_url": "api/system/license",
+      "aliases": [],
+      "source": {
+        "file": "app/Http/Controllers/Api/SystemController.php",
+        "sha256": "a1c5691d0c22d837c61d7e8e000baa13525a0784d4e2a65661e39f2bbb7b0cd2",
+        "start_line": 878,
+        "end_line": 944,
+        "body_sha256": "cfa93450cde3bf7fa1ddb728e7b7a5e571beeb86bb77dc528cf9d25cafc46279"
+      },
+      "verification": "NOT_RUN",
+      "status": "USER_APPROVED_REMOVED_VENDOR_LICENSE",
+      "external_prerequisites": []
+    },
+    {
+      "id": "SystemController::get__info",
+      "canonical_url": "api/system/get/info",
+      "aliases": [
+        "api/system/get__info"
+      ],
+      "source": {
+        "file": "app/Http/Controllers/Api/SystemController.php",
+        "sha256": "a1c5691d0c22d837c61d7e8e000baa13525a0784d4e2a65661e39f2bbb7b0cd2",
+        "start_line": 959,
+        "end_line": 971,
+        "body_sha256": "5929e81c0a76596696b4e9b4f348abe58eb0ed36b2dd697be03ac1a0b1435bb3"
+      },
+      "verification": "NOT_RUN",
+      "status": "IMPLEMENTED_NOT_RUNTIME_VERIFIED",
+      "external_prerequisites": [],
+      "implementation": {
+        "file": "backend/domains/system.py",
+        "function": "get_info",
+        "sha256": "5e285ff1eddb3c8ae047f40229190999d62806db53ffabc4f91f29578b662647",
+        "line": 254
+      }
+    },
+    {
+      "id": "SystemController::get__ip",
+      "canonical_url": "api/system/get/ip",
+      "aliases": [
+        "api/system/get__ip"
+      ],
+      "source": {
+        "file": "app/Http/Controllers/Api/SystemController.php",
+        "sha256": "a1c5691d0c22d837c61d7e8e000baa13525a0784d4e2a65661e39f2bbb7b0cd2",
+        "start_line": 984,
+        "end_line": 986,
+        "body_sha256": "2f889167d4f2f1e9b94e715d3c1bbf62b4af9ad92938a10545ef3123c240d9e9"
+      },
+      "verification": "NOT_RUN",
+      "status": "IMPLEMENTED_NOT_RUNTIME_VERIFIED",
+      "external_prerequisites": [],
+      "implementation": {
+        "file": "backend/domains/system.py",
+        "function": "get_ip",
+        "sha256": "5e285ff1eddb3c8ae047f40229190999d62806db53ffabc4f91f29578b662647",
+        "line": 240
+      }
+    },
+    {
+      "id": "SystemController::get__cnip",
+      "canonical_url": "api/system/get/cnip",
+      "aliases": [
+        "api/system/get__cnip"
+      ],
+      "source": {
+        "file": "app/Http/Controllers/Api/SystemController.php",
+        "sha256": "a1c5691d0c22d837c61d7e8e000baa13525a0784d4e2a65661e39f2bbb7b0cd2",
+        "start_line": 1001,
+        "end_line": 1003,
+        "body_sha256": "39062167a16af01f0bb1317f63919bcb3adaec6239bbd09fe156f03beb8fb789"
+      },
+      "verification": "NOT_RUN",
+      "status": "IMPLEMENTED_NOT_RUNTIME_VERIFIED",
+      "external_prerequisites": [],
+      "implementation": {
+        "file": "backend/domains/system.py",
+        "function": "get_cnip",
+        "sha256": "5e285ff1eddb3c8ae047f40229190999d62806db53ffabc4f91f29578b662647",
+        "line": 240
+      }
+    },
+    {
+      "id": "SystemController::imgupload",
+      "canonical_url": "api/system/imgupload",
+      "aliases": [],
+      "source": {
+        "file": "app/Http/Controllers/Api/SystemController.php",
+        "sha256": "a1c5691d0c22d837c61d7e8e000baa13525a0784d4e2a65661e39f2bbb7b0cd2",
+        "start_line": 1027,
+        "end_line": 1069,
+        "body_sha256": "f6bce03debb55596198ad655ef334cc9fe0000704b94687724d3016c2f504eb0"
+      },
+      "verification": "NOT_RUN",
+      "status": "IMPLEMENTED_NOT_RUNTIME_VERIFIED",
+      "external_prerequisites": [],
+      "implementation": {
+        "file": "backend/domains/account_system_files.py",
+        "function": "imgupload",
+        "sha256": "e40cf01bd699b56c657a4497c5c0cd22978dce0b4a7b25f6814bde5426a1bdae",
+        "line": 38
+      }
+    },
+    {
+      "id": "SystemController::imgview",
+      "canonical_url": "api/system/imgview",
+      "aliases": [],
+      "source": {
+        "file": "app/Http/Controllers/Api/SystemController.php",
+        "sha256": "a1c5691d0c22d837c61d7e8e000baa13525a0784d4e2a65661e39f2bbb7b0cd2",
+        "start_line": 1085,
+        "end_line": 1166,
+        "body_sha256": "26a0fb10c64d9bb912b4d943309c2fbd0b64f6c6f764f168f1595ebf54142190"
+      },
+      "verification": "NOT_RUN",
+      "status": "IMPLEMENTED_NOT_RUNTIME_VERIFIED",
+      "external_prerequisites": [],
+      "implementation": {
+        "file": "backend/domains/account_system_files.py",
+        "function": "imgview",
+        "sha256": "e40cf01bd699b56c657a4497c5c0cd22978dce0b4a7b25f6814bde5426a1bdae",
+        "line": 43
+      }
+    },
+    {
+      "id": "SystemController::fileupload",
+      "canonical_url": "api/system/fileupload",
+      "aliases": [],
+      "source": {
+        "file": "app/Http/Controllers/Api/SystemController.php",
+        "sha256": "a1c5691d0c22d837c61d7e8e000baa13525a0784d4e2a65661e39f2bbb7b0cd2",
+        "start_line": 1184,
+        "end_line": 1210,
+        "body_sha256": "e3593e641efa3f8ea00891dbcca46fe6e2d3fa1b1ace4561629e3e89cdac4cb7"
+      },
+      "verification": "NOT_RUN",
+      "status": "IMPLEMENTED_NOT_RUNTIME_VERIFIED",
+      "external_prerequisites": [],
+      "implementation": {
+        "file": "backend/domains/account_system_files.py",
+        "function": "fileupload",
+        "sha256": "e40cf01bd699b56c657a4497c5c0cd22978dce0b4a7b25f6814bde5426a1bdae",
+        "line": 42
+      }
+    },
+    {
+      "id": "SystemController::get__updatelog",
+      "canonical_url": "api/system/get/updatelog",
+      "aliases": [
+        "api/system/get__updatelog"
+      ],
+      "source": {
+        "file": "app/Http/Controllers/Api/SystemController.php",
+        "sha256": "a1c5691d0c22d837c61d7e8e000baa13525a0784d4e2a65661e39f2bbb7b0cd2",
+        "start_line": 1226,
+        "end_line": 1253,
+        "body_sha256": "0d07d1de22d32d43b41bb0b9b4877ca433e459b9732ff6f9c14b0a7750fb1403"
+      },
+      "verification": "NOT_RUN",
+      "status": "IMPLEMENTED_NOT_RUNTIME_VERIFIED",
+      "external_prerequisites": [],
+      "implementation": {
+        "file": "backend/domains/system.py",
+        "function": "get_updatelog",
+        "sha256": "5e285ff1eddb3c8ae047f40229190999d62806db53ffabc4f91f29578b662647",
+        "line": 284
+      }
+    },
+    {
+      "id": "SystemController::email__check",
+      "canonical_url": "api/system/email/check",
+      "aliases": [
+        "api/system/email__check"
+      ],
+      "source": {
+        "file": "app/Http/Controllers/Api/SystemController.php",
+        "sha256": "a1c5691d0c22d837c61d7e8e000baa13525a0784d4e2a65661e39f2bbb7b0cd2",
+        "start_line": 1267,
+        "end_line": 1297,
+        "body_sha256": "c6a2f4142cfaf8a6f2e15a574961d8e92ed2388f30a5fddbb2e5f7445b0db731"
+      },
+      "verification": "NOT_RUN",
+      "status": "IMPLEMENTED_NOT_RUNTIME_VERIFIED",
+      "external_prerequisites": [
+        "BLOCKED_VERIFICATION_SMTP: legitimate SMTP host/account/password + controlled receiving mailbox; real SMTP client implemented"
+      ],
+      "implementation": {
+        "file": "backend/domains/system.py",
+        "function": "email_check",
+        "sha256": "5e285ff1eddb3c8ae047f40229190999d62806db53ffabc4f91f29578b662647",
+        "line": 264
+      }
+    },
+    {
+      "id": "SystemController::checkin__export",
+      "canonical_url": "api/system/checkin/export",
+      "aliases": [
+        "api/system/checkin__export"
+      ],
+      "source": {
+        "file": "app/Http/Controllers/Api/SystemController.php",
+        "sha256": "a1c5691d0c22d837c61d7e8e000baa13525a0784d4e2a65661e39f2bbb7b0cd2",
+        "start_line": 1314,
+        "end_line": 1522,
+        "body_sha256": "938ce264c4887bfa6be0920930fd13a742edd0858ff62d504f4bc53657a488cc"
+      },
+      "verification": "NOT_RUN",
+      "status": "IMPLEMENTED_NOT_RUNTIME_VERIFIED",
+      "external_prerequisites": [],
+      "implementation": {
+        "file": "backend/domains/account_system_files.py",
+        "function": "checkin_export",
+        "sha256": "e40cf01bd699b56c657a4497c5c0cd22978dce0b4a7b25f6814bde5426a1bdae",
+        "line": 59
+      }
+    },
+    {
+      "id": "SystemController::checkin__down",
+      "canonical_url": "api/system/checkin/down",
+      "aliases": [
+        "api/system/checkin__down"
+      ],
+      "source": {
+        "file": "app/Http/Controllers/Api/SystemController.php",
+        "sha256": "a1c5691d0c22d837c61d7e8e000baa13525a0784d4e2a65661e39f2bbb7b0cd2",
+        "start_line": 1535,
+        "end_line": 1543,
+        "body_sha256": "1d919005941ea418455cb1b77c5b34fdab73a323341d8a7660d632dc48101054"
+      },
+      "verification": "NOT_RUN",
+      "status": "IMPLEMENTED_NOT_RUNTIME_VERIFIED",
+      "external_prerequisites": [],
+      "implementation": {
+        "file": "backend/domains/account_system_files.py",
+        "function": "checkin_down",
+        "sha256": "e40cf01bd699b56c657a4497c5c0cd22978dce0b4a7b25f6814bde5426a1bdae",
+        "line": 118
+      }
+    },
+    {
+      "id": "SystemController::version",
+      "canonical_url": "api/system/version",
+      "aliases": [],
+      "source": {
+        "file": "app/Http/Controllers/Api/SystemController.php",
+        "sha256": "a1c5691d0c22d837c61d7e8e000baa13525a0784d4e2a65661e39f2bbb7b0cd2",
+        "start_line": 1563,
+        "end_line": 1589,
+        "body_sha256": "0458673300ca510d022be3e6ebbf47a73b32daa3352835226a84899a3b6b985b"
+      },
+      "verification": "NOT_RUN",
+      "status": "IMPLEMENTED_NOT_RUNTIME_VERIFIED",
+      "external_prerequisites": [],
+      "implementation": {
+        "file": "backend/domains/system.py",
+        "function": "version",
+        "sha256": "5e285ff1eddb3c8ae047f40229190999d62806db53ffabc4f91f29578b662647",
+        "line": 271
+      }
+    },
+    {
+      "id": "SystemController::update__check",
+      "canonical_url": "api/system/update/check",
+      "aliases": [
+        "api/system/update__check"
+      ],
+      "source": {
+        "file": "app/Http/Controllers/Api/SystemController.php",
+        "sha256": "a1c5691d0c22d837c61d7e8e000baa13525a0784d4e2a65661e39f2bbb7b0cd2",
+        "start_line": 1605,
+        "end_line": 1610,
+        "body_sha256": "09a2b0ae6b96ad042354b5b77482a4d04accc0b7b5e0de6515d56622a49a9eb1"
+      },
+      "verification": "NOT_RUN",
+      "status": "IMPLEMENTED_NOT_RUNTIME_VERIFIED",
+      "external_prerequisites": [
+        "Approved FastAPI signed-release/migration/backup/rollback policy absent; explicitly unsupported, never launch PHP updater"
+      ],
+      "implementation": {
+        "file": "backend/domains/system.py",
+        "function": "update_check",
+        "sha256": "5e285ff1eddb3c8ae047f40229190999d62806db53ffabc4f91f29578b662647",
+        "line": 291
+      }
+    },
+    {
+      "id": "SystemController::update__start",
+      "canonical_url": "api/system/update/start",
+      "aliases": [
+        "api/system/update__start"
+      ],
+      "source": {
+        "file": "app/Http/Controllers/Api/SystemController.php",
+        "sha256": "a1c5691d0c22d837c61d7e8e000baa13525a0784d4e2a65661e39f2bbb7b0cd2",
+        "start_line": 1627,
+        "end_line": 1633,
+        "body_sha256": "dba7020790e1b94ca4c54fc5adff2b653a0a4c465615a87718509094b0068a1b"
+      },
+      "verification": "NOT_RUN",
+      "status": "IMPLEMENTED_NOT_RUNTIME_VERIFIED",
+      "external_prerequisites": [
+        "Approved FastAPI signed-release/migration/backup/rollback policy absent; explicitly unsupported, never launch PHP updater"
+      ],
+      "implementation": {
+        "file": "backend/domains/system.py",
+        "function": "update_start",
+        "sha256": "5e285ff1eddb3c8ae047f40229190999d62806db53ffabc4f91f29578b662647",
+        "line": 295
+      }
+    },
+    {
+      "id": "SystemController::update__status",
+      "canonical_url": "api/system/update/status",
+      "aliases": [
+        "api/system/update__status"
+      ],
+      "source": {
+        "file": "app/Http/Controllers/Api/SystemController.php",
+        "sha256": "a1c5691d0c22d837c61d7e8e000baa13525a0784d4e2a65661e39f2bbb7b0cd2",
+        "start_line": 1648,
+        "end_line": 1653,
+        "body_sha256": "415d7c6ab3e09e062a47f8740e876819d98cf12aa92b6b2463501816b6076a48"
+      },
+      "verification": "NOT_RUN",
+      "status": "IMPLEMENTED_NOT_RUNTIME_VERIFIED",
+      "external_prerequisites": [
+        "Approved FastAPI signed-release/migration/backup/rollback policy absent; explicitly unsupported, never launch PHP updater"
+      ],
+      "implementation": {
+        "file": "backend/domains/system.py",
+        "function": "update_status",
+        "sha256": "5e285ff1eddb3c8ae047f40229190999d62806db53ffabc4f91f29578b662647",
+        "line": 301
+      }
+    },
+    {
+      "id": "SystemController::prefetch",
+      "canonical_url": "api/system/prefetch",
+      "aliases": [],
+      "source": {
+        "file": "app/Http/Controllers/Api/SystemController.php",
+        "sha256": "a1c5691d0c22d837c61d7e8e000baa13525a0784d4e2a65661e39f2bbb7b0cd2",
+        "start_line": 1669,
+        "end_line": 1736,
+        "body_sha256": "2c8f43d6f1bb5e9216e3d877b4d63a5bd54ddbe86b2fdea59c1763932610af3c"
+      },
+      "verification": "NOT_RUN",
+      "status": "IMPLEMENTED_NOT_RUNTIME_VERIFIED",
+      "external_prerequisites": [],
+      "implementation": {
+        "file": "backend/domains/system.py",
+        "function": "prefetch",
+        "sha256": "5e285ff1eddb3c8ae047f40229190999d62806db53ffabc4f91f29578b662647",
+        "line": 301
+      }
+    },
+    {
+      "id": "UsersController::login",
+      "canonical_url": "api/users/login",
+      "aliases": [],
+      "source": {
+        "file": "app/Http/Controllers/Api/UsersController.php",
+        "sha256": "d3480aae25371d1e5f2d9a32a93e8a13519e0355604ab13a745fe1cfb062fd3f",
+        "start_line": 75,
+        "end_line": 177,
+        "body_sha256": "6bb885c8434f9d842669ac6c76571dfab197053bcb3bc56bdbac6d5c91c4f9dc"
+      },
+      "verification": "NOT_RUN",
+      "status": "IMPLEMENTED_NOT_RUNTIME_VERIFIED",
+      "external_prerequisites": [
+        "BLOCKED_VERIFICATION_SMTP: legitimate SMTP host/account/password + controlled receiving mailbox; real SMTP client implemented",
+        "BLOCKED_VERIFICATION_LDAP: LDAP server/service DN/base DN/login attribute/test user; ldap3 real binding/search/update implemented; shared auth now calls real LDAP functions; runtime integration unverified"
+      ],
+      "implementation": {
+        "file": "backend/auth.py",
+        "function": "login",
+        "sha256": "fa0884871f20224a21b364e8425377c9cd8a1764a2fd53ac3a84ad9b2ee55a8f",
+        "line": 233
+      }
+    },
+    {
+      "id": "UsersController::login__qrcode",
+      "canonical_url": "api/users/login/qrcode",
+      "aliases": [
+        "api/users/login__qrcode"
+      ],
+      "source": {
+        "file": "app/Http/Controllers/Api/UsersController.php",
+        "sha256": "d3480aae25371d1e5f2d9a32a93e8a13519e0355604ab13a745fe1cfb062fd3f",
+        "start_line": 196,
+        "end_line": 228,
+        "body_sha256": "738308779f812390dbfcc80801387fa3c504b4b565be181742e54c5d7d426e35"
+      },
+      "verification": "NOT_RUN",
+      "status": "IMPLEMENTED_NOT_RUNTIME_VERIFIED",
+      "external_prerequisites": [],
+      "implementation": {
+        "file": "backend/domains/accounts.py",
+        "function": "login_qrcode",
+        "sha256": "58e4b10ae9a731040af28e9e80cc6fd1eeeed99e665a8a089949930b6cf08168",
+        "line": 144
+      }
+    },
+    {
+      "id": "UsersController::login__needcode",
+      "canonical_url": "api/users/login/needcode",
+      "aliases": [
+        "api/users/login__needcode"
+      ],
+      "source": {
+        "file": "app/Http/Controllers/Api/UsersController.php",
+        "sha256": "d3480aae25371d1e5f2d9a32a93e8a13519e0355604ab13a745fe1cfb062fd3f",
+        "start_line": 244,
+        "end_line": 247,
+        "body_sha256": "29b1e8b7c98ae921d0c67d2c3b5fa01847af70a43e418e8432cd7c7377dc0604"
+      },
+      "verification": "NOT_RUN",
+      "status": "IMPLEMENTED_NOT_RUNTIME_VERIFIED",
+      "external_prerequisites": [],
+      "implementation": {
+        "file": "backend/main.py",
+        "function": "handle",
+        "sha256": "11ff357df00077cb198ea8ca50ccb61f9ebc31d5c41388f571a658b7d13daa93",
+        "line": 135
+      }
+    },
+    {
+      "id": "UsersController::login__codeimg",
+      "canonical_url": "api/users/login/codeimg",
+      "aliases": [
+        "api/users/login__codeimg"
+      ],
+      "source": {
+        "file": "app/Http/Controllers/Api/UsersController.php",
+        "sha256": "d3480aae25371d1e5f2d9a32a93e8a13519e0355604ab13a745fe1cfb062fd3f",
+        "start_line": 259,
+        "end_line": 262,
+        "body_sha256": "73dc21301b4545e6ccb782eb05c0f74b9dee687dd6d3515d63f082cc867fdb7b"
+      },
+      "verification": "NOT_RUN",
+      "status": "IMPLEMENTED_NOT_RUNTIME_VERIFIED",
+      "external_prerequisites": [],
+      "implementation": {
+        "file": "backend/main.py",
+        "function": "handle",
+        "sha256": "11ff357df00077cb198ea8ca50ccb61f9ebc31d5c41388f571a658b7d13daa93",
+        "line": 135
+      }
+    },
+    {
+      "id": "UsersController::login__codejson",
+      "canonical_url": "api/users/login/codejson",
+      "aliases": [
+        "api/users/login__codejson"
+      ],
+      "source": {
+        "file": "app/Http/Controllers/Api/UsersController.php",
+        "sha256": "d3480aae25371d1e5f2d9a32a93e8a13519e0355604ab13a745fe1cfb062fd3f",
+        "start_line": 276,
+        "end_line": 281,
+        "body_sha256": "55f9f8bbe77a01ef53754252a23afe47ba30a305dd81e0d341455ad6872f669f"
+      },
+      "verification": "NOT_RUN",
+      "status": "IMPLEMENTED_NOT_RUNTIME_VERIFIED",
+      "external_prerequisites": [],
+      "implementation": {
+        "file": "backend/main.py",
+        "function": "handle",
+        "sha256": "11ff357df00077cb198ea8ca50ccb61f9ebc31d5c41388f571a658b7d13daa93",
+        "line": 135
+      }
+    },
+    {
+      "id": "UsersController::logout",
+      "canonical_url": "api/users/logout",
+      "aliases": [],
+      "source": {
+        "file": "app/Http/Controllers/Api/UsersController.php",
+        "sha256": "d3480aae25371d1e5f2d9a32a93e8a13519e0355604ab13a745fe1cfb062fd3f",
+        "start_line": 293,
+        "end_line": 297,
+        "body_sha256": "91cb3c87a5f273af310745cc895ded2b7653c08d4a7de71e7dac3484b8e012e2"
+      },
+      "verification": "NOT_RUN",
+      "status": "IMPLEMENTED_NOT_RUNTIME_VERIFIED",
+      "external_prerequisites": [],
+      "implementation": {
+        "file": "backend/auth.py",
+        "function": "logout",
+        "sha256": "fa0884871f20224a21b364e8425377c9cd8a1764a2fd53ac3a84ad9b2ee55a8f",
+        "line": 312
+      }
+    },
+    {
+      "id": "UsersController::token__expire",
+      "canonical_url": "api/users/token/expire",
+      "aliases": [
+        "api/users/token__expire"
+      ],
+      "source": {
+        "file": "app/Http/Controllers/Api/UsersController.php",
+        "sha256": "d3480aae25371d1e5f2d9a32a93e8a13519e0355604ab13a745fe1cfb062fd3f",
+        "start_line": 318,
+        "end_line": 339,
+        "body_sha256": "5473a85ae33b1334da4dfa2ad5f761827f6e92fe0fb89621cdc64338078c36ad"
+      },
+      "verification": "NOT_RUN",
+      "status": "IMPLEMENTED_NOT_RUNTIME_VERIFIED",
+      "external_prerequisites": [],
+      "implementation": {
+        "file": "backend/auth.py",
+        "function": "token_expire",
+        "sha256": "fa0884871f20224a21b364e8425377c9cd8a1764a2fd53ac3a84ad9b2ee55a8f",
+        "line": 303
+      }
+    },
+    {
+      "id": "UsersController::reg__needinvite",
+      "canonical_url": "api/users/reg/needinvite",
+      "aliases": [
+        "api/users/reg__needinvite"
+      ],
+      "source": {
+        "file": "app/Http/Controllers/Api/UsersController.php",
+        "sha256": "d3480aae25371d1e5f2d9a32a93e8a13519e0355604ab13a745fe1cfb062fd3f",
+        "start_line": 355,
+        "end_line": 362,
+        "body_sha256": "d261409a6dc1aa3f8e3fd325212f76c5d2b1dafb790f9dda567cb5da1ba75abe"
+      },
+      "verification": "NOT_RUN",
+      "status": "IMPLEMENTED_NOT_RUNTIME_VERIFIED",
+      "external_prerequisites": [],
+      "implementation": {
+        "file": "backend/main.py",
+        "function": "handle",
+        "sha256": "11ff357df00077cb198ea8ca50ccb61f9ebc31d5c41388f571a658b7d13daa93",
+        "line": 135
+      }
+    },
+    {
+      "id": "UsersController::info",
+      "canonical_url": "api/users/info",
+      "aliases": [],
+      "source": {
+        "file": "app/Http/Controllers/Api/UsersController.php",
+        "sha256": "d3480aae25371d1e5f2d9a32a93e8a13519e0355604ab13a745fe1cfb062fd3f",
+        "start_line": 393,
+        "end_line": 417,
+        "body_sha256": "fb7889af0aaaac6b3afdb7318dc6458b9f841113cb28ec0660f0dc3eb8dc5cee"
+      },
+      "verification": "NOT_RUN",
+      "status": "IMPLEMENTED_NOT_RUNTIME_VERIFIED",
+      "external_prerequisites": [],
+      "implementation": {
+        "file": "backend/auth.py",
+        "function": "info",
+        "sha256": "fa0884871f20224a21b364e8425377c9cd8a1764a2fd53ac3a84ad9b2ee55a8f",
+        "line": 293
+      }
+    },
+    {
+      "id": "UsersController::info__managed_departments",
+      "canonical_url": "api/users/info/managed_departments",
+      "aliases": [
+        "api/users/info__managed_departments"
+      ],
+      "source": {
+        "file": "app/Http/Controllers/Api/UsersController.php",
+        "sha256": "d3480aae25371d1e5f2d9a32a93e8a13519e0355604ab13a745fe1cfb062fd3f",
+        "start_line": 422,
+        "end_line": 429,
+        "body_sha256": "61e8a033d342ac403e0d2f377a10b2c38424dfb03c7c2985fa6860cb0274f850"
+      },
+      "verification": "NOT_RUN",
+      "status": "IMPLEMENTED_NOT_RUNTIME_VERIFIED",
+      "external_prerequisites": [],
+      "implementation": {
+        "file": "backend/domains/accounts.py",
+        "function": "info_managed",
+        "sha256": "58e4b10ae9a731040af28e9e80cc6fd1eeeed99e665a8a089949930b6cf08168",
+        "line": 35
+      }
+    },
+    {
+      "id": "UsersController::info__departments",
+      "canonical_url": "api/users/info/departments",
+      "aliases": [
+        "api/users/info__departments"
+      ],
+      "source": {
+        "file": "app/Http/Controllers/Api/UsersController.php",
+        "sha256": "d3480aae25371d1e5f2d9a32a93e8a13519e0355604ab13a745fe1cfb062fd3f",
+        "start_line": 452,
+        "end_line": 474,
+        "body_sha256": "540ec980cb06b43fa340d3c3b896145027ca2631a8a2dae42b0c1cd9ae77174f"
+      },
+      "verification": "NOT_RUN",
+      "status": "IMPLEMENTED_NOT_RUNTIME_VERIFIED",
+      "external_prerequisites": [],
+      "implementation": {
+        "file": "backend/domains/accounts.py",
+        "function": "info_departments",
+        "sha256": "58e4b10ae9a731040af28e9e80cc6fd1eeeed99e665a8a089949930b6cf08168",
+        "line": 40
+      }
+    },
+    {
+      "id": "UsersController::editdata",
+      "canonical_url": "api/users/editdata",
+      "aliases": [],
+      "source": {
+        "file": "app/Http/Controllers/Api/UsersController.php",
+        "sha256": "d3480aae25371d1e5f2d9a32a93e8a13519e0355604ab13a745fe1cfb062fd3f",
+        "start_line": 497,
+        "end_line": 603,
+        "body_sha256": "565b2fabc3dd0aa2b614bf3c40c733f40433b7971850027730cd802dfe996adc"
+      },
+      "verification": "NOT_RUN",
+      "status": "IMPLEMENTED_NOT_RUNTIME_VERIFIED",
+      "external_prerequisites": [
+        "BLOCKED_VERIFICATION_LDAP: LDAP server/service DN/base DN/login attribute/test user; ldap3 real binding/search/update implemented; shared auth now calls real LDAP functions; runtime integration unverified"
+      ],
+      "implementation": {
+        "file": "backend/domains/accounts.py",
+        "function": "editdata",
+        "sha256": "58e4b10ae9a731040af28e9e80cc6fd1eeeed99e665a8a089949930b6cf08168",
+        "line": 136
+      }
+    },
+    {
+      "id": "UsersController::editpass",
+      "canonical_url": "api/users/editpass",
+      "aliases": [],
+      "source": {
+        "file": "app/Http/Controllers/Api/UsersController.php",
+        "sha256": "d3480aae25371d1e5f2d9a32a93e8a13519e0355604ab13a745fe1cfb062fd3f",
+        "start_line": 620,
+        "end_line": 644,
+        "body_sha256": "3a18eccf0bf8130b09d485faa512915408958e19e37de7377fd9d5e7f6047afc"
+      },
+      "verification": "NOT_RUN",
+      "status": "IMPLEMENTED_NOT_RUNTIME_VERIFIED",
+      "external_prerequisites": [
+        "BLOCKED_VERIFICATION_LDAP: LDAP server/service DN/base DN/login attribute/test user; ldap3 real binding/search/update implemented; shared auth now calls real LDAP functions; runtime integration unverified"
+      ],
+      "implementation": {
+        "file": "backend/auth.py",
+        "function": "change_password",
+        "sha256": "fa0884871f20224a21b364e8425377c9cd8a1764a2fd53ac3a84ad9b2ee55a8f",
+        "line": 329
+      }
+    },
+    {
+      "id": "UsersController::search",
+      "canonical_url": "api/users/search",
+      "aliases": [],
+      "source": {
+        "file": "app/Http/Controllers/Api/UsersController.php",
+        "sha256": "d3480aae25371d1e5f2d9a32a93e8a13519e0355604ab13a745fe1cfb062fd3f",
+        "start_line": 680,
+        "end_line": 808,
+        "body_sha256": "136692a2bce1a5eba4ed6bd0242a72c5cb3b38609cccaf95462ca406e17c5fce"
+      },
+      "verification": "NOT_RUN",
+      "status": "IMPLEMENTED_NOT_RUNTIME_VERIFIED",
+      "external_prerequisites": [],
+      "implementation": {
+        "file": "backend/domains/accounts.py",
+        "function": "search",
+        "sha256": "58e4b10ae9a731040af28e9e80cc6fd1eeeed99e665a8a089949930b6cf08168",
+        "line": 196
+      }
+    },
+    {
+      "id": "UsersController::search__ai",
+      "canonical_url": "api/users/search/ai",
+      "aliases": [
+        "api/users/search__ai"
+      ],
+      "source": {
+        "file": "app/Http/Controllers/Api/UsersController.php",
+        "sha256": "d3480aae25371d1e5f2d9a32a93e8a13519e0355604ab13a745fe1cfb062fd3f",
+        "start_line": 824,
+        "end_line": 839,
+        "body_sha256": "50f72965c856ba8d5b397542fa5a4a61708f068e307703115962e9e69debd50f"
+      },
+      "verification": "NOT_RUN",
+      "status": "IMPLEMENTED_NOT_RUNTIME_VERIFIED",
+      "external_prerequisites": [],
+      "implementation": {
+        "file": "backend/domains/account_meetings.py",
+        "function": "search_ai",
+        "sha256": "f0eee9a79c73b6f6efd8c268595bf3da310a63390d1a152e730542321fe9ae8d",
+        "line": 104
+      }
+    },
+    {
+      "id": "UsersController::basic",
+      "canonical_url": "api/users/basic",
+      "aliases": [],
+      "source": {
+        "file": "app/Http/Controllers/Api/UsersController.php",
+        "sha256": "d3480aae25371d1e5f2d9a32a93e8a13519e0355604ab13a745fe1cfb062fd3f",
+        "start_line": 855,
+        "end_line": 881,
+        "body_sha256": "f7c008bb9fec537f15a0b669a748e1fb6304f92dfce343193f9aafef7f8f6135"
+      },
+      "verification": "NOT_RUN",
+      "status": "IMPLEMENTED_NOT_RUNTIME_VERIFIED",
+      "external_prerequisites": [],
+      "implementation": {
+        "file": "backend/domains/accounts.py",
+        "function": "basic",
+        "sha256": "58e4b10ae9a731040af28e9e80cc6fd1eeeed99e665a8a089949930b6cf08168",
+        "line": 175
+      }
+    },
+    {
+      "id": "UsersController::extra",
+      "canonical_url": "api/users/extra",
+      "aliases": [],
+      "source": {
+        "file": "app/Http/Controllers/Api/UsersController.php",
+        "sha256": "d3480aae25371d1e5f2d9a32a93e8a13519e0355604ab13a745fe1cfb062fd3f",
+        "start_line": 897,
+        "end_line": 948,
+        "body_sha256": "3a3f729c46caec9cc44eb7dec1d4b64a41032cc9b46b803cc5f7fb8d628dc070"
+      },
+      "verification": "NOT_RUN",
+      "status": "IMPLEMENTED_NOT_RUNTIME_VERIFIED",
+      "external_prerequisites": [],
+      "implementation": {
+        "file": "backend/domains/accounts.py",
+        "function": "extra",
+        "sha256": "58e4b10ae9a731040af28e9e80cc6fd1eeeed99e665a8a089949930b6cf08168",
+        "line": 307
+      }
+    },
+    {
+      "id": "UsersController::lists",
+      "canonical_url": "api/users/lists",
+      "aliases": [],
+      "source": {
+        "file": "app/Http/Controllers/Api/UsersController.php",
+        "sha256": "d3480aae25371d1e5f2d9a32a93e8a13519e0355604ab13a745fe1cfb062fd3f",
+        "start_line": 994,
+        "end_line": 1097,
+        "body_sha256": "1c41004c86705eec9b538526880fbf4c5bb407221e4a009a6357d97a2ee461c5"
+      },
+      "verification": "NOT_RUN",
+      "status": "IMPLEMENTED_NOT_RUNTIME_VERIFIED",
+      "external_prerequisites": [],
+      "implementation": {
+        "file": "backend/domains/account_admin.py",
+        "function": "lists",
+        "sha256": "f80a18b72782d9932d050be84141c8ccc76459e34c8df9e5a728e8db29cd4ac7",
+        "line": 220
+      }
+    },
+    {
+      "id": "UsersController::operation",
+      "canonical_url": "api/users/operation",
+      "aliases": [],
+      "source": {
+        "file": "app/Http/Controllers/Api/UsersController.php",
+        "sha256": "d3480aae25371d1e5f2d9a32a93e8a13519e0355604ab13a745fe1cfb062fd3f",
+        "start_line": 1137,
+        "end_line": 1372,
+        "body_sha256": "935d097ed8c143c36f5d368d64ff3f292e67781f05121a8a3807993d6d9f9d57"
+      },
+      "verification": "NOT_RUN",
+      "status": "IMPLEMENTED_NOT_RUNTIME_VERIFIED",
+      "external_prerequisites": [
+        "BLOCKED_VERIFICATION_LDAP: LDAP server/service DN/base DN/login attribute/test user; ldap3 real binding/search/update implemented; shared auth now calls real LDAP functions; runtime integration unverified"
+      ],
+      "implementation": {
+        "file": "backend/domains/account_admin.py",
+        "function": "operation",
+        "sha256": "f80a18b72782d9932d050be84141c8ccc76459e34c8df9e5a728e8db29cd4ac7",
+        "line": 171
+      }
+    },
+    {
+      "id": "UsersController::createuser",
+      "canonical_url": "api/users/createuser",
+      "aliases": [],
+      "source": {
+        "file": "app/Http/Controllers/Api/UsersController.php",
+        "sha256": "d3480aae25371d1e5f2d9a32a93e8a13519e0355604ab13a745fe1cfb062fd3f",
+        "start_line": 1389,
+        "end_line": 1406,
+        "body_sha256": "fea3490a1e5c9409c957b2633f868ef2016a5b932496eea33e5998f7bbe104dd"
+      },
+      "verification": "NOT_RUN",
+      "status": "IMPLEMENTED_NOT_RUNTIME_VERIFIED",
+      "external_prerequisites": [],
+      "implementation": {
+        "file": "backend/domains/account_import.py",
+        "function": "createuser",
+        "sha256": "699e06f15b75b352ff192c57bff57ae5c28a149fff7c5c2f89113d941e8eb4be",
+        "line": 19
+      }
+    },
+    {
+      "id": "UsersController::import__preview",
+      "canonical_url": "api/users/import/preview",
+      "aliases": [
+        "api/users/import__preview"
+      ],
+      "source": {
+        "file": "app/Http/Controllers/Api/UsersController.php",
+        "sha256": "d3480aae25371d1e5f2d9a32a93e8a13519e0355604ab13a745fe1cfb062fd3f",
+        "start_line": 1416,
+        "end_line": 1434,
+        "body_sha256": "d11fb24d5819a6f1f2d8486929107087cc6b6aff458778f9af00a0bf97b8dfb8"
+      },
+      "verification": "NOT_RUN",
+      "status": "IMPLEMENTED_NOT_RUNTIME_VERIFIED",
+      "external_prerequisites": [],
+      "implementation": {
+        "file": "backend/domains/account_import.py",
+        "function": "import_preview",
+        "sha256": "699e06f15b75b352ff192c57bff57ae5c28a149fff7c5c2f89113d941e8eb4be",
+        "line": 38
+      }
+    },
+    {
+      "id": "UsersController::import",
+      "canonical_url": "api/users/import",
+      "aliases": [],
+      "source": {
+        "file": "app/Http/Controllers/Api/UsersController.php",
+        "sha256": "d3480aae25371d1e5f2d9a32a93e8a13519e0355604ab13a745fe1cfb062fd3f",
+        "start_line": 1444,
+        "end_line": 1454,
+        "body_sha256": "55323d1b0ab6dc03f46ad37e52bc4390372bf905a29a6c696ac6705ea6c32261"
+      },
+      "verification": "NOT_RUN",
+      "status": "IMPLEMENTED_NOT_RUNTIME_VERIFIED",
+      "external_prerequisites": [],
+      "implementation": {
+        "file": "backend/domains/account_import.py",
+        "function": "import_users",
+        "sha256": "699e06f15b75b352ff192c57bff57ae5c28a149fff7c5c2f89113d941e8eb4be",
+        "line": 73
+      }
+    },
+    {
+      "id": "UsersController::import__template",
+      "canonical_url": "api/users/import/template",
+      "aliases": [
+        "api/users/import__template"
+      ],
+      "source": {
+        "file": "app/Http/Controllers/Api/UsersController.php",
+        "sha256": "d3480aae25371d1e5f2d9a32a93e8a13519e0355604ab13a745fe1cfb062fd3f",
+        "start_line": 1463,
+        "end_line": 1467,
+        "body_sha256": "cb795b224c20900bbc784930cecf02ff46cf5ce3888639fa2bf0f2d75a1c621d"
+      },
+      "verification": "NOT_RUN",
+      "status": "IMPLEMENTED_NOT_RUNTIME_VERIFIED",
+      "external_prerequisites": [],
+      "implementation": {
+        "file": "backend/domains/account_import.py",
+        "function": "import_template",
+        "sha256": "699e06f15b75b352ff192c57bff57ae5c28a149fff7c5c2f89113d941e8eb4be",
+        "line": 91
+      }
+    },
+    {
+      "id": "UsersController::email__verification",
+      "canonical_url": "api/users/email/verification",
+      "aliases": [
+        "api/users/email__verification"
+      ],
+      "source": {
+        "file": "app/Http/Controllers/Api/UsersController.php",
+        "sha256": "d3480aae25371d1e5f2d9a32a93e8a13519e0355604ab13a745fe1cfb062fd3f",
+        "start_line": 1483,
+        "end_line": 1515,
+        "body_sha256": "6f41e0cc3ccd205498f14be532864c49d56bdb37ddcfaa368e2f30ac33dc0a9a"
+      },
+      "verification": "NOT_RUN",
+      "status": "IMPLEMENTED_NOT_RUNTIME_VERIFIED",
+      "external_prerequisites": [
+        "BLOCKED_VERIFICATION_SMTP: legitimate SMTP host/account/password + controlled receiving mailbox; real SMTP client implemented"
+      ],
+      "implementation": {
+        "file": "backend/domains/accounts.py",
+        "function": "email_verification",
+        "sha256": "58e4b10ae9a731040af28e9e80cc6fd1eeeed99e665a8a089949930b6cf08168",
+        "line": 329
+      }
+    },
+    {
+      "id": "UsersController::umeng__alias",
+      "canonical_url": "api/users/umeng/alias",
+      "aliases": [
+        "api/users/umeng__alias"
+      ],
+      "source": {
+        "file": "app/Http/Controllers/Api/UsersController.php",
+        "sha256": "d3480aae25371d1e5f2d9a32a93e8a13519e0355604ab13a745fe1cfb062fd3f",
+        "start_line": 1538,
+        "end_line": 1594,
+        "body_sha256": "ad79e0ed3706e781ec99fbc0547d2513798ce84c174ef5acf49894b2e71ffd74"
+      },
+      "verification": "NOT_RUN",
+      "status": "IMPLEMENTED_NOT_RUNTIME_VERIFIED",
+      "external_prerequisites": [],
+      "implementation": {
+        "file": "backend/domains/account_misc.py",
+        "function": "umeng_alias",
+        "sha256": "06fd07c11a7483c5198512556739c9c63b969b5c4f95fe3e4922d0e87787fc1e",
+        "line": 12
+      }
+    },
+    {
+      "id": "UsersController::meeting__open",
+      "canonical_url": "api/users/meeting/open",
+      "aliases": [
+        "api/users/meeting__open"
+      ],
+      "source": {
+        "file": "app/Http/Controllers/Api/UsersController.php",
+        "sha256": "d3480aae25371d1e5f2d9a32a93e8a13519e0355604ab13a745fe1cfb062fd3f",
+        "start_line": 1618,
+        "end_line": 1712,
+        "body_sha256": "0c6aa8c85d898333a7f91f2705e48acdc7b05bcb5de7b3084aa14abed820c04d"
+      },
+      "verification": "NOT_RUN",
+      "status": "IMPLEMENTED_NOT_RUNTIME_VERIFIED",
+      "external_prerequisites": [
+        "BLOCKED_VERIFICATION_AGORA: legitimate appid/app_certificate/API key/API secret and live channel; source Agora006 bytes implemented"
+      ],
+      "implementation": {
+        "file": "backend/domains/account_meetings.py",
+        "function": "meeting_open",
+        "sha256": "f0eee9a79c73b6f6efd8c268595bf3da310a63390d1a152e730542321fe9ae8d",
+        "line": 143
+      }
+    },
+    {
+      "id": "UsersController::tags__lists",
+      "canonical_url": "api/users/tags/lists",
+      "aliases": [
+        "api/users/tags__lists"
+      ],
+      "source": {
+        "file": "app/Http/Controllers/Api/UsersController.php",
+        "sha256": "d3480aae25371d1e5f2d9a32a93e8a13519e0355604ab13a745fe1cfb062fd3f",
+        "start_line": 1743,
+        "end_line": 1752,
+        "body_sha256": "762c28e037e3ac6f981fa23fe0f613e33058d20eb19a6c1b20275f2b27e5c17a"
+      },
+      "verification": "NOT_RUN",
+      "status": "IMPLEMENTED_NOT_RUNTIME_VERIFIED",
+      "external_prerequisites": [],
+      "implementation": {
+        "file": "backend/domains/accounts.py",
+        "function": "tags_lists",
+        "sha256": "58e4b10ae9a731040af28e9e80cc6fd1eeeed99e665a8a089949930b6cf08168",
+        "line": 264
+      }
+    },
+    {
+      "id": "UsersController::tags__add",
+      "canonical_url": "api/users/tags/add",
+      "aliases": [
+        "api/users/tags__add"
+      ],
+      "source": {
+        "file": "app/Http/Controllers/Api/UsersController.php",
+        "sha256": "d3480aae25371d1e5f2d9a32a93e8a13519e0355604ab13a745fe1cfb062fd3f",
+        "start_line": 1769,
+        "end_line": 1801,
+        "body_sha256": "466511aeb53d269a7618236f464449c4262aff994a930c2eb73af8bfaa8ac279"
+      },
+      "verification": "NOT_RUN",
+      "status": "IMPLEMENTED_NOT_RUNTIME_VERIFIED",
+      "external_prerequisites": [],
+      "implementation": {
+        "file": "backend/domains/accounts.py",
+        "function": "tags_add",
+        "sha256": "58e4b10ae9a731040af28e9e80cc6fd1eeeed99e665a8a089949930b6cf08168",
+        "line": 266
+      }
+    },
+    {
+      "id": "UsersController::tags__update",
+      "canonical_url": "api/users/tags/update",
+      "aliases": [
+        "api/users/tags__update"
+      ],
+      "source": {
+        "file": "app/Http/Controllers/Api/UsersController.php",
+        "sha256": "d3480aae25371d1e5f2d9a32a93e8a13519e0355604ab13a745fe1cfb062fd3f",
+        "start_line": 1818,
+        "end_line": 1856,
+        "body_sha256": "603487a09c644e012b0850a16e135c01cc98e707400eeaf86861246638d83068"
+      },
+      "verification": "NOT_RUN",
+      "status": "IMPLEMENTED_NOT_RUNTIME_VERIFIED",
+      "external_prerequisites": [],
+      "implementation": {
+        "file": "backend/domains/accounts.py",
+        "function": "tags_update",
+        "sha256": "58e4b10ae9a731040af28e9e80cc6fd1eeeed99e665a8a089949930b6cf08168",
+        "line": 303
+      }
+    },
+    {
+      "id": "UsersController::tags__delete",
+      "canonical_url": "api/users/tags/delete",
+      "aliases": [
+        "api/users/tags__delete"
+      ],
+      "source": {
+        "file": "app/Http/Controllers/Api/UsersController.php",
+        "sha256": "d3480aae25371d1e5f2d9a32a93e8a13519e0355604ab13a745fe1cfb062fd3f",
+        "start_line": 1872,
+        "end_line": 1891,
+        "body_sha256": "91014f9fd976a63a2330a77ebb6c145f0ebfe407ebf8494003d1d5528ae1a7b8"
+      },
+      "verification": "NOT_RUN",
+      "status": "IMPLEMENTED_NOT_RUNTIME_VERIFIED",
+      "external_prerequisites": [],
+      "implementation": {
+        "file": "backend/domains/accounts.py",
+        "function": "tags_delete",
+        "sha256": "58e4b10ae9a731040af28e9e80cc6fd1eeeed99e665a8a089949930b6cf08168",
+        "line": 304
+      }
+    },
+    {
+      "id": "UsersController::tags__recognize",
+      "canonical_url": "api/users/tags/recognize",
+      "aliases": [
+        "api/users/tags__recognize"
+      ],
+      "source": {
+        "file": "app/Http/Controllers/Api/UsersController.php",
+        "sha256": "d3480aae25371d1e5f2d9a32a93e8a13519e0355604ab13a745fe1cfb062fd3f",
+        "start_line": 1907,
+        "end_line": 1934,
+        "body_sha256": "f332fce33544424036c005638f3d8795b952ef406c9a59dddd35d4c3037a7e23"
+      },
+      "verification": "NOT_RUN",
+      "status": "IMPLEMENTED_NOT_RUNTIME_VERIFIED",
+      "external_prerequisites": [],
+      "implementation": {
+        "file": "backend/domains/accounts.py",
+        "function": "tags_recognize",
+        "sha256": "58e4b10ae9a731040af28e9e80cc6fd1eeeed99e665a8a089949930b6cf08168",
+        "line": 305
+      }
+    },
+    {
+      "id": "UsersController::meeting__link",
+      "canonical_url": "api/users/meeting/link",
+      "aliases": [
+        "api/users/meeting__link"
+      ],
+      "source": {
+        "file": "app/Http/Controllers/Api/UsersController.php",
+        "sha256": "d3480aae25371d1e5f2d9a32a93e8a13519e0355604ab13a745fe1cfb062fd3f",
+        "start_line": 1951,
+        "end_line": 1963,
+        "body_sha256": "a8b2c9109b53d4798ed31d186fd72dedbd25021048030f8e0f5a14b32b7bf9b7"
+      },
+      "verification": "NOT_RUN",
+      "status": "IMPLEMENTED_NOT_RUNTIME_VERIFIED",
+      "external_prerequisites": [
+        "BLOCKED_VERIFICATION_AGORA: legitimate appid/app_certificate/API key/API secret and live channel; source Agora006 bytes implemented"
+      ],
+      "implementation": {
+        "file": "backend/domains/account_meetings.py",
+        "function": "meeting_link",
+        "sha256": "f0eee9a79c73b6f6efd8c268595bf3da310a63390d1a152e730542321fe9ae8d",
+        "line": 172
+      }
+    },
+    {
+      "id": "UsersController::meeting__tourist",
+      "canonical_url": "api/users/meeting/tourist",
+      "aliases": [
+        "api/users/meeting__tourist"
+      ],
+      "source": {
+        "file": "app/Http/Controllers/Api/UsersController.php",
+        "sha256": "d3480aae25371d1e5f2d9a32a93e8a13519e0355604ab13a745fe1cfb062fd3f",
+        "start_line": 1979,
+        "end_line": 1986,
+        "body_sha256": "9699ab2caaaf9cbe6e4e259d87ddd778b53d5843d519eac0c1693270d9631c6d"
+      },
+      "verification": "NOT_RUN",
+      "status": "IMPLEMENTED_NOT_RUNTIME_VERIFIED",
+      "external_prerequisites": [
+        "BLOCKED_VERIFICATION_AGORA: legitimate appid/app_certificate/API key/API secret and live channel; source Agora006 bytes implemented"
+      ],
+      "implementation": {
+        "file": "backend/domains/account_meetings.py",
+        "function": "meeting_tourist",
+        "sha256": "f0eee9a79c73b6f6efd8c268595bf3da310a63390d1a152e730542321fe9ae8d",
+        "line": 183
+      }
+    },
+    {
+      "id": "UsersController::meeting__invitation",
+      "canonical_url": "api/users/meeting/invitation",
+      "aliases": [
+        "api/users/meeting__invitation"
+      ],
+      "source": {
+        "file": "app/Http/Controllers/Api/UsersController.php",
+        "sha256": "d3480aae25371d1e5f2d9a32a93e8a13519e0355604ab13a745fe1cfb062fd3f",
+        "start_line": 2003,
+        "end_line": 2033,
+        "body_sha256": "e21ac6b7cf69f6b485a360706d7740801cfe292144f0c94f4a27dd59f5a0c1f7"
+      },
+      "verification": "NOT_RUN",
+      "status": "IMPLEMENTED_NOT_RUNTIME_VERIFIED",
+      "external_prerequisites": [
+        "BLOCKED_VERIFICATION_AGORA: legitimate appid/app_certificate/API key/API secret and live channel; source Agora006 bytes implemented"
+      ],
+      "implementation": {
+        "file": "backend/domains/account_meetings.py",
+        "function": "meeting_invitation",
+        "sha256": "f0eee9a79c73b6f6efd8c268595bf3da310a63390d1a152e730542321fe9ae8d",
+        "line": 187
+      }
+    },
+    {
+      "id": "UsersController::email__send",
+      "canonical_url": "api/users/email/send",
+      "aliases": [
+        "api/users/email__send"
+      ],
+      "source": {
+        "file": "app/Http/Controllers/Api/UsersController.php",
+        "sha256": "d3480aae25371d1e5f2d9a32a93e8a13519e0355604ab13a745fe1cfb062fd3f",
+        "start_line": 2050,
+        "end_line": 2073,
+        "body_sha256": "c4314f41cf61ccd8b9080d4c980061dcd90c486d2d18b1ebfb14b22326a4a9b1"
+      },
+      "verification": "NOT_RUN",
+      "status": "IMPLEMENTED_NOT_RUNTIME_VERIFIED",
+      "external_prerequisites": [
+        "BLOCKED_VERIFICATION_SMTP: legitimate SMTP host/account/password + controlled receiving mailbox; real SMTP client implemented"
+      ],
+      "implementation": {
+        "file": "backend/domains/accounts.py",
+        "function": "email_send",
+        "sha256": "58e4b10ae9a731040af28e9e80cc6fd1eeeed99e665a8a089949930b6cf08168",
+        "line": 339
+      }
+    },
+    {
+      "id": "UsersController::email__edit",
+      "canonical_url": "api/users/email/edit",
+      "aliases": [
+        "api/users/email__edit"
+      ],
+      "source": {
+        "file": "app/Http/Controllers/Api/UsersController.php",
+        "sha256": "d3480aae25371d1e5f2d9a32a93e8a13519e0355604ab13a745fe1cfb062fd3f",
+        "start_line": 2090,
+        "end_line": 2118,
+        "body_sha256": "59ac39ff754dfaa6153659ddfb5b0028810cbca266e9ab74fd781b50fc162d42"
+      },
+      "verification": "NOT_RUN",
+      "status": "IMPLEMENTED_NOT_RUNTIME_VERIFIED",
+      "external_prerequisites": [
+        "BLOCKED_VERIFICATION_SMTP: legitimate SMTP host/account/password + controlled receiving mailbox; real SMTP client implemented"
+      ],
+      "implementation": {
+        "file": "backend/domains/accounts.py",
+        "function": "email_edit",
+        "sha256": "58e4b10ae9a731040af28e9e80cc6fd1eeeed99e665a8a089949930b6cf08168",
+        "line": 349
+      }
+    },
+    {
+      "id": "UsersController::delete__account",
+      "canonical_url": "api/users/delete/account",
+      "aliases": [
+        "api/users/delete__account"
+      ],
+      "source": {
+        "file": "app/Http/Controllers/Api/UsersController.php",
+        "sha256": "d3480aae25371d1e5f2d9a32a93e8a13519e0355604ab13a745fe1cfb062fd3f",
+        "start_line": 2140,
+        "end_line": 2180,
+        "body_sha256": "d758f10d1d1a76e6db3493d8c8c228e5725307280c0208253bd12d5d3dd069c8"
+      },
+      "verification": "NOT_RUN",
+      "status": "IMPLEMENTED_NOT_RUNTIME_VERIFIED",
+      "external_prerequisites": [],
+      "implementation": {
+        "file": "backend/domains/account_admin.py",
+        "function": "delete_account",
+        "sha256": "f80a18b72782d9932d050be84141c8ccc76459e34c8df9e5a728e8db29cd4ac7",
+        "line": 159
+      }
+    },
+    {
+      "id": "UsersController::department__list",
+      "canonical_url": "api/users/department/list",
+      "aliases": [
+        "api/users/department__list"
+      ],
+      "source": {
+        "file": "app/Http/Controllers/Api/UsersController.php",
+        "sha256": "d3480aae25371d1e5f2d9a32a93e8a13519e0355604ab13a745fe1cfb062fd3f",
+        "start_line": 2194,
+        "end_line": 2199,
+        "body_sha256": "ba6bc36040cb09d7cf1df0c86ee7a54c6c38be4d181fcd538aee0f91a10277f9"
+      },
+      "verification": "NOT_RUN",
+      "status": "IMPLEMENTED_NOT_RUNTIME_VERIFIED",
+      "external_prerequisites": [],
+      "implementation": {
+        "file": "backend/domains/account_admin.py",
+        "function": "department_list",
+        "sha256": "f80a18b72782d9932d050be84141c8ccc76459e34c8df9e5a728e8db29cd4ac7",
+        "line": 40
+      }
+    },
+    {
+      "id": "UsersController::department__add",
+      "canonical_url": "api/users/department/add",
+      "aliases": [
+        "api/users/department__add"
+      ],
+      "source": {
+        "file": "app/Http/Controllers/Api/UsersController.php",
+        "sha256": "d3480aae25371d1e5f2d9a32a93e8a13519e0355604ab13a745fe1cfb062fd3f",
+        "start_line": 2222,
+        "end_line": 2285,
+        "body_sha256": "594572f3ac3483b5bcacbfd3371af60f52f66f5f2e7bb98299c97010b1f23702"
+      },
+      "verification": "NOT_RUN",
+      "status": "IMPLEMENTED_NOT_RUNTIME_VERIFIED",
+      "external_prerequisites": [],
+      "implementation": {
+        "file": "backend/domains/account_admin.py",
+        "function": "department_add",
+        "sha256": "f80a18b72782d9932d050be84141c8ccc76459e34c8df9e5a728e8db29cd4ac7",
+        "line": 93
+      }
+    },
+    {
+      "id": "UsersController::department__adddeputy",
+      "canonical_url": "api/users/department/adddeputy",
+      "aliases": [
+        "api/users/department__adddeputy"
+      ],
+      "source": {
+        "file": "app/Http/Controllers/Api/UsersController.php",
+        "sha256": "d3480aae25371d1e5f2d9a32a93e8a13519e0355604ab13a745fe1cfb062fd3f",
+        "start_line": 2301,
+        "end_line": 2317,
+        "body_sha256": "d12fad09c6e2f9765611e0f2733ea517fed770247317a8b0df55ee7402d1a56d"
+      },
+      "verification": "NOT_RUN",
+      "status": "IMPLEMENTED_NOT_RUNTIME_VERIFIED",
+      "external_prerequisites": [],
+      "implementation": {
+        "file": "backend/domains/account_admin.py",
+        "function": "department_adddeputy",
+        "sha256": "f80a18b72782d9932d050be84141c8ccc76459e34c8df9e5a728e8db29cd4ac7",
+        "line": 115
+      }
+    },
+    {
+      "id": "UsersController::department__deldeputy",
+      "canonical_url": "api/users/department/deldeputy",
+      "aliases": [
+        "api/users/department__deldeputy"
+      ],
+      "source": {
+        "file": "app/Http/Controllers/Api/UsersController.php",
+        "sha256": "d3480aae25371d1e5f2d9a32a93e8a13519e0355604ab13a745fe1cfb062fd3f",
+        "start_line": 2330,
+        "end_line": 2344,
+        "body_sha256": "49597ee0908cfbac1d4b5b00d6a84b2898663a68806eb73ca7214548bbc12dcd"
+      },
+      "verification": "NOT_RUN",
+      "status": "IMPLEMENTED_NOT_RUNTIME_VERIFIED",
+      "external_prerequisites": [],
+      "implementation": {
+        "file": "backend/domains/account_admin.py",
+        "function": "department_deldeputy",
+        "sha256": "f80a18b72782d9932d050be84141c8ccc76459e34c8df9e5a728e8db29cd4ac7",
+        "line": 117
+      }
+    },
+    {
+      "id": "UsersController::department__del",
+      "canonical_url": "api/users/department/del",
+      "aliases": [
+        "api/users/department__del"
+      ],
+      "source": {
+        "file": "app/Http/Controllers/Api/UsersController.php",
+        "sha256": "d3480aae25371d1e5f2d9a32a93e8a13519e0355604ab13a745fe1cfb062fd3f",
+        "start_line": 2360,
+        "end_line": 2377,
+        "body_sha256": "913261e4734452b45cd4e102d8f12e29e90bd5fc4e59cee4fff4079ce665e20a"
+      },
+      "verification": "NOT_RUN",
+      "status": "IMPLEMENTED_NOT_RUNTIME_VERIFIED",
+      "external_prerequisites": [],
+      "implementation": {
+        "file": "backend/domains/account_admin.py",
+        "function": "department_del",
+        "sha256": "f80a18b72782d9932d050be84141c8ccc76459e34c8df9e5a728e8db29cd4ac7",
+        "line": 117
+      }
+    },
+    {
+      "id": "UsersController::department__sync",
+      "canonical_url": "api/users/department/sync",
+      "aliases": [
+        "api/users/department__sync"
+      ],
+      "source": {
+        "file": "app/Http/Controllers/Api/UsersController.php",
+        "sha256": "d3480aae25371d1e5f2d9a32a93e8a13519e0355604ab13a745fe1cfb062fd3f",
+        "start_line": 2393,
+        "end_line": 2485,
+        "body_sha256": "370d2ced033c61523bcef41e7ee3b4f52a31299f0368c7a958375660ceb788ca"
+      },
+      "verification": "NOT_RUN",
+      "status": "IMPLEMENTED_NOT_RUNTIME_VERIFIED",
+      "external_prerequisites": [],
+      "implementation": {
+        "file": "backend/domains/account_admin.py",
+        "function": "department_sync",
+        "sha256": "f80a18b72782d9932d050be84141c8ccc76459e34c8df9e5a728e8db29cd4ac7",
+        "line": 130
+      }
+    },
+    {
+      "id": "UsersController::checkin__get",
+      "canonical_url": "api/users/checkin/get",
+      "aliases": [
+        "api/users/checkin__get"
+      ],
+      "source": {
+        "file": "app/Http/Controllers/Api/UsersController.php",
+        "sha256": "d3480aae25371d1e5f2d9a32a93e8a13519e0355604ab13a745fe1cfb062fd3f",
+        "start_line": 2499,
+        "end_line": 2512,
+        "body_sha256": "277c3638de7b13ed8f4ee8b7e733c46a7a8493c7239bb7bd592dc66394566d77"
+      },
+      "verification": "NOT_RUN",
+      "status": "IMPLEMENTED_NOT_RUNTIME_VERIFIED",
+      "external_prerequisites": [],
+      "implementation": {
+        "file": "backend/domains/account_checkin.py",
+        "function": "checkin_get",
+        "sha256": "b7ff9862a00fb31121ef4bc9d751364e908691e39b4f9135e3fc2dbbd74fdb17",
+        "line": 61
+      }
+    },
+    {
+      "id": "UsersController::checkin__save",
+      "canonical_url": "api/users/checkin/save",
+      "aliases": [
+        "api/users/checkin__save"
+      ],
+      "source": {
+        "file": "app/Http/Controllers/Api/UsersController.php",
+        "sha256": "d3480aae25371d1e5f2d9a32a93e8a13519e0355604ab13a745fe1cfb062fd3f",
+        "start_line": 2532,
+        "end_line": 2587,
+        "body_sha256": "1539239fa2ded81e4a429a10a7c113569d455c20b17fef69e78cd47e58eba138"
+      },
+      "verification": "NOT_RUN",
+      "status": "IMPLEMENTED_NOT_RUNTIME_VERIFIED",
+      "external_prerequisites": [
+        "BLOCKED_VERIFICATION_FACE: installed face plugin, authorized camera/device endpoint and retained upload bytes"
+      ],
+      "implementation": {
+        "file": "backend/domains/account_checkin.py",
+        "function": "checkin_save",
+        "sha256": "b7ff9862a00fb31121ef4bc9d751364e908691e39b4f9135e3fc2dbbd74fdb17",
+        "line": 67
+      }
+    },
+    {
+      "id": "UsersController::checkin__list",
+      "canonical_url": "api/users/checkin/list",
+      "aliases": [
+        "api/users/checkin__list"
+      ],
+      "source": {
+        "file": "app/Http/Controllers/Api/UsersController.php",
+        "sha256": "d3480aae25371d1e5f2d9a32a93e8a13519e0355604ab13a745fe1cfb062fd3f",
+        "start_line": 2604,
+        "end_line": 2634,
+        "body_sha256": "58cad48fea3f37bf5a79d94c055517e90fc95889851df027f72da014ee3fbecc"
+      },
+      "verification": "NOT_RUN",
+      "status": "IMPLEMENTED_NOT_RUNTIME_VERIFIED",
+      "external_prerequisites": [],
+      "implementation": {
+        "file": "backend/domains/account_checkin.py",
+        "function": "checkin_list",
+        "sha256": "b7ff9862a00fb31121ef4bc9d751364e908691e39b4f9135e3fc2dbbd74fdb17",
+        "line": 101
+      }
+    },
+    {
+      "id": "UsersController::socket__status",
+      "canonical_url": "api/users/socket/status",
+      "aliases": [
+        "api/users/socket__status"
+      ],
+      "source": {
+        "file": "app/Http/Controllers/Api/UsersController.php",
+        "sha256": "d3480aae25371d1e5f2d9a32a93e8a13519e0355604ab13a745fe1cfb062fd3f",
+        "start_line": 2650,
+        "end_line": 2657,
+        "body_sha256": "bebd75e0f0b4f55eab716fb2c3b2ae5b7ce71d6f0830b585692b3ec24336c439"
+      },
+      "verification": "NOT_RUN",
+      "status": "IMPLEMENTED_NOT_RUNTIME_VERIFIED",
+      "external_prerequisites": [],
+      "implementation": {
+        "file": "backend/domains/accounts.py",
+        "function": "socket_status",
+        "sha256": "58e4b10ae9a731040af28e9e80cc6fd1eeeed99e665a8a089949930b6cf08168",
+        "line": 384
+      }
+    },
+    {
+      "id": "UsersController::key__client",
+      "canonical_url": "api/users/key/client",
+      "aliases": [
+        "api/users/key__client"
+      ],
+      "source": {
+        "file": "app/Http/Controllers/Api/UsersController.php",
+        "sha256": "d3480aae25371d1e5f2d9a32a93e8a13519e0355604ab13a745fe1cfb062fd3f",
+        "start_line": 2673,
+        "end_line": 2699,
+        "body_sha256": "b24026c68ad05af66807ff34e03e3f8b2b1dd67158ee9a9b515030c45886110e"
+      },
+      "verification": "NOT_RUN",
+      "status": "IMPLEMENTED_NOT_RUNTIME_VERIFIED",
+      "external_prerequisites": [],
+      "implementation": {
+        "file": "backend/main.py",
+        "function": "handle",
+        "sha256": "11ff357df00077cb198ea8ca50ccb61f9ebc31d5c41388f571a658b7d13daa93",
+        "line": 135
+      }
+    },
+    {
+      "id": "UsersController::bot__list",
+      "canonical_url": "api/users/bot/list",
+      "aliases": [
+        "api/users/bot__list"
+      ],
+      "source": {
+        "file": "app/Http/Controllers/Api/UsersController.php",
+        "sha256": "d3480aae25371d1e5f2d9a32a93e8a13519e0355604ab13a745fe1cfb062fd3f",
+        "start_line": 2713,
+        "end_line": 2745,
+        "body_sha256": "cb026baa5726e4b1a02501269dc5e19926dc271fcb5d6aead99003ed62d700df"
+      },
+      "verification": "NOT_RUN",
+      "status": "IMPLEMENTED_NOT_RUNTIME_VERIFIED",
+      "external_prerequisites": [],
+      "implementation": {
+        "file": "backend/domains/account_meetings.py",
+        "function": "bot_list",
+        "sha256": "f0eee9a79c73b6f6efd8c268595bf3da310a63390d1a152e730542321fe9ae8d",
+        "line": 58
+      }
+    },
+    {
+      "id": "UsersController::bot__info",
+      "canonical_url": "api/users/bot/info",
+      "aliases": [
+        "api/users/bot__info"
+      ],
+      "source": {
+        "file": "app/Http/Controllers/Api/UsersController.php",
+        "sha256": "d3480aae25371d1e5f2d9a32a93e8a13519e0355604ab13a745fe1cfb062fd3f",
+        "start_line": 2761,
+        "end_line": 2798,
+        "body_sha256": "9062c2f85d2249008de376449c3f8e6d361e2a00933eed7bfa2290b775ec1fa0"
+      },
+      "verification": "NOT_RUN",
+      "status": "IMPLEMENTED_NOT_RUNTIME_VERIFIED",
+      "external_prerequisites": [],
+      "implementation": {
+        "file": "backend/domains/account_meetings.py",
+        "function": "bot_info",
+        "sha256": "f0eee9a79c73b6f6efd8c268595bf3da310a63390d1a152e730542321fe9ae8d",
+        "line": 64
+      }
+    },
+    {
+      "id": "UsersController::bot__edit",
+      "canonical_url": "api/users/bot/edit",
+      "aliases": [
+        "api/users/bot__edit"
+      ],
+      "source": {
+        "file": "app/Http/Controllers/Api/UsersController.php",
+        "sha256": "d3480aae25371d1e5f2d9a32a93e8a13519e0355604ab13a745fe1cfb062fd3f",
+        "start_line": 2823,
+        "end_line": 2904,
+        "body_sha256": "bad5c13c192d284f99b352c1f79484833844a8ea0a8d37d1bfedc0da6bbc4bf5"
+      },
+      "verification": "NOT_RUN",
+      "status": "IMPLEMENTED_NOT_RUNTIME_VERIFIED",
+      "external_prerequisites": [],
+      "implementation": {
+        "file": "backend/domains/account_meetings.py",
+        "function": "bot_edit",
+        "sha256": "f0eee9a79c73b6f6efd8c268595bf3da310a63390d1a152e730542321fe9ae8d",
+        "line": 69
+      }
+    },
+    {
+      "id": "UsersController::bot__delete",
+      "canonical_url": "api/users/bot/delete",
+      "aliases": [
+        "api/users/bot__delete"
+      ],
+      "source": {
+        "file": "app/Http/Controllers/Api/UsersController.php",
+        "sha256": "d3480aae25371d1e5f2d9a32a93e8a13519e0355604ab13a745fe1cfb062fd3f",
+        "start_line": 2921,
+        "end_line": 2954,
+        "body_sha256": "2490669184d1f2c2dbe235bf025903e3dfe3d4e81a707005bd63b034457d3f42"
+      },
+      "verification": "NOT_RUN",
+      "status": "IMPLEMENTED_NOT_RUNTIME_VERIFIED",
+      "external_prerequisites": [],
+      "implementation": {
+        "file": "backend/domains/account_meetings.py",
+        "function": "bot_delete",
+        "sha256": "f0eee9a79c73b6f6efd8c268595bf3da310a63390d1a152e730542321fe9ae8d",
+        "line": 95
+      }
+    },
+    {
+      "id": "UsersController::share__list",
+      "canonical_url": "api/users/share/list",
+      "aliases": [
+        "api/users/share__list"
+      ],
+      "source": {
+        "file": "app/Http/Controllers/Api/UsersController.php",
+        "sha256": "d3480aae25371d1e5f2d9a32a93e8a13519e0355604ab13a745fe1cfb062fd3f",
+        "start_line": 2972,
+        "end_line": 3077,
+        "body_sha256": "97200e4f4d11705e0833699ec1a277f454943e04267e8ae355b5147721651698"
+      },
+      "verification": "NOT_RUN",
+      "status": "IMPLEMENTED_NOT_RUNTIME_VERIFIED",
+      "external_prerequisites": [],
+      "implementation": {
+        "file": "backend/domains/account_misc.py",
+        "function": "share_list",
+        "sha256": "06fd07c11a7483c5198512556739c9c63b969b5c4f95fe3e4922d0e87787fc1e",
+        "line": 23
+      }
+    },
+    {
+      "id": "UsersController::annual__report",
+      "canonical_url": "api/users/annual/report",
+      "aliases": [
+        "api/users/annual__report"
+      ],
+      "source": {
+        "file": "app/Http/Controllers/Api/UsersController.php",
+        "sha256": "d3480aae25371d1e5f2d9a32a93e8a13519e0355604ab13a745fe1cfb062fd3f",
+        "start_line": 3090,
+        "end_line": 3246,
+        "body_sha256": "fd94f7224b5cc29c9758aaaf409ab4c91f1efdaae41c1fb50e8436bc3b195ef2"
+      },
+      "verification": "NOT_RUN",
+      "status": "IMPLEMENTED_NOT_RUNTIME_VERIFIED",
+      "external_prerequisites": [],
+      "implementation": {
+        "file": "backend/domains/account_misc.py",
+        "function": "annual_report",
+        "sha256": "06fd07c11a7483c5198512556739c9c63b969b5c4f95fe3e4922d0e87787fc1e",
+        "line": 55
+      }
+    },
+    {
+      "id": "UsersController::device__list",
+      "canonical_url": "api/users/device/list",
+      "aliases": [
+        "api/users/device__list"
+      ],
+      "source": {
+        "file": "app/Http/Controllers/Api/UsersController.php",
+        "sha256": "d3480aae25371d1e5f2d9a32a93e8a13519e0355604ab13a745fe1cfb062fd3f",
+        "start_line": 3260,
+        "end_line": 3269,
+        "body_sha256": "09d4b390f77f6c188b8f560677dbc97766b06eedf31eef2bb4fb746a628d694c"
+      },
+      "verification": "NOT_RUN",
+      "status": "IMPLEMENTED_NOT_RUNTIME_VERIFIED",
+      "external_prerequisites": [],
+      "implementation": {
+        "file": "backend/domains/accounts.py",
+        "function": "device_list",
+        "sha256": "58e4b10ae9a731040af28e9e80cc6fd1eeeed99e665a8a089949930b6cf08168",
+        "line": 362
+      }
+    },
+    {
+      "id": "UsersController::device__logout",
+      "canonical_url": "api/users/device/logout",
+      "aliases": [
+        "api/users/device__logout"
+      ],
+      "source": {
+        "file": "app/Http/Controllers/Api/UsersController.php",
+        "sha256": "d3480aae25371d1e5f2d9a32a93e8a13519e0355604ab13a745fe1cfb062fd3f",
+        "start_line": 3285,
+        "end_line": 3300,
+        "body_sha256": "35c657ec3d2a8360820166e10dc28721237179a20422924090d66e0b32ddeb18"
+      },
+      "verification": "NOT_RUN",
+      "status": "IMPLEMENTED_NOT_RUNTIME_VERIFIED",
+      "external_prerequisites": [],
+      "implementation": {
+        "file": "backend/domains/accounts.py",
+        "function": "device_logout",
+        "sha256": "58e4b10ae9a731040af28e9e80cc6fd1eeeed99e665a8a089949930b6cf08168",
+        "line": 369
+      }
+    },
+    {
+      "id": "UsersController::device__edit",
+      "canonical_url": "api/users/device/edit",
+      "aliases": [
+        "api/users/device__edit"
+      ],
+      "source": {
+        "file": "app/Http/Controllers/Api/UsersController.php",
+        "sha256": "d3480aae25371d1e5f2d9a32a93e8a13519e0355604ab13a745fe1cfb062fd3f",
+        "start_line": 3320,
+        "end_line": 3339,
+        "body_sha256": "d6c263041c1f0f21aee59d94e826710aad6bb9403e5cdd50c413e4beb7568e48"
+      },
+      "verification": "NOT_RUN",
+      "status": "IMPLEMENTED_NOT_RUNTIME_VERIFIED",
+      "external_prerequisites": [],
+      "implementation": {
+        "file": "backend/domains/accounts.py",
+        "function": "device_edit",
+        "sha256": "58e4b10ae9a731040af28e9e80cc6fd1eeeed99e665a8a089949930b6cf08168",
+        "line": 372
+      }
+    },
+    {
+      "id": "UsersController::task__browse",
+      "canonical_url": "api/users/task/browse",
+      "aliases": [
+        "api/users/task__browse"
+      ],
+      "source": {
+        "file": "app/Http/Controllers/Api/UsersController.php",
+        "sha256": "d3480aae25371d1e5f2d9a32a93e8a13519e0355604ab13a745fe1cfb062fd3f",
+        "start_line": 3355,
+        "end_line": 3389,
+        "body_sha256": "7e2c37cfd539bb9c6efef9fb2ee602c2e283d3c07d28956ad362e28b007e8899"
+      },
+      "verification": "NOT_RUN",
+      "status": "IMPLEMENTED_NOT_RUNTIME_VERIFIED",
+      "external_prerequisites": [],
+      "implementation": {
+        "file": "backend/domains/account_history.py",
+        "function": "task_browse",
+        "sha256": "42ad0660ae159d30935af9472b05a4bd9e419cfb720a30b32912fa51704fd964",
+        "line": 72
+      }
+    },
+    {
+      "id": "UsersController::task__browse_save",
+      "canonical_url": "api/users/task/browse_save",
+      "aliases": [
+        "api/users/task__browse_save"
+      ],
+      "source": {
+        "file": "app/Http/Controllers/Api/UsersController.php",
+        "sha256": "d3480aae25371d1e5f2d9a32a93e8a13519e0355604ab13a745fe1cfb062fd3f",
+        "start_line": 3405,
+        "end_line": 3419,
+        "body_sha256": "09b7c1fb45dbd794db48b0579113d719df8f10b58ce30d5e1ad386fde97a81c8"
+      },
+      "verification": "NOT_RUN",
+      "status": "IMPLEMENTED_NOT_RUNTIME_VERIFIED",
+      "external_prerequisites": [],
+      "implementation": {
+        "file": "backend/domains/account_history.py",
+        "function": "task_browse_save",
+        "sha256": "42ad0660ae159d30935af9472b05a4bd9e419cfb720a30b32912fa51704fd964",
+        "line": 82
+      }
+    },
+    {
+      "id": "UsersController::task__browse_clean",
+      "canonical_url": "api/users/task/browse_clean",
+      "aliases": [
+        "api/users/task__browse_clean"
+      ],
+      "source": {
+        "file": "app/Http/Controllers/Api/UsersController.php",
+        "sha256": "d3480aae25371d1e5f2d9a32a93e8a13519e0355604ab13a745fe1cfb062fd3f",
+        "start_line": 3435,
+        "end_line": 3444,
+        "body_sha256": "ae8b802e54c9cd56ebd84df245825330240e36bccd54776d81b36afca7cdff08"
+      },
+      "verification": "NOT_RUN",
+      "status": "IMPLEMENTED_NOT_RUNTIME_VERIFIED",
+      "external_prerequisites": [],
+      "implementation": {
+        "file": "backend/domains/account_history.py",
+        "function": "task_browse_clean",
+        "sha256": "42ad0660ae159d30935af9472b05a4bd9e419cfb720a30b32912fa51704fd964",
+        "line": 92
+      }
+    },
+    {
+      "id": "UsersController::recent__browse",
+      "canonical_url": "api/users/recent/browse",
+      "aliases": [
+        "api/users/recent__browse"
+      ],
+      "source": {
+        "file": "app/Http/Controllers/Api/UsersController.php",
+        "sha256": "d3480aae25371d1e5f2d9a32a93e8a13519e0355604ab13a745fe1cfb062fd3f",
+        "start_line": 3462,
+        "end_line": 3647,
+        "body_sha256": "773b77a4867fbf3e3f9ce0db1483d6edf2ce8ae1e008802d1552a1fea0797329"
+      },
+      "verification": "NOT_RUN",
+      "status": "IMPLEMENTED_NOT_RUNTIME_VERIFIED",
+      "external_prerequisites": [],
+      "implementation": {
+        "file": "backend/domains/account_history.py",
+        "function": "recent_browse",
+        "sha256": "42ad0660ae159d30935af9472b05a4bd9e419cfb720a30b32912fa51704fd964",
+        "line": 98
+      }
+    },
+    {
+      "id": "UsersController::recent__delete",
+      "canonical_url": "api/users/recent/delete",
+      "aliases": [
+        "api/users/recent__delete"
+      ],
+      "source": {
+        "file": "app/Http/Controllers/Api/UsersController.php",
+        "sha256": "d3480aae25371d1e5f2d9a32a93e8a13519e0355604ab13a745fe1cfb062fd3f",
+        "start_line": 3663,
+        "end_line": 3680,
+        "body_sha256": "16480f79f81346cb8541ca667ea3c141a239f94c565b53103b997163626f760b"
+      },
+      "verification": "NOT_RUN",
+      "status": "IMPLEMENTED_NOT_RUNTIME_VERIFIED",
+      "external_prerequisites": [],
+      "implementation": {
+        "file": "backend/domains/account_history.py",
+        "function": "recent_delete",
+        "sha256": "42ad0660ae159d30935af9472b05a4bd9e419cfb720a30b32912fa51704fd964",
+        "line": 121
+      }
+    },
+    {
+      "id": "UsersController::appsort",
+      "canonical_url": "api/users/appsort",
+      "aliases": [],
+      "source": {
+        "file": "app/Http/Controllers/Api/UsersController.php",
+        "sha256": "d3480aae25371d1e5f2d9a32a93e8a13519e0355604ab13a745fe1cfb062fd3f",
+        "start_line": 3694,
+        "end_line": 3701,
+        "body_sha256": "3926ede77c92e9d9ea9b538b0f70a6d9dd7a07595c356ba4a1ecb76b34f5ab55"
+      },
+      "verification": "NOT_RUN",
+      "status": "IMPLEMENTED_NOT_RUNTIME_VERIFIED",
+      "external_prerequisites": [],
+      "implementation": {
+        "file": "backend/domains/accounts.py",
+        "function": "appsort",
+        "sha256": "58e4b10ae9a731040af28e9e80cc6fd1eeeed99e665a8a089949930b6cf08168",
+        "line": 395
+      }
+    },
+    {
+      "id": "UsersController::appsort__save",
+      "canonical_url": "api/users/appsort/save",
+      "aliases": [
+        "api/users/appsort__save"
+      ],
+      "source": {
+        "file": "app/Http/Controllers/Api/UsersController.php",
+        "sha256": "d3480aae25371d1e5f2d9a32a93e8a13519e0355604ab13a745fe1cfb062fd3f",
+        "start_line": 3717,
+        "end_line": 3725,
+        "body_sha256": "ca3e5a26fd4b8bc21203b8f87a7959f1c38e348cd80cd2f82ba12c9555138eaf"
+      },
+      "verification": "NOT_RUN",
+      "status": "IMPLEMENTED_NOT_RUNTIME_VERIFIED",
+      "external_prerequisites": [],
+      "implementation": {
+        "file": "backend/domains/accounts.py",
+        "function": "appsort_save",
+        "sha256": "58e4b10ae9a731040af28e9e80cc6fd1eeeed99e665a8a089949930b6cf08168",
+        "line": 401
+      }
+    },
+    {
+      "id": "UsersController::favorites",
+      "canonical_url": "api/users/favorites",
+      "aliases": [],
+      "source": {
+        "file": "app/Http/Controllers/Api/UsersController.php",
+        "sha256": "d3480aae25371d1e5f2d9a32a93e8a13519e0355604ab13a745fe1cfb062fd3f",
+        "start_line": 3743,
+        "end_line": 3760,
+        "body_sha256": "9ad88e270189c4c0db9599ad50b7393f218efc228885d8e7ad6879607003da18"
+      },
+      "verification": "NOT_RUN",
+      "status": "IMPLEMENTED_NOT_RUNTIME_VERIFIED",
+      "external_prerequisites": [],
+      "implementation": {
+        "file": "backend/domains/account_history.py",
+        "function": "favorites",
+        "sha256": "42ad0660ae159d30935af9472b05a4bd9e419cfb720a30b32912fa51704fd964",
+        "line": 129
+      }
+    },
+    {
+      "id": "UsersController::favorite__toggle",
+      "canonical_url": "api/users/favorite/toggle",
+      "aliases": [
+        "api/users/favorite__toggle"
+      ],
+      "source": {
+        "file": "app/Http/Controllers/Api/UsersController.php",
+        "sha256": "d3480aae25371d1e5f2d9a32a93e8a13519e0355604ab13a745fe1cfb062fd3f",
+        "start_line": 3777,
+        "end_line": 3826,
+        "body_sha256": "3190ecf3ea800776f34a02f607fc0d536cd4e9a7ad74b671b58be6b72b91f682"
+      },
+      "verification": "NOT_RUN",
+      "status": "IMPLEMENTED_NOT_RUNTIME_VERIFIED",
+      "external_prerequisites": [],
+      "implementation": {
+        "file": "backend/domains/account_history.py",
+        "function": "favorite_toggle",
+        "sha256": "42ad0660ae159d30935af9472b05a4bd9e419cfb720a30b32912fa51704fd964",
+        "line": 156
+      }
+    },
+    {
+      "id": "UsersController::favorite__remark",
+      "canonical_url": "api/users/favorite/remark",
+      "aliases": [
+        "api/users/favorite__remark"
+      ],
+      "source": {
+        "file": "app/Http/Controllers/Api/UsersController.php",
+        "sha256": "d3480aae25371d1e5f2d9a32a93e8a13519e0355604ab13a745fe1cfb062fd3f",
+        "start_line": 3844,
+        "end_line": 3878,
+        "body_sha256": "40721538a726d829fe7c2acb624b367eb4d044a4eab1cbc959a61479917e4c25"
+      },
+      "verification": "NOT_RUN",
+      "status": "IMPLEMENTED_NOT_RUNTIME_VERIFIED",
+      "external_prerequisites": [],
+      "implementation": {
+        "file": "backend/domains/account_history.py",
+        "function": "favorite_remark",
+        "sha256": "42ad0660ae159d30935af9472b05a4bd9e419cfb720a30b32912fa51704fd964",
+        "line": 165
+      }
+    },
+    {
+      "id": "UsersController::favorites__clean",
+      "canonical_url": "api/users/favorites/clean",
+      "aliases": [
+        "api/users/favorites__clean"
+      ],
+      "source": {
+        "file": "app/Http/Controllers/Api/UsersController.php",
+        "sha256": "d3480aae25371d1e5f2d9a32a93e8a13519e0355604ab13a745fe1cfb062fd3f",
+        "start_line": 3894,
+        "end_line": 3912,
+        "body_sha256": "f53bf84f589e05703f77a0b13aaeb0c90217f6d681f3c62bd9bdd2343d62992c"
+      },
+      "verification": "NOT_RUN",
+      "status": "IMPLEMENTED_NOT_RUNTIME_VERIFIED",
+      "external_prerequisites": [],
+      "implementation": {
+        "file": "backend/domains/account_history.py",
+        "function": "favorites_clean",
+        "sha256": "42ad0660ae159d30935af9472b05a4bd9e419cfb720a30b32912fa51704fd964",
+        "line": 173
+      }
+    },
+    {
+      "id": "UsersController::favorite__check",
+      "canonical_url": "api/users/favorite/check",
+      "aliases": [
+        "api/users/favorite__check"
+      ],
+      "source": {
+        "file": "app/Http/Controllers/Api/UsersController.php",
+        "sha256": "d3480aae25371d1e5f2d9a32a93e8a13519e0355604ab13a745fe1cfb062fd3f",
+        "start_line": 3929,
+        "end_line": 3949,
+        "body_sha256": "88379c59e728efe33d5f9b85bd0b8c86f031e31e35fc5a23abb78b9211db9517"
+      },
+      "verification": "NOT_RUN",
+      "status": "IMPLEMENTED_NOT_RUNTIME_VERIFIED",
+      "external_prerequisites": [],
+      "implementation": {
+        "file": "backend/domains/account_history.py",
+        "function": "favorite_check",
+        "sha256": "42ad0660ae159d30935af9472b05a4bd9e419cfb720a30b32912fa51704fd964",
+        "line": 180
+      }
+    }
+  ],
+  "shared_auth_contract": {
+    "login": "login(connection,context,email,password,*,settings,registration=False,invite=\"\") -> user dict | EmailVerificationRequired",
+    "change_password": "change_password(connection,context,old_password,new_password,*,settings) -> user dict",
+    "creation": "create_account(connection,context,email,password,*,nickname=\"\",identity=\"\",bot=False,email_verity=False,changepass=False,profession=\"\",departments=()) -> actual user",
+    "service_token": "issue_service_token(connection,userid,context) -> opaque raw token; digest persisted; purpose service; no device; <=1h",
+    "disabled": "is_disabled(user): identity disable OR disable_at",
+    "transaction": "All writes share caller Connection. Only explicit EmailVerificationRequired returns ret0 after legitimate pending verification transaction; ApiError rolls back.",
+    "jobs": [
+      "accounts.created",
+      "accounts.verify_email"
+    ],
+    "required_schema": [
+      "account_identity_state singleton in accounts.sql",
+      "auth_sessions purpose and nullable device_id owned by IntegrationOwner"
+    ]
+  },
+  "frontend_status": "SOURCE_CHANGED_PUBLIC_PENDING",
+  "verification_executed": [],
+  "binding_note": "Snapshot line/hash evidence; shared IntegrationOwner files may change during final integration. Final integration manifest supersedes their snapshot hashes."
+}

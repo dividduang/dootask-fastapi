@@ -1,0 +1,13 @@
+{
+  "status": "IMPLEMENTATION_INTEGRATED_READY_FOR_INDEPENDENT_QA",
+  "source_only_counts": {
+    "INSTALLED_IMPLEMENTATION_NOT_VERIFIED": 326,
+    "REJECTED_EXPLICIT_ALLOWLIST": 222,
+    "USER_APPROVED_RETIRED": 8
+  },
+  "dependencies": "37 runtime distributions installed; new 9 official PyPI hash matches",
+  "verification": "NOT_RUN; no application build/tests/lint/formatter/smoke/service/DB",
+  "frontend": "SOURCE_CHANGED_PUBLIC_PENDING_CENTRAL_BUILD; 9 user-approved vendor license UI source paths only",
+  "git": "exact stage manifest prepared; local commit next, no push",
+  "handoff": "docs/2026101217-全域整合与运行准备-feat.md"
+}

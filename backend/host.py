@@ -94,7 +94,7 @@ def verify_csrf(request: Request, secret: str, token: str | None = None) -> bool
     """
     expected = _cookie_csrf(request, secret)
     supplied = token if token is not None else request.headers.get("x-csrf-token", "")
-    return bool(expected and _CSRF_NONCE.fullmatch(supplied) and hmac.compare_digest(expected, supplied))
+    return bool(expected and isinstance(supplied, str) and _CSRF_NONCE.fullmatch(supplied) and hmac.compare_digest(expected, supplied))
 
 
 def render_template(

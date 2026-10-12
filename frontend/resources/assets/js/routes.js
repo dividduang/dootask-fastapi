@@ -65,11 +65,6 @@ export default [
                         component: () => import('./pages/manage/setting/keyboard.vue'),
                     },
                     {
-                        name: 'manage-setting-license',
-                        path: 'license',
-                        component: () => import('./pages/manage/setting/license.vue'),
-                    },
-                    {
                         name: 'manage-setting-password',
                         path: 'password',
                         component: () => import('./pages/manage/setting/password.vue'),

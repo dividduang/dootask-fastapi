@@ -21,13 +21,12 @@ const LINKS = {
     application:  { route: { name: 'manage-application' } },
     project_list: { route: { name: 'manage-project' } },
 
-    // 设置（12 个 manage-setting-* 独立路由）
+    // 设置（11 个 manage-setting-* 独立路由）
     setting_personal: { route: { name: 'manage-setting-personal' } },
     setting_checkin:  { route: { name: 'manage-setting-checkin' } },
     setting_language: { route: { name: 'manage-setting-language' } },
     setting_theme:    { route: { name: 'manage-setting-theme' } },
     setting_keyboard: { route: { name: 'manage-setting-keyboard' } },
-    setting_license:  { route: { name: 'manage-setting-license' } },
     setting_password: { route: { name: 'manage-setting-password' } },
     setting_email:    { route: { name: 'manage-setting-email' } },
     setting_system:   { route: { name: 'manage-setting-system', query: { tab: 'general' } } },

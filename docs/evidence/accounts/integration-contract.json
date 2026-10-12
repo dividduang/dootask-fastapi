@@ -1,0 +1,37 @@
+{
+  "status": "IMPLEMENTED_NOT_RUNTIME_VERIFIED",
+  "owner": "DomainAccounts",
+  "current_coverage": "docs/evidence/independent/current-coverage.json",
+  "transaction": "All handlers synchronously accept (connection, context, data, settings); same SQLAlchemy Connection, no commits. Workers receive (connection,payload,settings).",
+  "route_installation": {
+    "imports_in_order": ["backend.domains.accounts", "backend.domains.system"],
+    "maps": ["accounts.ROUTES", "system.ROUTES"],
+    "aliases": "For every explicit path, also expose source method__action spelling, case-insensitive per frozen endpoint ledger. No generic getattr/discovery dispatch.",
+    "response": "Already source envelopes; do not wrap a second time. Starlette Response returned directly. None from historical AI routes means source empty body, NOT success envelope.",
+    "raw": ["system/get/info", "system/get/ip", "system/get/cnip", "system/version", "system/prefetch", "system/setting/ai", "system/setting/aibot_models", "system/setting/aibot_defmodels"],
+    "binary": {"users/import/template": "XLSX Response; authenticated admin", "system/checkin/down": "ZIP FileResponse via expiring random bearer download key; invalid keys HTTP403"},
+    "uploads": {"users/import/preview": "UploadFile file", "system/imgupload": "UploadFile image OR data:image/...;base64 image64", "system/fileupload": "UploadFile files OR image64", "users/share/list": "UploadFile files/file on upload_file_id branch"},
+    "startup": ["Apply backend/domains/accounts.sql after shared schema, including account_identity_state and its singleton INSERT; reflect all tables", "accounts.register_jobs() after reflection; now includes accounts.created and accounts.verify_email. CheckinRemindTask remains uniquely owned by DomainProjects/checkin.register_jobs."],
+    "shared_identity_routes_not_replaced": ["users/login", "users/logout", "users/info", "users/editpass", "users/key/client", "users/token/expire", "users/reg/needinvite", "users/login/needcode", "users/login/codejson", "users/login/codeimg"]
+  },
+  "shared_auth_required_calls": {
+    "users/login LDAP": "auth.login(...,settings=settings) invokes actual ldap_login for missing/LDAP identities; real directory bind precedes new local identity creation. No supplier authorization. Disabled/email/password policy remains enforced.",
+    "users/login registration or unverified": "auth.login returns exact EmailVerificationRequired value after persisting actual user/verification/outbox without session. Main converts this value only to ret0/code=email on normal transaction completion. Never commit general ApiError. accounts.verify_email sends real SMTP and retains delivery errors in outbox.",
+    "users/login local sync": "Actual ldap_sync_local add after local authentication; ApiError logged independently; no failed LDAP bind promoted to success.",
+    "users/editpass LDAP": "auth.change_password(...,settings=settings) verifies old directory password and required ldap_update, then rotates local generation and revokes sessions.",
+    "auth registration": "auth.create_account uses transactional account_identity_state singleton; first human alone becomes admin. Shared local creation handles personal project/chat/log/project search/push, department/all-group join notices/member hooks, and independent accounts.search/accounts.created jobs. No fixture/license bypass or native code."
+  },
+  "consumed_helpers": ["files.require/view/lists/upload_path/transfer_user_files", "upload.generic_upload", "projects.require_project/require_task/transfer_user_memberships", "checkin.record_checkin/is_holiday", "dialog_core.create_group/sync_members/member_ids/get_dialog/get_message/send_message(trusted_sender=True only internal meeting)/ensure_user_dialog/push_dialog", "apps.require_installed/installed_config/dispatch_user_hook", "jobs.enqueue/enqueue_push/register/schedule"],
+  "produced_helpers": ["accounts.managed_departments(connection,userid)", "accounts.department_users(connection,department_ids,recursive=True)", "account_meetings.bot_get(connection,key): whitelist system key, creates actual local bot with random credential when absent; disabled/conflicting identity refused", "account_history.preview_message({type,msg})->localized string", "account_integrations.send_mail(config,to,subject,html,alias='Task')->None", "account_integrations.send_verification(connection,context,user,type=1,email=None,*,deferred=False)", "account_bot_jobs.quick_checkin(connection,context,command,extra,settings)->source error string or None"],
+  "jobs": ["accounts.changed", "accounts.search", "accounts.created", "accounts.verify_email", "accounts.transfer", "accounts.checkin_export", "accounts.expire", "accounts.bot_checkin", "accounts.bot_command", "accounts.close_meetings"],
+  "outgoing_job_dependencies": ["search.sync {type:'user',id:userid}", "dialog.message_effects", "realtime.push"],
+  "required_python_dependencies_for_integration_owner_to_lock": ["ldap3", "openpyxl", "xlrd", "pypinyin", "Markdown"],
+  "existing_dependency_use": ["SQLAlchemy", "redis", "Pillow", "FastAPI/Starlette"],
+  "settings_dependency": ["app_key", "appstore_root", "appstore_url", "frontend_root", "storage_root", "version", "redis_url"],
+  "context_dependency": ["RequestContext.headers (already implemented by BackendShared)", "base_url", "actor", "token", "fd", "platform", "version", "language", "ip", "user_agent"],
+  "environment_configuration": ["SYSTEM_SETTING=disabled", "PASSWORD_ADMIN=disabled", "PASSWORD_OWNER=disabled", "DEMO_ACCOUNT/DEMO_PASSWORD only explicitly configured real demo account", "APP_AI_HIDDEN", "FACE_URL", "OFFICE_URL", "NGINX_INTERNAL_URL"],
+  "checks": {"executed": [], "deferred": ["python -m tests.test_accounts_contract", "python -m backend.tests_independent on explicit fresh isolated database", "real DB/Redis/SMTP/LDAP/Agora/face/appstore/Manticore acceptance", "concurrent object ACL/session revoke/transaction rollback tests"]},
+  "retired": ["system/license", "license/email/send", "license/login", "license/login/confirm", "license/trial", "license/status", "license/refresh", "license/logout"],
+  "independent_metadata": "Existing system/setting returns deployment.mode independent, commercial_authorization_required false, vendor_authorized false. No license.py or old-route alias remains.",
+  "frontend": "SOURCE_CHANGED_PUBLIC_PENDING; approved scope and 9 path hashes in docs/evidence/independent/frontend-source-changes.json"
+}

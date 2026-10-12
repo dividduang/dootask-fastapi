@@ -1,0 +1,31 @@
+CREATE TABLE backend_uploads (
+ id CHAR(32) NOT NULL PRIMARY KEY,
+ userid BIGINT UNSIGNED NOT NULL,
+ hash CHAR(32) NOT NULL,
+ size BIGINT UNSIGNED NOT NULL,
+ name VARCHAR(255) NOT NULL,
+ scene VARCHAR(32) NOT NULL,
+ params LONGTEXT NOT NULL,
+ received LONGTEXT NOT NULL,
+ result LONGTEXT NULL,
+ state VARCHAR(16) NOT NULL DEFAULT 'pending',
+ expires_at DATETIME NOT NULL,
+ created_at DATETIME NOT NULL,
+ updated_at DATETIME NOT NULL,
+ INDEX upload_owner_hash(userid,hash), INDEX upload_expiry(expires_at)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+CREATE TABLE backend_file_downloads (
+ id CHAR(64) NOT NULL PRIMARY KEY,
+ userid BIGINT UNSIGNED NOT NULL,
+ file_id BIGINT UNSIGNED NULL,
+ content_id BIGINT UNSIGNED NULL,
+ dialog_id BIGINT UNSIGNED NULL,
+ file_ids LONGTEXT NULL,
+ path VARCHAR(512) NULL,
+ name VARCHAR(255) NOT NULL,
+ ready TINYINT NOT NULL DEFAULT 0,
+ expires_at DATETIME NOT NULL,
+ created_at DATETIME NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+CREATE TABLE backend_file_mutex (id TINYINT NOT NULL PRIMARY KEY) ENGINE=InnoDB;
+INSERT INTO backend_file_mutex (id) VALUES (1);

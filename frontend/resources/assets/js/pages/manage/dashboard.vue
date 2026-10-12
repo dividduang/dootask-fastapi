@@ -2,12 +2,6 @@
     <div class="page-dashboard">
         <PageTitle :title="$L('仪表盘')"/>
         <Scrollbar class="dashboard-scroller">
-            <!--系统信息-->
-            <div v-if="!!warningMsg" class="dashboard-warning">
-                <Alert type="warning" show-icon>
-                    <span @click="goForward({name: 'manage-setting-license'})">{{warningMsg}}</span>
-                </Alert>
-            </div>
             <div class="dashboard-body">
                 <!--头部-->
                 <div class="dashboard-header">
@@ -345,7 +339,6 @@ export default {
         return {
             emptyArt: $A.mainUrl('images/dashboard/empty.svg'),
             emptyDarkArt: $A.mainUrl('images/dashboard/empty-black.svg'),
-            licenseTimer: null,
 
             view: prefsCache.view,
             layout: prefsCache.layout,
@@ -368,7 +361,6 @@ export default {
 
             mateName: /macintosh|mac os x/i.test(navigator.userAgent) ? '⌘' : 'Ctrl',
 
-            warningMsg: '',
         }
     },
 
@@ -401,14 +393,12 @@ export default {
 
     activated() {
         this.loadInterval(true);
-        this.loadLicense(true);
         this.takeSnapshot();
     },
 
     deactivated() {
         this.$store.dispatch("forgetTaskCompleteTemp", true);
         this.loadInterval(false);
-        this.loadLicense(false);
     },
 
     computed: {
@@ -684,7 +674,6 @@ export default {
                 return
             }
             this.loadInterval(active)
-            this.loadLicense(active)
         }
     },
 
@@ -916,27 +905,6 @@ export default {
             this.$store.state.taskOperation = {event, task}
         },
 
-        loadLicense(load) {
-            if (this.licenseTimer) {
-                clearTimeout(this.licenseTimer)
-                this.licenseTimer = null;
-            }
-            if (load === false || !this.userIsAdmin) {
-                return
-            }
-            this.licenseTimer = setTimeout(_ => {
-                this.$store.dispatch("call", {
-                    url: 'system/license',
-                    data: {
-                        type: 'error',
-                    }
-                }).then(({data}) => {
-                    this.warningMsg = data.error.length > 0 ? data.error[0] : '';
-                }).catch(_ => {
-                    this.warningMsg = '';
-                })
-            }, 1500)
-        }
     }
 }
 </script>

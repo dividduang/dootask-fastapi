@@ -13,7 +13,8 @@ CREATE TABLE auth_credentials (
 CREATE TABLE auth_sessions (
   token_digest CHAR(64) CHARACTER SET ascii COLLATE ascii_bin NOT NULL PRIMARY KEY,
   userid BIGINT UNSIGNED NOT NULL,
-  device_id BIGINT UNSIGNED NOT NULL,
+  device_id BIGINT UNSIGNED NULL,
+  purpose VARCHAR(16) NOT NULL DEFAULT 'interactive',
   generation CHAR(64) CHARACTER SET ascii COLLATE ascii_bin NOT NULL,
   email VARCHAR(100) NOT NULL,
   expires_at DATETIME NOT NULL,

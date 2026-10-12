@@ -1,0 +1,49 @@
+{
+  "status": "IMPLEMENTED_NOT_REGISTERED_NOT_VERIFIED",
+  "owner": "DomainMessaging",
+  "transaction": "All handlers and domain consumers share caller's SQLAlchemy synchronous Connection; no nested independent commits. enqueue rejects absence of transaction.",
+  "routes": {
+    "backend.domains.dialog.ROUTES": {"source_handlers": 78, "signature": "(connection, context, data, settings)", "response": "raw data; shared transport wraps success once; Response objects bypass envelope"},
+    "backend.domains.assistant.ROUTES": {"source_handlers": 10, "signature": "(connection, context, data, settings)", "response": "raw data"},
+    "backend.domains.apps.ROUTES": {"source_handlers": 4, "signature": "(connection, context, data, settings)", "response": "raw data"},
+    "aliases": "Owner registers canonical source URLs and method__action aliases, case insensitive; GET HEAD POST PUT PATCH DELETE OPTIONS. assistant/match-elements maps to match_elements. Never expose Python helper functions.",
+    "binary": ["dialog/msg__download", "dialog/msg__ai_generate", "dialog/msg__webhookmsg2ai", "dialog/msg__applied"],
+    "retired": "Three original Dialog handlers enforce source 1.4.35 version gate then return an empty text/html Response, not fabricated AI output. They remain named source handlers."
+  },
+  "jobs": {
+    "enqueue": "backend.jobs.enqueue(connection, kind, payload, *, dedupe_key=None, available_at=None) -> id",
+    "push": "backend.jobs.enqueue_push(connection, *, userids=(), fds=(), ignore_fds=(), message, scope=None) -> id",
+    "emit": "backend.jobs.emit(connection, userids, type, data, *, ignore_fds=(), scope=None) -> id",
+    "register": "backend.jobs.register(kind, handler); handler(connection,payload,settings). payload contains _event_id. Registration is explicit; unknown kinds persist failure and retry.",
+    "schedule": "backend.jobs.schedule(kind, seconds, payload=None); unique period dedupe, SKIP LOCKED worker concurrency",
+    "delivery": "At least once. DB savepoint rolls back failed handler writes, attempts/error/backoff retained. HTTP side effects may duplicate after crash; Idempotency-Key sent for webhooks, provider support must be verified. SQL commit precedes socket transmission; Redis pubsub is wakeup only, durable rows polled if notification races commit.",
+    "worker": "async backend.jobs.worker(settings, stop_event); stop signals graceful exit after current sync transaction. realtime.job_lifecycle(settings) starts and joins it.",
+    "registrars": ["backend.domains.dialog.register_jobs()", "backend.domains.assistant.register_jobs()", "each other domain's explicit register_jobs()"],
+    "registered_messaging_kinds": ["realtime.push", "dialog.message_effects", "dialog.bot_prepare", "dialog.webhook", "dialog.member_hook", "dialog.todo_remind", "dialog.session_title", "dialog.delete_bot_messages", "dialog.maintenance", "dialog.mobile_push", "dialog.email_notice", "dialog.joke_soup", "assistant.delete_images"],
+    "foreign_consumers": ["search.sync", "accounts.bot_checkin", "accounts.bot_command"],
+    "periodic_seconds": {"dialog.todo_remind":60,"dialog.maintenance":60,"dialog.email_notice":60,"dialog.delete_bot_messages":3600,"dialog.joke_soup":3600}
+  },
+  "acl": {
+    "registration": "backend.realtime.register_scope(name, checker); checker(connection,userid,resource_id)->bool. dialog_id built in via dialog_core.can_view_dialog; project/task authorization reused. Other domains register file_id/report_id/project_id/task_id.",
+    "tombstone_invariant": "Unscoped revocation/delete recipients MUST be old authorized users captured in the same locked business transaction, and payload MUST contain only required object IDs. Never send full sensitive objects with scope=None to bypass revocation checks.",
+    "trusted_sender": "dialog_core.send_message(...,trusted_sender=True) is an internal-only business capability, never populated from HTTP data. Used for legitimate bot reminders/meeting invitation display sender; preserves actual dialog recipients.",
+    "no_fake_ack": "Only receipt matching authenticated userid, actual fd and msgId sets acknowledged_at. Missing msgId never acknowledged or guessed."
+  },
+  "installation": {
+    "sql": "Run backend/outbox.sql after schema.sql/security.sql during fresh init before db.configure startup reflection; no source schema edits by this owner.",
+    "startup": "db.configure(settings); explicit per-domain job/scope registration; realtime.install_realtime(app,settings); assistant.install_sse(app,settings); these non-JSON routes before host fallback; async with realtime.job_lifecycle(settings) in owner lifespan.",
+    "websocket": "/ws?action=web&token=...&language=...&platform=...; Redis monotonic numeric fd; durable per-fd delivery; TTL connection leases; PGP shared crypto; user revocation checked every delivery loop; receipt/handshake/path/encrypt/operationResult implemented.",
+    "sse": "/ai/invoke/stream/{stream_key}; only stream keys bound by authenticated assistant/auth accepted; revalidates stored owner/token and installed AI; forwards actual append/replace/done/id/heartbeat bytes and Last-Event-ID, no-cache/no buffering; no synthetic completion.",
+    "configuration": ["REDIS_URL", "APPSTORE_ROOT", "APPSTORE_URL", "APP_KEY", "AI_URL", "aibotSetting", "aiIntegration.embeddings_url", "appPushSetting", "emailSetting"],
+    "dependencies": ["redis>=5,<7", "PyYAML>=6,<7", "Pillow", "SQLAlchemy", "shared OpenPGP implementation"],
+    "entrypoint_changes": "Not made by this owner: main/manage/shared are sole integration owner files. Do not confuse install contract with already registered API."
+  },
+  "external_gates": [
+    "No valid licensed active users/bots exist by default. Bot lookup refuses absent real bot; cannot invoke CLI bypass or fake userCreate/license.",
+    "Actual AI/appstore/plugin config.yml deployment, API credentials, provider proxy compatibility and SSE service are required. Missing install or key returns actual business error.",
+    "SMTP and Umeng credentials/device aliases required; HTTP/provider failures retained rather than acknowledged as success.",
+    "Preserved frontend actions.js 5171-5183 drops params.msgId when sending receipt. Server refuses fake ack; original client therefore may leave deliveries unacknowledged and receive at-least-once repeats. Requires explicit consumer compatibility decision and real differential acceptance.",
+    "Shared auth source checks identity disable rather than disable_at. Account writers must sync both or integration owner tighten HTTP/login/WS together; documented shared owner response retained in report."
+  ],
+  "verification": "NOT_RUN: no build, lint, test, formatter, service start or git command executed. backend.tests_messaging is left for independent acceptance. Static source/implementation ledger is not branch coverage."
+}

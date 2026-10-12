@@ -30,8 +30,11 @@ def configure(settings):
     _engine = make_engine(settings)
     metadata = MetaData()
     metadata.reflect(bind=_engine)
+    tables.clear()
     tables.update(metadata.tables)
-    for required in ("users", "settings", "user_devices", "auth_credentials", "auth_sessions", "auth_pgp_keys"):
+    for required in ("users", "settings", "user_devices", "auth_credentials", "auth_sessions", "auth_pgp_keys",
+                     "auth_limits", "auth_captchas", "backend_outbox", "backend_deliveries", "backend_operations",
+                     "backend_uploads", "backend_file_downloads", "account_picture_uploads", "account_identity_state"):
         if required not in tables:
             raise RuntimeError(f"Missing {required}; run python -m backend.manage init-db first")
     return _engine

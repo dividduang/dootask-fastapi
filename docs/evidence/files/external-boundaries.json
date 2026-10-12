@@ -1,0 +1,121 @@
+{
+  "status": "NOT_VERIFIED",
+  "external_boundaries": [
+    {
+      "handlers": [
+        "LicenseController::login",
+        "LicenseController::login__confirm",
+        "LicenseController::trial",
+        "LicenseController::status",
+        "LicenseController::refresh"
+      ],
+      "state": "BLOCKED_NATIVE_BRANCHES",
+      "required": [
+        "Legally supplied doo.so or supplier-supported trusted verifier",
+        "Immutable binary identity and independent LICENSE/NOTICE",
+        "SN/MAC generation contract",
+        "Signature/license policy plus ABI ownership/concurrency contract"
+      ],
+      "existing_evidence": [
+        "docs/evidence/acquisition/native-acquisition-ledger.json",
+        "docs/evidence/backend/native-boundary-contract.json"
+      ],
+      "implemented": "Official HTTPS request/response handling; select_required; encrypted pending blob quarantine; no grant",
+      "not_implemented": "Trusted license verification, installed grant application, local lease authority and sanctioned first-account bootstrap"
+    },
+    {
+      "handlers": [
+        "FileController::office__token",
+        "FileController::content__office",
+        "FileController::content",
+        "IndexController::online__preview"
+      ],
+      "state": "IMPLEMENTED_REQUIRES_EXTERNAL_SERVICE",
+      "required": [
+        "Installed office app",
+        "OFFICE_INTERNAL_URL + OFFICE_JWT_SECRET",
+        "Internal nginx DNS/reverse proxy for unchanged frontend hardcoded URLs",
+        "FILEVIEW_URL for non-PDF converter preview"
+      ],
+      "consumer_source": {
+        "path": "frontend/resources/assets/js/components/OnlyOffice.vue",
+        "lines": [
+          120,
+          133,
+          220,
+          247
+        ]
+      },
+      "integration_required": "dootask-token query authentication separate from Office body.token JWT"
+    },
+    {
+      "handlers": [
+        "SearchController::contact",
+        "SearchController::project",
+        "SearchController::task",
+        "SearchController::file",
+        "SearchController::message"
+      ],
+      "state": "IMPLEMENTED_REQUIRES_EXTERNAL_SERVICE",
+      "required": [
+        "MANTICORE_URL",
+        "SEARCH_EMBEDDING_URL/KEY/MODEL for vector/hybrid",
+        "Manticore HTTP SQL and HNSW support"
+      ],
+      "failure_semantics": "installed app with missing service URL errors; uninstalled source optional app uses MySQL branch; no fake search scores/vectors"
+    },
+    {
+      "handlers": [
+        "FileController::one",
+        "FileController::fetch",
+        "SearchController::file"
+      ],
+      "state": "IMPLEMENTED_REQUIRES_DEPENDENCIES",
+      "required": [
+        "pypdf>=6,<7",
+        "xlrd>=2,<3",
+        "LIBREOFFICE_EXECUTABLE for legacy DOC/PPT"
+      ],
+      "not_installed_by_this_agent": true
+    },
+    {
+      "handlers": [
+        "FileController::download__pack"
+      ],
+      "state": "IMPLEMENTED_REQUIRES_LEGAL_BOT",
+      "required": [
+        "Existing active system-msg@bot.system bot from legitimate provisioning"
+      ],
+      "failure_semantics": "persistent job failure, no bot creation around license gate"
+    },
+    {
+      "handlers": [
+        "IndexController::drawio__iconsearch",
+        "LicenseController::email__send",
+        "LicenseController::logout"
+      ],
+      "state": "IMPLEMENTED_NETWORK_NOT_EXERCISED",
+      "required": [
+        "Trusted outbound TLS and official endpoint availability"
+      ],
+      "endpoints": [
+        "https://app.diagrams.net/iconSearch",
+        "https://appstore.dootask.com/api/v1/license/"
+      ]
+    }
+  ],
+  "checks_left_unrun": [
+    "python -m backend.tests_files",
+    "Full MariaDB transaction/ACL/integration suite",
+    "DAV client interoperability, Range/HEAD/XML/locks",
+    "Official license verified issuance with legal supplier artifacts",
+    "Actual Office/FILEVIEW/Manticore/embeddings/mail interactions"
+  ],
+  "intentional_changes": [
+    "New-database selected-period report sign instead of source daily-offset bug",
+    "Write permission required for restore and share-link policy changes",
+    "Persistent bounded capabilities instead of public upload tree",
+    "Embedded data images validated and preserved instead of extra public attachment files",
+    "Private immutable orphan blobs retained until safe ownership-aware GC exists"
+  ]
+}

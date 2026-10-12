@@ -65,7 +65,7 @@ def init_database(settings):
                 raise RuntimeError("This schema requires MariaDB, not SQLite or MySQL emulation")
             # MariaDB DDL auto-commits. A failed run is deliberately NOT called atomic;
             # operator must inspect/recreate only the dedicated empty database.
-            for filename in ("schema.sql", "security.sql", "schema_seed.sql"):
+            for filename in ("schema.sql", "security.sql", "outbox.sql", "domains/files.sql", "domains/accounts.sql", "schema_seed.sql"):
                 raw = (root / filename).read_bytes()
                 for statement in sql_statements(raw.decode("utf-8")):
                     connection.exec_driver_sql(statement)

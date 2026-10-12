@@ -241,7 +241,6 @@ export default {
                 'users/editpass',
                 'users/operation',
                 'users/delete/account',
-                'system/license',
                 'users/bot/*',
                 'dialog/msg/*',
             ], true)) {

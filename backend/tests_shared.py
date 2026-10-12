@@ -1,8 +1,8 @@
 """Runnable security checks; not executed during implementation.
 
 Run: python -m unittest backend.tests_shared backend.templates.tests_host
-State checks require an isolated running MariaDB and a legally provisioned new
-account identified by DOOTASK_TEST_EMAIL/PASSWORD. Never seed/bypass licensing.
+State checks require an isolated running MariaDB and a newly registered local
+account identified by DOOTASK_TEST_EMAIL/PASSWORD.
 """
 import json
 import os
@@ -64,12 +64,12 @@ class SharedSecurityChecks(unittest.TestCase):
             atomic_write(root, "owner/blob", b"second")
             self.assertEqual(path.read_bytes(), b"second")
 
-    def test_sql_split_and_license_fail_closed(self):
+    def test_sql_split_and_retired_vendor_routes(self):
         self.assertEqual(list(sql_statements("-- comment\nINSERT INTO t VALUES ('a;b', 'it''s'); SELECT 1;")),
                          ["INSERT INTO t VALUES ('a;b', 'it''s')", "SELECT 1"])
-        with self.assertRaises(ApiError) as result:
-            auth.require_registration_license()
-        self.assertEqual(result.exception.data["code"], "license_unavailable")
+        from .domains import system
+        self.assertNotIn('system/license', system.ROUTES)
+        self.assertFalse(any(path.startswith('license/') for path in ALLOWLIST))
 
 
 class MariaDBStateChecks(unittest.TestCase):
@@ -77,8 +77,9 @@ class MariaDBStateChecks(unittest.TestCase):
     def setUpClass(cls):
         cls.email, cls.password = os.environ.get("DOOTASK_TEST_EMAIL"), os.environ.get("DOOTASK_TEST_PASSWORD")
         if not cls.email or not cls.password:
-            raise SkipTest("Requires legally provisioned isolated new account, not a license-bypass fixture")
-        cls.engine = db.configure(Settings.from_env())
+            raise SkipTest("Requires isolated new local account")
+        cls.settings = Settings.from_env()
+        cls.engine = db.configure(cls.settings)
 
     @classmethod
     def tearDownClass(cls):
@@ -89,20 +90,20 @@ class MariaDBStateChecks(unittest.TestCase):
         users = db.tables["users"]
         with db.transaction() as connection:
             before = connection.execute(select(users.c.login_num).where(users.c.email == self.email)).scalar_one()
-            result = auth.login(connection, ctx, self.email, self.password)
+            result = auth.login(connection, ctx, self.email, self.password, settings=self.settings)
         ctx.token = result["token"]
         with db.transaction() as connection:
             self.assertEqual(auth.info(connection, ctx)["login_num"], before + 1)
         original = ctx.token
         changed = "Changed-Password79!"
         with db.transaction() as connection:
-            changed_result = auth.change_password(connection, RequestContext("change", token=original, ip=ctx.ip), self.password, changed)
+            changed_result = auth.change_password(connection, RequestContext("change", token=original, ip=ctx.ip), self.password, changed, settings=self.settings)
         try:
             with self.assertRaises(ApiError):
                 with db.transaction() as connection:
                     auth.authenticate(connection, RequestContext("revoked", token=original))
             with db.transaction() as connection:
-                restored = auth.change_password(connection, RequestContext("restore", token=changed_result["token"], ip=ctx.ip), changed, self.password)
+                restored = auth.change_password(connection, RequestContext("restore", token=changed_result["token"], ip=ctx.ip), changed, self.password, settings=self.settings)
             with db.transaction() as connection:
                 auth.logout(connection, RequestContext("logout", token=restored["token"]))
             with self.assertRaises(ApiError):
@@ -114,7 +115,7 @@ class MariaDBStateChecks(unittest.TestCase):
                 credential = connection.execute(select(db.tables["auth_credentials"]).where(db.tables["auth_credentials"].c.userid == result["userid"])).mappings().one()
             if security.password_verify(changed, credential["password_hash"]):
                 with db.transaction() as connection:
-                    recovered = auth.change_password(connection, RequestContext("recovery", token=changed_result["token"], ip=ctx.ip), changed, self.password)
+                    recovered = auth.change_password(connection, RequestContext("recovery", token=changed_result["token"], ip=ctx.ip), changed, self.password, settings=self.settings)
                     auth.logout(connection, RequestContext("cleanup", token=recovered["token"]))
         with self.assertRaises(RuntimeError):
             with db.transaction() as connection:

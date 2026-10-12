@@ -1,0 +1,193 @@
+{
+  "status": "NOT_INTEGRATED_NOT_VERIFIED",
+  "function_signature": "(connection,context,data,settings)",
+  "office_transport": "OnlyOffice.vue hardcodes http://nginx/api URLs; exact resource ACL signing permits this fixed internal origin. Route auth must prioritize dootask-token query over body.token Office JWT. Internal nginx DNS/reverse proxy is required; no frontend edit.",
+  "multipart": "upload/chunk original field is blob; preserve UploadFile.file binary stream; init seconds pass returns done/instant/addItem/msg",
+  "cross_domain_exports": [
+    "files.require(connection,context,id,level=0,lock=False); can_access(connection,userid,id); view(connection,context,settings,item)",
+    "files.transfer_user_files(connection,context,original_userid,new_userid)",
+    "upload.generic_upload(connection,context,stream,name,params,settings,image=False)",
+    "files_collaboration.send_files_from_path(connection,context,dialog_ids,local_path,name,reply_id,image_attachment,settings); owns project_task_files insert",
+    "files_collaboration.resolve_attachment_path(connection,context,path,settings); format_file_data(connection,context,data,settings)",
+    "reports.generate_link(connection,context,ident) -> id/rid/userid/code/num/url, no message side effect",
+    "search.task_vector_search(connection,vector,userid,limit=200,project_id=0,exclude_id=0)",
+    "index.to_preview_url(context,data) -> actual /online/preview URL"
+  ],
+  "checkin_cron_owner": "DomainProjects checkin.remind; Accounts removed duplicated accounts.checkin_tick/remind",
+  "sql_order": [
+    "backend/schema.sql",
+    "backend/schema_seed.sql",
+    "backend/security.sql",
+    "backend/outbox.sql",
+    "backend/domains/files.sql"
+  ],
+  "explicit_route_modules": [
+    "backend.domains.files.ROUTES",
+    "backend.domains.filedav.ROUTES",
+    "backend.domains.upload.ROUTES",
+    "backend.domains.reports.ROUTES",
+    "backend.domains.search.ROUTES",
+    "backend.domains.license.ROUTES"
+  ],
+  "raw_json": [
+    "file/content/office"
+  ],
+  "response_capable": [
+    "file/content",
+    "file/collaboration/download",
+    "file/download/pack"
+  ],
+  "extra_routes": [
+    "backend.domains.files.EXTRA_ROUTES[file/bytes]"
+  ],
+  "install_before_host": [
+    "backend.dav.install_dav(app,settings)",
+    "backend.domains.index.install_index(app,settings)"
+  ],
+  "register_calls": [
+    "backend.domains.files.register_jobs()",
+    "backend.domains.reports.register_jobs()",
+    "backend.domains.search.register_jobs()"
+  ],
+  "jobs": {
+    "file.pack": "files_jobs.pack",
+    "files.expire": "files_jobs.expire",
+    "files.attachment_backfill": "files_jobs.attachment_backfill",
+    "search.sync": "search.sync",
+    "search.initialize": "search.initialize",
+    "search.rebuild": "search.rebuild"
+  },
+  "cross_domain_imports": [
+    "backend.jobs enqueue/enqueue_push/register/schedule",
+    "backend.realtime.register_scope",
+    "backend.domains.dialog_core get_dialog/get_message/send_message/ensure_user_dialog/_attachments/message_data",
+    "backend.domains.project_core can_view_task/can_view_project/task_allowed_users",
+    "backend.domains.apps installed_config/require_installed"
+  ],
+  "added_dependencies_not_installed": [
+    "pypdf>=6,<7",
+    "xlrd>=2,<3"
+  ],
+  "external_executables": [
+    "LIBREOFFICE_EXECUTABLE optional legacy DOC/PPT conversion"
+  ],
+  "dav": {
+    "methods": [
+      "OPTIONS",
+      "PROPFIND",
+      "GET",
+      "HEAD",
+      "PUT",
+      "DELETE",
+      "MKCOL",
+      "MOVE",
+      "COPY",
+      "PROPPATCH",
+      "LOCK",
+      "UNLOCK"
+    ],
+    "entry": "backend.dav.install_dav",
+    "response": "HTTP status/XML207/FileResponse; never API envelope",
+    "authentication": "TLS Basic dedicated application password; revoke/expiry/user-disable recheck",
+    "known_policy": "PROPFIND Depth infinity => 403 DAV:propfind-finite-depth; COPY supports 0/infinity"
+  },
+  "index": [
+    {
+      "id": "IndexController::main",
+      "source": "app/Http/Controllers/IndexController.php",
+      "start_line": 59,
+      "end_line": 83,
+      "canonical_url": "/main",
+      "source_sha256": "d422ec42bdbdaa2667da695060312b61bf314b84829409474adc9459f05a121d",
+      "implementation": "backend/host.py",
+      "state": "SHARED_OWNER_NOT_VERIFIED"
+    },
+    {
+      "id": "IndexController::version",
+      "source": "app/Http/Controllers/IndexController.php",
+      "start_line": 89,
+      "end_line": 92,
+      "canonical_url": "/version",
+      "source_sha256": "d422ec42bdbdaa2667da695060312b61bf314b84829409474adc9459f05a121d",
+      "implementation": "backend/host.py",
+      "state": "SHARED_OWNER_NOT_VERIFIED"
+    },
+    {
+      "id": "IndexController::health",
+      "source": "app/Http/Controllers/IndexController.php",
+      "start_line": 98,
+      "end_line": 101,
+      "canonical_url": "/health",
+      "source_sha256": "d422ec42bdbdaa2667da695060312b61bf314b84829409474adc9459f05a121d",
+      "implementation": "backend/host.py",
+      "state": "SHARED_OWNER_NOT_VERIFIED"
+    },
+    {
+      "id": "IndexController::avatar",
+      "source": "app/Http/Controllers/IndexController.php",
+      "start_line": 107,
+      "end_line": 233,
+      "canonical_url": "/avatar",
+      "source_sha256": "d422ec42bdbdaa2667da695060312b61bf314b84829409474adc9459f05a121d",
+      "implementation": "backend/avatar.py",
+      "state": "SHARED_OWNER_NOT_VERIFIED"
+    },
+    {
+      "id": "IndexController::api",
+      "source": "app/Http/Controllers/IndexController.php",
+      "start_line": 239,
+      "end_line": 242,
+      "canonical_url": "/api",
+      "source_sha256": "d422ec42bdbdaa2667da695060312b61bf314b84829409474adc9459f05a121d",
+      "implementation": "backend/domains/index.py:api",
+      "state": "IMPLEMENTED_NOT_VERIFIED"
+    },
+    {
+      "id": "IndexController::crontab",
+      "source": "app/Http/Controllers/IndexController.php",
+      "start_line": 248,
+      "end_line": 290,
+      "canonical_url": "/crontab",
+      "source_sha256": "d422ec42bdbdaa2667da695060312b61bf314b84829409474adc9459f05a121d",
+      "implementation": "backend/domains/index.py:crontab",
+      "state": "IMPLEMENTED_NOT_VERIFIED"
+    },
+    {
+      "id": "IndexController::desktop__publish",
+      "source": "app/Http/Controllers/IndexController.php",
+      "start_line": 295,
+      "end_line": 424,
+      "canonical_url": "/desktop/publish",
+      "source_sha256": "d422ec42bdbdaa2667da695060312b61bf314b84829409474adc9459f05a121d",
+      "implementation": "backend/domains/index.py:desktop__publish",
+      "state": "IMPLEMENTED_NOT_VERIFIED"
+    },
+    {
+      "id": "IndexController::drawio__iconsearch",
+      "source": "app/Http/Controllers/IndexController.php",
+      "start_line": 430,
+      "end_line": 436,
+      "canonical_url": "/drawio/iconsearch",
+      "source_sha256": "d422ec42bdbdaa2667da695060312b61bf314b84829409474adc9459f05a121d",
+      "implementation": "backend/domains/index.py:drawio__iconsearch",
+      "state": "IMPLEMENTED_NOT_VERIFIED"
+    },
+    {
+      "id": "IndexController::online__preview",
+      "source": "app/Http/Controllers/IndexController.php",
+      "start_line": 442,
+      "end_line": 521,
+      "canonical_url": "/online/preview",
+      "source_sha256": "d422ec42bdbdaa2667da695060312b61bf314b84829409474adc9459f05a121d",
+      "implementation": "backend/domains/index.py:online__preview",
+      "state": "IMPLEMENTED_NOT_VERIFIED"
+    }
+  ],
+  "non_claims": [
+    "No tests/build/lint/formatter/runtime/service or external API calls executed",
+    "No 59/59 runtime acceptance claim",
+    "No license grant, default seat allowance or registration bypass",
+    "No immutable blob orphan garbage collection; retained to avoid data loss",
+    "No avatar pixel equivalence claim; deterministic dark color is shared-owner deviation"
+  ]
+}

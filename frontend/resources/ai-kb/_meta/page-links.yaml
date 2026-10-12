@@ -72,11 +72,6 @@ links:
     aliases: [快捷键, 键盘快捷键]
     description: 键盘快捷键设置
 
-  setting_license:
-    title: 授权许可
-    aliases: [授权, 许可证, license]
-    description: 授权许可信息
-
   setting_password:
     title: 密码设置
     aliases: [密码, 修改密码, 改密码]

@@ -1,0 +1,3913 @@
+{
+  "status": "STATIC_BINDINGS_NOT_RUNTIME_COVERAGE",
+  "handlers": [
+    {
+      "id": "DialogController::lists",
+      "canonical_url": "api/dialog/lists",
+      "aliases": [],
+      "source": "app/Http/Controllers/Api/DialogController.php",
+      "source_sha256": "3870360b15d91d3e0c71048ee75a910b94f5570d08bbf1ce7057a30843ecbed3",
+      "source_lines": [
+        68,
+        77
+      ],
+      "implementation": "backend/domains/dialog.py",
+      "function": "lists",
+      "implementation_lines": [
+        85,
+        101
+      ],
+      "implementation_file_sha256": "d75bcae6bd921553fe3012edb4c00f7943c432137432a075e1d64ce4261da718",
+      "implementation_function_sha256": "3c0a8d59bc8408733fddf996cc6d817a4d67951a82a03772bf438603b66d7c76",
+      "status": "IMPLEMENTED_NOT_REGISTERED_NOT_VERIFIED",
+      "response": "raw data; shared success wrapper once",
+      "source_guard_evidence": [
+        {
+          "line": 70,
+          "text": "$user = User::auth();"
+        }
+      ],
+      "implementation_branches": [
+        {
+          "line": 89,
+          "text": "if data.get(\"updated\") or data.get(\"updated_at\"):"
+        },
+        {
+          "line": 93,
+          "text": "if result[\"current_page\"] == 1:"
+        },
+        {
+          "line": 96,
+          "text": "if data.get(\"deleted\"):"
+        }
+      ],
+      "external_gates": [],
+      "runtime_branch_coverage": "NOT_RUN"
+    },
+    {
+      "id": "DialogController::beyond",
+      "canonical_url": "api/dialog/beyond",
+      "aliases": [],
+      "source": "app/Http/Controllers/Api/DialogController.php",
+      "source_sha256": "3870360b15d91d3e0c71048ee75a910b94f5570d08bbf1ce7057a30843ecbed3",
+      "source_lines": [
+        96,
+        106
+      ],
+      "implementation": "backend/domains/dialog.py",
+      "function": "beyond",
+      "implementation_lines": [
+        102,
+        116
+      ],
+      "implementation_file_sha256": "d75bcae6bd921553fe3012edb4c00f7943c432137432a075e1d64ce4261da718",
+      "implementation_function_sha256": "8f5182e1fc201f4766e9417556193b047e8a96fec1666d29161a92bdc4a30fee",
+      "status": "IMPLEMENTED_NOT_REGISTERED_NOT_VERIFIED",
+      "response": "raw data; shared success wrapper once",
+      "source_guard_evidence": [
+        {
+          "line": 98,
+          "text": "$user = User::auth();"
+        }
+      ],
+      "implementation_branches": [
+        {
+          "line": 106,
+          "text": "if data.get(\"unread_at\"):"
+        },
+        {
+          "line": 110,
+          "text": "if data.get(\"todo_at\"):"
+        }
+      ],
+      "external_gates": [],
+      "runtime_branch_coverage": "NOT_RUN"
+    },
+    {
+      "id": "DialogController::search",
+      "canonical_url": "api/dialog/search",
+      "aliases": [],
+      "source": "app/Http/Controllers/Api/DialogController.php",
+      "source_sha256": "3870360b15d91d3e0c71048ee75a910b94f5570d08bbf1ce7057a30843ecbed3",
+      "source_lines": [
+        123,
+        180
+      ],
+      "implementation": "backend/domains/dialog.py",
+      "function": "search",
+      "implementation_lines": [
+        122,
+        143
+      ],
+      "implementation_file_sha256": "d75bcae6bd921553fe3012edb4c00f7943c432137432a075e1d64ce4261da718",
+      "implementation_function_sha256": "7242a64a83832e2829a5ee653d94f4d2b1c9f19949ab4445cde9c5c45f8725f1",
+      "status": "IMPLEMENTED_NOT_REGISTERED_NOT_VERIFIED",
+      "response": "raw data; shared success wrapper once",
+      "source_guard_evidence": [
+        {
+          "line": 125,
+          "text": "$user = User::auth();"
+        }
+      ],
+      "implementation_branches": [
+        {
+          "line": 125,
+          "text": "if not key:"
+        },
+        {
+          "line": 132,
+          "text": "for row in connection.execute(select(users.c.userid, users.c.nickname, users.c.email, users.c.userimg, users.c.bot)"
+        },
+        {
+          "line": 135,
+          "text": "if \"dialog_only\" not in data and len(result) < 20:"
+        }
+      ],
+      "external_gates": [],
+      "runtime_branch_coverage": "NOT_RUN"
+    },
+    {
+      "id": "DialogController::search__tag",
+      "canonical_url": "api/dialog/search/tag",
+      "aliases": [
+        "api/dialog/search__tag"
+      ],
+      "source": "app/Http/Controllers/Api/DialogController.php",
+      "source_sha256": "3870360b15d91d3e0c71048ee75a910b94f5570d08bbf1ce7057a30843ecbed3",
+      "source_lines": [
+        194,
+        214
+      ],
+      "implementation": "backend/domains/dialog.py",
+      "function": "search__tag",
+      "implementation_lines": [
+        144,
+        151
+      ],
+      "implementation_file_sha256": "d75bcae6bd921553fe3012edb4c00f7943c432137432a075e1d64ce4261da718",
+      "implementation_function_sha256": "8c5dad1400a0a6382584403c74da4e4b0295293cc42e07146f857c33e67eb3a4",
+      "status": "IMPLEMENTED_NOT_REGISTERED_NOT_VERIFIED",
+      "response": "raw data; shared success wrapper once",
+      "source_guard_evidence": [
+        {
+          "line": 196,
+          "text": "$user = User::auth();"
+        }
+      ],
+      "implementation_branches": [],
+      "external_gates": [],
+      "runtime_branch_coverage": "NOT_RUN"
+    },
+    {
+      "id": "DialogController::one",
+      "canonical_url": "api/dialog/one",
+      "aliases": [],
+      "source": "app/Http/Controllers/Api/DialogController.php",
+      "source_sha256": "3870360b15d91d3e0c71048ee75a910b94f5570d08bbf1ce7057a30843ecbed3",
+      "source_lines": [
+        230,
+        240
+      ],
+      "implementation": "backend/domains/dialog.py",
+      "function": "one",
+      "implementation_lines": [
+        117,
+        121
+      ],
+      "implementation_file_sha256": "d75bcae6bd921553fe3012edb4c00f7943c432137432a075e1d64ce4261da718",
+      "implementation_function_sha256": "02e1d871d0fc488524e677f1069247dffcec821a319c65c927859bee29aa29d0",
+      "status": "IMPLEMENTED_NOT_REGISTERED_NOT_VERIFIED",
+      "response": "raw data; shared success wrapper once",
+      "source_guard_evidence": [
+        {
+          "line": 232,
+          "text": "$user = User::auth();"
+        }
+      ],
+      "implementation_branches": [],
+      "external_gates": [],
+      "runtime_branch_coverage": "NOT_RUN"
+    },
+    {
+      "id": "DialogController::user",
+      "canonical_url": "api/dialog/user",
+      "aliases": [],
+      "source": "app/Http/Controllers/Api/DialogController.php",
+      "source_sha256": "3870360b15d91d3e0c71048ee75a910b94f5570d08bbf1ce7057a30843ecbed3",
+      "source_lines": [
+        257,
+        284
+      ],
+      "implementation": "backend/domains/dialog.py",
+      "function": "user",
+      "implementation_lines": [
+        152,
+        167
+      ],
+      "implementation_file_sha256": "d75bcae6bd921553fe3012edb4c00f7943c432137432a075e1d64ce4261da718",
+      "implementation_function_sha256": "753c71278917db996b0ad7f53d62a92817ec506ec390a1d78e913cc904030b67",
+      "status": "IMPLEMENTED_NOT_REGISTERED_NOT_VERIFIED",
+      "response": "raw data; shared success wrapper once",
+      "source_guard_evidence": [
+        {
+          "line": 259,
+          "text": "User::auth();"
+        }
+      ],
+      "implementation_branches": [
+        {
+          "line": 158,
+          "text": "if int(data.get(\"getuser\", 0)):"
+        },
+        {
+          "line": 161,
+          "text": "for row in rows:"
+        }
+      ],
+      "external_gates": [],
+      "runtime_branch_coverage": "NOT_RUN"
+    },
+    {
+      "id": "DialogController::todo",
+      "canonical_url": "api/dialog/todo",
+      "aliases": [],
+      "source": "app/Http/Controllers/Api/DialogController.php",
+      "source_sha256": "3870360b15d91d3e0c71048ee75a910b94f5570d08bbf1ce7057a30843ecbed3",
+      "source_lines": [
+        300,
+        314
+      ],
+      "implementation": "backend/domains/dialog.py",
+      "function": "todo",
+      "implementation_lines": [
+        168,
+        177
+      ],
+      "implementation_file_sha256": "d75bcae6bd921553fe3012edb4c00f7943c432137432a075e1d64ce4261da718",
+      "implementation_function_sha256": "bebbb422ab5f6bad09b1197e19012275fad58de147d9a8a7eaaf5d511fd0a0e9",
+      "status": "IMPLEMENTED_NOT_REGISTERED_NOT_VERIFIED",
+      "response": "raw data; shared success wrapper once",
+      "source_guard_evidence": [
+        {
+          "line": 302,
+          "text": "$user = User::auth();"
+        },
+        {
+          "line": 306,
+          "text": "$builder = WebSocketDialogMsgTodo::whereUserid($user->userid)->whereDoneAt(null);"
+        }
+      ],
+      "implementation_branches": [
+        {
+          "line": 172,
+          "text": "if int(data.get(\"dialog_id\", 0)):"
+        }
+      ],
+      "external_gates": [],
+      "runtime_branch_coverage": "NOT_RUN"
+    },
+    {
+      "id": "DialogController::top",
+      "canonical_url": "api/dialog/top",
+      "aliases": [],
+      "source": "app/Http/Controllers/Api/DialogController.php",
+      "source_sha256": "3870360b15d91d3e0c71048ee75a910b94f5570d08bbf1ce7057a30843ecbed3",
+      "source_lines": [
+        330,
+        344
+      ],
+      "implementation": "backend/domains/dialog.py",
+      "function": "top",
+      "implementation_lines": [
+        178,
+        183
+      ],
+      "implementation_file_sha256": "d75bcae6bd921553fe3012edb4c00f7943c432137432a075e1d64ce4261da718",
+      "implementation_function_sha256": "f5cb25b36ebcd9e986326dcf719b25d251e718ae6b5bef56fefdd5ba2ca7a284",
+      "status": "IMPLEMENTED_NOT_REGISTERED_NOT_VERIFIED",
+      "response": "raw data; shared success wrapper once",
+      "source_guard_evidence": [
+        {
+          "line": 332,
+          "text": "$user = User::auth();"
+        },
+        {
+          "line": 334,
+          "text": "$dialogUser = WebSocketDialogUser::whereUserid($user->userid)->whereDialogId($dialogId)->first();"
+        }
+      ],
+      "implementation_branches": [],
+      "external_gates": [],
+      "runtime_branch_coverage": "NOT_RUN"
+    },
+    {
+      "id": "DialogController::hide",
+      "canonical_url": "api/dialog/hide",
+      "aliases": [],
+      "source": "app/Http/Controllers/Api/DialogController.php",
+      "source_sha256": "3870360b15d91d3e0c71048ee75a910b94f5570d08bbf1ce7057a30843ecbed3",
+      "source_lines": [
+        360,
+        377
+      ],
+      "implementation": "backend/domains/dialog.py",
+      "function": "hide",
+      "implementation_lines": [
+        184,
+        190
+      ],
+      "implementation_file_sha256": "d75bcae6bd921553fe3012edb4c00f7943c432137432a075e1d64ce4261da718",
+      "implementation_function_sha256": "335b7dbb9ee464aeb940774357a2069a1e26f62c645b781a53ed3ce015d14f6d",
+      "status": "IMPLEMENTED_NOT_REGISTERED_NOT_VERIFIED",
+      "response": "raw data; shared success wrapper once",
+      "source_guard_evidence": [
+        {
+          "line": 362,
+          "text": "$user = User::auth();"
+        },
+        {
+          "line": 364,
+          "text": "$dialogUser = WebSocketDialogUser::whereUserid($user->userid)->whereDialogId($dialogId)->first();"
+        }
+      ],
+      "implementation_branches": [
+        {
+          "line": 186,
+          "text": "if _member(connection, dialog[\"id\"], actor.userid)[\"top_at\"]:"
+        }
+      ],
+      "external_gates": [],
+      "runtime_branch_coverage": "NOT_RUN"
+    },
+    {
+      "id": "DialogController::tel",
+      "canonical_url": "api/dialog/tel",
+      "aliases": [],
+      "source": "app/Http/Controllers/Api/DialogController.php",
+      "source_sha256": "3870360b15d91d3e0c71048ee75a910b94f5570d08bbf1ce7057a30843ecbed3",
+      "source_lines": [
+        393,
+        426
+      ],
+      "implementation": "backend/domains/dialog.py",
+      "function": "tel",
+      "implementation_lines": [
+        191,
+        208
+      ],
+      "implementation_file_sha256": "d75bcae6bd921553fe3012edb4c00f7943c432137432a075e1d64ce4261da718",
+      "implementation_function_sha256": "ac8a7af1be75fc1e059bf02b5adfbe8b072947d8311ef6a16f6d141392728cdd",
+      "status": "IMPLEMENTED_NOT_REGISTERED_NOT_VERIFIED",
+      "response": "raw data; shared success wrapper once",
+      "source_guard_evidence": [
+        {
+          "line": 395,
+          "text": "$user = User::auth();"
+        }
+      ],
+      "implementation_branches": [
+        {
+          "line": 193,
+          "text": "if dialog[\"type\"] != \"user\":"
+        },
+        {
+          "line": 198,
+          "text": "if not recipient:"
+        },
+        {
+          "line": 200,
+          "text": "if not recipient[\"tel\"]:"
+        },
+        {
+          "line": 202,
+          "text": "if \"temp\" in actor.identities:"
+        }
+      ],
+      "external_gates": [],
+      "runtime_branch_coverage": "NOT_RUN"
+    },
+    {
+      "id": "DialogController::open__user",
+      "canonical_url": "api/dialog/open/user",
+      "aliases": [
+        "api/dialog/open__user"
+      ],
+      "source": "app/Http/Controllers/Api/DialogController.php",
+      "source_sha256": "3870360b15d91d3e0c71048ee75a910b94f5570d08bbf1ce7057a30843ecbed3",
+      "source_lines": [
+        442,
+        458
+      ],
+      "implementation": "backend/domains/dialog.py",
+      "function": "open__user",
+      "implementation_lines": [
+        209,
+        214
+      ],
+      "implementation_file_sha256": "d75bcae6bd921553fe3012edb4c00f7943c432137432a075e1d64ce4261da718",
+      "implementation_function_sha256": "db4d9129d61e231e2510a383f186ea381140f3b7bedcde98dcf988f6583924e8",
+      "status": "IMPLEMENTED_NOT_REGISTERED_NOT_VERIFIED",
+      "response": "raw data; shared success wrapper once",
+      "source_guard_evidence": [
+        {
+          "line": 444,
+          "text": "$user = User::auth();"
+        }
+      ],
+      "implementation_branches": [],
+      "external_gates": [],
+      "runtime_branch_coverage": "NOT_RUN"
+    },
+    {
+      "id": "DialogController::open__event",
+      "canonical_url": "api/dialog/open/event",
+      "aliases": [
+        "api/dialog/open__event"
+      ],
+      "source": "app/Http/Controllers/Api/DialogController.php",
+      "source_sha256": "3870360b15d91d3e0c71048ee75a910b94f5570d08bbf1ce7057a30843ecbed3",
+      "source_lines": [
+        474,
+        491
+      ],
+      "implementation": "backend/domains/dialog.py",
+      "function": "open__event",
+      "implementation_lines": [
+        215,
+        221
+      ],
+      "implementation_file_sha256": "d75bcae6bd921553fe3012edb4c00f7943c432137432a075e1d64ce4261da718",
+      "implementation_function_sha256": "ec0bbb0cba5b72124dbb679063db013a1588d116e9bd299ffc3d014cc1b363cb",
+      "status": "IMPLEMENTED_NOT_REGISTERED_NOT_VERIFIED",
+      "response": "raw data; shared success wrapper once",
+      "source_guard_evidence": [
+        {
+          "line": 476,
+          "text": "$user = User::auth();"
+        }
+      ],
+      "implementation_branches": [],
+      "external_gates": [],
+      "runtime_branch_coverage": "NOT_RUN"
+    },
+    {
+      "id": "DialogController::msg__list",
+      "canonical_url": "api/dialog/msg/list",
+      "aliases": [
+        "api/dialog/msg__list"
+      ],
+      "source": "app/Http/Controllers/Api/DialogController.php",
+      "source_sha256": "3870360b15d91d3e0c71048ee75a910b94f5570d08bbf1ce7057a30843ecbed3",
+      "source_lines": [
+        522,
+        630
+      ],
+      "implementation": "backend/domains/dialog.py",
+      "function": "msg__list",
+      "implementation_lines": [
+        226,
+        265
+      ],
+      "implementation_file_sha256": "d75bcae6bd921553fe3012edb4c00f7943c432137432a075e1d64ce4261da718",
+      "implementation_function_sha256": "9363583575f880f3accd5cf0f4f5ae4d5309d4b807e81583a7c473addfb66950",
+      "status": "IMPLEMENTED_NOT_REGISTERED_NOT_VERIFIED",
+      "response": "raw data; shared success wrapper once",
+      "source_guard_evidence": [
+        {
+          "line": 524,
+          "text": "$user = User::auth();"
+        },
+        {
+          "line": 618,
+          "text": "$isMarkDialogUser = WebSocketDialogUser::whereDialogId($dialog->id)->whereUserid($user->userid)->whereMarkUnread(1)->first();"
+        },
+        {
+          "line": 626,
+          "text": "$data['todo'] = $data['dialog']['todo_num'] > 0 ? WebSocketDialogMsgTodo::whereDialogId($dialog->id)->whereUserid($user->userid)->whereDoneAt(null)->orderByDesc('id')->take(50)->get() : [];"
+        }
+      ],
+      "implementation_branches": [
+        {
+          "line": 231,
+          "text": "if dialog[\"session_id\"]:"
+        },
+        {
+          "line": 234,
+          "text": "if kind in (\"tag\", \"todo\", \"link\"):"
+        },
+        {
+          "line": 236,
+          "text": "elif kind in (\"text\", \"image\", \"file\", \"record\", \"meeting\"):"
+        },
+        {
+          "line": 238,
+          "text": "elif kind:"
+        },
+        {
+          "line": 240,
+          "text": "if int(data.get(\"msg_id\", 0)):"
+        },
+        {
+          "line": 244,
+          "text": "if int(data.get(\"position_id\", 0)):"
+        },
+        {
+          "line": 249,
+          "text": "for row in rows:"
+        },
+        {
+          "line": 252,
+          "text": "if rows:"
+        },
+        {
+          "line": 257,
+          "text": "if not any((kind, data.get(\"msg_id\"), prev, next_id)):"
+        },
+        {
+          "line": 260,
+          "text": "if dialog[\"group_type\"] == \"task\":"
+        }
+      ],
+      "external_gates": [],
+      "runtime_branch_coverage": "NOT_RUN"
+    },
+    {
+      "id": "DialogController::msg__latest",
+      "canonical_url": "api/dialog/msg/latest",
+      "aliases": [
+        "api/dialog/msg__latest"
+      ],
+      "source": "app/Http/Controllers/Api/DialogController.php",
+      "source_sha256": "3870360b15d91d3e0c71048ee75a910b94f5570d08bbf1ce7057a30843ecbed3",
+      "source_lines": [
+        648,
+        696
+      ],
+      "implementation": "backend/domains/dialog.py",
+      "function": "msg__latest",
+      "implementation_lines": [
+        266,
+        279
+      ],
+      "implementation_file_sha256": "d75bcae6bd921553fe3012edb4c00f7943c432137432a075e1d64ce4261da718",
+      "implementation_function_sha256": "17d1569bb9049086582548f61544ec727f8c6a7833951fd23acfee4b6e31568a",
+      "status": "IMPLEMENTED_NOT_REGISTERED_NOT_VERIFIED",
+      "response": "raw data; shared success wrapper once",
+      "source_guard_evidence": [
+        {
+          "line": 654,
+          "text": "$user = User::auth();"
+        }
+      ],
+      "implementation_branches": [
+        {
+          "line": 268,
+          "text": "if not isinstance(data.get(\"dialogs\"), list) or not data[\"dialogs\"]:"
+        },
+        {
+          "line": 272,
+          "text": "for item in data[\"dialogs\"][:5]:"
+        }
+      ],
+      "external_gates": [],
+      "runtime_branch_coverage": "NOT_RUN"
+    },
+    {
+      "id": "DialogController::msg__one",
+      "canonical_url": "api/dialog/msg/one",
+      "aliases": [
+        "api/dialog/msg__one"
+      ],
+      "source": "app/Http/Controllers/Api/DialogController.php",
+      "source_sha256": "3870360b15d91d3e0c71048ee75a910b94f5570d08bbf1ce7057a30843ecbed3",
+      "source_lines": [
+        712,
+        725
+      ],
+      "implementation": "backend/domains/dialog.py",
+      "function": "msg__one",
+      "implementation_lines": [
+        222,
+        225
+      ],
+      "implementation_file_sha256": "d75bcae6bd921553fe3012edb4c00f7943c432137432a075e1d64ce4261da718",
+      "implementation_function_sha256": "ee8557fc3198c4ee4c9a4b28c51ce939fbfd602b38e0f1ac3a760acb192326d4",
+      "status": "IMPLEMENTED_NOT_REGISTERED_NOT_VERIFIED",
+      "response": "raw data; shared success wrapper once",
+      "source_guard_evidence": [
+        {
+          "line": 714,
+          "text": "User::auth();"
+        }
+      ],
+      "implementation_branches": [],
+      "external_gates": [],
+      "runtime_branch_coverage": "NOT_RUN"
+    },
+    {
+      "id": "DialogController::msg__dot",
+      "canonical_url": "api/dialog/msg/dot",
+      "aliases": [
+        "api/dialog/msg__dot"
+      ],
+      "source": "app/Http/Controllers/Api/DialogController.php",
+      "source_sha256": "3870360b15d91d3e0c71048ee75a910b94f5570d08bbf1ce7057a30843ecbed3",
+      "source_lines": [
+        741,
+        758
+      ],
+      "implementation": "backend/domains/dialog.py",
+      "function": "msg__dot",
+      "implementation_lines": [
+        280,
+        286
+      ],
+      "implementation_file_sha256": "d75bcae6bd921553fe3012edb4c00f7943c432137432a075e1d64ce4261da718",
+      "implementation_function_sha256": "178adfeb3fe4527bef0a92272b556a9174a78e2ec7aee0504b145bd08f7f04c6",
+      "status": "IMPLEMENTED_NOT_REGISTERED_NOT_VERIFIED",
+      "response": "raw data; shared success wrapper once",
+      "source_guard_evidence": [
+        {
+          "line": 743,
+          "text": "$user = User::auth();"
+        },
+        {
+          "line": 752,
+          "text": "WebSocketDialogMsgRead::whereMsgId($id)->whereUserid($user->userid)->change(['dot' => 0]);"
+        }
+      ],
+      "implementation_branches": [],
+      "external_gates": [],
+      "runtime_branch_coverage": "NOT_RUN"
+    },
+    {
+      "id": "DialogController::msg__read",
+      "canonical_url": "api/dialog/msg/read",
+      "aliases": [
+        "api/dialog/msg__read"
+      ],
+      "source": "app/Http/Controllers/Api/DialogController.php",
+      "source_sha256": "3870360b15d91d3e0c71048ee75a910b94f5570d08bbf1ce7057a30843ecbed3",
+      "source_lines": [
+        778,
+        829
+      ],
+      "implementation": "backend/domains/dialog.py",
+      "function": "msg__read",
+      "implementation_lines": [
+        299,
+        315
+      ],
+      "implementation_file_sha256": "d75bcae6bd921553fe3012edb4c00f7943c432137432a075e1d64ce4261da718",
+      "implementation_function_sha256": "ee030ee4171b8d8bfb4927cb175260d7dc5e49c153a2b454d5c422d6eb524cd0",
+      "status": "IMPLEMENTED_NOT_REGISTERED_NOT_VERIFIED",
+      "response": "raw data; shared success wrapper once",
+      "source_guard_evidence": [
+        {
+          "line": 780,
+          "text": "$user = User::auth();"
+        },
+        {
+          "line": 800,
+          "text": "->whereUserid($user->userid)"
+        },
+        {
+          "line": 809,
+          "text": "$dialogUsers = WebSocketDialogUser::with(['webSocketDialog'])->whereUserid($user->userid)->whereIn('dialog_id', array_values($dialogIds))->get();"
+        }
+      ],
+      "implementation_branches": [
+        {
+          "line": 305,
+          "text": "for id, dialog_id in mapping.items():"
+        },
+        {
+          "line": 309,
+          "text": "if int(dialog_id or 0) == msg[\"dialog_id\"]:"
+        }
+      ],
+      "external_gates": [],
+      "runtime_branch_coverage": "NOT_RUN"
+    },
+    {
+      "id": "DialogController::msg__unread",
+      "canonical_url": "api/dialog/msg/unread",
+      "aliases": [
+        "api/dialog/msg__unread"
+      ],
+      "source": "app/Http/Controllers/Api/DialogController.php",
+      "source_sha256": "3870360b15d91d3e0c71048ee75a910b94f5570d08bbf1ce7057a30843ecbed3",
+      "source_lines": [
+        853,
+        872
+      ],
+      "implementation": "backend/domains/dialog.py",
+      "function": "msg__unread",
+      "implementation_lines": [
+        316,
+        322
+      ],
+      "implementation_file_sha256": "d75bcae6bd921553fe3012edb4c00f7943c432137432a075e1d64ce4261da718",
+      "implementation_function_sha256": "a5fdcdf2a134b3791200bf7d12b193cc665b87f56c69af064e8c59a24b7d2e6f",
+      "status": "IMPLEMENTED_NOT_REGISTERED_NOT_VERIFIED",
+      "response": "raw data; shared success wrapper once",
+      "source_guard_evidence": [
+        {
+          "line": 857,
+          "text": "$dialogUser = WebSocketDialogUser::with(['webSocketDialog'])->whereDialogId($dialog_id)->whereUserid(User::userid())->first();"
+        }
+      ],
+      "implementation_branches": [],
+      "external_gates": [],
+      "runtime_branch_coverage": "NOT_RUN"
+    },
+    {
+      "id": "DialogController::msg__checked",
+      "canonical_url": "api/dialog/msg/checked",
+      "aliases": [
+        "api/dialog/msg__checked"
+      ],
+      "source": "app/Http/Controllers/Api/DialogController.php",
+      "source_sha256": "3870360b15d91d3e0c71048ee75a910b94f5570d08bbf1ce7057a30843ecbed3",
+      "source_lines": [
+        898,
+        938
+      ],
+      "implementation": "backend/domains/dialog.py",
+      "function": "msg__checked",
+      "implementation_lines": [
+        323,
+        337
+      ],
+      "implementation_file_sha256": "d75bcae6bd921553fe3012edb4c00f7943c432137432a075e1d64ce4261da718",
+      "implementation_function_sha256": "b68d05f80db267664f8ced513f14c4499f55cc4d313692e25fc22294c7cfc1bb",
+      "status": "IMPLEMENTED_NOT_REGISTERED_NOT_VERIFIED",
+      "response": "raw data; shared success wrapper once",
+      "source_guard_evidence": [
+        {
+          "line": 900,
+          "text": "$user = User::auth();"
+        }
+      ],
+      "implementation_branches": [
+        {
+          "line": 325,
+          "text": "if msg[\"userid\"] != actor.userid or msg[\"type\"] != \"text\":"
+        }
+      ],
+      "external_gates": [],
+      "runtime_branch_coverage": "NOT_RUN"
+    },
+    {
+      "id": "DialogController::msg__stream",
+      "canonical_url": "api/dialog/msg/stream",
+      "aliases": [
+        "api/dialog/msg__stream"
+      ],
+      "source": "app/Http/Controllers/Api/DialogController.php",
+      "source_sha256": "3870360b15d91d3e0c71048ee75a910b94f5570d08bbf1ce7057a30843ecbed3",
+      "source_lines": [
+        957,
+        982
+      ],
+      "implementation": "backend/domains/dialog.py",
+      "function": "msg__stream",
+      "implementation_lines": [
+        338,
+        349
+      ],
+      "implementation_file_sha256": "d75bcae6bd921553fe3012edb4c00f7943c432137432a075e1d64ce4261da718",
+      "implementation_function_sha256": "680029e961abb674f655f28da90db3f466b079ed05a7c4b87aa704198dfe49d2",
+      "status": "IMPLEMENTED_NOT_REGISTERED_NOT_VERIFIED",
+      "response": "raw data; shared success wrapper once",
+      "source_guard_evidence": [],
+      "implementation_branches": [
+        {
+          "line": 341,
+          "text": "if userid != actor.userid and not actor.user.get(\"bot\"):"
+        },
+        {
+          "line": 344,
+          "text": "if not stream_url.startswith(\"/ai/\") or \"..\" in stream_url or \"\\\\\" in stream_url:"
+        }
+      ],
+      "external_gates": [],
+      "runtime_branch_coverage": "NOT_RUN"
+    },
+    {
+      "id": "DialogController::msg__ai_generate",
+      "canonical_url": "api/dialog/msg/ai_generate",
+      "aliases": [
+        "api/dialog/msg__ai_generate"
+      ],
+      "source": "app/Http/Controllers/Api/DialogController.php",
+      "source_sha256": "3870360b15d91d3e0c71048ee75a910b94f5570d08bbf1ce7057a30843ecbed3",
+      "source_lines": [
+        989,
+        992
+      ],
+      "implementation": "backend/domains/dialog.py",
+      "function": "msg__ai_generate",
+      "implementation_lines": [
+        1214,
+        1217
+      ],
+      "implementation_file_sha256": "d75bcae6bd921553fe3012edb4c00f7943c432137432a075e1d64ce4261da718",
+      "implementation_function_sha256": "186ea8727e268e7f97e402dccbd90a10366a3619da0a8879655cbc7d9a3457df",
+      "status": "IMPLEMENTED_NOT_REGISTERED_NOT_VERIFIED",
+      "response": "Response passthrough",
+      "source_guard_evidence": [],
+      "implementation_branches": [],
+      "external_gates": [],
+      "runtime_branch_coverage": "NOT_RUN"
+    },
+    {
+      "id": "DialogController::msg__sendtext",
+      "canonical_url": "api/dialog/msg/sendtext",
+      "aliases": [
+        "api/dialog/msg__sendtext"
+      ],
+      "source": "app/Http/Controllers/Api/DialogController.php",
+      "source_sha256": "3870360b15d91d3e0c71048ee75a910b94f5570d08bbf1ce7057a30843ecbed3",
+      "source_lines": [
+        1026,
+        1137
+      ],
+      "implementation": "backend/domains/dialog.py",
+      "function": "msg__sendtext",
+      "implementation_lines": [
+        371,
+        397
+      ],
+      "implementation_file_sha256": "d75bcae6bd921553fe3012edb4c00f7943c432137432a075e1d64ce4261da718",
+      "implementation_function_sha256": "0eaddb51f869475fe8701344c55d4b0f32f7878353a13489a6c494e52981bb65",
+      "status": "IMPLEMENTED_NOT_REGISTERED_NOT_VERIFIED",
+      "response": "raw data; shared success wrapper once",
+      "source_guard_evidence": [
+        {
+          "line": 1028,
+          "text": "$user = User::auth();"
+        }
+      ],
+      "implementation_branches": [
+        {
+          "line": 374,
+          "text": "if str(data.get(\"text_type\", \"\")).lower() not in (\"md\", \"markdown\"):"
+        },
+        {
+          "line": 378,
+          "text": "for dialog_id in _targets(connection, actor, data):"
+        },
+        {
+          "line": 380,
+          "text": "if str(data.get(\"text_type\", \"\")).lower() in (\"md\", \"markdown\"):"
+        },
+        {
+          "line": 382,
+          "text": "if data.get(\"model_name\"):"
+        },
+        {
+          "line": 385,
+          "text": "if len(re.sub(r\"<img[^>]*>\", \"\", text, flags=re.I)) > 5000:"
+        }
+      ],
+      "external_gates": [],
+      "runtime_branch_coverage": "NOT_RUN"
+    },
+    {
+      "id": "DialogController::msg__sendnotice",
+      "canonical_url": "api/dialog/msg/sendnotice",
+      "aliases": [
+        "api/dialog/msg__sendnotice"
+      ],
+      "source": "app/Http/Controllers/Api/DialogController.php",
+      "source_sha256": "3870360b15d91d3e0c71048ee75a910b94f5570d08bbf1ce7057a30843ecbed3",
+      "source_lines": [
+        1160,
+        1190
+      ],
+      "implementation": "backend/domains/dialog.py",
+      "function": "msg__sendnotice",
+      "implementation_lines": [
+        398,
+        407
+      ],
+      "implementation_file_sha256": "d75bcae6bd921553fe3012edb4c00f7943c432137432a075e1d64ce4261da718",
+      "implementation_function_sha256": "890c599d13dc4f0f267fd179134a98145c651b4422de427692c03361b23515c4",
+      "status": "IMPLEMENTED_NOT_REGISTERED_NOT_VERIFIED",
+      "response": "raw data; shared success wrapper once",
+      "source_guard_evidence": [
+        {
+          "line": 1162,
+          "text": "$user = User::auth();"
+        }
+      ],
+      "implementation_branches": [
+        {
+          "line": 402,
+          "text": "for dialog_id in _targets(connection, actor, data):"
+        }
+      ],
+      "external_gates": [],
+      "runtime_branch_coverage": "NOT_RUN"
+    },
+    {
+      "id": "DialogController::msg__sendtemplate",
+      "canonical_url": "api/dialog/msg/sendtemplate",
+      "aliases": [
+        "api/dialog/msg__sendtemplate"
+      ],
+      "source": "app/Http/Controllers/Api/DialogController.php",
+      "source_sha256": "3870360b15d91d3e0c71048ee75a910b94f5570d08bbf1ce7057a30843ecbed3",
+      "source_lines": [
+        1215,
+        1259
+      ],
+      "implementation": "backend/domains/dialog.py",
+      "function": "msg__sendtemplate",
+      "implementation_lines": [
+        408,
+        424
+      ],
+      "implementation_file_sha256": "d75bcae6bd921553fe3012edb4c00f7943c432137432a075e1d64ce4261da718",
+      "implementation_function_sha256": "01dc906a04fd9b2301fc2817ee50e92c80412f62e7bd92c5bd3b5d97ce7dfeaa",
+      "status": "IMPLEMENTED_NOT_REGISTERED_NOT_VERIFIED",
+      "response": "raw data; shared success wrapper once",
+      "source_guard_evidence": [
+        {
+          "line": 1217,
+          "text": "$user = User::auth();"
+        }
+      ],
+      "implementation_branches": [
+        {
+          "line": 411,
+          "text": "if not isinstance(content, list) or not content:"
+        },
+        {
+          "line": 413,
+          "text": "for item in content:"
+        },
+        {
+          "line": 415,
+          "text": "if len(str(item.get(\"style\", \"\"))) > 300:"
+        },
+        {
+          "line": 419,
+          "text": "for dialog_id in _targets(connection, actor, data):"
+        }
+      ],
+      "external_gates": [],
+      "runtime_branch_coverage": "NOT_RUN"
+    },
+    {
+      "id": "DialogController::msg__sendapprove",
+      "canonical_url": "api/dialog/msg/sendapprove",
+      "aliases": [
+        "api/dialog/msg__sendapprove"
+      ],
+      "source": "app/Http/Controllers/Api/DialogController.php",
+      "source_sha256": "3870360b15d91d3e0c71048ee75a910b94f5570d08bbf1ce7057a30843ecbed3",
+      "source_lines": [
+        1277,
+        1304
+      ],
+      "implementation": "backend/domains/dialog.py",
+      "function": "msg__sendapprove",
+      "implementation_lines": [
+        433,
+        444
+      ],
+      "implementation_file_sha256": "d75bcae6bd921553fe3012edb4c00f7943c432137432a075e1d64ce4261da718",
+      "implementation_function_sha256": "bc3319fd5121053cabee1a03e4055e3faa990c462c5ad70d16af6f6f0e281415",
+      "status": "IMPLEMENTED_NOT_REGISTERED_NOT_VERIFIED",
+      "response": "raw data; shared success wrapper once",
+      "source_guard_evidence": [
+        {
+          "line": 1279,
+          "text": "$user = User::auth();"
+        }
+      ],
+      "implementation_branches": [
+        {
+          "line": 436,
+          "text": "if int(data.get(\"to_userid\", 0)) <= 0 or kind not in (\"approve_reviewer\", \"approve_notifier\", \"approve_submitter\", \"approve_comment_notifier\"):"
+        }
+      ],
+      "external_gates": [
+        "real licensed bot identity; missing bot fails closed"
+      ],
+      "runtime_branch_coverage": "NOT_RUN"
+    },
+    {
+      "id": "DialogController::msg__sendrecord",
+      "canonical_url": "api/dialog/msg/sendrecord",
+      "aliases": [
+        "api/dialog/msg__sendrecord"
+      ],
+      "source": "app/Http/Controllers/Api/DialogController.php",
+      "source_sha256": "3870360b15d91d3e0c71048ee75a910b94f5570d08bbf1ce7057a30843ecbed3",
+      "source_lines": [
+        1323,
+        1352
+      ],
+      "implementation": "backend/domains/dialog.py",
+      "function": "msg__sendrecord",
+      "implementation_lines": [
+        464,
+        469
+      ],
+      "implementation_file_sha256": "d75bcae6bd921553fe3012edb4c00f7943c432137432a075e1d64ce4261da718",
+      "implementation_function_sha256": "fd124cde5cf624246664582868a33fd4663be6b425f6dc55c3188a58f136ae1d",
+      "status": "IMPLEMENTED_NOT_REGISTERED_NOT_VERIFIED",
+      "response": "raw data; shared success wrapper once",
+      "source_guard_evidence": [
+        {
+          "line": 1325,
+          "text": "$user = User::auth();"
+        }
+      ],
+      "implementation_branches": [],
+      "external_gates": [],
+      "runtime_branch_coverage": "NOT_RUN"
+    },
+    {
+      "id": "DialogController::msg__convertrecord",
+      "canonical_url": "api/dialog/msg/convertrecord",
+      "aliases": [
+        "api/dialog/msg__convertrecord"
+      ],
+      "source": "app/Http/Controllers/Api/DialogController.php",
+      "source_sha256": "3870360b15d91d3e0c71048ee75a910b94f5570d08bbf1ce7057a30843ecbed3",
+      "source_lines": [
+        1374,
+        1441
+      ],
+      "implementation": "backend/domains/dialog.py",
+      "function": "msg__convertrecord",
+      "implementation_lines": [
+        1252,
+        1267
+      ],
+      "implementation_file_sha256": "d75bcae6bd921553fe3012edb4c00f7943c432137432a075e1d64ce4261da718",
+      "implementation_function_sha256": "b8a14ebdd35f676dfa4c8e1717ee2b57cf13cbc254fda34547fd6f68656616e2",
+      "status": "IMPLEMENTED_NOT_REGISTERED_NOT_VERIFIED",
+      "response": "raw data; shared success wrapper once",
+      "source_guard_evidence": [
+        {
+          "line": 1376,
+          "text": "$user = User::auth();"
+        }
+      ],
+      "implementation_branches": [
+        {
+          "line": 1256,
+          "text": "if dialog_id:"
+        },
+        {
+          "line": 1263,
+          "text": "if data.get(\"translate\"):"
+        }
+      ],
+      "external_gates": [
+        "installed AI plugin/provider configuration; genuine HTTP client; no credentials/service verified"
+      ],
+      "runtime_branch_coverage": "NOT_RUN"
+    },
+    {
+      "id": "DialogController::msg__sendfile",
+      "canonical_url": "api/dialog/msg/sendfile",
+      "aliases": [
+        "api/dialog/msg__sendfile"
+      ],
+      "source": "app/Http/Controllers/Api/DialogController.php",
+      "source_sha256": "3870360b15d91d3e0c71048ee75a910b94f5570d08bbf1ce7057a30843ecbed3",
+      "source_lines": [
+        1462,
+        1473
+      ],
+      "implementation": "backend/domains/dialog.py",
+      "function": "msg__sendfile",
+      "implementation_lines": [
+        470,
+        474
+      ],
+      "implementation_file_sha256": "d75bcae6bd921553fe3012edb4c00f7943c432137432a075e1d64ce4261da718",
+      "implementation_function_sha256": "379e35d38226a9cb8048e730b10f3a5d0ddb7cb3c8a62310323f74c496d24148",
+      "status": "IMPLEMENTED_NOT_REGISTERED_NOT_VERIFIED",
+      "response": "raw data; shared success wrapper once",
+      "source_guard_evidence": [
+        {
+          "line": 1464,
+          "text": "$user = User::auth();"
+        }
+      ],
+      "implementation_branches": [],
+      "external_gates": [],
+      "runtime_branch_coverage": "NOT_RUN"
+    },
+    {
+      "id": "DialogController::msg__sendfiles",
+      "canonical_url": "api/dialog/msg/sendfiles",
+      "aliases": [
+        "api/dialog/msg__sendfiles"
+      ],
+      "source": "app/Http/Controllers/Api/DialogController.php",
+      "source_sha256": "3870360b15d91d3e0c71048ee75a910b94f5570d08bbf1ce7057a30843ecbed3",
+      "source_lines": [
+        1495,
+        1529
+      ],
+      "implementation": "backend/domains/dialog.py",
+      "function": "msg__sendfiles",
+      "implementation_lines": [
+        475,
+        479
+      ],
+      "implementation_file_sha256": "d75bcae6bd921553fe3012edb4c00f7943c432137432a075e1d64ce4261da718",
+      "implementation_function_sha256": "f3fe255cd86ba3c8643e19297a32a4a5d1ba39a811b7304f76f1dc5081feb71a",
+      "status": "IMPLEMENTED_NOT_REGISTERED_NOT_VERIFIED",
+      "response": "raw data; shared success wrapper once",
+      "source_guard_evidence": [
+        {
+          "line": 1497,
+          "text": "$user = User::auth();"
+        }
+      ],
+      "implementation_branches": [],
+      "external_gates": [],
+      "runtime_branch_coverage": "NOT_RUN"
+    },
+    {
+      "id": "DialogController::msg__sendfileid",
+      "canonical_url": "api/dialog/msg/sendfileid",
+      "aliases": [
+        "api/dialog/msg__sendfileid"
+      ],
+      "source": "app/Http/Controllers/Api/DialogController.php",
+      "source_sha256": "3870360b15d91d3e0c71048ee75a910b94f5570d08bbf1ce7057a30843ecbed3",
+      "source_lines": [
+        1548,
+        1569
+      ],
+      "implementation": "backend/domains/dialog.py",
+      "function": "msg__sendfileid",
+      "implementation_lines": [
+        969,
+        980
+      ],
+      "implementation_file_sha256": "d75bcae6bd921553fe3012edb4c00f7943c432137432a075e1d64ce4261da718",
+      "implementation_function_sha256": "f032f162c49cae907a533230375ade4a69506ce2ca4d6a8c6c14a4b4129b4cbd",
+      "status": "IMPLEMENTED_NOT_REGISTERED_NOT_VERIFIED",
+      "response": "raw data; shared success wrapper once",
+      "source_guard_evidence": [
+        {
+          "line": 1550,
+          "text": "$user = User::auth();"
+        },
+        {
+          "line": 1561,
+          "text": "$file = File::permissionFind($file_id, $user);"
+        }
+      ],
+      "implementation_branches": [
+        {
+          "line": 976,
+          "text": "if data.get(\"leave_message\"):"
+        }
+      ],
+      "external_gates": [],
+      "runtime_branch_coverage": "NOT_RUN"
+    },
+    {
+      "id": "DialogController::msg__sendtaskid",
+      "canonical_url": "api/dialog/msg/sendtaskid",
+      "aliases": [
+        "api/dialog/msg__sendtaskid"
+      ],
+      "source": "app/Http/Controllers/Api/DialogController.php",
+      "source_sha256": "3870360b15d91d3e0c71048ee75a910b94f5570d08bbf1ce7057a30843ecbed3",
+      "source_lines": [
+        1588,
+        1608
+      ],
+      "implementation": "backend/domains/dialog.py",
+      "function": "msg__sendtaskid",
+      "implementation_lines": [
+        981,
+        993
+      ],
+      "implementation_file_sha256": "d75bcae6bd921553fe3012edb4c00f7943c432137432a075e1d64ce4261da718",
+      "implementation_function_sha256": "80ccae04aefd5768d6bcf9f25dd36b054db036635d580ef87c581b9dc7f8a8ef",
+      "status": "IMPLEMENTED_NOT_REGISTERED_NOT_VERIFIED",
+      "response": "raw data; shared success wrapper once",
+      "source_guard_evidence": [
+        {
+          "line": 1590,
+          "text": "$user = User::auth();"
+        }
+      ],
+      "implementation_branches": [
+        {
+          "line": 986,
+          "text": "if not task or not can_view_task(connection, actor.userid, dict(task)):"
+        },
+        {
+          "line": 989,
+          "text": "if data.get(\"leave_message\"):"
+        }
+      ],
+      "external_gates": [],
+      "runtime_branch_coverage": "NOT_RUN"
+    },
+    {
+      "id": "DialogController::msg__sendanon",
+      "canonical_url": "api/dialog/msg/sendanon",
+      "aliases": [
+        "api/dialog/msg__sendanon"
+      ],
+      "source": "app/Http/Controllers/Api/DialogController.php",
+      "source_sha256": "3870360b15d91d3e0c71048ee75a910b94f5570d08bbf1ce7057a30843ecbed3",
+      "source_lines": [
+        1625,
+        1664
+      ],
+      "implementation": "backend/domains/dialog.py",
+      "function": "msg__sendanon",
+      "implementation_lines": [
+        511,
+        524
+      ],
+      "implementation_file_sha256": "d75bcae6bd921553fe3012edb4c00f7943c432137432a075e1d64ce4261da718",
+      "implementation_function_sha256": "049fb3b43bf07c887f6ddff55d61adf0c1464ac5b5e5e93c460c82fdb4a8b723",
+      "status": "IMPLEMENTED_NOT_REGISTERED_NOT_VERIFIED",
+      "response": "raw data; shared success wrapper once",
+      "source_guard_evidence": [
+        {
+          "line": 1627,
+          "text": "User::auth();"
+        },
+        {
+          "line": 1637,
+          "text": "$toUser = User::whereUserid($userid)->first();"
+        }
+      ],
+      "implementation_branches": [
+        {
+          "line": 513,
+          "text": "if db.setting(connection, \"system\", \"anon_message\", \"open\") != \"open\":"
+        },
+        {
+          "line": 519,
+          "text": "if not recipient:"
+        }
+      ],
+      "external_gates": [
+        "real licensed bot identity; missing bot fails closed"
+      ],
+      "runtime_branch_coverage": "NOT_RUN"
+    },
+    {
+      "id": "DialogController::msg__sendbot",
+      "canonical_url": "api/dialog/msg/sendbot",
+      "aliases": [
+        "api/dialog/msg__sendbot"
+      ],
+      "source": "app/Http/Controllers/Api/DialogController.php",
+      "source_sha256": "3870360b15d91d3e0c71048ee75a910b94f5570d08bbf1ce7057a30843ecbed3",
+      "source_lines": [
+        1690,
+        1747
+      ],
+      "implementation": "backend/domains/dialog.py",
+      "function": "msg__sendbot",
+      "implementation_lines": [
+        525,
+        541
+      ],
+      "implementation_file_sha256": "d75bcae6bd921553fe3012edb4c00f7943c432137432a075e1d64ce4261da718",
+      "implementation_function_sha256": "97a1ac97a5e5aa5ec8ae26e6bb7fff400469f7b36e2363551f6a38100f1bdfb6",
+      "status": "IMPLEMENTED_NOT_REGISTERED_NOT_VERIFIED",
+      "response": "raw data; shared success wrapper once",
+      "source_guard_evidence": [
+        {
+          "line": 1692,
+          "text": "$user = User::auth();"
+        },
+        {
+          "line": 1700,
+          "text": "$toUser = User::whereUserid($userid)->first();"
+        }
+      ],
+      "implementation_branches": [
+        {
+          "line": 528,
+          "text": "if kind not in (\"system-msg\", \"task-alert\", \"todo-alert\", \"check-in\", \"approval-alert\", \"meeting-alert\", \"bot-manager\"):"
+        },
+        {
+          "line": 529,
+          "text": "if not 6 <= len(kind) <= 20:"
+        },
+        {
+          "line": 533,
+          "text": "if kind.startswith(\"user-auto-\"):"
+        },
+        {
+          "line": 535,
+          "text": "if not connection.execute(select(bots.c.id).where(bots.c.bot_id == bot[\"userid\"], bots.c.userid == actor.userid)).first():"
+        }
+      ],
+      "external_gates": [
+        "real licensed bot identity; missing bot fails closed"
+      ],
+      "runtime_branch_coverage": "NOT_RUN"
+    },
+    {
+      "id": "DialogController::msg__send_ai_assistant",
+      "canonical_url": "api/dialog/msg/send_ai_assistant",
+      "aliases": [
+        "api/dialog/msg__send_ai_assistant"
+      ],
+      "source": "app/Http/Controllers/Api/DialogController.php",
+      "source_sha256": "3870360b15d91d3e0c71048ee75a910b94f5570d08bbf1ce7057a30843ecbed3",
+      "source_lines": [
+        1771,
+        1857
+      ],
+      "implementation": "backend/domains/dialog.py",
+      "function": "msg__send_ai_assistant",
+      "implementation_lines": [
+        1234,
+        1251
+      ],
+      "implementation_file_sha256": "d75bcae6bd921553fe3012edb4c00f7943c432137432a075e1d64ce4261da718",
+      "implementation_function_sha256": "ec56ee12298360ca11aaa3f17e47e17ec129bff7a269ffb0fdc22c67f3775481",
+      "status": "IMPLEMENTED_NOT_REGISTERED_NOT_VERIFIED",
+      "response": "raw data; shared success wrapper once",
+      "source_guard_evidence": [
+        {
+          "line": 1773,
+          "text": "$user = User::auth();"
+        },
+        {
+          "line": 1805,
+          "text": "if (!ProjectUser::whereProjectId($task->project_id)->whereUserid($user->userid)->exists()) {"
+        }
+      ],
+      "implementation_branches": [
+        {
+          "line": 1237,
+          "text": "if not dialog_id:"
+        },
+        {
+          "line": 1242,
+          "text": "if len(nickname) > 20:"
+        },
+        {
+          "line": 1245,
+          "text": "if data.get(\"text_type\", \"md\") in (\"md\", \"markdown\"):"
+        },
+        {
+          "line": 1247,
+          "text": "if nickname:"
+        }
+      ],
+      "external_gates": [],
+      "runtime_branch_coverage": "NOT_RUN"
+    },
+    {
+      "id": "DialogController::msg__sendlocation",
+      "canonical_url": "api/dialog/msg/sendlocation",
+      "aliases": [
+        "api/dialog/msg__sendlocation"
+      ],
+      "source": "app/Http/Controllers/Api/DialogController.php",
+      "source_sha256": "3870360b15d91d3e0c71048ee75a910b94f5570d08bbf1ce7057a30843ecbed3",
+      "source_lines": [
+        1883,
+        1919
+      ],
+      "implementation": "backend/domains/dialog.py",
+      "function": "msg__sendlocation",
+      "implementation_lines": [
+        542,
+        572
+      ],
+      "implementation_file_sha256": "d75bcae6bd921553fe3012edb4c00f7943c432137432a075e1d64ce4261da718",
+      "implementation_function_sha256": "bcb6ddf1be19322d4f218ada18f5052f5bfdfc5b8eaf548e2aad53bc008e834b",
+      "status": "IMPLEMENTED_NOT_REGISTERED_NOT_VERIFIED",
+      "response": "raw data; shared success wrapper once",
+      "source_guard_evidence": [
+        {
+          "line": 1885,
+          "text": "$user = User::auth();"
+        }
+      ],
+      "implementation_branches": [
+        {
+          "line": 545,
+          "text": "if not lng or not lat or not -180 <= lng <= 180 or not -90 <= lat <= 90:"
+        },
+        {
+          "line": 547,
+          "text": "if data.get(\"type\") not in (\"baidu\", \"amap\", \"tencent\"):"
+        },
+        {
+          "line": 552,
+          "text": "if payload[\"thumb\"].startswith((\"https://\", \"http://\")):"
+        },
+        {
+          "line": 555,
+          "text": "if not any(host == suffix or host.endswith(\".\" + suffix) for suffix in (\"baidu.com\", \"amap.com\", \"qq.com\", \"gtimg.com\")):"
+        },
+        {
+          "line": 559,
+          "text": "if len(raw) > 10 * 1024 * 1024:"
+        },
+        {
+          "line": 561,
+          "text": "with Image.open(io.BytesIO(raw)) as image:"
+        },
+        {
+          "line": 563,
+          "text": "if min(width, height) < 20:"
+        }
+      ],
+      "external_gates": [],
+      "runtime_branch_coverage": "NOT_RUN"
+    },
+    {
+      "id": "DialogController::msg__readlist",
+      "canonical_url": "api/dialog/msg/readlist",
+      "aliases": [
+        "api/dialog/msg__readlist"
+      ],
+      "source": "app/Http/Controllers/Api/DialogController.php",
+      "source_sha256": "3870360b15d91d3e0c71048ee75a910b94f5570d08bbf1ce7057a30843ecbed3",
+      "source_lines": [
+        1935,
+        1948
+      ],
+      "implementation": "backend/domains/dialog.py",
+      "function": "msg__readlist",
+      "implementation_lines": [
+        573,
+        580
+      ],
+      "implementation_file_sha256": "d75bcae6bd921553fe3012edb4c00f7943c432137432a075e1d64ce4261da718",
+      "implementation_function_sha256": "3e4a089b8d65a0b0af752aaa3f24554a8b2e938e203016312c83dbd53c6eeb78",
+      "status": "IMPLEMENTED_NOT_REGISTERED_NOT_VERIFIED",
+      "response": "raw data; shared success wrapper once",
+      "source_guard_evidence": [
+        {
+          "line": 1937,
+          "text": "$user = User::auth();"
+        },
+        {
+          "line": 1941,
+          "text": "$msg = WebSocketDialogMsg::whereId($msg_id)->whereUserid($user->userid)->first();"
+        }
+      ],
+      "implementation_branches": [
+        {
+          "line": 575,
+          "text": "if msg[\"userid\"] != actor.userid:"
+        }
+      ],
+      "external_gates": [],
+      "runtime_branch_coverage": "NOT_RUN"
+    },
+    {
+      "id": "DialogController::msg__detail",
+      "canonical_url": "api/dialog/msg/detail",
+      "aliases": [
+        "api/dialog/msg__detail"
+      ],
+      "source": "app/Http/Controllers/Api/DialogController.php",
+      "source_sha256": "3870360b15d91d3e0c71048ee75a910b94f5570d08bbf1ce7057a30843ecbed3",
+      "source_lines": [
+        1967,
+        2019
+      ],
+      "implementation": "backend/domains/dialog.py",
+      "function": "msg__detail",
+      "implementation_lines": [
+        994,
+        1010
+      ],
+      "implementation_file_sha256": "d75bcae6bd921553fe3012edb4c00f7943c432137432a075e1d64ce4261da718",
+      "implementation_function_sha256": "12dd480e2d76ea630631ed44c2100be261731b60a407bdae307aea87a4ea5c1b",
+      "status": "IMPLEMENTED_NOT_REGISTERED_NOT_VERIFIED",
+      "response": "raw data; shared success wrapper once",
+      "source_guard_evidence": [
+        {
+          "line": 1969,
+          "text": "$user =User::auth();"
+        },
+        {
+          "line": 1978,
+          "text": "CollaborationFileService::authorizeMessage($dialogMsg, $user);"
+        }
+      ],
+      "implementation_branches": [
+        {
+          "line": 999,
+          "text": "if data.get(\"only_update_at\") == \"yes\":"
+        },
+        {
+          "line": 1001,
+          "text": "if msg[\"type\"] == \"file\":"
+        },
+        {
+          "line": 1004,
+          "text": "elif msg[\"type\"] == \"longtext\":"
+        }
+      ],
+      "external_gates": [],
+      "runtime_branch_coverage": "NOT_RUN"
+    },
+    {
+      "id": "DialogController::msg__download",
+      "canonical_url": "api/dialog/msg/download",
+      "aliases": [
+        "api/dialog/msg__download"
+      ],
+      "source": "app/Http/Controllers/Api/DialogController.php",
+      "source_sha256": "3870360b15d91d3e0c71048ee75a910b94f5570d08bbf1ce7057a30843ecbed3",
+      "source_lines": [
+        2038,
+        2061
+      ],
+      "implementation": "backend/domains/dialog.py",
+      "function": "msg__download",
+      "implementation_lines": [
+        1011,
+        1025
+      ],
+      "implementation_file_sha256": "d75bcae6bd921553fe3012edb4c00f7943c432137432a075e1d64ce4261da718",
+      "implementation_function_sha256": "1c3ef5594fb78765d1da8a10c7de12b08c97dd819445f3b281a9877cb21308da",
+      "status": "IMPLEMENTED_NOT_REGISTERED_NOT_VERIFIED",
+      "response": "Response passthrough",
+      "source_guard_evidence": [
+        {
+          "line": 2040,
+          "text": "$user = User::auth();"
+        },
+        {
+          "line": 2049,
+          "text": "CollaborationFileService::authorizeMessage($msg, $user);"
+        }
+      ],
+      "implementation_branches": [
+        {
+          "line": 1016,
+          "text": "if msg[\"type\"] != \"file\":"
+        },
+        {
+          "line": 1019,
+          "text": "if not path or not path.is_file():"
+        },
+        {
+          "line": 1021,
+          "text": "if data.get(\"down\") == \"preview\":"
+        }
+      ],
+      "external_gates": [],
+      "runtime_branch_coverage": "NOT_RUN"
+    },
+    {
+      "id": "DialogController::msg__withdraw",
+      "canonical_url": "api/dialog/msg/withdraw",
+      "aliases": [
+        "api/dialog/msg__withdraw"
+      ],
+      "source": "app/Http/Controllers/Api/DialogController.php",
+      "source_sha256": "3870360b15d91d3e0c71048ee75a910b94f5570d08bbf1ce7057a30843ecbed3",
+      "source_lines": [
+        2077,
+        2092
+      ],
+      "implementation": "backend/domains/dialog.py",
+      "function": "msg__withdraw",
+      "implementation_lines": [
+        581,
+        605
+      ],
+      "implementation_file_sha256": "d75bcae6bd921553fe3012edb4c00f7943c432137432a075e1d64ce4261da718",
+      "implementation_function_sha256": "510730b5f34496590721f01dffac16e5583cc1cb3b7b4aa8813305125c0cb46a",
+      "status": "IMPLEMENTED_NOT_REGISTERED_NOT_VERIFIED",
+      "response": "raw data; shared success wrapper once",
+      "source_guard_evidence": [
+        {
+          "line": 2079,
+          "text": "$user = User::auth();"
+        },
+        {
+          "line": 2081,
+          "text": "$msg = WebSocketDialogMsg::whereId($msg_id)->whereUserid($user->userid)->first();"
+        }
+      ],
+      "implementation_branches": [
+        {
+          "line": 583,
+          "text": "if msg[\"userid\"] != actor.userid:"
+        },
+        {
+          "line": 586,
+          "text": "if limit and not actor.user[\"bot\"] and len(member_ids(connection, msg[\"dialog_id\"])) > 1 and msg[\"created_at\"] + timedelta(minutes=limit) < utcnow():"
+        },
+        {
+          "line": 591,
+          "text": "for name in (\"web_socket_dialog_msg_todos\", \"web_socket_dialog_msg_attachments\"):"
+        },
+        {
+          "line": 594,
+          "text": "if msg[\"reply_id\"]:"
+        }
+      ],
+      "external_gates": [],
+      "runtime_branch_coverage": "NOT_RUN"
+    },
+    {
+      "id": "DialogController::msg__voice2text",
+      "canonical_url": "api/dialog/msg/voice2text",
+      "aliases": [
+        "api/dialog/msg__voice2text"
+      ],
+      "source": "app/Http/Controllers/Api/DialogController.php",
+      "source_sha256": "3870360b15d91d3e0c71048ee75a910b94f5570d08bbf1ce7057a30843ecbed3",
+      "source_lines": [
+        2108,
+        2154
+      ],
+      "implementation": "backend/domains/dialog.py",
+      "function": "msg__voice2text",
+      "implementation_lines": [
+        1268,
+        1283
+      ],
+      "implementation_file_sha256": "d75bcae6bd921553fe3012edb4c00f7943c432137432a075e1d64ce4261da718",
+      "implementation_function_sha256": "f06b26c7785eaddb94636095d6eeae911d993122fef17e1e2e36a7cd68c79086",
+      "status": "IMPLEMENTED_NOT_REGISTERED_NOT_VERIFIED",
+      "response": "raw data; shared success wrapper once",
+      "source_guard_evidence": [
+        {
+          "line": 2110,
+          "text": "$user = User::auth();"
+        }
+      ],
+      "implementation_branches": [
+        {
+          "line": 1271,
+          "text": "if msg[\"type\"] != \"record\":"
+        },
+        {
+          "line": 1274,
+          "text": "if not payload.get(\"text\"):"
+        }
+      ],
+      "external_gates": [
+        "installed AI plugin/provider configuration; genuine HTTP client; no credentials/service verified"
+      ],
+      "runtime_branch_coverage": "NOT_RUN"
+    },
+    {
+      "id": "DialogController::msg__translation",
+      "canonical_url": "api/dialog/msg/translation",
+      "aliases": [
+        "api/dialog/msg__translation"
+      ],
+      "source": "app/Http/Controllers/Api/DialogController.php",
+      "source_sha256": "3870360b15d91d3e0c71048ee75a910b94f5570d08bbf1ce7057a30843ecbed3",
+      "source_lines": [
+        2173,
+        2226
+      ],
+      "implementation": "backend/domains/dialog.py",
+      "function": "msg__translation",
+      "implementation_lines": [
+        1284,
+        1338
+      ],
+      "implementation_file_sha256": "d75bcae6bd921553fe3012edb4c00f7943c432137432a075e1d64ce4261da718",
+      "implementation_function_sha256": "ce7c959f259d0708fd3d2604518a96fc941472aa3abcb226a5cc2444d50da275",
+      "status": "IMPLEMENTED_NOT_REGISTERED_NOT_VERIFIED",
+      "response": "raw data; shared success wrapper once",
+      "source_guard_evidence": [
+        {
+          "line": 2175,
+          "text": "User::auth();"
+        }
+      ],
+      "implementation_branches": [
+        {
+          "line": 1287,
+          "text": "if msg[\"type\"] not in (\"text\", \"record\"):"
+        },
+        {
+          "line": 1290,
+          "text": "if not re.fullmatch(r\"[A-Za-z-]{2,20}\", language):"
+        },
+        {
+          "line": 1294,
+          "text": "if row and not int(data.get(\"force\", 0)):"
+        },
+        {
+          "line": 1297,
+          "text": "if msg[\"msg\"].get(\"type\") == \"md\":"
+        },
+        {
+          "line": 1300,
+          "text": "if row:"
+        },
+        {
+          "line": 1302,
+          "text": "else:"
+        }
+      ],
+      "external_gates": [
+        "installed AI plugin/provider configuration; genuine HTTP client; no credentials/service verified"
+      ],
+      "runtime_branch_coverage": "NOT_RUN"
+    },
+    {
+      "id": "DialogController::msg__mark",
+      "canonical_url": "api/dialog/msg/mark",
+      "aliases": [
+        "api/dialog/msg__mark"
+      ],
+      "source": "app/Http/Controllers/Api/DialogController.php",
+      "source_sha256": "3870360b15d91d3e0c71048ee75a910b94f5570d08bbf1ce7057a30843ecbed3",
+      "source_lines": [
+        2246,
+        2293
+      ],
+      "implementation": "backend/domains/dialog.py",
+      "function": "msg__mark",
+      "implementation_lines": [
+        606,
+        619
+      ],
+      "implementation_file_sha256": "d75bcae6bd921553fe3012edb4c00f7943c432137432a075e1d64ce4261da718",
+      "implementation_function_sha256": "54b1d2683f9d3698519abfddd50b0a57f2af1ef2d798fa9bf14a7108493cbba7",
+      "status": "IMPLEMENTED_NOT_REGISTERED_NOT_VERIFIED",
+      "response": "raw data; shared success wrapper once",
+      "source_guard_evidence": [
+        {
+          "line": 2248,
+          "text": "$user = User::auth();"
+        },
+        {
+          "line": 2254,
+          "text": "$dialogUser = WebSocketDialogUser::with(['webSocketDialog'])->whereDialogId($dialog_id)->whereUserid($user->userid)->first();"
+        },
+        {
+          "line": 2262,
+          "text": "->whereUserid($user->userid)"
+        }
+      ],
+      "implementation_branches": [
+        {
+          "line": 609,
+          "text": "if kind not in (\"read\", \"unread\"):"
+        },
+        {
+          "line": 611,
+          "text": "if kind == \"read\":"
+        }
+      ],
+      "external_gates": [],
+      "runtime_branch_coverage": "NOT_RUN"
+    },
+    {
+      "id": "DialogController::msg__silence",
+      "canonical_url": "api/dialog/msg/silence",
+      "aliases": [
+        "api/dialog/msg__silence"
+      ],
+      "source": "app/Http/Controllers/Api/DialogController.php",
+      "source_sha256": "3870360b15d91d3e0c71048ee75a910b94f5570d08bbf1ce7057a30843ecbed3",
+      "source_lines": [
+        2312,
+        2356
+      ],
+      "implementation": "backend/domains/dialog.py",
+      "function": "msg__silence",
+      "implementation_lines": [
+        620,
+        630
+      ],
+      "implementation_file_sha256": "d75bcae6bd921553fe3012edb4c00f7943c432137432a075e1d64ce4261da718",
+      "implementation_function_sha256": "42ccb5469f3c867e09f5ceffe04e0bb353d9b8144d4e085cc36946689067265a",
+      "status": "IMPLEMENTED_NOT_REGISTERED_NOT_VERIFIED",
+      "response": "raw data; shared success wrapper once",
+      "source_guard_evidence": [
+        {
+          "line": 2314,
+          "text": "$user = User::auth();"
+        },
+        {
+          "line": 2317,
+          "text": "$dialogUser = WebSocketDialogUser::whereUserid($user->userid)->whereDialogId($dialogId)->first();"
+        },
+        {
+          "line": 2333,
+          "text": "WebSocketDialogMsgRead::whereUserid($user->userid)"
+        }
+      ],
+      "implementation_branches": [
+        {
+          "line": 622,
+          "text": "if dialog[\"type\"] == \"group\" and dialog[\"group_type\"] != \"user\":"
+        },
+        {
+          "line": 624,
+          "text": "if data.get(\"type\") not in (\"set\", \"cancel\"):"
+        },
+        {
+          "line": 626,
+          "text": "if data[\"type\"] == \"set\":"
+        }
+      ],
+      "external_gates": [],
+      "runtime_branch_coverage": "NOT_RUN"
+    },
+    {
+      "id": "DialogController::msg__forward",
+      "canonical_url": "api/dialog/msg/forward",
+      "aliases": [
+        "api/dialog/msg__forward"
+      ],
+      "source": "app/Http/Controllers/Api/DialogController.php",
+      "source_sha256": "3870360b15d91d3e0c71048ee75a910b94f5570d08bbf1ce7057a30843ecbed3",
+      "source_lines": [
+        2376,
+        2425
+      ],
+      "implementation": "backend/domains/dialog.py",
+      "function": "msg__forward",
+      "implementation_lines": [
+        659,
+        681
+      ],
+      "implementation_file_sha256": "d75bcae6bd921553fe3012edb4c00f7943c432137432a075e1d64ce4261da718",
+      "implementation_function_sha256": "2c42427d7a13ad50f0271b434e595403c0f33ce1812b5440c1662375b71a4cdf",
+      "status": "IMPLEMENTED_NOT_REGISTERED_NOT_VERIFIED",
+      "response": "raw data; shared success wrapper once",
+      "source_guard_evidence": [
+        {
+          "line": 2378,
+          "text": "$user = User::auth();"
+        }
+      ],
+      "implementation_branches": [
+        {
+          "line": 662,
+          "text": "if not msg_ids or len(msg_ids) > 100:"
+        },
+        {
+          "line": 666,
+          "text": "for source in sources:"
+        },
+        {
+          "line": 667,
+          "text": "if source[\"type\"] in (\"tag\", \"top\", \"todo\", \"notice\", \"word-chain\", \"vote\", \"template\"):"
+        },
+        {
+          "line": 671,
+          "text": "if int(data.get(\"show_source\", 0)):"
+        },
+        {
+          "line": 673,
+          "text": "for dialog_id in targets:"
+        },
+        {
+          "line": 676,
+          "text": "if data.get(\"leave_message\"):"
+        },
+        {
+          "line": 677,
+          "text": "for dialog_id in targets:"
+        }
+      ],
+      "external_gates": [],
+      "runtime_branch_coverage": "NOT_RUN"
+    },
+    {
+      "id": "DialogController::msg__mergeforward",
+      "canonical_url": "api/dialog/msg/mergeforward",
+      "aliases": [
+        "api/dialog/msg__mergeforward"
+      ],
+      "source": "app/Http/Controllers/Api/DialogController.php",
+      "source_sha256": "3870360b15d91d3e0c71048ee75a910b94f5570d08bbf1ce7057a30843ecbed3",
+      "source_lines": [
+        2445,
+        2466
+      ],
+      "implementation": "backend/domains/dialog.py",
+      "function": "msg__mergeforward",
+      "implementation_lines": [
+        682,
+        707
+      ],
+      "implementation_file_sha256": "d75bcae6bd921553fe3012edb4c00f7943c432137432a075e1d64ce4261da718",
+      "implementation_function_sha256": "7b42488b8854d2afbda7fc6f6b38624220c8d791f37df65535f97915791c124a",
+      "status": "IMPLEMENTED_NOT_REGISTERED_NOT_VERIFIED",
+      "response": "raw data; shared success wrapper once",
+      "source_guard_evidence": [
+        {
+          "line": 2447,
+          "text": "$user = User::auth();"
+        }
+      ],
+      "implementation_branches": [
+        {
+          "line": 685,
+          "text": "if not wanted or len(wanted) > 100:"
+        },
+        {
+          "line": 689,
+          "text": "if not sources:"
+        },
+        {
+          "line": 691,
+          "text": "if len({row[\"dialog_id\"] for row in sources}) != 1:"
+        },
+        {
+          "line": 697,
+          "text": "for dialog_id in _targets(connection, actor, data):"
+        },
+        {
+          "line": 703,
+          "text": "if data.get(\"leave_message\"):"
+        }
+      ],
+      "external_gates": [],
+      "runtime_branch_coverage": "NOT_RUN"
+    },
+    {
+      "id": "DialogController::msg__mergedetail",
+      "canonical_url": "api/dialog/msg/mergedetail",
+      "aliases": [
+        "api/dialog/msg__mergedetail"
+      ],
+      "source": "app/Http/Controllers/Api/DialogController.php",
+      "source_sha256": "3870360b15d91d3e0c71048ee75a910b94f5570d08bbf1ce7057a30843ecbed3",
+      "source_lines": [
+        2482,
+        2517
+      ],
+      "implementation": "backend/domains/dialog.py",
+      "function": "msg__mergedetail",
+      "implementation_lines": [
+        708,
+        716
+      ],
+      "implementation_file_sha256": "d75bcae6bd921553fe3012edb4c00f7943c432137432a075e1d64ce4261da718",
+      "implementation_function_sha256": "4d957f1aa0c6a446511e87803698e910cd289559d7e0bd7290c3ef0ab2891668",
+      "status": "IMPLEMENTED_NOT_REGISTERED_NOT_VERIFIED",
+      "response": "raw data; shared success wrapper once",
+      "source_guard_evidence": [
+        {
+          "line": 2484,
+          "text": "User::auth();"
+        }
+      ],
+      "implementation_branches": [
+        {
+          "line": 710,
+          "text": "if msg[\"type\"] != \"merge-forward\":"
+        }
+      ],
+      "external_gates": [],
+      "runtime_branch_coverage": "NOT_RUN"
+    },
+    {
+      "id": "DialogController::msg__emoji",
+      "canonical_url": "api/dialog/msg/emoji",
+      "aliases": [
+        "api/dialog/msg__emoji"
+      ],
+      "source": "app/Http/Controllers/Api/DialogController.php",
+      "source_sha256": "3870360b15d91d3e0c71048ee75a910b94f5570d08bbf1ce7057a30843ecbed3",
+      "source_lines": [
+        2534,
+        2567
+      ],
+      "implementation": "backend/domains/dialog.py",
+      "function": "msg__emoji",
+      "implementation_lines": [
+        636,
+        658
+      ],
+      "implementation_file_sha256": "d75bcae6bd921553fe3012edb4c00f7943c432137432a075e1d64ce4261da718",
+      "implementation_function_sha256": "76cb5d21f7cf5f4c53e2378d81f97b82959cedfaa4d43902b813acd3df2cb419",
+      "status": "IMPLEMENTED_NOT_REGISTERED_NOT_VERIFIED",
+      "response": "raw data; shared success wrapper once",
+      "source_guard_evidence": [
+        {
+          "line": 2536,
+          "text": "$user = User::auth();"
+        }
+      ],
+      "implementation_branches": [
+        {
+          "line": 639,
+          "text": "if len(symbol) > 32 or not re.search(\"[\\U0001f000-\\U0001faff\\u2600-\\u27bf\\ufe0f\\u20e3]\", symbol):"
+        },
+        {
+          "line": 643,
+          "text": "if found:"
+        },
+        {
+          "line": 644,
+          "text": "if actor.userid in found[\"userids\"]:"
+        },
+        {
+          "line": 646,
+          "text": "else:"
+        },
+        {
+          "line": 649,
+          "text": "else:"
+        }
+      ],
+      "external_gates": [],
+      "runtime_branch_coverage": "NOT_RUN"
+    },
+    {
+      "id": "DialogController::msg__tag",
+      "canonical_url": "api/dialog/msg/tag",
+      "aliases": [
+        "api/dialog/msg__tag"
+      ],
+      "source": "app/Http/Controllers/Api/DialogController.php",
+      "source_sha256": "3870360b15d91d3e0c71048ee75a910b94f5570d08bbf1ce7057a30843ecbed3",
+      "source_lines": [
+        2583,
+        2596
+      ],
+      "implementation": "backend/domains/dialog.py",
+      "function": "msg__tag",
+      "implementation_lines": [
+        721,
+        733
+      ],
+      "implementation_file_sha256": "d75bcae6bd921553fe3012edb4c00f7943c432137432a075e1d64ce4261da718",
+      "implementation_function_sha256": "9a1c4a56d2ae0b461479f15af1a8104e4c7c758ed589eaa0cea51b4565f2fffe",
+      "status": "IMPLEMENTED_NOT_REGISTERED_NOT_VERIFIED",
+      "response": "raw data; shared success wrapper once",
+      "source_guard_evidence": [
+        {
+          "line": 2585,
+          "text": "$user = User::auth();"
+        }
+      ],
+      "implementation_branches": [
+        {
+          "line": 723,
+          "text": "if msg[\"type\"] in (\"tag\", \"todo\", \"notice\"):"
+        }
+      ],
+      "external_gates": [],
+      "runtime_branch_coverage": "NOT_RUN"
+    },
+    {
+      "id": "DialogController::msg__todo",
+      "canonical_url": "api/dialog/msg/todo",
+      "aliases": [
+        "api/dialog/msg__todo"
+      ],
+      "source": "app/Http/Controllers/Api/DialogController.php",
+      "source_sha256": "3870360b15d91d3e0c71048ee75a910b94f5570d08bbf1ce7057a30843ecbed3",
+      "source_lines": [
+        2618,
+        2640
+      ],
+      "implementation": "backend/domains/dialog.py",
+      "function": "msg__todo",
+      "implementation_lines": [
+        749,
+        778
+      ],
+      "implementation_file_sha256": "d75bcae6bd921553fe3012edb4c00f7943c432137432a075e1d64ce4261da718",
+      "implementation_function_sha256": "cdd55a08d0683067476270732d619146f2d12be64d136ac140bc356b16965ff4",
+      "status": "IMPLEMENTED_NOT_REGISTERED_NOT_VERIFIED",
+      "response": "raw data; shared success wrapper once",
+      "source_guard_evidence": [
+        {
+          "line": 2621,
+          "text": "$user = User::auth();"
+        }
+      ],
+      "implementation_branches": [
+        {
+          "line": 751,
+          "text": "if msg[\"type\"] in (\"tag\", \"todo\", \"notice\"):"
+        },
+        {
+          "line": 755,
+          "text": "if wanted - members:"
+        },
+        {
+          "line": 761,
+          "text": "for action, affected in ((\"remove\", current - wanted), (\"add\", wanted - current)):"
+        },
+        {
+          "line": 762,
+          "text": "if not affected:"
+        },
+        {
+          "line": 766,
+          "text": "if action == \"remove\":"
+        },
+        {
+          "line": 768,
+          "text": "else:"
+        },
+        {
+          "line": 769,
+          "text": "for userid in affected:"
+        },
+        {
+          "line": 771,
+          "text": "if \"remind_at\" in data:"
+        }
+      ],
+      "external_gates": [],
+      "runtime_branch_coverage": "NOT_RUN"
+    },
+    {
+      "id": "DialogController::msg__todolist",
+      "canonical_url": "api/dialog/msg/todolist",
+      "aliases": [
+        "api/dialog/msg__todolist"
+      ],
+      "source": "app/Http/Controllers/Api/DialogController.php",
+      "source_sha256": "3870360b15d91d3e0c71048ee75a910b94f5570d08bbf1ce7057a30843ecbed3",
+      "source_lines": [
+        2656,
+        2670
+      ],
+      "implementation": "backend/domains/dialog.py",
+      "function": "msg__todolist",
+      "implementation_lines": [
+        779,
+        784
+      ],
+      "implementation_file_sha256": "d75bcae6bd921553fe3012edb4c00f7943c432137432a075e1d64ce4261da718",
+      "implementation_function_sha256": "68728faf168564b9bde32f6d272e9ddcd0a514986b5062770dbeaf8ef68de03f",
+      "status": "IMPLEMENTED_NOT_REGISTERED_NOT_VERIFIED",
+      "response": "raw data; shared success wrapper once",
+      "source_guard_evidence": [
+        {
+          "line": 2658,
+          "text": "User::auth();"
+        }
+      ],
+      "implementation_branches": [],
+      "external_gates": [],
+      "runtime_branch_coverage": "NOT_RUN"
+    },
+    {
+      "id": "DialogController::msg__todoremind",
+      "canonical_url": "api/dialog/msg/todoremind",
+      "aliases": [
+        "api/dialog/msg__todoremind"
+      ],
+      "source": "app/Http/Controllers/Api/DialogController.php",
+      "source_sha256": "3870360b15d91d3e0c71048ee75a910b94f5570d08bbf1ce7057a30843ecbed3",
+      "source_lines": [
+        2688,
+        2728
+      ],
+      "implementation": "backend/domains/dialog.py",
+      "function": "msg__todoremind",
+      "implementation_lines": [
+        785,
+        795
+      ],
+      "implementation_file_sha256": "d75bcae6bd921553fe3012edb4c00f7943c432137432a075e1d64ce4261da718",
+      "implementation_function_sha256": "1ffa152c4bd48a7d6ac90822a4ca9f8eb6a73da7369e6918f224d9ab64674fe9",
+      "status": "IMPLEMENTED_NOT_REGISTERED_NOT_VERIFIED",
+      "response": "raw data; shared success wrapper once",
+      "source_guard_evidence": [
+        {
+          "line": 2690,
+          "text": "$user = User::auth();"
+        },
+        {
+          "line": 2710,
+          "text": "if (Base::settingFind('system', 'todo_set_permission') === 'close') {"
+        },
+        {
+          "line": 2712,
+          "text": "if ($others && !$dialog->checkTodoOwnerPermission($user->userid)) {"
+        }
+      ],
+      "implementation_branches": [
+        {
+          "line": 788,
+          "text": "if not wanted:"
+        }
+      ],
+      "external_gates": [],
+      "runtime_branch_coverage": "NOT_RUN"
+    },
+    {
+      "id": "DialogController::msg__done",
+      "canonical_url": "api/dialog/msg/done",
+      "aliases": [
+        "api/dialog/msg__done"
+      ],
+      "source": "app/Http/Controllers/Api/DialogController.php",
+      "source_sha256": "3870360b15d91d3e0c71048ee75a910b94f5570d08bbf1ce7057a30843ecbed3",
+      "source_lines": [
+        2744,
+        2813
+      ],
+      "implementation": "backend/domains/dialog.py",
+      "function": "msg__done",
+      "implementation_lines": [
+        796,
+        810
+      ],
+      "implementation_file_sha256": "d75bcae6bd921553fe3012edb4c00f7943c432137432a075e1d64ce4261da718",
+      "implementation_function_sha256": "db01fa6a487bf6626d42fab84074e6b504a172de0035e91c86bc4cddc7a048c9",
+      "status": "IMPLEMENTED_NOT_REGISTERED_NOT_VERIFIED",
+      "response": "raw data; shared success wrapper once",
+      "source_guard_evidence": [
+        {
+          "line": 2746,
+          "text": "$user = User::auth();"
+        },
+        {
+          "line": 2752,
+          "text": "$todo = WebSocketDialogMsgTodo::whereId($id)->whereUserid($user->userid)->first();"
+        }
+      ],
+      "implementation_branches": [
+        {
+          "line": 800,
+          "text": "if not row or row[\"done_at\"]:"
+        }
+      ],
+      "external_gates": [],
+      "runtime_branch_coverage": "NOT_RUN"
+    },
+    {
+      "id": "DialogController::msg__color",
+      "canonical_url": "api/dialog/msg/color",
+      "aliases": [
+        "api/dialog/msg__color"
+      ],
+      "source": "app/Http/Controllers/Api/DialogController.php",
+      "source_sha256": "3870360b15d91d3e0c71048ee75a910b94f5570d08bbf1ce7057a30843ecbed3",
+      "source_lines": [
+        2830,
+        2854
+      ],
+      "implementation": "backend/domains/dialog.py",
+      "function": "msg__color",
+      "implementation_lines": [
+        631,
+        635
+      ],
+      "implementation_file_sha256": "d75bcae6bd921553fe3012edb4c00f7943c432137432a075e1d64ce4261da718",
+      "implementation_function_sha256": "770032827849bf803f4a0538d6f5b2d264d69ef67e0a0ee2a352368b86947659",
+      "status": "IMPLEMENTED_NOT_REGISTERED_NOT_VERIFIED",
+      "response": "raw data; shared success wrapper once",
+      "source_guard_evidence": [
+        {
+          "line": 2832,
+          "text": "$user = User::auth();"
+        },
+        {
+          "line": 2836,
+          "text": "$dialogUser = WebSocketDialogUser::whereUserid($user->userid)->whereDialogId($dialogId)->first();"
+        }
+      ],
+      "implementation_branches": [],
+      "external_gates": [],
+      "runtime_branch_coverage": "NOT_RUN"
+    },
+    {
+      "id": "DialogController::msg__webhookmsg2ai",
+      "canonical_url": "api/dialog/msg/webhookmsg2ai",
+      "aliases": [
+        "api/dialog/msg__webhookmsg2ai"
+      ],
+      "source": "app/Http/Controllers/Api/DialogController.php",
+      "source_sha256": "3870360b15d91d3e0c71048ee75a910b94f5570d08bbf1ce7057a30843ecbed3",
+      "source_lines": [
+        2861,
+        2864
+      ],
+      "implementation": "backend/domains/dialog.py",
+      "function": "msg__webhookmsg2ai",
+      "implementation_lines": [
+        1225,
+        1228
+      ],
+      "implementation_file_sha256": "d75bcae6bd921553fe3012edb4c00f7943c432137432a075e1d64ce4261da718",
+      "implementation_function_sha256": "1883cc55127d07a613f3977b056b8c7301d78cd1167ecbe25bf02f5c6d72f19f",
+      "status": "IMPLEMENTED_NOT_REGISTERED_NOT_VERIFIED",
+      "response": "Response passthrough",
+      "source_guard_evidence": [],
+      "implementation_branches": [],
+      "external_gates": [],
+      "runtime_branch_coverage": "NOT_RUN"
+    },
+    {
+      "id": "DialogController::group__add",
+      "canonical_url": "api/dialog/group/add",
+      "aliases": [
+        "api/dialog/group__add"
+      ],
+      "source": "app/Http/Controllers/Api/DialogController.php",
+      "source_sha256": "3870360b15d91d3e0c71048ee75a910b94f5570d08bbf1ce7057a30843ecbed3",
+      "source_lines": [
+        2882,
+        2926
+      ],
+      "implementation": "backend/domains/dialog.py",
+      "function": "group__add",
+      "implementation_lines": [
+        811,
+        830
+      ],
+      "implementation_file_sha256": "d75bcae6bd921553fe3012edb4c00f7943c432137432a075e1d64ce4261da718",
+      "implementation_function_sha256": "c778b0bab4cb9fc7d24985056f2d224bad3408f2562aa82be682d938595942c5",
+      "status": "IMPLEMENTED_NOT_REGISTERED_NOT_VERIFIED",
+      "response": "raw data; shared success wrapper once",
+      "source_guard_evidence": [
+        {
+          "line": 2884,
+          "text": "$user = User::auth();"
+        }
+      ],
+      "implementation_branches": [
+        {
+          "line": 814,
+          "text": "if len(users) < 2:"
+        },
+        {
+          "line": 816,
+          "text": "if \"temp\" in actor.identities:"
+        },
+        {
+          "line": 819,
+          "text": "if not name:"
+        },
+        {
+          "line": 823,
+          "text": "if data.get(\"avatar\"):"
+        }
+      ],
+      "external_gates": [],
+      "runtime_branch_coverage": "NOT_RUN"
+    },
+    {
+      "id": "DialogController::group__edit",
+      "canonical_url": "api/dialog/group/edit",
+      "aliases": [
+        "api/dialog/group__edit"
+      ],
+      "source": "app/Http/Controllers/Api/DialogController.php",
+      "source_sha256": "3870360b15d91d3e0c71048ee75a910b94f5570d08bbf1ce7057a30843ecbed3",
+      "source_lines": [
+        2945,
+        2994
+      ],
+      "implementation": "backend/domains/dialog.py",
+      "function": "group__edit",
+      "implementation_lines": [
+        831,
+        853
+      ],
+      "implementation_file_sha256": "d75bcae6bd921553fe3012edb4c00f7943c432137432a075e1d64ce4261da718",
+      "implementation_function_sha256": "e24e58128f232d08debd10fb52e0aa99e146febd69912634ca0de44e4e3f9869",
+      "status": "IMPLEMENTED_NOT_REGISTERED_NOT_VERIFIED",
+      "response": "raw data; shared success wrapper once",
+      "source_guard_evidence": [
+        {
+          "line": 2947,
+          "text": "$user = User::auth();"
+        },
+        {
+          "line": 2961,
+          "text": "if (!$dialog->isOwner(User::userid())) {"
+        }
+      ],
+      "implementation_branches": [
+        {
+          "line": 834,
+          "text": "if admin:"
+        },
+        {
+          "line": 837,
+          "text": "if not admin:"
+        },
+        {
+          "line": 840,
+          "text": "if \"avatar\" in data:"
+        },
+        {
+          "line": 843,
+          "text": "if (\"chat_name\" in data or \"name\" in data) and (dialog[\"group_type\"] == \"user\" or dialog[\"group_type\"] == \"all\" and admin):"
+        },
+        {
+          "line": 845,
+          "text": "if not 2 <= len(name) <= 100:"
+        }
+      ],
+      "external_gates": [],
+      "runtime_branch_coverage": "NOT_RUN"
+    },
+    {
+      "id": "DialogController::group__adduser",
+      "canonical_url": "api/dialog/group/adduser",
+      "aliases": [
+        "api/dialog/group__adduser"
+      ],
+      "source": "app/Http/Controllers/Api/DialogController.php",
+      "source_sha256": "3870360b15d91d3e0c71048ee75a910b94f5570d08bbf1ce7057a30843ecbed3",
+      "source_lines": [
+        3013,
+        3034
+      ],
+      "implementation": "backend/domains/dialog.py",
+      "function": "group__adduser",
+      "implementation_lines": [
+        854,
+        865
+      ],
+      "implementation_file_sha256": "d75bcae6bd921553fe3012edb4c00f7943c432137432a075e1d64ce4261da718",
+      "implementation_function_sha256": "415ed9cd43be9a4521f3d14a16a6bbdf2aff1aa4d5aa1068465558c4e8d2f446",
+      "status": "IMPLEMENTED_NOT_REGISTERED_NOT_VERIFIED",
+      "response": "raw data; shared success wrapper once",
+      "source_guard_evidence": [
+        {
+          "line": 3015,
+          "text": "$user = User::auth();"
+        },
+        {
+          "line": 3026,
+          "text": "if ($dialog->owner_id > 0 && !$dialog->isOwner($user->userid)) {"
+        }
+      ],
+      "implementation_branches": [
+        {
+          "line": 856,
+          "text": "if dialog[\"owner_id\"]:"
+        },
+        {
+          "line": 858,
+          "text": "elif dialog[\"type\"] != \"group\":"
+        }
+      ],
+      "external_gates": [],
+      "runtime_branch_coverage": "NOT_RUN"
+    },
+    {
+      "id": "DialogController::group__deluser",
+      "canonical_url": "api/dialog/group/deluser",
+      "aliases": [
+        "api/dialog/group__deluser"
+      ],
+      "source": "app/Http/Controllers/Api/DialogController.php",
+      "source_sha256": "3870360b15d91d3e0c71048ee75a910b94f5570d08bbf1ce7057a30843ecbed3",
+      "source_lines": [
+        3055,
+        3078
+      ],
+      "implementation": "backend/domains/dialog.py",
+      "function": "group__deluser",
+      "implementation_lines": [
+        866,
+        884
+      ],
+      "implementation_file_sha256": "d75bcae6bd921553fe3012edb4c00f7943c432137432a075e1d64ce4261da718",
+      "implementation_function_sha256": "4667fa479e030daca51b6e646eae0741891f6528ad016b9bcf96c31ada640a7f",
+      "status": "IMPLEMENTED_NOT_REGISTERED_NOT_VERIFIED",
+      "response": "raw data; shared success wrapper once",
+      "source_guard_evidence": [
+        {
+          "line": 3057,
+          "text": "$user = User::auth();"
+        }
+      ],
+      "implementation_branches": [
+        {
+          "line": 868,
+          "text": "if dialog[\"type\"] != \"group\":"
+        },
+        {
+          "line": 872,
+          "text": "for userid in wanted:"
+        },
+        {
+          "line": 874,
+          "text": "if member[\"role\"] == 1 or member[\"important\"]:"
+        },
+        {
+          "line": 876,
+          "text": "if userid != actor.userid and role not in (1, 2) and member[\"inviter\"] != actor.userid:"
+        },
+        {
+          "line": 878,
+          "text": "if role == 2 and member[\"role\"] == 2 and userid != actor.userid:"
+        }
+      ],
+      "external_gates": [],
+      "runtime_branch_coverage": "NOT_RUN"
+    },
+    {
+      "id": "DialogController::group__transfer",
+      "canonical_url": "api/dialog/group/transfer",
+      "aliases": [
+        "api/dialog/group__transfer"
+      ],
+      "source": "app/Http/Controllers/Api/DialogController.php",
+      "source_sha256": "3870360b15d91d3e0c71048ee75a910b94f5570d08bbf1ce7057a30843ecbed3",
+      "source_lines": [
+        3098,
+        3138
+      ],
+      "implementation": "backend/domains/dialog.py",
+      "function": "group__transfer",
+      "implementation_lines": [
+        885,
+        895
+      ],
+      "implementation_file_sha256": "d75bcae6bd921553fe3012edb4c00f7943c432137432a075e1d64ce4261da718",
+      "implementation_function_sha256": "58f1088c1d0de2badfcfa817f309186d2034459afc68ec75e166b2f4b49a8057",
+      "status": "IMPLEMENTED_NOT_REGISTERED_NOT_VERIFIED",
+      "response": "raw data; shared success wrapper once",
+      "source_guard_evidence": [
+        {
+          "line": 3101,
+          "text": "$user = User::auth();"
+        },
+        {
+          "line": 3111,
+          "text": "if (!User::whereUserid($userid)->exists()) {"
+        }
+      ],
+      "implementation_branches": [
+        {
+          "line": 889,
+          "text": "if userid == actor.userid:"
+        }
+      ],
+      "external_gates": [],
+      "runtime_branch_coverage": "NOT_RUN"
+    },
+    {
+      "id": "DialogController::group__adddeputy",
+      "canonical_url": "api/dialog/group/adddeputy",
+      "aliases": [
+        "api/dialog/group__adddeputy"
+      ],
+      "source": "app/Http/Controllers/Api/DialogController.php",
+      "source_sha256": "3870360b15d91d3e0c71048ee75a910b94f5570d08bbf1ce7057a30843ecbed3",
+      "source_lines": [
+        3146,
+        3179
+      ],
+      "implementation": "backend/domains/dialog.py",
+      "function": "group__adddeputy",
+      "implementation_lines": [
+        910,
+        913
+      ],
+      "implementation_file_sha256": "d75bcae6bd921553fe3012edb4c00f7943c432137432a075e1d64ce4261da718",
+      "implementation_function_sha256": "6ea4d9ccb7e5056ef77cbdeae6e628e89d6d434736e00e3da4375b0661d34e58",
+      "status": "IMPLEMENTED_NOT_REGISTERED_NOT_VERIFIED",
+      "response": "raw data; shared success wrapper once",
+      "source_guard_evidence": [
+        {
+          "line": 3148,
+          "text": "$user = User::auth();"
+        },
+        {
+          "line": 3156,
+          "text": "$dialog = WebSocketDialog::checkDialog($dialog_id, true); // checkOwner=true：仅群主"
+        }
+      ],
+      "implementation_branches": [],
+      "external_gates": [],
+      "runtime_branch_coverage": "NOT_RUN"
+    },
+    {
+      "id": "DialogController::group__deldeputy",
+      "canonical_url": "api/dialog/group/deldeputy",
+      "aliases": [
+        "api/dialog/group__deldeputy"
+      ],
+      "source": "app/Http/Controllers/Api/DialogController.php",
+      "source_sha256": "3870360b15d91d3e0c71048ee75a910b94f5570d08bbf1ce7057a30843ecbed3",
+      "source_lines": [
+        3187,
+        3217
+      ],
+      "implementation": "backend/domains/dialog.py",
+      "function": "group__deldeputy",
+      "implementation_lines": [
+        914,
+        917
+      ],
+      "implementation_file_sha256": "d75bcae6bd921553fe3012edb4c00f7943c432137432a075e1d64ce4261da718",
+      "implementation_function_sha256": "3da6930eb4be5c896302e4fbd08cb502c62f352e0793247f7fad0a0a4ad7e7f1",
+      "status": "IMPLEMENTED_NOT_REGISTERED_NOT_VERIFIED",
+      "response": "raw data; shared success wrapper once",
+      "source_guard_evidence": [
+        {
+          "line": 3189,
+          "text": "$user = User::auth();"
+        }
+      ],
+      "implementation_branches": [],
+      "external_gates": [],
+      "runtime_branch_coverage": "NOT_RUN"
+    },
+    {
+      "id": "DialogController::group__disband",
+      "canonical_url": "api/dialog/group/disband",
+      "aliases": [
+        "api/dialog/group__disband"
+      ],
+      "source": "app/Http/Controllers/Api/DialogController.php",
+      "source_sha256": "3870360b15d91d3e0c71048ee75a910b94f5570d08bbf1ce7057a30843ecbed3",
+      "source_lines": [
+        3234,
+        3245
+      ],
+      "implementation": "backend/domains/dialog.py",
+      "function": "group__disband",
+      "implementation_lines": [
+        918,
+        930
+      ],
+      "implementation_file_sha256": "d75bcae6bd921553fe3012edb4c00f7943c432137432a075e1d64ce4261da718",
+      "implementation_function_sha256": "57aeeb7e0cb838cc9fb8e2092177ccc77d3627273de0ce7c05fd70ade04561e6",
+      "status": "IMPLEMENTED_NOT_REGISTERED_NOT_VERIFIED",
+      "response": "raw data; shared success wrapper once",
+      "source_guard_evidence": [
+        {
+          "line": 3236,
+          "text": "User::auth();"
+        }
+      ],
+      "implementation_branches": [
+        {
+          "line": 924,
+          "text": "for userid in users:"
+        },
+        {
+          "line": 926,
+          "text": "if users:"
+        }
+      ],
+      "external_gates": [],
+      "runtime_branch_coverage": "NOT_RUN"
+    },
+    {
+      "id": "DialogController::group__searchuser",
+      "canonical_url": "api/dialog/group/searchuser",
+      "aliases": [
+        "api/dialog/group__searchuser"
+      ],
+      "source": "app/Http/Controllers/Api/DialogController.php",
+      "source_sha256": "3870360b15d91d3e0c71048ee75a910b94f5570d08bbf1ce7057a30843ecbed3",
+      "source_lines": [
+        3261,
+        3274
+      ],
+      "implementation": "backend/domains/dialog.py",
+      "function": "group__searchuser",
+      "implementation_lines": [
+        931,
+        939
+      ],
+      "implementation_file_sha256": "d75bcae6bd921553fe3012edb4c00f7943c432137432a075e1d64ce4261da718",
+      "implementation_function_sha256": "2b1ab60f5796f137ccf57632ffe9bd95c2ba3fbc8790c751635bbed8a03482a0",
+      "status": "IMPLEMENTED_NOT_REGISTERED_NOT_VERIFIED",
+      "response": "raw data; shared success wrapper once",
+      "source_guard_evidence": [
+        {
+          "line": 3263,
+          "text": "User::auth('admin');"
+        }
+      ],
+      "implementation_branches": [
+        {
+          "line": 935,
+          "text": "if data.get(\"key\"):"
+        }
+      ],
+      "external_gates": [],
+      "runtime_branch_coverage": "NOT_RUN"
+    },
+    {
+      "id": "DialogController::common__list",
+      "canonical_url": "api/dialog/common/list",
+      "aliases": [
+        "api/dialog/common__list"
+      ],
+      "source": "app/Http/Controllers/Api/DialogController.php",
+      "source_sha256": "3870360b15d91d3e0c71048ee75a910b94f5570d08bbf1ce7057a30843ecbed3",
+      "source_lines": [
+        3306,
+        3351
+      ],
+      "implementation": "backend/domains/dialog.py",
+      "function": "common__list",
+      "implementation_lines": [
+        940,
+        953
+      ],
+      "implementation_file_sha256": "d75bcae6bd921553fe3012edb4c00f7943c432137432a075e1d64ce4261da718",
+      "implementation_function_sha256": "287a83fd02e7617834d1e1ecc6d6740f9a2ecd8bbb78ee2bfbdc634882b56480",
+      "status": "IMPLEMENTED_NOT_REGISTERED_NOT_VERIFIED",
+      "response": "raw data; shared success wrapper once",
+      "source_guard_evidence": [
+        {
+          "line": 3308,
+          "text": "$user = User::auth();"
+        }
+      ],
+      "implementation_branches": [
+        {
+          "line": 945,
+          "text": "if int(data.get(\"target_userid\", 0)):"
+        },
+        {
+          "line": 948,
+          "text": "if data.get(\"only_count\") == \"yes\":"
+        }
+      ],
+      "external_gates": [],
+      "runtime_branch_coverage": "NOT_RUN"
+    },
+    {
+      "id": "DialogController::okr__add",
+      "canonical_url": "api/dialog/okr/add",
+      "aliases": [
+        "api/dialog/okr__add"
+      ],
+      "source": "app/Http/Controllers/Api/DialogController.php",
+      "source_sha256": "3870360b15d91d3e0c71048ee75a910b94f5570d08bbf1ce7057a30843ecbed3",
+      "source_lines": [
+        3369,
+        3390
+      ],
+      "implementation": "backend/domains/dialog.py",
+      "function": "okr__add",
+      "implementation_lines": [
+        954,
+        960
+      ],
+      "implementation_file_sha256": "d75bcae6bd921553fe3012edb4c00f7943c432137432a075e1d64ce4261da718",
+      "implementation_function_sha256": "b9f5c631f34a94ebd9452dbe8786ace406bb0de55a094f906c88dc8bb4709d78",
+      "status": "IMPLEMENTED_NOT_REGISTERED_NOT_VERIFIED",
+      "response": "raw data; shared success wrapper once",
+      "source_guard_evidence": [
+        {
+          "line": 3371,
+          "text": "$user = User::auth();"
+        }
+      ],
+      "implementation_branches": [],
+      "external_gates": [],
+      "runtime_branch_coverage": "NOT_RUN"
+    },
+    {
+      "id": "DialogController::okr__push",
+      "canonical_url": "api/dialog/okr/push",
+      "aliases": [
+        "api/dialog/okr__push"
+      ],
+      "source": "app/Http/Controllers/Api/DialogController.php",
+      "source_sha256": "3870360b15d91d3e0c71048ee75a910b94f5570d08bbf1ce7057a30843ecbed3",
+      "source_lines": [
+        3408,
+        3426
+      ],
+      "implementation": "backend/domains/dialog.py",
+      "function": "okr__push",
+      "implementation_lines": [
+        961,
+        968
+      ],
+      "implementation_file_sha256": "d75bcae6bd921553fe3012edb4c00f7943c432137432a075e1d64ce4261da718",
+      "implementation_function_sha256": "694eb3b44a676a61ad2fcfa611cde577056fe8f3cccbd8de1e5c82d9d2146c2f",
+      "status": "IMPLEMENTED_NOT_REGISTERED_NOT_VERIFIED",
+      "response": "raw data; shared success wrapper once",
+      "source_guard_evidence": [
+        {
+          "line": 3411,
+          "text": "User::auth();"
+        }
+      ],
+      "implementation_branches": [],
+      "external_gates": [
+        "real licensed bot identity; missing bot fails closed"
+      ],
+      "runtime_branch_coverage": "NOT_RUN"
+    },
+    {
+      "id": "DialogController::msg__wordchain",
+      "canonical_url": "api/dialog/msg/wordchain",
+      "aliases": [
+        "api/dialog/msg__wordchain"
+      ],
+      "source": "app/Http/Controllers/Api/DialogController.php",
+      "source_sha256": "3870360b15d91d3e0c71048ee75a910b94f5570d08bbf1ce7057a30843ecbed3",
+      "source_lines": [
+        3445,
+        3512
+      ],
+      "implementation": "backend/domains/dialog.py",
+      "function": "msg__wordchain",
+      "implementation_lines": [
+        1026,
+        1047
+      ],
+      "implementation_file_sha256": "d75bcae6bd921553fe3012edb4c00f7943c432137432a075e1d64ce4261da718",
+      "implementation_function_sha256": "1e50930a164dd02c4660b330c163e48ee5284478f4e235d8112fcd4fb8c9bbfd",
+      "status": "IMPLEMENTED_NOT_REGISTERED_NOT_VERIFIED",
+      "response": "raw data; shared success wrapper once",
+      "source_guard_evidence": [
+        {
+          "line": 3447,
+          "text": "$user = User::auth();"
+        }
+      ],
+      "implementation_branches": [
+        {
+          "line": 1029,
+          "text": "if not isinstance(entries, list) or not entries:"
+        },
+        {
+          "line": 1037,
+          "text": "for offset, entry in enumerate(entries):"
+        },
+        {
+          "line": 1039,
+          "text": "if old and old[\"userid\"] != actor.userid:"
+        }
+      ],
+      "external_gates": [],
+      "runtime_branch_coverage": "NOT_RUN"
+    },
+    {
+      "id": "DialogController::msg__vote",
+      "canonical_url": "api/dialog/msg/vote",
+      "aliases": [
+        "api/dialog/msg__vote"
+      ],
+      "source": "app/Http/Controllers/Api/DialogController.php",
+      "source_sha256": "3870360b15d91d3e0c71048ee75a910b94f5570d08bbf1ce7057a30843ecbed3",
+      "source_lines": [
+        3535,
+        3628
+      ],
+      "implementation": "backend/domains/dialog.py",
+      "function": "msg__vote",
+      "implementation_lines": [
+        1055,
+        1099
+      ],
+      "implementation_file_sha256": "d75bcae6bd921553fe3012edb4c00f7943c432137432a075e1d64ce4261da718",
+      "implementation_function_sha256": "94722c1678022804f27e4555187f74ca8962ad74da10394e49d950a9a7463283",
+      "status": "IMPLEMENTED_NOT_REGISTERED_NOT_VERIFIED",
+      "response": "raw data; shared success wrapper once",
+      "source_guard_evidence": [
+        {
+          "line": 3537,
+          "text": "$user = User::auth();"
+        }
+      ],
+      "implementation_branches": [
+        {
+          "line": 1058,
+          "text": "if action == \"create\":"
+        },
+        {
+          "line": 1060,
+          "text": "if not isinstance(choices, list) or len(choices) < 2:"
+        },
+        {
+          "line": 1065,
+          "text": "if action not in (\"vote\", \"again\", \"finish\") or not data.get(\"uuid\"):"
+        },
+        {
+          "line": 1068,
+          "text": "if not rows:"
+        },
+        {
+          "line": 1070,
+          "text": "if action == \"again\":"
+        },
+        {
+          "line": 1075,
+          "text": "for row in rows:"
+        },
+        {
+          "line": 1077,
+          "text": "if action == \"finish\":"
+        },
+        {
+          "line": 1078,
+          "text": "if payload.get(\"userid\") != actor.userid:"
+        },
+        {
+          "line": 1081,
+          "text": "else:"
+        },
+        {
+          "line": 1082,
+          "text": "if not payload.get(\"state\"):"
+        },
+        {
+          "line": 1084,
+          "text": "if any(v[\"userid\"] == actor.userid for v in payload.get(\"votes\", [])):"
+        },
+        {
+          "line": 1086,
+          "text": "if not votes or not payload.get(\"multiple\") and len(votes) != 1:"
+        },
+        {
+          "line": 1089,
+          "text": "if any(str(v) not in valid for v in votes):"
+        }
+      ],
+      "external_gates": [],
+      "runtime_branch_coverage": "NOT_RUN"
+    },
+    {
+      "id": "DialogController::msg__top",
+      "canonical_url": "api/dialog/msg/top",
+      "aliases": [
+        "api/dialog/msg__top"
+      ],
+      "source": "app/Http/Controllers/Api/DialogController.php",
+      "source_sha256": "3870360b15d91d3e0c71048ee75a910b94f5570d08bbf1ce7057a30843ecbed3",
+      "source_lines": [
+        3644,
+        3688
+      ],
+      "implementation": "backend/domains/dialog.py",
+      "function": "msg__top",
+      "implementation_lines": [
+        1100,
+        1112
+      ],
+      "implementation_file_sha256": "d75bcae6bd921553fe3012edb4c00f7943c432137432a075e1d64ce4261da718",
+      "implementation_function_sha256": "159d5362f6bc47f5bb6a3d6e4df86449ea00878c41630311cecea0a010bc81c6",
+      "status": "IMPLEMENTED_NOT_REGISTERED_NOT_VERIFIED",
+      "response": "raw data; shared success wrapper once",
+      "source_guard_evidence": [
+        {
+          "line": 3646,
+          "text": "$user = User::auth();"
+        }
+      ],
+      "implementation_branches": [],
+      "external_gates": [],
+      "runtime_branch_coverage": "NOT_RUN"
+    },
+    {
+      "id": "DialogController::msg__topinfo",
+      "canonical_url": "api/dialog/msg/topinfo",
+      "aliases": [
+        "api/dialog/msg__topinfo"
+      ],
+      "source": "app/Http/Controllers/Api/DialogController.php",
+      "source_sha256": "3870360b15d91d3e0c71048ee75a910b94f5570d08bbf1ce7057a30843ecbed3",
+      "source_lines": [
+        3704,
+        3715
+      ],
+      "implementation": "backend/domains/dialog.py",
+      "function": "msg__topinfo",
+      "implementation_lines": [
+        1113,
+        1117
+      ],
+      "implementation_file_sha256": "d75bcae6bd921553fe3012edb4c00f7943c432137432a075e1d64ce4261da718",
+      "implementation_function_sha256": "602049d1e6409dcbe3dbe8771646449b8828ed74b653d1a7999bfa1558daa467",
+      "status": "IMPLEMENTED_NOT_REGISTERED_NOT_VERIFIED",
+      "response": "raw data; shared success wrapper once",
+      "source_guard_evidence": [
+        {
+          "line": 3706,
+          "text": "User::auth();"
+        }
+      ],
+      "implementation_branches": [],
+      "external_gates": [],
+      "runtime_branch_coverage": "NOT_RUN"
+    },
+    {
+      "id": "DialogController::msg__applied",
+      "canonical_url": "api/dialog/msg/applied",
+      "aliases": [
+        "api/dialog/msg__applied"
+      ],
+      "source": "app/Http/Controllers/Api/DialogController.php",
+      "source_sha256": "3870360b15d91d3e0c71048ee75a910b94f5570d08bbf1ce7057a30843ecbed3",
+      "source_lines": [
+        3722,
+        3725
+      ],
+      "implementation": "backend/domains/dialog.py",
+      "function": "msg__applied",
+      "implementation_lines": [
+        1229,
+        1233
+      ],
+      "implementation_file_sha256": "d75bcae6bd921553fe3012edb4c00f7943c432137432a075e1d64ce4261da718",
+      "implementation_function_sha256": "73c0687c596ebbcb4abef3b8dbf20997086d94a1e2dc77063d04a9515d34c2a5",
+      "status": "IMPLEMENTED_NOT_REGISTERED_NOT_VERIFIED",
+      "response": "Response passthrough",
+      "source_guard_evidence": [],
+      "implementation_branches": [],
+      "external_gates": [],
+      "runtime_branch_coverage": "NOT_RUN"
+    },
+    {
+      "id": "DialogController::sticker__search",
+      "canonical_url": "api/dialog/sticker/search",
+      "aliases": [
+        "api/dialog/sticker__search"
+      ],
+      "source": "app/Http/Controllers/Api/DialogController.php",
+      "source_sha256": "3870360b15d91d3e0c71048ee75a910b94f5570d08bbf1ce7057a30843ecbed3",
+      "source_lines": [
+        3741,
+        3749
+      ],
+      "implementation": "backend/domains/dialog.py",
+      "function": "sticker__search",
+      "implementation_lines": [
+        1118,
+        1129
+      ],
+      "implementation_file_sha256": "d75bcae6bd921553fe3012edb4c00f7943c432137432a075e1d64ce4261da718",
+      "implementation_function_sha256": "f9a126159fc9584c94345ee81e87c1857fc92b17c55e48ce1eeb219b29c0a52c",
+      "status": "IMPLEMENTED_NOT_REGISTERED_NOT_VERIFIED",
+      "response": "raw data; shared success wrapper once",
+      "source_guard_evidence": [
+        {
+          "line": 3743,
+          "text": "User::auth();"
+        }
+      ],
+      "implementation_branches": [
+        {
+          "line": 1124,
+          "text": "with urlopen(request, timeout=15) as response:"
+        },
+        {
+          "line": 1127,
+          "text": "for item in result.get(\"data\", {}).get(\"picResult\", {}).get(\"items\", []) if int(item[\"thumbHeight\"]) > 10 and int(item[\"thumbWidth\"]) > 10]}"
+        }
+      ],
+      "external_gates": [
+        "Sogou public image service"
+      ],
+      "runtime_branch_coverage": "NOT_RUN"
+    },
+    {
+      "id": "DialogController::config",
+      "canonical_url": "api/dialog/config",
+      "aliases": [],
+      "source": "app/Http/Controllers/Api/DialogController.php",
+      "source_sha256": "3870360b15d91d3e0c71048ee75a910b94f5570d08bbf1ce7057a30843ecbed3",
+      "source_lines": [
+        3764,
+        3785
+      ],
+      "implementation": "backend/domains/dialog.py",
+      "function": "config",
+      "implementation_lines": [
+        1130,
+        1139
+      ],
+      "implementation_file_sha256": "d75bcae6bd921553fe3012edb4c00f7943c432137432a075e1d64ce4261da718",
+      "implementation_function_sha256": "4360f3356d7784a711548a63179b71885b4927d8c86dfe59bb10c2410990dbd9",
+      "status": "IMPLEMENTED_NOT_REGISTERED_NOT_VERIFIED",
+      "response": "raw data; shared success wrapper once",
+      "source_guard_evidence": [
+        {
+          "line": 3766,
+          "text": "$user = User::auth();"
+        }
+      ],
+      "implementation_branches": [
+        {
+          "line": 1133,
+          "text": "if not kind:"
+        }
+      ],
+      "external_gates": [],
+      "runtime_branch_coverage": "NOT_RUN"
+    },
+    {
+      "id": "DialogController::config__save",
+      "canonical_url": "api/dialog/config/save",
+      "aliases": [
+        "api/dialog/config__save"
+      ],
+      "source": "app/Http/Controllers/Api/DialogController.php",
+      "source_sha256": "3870360b15d91d3e0c71048ee75a910b94f5570d08bbf1ce7057a30843ecbed3",
+      "source_lines": [
+        3801,
+        3831
+      ],
+      "implementation": "backend/domains/dialog.py",
+      "function": "config__save",
+      "implementation_lines": [
+        1140,
+        1154
+      ],
+      "implementation_file_sha256": "d75bcae6bd921553fe3012edb4c00f7943c432137432a075e1d64ce4261da718",
+      "implementation_function_sha256": "f4aef1782f92d934b98a3971daeb19d4b41e85d8395666af25c01a4a80439da1",
+      "status": "IMPLEMENTED_NOT_REGISTERED_NOT_VERIFIED",
+      "response": "raw data; shared success wrapper once",
+      "source_guard_evidence": [
+        {
+          "line": 3803,
+          "text": "$user = User::auth();"
+        }
+      ],
+      "implementation_branches": [
+        {
+          "line": 1143,
+          "text": "if not kind or len(kind) > 50:"
+        },
+        {
+          "line": 1147,
+          "text": "if row:"
+        },
+        {
+          "line": 1149,
+          "text": "else:"
+        }
+      ],
+      "external_gates": [],
+      "runtime_branch_coverage": "NOT_RUN"
+    },
+    {
+      "id": "DialogController::session__create",
+      "canonical_url": "api/dialog/session/create",
+      "aliases": [
+        "api/dialog/session__create"
+      ],
+      "source": "app/Http/Controllers/Api/DialogController.php",
+      "source_sha256": "3870360b15d91d3e0c71048ee75a910b94f5570d08bbf1ce7057a30843ecbed3",
+      "source_lines": [
+        3848,
+        3884
+      ],
+      "implementation": "backend/domains/dialog.py",
+      "function": "session__create",
+      "implementation_lines": [
+        1162,
+        1178
+      ],
+      "implementation_file_sha256": "d75bcae6bd921553fe3012edb4c00f7943c432137432a075e1d64ce4261da718",
+      "implementation_function_sha256": "a3333e5e1c1d799a799d034dabc846cada0fb3d03d127686c1b958fc19ca7580",
+      "status": "IMPLEMENTED_NOT_REGISTERED_NOT_VERIFIED",
+      "response": "raw data; shared success wrapper once",
+      "source_guard_evidence": [
+        {
+          "line": 3850,
+          "text": "$user = User::auth();"
+        }
+      ],
+      "implementation_branches": [
+        {
+          "line": 1169,
+          "text": "if not row:"
+        }
+      ],
+      "external_gates": [],
+      "runtime_branch_coverage": "NOT_RUN"
+    },
+    {
+      "id": "DialogController::session__list",
+      "canonical_url": "api/dialog/session/list",
+      "aliases": [
+        "api/dialog/session__list"
+      ],
+      "source": "app/Http/Controllers/Api/DialogController.php",
+      "source_sha256": "3870360b15d91d3e0c71048ee75a910b94f5570d08bbf1ce7057a30843ecbed3",
+      "source_lines": [
+        3903,
+        3924
+      ],
+      "implementation": "backend/domains/dialog.py",
+      "function": "session__list",
+      "implementation_lines": [
+        1179,
+        1185
+      ],
+      "implementation_file_sha256": "d75bcae6bd921553fe3012edb4c00f7943c432137432a075e1d64ce4261da718",
+      "implementation_function_sha256": "0cdb2531620e49b9a3ca4c53b8a61ccfdda2cebacd95078b5d6a4479238ac239",
+      "status": "IMPLEMENTED_NOT_REGISTERED_NOT_VERIFIED",
+      "response": "raw data; shared success wrapper once",
+      "source_guard_evidence": [
+        {
+          "line": 3905,
+          "text": "User::auth();"
+        }
+      ],
+      "implementation_branches": [],
+      "external_gates": [],
+      "runtime_branch_coverage": "NOT_RUN"
+    },
+    {
+      "id": "DialogController::session__open",
+      "canonical_url": "api/dialog/session/open",
+      "aliases": [
+        "api/dialog/session__open"
+      ],
+      "source": "app/Http/Controllers/Api/DialogController.php",
+      "source_sha256": "3870360b15d91d3e0c71048ee75a910b94f5570d08bbf1ce7057a30843ecbed3",
+      "source_lines": [
+        3940,
+        3957
+      ],
+      "implementation": "backend/domains/dialog.py",
+      "function": "session__open",
+      "implementation_lines": [
+        1186,
+        1196
+      ],
+      "implementation_file_sha256": "d75bcae6bd921553fe3012edb4c00f7943c432137432a075e1d64ce4261da718",
+      "implementation_function_sha256": "0874b6dbb4691fcd50a4c6c09d7ac2ba6520b7bad3710119af84f69a87f95e2b",
+      "status": "IMPLEMENTED_NOT_REGISTERED_NOT_VERIFIED",
+      "response": "raw data; shared success wrapper once",
+      "source_guard_evidence": [
+        {
+          "line": 3942,
+          "text": "User::auth();"
+        }
+      ],
+      "implementation_branches": [
+        {
+          "line": 1190,
+          "text": "if not row:"
+        }
+      ],
+      "external_gates": [],
+      "runtime_branch_coverage": "NOT_RUN"
+    },
+    {
+      "id": "DialogController::session__rename",
+      "canonical_url": "api/dialog/session/rename",
+      "aliases": [
+        "api/dialog/session__rename"
+      ],
+      "source": "app/Http/Controllers/Api/DialogController.php",
+      "source_sha256": "3870360b15d91d3e0c71048ee75a910b94f5570d08bbf1ce7057a30843ecbed3",
+      "source_lines": [
+        3974,
+        4004
+      ],
+      "implementation": "backend/domains/dialog.py",
+      "function": "session__rename",
+      "implementation_lines": [
+        1197,
+        1213
+      ],
+      "implementation_file_sha256": "d75bcae6bd921553fe3012edb4c00f7943c432137432a075e1d64ce4261da718",
+      "implementation_function_sha256": "55e365ddf09763c0a5764986ad8febe1564da6ecb27591f318076a18c9bd72b4",
+      "status": "IMPLEMENTED_NOT_REGISTERED_NOT_VERIFIED",
+      "response": "raw data; shared success wrapper once",
+      "source_guard_evidence": [
+        {
+          "line": 3976,
+          "text": "User::auth();"
+        }
+      ],
+      "implementation_branches": [
+        {
+          "line": 1201,
+          "text": "if not row:"
+        }
+      ],
+      "external_gates": [],
+      "runtime_branch_coverage": "NOT_RUN"
+    },
+    {
+      "id": "AssistantController::auth",
+      "canonical_url": "api/assistant/auth",
+      "aliases": [],
+      "source": "app/Http/Controllers/Api/AssistantController.php",
+      "source_sha256": "d47b38953faacc3c4be2fe43074ccab7609e703841a5d565ade3574dc7f8c621",
+      "source_lines": [
+        49,
+        72
+      ],
+      "implementation": "backend/domains/assistant.py",
+      "function": "auth",
+      "implementation_lines": [
+        45,
+        85
+      ],
+      "implementation_file_sha256": "f023523964df5caff74cd69a093ee8e5df464a8c9629e064cf2a32c80efe8e88",
+      "implementation_function_sha256": "0521b7d56cc220f5b6835e3ad07cd944237c7b22313afdfaa9946d2adc6eafa5",
+      "status": "IMPLEMENTED_NOT_REGISTERED_NOT_VERIFIED",
+      "response": "raw data; shared success wrapper once",
+      "source_guard_evidence": [
+        {
+          "line": 51,
+          "text": "$user = User::auth();"
+        }
+      ],
+      "implementation_branches": [
+        {
+          "line": 49,
+          "text": "if not model_type or not model_name:"
+        },
+        {
+          "line": 52,
+          "text": "if model_type == \"ollama\" and not key:"
+        },
+        {
+          "line": 54,
+          "text": "if not key:"
+        },
+        {
+          "line": 57,
+          "text": "if not isinstance(history, list):"
+        },
+        {
+          "line": 63,
+          "text": "if client.hget(f\"dootask:connection:{fd}\", \"userid\") != str(user.userid):"
+        },
+        {
+          "line": 69,
+          "text": "for field in (\"base_url\", \"agency\"):"
+        },
+        {
+          "line": 70,
+          "text": "if config.get(model_type + \"_\" + field):"
+        },
+        {
+          "line": 73,
+          "text": "if result.get(\"code\") != 200:"
+        },
+        {
+          "line": 76,
+          "text": "if not stream_key:"
+        }
+      ],
+      "external_gates": [
+        "installed AI plugin/provider configuration; genuine HTTP client; no credentials/service verified"
+      ],
+      "runtime_branch_coverage": "NOT_RUN"
+    },
+    {
+      "id": "AssistantController::models",
+      "canonical_url": "api/assistant/models",
+      "aliases": [],
+      "source": "app/Http/Controllers/Api/AssistantController.php",
+      "source_sha256": "d47b38953faacc3c4be2fe43074ccab7609e703841a5d565ade3574dc7f8c621",
+      "source_lines": [
+        86,
+        94
+      ],
+      "implementation": "backend/domains/assistant.py",
+      "function": "models",
+      "implementation_lines": [
+        86,
+        90
+      ],
+      "implementation_file_sha256": "f023523964df5caff74cd69a093ee8e5df464a8c9629e064cf2a32c80efe8e88",
+      "implementation_function_sha256": "a461096696f2f630a67eee47e2a833b85b08d1728a002aebb35ebe2ad504f58b",
+      "status": "IMPLEMENTED_NOT_REGISTERED_NOT_VERIFIED",
+      "response": "raw data; shared success wrapper once",
+      "source_guard_evidence": [],
+      "implementation_branches": [],
+      "external_gates": [
+        "installed AI plugin/provider configuration; genuine HTTP client; no credentials/service verified"
+      ],
+      "runtime_branch_coverage": "NOT_RUN"
+    },
+    {
+      "id": "AssistantController::match_elements",
+      "canonical_url": "api/assistant/match_elements",
+      "aliases": [],
+      "source": "app/Http/Controllers/Api/AssistantController.php",
+      "source_sha256": "d47b38953faacc3c4be2fe43074ccab7609e703841a5d565ade3574dc7f8c621",
+      "source_lines": [
+        113,
+        158
+      ],
+      "implementation": "backend/domains/assistant.py",
+      "function": "match_elements",
+      "implementation_lines": [
+        113,
+        123
+      ],
+      "implementation_file_sha256": "f023523964df5caff74cd69a093ee8e5df464a8c9629e064cf2a32c80efe8e88",
+      "implementation_function_sha256": "3c2bc8042269e33bc3602cbdb560f8d9daf4040fe8fbcbf2f856d9f8c828a8d5",
+      "status": "IMPLEMENTED_NOT_REGISTERED_NOT_VERIFIED",
+      "response": "raw data; shared success wrapper once",
+      "source_guard_evidence": [
+        {
+          "line": 115,
+          "text": "User::auth();"
+        }
+      ],
+      "implementation_branches": [
+        {
+          "line": 116,
+          "text": "if not query or not isinstance(elements, list) or not elements:"
+        }
+      ],
+      "external_gates": [
+        "installed AI plugin/provider configuration; genuine HTTP client; no credentials/service verified"
+      ],
+      "runtime_branch_coverage": "NOT_RUN"
+    },
+    {
+      "id": "AssistantController::log__search",
+      "canonical_url": "api/assistant/log/search",
+      "aliases": [
+        "api/assistant/log__search"
+      ],
+      "source": "app/Http/Controllers/Api/AssistantController.php",
+      "source_sha256": "d47b38953faacc3c4be2fe43074ccab7609e703841a5d565ade3574dc7f8c621",
+      "source_lines": [
+        202,
+        242
+      ],
+      "implementation": "backend/domains/assistant.py",
+      "function": "log__search",
+      "implementation_lines": [
+        124,
+        140
+      ],
+      "implementation_file_sha256": "f023523964df5caff74cd69a093ee8e5df464a8c9629e064cf2a32c80efe8e88",
+      "implementation_function_sha256": "480a02eae3a7590f186c4f3eb1739b102eefc6f60c258d2b41901be887628c45",
+      "status": "IMPLEMENTED_NOT_REGISTERED_NOT_VERIFIED",
+      "response": "raw data; shared success wrapper once",
+      "source_guard_evidence": [
+        {
+          "line": 204,
+          "text": "$user = User::auth();"
+        }
+      ],
+      "implementation_branches": [
+        {
+          "line": 127,
+          "text": "if not query:"
+        },
+        {
+          "line": 130,
+          "text": "if dialog_id:"
+        }
+      ],
+      "external_gates": [
+        "installed AI plugin/provider configuration; genuine HTTP client; no credentials/service verified"
+      ],
+      "runtime_branch_coverage": "NOT_RUN"
+    },
+    {
+      "id": "AssistantController::feedback__save",
+      "canonical_url": "api/assistant/feedback/save",
+      "aliases": [
+        "api/assistant/feedback__save"
+      ],
+      "source": "app/Http/Controllers/Api/AssistantController.php",
+      "source_sha256": "d47b38953faacc3c4be2fe43074ccab7609e703841a5d565ade3574dc7f8c621",
+      "source_lines": [
+        266,
+        320
+      ],
+      "implementation": "backend/domains/assistant.py",
+      "function": "feedback__save",
+      "implementation_lines": [
+        141,
+        162
+      ],
+      "implementation_file_sha256": "f023523964df5caff74cd69a093ee8e5df464a8c9629e064cf2a32c80efe8e88",
+      "implementation_function_sha256": "1ee3f35e8a428fc824cc3601cb5d315d59e9756ab2b5d5aba6c1cf766826be95",
+      "status": "IMPLEMENTED_NOT_REGISTERED_NOT_VERIFIED",
+      "response": "raw data; shared success wrapper once",
+      "source_guard_evidence": [
+        {
+          "line": 268,
+          "text": "$user = User::auth();"
+        }
+      ],
+      "implementation_branches": [
+        {
+          "line": 145,
+          "text": "if not session_id or local_id <= 0:"
+        },
+        {
+          "line": 147,
+          "text": "if feedback not in (\"\", \"like\", \"dislike\"):"
+        },
+        {
+          "line": 151,
+          "text": "if not feedback:"
+        },
+        {
+          "line": 153,
+          "text": "else:"
+        }
+      ],
+      "external_gates": [
+        "installed AI plugin/provider configuration; genuine HTTP client; no credentials/service verified"
+      ],
+      "runtime_branch_coverage": "NOT_RUN"
+    },
+    {
+      "id": "AssistantController::operation__dispatch",
+      "canonical_url": "api/assistant/operation/dispatch",
+      "aliases": [
+        "api/assistant/operation__dispatch"
+      ],
+      "source": "app/Http/Controllers/Api/AssistantController.php",
+      "source_sha256": "d47b38953faacc3c4be2fe43074ccab7609e703841a5d565ade3574dc7f8c621",
+      "source_lines": [
+        339,
+        378
+      ],
+      "implementation": "backend/domains/assistant.py",
+      "function": "operation__dispatch",
+      "implementation_lines": [
+        163,
+        181
+      ],
+      "implementation_file_sha256": "f023523964df5caff74cd69a093ee8e5df464a8c9629e064cf2a32c80efe8e88",
+      "implementation_function_sha256": "14cf17e8bbda9d4bd03c38112062bf7409f0ff26c086993ef1454c1c782093ca",
+      "status": "IMPLEMENTED_NOT_REGISTERED_NOT_VERIFIED",
+      "response": "raw data; shared success wrapper once",
+      "source_guard_evidence": [
+        {
+          "line": 341,
+          "text": "$user = User::auth();"
+        }
+      ],
+      "implementation_branches": [
+        {
+          "line": 166,
+          "text": "if not fd or not action:"
+        },
+        {
+          "line": 170,
+          "text": "if client.hget(f\"dootask:connection:{fd}\", \"userid\") != str(user.userid):"
+        }
+      ],
+      "external_gates": [
+        "installed AI plugin/provider configuration; genuine HTTP client; no credentials/service verified"
+      ],
+      "runtime_branch_coverage": "NOT_RUN"
+    },
+    {
+      "id": "AssistantController::operation__result",
+      "canonical_url": "api/assistant/operation/result",
+      "aliases": [
+        "api/assistant/operation__result"
+      ],
+      "source": "app/Http/Controllers/Api/AssistantController.php",
+      "source_sha256": "d47b38953faacc3c4be2fe43074ccab7609e703841a5d565ade3574dc7f8c621",
+      "source_lines": [
+        395,
+        420
+      ],
+      "implementation": "backend/domains/assistant.py",
+      "function": "operation__result",
+      "implementation_lines": [
+        182,
+        197
+      ],
+      "implementation_file_sha256": "f023523964df5caff74cd69a093ee8e5df464a8c9629e064cf2a32c80efe8e88",
+      "implementation_function_sha256": "17b4ce01e9091ba4ced5e66b2b21f5663b625f95b794bf01b5875c576897e9e6",
+      "status": "IMPLEMENTED_NOT_REGISTERED_NOT_VERIFIED",
+      "response": "raw data; shared success wrapper once",
+      "source_guard_evidence": [
+        {
+          "line": 397,
+          "text": "$user = User::auth();"
+        }
+      ],
+      "implementation_branches": [
+        {
+          "line": 185,
+          "text": "if not request_id:"
+        },
+        {
+          "line": 189,
+          "text": "if row and row[\"userid\"] != user.userid:"
+        },
+        {
+          "line": 191,
+          "text": "if not row or not row[\"result\"]:"
+        }
+      ],
+      "external_gates": [
+        "installed AI plugin/provider configuration; genuine HTTP client; no credentials/service verified"
+      ],
+      "runtime_branch_coverage": "NOT_RUN"
+    },
+    {
+      "id": "AssistantController::session__list",
+      "canonical_url": "api/assistant/session/list",
+      "aliases": [
+        "api/assistant/session__list"
+      ],
+      "source": "app/Http/Controllers/Api/AssistantController.php",
+      "source_sha256": "d47b38953faacc3c4be2fe43074ccab7609e703841a5d565ade3574dc7f8c621",
+      "source_lines": [
+        425,
+        454
+      ],
+      "implementation": "backend/domains/assistant.py",
+      "function": "session__list",
+      "implementation_lines": [
+        198,
+        208
+      ],
+      "implementation_file_sha256": "f023523964df5caff74cd69a093ee8e5df464a8c9629e064cf2a32c80efe8e88",
+      "implementation_function_sha256": "9d08c1b8593982dbc8154c1ef6926a9c138d54c260230f0258c22fa90a379b75",
+      "status": "IMPLEMENTED_NOT_REGISTERED_NOT_VERIFIED",
+      "response": "raw data; shared success wrapper once",
+      "source_guard_evidence": [
+        {
+          "line": 427,
+          "text": "$user = User::auth();"
+        }
+      ],
+      "implementation_branches": [],
+      "external_gates": [
+        "installed AI plugin/provider configuration; genuine HTTP client; no credentials/service verified"
+      ],
+      "runtime_branch_coverage": "NOT_RUN"
+    },
+    {
+      "id": "AssistantController::session__save",
+      "canonical_url": "api/assistant/session/save",
+      "aliases": [
+        "api/assistant/session__save"
+      ],
+      "source": "app/Http/Controllers/Api/AssistantController.php",
+      "source_sha256": "d47b38953faacc3c4be2fe43074ccab7609e703841a5d565ade3574dc7f8c621",
+      "source_lines": [
+        459,
+        524
+      ],
+      "implementation": "backend/domains/assistant.py",
+      "function": "session__save",
+      "implementation_lines": [
+        225,
+        245
+      ],
+      "implementation_file_sha256": "f023523964df5caff74cd69a093ee8e5df464a8c9629e064cf2a32c80efe8e88",
+      "implementation_function_sha256": "44da1afb379b6c68fe3dd4bf5a347266aab140add4527ef3493a4b09cd971974",
+      "status": "IMPLEMENTED_NOT_REGISTERED_NOT_VERIFIED",
+      "response": "raw data; shared success wrapper once",
+      "source_guard_evidence": [
+        {
+          "line": 461,
+          "text": "$user = User::auth();"
+        }
+      ],
+      "implementation_branches": [
+        {
+          "line": 228,
+          "text": "if not session_id:"
+        },
+        {
+          "line": 235,
+          "text": "for item in data.get(\"new_images\", []):"
+        },
+        {
+          "line": 236,
+          "text": "if item.get(\"imageId\") and item.get(\"dataUrl\"):"
+        }
+      ],
+      "external_gates": [
+        "installed AI plugin/provider configuration; genuine HTTP client; no credentials/service verified"
+      ],
+      "runtime_branch_coverage": "NOT_RUN"
+    },
+    {
+      "id": "AssistantController::session__delete",
+      "canonical_url": "api/assistant/session/delete",
+      "aliases": [
+        "api/assistant/session__delete"
+      ],
+      "source": "app/Http/Controllers/Api/AssistantController.php",
+      "source_sha256": "d47b38953faacc3c4be2fe43074ccab7609e703841a5d565ade3574dc7f8c621",
+      "source_lines": [
+        529,
+        557
+      ],
+      "implementation": "backend/domains/assistant.py",
+      "function": "session__delete",
+      "implementation_lines": [
+        246,
+        259
+      ],
+      "implementation_file_sha256": "f023523964df5caff74cd69a093ee8e5df464a8c9629e064cf2a32c80efe8e88",
+      "implementation_function_sha256": "fcc44ac2610c727d3d277a15dfc240f25c5dcc1ef80d5cbe1ac25782187afd98",
+      "status": "IMPLEMENTED_NOT_REGISTERED_NOT_VERIFIED",
+      "response": "raw data; shared success wrapper once",
+      "source_guard_evidence": [
+        {
+          "line": 531,
+          "text": "$user = User::auth();"
+        }
+      ],
+      "implementation_branches": [
+        {
+          "line": 250,
+          "text": "if not apps.on(data.get(\"clear_all\", False)):"
+        },
+        {
+          "line": 251,
+          "text": "if not data.get(\"session_id\"):"
+        },
+        {
+          "line": 254,
+          "text": "for row in connection.execute(select(table).where(*predicate).with_for_update()).mappings():"
+        }
+      ],
+      "external_gates": [
+        "installed AI plugin/provider configuration; genuine HTTP client; no credentials/service verified"
+      ],
+      "runtime_branch_coverage": "NOT_RUN"
+    },
+    {
+      "id": "AppsController::badge__set",
+      "canonical_url": "api/apps/badge/set",
+      "aliases": [
+        "api/apps/badge__set"
+      ],
+      "source": "app/Http/Controllers/Api/AppsController.php",
+      "source_sha256": "ea148c165e02f2553388998878a94265f4d8e3f29f1bc618bf7234caa7bd78af",
+      "source_lines": [
+        41,
+        51
+      ],
+      "implementation": "backend/domains/apps.py",
+      "function": "badge__set",
+      "implementation_lines": [
+        78,
+        101
+      ],
+      "implementation_file_sha256": "2a2056b855c713cb5b4cfded3a625c6e7c3283263ba31753c611192077122c29",
+      "implementation_function_sha256": "1869980d236d7f3fbf101091ed63c4ebe173584c3aa80ef43f56cd7655b0d439",
+      "status": "IMPLEMENTED_NOT_REGISTERED_NOT_VERIFIED",
+      "response": "raw data; shared success wrapper once",
+      "source_guard_evidence": [],
+      "implementation_branches": [
+        {
+          "line": 82,
+          "text": "if not expected or not hmac.compare_digest(expected, secret):"
+        },
+        {
+          "line": 86,
+          "text": "if not userids:"
+        },
+        {
+          "line": 92,
+          "text": "if not count and not dot:"
+        },
+        {
+          "line": 94,
+          "text": "else:"
+        },
+        {
+          "line": 95,
+          "text": "for userid in recipients:"
+        }
+      ],
+      "external_gates": [],
+      "runtime_branch_coverage": "NOT_RUN"
+    },
+    {
+      "id": "AppsController::badge__clear",
+      "canonical_url": "api/apps/badge/clear",
+      "aliases": [
+        "api/apps/badge__clear"
+      ],
+      "source": "app/Http/Controllers/Api/AppsController.php",
+      "source_sha256": "ea148c165e02f2553388998878a94265f4d8e3f29f1bc618bf7234caa7bd78af",
+      "source_lines": [
+        68,
+        76
+      ],
+      "implementation": "backend/domains/apps.py",
+      "function": "badge__clear",
+      "implementation_lines": [
+        102,
+        111
+      ],
+      "implementation_file_sha256": "2a2056b855c713cb5b4cfded3a625c6e7c3283263ba31753c611192077122c29",
+      "implementation_function_sha256": "b792ed0e8b7c039f907ec98f7ac81292563f9a8606f680540f5bb4aa6c482b9c",
+      "status": "IMPLEMENTED_NOT_REGISTERED_NOT_VERIFIED",
+      "response": "raw data; shared success wrapper once",
+      "source_guard_evidence": [
+        {
+          "line": 70,
+          "text": "$user = User::auth();"
+        }
+      ],
+      "implementation_branches": [],
+      "external_gates": [],
+      "runtime_branch_coverage": "NOT_RUN"
+    },
+    {
+      "id": "AppsController::badge__list",
+      "canonical_url": "api/apps/badge/list",
+      "aliases": [
+        "api/apps/badge__list"
+      ],
+      "source": "app/Http/Controllers/Api/AppsController.php",
+      "source_sha256": "ea148c165e02f2553388998878a94265f4d8e3f29f1bc618bf7234caa7bd78af",
+      "source_lines": [
+        91,
+        95
+      ],
+      "implementation": "backend/domains/apps.py",
+      "function": "badge__list",
+      "implementation_lines": [
+        112,
+        124
+      ],
+      "implementation_file_sha256": "2a2056b855c713cb5b4cfded3a625c6e7c3283263ba31753c611192077122c29",
+      "implementation_function_sha256": "fa8def982b1516106729b52c3d3703d0b83694873b399b0bff5b73c780293985",
+      "status": "IMPLEMENTED_NOT_REGISTERED_NOT_VERIFIED",
+      "response": "raw data; shared success wrapper once",
+      "source_guard_evidence": [
+        {
+          "line": 93,
+          "text": "$user = User::auth();"
+        }
+      ],
+      "implementation_branches": [
+        {
+          "line": 115,
+          "text": "for row in connection.execute(select(table).where(table.c.userid == actor.userid)).mappings():"
+        },
+        {
+          "line": 118,
+          "text": "except ApiError:"
+        },
+        {
+          "line": 120,
+          "text": "if _visible(actor.user, menu):"
+        }
+      ],
+      "external_gates": [],
+      "runtime_branch_coverage": "NOT_RUN"
+    },
+    {
+      "id": "AppsController::functions",
+      "canonical_url": "api/apps/functions",
+      "aliases": [],
+      "source": "app/Http/Controllers/Api/AppsController.php",
+      "source_sha256": "ea148c165e02f2553388998878a94265f4d8e3f29f1bc618bf7234caa7bd78af",
+      "source_lines": [
+        112,
+        116
+      ],
+      "implementation": "backend/domains/apps.py",
+      "function": "functions",
+      "implementation_lines": [
+        125,
+        132
+      ],
+      "implementation_file_sha256": "2a2056b855c713cb5b4cfded3a625c6e7c3283263ba31753c611192077122c29",
+      "implementation_function_sha256": "05b5093defb6472ec21cf7353ca4f6bcd8a2ed6164853e794d3be6c1dee9a523",
+      "status": "IMPLEMENTED_NOT_REGISTERED_NOT_VERIFIED",
+      "response": "raw data; shared success wrapper once",
+      "source_guard_evidence": [
+        {
+          "line": 114,
+          "text": "User::auth();"
+        }
+      ],
+      "implementation_branches": [
+        {
+          "line": 130,
+          "text": "for name in (\"report\", \"calendar\", \"favorite\", \"recent\", \"checkin\")}}"
+        }
+      ],
+      "external_gates": [],
+      "runtime_branch_coverage": "NOT_RUN"
+    }
+  ]
+}

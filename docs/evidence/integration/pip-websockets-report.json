@@ -1,0 +1,75 @@
+{
+  "version": "1",
+  "pip_version": "25.0.1",
+  "install": [
+    {
+      "download_info": {
+        "url": "https://pypi.tuna.tsinghua.edu.cn/packages/d9/de/6abe251d28c3a3f217096575400b27750b18e0b1d2fff3a2a239960fea07/websockets-16.1.1-cp312-cp312-win_amd64.whl",
+        "archive_info": {
+          "hash": "sha256=b436f6ec4fc3a6b4237c84d3f83170ed2b40bb584222f0ac47a0c8a5921980c7",
+          "hashes": {
+            "sha256": "b436f6ec4fc3a6b4237c84d3f83170ed2b40bb584222f0ac47a0c8a5921980c7"
+          }
+        }
+      },
+      "is_direct": false,
+      "is_yanked": false,
+      "requested": true,
+      "metadata": {
+        "metadata_version": "2.4",
+        "name": "websockets",
+        "version": "16.1.1",
+        "dynamic": [
+          "description",
+          "description-content-type",
+          "license-file"
+        ],
+        "summary": "An implementation of the WebSocket Protocol (RFC 6455 & 7692)",
+        "description": ".. image:: logo/horizontal.svg\r\n   :width: 480px\r\n   :alt: websockets\r\n\r\n|licence| |version| |pyversions| |tests| |docs| |openssf|\r\n\r\n.. |licence| image:: https://img.shields.io/pypi/l/websockets.svg\r\n    :target: https://pypi.python.org/pypi/websockets\r\n\r\n.. |version| image:: https://img.shields.io/pypi/v/websockets.svg\r\n    :target: https://pypi.python.org/pypi/websockets\r\n\r\n.. |pyversions| image:: https://img.shields.io/pypi/pyversions/websockets.svg\r\n    :target: https://pypi.python.org/pypi/websockets\r\n\r\n.. |tests| image:: https://img.shields.io/github/checks-status/python-websockets/websockets/main?label=tests\r\n   :target: https://github.com/python-websockets/websockets/actions/workflows/tests.yml\r\n\r\n.. |docs| image:: https://img.shields.io/readthedocs/websockets.svg\r\n   :target: https://websockets.readthedocs.io/\r\n\r\n.. |openssf| image:: https://bestpractices.coreinfrastructure.org/projects/6475/badge\r\n   :target: https://bestpractices.coreinfrastructure.org/projects/6475\r\n\r\nWhat is ``websockets``?\r\n-----------------------\r\n\r\nwebsockets is a library for building WebSocket_ servers and clients in Python\r\nwith a focus on correctness, simplicity, robustness, and performance.\r\n\r\n.. _WebSocket: https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API\r\n\r\nBuilt on top of ``asyncio``, Python's standard asynchronous I/O framework, the\r\ndefault implementation provides an elegant coroutine-based API.\r\n\r\nAn implementation on top of ``threading`` and a Sans-I/O implementation are also\r\navailable.\r\n\r\n`Documentation is available on Read the Docs. <https://websockets.readthedocs.io/>`_\r\n\r\n.. copy-pasted because GitHub doesn't support the include directive\r\n\r\nHere's an echo server with the ``asyncio`` API:\r\n\r\n.. code:: python\r\n\r\n    #!/usr/bin/env python\r\n\r\n    import asyncio\r\n    from websockets.asyncio.server import serve\r\n\r\n    async def echo(websocket):\r\n        async for message in websocket:\r\n            await websocket.send(message)\r\n\r\n    async def main():\r\n        async with serve(echo, \"localhost\", 8765) as server:\r\n            await server.serve_forever()\r\n\r\n    asyncio.run(main())\r\n\r\nHere's how a client sends and receives messages with the ``threading`` API:\r\n\r\n.. code:: python\r\n\r\n    #!/usr/bin/env python\r\n\r\n    from websockets.sync.client import connect\r\n\r\n    def hello():\r\n        with connect(\"ws://localhost:8765\") as websocket:\r\n            websocket.send(\"Hello world!\")\r\n            message = websocket.recv()\r\n            print(f\"Received: {message}\")\r\n\r\n    hello()\r\n\r\n\r\nDoes that look good?\r\n\r\n`Get started with the tutorial! <https://websockets.readthedocs.io/en/stable/intro/index.html>`_\r\n\r\nWhy should I use ``websockets``?\r\n--------------------------------\r\n\r\nThe development of ``websockets`` is shaped by four principles:\r\n\r\n1. **Correctness**: ``websockets`` is heavily tested for compliance with\r\n   :rfc:`6455`. Continuous integration fails under 100% branch coverage.\r\n\r\n2. **Simplicity**: all you need to understand is ``msg = await ws.recv()`` and\r\n   ``await ws.send(msg)``. ``websockets`` takes care of managing connections\r\n   so you can focus on your application.\r\n\r\n3. **Robustness**: ``websockets`` is built for production. For example, it was\r\n   the only library to `handle backpressure correctly`_ before the issue\r\n   became widely known in the Python community.\r\n\r\n4. **Performance**: memory usage is optimized and configurable. A C extension\r\n   accelerates expensive operations. It's pre-compiled for Linux, macOS and\r\n   Windows and packaged in the wheel format for each system and Python version.\r\n\r\nDocumentation is a first class concern in the project. Head over to `Read the\r\nDocs`_ and see for yourself.\r\n\r\n.. _Read the Docs: https://websockets.readthedocs.io/\r\n.. _handle backpressure correctly: https://vorpus.org/blog/some-thoughts-on-asynchronous-api-design-in-a-post-asyncawait-world/#websocket-servers\r\n\r\nWhy shouldn't I use ``websockets``?\r\n-----------------------------------\r\n\r\n* If you prefer callbacks over coroutines: ``websockets`` was created to\r\n  provide the best coroutine-based API to manage WebSocket connections in\r\n  Python. Pick another library for a callback-based API.\r\n\r\n* If you're looking for a mixed HTTP / WebSocket library: ``websockets`` aims\r\n  at being an excellent implementation of :rfc:`6455`: The WebSocket Protocol\r\n  and :rfc:`7692`: Compression Extensions for WebSocket. Its support for HTTP\r\n  is minimal — just enough for an HTTP health check.\r\n\r\n  If you want to do both in the same server, look at HTTP + WebSocket servers\r\n  that build on top of ``websockets`` to support WebSocket connections, like\r\n  uvicorn_ or Sanic_.\r\n\r\n.. _uvicorn: https://www.uvicorn.org/\r\n.. _Sanic: https://sanic.dev/en/\r\n\r\nWhat else?\r\n----------\r\n\r\nBug reports, patches and suggestions are welcome!\r\n\r\nTo report a security vulnerability, please use the `Tidelift security\r\ncontact`_. Tidelift will coordinate the fix and disclosure.\r\n\r\n.. _Tidelift security contact: https://tidelift.com/security\r\n\r\nFor anything else, please open an issue_ or send a `pull request`_.\r\n\r\n.. _issue: https://github.com/python-websockets/websockets/issues/new\r\n.. _pull request: https://github.com/python-websockets/websockets/compare/\r\n\r\nParticipants must uphold the `Contributor Covenant code of conduct`_.\r\n\r\n.. _Contributor Covenant code of conduct: https://github.com/python-websockets/websockets/blob/main/CODE_OF_CONDUCT.md\r\n\r\n``websockets`` is released under the `BSD license`_.\r\n\r\n.. _BSD license: https://github.com/python-websockets/websockets/blob/main/LICENSE\r\n",
+        "description_content_type": "text/x-rst",
+        "keywords": [
+          "WebSocket"
+        ],
+        "author_email": "Aymeric Augustin <aymeric.augustin@m4x.org>",
+        "license_expression": "BSD-3-Clause",
+        "license_file": [
+          "LICENSE"
+        ],
+        "classifier": [
+          "Development Status :: 5 - Production/Stable",
+          "Environment :: Web Environment",
+          "Intended Audience :: Developers",
+          "Operating System :: OS Independent",
+          "Programming Language :: Python",
+          "Programming Language :: Python :: 3",
+          "Programming Language :: Python :: 3.10",
+          "Programming Language :: Python :: 3.11",
+          "Programming Language :: Python :: 3.12",
+          "Programming Language :: Python :: 3.13",
+          "Programming Language :: Python :: 3.14"
+        ],
+        "requires_python": ">=3.10",
+        "project_url": [
+          "Homepage, https://github.com/python-websockets/websockets",
+          "Changelog, https://websockets.readthedocs.io/en/stable/project/changelog.html",
+          "Documentation, https://websockets.readthedocs.io/",
+          "Funding, https://tidelift.com/subscription/pkg/pypi-websockets?utm_source=pypi-websockets&utm_medium=referral&utm_campaign=readme",
+          "Tracker, https://github.com/python-websockets/websockets/issues"
+        ]
+      }
+    }
+  ],
+  "environment": {
+    "implementation_name": "cpython",
+    "implementation_version": "3.12.10",
+    "os_name": "nt",
+    "platform_machine": "AMD64",
+    "platform_release": "11",
+    "platform_system": "Windows",
+    "platform_version": "10.0.26200",
+    "python_full_version": "3.12.10",
+    "platform_python_implementation": "CPython",
+    "python_version": "3.12",
+    "sys_platform": "win32"
+  }
+}

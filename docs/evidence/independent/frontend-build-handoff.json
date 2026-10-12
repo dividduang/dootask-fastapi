@@ -1,0 +1,39 @@
+{
+  "status": "SOURCE_CHANGED_PUBLIC_PENDING",
+  "build_executed": false,
+  "installation_executed": false,
+  "owner_next_batch": "Centralized delivery and independent QA",
+  "input": {
+    "package_json": "frontend/package.json",
+    "vite_config": "frontend/vite.config.js",
+    "entry": "frontend/resources/assets/js/app.js",
+    "original_node_lock": "ABSENT; do not claim original build reproduction",
+    "original_node_modules": "ABSENT",
+    "node_baseline": "Original frontend/cmd requires Node >=20; record exact selected Node/npm versions in isolated build evidence",
+    "dependency_policy": "Resolve unchanged package.json in isolated build copy only, retain generated package-lock.json with registry/integrity evidence; no deliberate dependency upgrades or package.json changes. Stop and report incompatibility instead of broad upgrading. Any transitive differences are new-build inputs, not original-lock reproduction."
+  },
+  "commands_not_executed": [
+    {"cwd":"isolated frontend build copy", "command":"npm install --package-lock-only --ignore-scripts", "purpose":"Resolve unchanged dependency inputs and retain exact candidate lock for review"},
+    {"cwd":"isolated frontend build copy", "command":"npm ci", "purpose":"Install reviewed candidate lock; retain install log and native install side effects"},
+    {"cwd":"isolated frontend build copy", "command":"node -e \"(async()=>{process.argv.push('fromcmd'); await (await import('vite')).build()})().catch(e=>{console.error(e);process.exit(1)})\"", "purpose":"Use existing vite config without destructive frontend/cmd wrapper"}
+  ],
+  "expected_outputs": ["public/manifest.json", "public/js/build/*", "public static files copied from resources/assets/statics/public"],
+  "prohibited": ["Run original frontend/cmd production wrapper (it deletes public/js/build)", "Build directly into production original public", "Global replacement inside minified bundles", "Host shim or CSS-only hiding", "Delete legal licenses/NOTICE/corresponding-source links", "Claim original deterministic reconstruction without original dependency lock"],
+  "promotion_acceptance": [
+    "Use public-prebuild-manifest.json to account for every changed/added/removed public file",
+    "Preserve unrelated static resources byte-for-byte; explain non-license chunk hash changes via actual candidate dependency/build graph evidence",
+    "Manifest and all referenced chunks/assets must be promoted together; remove obsolete original license chunks only after dependency inventory proves obsolete",
+    "Browser-loaded production entry has no vendor license route/menu/dashboard polling and direct removed route is unavailable; registration/admin creation/bot paths remain functional",
+    "Retain all copyright/license/NOTICE/source-provision material",
+    "Only after actual browser acceptance replace target public; record final hashes and generated dependency lock"
+  ],
+  "frontend_search_boundary": {
+    "runtime_source": "frontend/resources/assets/js, frontend/resources/assets/sass",
+    "navigation_metadata": "frontend/resources/ai-kb/_meta/page-links.yaml",
+    "additional_consumers_searched": "frontend/resources, frontend/tests, frontend/types",
+    "terms": ["license", "授权", "购买", "试用", "setting_license", "manage-setting-license", "system/license", "license/(refresh|status|trial|login|email)", "License Key", "warningMsg", "dashboard-warning"],
+    "intentional_history": "Upstream ai-kb markdown/feature-map historical descriptions and legal notices remain; not runtime route dispatch. Compiled public remains old until centralized build."
+  },
+  "source_change_evidence": "frontend-source-changes.json",
+  "public_baseline": "public-prebuild-manifest.json"
+}

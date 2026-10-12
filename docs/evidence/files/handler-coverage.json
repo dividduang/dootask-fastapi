@@ -1,0 +1,1383 @@
+{
+  "status": "DOMAIN_CODE_DELIVERED_NOT_INTEGRATED_NOT_VERIFIED",
+  "endpoint_count": 59,
+  "endpoints": [
+    {
+      "id": "FileController::collaboration__lists",
+      "url": "file/collaboration/lists",
+      "aliases": [
+        "api/file/collaboration__lists"
+      ],
+      "source": "app/Http/Controllers/Api/FileController.php",
+      "source_sha256": "e52f7fb5ddf66e97f6257cbe3742dd0f15e771d8aed6de95d669250d59bef884",
+      "source_lines": [
+        62,
+        78
+      ],
+      "implementation": "backend/domains/files.py:collaboration__lists",
+      "state": "IMPLEMENTED_NOT_VERIFIED",
+      "branch_evidence": [
+        "owner/creator/read/write hierarchical ACL",
+        "namespace mutations, descendants/share recomputation",
+        "persistent contents and immutable byte hashes",
+        "download/share capability recheck",
+        "external editor installation/JWT/HTTP gates"
+      ],
+      "returns": "raw data; host wraps numeric ret/msg/data",
+      "external_blockers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "FileController::collaboration__download",
+      "url": "file/collaboration/download",
+      "aliases": [
+        "api/file/collaboration__download"
+      ],
+      "source": "app/Http/Controllers/Api/FileController.php",
+      "source_sha256": "e52f7fb5ddf66e97f6257cbe3742dd0f15e771d8aed6de95d669250d59bef884",
+      "source_lines": [
+        90,
+        111
+      ],
+      "implementation": "backend/domains/files.py:collaboration__download",
+      "state": "IMPLEMENTED_NOT_VERIFIED",
+      "branch_evidence": [
+        "owner/creator/read/write hierarchical ACL",
+        "namespace mutations, descendants/share recomputation",
+        "persistent contents and immutable byte hashes",
+        "download/share capability recheck",
+        "external editor installation/JWT/HTTP gates"
+      ],
+      "returns": "Response or raw data (host wraps numeric ret/msg/data)",
+      "external_blockers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "FileController::lists",
+      "url": "file/lists",
+      "aliases": [],
+      "source": "app/Http/Controllers/Api/FileController.php",
+      "source_sha256": "e52f7fb5ddf66e97f6257cbe3742dd0f15e771d8aed6de95d669250d59bef884",
+      "source_lines": [
+        128,
+        139
+      ],
+      "implementation": "backend/domains/files.py:lists",
+      "state": "IMPLEMENTED_NOT_VERIFIED",
+      "branch_evidence": [
+        "owner/creator/read/write hierarchical ACL",
+        "namespace mutations, descendants/share recomputation",
+        "persistent contents and immutable byte hashes",
+        "download/share capability recheck",
+        "external editor installation/JWT/HTTP gates"
+      ],
+      "returns": "raw data; host wraps numeric ret/msg/data",
+      "external_blockers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "FileController::one",
+      "url": "file/one",
+      "aliases": [],
+      "source": "app/Http/Controllers/Api/FileController.php",
+      "source_sha256": "e52f7fb5ddf66e97f6257cbe3742dd0f15e771d8aed6de95d669250d59bef884",
+      "source_lines": [
+        165,
+        213
+      ],
+      "implementation": "backend/domains/files.py:one",
+      "state": "IMPLEMENTED_NOT_VERIFIED",
+      "branch_evidence": [
+        "owner/creator/read/write hierarchical ACL",
+        "namespace mutations, descendants/share recomputation",
+        "persistent contents and immutable byte hashes",
+        "download/share capability recheck",
+        "external editor installation/JWT/HTTP gates"
+      ],
+      "returns": "raw data; host wraps numeric ret/msg/data",
+      "external_blockers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "FileController::fetch",
+      "url": "file/fetch",
+      "aliases": [],
+      "source": "app/Http/Controllers/Api/FileController.php",
+      "source_sha256": "e52f7fb5ddf66e97f6257cbe3742dd0f15e771d8aed6de95d669250d59bef884",
+      "source_lines": [
+        236,
+        256
+      ],
+      "implementation": "backend/domains/files.py:fetch",
+      "state": "IMPLEMENTED_NOT_VERIFIED",
+      "branch_evidence": [
+        "owner/creator/read/write hierarchical ACL",
+        "namespace mutations, descendants/share recomputation",
+        "persistent contents and immutable byte hashes",
+        "download/share capability recheck",
+        "external editor installation/JWT/HTTP gates"
+      ],
+      "returns": "raw data; host wraps numeric ret/msg/data",
+      "external_blockers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "FileController::search",
+      "url": "file/search",
+      "aliases": [],
+      "source": "app/Http/Controllers/Api/FileController.php",
+      "source_sha256": "e52f7fb5ddf66e97f6257cbe3742dd0f15e771d8aed6de95d669250d59bef884",
+      "source_lines": [
+        274,
+        342
+      ],
+      "implementation": "backend/domains/files.py:search",
+      "state": "IMPLEMENTED_NOT_VERIFIED",
+      "branch_evidence": [
+        "owner/creator/read/write hierarchical ACL",
+        "namespace mutations, descendants/share recomputation",
+        "persistent contents and immutable byte hashes",
+        "download/share capability recheck",
+        "external editor installation/JWT/HTTP gates"
+      ],
+      "returns": "raw data; host wraps numeric ret/msg/data",
+      "external_blockers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "FileController::add",
+      "url": "file/add",
+      "aliases": [],
+      "source": "app/Http/Controllers/Api/FileController.php",
+      "source_sha256": "e52f7fb5ddf66e97f6257cbe3742dd0f15e771d8aed6de95d669250d59bef884",
+      "source_lines": [
+        361,
+        451
+      ],
+      "implementation": "backend/domains/files.py:add",
+      "state": "IMPLEMENTED_NOT_VERIFIED",
+      "branch_evidence": [
+        "owner/creator/read/write hierarchical ACL",
+        "namespace mutations, descendants/share recomputation",
+        "persistent contents and immutable byte hashes",
+        "download/share capability recheck",
+        "external editor installation/JWT/HTTP gates"
+      ],
+      "returns": "raw data; host wraps numeric ret/msg/data",
+      "external_blockers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "FileController::copy",
+      "url": "file/copy",
+      "aliases": [],
+      "source": "app/Http/Controllers/Api/FileController.php",
+      "source_sha256": "e52f7fb5ddf66e97f6257cbe3742dd0f15e771d8aed6de95d669250d59bef884",
+      "source_lines": [
+        467,
+        512
+      ],
+      "implementation": "backend/domains/files.py:copy",
+      "state": "IMPLEMENTED_NOT_VERIFIED",
+      "branch_evidence": [
+        "owner/creator/read/write hierarchical ACL",
+        "namespace mutations, descendants/share recomputation",
+        "persistent contents and immutable byte hashes",
+        "download/share capability recheck",
+        "external editor installation/JWT/HTTP gates"
+      ],
+      "returns": "raw data; host wraps numeric ret/msg/data",
+      "external_blockers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "FileController::move",
+      "url": "file/move",
+      "aliases": [],
+      "source": "app/Http/Controllers/Api/FileController.php",
+      "source_sha256": "e52f7fb5ddf66e97f6257cbe3742dd0f15e771d8aed6de95d669250d59bef884",
+      "source_lines": [
+        529,
+        587
+      ],
+      "implementation": "backend/domains/files.py:move",
+      "state": "IMPLEMENTED_NOT_VERIFIED",
+      "branch_evidence": [
+        "owner/creator/read/write hierarchical ACL",
+        "namespace mutations, descendants/share recomputation",
+        "persistent contents and immutable byte hashes",
+        "download/share capability recheck",
+        "external editor installation/JWT/HTTP gates"
+      ],
+      "returns": "raw data; host wraps numeric ret/msg/data",
+      "external_blockers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "FileController::remove",
+      "url": "file/remove",
+      "aliases": [],
+      "source": "app/Http/Controllers/Api/FileController.php",
+      "source_sha256": "e52f7fb5ddf66e97f6257cbe3742dd0f15e771d8aed6de95d669250d59bef884",
+      "source_lines": [
+        603,
+        626
+      ],
+      "implementation": "backend/domains/files.py:remove",
+      "state": "IMPLEMENTED_NOT_VERIFIED",
+      "branch_evidence": [
+        "owner/creator/read/write hierarchical ACL",
+        "namespace mutations, descendants/share recomputation",
+        "persistent contents and immutable byte hashes",
+        "download/share capability recheck",
+        "external editor installation/JWT/HTTP gates"
+      ],
+      "returns": "raw data; host wraps numeric ret/msg/data",
+      "external_blockers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "FileController::content",
+      "url": "file/content",
+      "aliases": [],
+      "source": "app/Http/Controllers/Api/FileController.php",
+      "source_sha256": "e52f7fb5ddf66e97f6257cbe3742dd0f15e771d8aed6de95d669250d59bef884",
+      "source_lines": [
+        652,
+        707
+      ],
+      "implementation": "backend/domains/files.py:content",
+      "state": "IMPLEMENTED_NOT_VERIFIED",
+      "branch_evidence": [
+        "owner/creator/read/write hierarchical ACL",
+        "namespace mutations, descendants/share recomputation",
+        "persistent contents and immutable byte hashes",
+        "download/share capability recheck",
+        "external editor installation/JWT/HTTP gates"
+      ],
+      "returns": "Response or raw data (host wraps numeric ret/msg/data)",
+      "external_blockers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "FileController::content__save",
+      "url": "file/content/save",
+      "aliases": [
+        "api/file/content__save"
+      ],
+      "source": "app/Http/Controllers/Api/FileController.php",
+      "source_sha256": "e52f7fb5ddf66e97f6257cbe3742dd0f15e771d8aed6de95d669250d59bef884",
+      "source_lines": [
+        725,
+        802
+      ],
+      "implementation": "backend/domains/files.py:content__save",
+      "state": "IMPLEMENTED_NOT_VERIFIED",
+      "branch_evidence": [
+        "owner/creator/read/write hierarchical ACL",
+        "namespace mutations, descendants/share recomputation",
+        "persistent contents and immutable byte hashes",
+        "download/share capability recheck",
+        "external editor installation/JWT/HTTP gates"
+      ],
+      "returns": "raw data; host wraps numeric ret/msg/data",
+      "external_blockers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "FileController::office__token",
+      "url": "file/office/token",
+      "aliases": [
+        "api/file/office__token"
+      ],
+      "source": "app/Http/Controllers/Api/FileController.php",
+      "source_sha256": "e52f7fb5ddf66e97f6257cbe3742dd0f15e771d8aed6de95d669250d59bef884",
+      "source_lines": [
+        818,
+        830
+      ],
+      "implementation": "backend/domains/files.py:office__token",
+      "state": "IMPLEMENTED_NOT_VERIFIED",
+      "branch_evidence": [
+        "owner/creator/read/write hierarchical ACL",
+        "namespace mutations, descendants/share recomputation",
+        "persistent contents and immutable byte hashes",
+        "download/share capability recheck",
+        "external editor installation/JWT/HTTP gates"
+      ],
+      "returns": "raw data; host wraps numeric ret/msg/data",
+      "external_blockers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "FileController::content__office",
+      "url": "file/content/office",
+      "aliases": [
+        "api/file/content__office"
+      ],
+      "source": "app/Http/Controllers/Api/FileController.php",
+      "source_sha256": "e52f7fb5ddf66e97f6257cbe3742dd0f15e771d8aed6de95d669250d59bef884",
+      "source_lines": [
+        846,
+        886
+      ],
+      "implementation": "backend/domains/files.py:content__office",
+      "state": "IMPLEMENTED_NOT_VERIFIED",
+      "branch_evidence": [
+        "owner/creator/read/write hierarchical ACL",
+        "namespace mutations, descendants/share recomputation",
+        "persistent contents and immutable byte hashes",
+        "download/share capability recheck",
+        "external editor installation/JWT/HTTP gates"
+      ],
+      "returns": "raw callback dict",
+      "external_blockers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "FileController::content__upload",
+      "url": "file/content/upload",
+      "aliases": [
+        "api/file/content__upload"
+      ],
+      "source": "app/Http/Controllers/Api/FileController.php",
+      "source_sha256": "e52f7fb5ddf66e97f6257cbe3742dd0f15e771d8aed6de95d669250d59bef884",
+      "source_lines": [
+        906,
+        924
+      ],
+      "implementation": "backend/domains/files.py:content__upload",
+      "state": "IMPLEMENTED_NOT_VERIFIED",
+      "branch_evidence": [
+        "owner/creator/read/write hierarchical ACL",
+        "namespace mutations, descendants/share recomputation",
+        "persistent contents and immutable byte hashes",
+        "download/share capability recheck",
+        "external editor installation/JWT/HTTP gates"
+      ],
+      "returns": "raw data; host wraps numeric ret/msg/data",
+      "external_blockers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "FileController::content__history",
+      "url": "file/content/history",
+      "aliases": [
+        "api/file/content__history"
+      ],
+      "source": "app/Http/Controllers/Api/FileController.php",
+      "source_sha256": "e52f7fb5ddf66e97f6257cbe3742dd0f15e771d8aed6de95d669250d59bef884",
+      "source_lines": [
+        943,
+        956
+      ],
+      "implementation": "backend/domains/files.py:content__history",
+      "state": "IMPLEMENTED_NOT_VERIFIED",
+      "branch_evidence": [
+        "owner/creator/read/write hierarchical ACL",
+        "namespace mutations, descendants/share recomputation",
+        "persistent contents and immutable byte hashes",
+        "download/share capability recheck",
+        "external editor installation/JWT/HTTP gates"
+      ],
+      "returns": "raw data; host wraps numeric ret/msg/data",
+      "external_blockers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "FileController::content__restore",
+      "url": "file/content/restore",
+      "aliases": [
+        "api/file/content__restore"
+      ],
+      "source": "app/Http/Controllers/Api/FileController.php",
+      "source_sha256": "e52f7fb5ddf66e97f6257cbe3742dd0f15e771d8aed6de95d669250d59bef884",
+      "source_lines": [
+        973,
+        998
+      ],
+      "implementation": "backend/domains/files.py:content__restore",
+      "state": "IMPLEMENTED_NOT_VERIFIED",
+      "branch_evidence": [
+        "owner/creator/read/write hierarchical ACL",
+        "namespace mutations, descendants/share recomputation",
+        "persistent contents and immutable byte hashes",
+        "download/share capability recheck",
+        "external editor installation/JWT/HTTP gates"
+      ],
+      "returns": "raw data; host wraps numeric ret/msg/data",
+      "external_blockers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "FileController::share",
+      "url": "file/share",
+      "aliases": [],
+      "source": "app/Http/Controllers/Api/FileController.php",
+      "source_sha256": "e52f7fb5ddf66e97f6257cbe3742dd0f15e771d8aed6de95d669250d59bef884",
+      "source_lines": [
+        1014,
+        1034
+      ],
+      "implementation": "backend/domains/files.py:share",
+      "state": "IMPLEMENTED_NOT_VERIFIED",
+      "branch_evidence": [
+        "owner/creator/read/write hierarchical ACL",
+        "namespace mutations, descendants/share recomputation",
+        "persistent contents and immutable byte hashes",
+        "download/share capability recheck",
+        "external editor installation/JWT/HTTP gates"
+      ],
+      "returns": "raw data; host wraps numeric ret/msg/data",
+      "external_blockers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "FileController::share__update",
+      "url": "file/share/update",
+      "aliases": [
+        "api/file/share__update"
+      ],
+      "source": "app/Http/Controllers/Api/FileController.php",
+      "source_sha256": "e52f7fb5ddf66e97f6257cbe3742dd0f15e771d8aed6de95d669250d59bef884",
+      "source_lines": [
+        1058,
+        1124
+      ],
+      "implementation": "backend/domains/files.py:share__update",
+      "state": "IMPLEMENTED_NOT_VERIFIED",
+      "branch_evidence": [
+        "owner/creator/read/write hierarchical ACL",
+        "namespace mutations, descendants/share recomputation",
+        "persistent contents and immutable byte hashes",
+        "download/share capability recheck",
+        "external editor installation/JWT/HTTP gates"
+      ],
+      "returns": "raw data; host wraps numeric ret/msg/data",
+      "external_blockers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "FileController::share__out",
+      "url": "file/share/out",
+      "aliases": [
+        "api/file/share__out"
+      ],
+      "source": "app/Http/Controllers/Api/FileController.php",
+      "source_sha256": "e52f7fb5ddf66e97f6257cbe3742dd0f15e771d8aed6de95d669250d59bef884",
+      "source_lines": [
+        1140,
+        1158
+      ],
+      "implementation": "backend/domains/files.py:share__out",
+      "state": "IMPLEMENTED_NOT_VERIFIED",
+      "branch_evidence": [
+        "owner/creator/read/write hierarchical ACL",
+        "namespace mutations, descendants/share recomputation",
+        "persistent contents and immutable byte hashes",
+        "download/share capability recheck",
+        "external editor installation/JWT/HTTP gates"
+      ],
+      "returns": "raw data; host wraps numeric ret/msg/data",
+      "external_blockers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "FileController::link",
+      "url": "file/link",
+      "aliases": [],
+      "source": "app/Http/Controllers/Api/FileController.php",
+      "source_sha256": "e52f7fb5ddf66e97f6257cbe3742dd0f15e771d8aed6de95d669250d59bef884",
+      "source_lines": [
+        1180,
+        1198
+      ],
+      "implementation": "backend/domains/files.py:link",
+      "state": "IMPLEMENTED_NOT_VERIFIED",
+      "branch_evidence": [
+        "owner/creator/read/write hierarchical ACL",
+        "namespace mutations, descendants/share recomputation",
+        "persistent contents and immutable byte hashes",
+        "download/share capability recheck",
+        "external editor installation/JWT/HTTP gates"
+      ],
+      "returns": "raw data; host wraps numeric ret/msg/data",
+      "external_blockers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "FileController::download__pack",
+      "url": "file/download/pack",
+      "aliases": [
+        "api/file/download__pack"
+      ],
+      "source": "app/Http/Controllers/Api/FileController.php",
+      "source_sha256": "e52f7fb5ddf66e97f6257cbe3742dd0f15e771d8aed6de95d669250d59bef884",
+      "source_lines": [
+        1215,
+        1337
+      ],
+      "implementation": "backend/domains/files.py:download__pack",
+      "state": "IMPLEMENTED_NOT_VERIFIED",
+      "branch_evidence": [
+        "owner/creator/read/write hierarchical ACL",
+        "namespace mutations, descendants/share recomputation",
+        "persistent contents and immutable byte hashes",
+        "download/share capability recheck",
+        "external editor installation/JWT/HTTP gates"
+      ],
+      "returns": "Response or raw data (host wraps numeric ret/msg/data)",
+      "external_blockers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "FileDavController::dav__status",
+      "url": "file/dav/status",
+      "aliases": [],
+      "source": "app/Http/Controllers/Api/FileDavController.php",
+      "source_sha256": "ea861b3260cc668df0fc703531808865f08599ff20bc364efd091877b1bc2c71",
+      "source_lines": [
+        37,
+        56
+      ],
+      "implementation": "backend/domains/filedav.py:dav__status",
+      "state": "IMPLEMENTED_NOT_VERIFIED",
+      "branch_evidence": [
+        "credential expiry/revocation/TLS and quota",
+        "admin config/conflicts and rename audit",
+        "shared file-object ACL with transport"
+      ],
+      "returns": "raw data; host wraps numeric ret/msg/data",
+      "external_blockers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "FileDavController::dav__credentials",
+      "url": "file/dav/credentials",
+      "aliases": [],
+      "source": "app/Http/Controllers/Api/FileDavController.php",
+      "source_sha256": "ea861b3260cc668df0fc703531808865f08599ff20bc364efd091877b1bc2c71",
+      "source_lines": [
+        65,
+        85
+      ],
+      "implementation": "backend/domains/filedav.py:dav__credentials",
+      "state": "IMPLEMENTED_NOT_VERIFIED",
+      "branch_evidence": [
+        "credential expiry/revocation/TLS and quota",
+        "admin config/conflicts and rename audit",
+        "shared file-object ACL with transport"
+      ],
+      "returns": "raw data; host wraps numeric ret/msg/data",
+      "external_blockers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "FileDavController::dav__create",
+      "url": "file/dav/create",
+      "aliases": [],
+      "source": "app/Http/Controllers/Api/FileDavController.php",
+      "source_sha256": "ea861b3260cc668df0fc703531808865f08599ff20bc364efd091877b1bc2c71",
+      "source_lines": [
+        94,
+        130
+      ],
+      "implementation": "backend/domains/filedav.py:dav__create",
+      "state": "IMPLEMENTED_NOT_VERIFIED",
+      "branch_evidence": [
+        "credential expiry/revocation/TLS and quota",
+        "admin config/conflicts and rename audit",
+        "shared file-object ACL with transport"
+      ],
+      "returns": "raw data; host wraps numeric ret/msg/data",
+      "external_blockers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "FileDavController::dav__revoke",
+      "url": "file/dav/revoke",
+      "aliases": [],
+      "source": "app/Http/Controllers/Api/FileDavController.php",
+      "source_sha256": "ea861b3260cc668df0fc703531808865f08599ff20bc364efd091877b1bc2c71",
+      "source_lines": [
+        139,
+        153
+      ],
+      "implementation": "backend/domains/filedav.py:dav__revoke",
+      "state": "IMPLEMENTED_NOT_VERIFIED",
+      "branch_evidence": [
+        "credential expiry/revocation/TLS and quota",
+        "admin config/conflicts and rename audit",
+        "shared file-object ACL with transport"
+      ],
+      "returns": "raw data; host wraps numeric ret/msg/data",
+      "external_blockers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "FileDavController::dav__delete",
+      "url": "file/dav/delete",
+      "aliases": [],
+      "source": "app/Http/Controllers/Api/FileDavController.php",
+      "source_sha256": "ea861b3260cc668df0fc703531808865f08599ff20bc364efd091877b1bc2c71",
+      "source_lines": [
+        164,
+        176
+      ],
+      "implementation": "backend/domains/filedav.py:dav__delete",
+      "state": "IMPLEMENTED_NOT_VERIFIED",
+      "branch_evidence": [
+        "credential expiry/revocation/TLS and quota",
+        "admin config/conflicts and rename audit",
+        "shared file-object ACL with transport"
+      ],
+      "returns": "raw data; host wraps numeric ret/msg/data",
+      "external_blockers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "FileDavController::dav__adminsetting",
+      "url": "file/dav/adminsetting",
+      "aliases": [],
+      "source": "app/Http/Controllers/Api/FileDavController.php",
+      "source_sha256": "ea861b3260cc668df0fc703531808865f08599ff20bc364efd091877b1bc2c71",
+      "source_lines": [
+        185,
+        201
+      ],
+      "implementation": "backend/domains/filedav.py:dav__adminsetting",
+      "state": "IMPLEMENTED_NOT_VERIFIED",
+      "branch_evidence": [
+        "credential expiry/revocation/TLS and quota",
+        "admin config/conflicts and rename audit",
+        "shared file-object ACL with transport"
+      ],
+      "returns": "raw data; host wraps numeric ret/msg/data",
+      "external_blockers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "FileDavController::dav__adminstatus",
+      "url": "file/dav/adminstatus",
+      "aliases": [],
+      "source": "app/Http/Controllers/Api/FileDavController.php",
+      "source_sha256": "ea861b3260cc668df0fc703531808865f08599ff20bc364efd091877b1bc2c71",
+      "source_lines": [
+        210,
+        222
+      ],
+      "implementation": "backend/domains/filedav.py:dav__adminstatus",
+      "state": "IMPLEMENTED_NOT_VERIFIED",
+      "branch_evidence": [
+        "credential expiry/revocation/TLS and quota",
+        "admin config/conflicts and rename audit",
+        "shared file-object ACL with transport"
+      ],
+      "returns": "raw data; host wraps numeric ret/msg/data",
+      "external_blockers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "FileDavController::dav__conflicts",
+      "url": "file/dav/conflicts",
+      "aliases": [],
+      "source": "app/Http/Controllers/Api/FileDavController.php",
+      "source_sha256": "ea861b3260cc668df0fc703531808865f08599ff20bc364efd091877b1bc2c71",
+      "source_lines": [
+        237,
+        245
+      ],
+      "implementation": "backend/domains/filedav.py:dav__conflicts",
+      "state": "IMPLEMENTED_NOT_VERIFIED",
+      "branch_evidence": [
+        "credential expiry/revocation/TLS and quota",
+        "admin config/conflicts and rename audit",
+        "shared file-object ACL with transport"
+      ],
+      "returns": "raw data; host wraps numeric ret/msg/data",
+      "external_blockers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "FileDavController::dav__conflictrename",
+      "url": "file/dav/conflictrename",
+      "aliases": [],
+      "source": "app/Http/Controllers/Api/FileDavController.php",
+      "source_sha256": "ea861b3260cc668df0fc703531808865f08599ff20bc364efd091877b1bc2c71",
+      "source_lines": [
+        257,
+        274
+      ],
+      "implementation": "backend/domains/filedav.py:dav__conflictrename",
+      "state": "IMPLEMENTED_NOT_VERIFIED",
+      "branch_evidence": [
+        "credential expiry/revocation/TLS and quota",
+        "admin config/conflicts and rename audit",
+        "shared file-object ACL with transport"
+      ],
+      "returns": "raw data; host wraps numeric ret/msg/data",
+      "external_blockers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "FileDavController::dav__userrevoke",
+      "url": "file/dav/userrevoke",
+      "aliases": [],
+      "source": "app/Http/Controllers/Api/FileDavController.php",
+      "source_sha256": "ea861b3260cc668df0fc703531808865f08599ff20bc364efd091877b1bc2c71",
+      "source_lines": [
+        283,
+        299
+      ],
+      "implementation": "backend/domains/filedav.py:dav__userrevoke",
+      "state": "IMPLEMENTED_NOT_VERIFIED",
+      "branch_evidence": [
+        "credential expiry/revocation/TLS and quota",
+        "admin config/conflicts and rename audit",
+        "shared file-object ACL with transport"
+      ],
+      "returns": "raw data; host wraps numeric ret/msg/data",
+      "external_blockers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "LicenseController::email__send",
+      "url": "license/email/send",
+      "aliases": [
+        "api/license/email__send"
+      ],
+      "source": "app/Http/Controllers/Api/LicenseController.php",
+      "source_sha256": "8cc3317cc0991bececcaecd4e09cb282947522d372f5fb12779304423e0bfdbf",
+      "source_lines": [
+        27,
+        36
+      ],
+      "implementation": "backend/domains/license.py:email__send",
+      "state": "IMPLEMENTED_NOT_VERIFIED",
+      "branch_evidence": [
+        "official HTTPS endpoint and upstream code/message",
+        "email/send and deactivate real client",
+        "select_required handling",
+        "SN/MAC missing => blocked; issued blob encrypted quarantine, never grant"
+      ],
+      "returns": "raw data; host wraps numeric ret/msg/data",
+      "external_blockers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "LicenseController::login",
+      "url": "license/login",
+      "aliases": [],
+      "source": "app/Http/Controllers/Api/LicenseController.php",
+      "source_sha256": "8cc3317cc0991bececcaecd4e09cb282947522d372f5fb12779304423e0bfdbf",
+      "source_lines": [
+        41,
+        51
+      ],
+      "implementation": "backend/domains/license.py:login",
+      "state": "BLOCKED_NATIVE_BRANCHES",
+      "branch_evidence": [
+        "official HTTPS endpoint and upstream code/message",
+        "email/send and deactivate real client",
+        "select_required handling",
+        "SN/MAC missing => blocked; issued blob encrypted quarantine, never grant"
+      ],
+      "returns": "raw data; host wraps numeric ret/msg/data",
+      "external_blockers": [
+        "supplier doo.so trusted license verification + legal ABI/SN/MAC; no default grant"
+      ],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "LicenseController::login__confirm",
+      "url": "license/login/confirm",
+      "aliases": [
+        "api/license/login__confirm"
+      ],
+      "source": "app/Http/Controllers/Api/LicenseController.php",
+      "source_sha256": "8cc3317cc0991bececcaecd4e09cb282947522d372f5fb12779304423e0bfdbf",
+      "source_lines": [
+        56,
+        70
+      ],
+      "implementation": "backend/domains/license.py:login__confirm",
+      "state": "BLOCKED_NATIVE_BRANCHES",
+      "branch_evidence": [
+        "official HTTPS endpoint and upstream code/message",
+        "email/send and deactivate real client",
+        "select_required handling",
+        "SN/MAC missing => blocked; issued blob encrypted quarantine, never grant"
+      ],
+      "returns": "raw data; host wraps numeric ret/msg/data",
+      "external_blockers": [
+        "supplier doo.so trusted license verification + legal ABI/SN/MAC; no default grant"
+      ],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "LicenseController::trial",
+      "url": "license/trial",
+      "aliases": [],
+      "source": "app/Http/Controllers/Api/LicenseController.php",
+      "source_sha256": "8cc3317cc0991bececcaecd4e09cb282947522d372f5fb12779304423e0bfdbf",
+      "source_lines": [
+        75,
+        85
+      ],
+      "implementation": "backend/domains/license.py:trial",
+      "state": "BLOCKED_NATIVE_BRANCHES",
+      "branch_evidence": [
+        "official HTTPS endpoint and upstream code/message",
+        "email/send and deactivate real client",
+        "select_required handling",
+        "SN/MAC missing => blocked; issued blob encrypted quarantine, never grant"
+      ],
+      "returns": "raw data; host wraps numeric ret/msg/data",
+      "external_blockers": [
+        "supplier doo.so trusted license verification + legal ABI/SN/MAC; no default grant"
+      ],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "LicenseController::status",
+      "url": "license/status",
+      "aliases": [],
+      "source": "app/Http/Controllers/Api/LicenseController.php",
+      "source_sha256": "8cc3317cc0991bececcaecd4e09cb282947522d372f5fb12779304423e0bfdbf",
+      "source_lines": [
+        90,
+        94
+      ],
+      "implementation": "backend/domains/license.py:status",
+      "state": "BLOCKED_NATIVE_BRANCHES",
+      "branch_evidence": [
+        "official HTTPS endpoint and upstream code/message",
+        "email/send and deactivate real client",
+        "select_required handling",
+        "SN/MAC missing => blocked; issued blob encrypted quarantine, never grant"
+      ],
+      "returns": "raw data; host wraps numeric ret/msg/data",
+      "external_blockers": [
+        "supplier doo.so trusted license verification + legal ABI/SN/MAC; no default grant"
+      ],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "LicenseController::refresh",
+      "url": "license/refresh",
+      "aliases": [],
+      "source": "app/Http/Controllers/Api/LicenseController.php",
+      "source_sha256": "8cc3317cc0991bececcaecd4e09cb282947522d372f5fb12779304423e0bfdbf",
+      "source_lines": [
+        99,
+        104
+      ],
+      "implementation": "backend/domains/license.py:refresh",
+      "state": "BLOCKED_NATIVE_BRANCHES",
+      "branch_evidence": [
+        "official HTTPS endpoint and upstream code/message",
+        "email/send and deactivate real client",
+        "select_required handling",
+        "SN/MAC missing => blocked; issued blob encrypted quarantine, never grant"
+      ],
+      "returns": "raw data; host wraps numeric ret/msg/data",
+      "external_blockers": [
+        "supplier doo.so trusted license verification + legal ABI/SN/MAC; no default grant"
+      ],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "LicenseController::logout",
+      "url": "license/logout",
+      "aliases": [],
+      "source": "app/Http/Controllers/Api/LicenseController.php",
+      "source_sha256": "8cc3317cc0991bececcaecd4e09cb282947522d372f5fb12779304423e0bfdbf",
+      "source_lines": [
+        109,
+        114
+      ],
+      "implementation": "backend/domains/license.py:logout",
+      "state": "IMPLEMENTED_NOT_VERIFIED",
+      "branch_evidence": [
+        "official HTTPS endpoint and upstream code/message",
+        "email/send and deactivate real client",
+        "select_required handling",
+        "SN/MAC missing => blocked; issued blob encrypted quarantine, never grant"
+      ],
+      "returns": "raw data; host wraps numeric ret/msg/data",
+      "external_blockers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "ReportController::my",
+      "url": "report/my",
+      "aliases": [],
+      "source": "app/Http/Controllers/Api/ReportController.php",
+      "source_sha256": "f53ecef337e44a5bff4ae6b62aed39a2d1fcb963f4546de03fe39141a9292ddf",
+      "source_lines": [
+        50,
+        83
+      ],
+      "implementation": "backend/domains/reports.py:my",
+      "state": "IMPLEMENTED_NOT_VERIFIED",
+      "branch_evidence": [
+        "author/recipient/share-code authorization",
+        "daily/weekly template task windows and variable labels/datas",
+        "recipient unread persistence and outbox",
+        "per-viewer AI analysis storage; sharing via real dialog primitive"
+      ],
+      "returns": "raw data; host wraps numeric ret/msg/data",
+      "external_blockers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "ReportController::receive",
+      "url": "report/receive",
+      "aliases": [],
+      "source": "app/Http/Controllers/Api/ReportController.php",
+      "source_sha256": "f53ecef337e44a5bff4ae6b62aed39a2d1fcb963f4546de03fe39141a9292ddf",
+      "source_lines": [
+        106,
+        156
+      ],
+      "implementation": "backend/domains/reports.py:receive",
+      "state": "IMPLEMENTED_NOT_VERIFIED",
+      "branch_evidence": [
+        "author/recipient/share-code authorization",
+        "daily/weekly template task windows and variable labels/datas",
+        "recipient unread persistence and outbox",
+        "per-viewer AI analysis storage; sharing via real dialog primitive"
+      ],
+      "returns": "raw data; host wraps numeric ret/msg/data",
+      "external_blockers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "ReportController::store",
+      "url": "report/store",
+      "aliases": [],
+      "source": "app/Http/Controllers/Api/ReportController.php",
+      "source_sha256": "f53ecef337e44a5bff4ae6b62aed39a2d1fcb963f4546de03fe39141a9292ddf",
+      "source_lines": [
+        178,
+        295
+      ],
+      "implementation": "backend/domains/reports.py:store",
+      "state": "IMPLEMENTED_NOT_VERIFIED",
+      "branch_evidence": [
+        "author/recipient/share-code authorization",
+        "daily/weekly template task windows and variable labels/datas",
+        "recipient unread persistence and outbox",
+        "per-viewer AI analysis storage; sharing via real dialog primitive"
+      ],
+      "returns": "raw data; host wraps numeric ret/msg/data",
+      "external_blockers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "ReportController::template",
+      "url": "report/template",
+      "aliases": [],
+      "source": "app/Http/Controllers/Api/ReportController.php",
+      "source_sha256": "f53ecef337e44a5bff4ae6b62aed39a2d1fcb963f4546de03fe39141a9292ddf",
+      "source_lines": [
+        313,
+        491
+      ],
+      "implementation": "backend/domains/reports.py:template",
+      "state": "IMPLEMENTED_NOT_VERIFIED",
+      "branch_evidence": [
+        "author/recipient/share-code authorization",
+        "daily/weekly template task windows and variable labels/datas",
+        "recipient unread persistence and outbox",
+        "per-viewer AI analysis storage; sharing via real dialog primitive"
+      ],
+      "returns": "raw data; host wraps numeric ret/msg/data",
+      "external_blockers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "ReportController::detail",
+      "url": "report/detail",
+      "aliases": [],
+      "source": "app/Http/Controllers/Api/ReportController.php",
+      "source_sha256": "f53ecef337e44a5bff4ae6b62aed39a2d1fcb963f4546de03fe39141a9292ddf",
+      "source_lines": [
+        508,
+        558
+      ],
+      "implementation": "backend/domains/reports.py:detail",
+      "state": "IMPLEMENTED_NOT_VERIFIED",
+      "branch_evidence": [
+        "author/recipient/share-code authorization",
+        "daily/weekly template task windows and variable labels/datas",
+        "recipient unread persistence and outbox",
+        "per-viewer AI analysis storage; sharing via real dialog primitive"
+      ],
+      "returns": "raw data; host wraps numeric ret/msg/data",
+      "external_blockers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "ReportController::analysave",
+      "url": "report/analysave",
+      "aliases": [],
+      "source": "app/Http/Controllers/Api/ReportController.php",
+      "source_sha256": "f53ecef337e44a5bff4ae6b62aed39a2d1fcb963f4546de03fe39141a9292ddf",
+      "source_lines": [
+        579,
+        644
+      ],
+      "implementation": "backend/domains/reports.py:analysave",
+      "state": "IMPLEMENTED_NOT_VERIFIED",
+      "branch_evidence": [
+        "author/recipient/share-code authorization",
+        "daily/weekly template task windows and variable labels/datas",
+        "recipient unread persistence and outbox",
+        "per-viewer AI analysis storage; sharing via real dialog primitive"
+      ],
+      "returns": "raw data; host wraps numeric ret/msg/data",
+      "external_blockers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "ReportController::mark",
+      "url": "report/mark",
+      "aliases": [],
+      "source": "app/Http/Controllers/Api/ReportController.php",
+      "source_sha256": "f53ecef337e44a5bff4ae6b62aed39a2d1fcb963f4546de03fe39141a9292ddf",
+      "source_lines": [
+        663,
+        687
+      ],
+      "implementation": "backend/domains/reports.py:mark",
+      "state": "IMPLEMENTED_NOT_VERIFIED",
+      "branch_evidence": [
+        "author/recipient/share-code authorization",
+        "daily/weekly template task windows and variable labels/datas",
+        "recipient unread persistence and outbox",
+        "per-viewer AI analysis storage; sharing via real dialog primitive"
+      ],
+      "returns": "raw data; host wraps numeric ret/msg/data",
+      "external_blockers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "ReportController::share",
+      "url": "report/share",
+      "aliases": [],
+      "source": "app/Http/Controllers/Api/ReportController.php",
+      "source_sha256": "f53ecef337e44a5bff4ae6b62aed39a2d1fcb963f4546de03fe39141a9292ddf",
+      "source_lines": [
+        706,
+        749
+      ],
+      "implementation": "backend/domains/reports.py:share",
+      "state": "IMPLEMENTED_NOT_VERIFIED",
+      "branch_evidence": [
+        "author/recipient/share-code authorization",
+        "daily/weekly template task windows and variable labels/datas",
+        "recipient unread persistence and outbox",
+        "per-viewer AI analysis storage; sharing via real dialog primitive"
+      ],
+      "returns": "raw data; host wraps numeric ret/msg/data",
+      "external_blockers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "ReportController::last_submitter",
+      "url": "report/last_submitter",
+      "aliases": [],
+      "source": "app/Http/Controllers/Api/ReportController.php",
+      "source_sha256": "f53ecef337e44a5bff4ae6b62aed39a2d1fcb963f4546de03fe39141a9292ddf",
+      "source_lines": [
+        763,
+        767
+      ],
+      "implementation": "backend/domains/reports.py:last_submitter",
+      "state": "IMPLEMENTED_NOT_VERIFIED",
+      "branch_evidence": [
+        "author/recipient/share-code authorization",
+        "daily/weekly template task windows and variable labels/datas",
+        "recipient unread persistence and outbox",
+        "per-viewer AI analysis storage; sharing via real dialog primitive"
+      ],
+      "returns": "raw data; host wraps numeric ret/msg/data",
+      "external_blockers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "ReportController::unread",
+      "url": "report/unread",
+      "aliases": [],
+      "source": "app/Http/Controllers/Api/ReportController.php",
+      "source_sha256": "f53ecef337e44a5bff4ae6b62aed39a2d1fcb963f4546de03fe39141a9292ddf",
+      "source_lines": [
+        781,
+        792
+      ],
+      "implementation": "backend/domains/reports.py:unread",
+      "state": "IMPLEMENTED_NOT_VERIFIED",
+      "branch_evidence": [
+        "author/recipient/share-code authorization",
+        "daily/weekly template task windows and variable labels/datas",
+        "recipient unread persistence and outbox",
+        "per-viewer AI analysis storage; sharing via real dialog primitive"
+      ],
+      "returns": "raw data; host wraps numeric ret/msg/data",
+      "external_blockers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "ReportController::read",
+      "url": "report/read",
+      "aliases": [],
+      "source": "app/Http/Controllers/Api/ReportController.php",
+      "source_sha256": "f53ecef337e44a5bff4ae6b62aed39a2d1fcb963f4546de03fe39141a9292ddf",
+      "source_lines": [
+        808,
+        832
+      ],
+      "implementation": "backend/domains/reports.py:read",
+      "state": "IMPLEMENTED_NOT_VERIFIED",
+      "branch_evidence": [
+        "author/recipient/share-code authorization",
+        "daily/weekly template task windows and variable labels/datas",
+        "recipient unread persistence and outbox",
+        "per-viewer AI analysis storage; sharing via real dialog primitive"
+      ],
+      "returns": "raw data; host wraps numeric ret/msg/data",
+      "external_blockers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "SearchController::contact",
+      "url": "search/contact",
+      "aliases": [],
+      "source": "app/Http/Controllers/Api/SearchController.php",
+      "source_sha256": "5d9ef2ecde6ce0c1febe9fd68cd79f59a9638c77fda266fc2f6aa1eddea83030",
+      "source_lines": [
+        44,
+        89
+      ],
+      "implementation": "backend/domains/search.py:contact",
+      "state": "IMPLEMENTED_NOT_VERIFIED",
+      "branch_evidence": [
+        "installed app guard/MySQL fallback when uninstalled",
+        "Manticore real SQL/replace + OpenAI embeddings",
+        "authoritative per-result DB ACL",
+        "persistent sync/rebuild outbox consumers"
+      ],
+      "returns": "raw data; host wraps numeric ret/msg/data",
+      "external_blockers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "SearchController::project",
+      "url": "search/project",
+      "aliases": [],
+      "source": "app/Http/Controllers/Api/SearchController.php",
+      "source_sha256": "5d9ef2ecde6ce0c1febe9fd68cd79f59a9638c77fda266fc2f6aa1eddea83030",
+      "source_lines": [
+        137,
+        176
+      ],
+      "implementation": "backend/domains/search.py:project",
+      "state": "IMPLEMENTED_NOT_VERIFIED",
+      "branch_evidence": [
+        "installed app guard/MySQL fallback when uninstalled",
+        "Manticore real SQL/replace + OpenAI embeddings",
+        "authoritative per-result DB ACL",
+        "persistent sync/rebuild outbox consumers"
+      ],
+      "returns": "raw data; host wraps numeric ret/msg/data",
+      "external_blockers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "SearchController::task",
+      "url": "search/task",
+      "aliases": [],
+      "source": "app/Http/Controllers/Api/SearchController.php",
+      "source_sha256": "5d9ef2ecde6ce0c1febe9fd68cd79f59a9638c77fda266fc2f6aa1eddea83030",
+      "source_lines": [
+        219,
+        260
+      ],
+      "implementation": "backend/domains/search.py:task",
+      "state": "IMPLEMENTED_NOT_VERIFIED",
+      "branch_evidence": [
+        "installed app guard/MySQL fallback when uninstalled",
+        "Manticore real SQL/replace + OpenAI embeddings",
+        "authoritative per-result DB ACL",
+        "persistent sync/rebuild outbox consumers"
+      ],
+      "returns": "raw data; host wraps numeric ret/msg/data",
+      "external_blockers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "SearchController::file",
+      "url": "search/file",
+      "aliases": [],
+      "source": "app/Http/Controllers/Api/SearchController.php",
+      "source_sha256": "5d9ef2ecde6ce0c1febe9fd68cd79f59a9638c77fda266fc2f6aa1eddea83030",
+      "source_lines": [
+        310,
+        352
+      ],
+      "implementation": "backend/domains/search.py:file",
+      "state": "IMPLEMENTED_NOT_VERIFIED",
+      "branch_evidence": [
+        "installed app guard/MySQL fallback when uninstalled",
+        "Manticore real SQL/replace + OpenAI embeddings",
+        "authoritative per-result DB ACL",
+        "persistent sync/rebuild outbox consumers"
+      ],
+      "returns": "raw data; host wraps numeric ret/msg/data",
+      "external_blockers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "SearchController::message",
+      "url": "search/message",
+      "aliases": [],
+      "source": "app/Http/Controllers/Api/SearchController.php",
+      "source_sha256": "5d9ef2ecde6ce0c1febe9fd68cd79f59a9638c77fda266fc2f6aa1eddea83030",
+      "source_lines": [
+        422,
+        456
+      ],
+      "implementation": "backend/domains/search.py:message",
+      "state": "IMPLEMENTED_NOT_VERIFIED",
+      "branch_evidence": [
+        "installed app guard/MySQL fallback when uninstalled",
+        "Manticore real SQL/replace + OpenAI embeddings",
+        "authoritative per-result DB ACL",
+        "persistent sync/rebuild outbox consumers"
+      ],
+      "returns": "raw data; host wraps numeric ret/msg/data",
+      "external_blockers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "UploadController::init",
+      "url": "upload/init",
+      "aliases": [],
+      "source": "app/Http/Controllers/Api/UploadController.php",
+      "source_sha256": "f35ee4847661ddfeb100ca71c8925f93c421739271593a9cef12c6724af3a540",
+      "source_lines": [
+        39,
+        50
+      ],
+      "implementation": "backend/domains/upload.py:init",
+      "state": "IMPLEMENTED_NOT_VERIFIED",
+      "branch_evidence": [
+        "init/resume/owner/hash/size/scene validation",
+        "chunk exact size, immutable persistence, row lock",
+        "merge byte MD5 and saved result idempotency",
+        "cabinet/dialog_file/image/generic_file dispatch",
+        "cancel session invalidation"
+      ],
+      "returns": "raw data; host wraps numeric ret/msg/data",
+      "external_blockers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "UploadController::chunk",
+      "url": "upload/chunk",
+      "aliases": [],
+      "source": "app/Http/Controllers/Api/UploadController.php",
+      "source_sha256": "f35ee4847661ddfeb100ca71c8925f93c421739271593a9cef12c6724af3a540",
+      "source_lines": [
+        66,
+        76
+      ],
+      "implementation": "backend/domains/upload.py:chunk",
+      "state": "IMPLEMENTED_NOT_VERIFIED",
+      "branch_evidence": [
+        "init/resume/owner/hash/size/scene validation",
+        "chunk exact size, immutable persistence, row lock",
+        "merge byte MD5 and saved result idempotency",
+        "cabinet/dialog_file/image/generic_file dispatch",
+        "cancel session invalidation"
+      ],
+      "returns": "raw data; host wraps numeric ret/msg/data",
+      "external_blockers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "UploadController::merge",
+      "url": "upload/merge",
+      "aliases": [],
+      "source": "app/Http/Controllers/Api/UploadController.php",
+      "source_sha256": "f35ee4847661ddfeb100ca71c8925f93c421739271593a9cef12c6724af3a540",
+      "source_lines": [
+        90,
+        105
+      ],
+      "implementation": "backend/domains/upload.py:merge",
+      "state": "IMPLEMENTED_NOT_VERIFIED",
+      "branch_evidence": [
+        "init/resume/owner/hash/size/scene validation",
+        "chunk exact size, immutable persistence, row lock",
+        "merge byte MD5 and saved result idempotency",
+        "cabinet/dialog_file/image/generic_file dispatch",
+        "cancel session invalidation"
+      ],
+      "returns": "raw data; host wraps numeric ret/msg/data",
+      "external_blockers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "UploadController::cancel",
+      "url": "upload/cancel",
+      "aliases": [],
+      "source": "app/Http/Controllers/Api/UploadController.php",
+      "source_sha256": "f35ee4847661ddfeb100ca71c8925f93c421739271593a9cef12c6724af3a540",
+      "source_lines": [
+        119,
+        128
+      ],
+      "implementation": "backend/domains/upload.py:cancel",
+      "state": "IMPLEMENTED_NOT_VERIFIED",
+      "branch_evidence": [
+        "init/resume/owner/hash/size/scene validation",
+        "chunk exact size, immutable persistence, row lock",
+        "merge byte MD5 and saved result idempotency",
+        "cabinet/dialog_file/image/generic_file dispatch",
+        "cancel session invalidation"
+      ],
+      "returns": "raw data; host wraps numeric ret/msg/data",
+      "external_blockers": [],
+      "verification": "NOT_RUN"
+    }
+  ],
+  "source_bindings": [
+    {
+      "controller": "FileController",
+      "implementation": "backend/domains/files.py"
+    },
+    {
+      "controller": "FileDavController",
+      "implementation": "backend/domains/filedav.py"
+    },
+    {
+      "controller": "LicenseController",
+      "implementation": "backend/domains/license.py"
+    },
+    {
+      "controller": "ReportController",
+      "implementation": "backend/domains/reports.py"
+    },
+    {
+      "controller": "SearchController",
+      "implementation": "backend/domains/search.py"
+    },
+    {
+      "controller": "UploadController",
+      "implementation": "backend/domains/upload.py"
+    }
+  ],
+  "verification": "No build/lint/test/formatter/service/HTTP request was executed by DomainFiles."
+}

@@ -1,0 +1,550 @@
+{
+  "version": "1",
+  "pip_version": "25.0.1",
+  "install": [
+    {
+      "download_info": {
+        "url": "https://pypi.tuna.tsinghua.edu.cn/packages/44/48/def306413b25c3d01753603b1a222a011b8621aed27cd7f89cbc27e6b0f4/xlwt-1.3.0-py2.py3-none-any.whl",
+        "archive_info": {
+          "hash": "sha256=a082260524678ba48a297d922cc385f58278b8aa68741596a87de01a9c628b2e",
+          "hashes": {
+            "sha256": "a082260524678ba48a297d922cc385f58278b8aa68741596a87de01a9c628b2e"
+          }
+        }
+      },
+      "is_direct": false,
+      "is_yanked": false,
+      "requested": true,
+      "metadata": {
+        "metadata_version": "2.0",
+        "name": "xlwt",
+        "version": "1.3.0",
+        "platform": [
+          "Platform Independent"
+        ],
+        "summary": "Library to create spreadsheet files compatible with MS Excel 97/2000/XP/2003 XLS files, on any platform, with Python 2.6, 2.7, 3.3+",
+        "description": "|Travis|_ |Coveralls|_ |Docs|_ |PyPI|_\n\n.. |Travis| image:: https://api.travis-ci.org/python-excel/xlwt.svg?branch=master\n.. _Travis: https://travis-ci.org/python-excel/xlwt\n\n.. |Coveralls| image:: https://coveralls.io/repos/python-excel/xlwt/badge.svg?branch=master\n.. _Coveralls: https://coveralls.io/r/python-excel/xlwt?branch=master\n\n.. |Docs| image:: https://readthedocs.org/projects/xlwt/badge/?version=latest\n.. _Docs: https://xlwt.readthedocs.org/en/latest/\n\n.. |PyPI| image:: https://badge.fury.io/py/xlwt.svg\n.. _PyPI: https://badge.fury.io/py/xlwt\n\nxlwt\n====\n\nThis is a library for developers to use to generate\nspreadsheet files compatible with Microsoft Excel versions 95 to 2003.\n\nThe package itself is pure Python with no dependencies on modules or packages\noutside the standard Python distribution.\n\nPlease read this before using this package:\nhttps://groups.google.com/d/msg/python-excel/P6TjJgFVjMI/g8d0eWxTBQAJ\n\nInstallation\n============\n\nDo the following in your virtualenv::\n\n  pip install xlwt\n\nQuick start\n===========\n\n.. code-block:: python\n\n    import xlwt\n    from datetime import datetime\n\n    style0 = xlwt.easyxf('font: name Times New Roman, color-index red, bold on',\n        num_format_str='#,##0.00')\n    style1 = xlwt.easyxf(num_format_str='D-MMM-YY')\n\n    wb = xlwt.Workbook()\n    ws = wb.add_sheet('A Test Sheet')\n\n    ws.write(0, 0, 1234.56, style0)\n    ws.write(1, 0, datetime.now(), style1)\n    ws.write(2, 0, 1)\n    ws.write(2, 1, 1)\n    ws.write(2, 2, xlwt.Formula(\"A3+B3\"))\n\n    wb.save('example.xls')\n\n\nDocumentation\n=============\n\nDocumentation can be found in the ``docs`` directory of the xlwt package.\nIf these aren't sufficient, please consult the code in the\nexamples directory and the source code itself.\n\nThe latest documentation can also be found at:\nhttps://xlwt.readthedocs.org/en/latest/\n\nProblems?\n=========\nTry the following in this order:\n\n- Read the source\n\n- Ask a question on https://groups.google.com/group/python-excel/\n\nAcknowledgements\n================\n\nxlwt is a fork of the pyExcelerator package, which was developed by\nRoman V. Kiseliov. This product includes software developed by\nRoman V. Kiseliov <roman@kiseliov.ru>.\n\nxlwt uses ANTLR v 2.7.7 to generate its formula compiler.\n\n\n",
+        "keywords": [
+          "xls",
+          "excel",
+          "spreadsheet",
+          "workbook",
+          "worksheet",
+          "pyExcelerator"
+        ],
+        "home_page": "http://www.python-excel.org/",
+        "download_url": "https://pypi.python.org/pypi/xlwt",
+        "author": "John Machin",
+        "author_email": "sjmachin@lexicon.net",
+        "license": "BSD",
+        "classifier": [
+          "Operating System :: OS Independent",
+          "Programming Language :: Python",
+          "License :: OSI Approved :: BSD License",
+          "Development Status :: 5 - Production/Stable",
+          "Intended Audience :: Developers",
+          "Topic :: Software Development :: Libraries :: Python Modules",
+          "Topic :: Office/Business :: Financial :: Spreadsheet",
+          "Topic :: Database",
+          "Topic :: Internet :: WWW/HTTP :: Dynamic Content :: CGI Tools/Libraries",
+          "Programming Language :: Python :: 2",
+          "Programming Language :: Python :: 2.7",
+          "Programming Language :: Python :: 3",
+          "Programming Language :: Python :: 3.3",
+          "Programming Language :: Python :: 3.4",
+          "Programming Language :: Python :: 3.5",
+          "Programming Language :: Python :: 3.6"
+        ]
+      }
+    },
+    {
+      "download_info": {
+        "url": "https://pypi.tuna.tsinghua.edu.cn/packages/4e/f6/71d6ec9f18da0b2201287ce9db6afb1a1f637dedb3f0703409558981c723/ldap3-2.9.1-py2.py3-none-any.whl",
+        "archive_info": {
+          "hash": "sha256=5869596fc4948797020d3f03b7939da938778a0f9e2009f7a072ccf92b8e8d70",
+          "hashes": {
+            "sha256": "5869596fc4948797020d3f03b7939da938778a0f9e2009f7a072ccf92b8e8d70"
+          }
+        }
+      },
+      "is_direct": false,
+      "is_yanked": false,
+      "requested": true,
+      "metadata": {
+        "metadata_version": "2.1",
+        "name": "ldap3",
+        "version": "2.9.1",
+        "platform": [
+          "UNKNOWN"
+        ],
+        "summary": "A strictly RFC 4510 conforming LDAP V3 pure Python client library",
+        "description": "LDAP3\n=====\n\n.. image:: https://img.shields.io/pypi/v/ldap3.svg\n    :target: https://pypi.python.org/pypi/ldap3/\n    :alt: Latest Version\n\n.. image:: https://img.shields.io/pypi/l/ldap3.svg\n    :target: https://pypi.python.org/pypi/ldap3/\n    :alt: License\n\n.. image:: https://img.shields.io/travis/cannatag/ldap3/master.svg\n    :target: https://travis-ci.org/cannatag/ldap3\n    :alt: TRAVIS-CI build status for master branch\n\n\nldap3 is a strictly RFC 4510 conforming **LDAP V3 pure Python client** library. The same codebase runs in Python 2, Python 3, PyPy and PyPy3.\n\n\nA more pythonic LDAP\n--------------------\n\nLDAP operations look clumsy and hard-to-use because they reflect the old-age idea that time-consuming operations should be performed client-side\nto not hog the server with heavy elaborations. To alleviate this ldap3 includes a fully functional **Abstraction Layer** that lets you\ninteract with the LDAP server in a modern and *pythonic* way. With the Abstraction Layer you don't need to directly issue any LDAP operation at all.\n\n\nThread safe strategies\n----------------------\n\nIn multithreaded programs you must use on of **SAFE_SYNC** (synchronous connection strategy), **SAFE_RESTARTABLE** (restartable syncronous connection strategy) or **ASYNC** (asynchronous connection strategy).\n   Each LDAP operation with SAFE_SYNC or SAFE_RESTARTABLE strategies returns a tuple of four elements: status, result, response and request.\n\n   * status: states if the operation was successful\n\n   * result: the LDAP result of the operation\n\n   * response: the response of a LDAP Search Operation\n\n   * request: the original request of the operation\n\n   The SafeSync strategy can be used with the Abstract Layer, but the Abstract Layer currently is NOT thread safe.\n   For example, to use *SAFE_SYNC*::\n\n      from ldap3 import Server, Connection, SAFE_SYNC\n      server = Server('my_server')\n      conn = Connection(server, 'my_user', 'my_password', client_strategy=SAFE_SYNC, auto_bind=True)\n      status, result, response, _ = conn.search('o=test', '(objectclass=*)')  # usually you don't need the original request (4th element of the returned tuple)\n\n\n  With *ASYNC* you must request the response with the *get_response()* method.\n\nHome Page\n---------\n\nThe home page of the ldap3 project is https://github.com/cannatag/ldap3\n\n\nDocumentation\n-------------\n\nDocumentation is available at http://ldap3.readthedocs.io\n\n\nLicense\n-------\n\nThe ldap3 project is open source software released under the **LGPL v3 license**.\nCopyright 2013 - 2020 Giovanni Cannata\n\n\nPEP8 Compliance\n---------------\n\nldap3 is PEP8 compliant, except for line length.\n\n\nDownload\n--------\n\nPackage download is available at https://pypi.python.org/pypi/ldap3.\n\n\nInstall\n-------\n\nInstall with **pip install ldap3**\n\n\nGit repository\n--------------\n\nYou can download the latest source at https://github.com/cannatag/ldap3\n\n\nContinuous integration\n----------------------\n\nContinuous integration for testing is at https://travis-ci.org/cannatag/ldap3\n\n\nSupport & Development\n---------------------\n\nYou can submit support tickets on https://github.com/cannatag/ldap3/issues/new\nYou can submit pull request on the **dev** branch at https://github.com/cannatag/ldap3/tree/dev\n\n\nThanks to\n---------\n\n* **Ilya Etingof**, the author of the *pyasn1* package for his excellent work and support.\n\n* **Mark Lutz** for his *Learning Python* and *Programming Python* excellent books series and **John Goerzen** and **Brandon Rhodes** for their book *Foundations of Python Network Programming*. These books are wonderful tools for learning Python and this project owes a lot to them.\n\n* **JetBrains** for donating to this project the Open Source license of *PyCharm Professional*.\n\n* **GitHub** for providing the *free source repository space and the tools* I use to develop this project.\n\n* The **FreeIPA** team for letting me use their demo LDAP server in the ldap3 tutorial.\n\n\nContact me\n----------\n\nFor information and suggestions you can contact me at cannatag@gmail.com. You can also open a support ticket on https://github.com/cannatag/ldap3/issues/new\n\n\nDonate\n------\n\nIf you want to keep this project up and running you can send me an Amazon gift card. I will use it to improve my skills in Information and Communication technologies.\n\n\nChangelog\n---------\n\nUpdated changelog at https://ldap3.readthedocs.io/changelog.html\n\n\n\n",
+        "keywords": [
+          "python3",
+          "python2",
+          "ldap"
+        ],
+        "home_page": "https://github.com/cannatag/ldap3",
+        "author": "Giovanni Cannata",
+        "author_email": "cannatag@gmail.com",
+        "license": "LGPL v3",
+        "classifier": [
+          "Development Status :: 5 - Production/Stable",
+          "Intended Audience :: Developers",
+          "Intended Audience :: System Administrators",
+          "Operating System :: MacOS :: MacOS X",
+          "Operating System :: Microsoft :: Windows",
+          "Operating System :: POSIX :: Linux",
+          "License :: OSI Approved :: GNU Lesser General Public License v3 (LGPLv3)",
+          "Programming Language :: Python",
+          "Programming Language :: Python :: 2",
+          "Programming Language :: Python :: 3",
+          "Topic :: Software Development :: Libraries :: Python Modules",
+          "Topic :: System :: Systems Administration :: Authentication/Directory :: LDAP"
+        ],
+        "requires_dist": [
+          "pyasn1 (>=0.4.6)"
+        ]
+      }
+    },
+    {
+      "download_info": {
+        "url": "https://pypi.tuna.tsinghua.edu.cn/packages/c0/da/977ded879c29cbd04de313843e76868e6e13408a94ed6b987245dc7c8506/openpyxl-3.1.5-py2.py3-none-any.whl",
+        "archive_info": {
+          "hash": "sha256=5282c12b107bffeef825f4617dc029afaf41d0ea60823bbb665ef3079dc79de2",
+          "hashes": {
+            "sha256": "5282c12b107bffeef825f4617dc029afaf41d0ea60823bbb665ef3079dc79de2"
+          }
+        }
+      },
+      "is_direct": false,
+      "is_yanked": false,
+      "requested": true,
+      "metadata": {
+        "metadata_version": "2.1",
+        "name": "openpyxl",
+        "version": "3.1.5",
+        "summary": "A Python library to read/write Excel 2010 xlsx/xlsm files",
+        "description": ".. image:: https://coveralls.io/repos/bitbucket/openpyxl/openpyxl/badge.svg?branch=default\n    :target: https://coveralls.io/bitbucket/openpyxl/openpyxl?branch=default\n    :alt: coverage status\n\nIntroduction\n------------\n\nopenpyxl is a Python library to read/write Excel 2010 xlsx/xlsm/xltx/xltm files.\n\nIt was born from lack of existing library to read/write natively from Python\nthe Office Open XML format.\n\nAll kudos to the PHPExcel team as openpyxl was initially based on PHPExcel.\n\n\nSecurity\n--------\n\nBy default openpyxl does not guard against quadratic blowup or billion laughs\nxml attacks. To guard against these attacks install defusedxml.\n\nMailing List\n------------\n\nThe user list can be found on http://groups.google.com/group/openpyxl-users\n\n\nSample code::\n\n    from openpyxl import Workbook\n    wb = Workbook()\n\n    # grab the active worksheet\n    ws = wb.active\n\n    # Data can be assigned directly to cells\n    ws['A1'] = 42\n\n    # Rows can also be appended\n    ws.append([1, 2, 3])\n\n    # Python types will automatically be converted\n    import datetime\n    ws['A2'] = datetime.datetime.now()\n\n    # Save the file\n    wb.save(\"sample.xlsx\")\n\n\nDocumentation\n-------------\n\nThe documentation is at: https://openpyxl.readthedocs.io\n\n* installation methods\n* code examples\n* instructions for contributing\n\nRelease notes: https://openpyxl.readthedocs.io/en/stable/changes.html\n",
+        "home_page": "https://openpyxl.readthedocs.io",
+        "author": "See AUTHORS",
+        "author_email": "charlie.clark@clark-consulting.eu",
+        "license": "MIT",
+        "license_file": [
+          "LICENCE.rst"
+        ],
+        "classifier": [
+          "Development Status :: 5 - Production/Stable",
+          "Operating System :: MacOS :: MacOS X",
+          "Operating System :: Microsoft :: Windows",
+          "Operating System :: POSIX",
+          "License :: OSI Approved :: MIT License",
+          "Programming Language :: Python",
+          "Programming Language :: Python :: 3.6",
+          "Programming Language :: Python :: 3.7",
+          "Programming Language :: Python :: 3.8",
+          "Programming Language :: Python :: 3.9",
+          "Programming Language :: Python :: 3.10",
+          "Programming Language :: Python :: 3.11"
+        ],
+        "requires_dist": [
+          "et-xmlfile"
+        ],
+        "requires_python": ">=3.8",
+        "project_url": [
+          "Documentation, https://openpyxl.readthedocs.io/en/stable/",
+          "Source, https://foss.heptapod.net/openpyxl/openpyxl",
+          "Tracker, https://foss.heptapod.net/openpyxl/openpyxl/-/issues"
+        ]
+      }
+    },
+    {
+      "download_info": {
+        "url": "https://pypi.tuna.tsinghua.edu.cn/packages/1a/62/c8d562e7766786ba6587d09c5a8ba9f718ed3fa8af7f4553e8f91c36f302/xlrd-2.0.2-py2.py3-none-any.whl",
+        "archive_info": {
+          "hash": "sha256=ea762c3d29f4cca48d82df517b6d89fbce4db3107f9d78713e48cd321d5c9aa9",
+          "hashes": {
+            "sha256": "ea762c3d29f4cca48d82df517b6d89fbce4db3107f9d78713e48cd321d5c9aa9"
+          }
+        }
+      },
+      "is_direct": false,
+      "is_yanked": false,
+      "requested": true,
+      "metadata": {
+        "metadata_version": "2.1",
+        "name": "xlrd",
+        "version": "2.0.2",
+        "platform": [
+          "UNKNOWN"
+        ],
+        "summary": "Library for developers to extract data from Microsoft Excel (tm) .xls spreadsheet files",
+        "description": "xlrd\n====\n\n|Build Status|_ |Coverage Status|_ |Documentation|_ |PyPI version|_\n\n.. |Build Status| image:: https://circleci.com/gh/python-excel/xlrd/tree/master.svg?style=shield\n.. _Build Status: https://circleci.com/gh/python-excel/xlrd/tree/master\n\n.. |Coverage Status| image:: https://codecov.io/gh/python-excel/xlrd/branch/master/graph/badge.svg?token=lNSqwBBbvk\n.. _Coverage Status: https://codecov.io/gh/python-excel/xlrd\n\n.. |Documentation| image:: https://readthedocs.org/projects/xlrd/badge/?version=latest\n.. _Documentation: http://xlrd.readthedocs.io/en/latest/?badge=latest\n\n.. |PyPI version| image:: https://badge.fury.io/py/xlrd.svg\n.. _PyPI version: https://badge.fury.io/py/xlrd\n\n\nxlrd is a library for reading data and formatting information from Excel\nfiles in the historical ``.xls`` format.\n\n.. warning::\n\n  This library will no longer read anything other than ``.xls`` files. For\n  alternatives that read newer file formats, please see http://www.python-excel.org/.\n\nThe following are also not supported but will safely and reliably be ignored:\n\n*   Charts, Macros, Pictures, any other embedded object, **including** embedded worksheets.\n*   VBA modules\n*   Formulas, but results of formula calculations are extracted.\n*   Comments\n*   Hyperlinks\n*   Autofilters, advanced filters, pivot tables, conditional formatting, data validation\n\nPassword-protected files are not supported and cannot be read by this library.\n\nQuick start:\n\n.. code-block:: bash\n\n    pip install xlrd\n    \n.. code-block:: python\n\n    import xlrd\n    book = xlrd.open_workbook(\"myfile.xls\")\n    print(\"The number of worksheets is {0}\".format(book.nsheets))\n    print(\"Worksheet name(s): {0}\".format(book.sheet_names()))\n    sh = book.sheet_by_index(0)\n    print(\"{0} {1} {2}\".format(sh.name, sh.nrows, sh.ncols))\n    print(\"Cell D30 is {0}\".format(sh.cell_value(rowx=29, colx=3)))\n    for rx in range(sh.nrows):\n        print(sh.row(rx))\n\nFrom the command line, this will show the first, second and last rows of each sheet in each file:\n\n.. code-block:: bash\n\n    python PYDIR/scripts/runxlrd.py 3rows *blah*.xls\n\n\n",
+        "keywords": [
+          "xls",
+          "excel",
+          "spreadsheet",
+          "workbook"
+        ],
+        "home_page": "http://www.python-excel.org/",
+        "author": "Chris Withers",
+        "author_email": "chris@withers.org",
+        "license": "BSD",
+        "license_file": [
+          "LICENSE"
+        ],
+        "classifier": [
+          "Development Status :: 5 - Production/Stable",
+          "Intended Audience :: Developers",
+          "License :: OSI Approved :: BSD License",
+          "Programming Language :: Python",
+          "Programming Language :: Python :: 2",
+          "Programming Language :: Python :: 2.7",
+          "Programming Language :: Python :: 3",
+          "Programming Language :: Python :: 3.6",
+          "Programming Language :: Python :: 3.7",
+          "Programming Language :: Python :: 3.8",
+          "Programming Language :: Python :: 3.9",
+          "Operating System :: OS Independent",
+          "Topic :: Database",
+          "Topic :: Office/Business",
+          "Topic :: Software Development :: Libraries :: Python Modules"
+        ],
+        "requires_dist": [
+          "wheel ; extra == 'build'",
+          "twine ; extra == 'build'",
+          "sphinx ; extra == 'docs'",
+          "pytest ; extra == 'test'",
+          "pytest-cov ; extra == 'test'"
+        ],
+        "requires_python": ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*, !=3.5.*",
+        "provides_extra": [
+          "build",
+          "docs",
+          "test"
+        ]
+      }
+    },
+    {
+      "download_info": {
+        "url": "https://pypi.tuna.tsinghua.edu.cn/packages/b9/7b/4cabc76fcc21c3c7d5c671d8783984d30ac9d3bb387c4ba784fca3cdfa3a/pypinyin-0.55.0-py2.py3-none-any.whl",
+        "archive_info": {
+          "hash": "sha256=d53b1e8ad2cdb815fb2cb604ed3123372f5a28c6f447571244aca36fc62a286f",
+          "hashes": {
+            "sha256": "d53b1e8ad2cdb815fb2cb604ed3123372f5a28c6f447571244aca36fc62a286f"
+          }
+        }
+      },
+      "is_direct": false,
+      "is_yanked": false,
+      "requested": true,
+      "metadata": {
+        "metadata_version": "2.4",
+        "name": "pypinyin",
+        "version": "0.55.0",
+        "dynamic": [
+          "author",
+          "author-email",
+          "classifier",
+          "description",
+          "description-content-type",
+          "home-page",
+          "keywords",
+          "license",
+          "license-file",
+          "project-url",
+          "provides-extra",
+          "requires-python",
+          "summary"
+        ],
+        "summary": "汉字拼音转换模块/工具.",
+        "description": "汉字拼音转换工具（Python 版）\n=============================\n\n|Build| |GitHubAction| |Coverage| |Pypi version| |PyPI downloads| |DOI|\n\n\n将汉字转为拼音。可以用于汉字注音、排序、检索(`Russian translation`_) 。\n\n最初版本的代码参考了 `hotoo/pinyin <https://github.com/hotoo/pinyin>`__ 的实现。\n\n* Documentation: https://pypinyin.readthedocs.io/\n* GitHub: https://github.com/mozillazg/python-pinyin\n* License: MIT license\n* PyPI: https://pypi.org/project/pypinyin\n* Python version: 2.7, pypy, pypy3, 3.4, 3.5, 3.6, 3.7, 3.8, 3.9, 3.10, 3.11, 3.12, 3.13\n\n.. contents::\n\n\n特性\n----\n\n* 根据词组智能匹配最正确的拼音。\n* 支持多音字。\n* 简单的繁体支持，注音支持，威妥玛拼音支持。\n* 支持多种不同拼音/注音风格。\n\n\n安装\n----\n\n.. code-block:: bash\n\n    pip install pypinyin\n\n\n使用示例\n--------\n\n.. code-block:: python\n\n    >>> from pypinyin import pinyin, lazy_pinyin, Style\n    >>> pinyin('中心')  # or pinyin(['中心'])，参数值为列表时表示输入的是已分词后的数据\n    [['zhōng'], ['xīn']]\n    >>> pinyin('中心', heteronym=True)  # 启用多音字模式\n    [['zhōng', 'zhòng'], ['xīn']]\n    >>> pinyin('中心', style=Style.FIRST_LETTER)  # 设置拼音风格\n    [['z'], ['x']]\n    >>> pinyin('中心', style=Style.TONE2, heteronym=True)\n    [['zho1ng', 'zho4ng'], ['xi1n']]\n    >>> pinyin('中心', style=Style.TONE3, heteronym=True)\n    [['zhong1', 'zhong4'], ['xin1']]\n    >>> pinyin('中心', style=Style.BOPOMOFO)  # 注音风格\n    [['ㄓㄨㄥ'], ['ㄒㄧㄣ']]\n    >>> lazy_pinyin('威妥玛拼音', style=Style.WADEGILES)\n    ['wei', \"t'o\", 'ma', \"p'in\", 'yin']\n    >>> lazy_pinyin('中心')  # 不考虑多音字的情况\n    ['zhong', 'xin']\n    >>> lazy_pinyin('战略', v_to_u=True)  # 不使用 v 表示 ü\n    ['zhan', 'lüe']\n    # 使用 5 标识轻声\n    >>> lazy_pinyin('衣裳', style=Style.TONE3, neutral_tone_with_five=True)\n    ['yi1', 'shang5']\n    # 变调  nǐ hǎo -> ní hǎo\n    >>> lazy_pinyin('你好', style=Style.TONE2, tone_sandhi=True)\n    ['ni2', 'ha3o']\n\n**注意事项** ：\n\n* 默认情况下拼音结果不会标明哪个韵母是轻声，轻声的韵母没有声调或数字标识（可以通过参数 ``neutral_tone_with_five=True`` 开启使用 ``5`` 标识轻声 ）。\n* 默认情况下无声调相关拼音风格下的结果会使用 ``v`` 表示 ``ü`` （可以通过参数 ``v_to_u=True`` 开启使用 ``ü`` 代替 ``v`` ）。\n* 默认情况下会原样输出没有拼音的字符（自定义处理没有拼音的字符的方法见 `文档 <https://pypinyin.readthedocs.io/zh_CN/master/usage.html#handle-no-pinyin>`__ ）。\n* ``嗯`` 的拼音并不是大部分人以为的 ``en`` 以及存在既没有声母也没有韵母的拼音，详见下方 FAQ 中的说明。\n\n命令行工具：\n\n.. code-block:: console\n\n    $ pypinyin 音乐\n    yīn yuè\n\n    $ python -m pypinyin.tools.toneconvert to-tone 'zhong4 xin1'\n    zhòng xīn\n\n\n文档\n--------\n\n详细文档请访问：https://pypinyin.readthedocs.io/。\n\n项目代码开发方面的问题可以看看 `开发文档`_ 。\n\n\nFAQ\n---------\n\n拼音有误？\n+++++++++++++++++++++++++++++\n\n可以通过下面的方法提高拼音准确性：\n\n* 可以通过自定义词组拼音库或者单字拼音库的方式修正拼音结果，\n  详见 `文档 <https://pypinyin.readthedocs.io/zh_CN/master/usage.html#custom-dict>`__ 。\n\n.. code-block:: python\n\n    >> from pypinyin import load_phrases_dict, load_single_dict\n\n    >> load_phrases_dict({'桔子': [['jú'], ['zǐ']]})  # 增加 \"桔子\" 词组\n\n    >> load_single_dict({ord('还'): 'hái,huán'})  # 调整 \"还\" 字的拼音顺序或覆盖默认拼音\n\n* 也可以使用 `pypinyin-dict <https://github.com/mozillazg/pypinyin-dict>`__ 项目提供的自定义拼音库来纠正结果。\n\n.. code-block:: python\n\n    # 使用 phrase-pinyin-data 项目中 cc_cedict.txt 文件中的拼音数据优化结果\n    >>> from pypinyin_dict.phrase_pinyin_data import cc_cedict\n    >>> cc_cedict.load()\n\n    # 使用 pinyin-data 项目中 kXHC1983.txt 文件中的拼音数据优化结果\n    >>> from pypinyin_dict.pinyin_data import kxhc1983\n    >>> kxhc1983.load()\n\n* 如果是分词导致的拼音有误的话，可以先使用其他的分词模块对数据进行分词处理，\n  然后将分词后的词组结果列表作为函数的参数即可:\n\n.. code-block:: python\n\n    >>> # 使用其他分词模块分词，比如 jieba 之类，\n    >>> #或者基于 phrases_dict.py 里的词语数据使用其他分词算法分词\n    >>> words = list(jieba.cut('每股24.67美元的确定性协议'))\n    >>> pinyin(words)\n\n* 如果你希望能通过训练模型的方式提高拼音准确性的话，可以看一下 `pypinyin-g2pW <https://github.com/mozillazg/pypinyin-g2pW>`__ 这个项目。\n\n\n为什么没有 y, w, yu 几个声母？\n++++++++++++++++++++++++++++++++++++++++++++\n\n.. code-block:: python\n\n    >>> from pypinyin import Style, pinyin\n    >>> pinyin('下雨天', style=Style.INITIALS)\n    [['x'], [''], ['t']]\n\n因为根据 `《汉语拼音方案》 <http://www.moe.gov.cn/jyb_sjzl/ziliao/A19/195802/t19580201_186000.html>`__ ，\ny，w，ü (yu) 都不是声母。\n\n    声母风格（INITIALS）下，“雨”、“我”、“圆”等汉字返回空字符串，因为根据\n    `《汉语拼音方案》 <http://www.moe.gov.cn/jyb_sjzl/ziliao/A19/195802/t19580201_186000.html>`__ ，\n    y，w，ü (yu) 都不是声母，在某些特定韵母无声母时，才加上 y 或 w，而 ü 也有其特定规则。    —— @hotoo\n\n    **如果你觉得这个给你带来了麻烦，那么也请小心一些无声母的汉字（如“啊”、“饿”、“按”、“昂”等）。\n    这时候你也许需要的是首字母风格（FIRST_LETTER）**。    —— @hotoo\n\n    参考: `hotoo/pinyin#57 <https://github.com/hotoo/pinyin/issues/57>`__,\n    `#22 <https://github.com/mozillazg/python-pinyin/pull/22>`__,\n    `#27 <https://github.com/mozillazg/python-pinyin/issues/27>`__,\n    `#44 <https://github.com/mozillazg/python-pinyin/issues/44>`__\n\n如果觉得这个行为不是你想要的，就是想把 y 当成声母的话，可以指定 ``strict=False`` ，\n这个可能会符合你的预期：\n\n.. code-block:: python\n\n    >>> from pypinyin import Style, pinyin\n    >>> pinyin('下雨天', style=Style.INITIALS)\n    [['x'], [''], ['t']]\n    >>> pinyin('下雨天', style=Style.INITIALS, strict=False)\n    [['x'], ['y'], ['t']]\n\n详见 `strict 参数的影响`_ 。\n\n存在既没有声母也没有韵母的拼音？\n+++++++++++++++++++++++++++++++++\n\n是的，``strict=True`` 模式下存在极少数既没有声母也没有韵母的拼音。\n比如下面这些拼音（来自汉字 ``嗯``、``呒``、``呣``、``唔``）::\n\n    ń ńg ňg ǹg ň ǹ m̄ ḿ m̀\n\n尤其需要注意的是 ``嗯`` 的所有拼音都既没有声母也没有韵母，``呣`` 的默认拼音既没有声母也没有韵母。\n详见 `#109`_ `#259`_ `#284`_ 。\n\n\n如何将某一风格的拼音转换为其他风格的拼音？\n++++++++++++++++++++++++++++++++++++++++++++\n\n可以通过 ``pypinyin.contrib.tone_convert`` 模块提供的辅助函数对标准拼音进行转换，得到不同风格的拼音。\n比如将 ``zhōng`` 转换为 ``zhong``，或者获取拼音中的声母或韵母数据：\n\n.. code-block:: python\n\n    >>> from pypinyin.contrib.tone_convert import to_normal, to_tone, to_initials, to_finals\n    >>> to_normal('zhōng')\n    'zhong'\n    >>> to_tone('zhong1')\n    'zhōng'\n    >>> to_initials('zhōng')\n    'zh'\n    >>> to_finals('zhōng')\n    'ong'\n\n更多拼音转换的辅助函数，详见 ``pypinyin.contrib.tone_convert`` 模块的\n`文档 <https://pypinyin.readthedocs.io/zh_CN/master/contrib.html#tone-convert>`__ 。\n\n\n如何减少内存占用？\n++++++++++++++++++++\n\n如果对拼音的准确性不是特别在意的话，可以通过设置环境变量 ``PYPINYIN_NO_PHRASES``\n和 ``PYPINYIN_NO_DICT_COPY`` 来节省内存。\n详见 `文档 <https://pypinyin.readthedocs.io/zh_CN/master/faq.html#no-phrases>`__\n\n\n更多 FAQ 详见文档中的\n`FAQ <https://pypinyin.readthedocs.io/zh_CN/master/faq.html>`__ 部分。\n\n\n.. _#13 : https://github.com/mozillazg/python-pinyin/issues/113\n.. _strict 参数的影响: https://pypinyin.readthedocs.io/zh_CN/master/usage.html#strict\n\n\n拼音数据\n---------\n\n* 单个汉字的拼音使用 `pinyin-data`_ 的数据\n* 词组的拼音使用 `phrase-pinyin-data`_ 的数据\n* 声母和韵母使用 `《汉语拼音方案》 <http://www.moe.gov.cn/jyb_sjzl/ziliao/A19/195802/t19580201_186000.html>`__ 的数据\n\n\nRelated Projects\n-----------------\n\n* `hotoo/pinyin`__: 汉字拼音转换工具 Node.js/JavaScript 版。\n* `mozillazg/go-pinyin`__: 汉字拼音转换工具 Go 版。\n* `mozillazg/rust-pinyin`__: 汉字拼音转换工具 Rust 版。\n* `wolfgitpr/cpp-pinyin`__: 汉字拼音转换工具 c++ 版。\n* `wolfgitpr/csharp-pinyin`__: 汉字拼音转换工具 c# 版。\n\n\n__ https://github.com/hotoo/pinyin\n__ https://github.com/mozillazg/go-pinyin\n__ https://github.com/mozillazg/rust-pinyin\n__ https://github.com/wolfgitpr/cpp-pinyin\n__ https://github.com/wolfgitpr/csharp-pinyin\n\n\n.. |Build| image:: https://img.shields.io/circleci/project/github/mozillazg/python-pinyin/master.svg\n   :target: https://circleci.com/gh/mozillazg/python-pinyin\n.. |GitHubAction| image:: https://github.com/mozillazg/python-pinyin/workflows/CI/badge.svg\n   :target: https://github.com/mozillazg/python-pinyin/actions\n.. |Coverage| image:: https://img.shields.io/coveralls/github/mozillazg/python-pinyin/master.svg\n   :target: https://coveralls.io/github/mozillazg/python-pinyin\n.. |PyPI version| image:: https://img.shields.io/pypi/v/pypinyin.svg\n   :target: https://pypi.org/project/pypinyin/\n.. |DOI| image:: https://zenodo.org/badge/12830126.svg\n   :target: https://zenodo.org/badge/latestdoi/12830126\n.. |PyPI downloads| image:: https://img.shields.io/pypi/dm/pypinyin.svg\n   :target: https://pypi.org/project/pypinyin/\n\n\n\n.. _Russian translation: https://github.com/mozillazg/python-pinyin/blob/master/README_ru.rst\n.. _pinyin-data: https://github.com/mozillazg/pinyin-data\n.. _phrase-pinyin-data: https://github.com/mozillazg/phrase-pinyin-data\n.. _开发文档: https://pypinyin.readthedocs.io/zh_CN/develop/develop.html\n.. _#109: https://github.com/mozillazg/python-pinyin/issues/109\n.. _#259: https://github.com/mozillazg/python-pinyin/issues/259\n.. _#284: https://github.com/mozillazg/python-pinyin/issues/284\n",
+        "description_content_type": "text/x-rst",
+        "keywords": [
+          "pinyin",
+          "拼音"
+        ],
+        "home_page": "https://github.com/mozillazg/python-pinyin",
+        "author": "mozillazg, 闲耘",
+        "author_email": "mozillazg101@gmail.com",
+        "license": "MIT",
+        "license_file": [
+          "LICENSE.txt"
+        ],
+        "classifier": [
+          "Development Status :: 5 - Production/Stable",
+          "Intended Audience :: Developers",
+          "License :: OSI Approved :: MIT License",
+          "Operating System :: OS Independent",
+          "Programming Language :: Python",
+          "Programming Language :: Python :: 2",
+          "Programming Language :: Python :: 2.7",
+          "Programming Language :: Python :: 3",
+          "Programming Language :: Python :: 3.4",
+          "Programming Language :: Python :: 3.5",
+          "Programming Language :: Python :: 3.6",
+          "Programming Language :: Python :: 3.7",
+          "Programming Language :: Python :: 3.8",
+          "Programming Language :: Python :: 3.9",
+          "Programming Language :: Python :: 3.10",
+          "Programming Language :: Python :: 3.11",
+          "Programming Language :: Python :: 3.12",
+          "Programming Language :: Python :: 3.13",
+          "Programming Language :: Python :: Implementation :: CPython",
+          "Programming Language :: Python :: Implementation :: PyPy",
+          "Topic :: Utilities",
+          "Topic :: Text Processing"
+        ],
+        "requires_dist": [
+          "argparse; python_version < \"2.7\"",
+          "enum34; python_version < \"3.4\"",
+          "typing; python_version < \"3.5\""
+        ],
+        "requires_python": ">=2.6, !=3.0.*, !=3.1.*, !=3.2.*, <4",
+        "project_url": [
+          "Documentation, https://pypinyin.readthedocs.io/",
+          "Source, https://github.com/mozillazg/python-pinyin",
+          "Tracker, https://github.com/mozillazg/python-pinyin/issues"
+        ]
+      }
+    },
+    {
+      "download_info": {
+        "url": "https://pypi.tuna.tsinghua.edu.cn/packages/ec/1e/32971905a7ab47f8b66866ed949fa48b104ba1c4a6fa57794c4f2c4b2cb8/markdown-3.11-py3-none-any.whl",
+        "archive_info": {
+          "hash": "sha256=cd6c89e7eb308c8b332ed673215a52d208a43f8bacc030b1419376129408719e",
+          "hashes": {
+            "sha256": "cd6c89e7eb308c8b332ed673215a52d208a43f8bacc030b1419376129408719e"
+          }
+        }
+      },
+      "is_direct": false,
+      "is_yanked": false,
+      "requested": true,
+      "metadata": {
+        "metadata_version": "2.4",
+        "name": "Markdown",
+        "version": "3.11",
+        "dynamic": [
+          "license-file"
+        ],
+        "summary": "Python implementation of John Gruber's Markdown.",
+        "description": "[Python-Markdown][]\n===================\n\n[![Build Status][build-button]][build]\n[![Coverage Status][codecov-button]][codecov]\n[![Latest Version][mdversion-button]][md-pypi]\n[![Python Versions][pyversion-button]][md-pypi]\n[![BSD License][bsdlicense-button]][bsdlicense]\n[![Code of Conduct][codeofconduct-button]][Code of Conduct]\n\n[build-button]: https://github.com/Python-Markdown/markdown/actions/workflows/tox.yml/badge.svg\n[build]: https://github.com/Python-Markdown/markdown/actions/workflows/tox.yml\n[codecov-button]: https://codecov.io/gh/Python-Markdown/markdown/branch/master/graph/badge.svg\n[codecov]: https://codecov.io/gh/Python-Markdown/markdown\n[mdversion-button]: https://img.shields.io/pypi/v/Markdown.svg\n[md-pypi]: https://pypi.org/project/Markdown/\n[pyversion-button]: https://img.shields.io/pypi/pyversions/Markdown.svg\n[bsdlicense-button]: https://img.shields.io/badge/license-BSD-yellow.svg\n[bsdlicense]: https://opensource.org/licenses/BSD-3-Clause\n[codeofconduct-button]: https://img.shields.io/badge/code%20of%20conduct-contributor%20covenant-green.svg?style=flat-square\n[Code of Conduct]: https://github.com/Python-Markdown/markdown/blob/master/CODE_OF_CONDUCT.md\n\nThis is a Python implementation of John Gruber's [Markdown][].\nIt is almost completely compliant with the reference implementation,\nthough there are a few known issues. See [Features][] for information\non what exactly is supported and what is not. Additional features are\nsupported by the [Available Extensions][].\n\n[Python-Markdown]: https://Python-Markdown.github.io/\n[Markdown]: https://daringfireball.net/projects/markdown/\n[Features]: https://Python-Markdown.github.io#Features\n[Available Extensions]: https://Python-Markdown.github.io/extensions\n\nDocumentation\n-------------\n\n```bash\npip install markdown\n```\n```python\nimport markdown\nhtml = markdown.markdown(your_text_string)\n```\n\nFor more advanced [installation] and [usage] documentation, see the `docs/` directory\nof the distribution or the project website at <https://Python-Markdown.github.io/>.\n\n[installation]: https://python-markdown.github.io/install/\n[usage]: https://python-markdown.github.io/reference/\n\nSee the change log at <https://python-markdown.github.io/changelog/>.\n\nSupport\n-------\n\nYou may report bugs, ask for help, and discuss various other issues on the [bug tracker][].\n\n[bug tracker]: https://github.com/Python-Markdown/markdown/issues\n\nCode of Conduct\n---------------\n\nEveryone interacting in the Python-Markdown project's code bases, issue trackers,\nand mailing lists is expected to follow the [Code of Conduct].\n",
+        "description_content_type": "text/markdown",
+        "keywords": [
+          "markdown",
+          "markdown-parser",
+          "python-markdown",
+          "markdown-to-html"
+        ],
+        "author": "Manfred Stienstra, Yuri Takhteyev",
+        "author_email": "Waylan limberg <python.markdown@gmail.com>",
+        "maintainer": "Isaac Muse",
+        "maintainer_email": "Waylan Limberg <python.markdown@gmail.com>",
+        "license_expression": "BSD-3-Clause",
+        "license_file": [
+          "LICENSE.md"
+        ],
+        "classifier": [
+          "Development Status :: 5 - Production/Stable",
+          "Operating System :: OS Independent",
+          "Programming Language :: Python",
+          "Programming Language :: Python :: 3",
+          "Programming Language :: Python :: 3.11",
+          "Programming Language :: Python :: 3.12",
+          "Programming Language :: Python :: 3.13",
+          "Programming Language :: Python :: 3.14",
+          "Programming Language :: Python :: 3.15",
+          "Programming Language :: Python :: 3 :: Only",
+          "Programming Language :: Python :: Implementation :: CPython",
+          "Programming Language :: Python :: Implementation :: PyPy",
+          "Topic :: Communications :: Email :: Filters",
+          "Topic :: Internet :: WWW/HTTP :: Dynamic Content :: CGI Tools/Libraries",
+          "Topic :: Internet :: WWW/HTTP :: Site Management",
+          "Topic :: Software Development :: Documentation",
+          "Topic :: Software Development :: Libraries :: Python Modules",
+          "Topic :: Text Processing :: Filters",
+          "Topic :: Text Processing :: Markup :: HTML",
+          "Topic :: Text Processing :: Markup :: Markdown"
+        ],
+        "requires_dist": [
+          "coverage; extra == \"testing\"",
+          "pyyaml; extra == \"testing\"",
+          "zensical==0.0.62; extra == \"docs\"",
+          "mdx_gh_links==0.4; extra == \"docs\"",
+          "mkdocstrings==1.0.6; extra == \"docs\"",
+          "mkdocstrings-python==1.16.8; extra == \"docs\"",
+          "pygments==2.21.0; extra == \"docs\"",
+          "pymdown-extensions==11.0.2; extra == \"docs\"",
+          "justhtml==3.11.2; extra == \"docs\"",
+          "ghp-import==2.1.0; extra == \"docs\""
+        ],
+        "requires_python": ">=3.11",
+        "project_url": [
+          "Homepage, https://Python-Markdown.github.io/",
+          "Documentation, https://Python-Markdown.github.io/",
+          "Repository, https://github.com/Python-Markdown/markdown",
+          "Issue Tracker, https://github.com/Python-Markdown/markdown/issues",
+          "Changelog, https://python-markdown.github.io/changelog/"
+        ],
+        "provides_extra": [
+          "testing",
+          "docs"
+        ]
+      }
+    },
+    {
+      "download_info": {
+        "url": "https://pypi.tuna.tsinghua.edu.cn/packages/18/42/a945f65cc61c739ec80f4112c4b78ed1791f25d33f45f19389c9c9e247e2/pypdf-6.20.0-py3-none-any.whl",
+        "archive_info": {
+          "hash": "sha256=f003fc2014814d264fe7dd3f9d435c158e23e1a85a2233f87a0a2d6d21c914ad",
+          "hashes": {
+            "sha256": "f003fc2014814d264fe7dd3f9d435c158e23e1a85a2233f87a0a2d6d21c914ad"
+          }
+        }
+      },
+      "is_direct": false,
+      "is_yanked": false,
+      "requested": true,
+      "metadata": {
+        "metadata_version": "2.5",
+        "name": "pypdf",
+        "version": "6.20.0",
+        "summary": "A pure-python PDF library capable of splitting, merging, cropping, and transforming PDF files",
+        "description": "[![PyPI version](https://badge.fury.io/py/pypdf.svg)](https://badge.fury.io/py/pypdf)\n[![Python Support](https://img.shields.io/pypi/pyversions/pypdf.svg)](https://pypi.org/project/pypdf/)\n[![](https://img.shields.io/badge/-documentation-green)](https://pypdf.readthedocs.io/en/stable/)\n[![GitHub last commit](https://img.shields.io/github/last-commit/py-pdf/pypdf)](https://github.com/py-pdf/pypdf)\n[![codecov](https://codecov.io/gh/py-pdf/pypdf/branch/main/graph/badge.svg?token=id42cGNZ5Z)](https://codecov.io/gh/py-pdf/pypdf)\n\n# pypdf\n\npypdf is a free and open-source pure-python PDF library capable of splitting,\n[merging](https://pypdf.readthedocs.io/en/stable/user/merging-pdfs.html),\n[cropping, and transforming](https://pypdf.readthedocs.io/en/stable/user/cropping-and-transforming.html)\nthe pages of PDF files. It can also add\ncustom data, viewing options, and\n[passwords](https://pypdf.readthedocs.io/en/stable/user/encryption-decryption.html)\nto PDF files. pypdf can\n[retrieve text](https://pypdf.readthedocs.io/en/stable/user/extract-text.html)\nand\n[metadata](https://pypdf.readthedocs.io/en/stable/user/metadata.html)\nfrom PDFs as well.\n\nSee [pdfly](https://github.com/py-pdf/pdfly) for a CLI application that uses pypdf to interact with PDFs.\n\n## Installation\n\nInstall pypdf using pip:\n\n```\npip install pypdf\n```\n\nFor using pypdf with AES encryption or decryption, install extra dependencies:\n\n```\npip install pypdf[crypto]\n```\n\n> **NOTE**: `pypdf` 3.1.0 and above include significant improvements compared to\n> previous versions. Please refer to [the migration\n> guide](https://pypdf.readthedocs.io/en/latest/user/migration-1-to-2.html) for\n> more information.\n\n## Usage\n\n```python\nfrom pypdf import PdfReader\n\nreader = PdfReader(\"example.pdf\")\nnumber_of_pages = len(reader.pages)\npage = reader.pages[0]\ntext = page.extract_text()\n```\n\npypdf can do a lot more, e.g. splitting, merging, reading and creating annotations, decrypting and encrypting. Check out the\n[documentation](https://pypdf.readthedocs.io/en/stable/) for additional usage\nexamples!\n\nFor questions and answers, visit\n[StackOverflow](https://stackoverflow.com/questions/tagged/pypdf)\n(tagged with [pypdf](https://stackoverflow.com/questions/tagged/pypdf)).\n\n## Contributions\n\nMaintaining pypdf is a collaborative effort. You can support the project by\nwriting documentation, helping to narrow down issues, and submitting code.\nSee the [CONTRIBUTING.md](https://github.com/py-pdf/pypdf/blob/main/CONTRIBUTING.md) file for more information.\n\n### Q&A\n\nThe experience pypdf users have covers the whole range from beginner to expert. You can contribute to the pypdf community by answering questions\non [StackOverflow](https://stackoverflow.com/questions/tagged/pypdf),\nhelping in [discussions](https://github.com/py-pdf/pypdf/discussions),\nand asking users who report issues for [MCVE](https://stackoverflow.com/help/minimal-reproducible-example)'s (Code + example PDF!).\n\n\n### Issues\n\nA good bug ticket includes a MCVE - a minimal complete verifiable example.\nFor pypdf, this means that you must upload a PDF that causes the bug to occur\nas well as the code you're executing with all of the output. Use\n`print(pypdf.__version__)` to tell us which version you're using.\n\n### Code\n\nAll code contributions are welcome, but smaller ones have a better chance to\nget included in a timely manner. Adding unit tests for new features or test\ncases for bugs you've fixed help us to ensure that the Pull Request (PR) is fine.\n\npypdf includes a test suite which can be executed with `pytest`:\n\n```bash\n$ pytest\n===================== test session starts =====================\nplatform linux -- Python 3.6.15, pytest-7.0.1, pluggy-1.0.0\nrootdir: /home/moose/GitHub/Martin/pypdf\nplugins: cov-3.0.0\ncollected 233 items\n\ntests/test_basic_features.py ..                         [  0%]\ntests/test_constants.py .                               [  1%]\ntests/test_filters.py .................x.....           [ 11%]\ntests/test_generic.py ................................. [ 25%]\n.............                                           [ 30%]\ntests/test_javascript.py ..                             [ 31%]\ntests/test_merger.py .                                  [ 32%]\ntests/test_page.py .........................            [ 42%]\ntests/test_pagerange.py ................                [ 49%]\ntests/test_papersizes.py ..................             [ 57%]\ntests/test_reader.py .................................. [ 72%]\n...............                                         [ 78%]\ntests/test_utils.py ....................                [ 87%]\ntests/test_workflows.py ..........                      [ 91%]\ntests/test_writer.py .................                  [ 98%]\ntests/test_xmp.py ...                                   [100%]\n\n========== 232 passed, 1 xfailed, 1 warning in 4.52s ==========\n```\n\n",
+        "description_content_type": "text/markdown",
+        "author_email": "Mathieu Fenniak <biziqe@mathieu.fenniak.net>",
+        "maintainer": "stefan6419846",
+        "maintainer_email": "Martin Thoma <info@martin-thoma.de>",
+        "license_expression": "BSD-3-Clause",
+        "license_file": [
+          "LICENSE"
+        ],
+        "classifier": [
+          "Development Status :: 5 - Production/Stable",
+          "Intended Audience :: Developers",
+          "Programming Language :: Python :: 3",
+          "Programming Language :: Python :: 3 :: Only",
+          "Programming Language :: Python :: 3.9",
+          "Programming Language :: Python :: 3.10",
+          "Programming Language :: Python :: 3.11",
+          "Programming Language :: Python :: 3.12",
+          "Programming Language :: Python :: 3.13",
+          "Programming Language :: Python :: 3.14",
+          "Programming Language :: Python :: 3.15",
+          "Operating System :: OS Independent",
+          "Topic :: Software Development :: Libraries :: Python Modules",
+          "Typing :: Typed"
+        ],
+        "requires_dist": [
+          "typing_extensions >= 4.0; python_version < '3.11'",
+          "brotli>=1.2.0 ; extra == \"brotli\"",
+          "cryptography>3.0 ; extra == \"crypto\"",
+          "PyCryptodome ; extra == \"cryptodome\"",
+          "flit ; extra == \"dev\"",
+          "pip-tools ; extra == \"dev\"",
+          "pre-commit ; extra == \"dev\"",
+          "pytest-cov ; extra == \"dev\"",
+          "pytest-socket ; extra == \"dev\"",
+          "pytest-timeout ; extra == \"dev\"",
+          "pytest-xdist ; extra == \"dev\"",
+          "wheel ; extra == \"dev\"",
+          "myst_parser ; extra == \"docs\"",
+          "sphinx ; extra == \"docs\"",
+          "sphinx_rtd_theme ; extra == \"docs\"",
+          "fonttools ; extra == \"fonts\"",
+          "arabic-reshaper ; extra == \"full\"",
+          "brotli>=1.2.0 ; extra == \"full\"",
+          "cryptography>3.0 ; extra == \"full\"",
+          "fonttools ; extra == \"full\"",
+          "Pillow>=8.0.0 ; extra == \"full\"",
+          "python-bidi ; extra == \"full\"",
+          "Pillow>=8.0.0 ; extra == \"image\"",
+          "arabic-reshaper ; extra == \"rtl-text\"",
+          "python-bidi ; extra == \"rtl-text\""
+        ],
+        "requires_python": ">=3.9",
+        "project_url": [
+          "Bug Reports, https://github.com/py-pdf/pypdf/issues",
+          "Changelog, https://pypdf.readthedocs.io/en/latest/meta/CHANGELOG.html",
+          "Documentation, https://pypdf.readthedocs.io/en/latest/",
+          "Source, https://github.com/py-pdf/pypdf"
+        ],
+        "provides_extra": [
+          "brotli",
+          "crypto",
+          "cryptodome",
+          "dev",
+          "docs",
+          "fonts",
+          "full",
+          "image",
+          "rtl-text"
+        ]
+      }
+    },
+    {
+      "download_info": {
+        "url": "https://pypi.tuna.tsinghua.edu.cn/packages/c1/8b/5fe2cc11fee489817272089c4203e679c63b570a5aaeb18d852ae3cbba6a/et_xmlfile-2.0.0-py3-none-any.whl",
+        "archive_info": {
+          "hash": "sha256=7a91720bc756843502c3b7504c77b8fe44217c85c537d85037f0f536151b2caa",
+          "hashes": {
+            "sha256": "7a91720bc756843502c3b7504c77b8fe44217c85c537d85037f0f536151b2caa"
+          }
+        }
+      },
+      "is_direct": false,
+      "is_yanked": false,
+      "requested": false,
+      "metadata": {
+        "metadata_version": "2.1",
+        "name": "et_xmlfile",
+        "version": "2.0.0",
+        "summary": "An implementation of lxml.xmlfile for the standard library",
+        "description": ".. image:: https://foss.heptapod.net/openpyxl/et_xmlfile/badges/branch/default/coverage.svg\n    :target: https://coveralls.io/bitbucket/openpyxl/et_xmlfile?branch=default\n    :alt: coverage status\n\net_xmfile\n=========\n\nXML can use lots of memory, and et_xmlfile is a low memory library for creating large XML files\nAnd, although the standard library already includes an incremental parser, `iterparse` it has no equivalent when writing XML. Once an element has been added to the tree, it is written to\nthe file or stream and the memory is then cleared.\n\nThis module is based upon the `xmlfile module from lxml <http://lxml.de/api.html#incremental-xml-generation>`_ with the aim of allowing code to be developed that will work with both libraries.\nIt was developed initially for the openpyxl project, but is now a standalone module.\n\nThe code was written by Elias Rabel as part of the `Python Düsseldorf <http://pyddf.de>`_ openpyxl sprint in September 2014.\n\nProper support for incremental writing was provided by Daniel Hillier in 2024\n\nNote on performance\n-------------------\n\nThe code was not developed with performance in mind, but turned out to be faster than the existing SAX-based implementation but is generally slower than lxml's xmlfile.\nThere is one area where an optimisation for lxml may negatively affect the performance of et_xmfile and that is when using the `.element()` method on the xmlfile context manager. It is, therefore, recommended simply to create Elements write these directly, as in the sample code.\n",
+        "home_page": "https://foss.heptapod.net/openpyxl/et_xmlfile",
+        "author": "See AUTHORS.txt",
+        "author_email": "charlie.clark@clark-consulting.eu",
+        "license": "MIT",
+        "license_file": [
+          "LICENCE.python",
+          "LICENCE.rst",
+          "AUTHORS.txt"
+        ],
+        "classifier": [
+          "Development Status :: 5 - Production/Stable",
+          "Operating System :: MacOS :: MacOS X",
+          "Operating System :: Microsoft :: Windows",
+          "Operating System :: POSIX",
+          "License :: OSI Approved :: MIT License",
+          "Programming Language :: Python",
+          "Programming Language :: Python :: 3.8",
+          "Programming Language :: Python :: 3.9",
+          "Programming Language :: Python :: 3.10",
+          "Programming Language :: Python :: 3.11",
+          "Programming Language :: Python :: 3.12",
+          "Programming Language :: Python :: 3.13"
+        ],
+        "requires_python": ">=3.8",
+        "project_url": [
+          "Documentation, https://openpyxl.pages.heptapod.net/et_xmlfile/",
+          "Source, https://foss.heptapod.net/openpyxl/et_xmlfile",
+          "Tracker, https://foss.heptapod.net/openpyxl/et_xmfile/-/issues"
+        ]
+      }
+    }
+  ],
+  "environment": {
+    "implementation_name": "cpython",
+    "implementation_version": "3.12.10",
+    "os_name": "nt",
+    "platform_machine": "AMD64",
+    "platform_release": "11",
+    "platform_system": "Windows",
+    "platform_version": "10.0.26200",
+    "python_full_version": "3.12.10",
+    "platform_python_implementation": "CPython",
+    "python_version": "3.12",
+    "sys_platform": "win32"
+  }
+}

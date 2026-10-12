@@ -1,0 +1,7 @@
+{
+  "date": "2026-10-12",
+  "recovery": "Resumed same IntegrationOwner after upstream transport interruption; read local checkpoint and own recent history; no compression API claimed.",
+  "completed_writes": ["main explicit domain dispatch, envelopes/raw/Response/None, method aliases and POST handoff, spooled multipart, token precedence", "fresh init all domain DDL and reflection, worker/scopes/lifespan", "DAV user-before-credential lock and disabled policy", "service token schema and messaging callsite, auth helper owned by IndependentIdentity", "WS transport_sent separate from ACK, discarded ACL rows unblock queue; no shim", "dialog/files_jobs actual bot_get integration", "search.dialog_members historical MVA updater + registration and sync_members outbox", "37 installed dependency lock with official hashes; application checks not run", "README/run runtime-up/down and deferred tests_integration.py"],
+  "remaining": ["refresh final Identity contract and affected callsites", "complete endpoint and 22Task/15Observer evidence, source snapshots and hashes", "1217 report and exact QA handoff", "precise stage and local commit; no push"],
+  "verification": "NOT_RUN: no application build/test/lint/formatter/smoke/services/DB. Dependency installation and source-only evidence analysis only."
+}

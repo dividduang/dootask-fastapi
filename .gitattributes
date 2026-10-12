@@ -18,3 +18,6 @@
 frontend/** -text !eol !working-tree-encoding
 # Evidence manifests refer to raw file digests; never normalize evidence bytes.
 docs/evidence/** -text !eol !working-tree-encoding
+# Imported IP list/changelog are source-bound data, not normalized prose.
+backend/domains/accounts_cn_ips.txt -text !eol !working-tree-encoding
+backend/domains/accounts_upstream_changelog.txt -text !eol !working-tree-encoding

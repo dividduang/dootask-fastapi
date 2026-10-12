@@ -1,0 +1,57 @@
+{
+  "status": "NOT_RUN",
+  "launch": [
+    ".\\run.ps1 runtime-up",
+    ".\\run.ps1 secrets (only if backend.env absent)",
+    ".\\run.ps1 init-db (isolated empty dootask_fastapi only)",
+    ".\\run.ps1 serve -ListenHost 127.0.0.1 -Port 18080"
+  ],
+  "registration": {
+    "path": "POST /api/users/login",
+    "json": {
+      "type": "reg",
+      "email": "qa-owner@example.test",
+      "password": "unique strong synthetic password"
+    },
+    "first_human": "transactional singleton grants admin once",
+    "mail_policy": "actual configured SMTP/verification; ret0 email value commits legitimate registration + outbox, no session"
+  },
+  "commands": [
+    "python -m unittest backend.tests_shared backend.templates.tests_host tests.test_accounts_contract",
+    "python -m backend.tests_independent (read CLI isolated-empty-DB preconditions first)",
+    "python -m backend.tests_files",
+    "python -m backend.tests_projects",
+    "python -m backend.tests_projects --integration",
+    "python -m backend.tests_messaging --users <admin-id> <member-id> <outsider-id>",
+    "python -m backend.tests_integration --database"
+  ],
+  "critical_scenarios": [
+    "concurrent first registration/admin reset/own password change",
+    "auth/login/http/ws/dav disabled_at and identity disable",
+    "201 service tokens do not create devices; logout/revoke invalidates them; service cannot refresh/QR/WS",
+    "DAV authenticate concurrent revoke same account: no ABBA and revoked credential denied",
+    "200 revoked-scoped WS deliveries followed by tombstone: discard not ACK, tombstone reached",
+    "successful websocket send without receipt not redelivered; send failure and process crash before sent commit explicit retry/duplicate",
+    "first empty-DB file ZIP pack creates real system-msg bot, no interface prewarming",
+    "old Manticore message -> add member -> historical search visible -> remove member -> authoritative DB denies even before index refresh",
+    "PGP OpenPGP.js duplex, multipart blob 5MiB, ordinary uploads, Office callback query identity token vs body JWT",
+    "worker shutdown joins current transaction; outbox failure rolled back/retry evidence survives",
+    "SSE actual stream, file grants expiration, reports, XLS BIFF8 and XLSX exports",
+    "frontend production candidate build and real UI removal of vendor license only; original unrelated bytes/resources retained"
+  ],
+  "external_blockers": [
+    "SMTP/test mailbox",
+    "LDAP endpoint/CA/bind credentials when enabled",
+    "Manticore/embedding service",
+    "AI/appstore plugin config and credentials",
+    "Office/nginx DNS/reverse proxy/preview",
+    "LibreOffice for DOC/PPT",
+    "Agora/face/Umeng when enabled"
+  ],
+  "not_a_blocker": [
+    "doo.so",
+    "vendor commercial license",
+    "old user database access"
+  ],
+  "frontend_build_handoff": "docs/evidence/independent/frontend-build-handoff.json"
+}

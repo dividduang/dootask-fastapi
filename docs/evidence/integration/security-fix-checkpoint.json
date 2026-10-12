@@ -1,0 +1,115 @@
+{
+  "observed_at": "2026-10-12T10:03:59.347061+00:00",
+  "findings": [
+    {
+      "finding": "WS_HEAD_OF_LINE",
+      "binding": {
+        "file": "backend/realtime.py",
+        "function": "_pending",
+        "sha256": "70f9c9863cccccbcf64b62cd7db9d83397699d2af60c4a6a422308881ec3a431",
+        "lines": [
+          [
+            51,
+            65
+          ]
+        ],
+        "binding": "SOURCE_BOUND"
+      },
+      "repair": "Discard revoked/ignored rows distinctly from sent/ACK; next poll reaches later authorized tombstones",
+      "deferred_check": "backend/tests_integration.py:database_checks",
+      "verification": "NOT_RUN_OWNER_IMPLEMENTED"
+    },
+    {
+      "finding": "WEBHOOK_DEVICE_EVICTION",
+      "binding": {
+        "file": "backend/auth.py",
+        "function": "issue_service_token",
+        "sha256": "fa0884871f20224a21b364e8425377c9cd8a1764a2fd53ac3a84ad9b2ee55a8f",
+        "lines": [
+          [
+            210,
+            221
+          ]
+        ],
+        "binding": "SOURCE_BOUND"
+      },
+      "repair": "purpose service, NULL device, <=1h; generation/disable/revoke checks; no interactive quota",
+      "deferred_check": "backend/tests_independent.py",
+      "verification": "NOT_RUN_OWNER_IMPLEMENTED"
+    },
+    {
+      "finding": "DAV_LOCK_ORDER",
+      "binding": {
+        "file": "backend/domains/filedav.py",
+        "function": "authenticate_dav",
+        "sha256": "3e91b73db69f5a5561e74315a61302ba2b58eee8ac96eb24aa74d0c7e19b3bc8",
+        "lines": [
+          [
+            205,
+            230
+          ]
+        ],
+        "binding": "SOURCE_BOUND"
+      },
+      "repair": "Owner discovery, user lock, credential lock, current-state revalidation",
+      "deferred_check": "backend/tests_integration.py:database_checks",
+      "verification": "NOT_RUN_OWNER_IMPLEMENTED"
+    },
+    {
+      "finding": "ADMIN_RESET_LOCK_ORDER",
+      "binding": {
+        "file": "backend/domains/account_admin.py",
+        "function": "operation",
+        "sha256": "f80a18b72782d9932d050be84141c8ccc76459e34c8df9e5a728e8db29cd4ac7",
+        "lines": [
+          [
+            179,
+            228
+          ]
+        ],
+        "binding": "SOURCE_BOUND"
+      },
+      "repair": "Identity owner locks target user before credentials/devices",
+      "deferred_check": "backend/tests_independent.py",
+      "verification": "NOT_RUN_OWNER_IMPLEMENTED"
+    },
+    {
+      "finding": "HISTORICAL_SEARCH_MEMBERSHIP",
+      "binding": {
+        "file": "backend/domains/search.py",
+        "function": "sync_dialog_members",
+        "sha256": "6714c3d7ef923237e22eb04670800c61ed778310ae72e9875d938335427c425a",
+        "lines": [
+          [
+            253,
+            266
+          ]
+        ],
+        "binding": "SOURCE_BOUND"
+      },
+      "repair": "sync_members outbox + real Manticore MVA updater; dialog lock serializes replacement; DB ACL still authoritative",
+      "deferred_check": "Manticore real external scenario in 1217",
+      "verification": "NOT_RUN_OWNER_IMPLEMENTED"
+    },
+    {
+      "finding": "FIRST_SYSTEM_BOT",
+      "binding": {
+        "file": "backend/domains/files_jobs.py",
+        "function": "pack",
+        "sha256": "8ddbd2e7d5f2835c8c6ad8998854f3e6a0e7243014816d6f320028e100c4c0f4",
+        "lines": [
+          [
+            17,
+            64
+          ]
+        ],
+        "binding": "SOURCE_BOUND"
+      },
+      "repair": "pack and dialog._bot call actual whitelist bot_get; disabled bot not recreated",
+      "deferred_check": "fresh DB first pack and bot message UI/API scenario in 1217",
+      "verification": "NOT_RUN_OWNER_IMPLEMENTED"
+    }
+  ],
+  "review_snapshot": "docs/evidence/review/integration-review-snapshot.json",
+  "snapshot_note": "Preserve original reviewer observation; this checkpoint binds later repairs, not successful reproduction."
+}

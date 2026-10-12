@@ -820,7 +820,6 @@ export default {
                     [
                         {path: 'personal', name: '个人设置'},
                         {path: 'system', name: '系统设置'},
-                        {path: 'license', name: 'License Key'},
                     ],
                     [
                         {path: 'system-update', name: '更新系统', visible: !!this.systemNewVersion},

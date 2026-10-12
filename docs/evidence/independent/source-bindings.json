@@ -1,0 +1,161 @@
+{
+  "status": "IMPLEMENTED_NOT_RUNTIME_VERIFIED",
+  "verification_executed": [],
+  "backend": [
+    {
+      "path": "backend/auth.py",
+      "exists": true,
+      "sha256": "fa0884871f20224a21b364e8425377c9cd8a1764a2fd53ac3a84ad9b2ee55a8f",
+      "bytes": 20287,
+      "lines": 367
+    },
+    {
+      "path": "backend/domains/accounts.py",
+      "exists": true,
+      "sha256": "58e4b10ae9a731040af28e9e80cc6fd1eeeed99e665a8a089949930b6cf08168",
+      "bytes": 23902,
+      "lines": 453
+    },
+    {
+      "path": "backend/domains/accounts.sql",
+      "exists": true,
+      "sha256": "09e8e68a984f5737a235a6fe0f0f0f775b190f449471d66915104d5959d3c41c",
+      "bytes": 786,
+      "lines": 19
+    },
+    {
+      "path": "backend/domains/account_import.py",
+      "exists": true,
+      "sha256": "699e06f15b75b352ff192c57bff57ae5c28a149fff7c5c2f89113d941e8eb4be",
+      "bytes": 5352,
+      "lines": 105
+    },
+    {
+      "path": "backend/domains/account_admin.py",
+      "exists": true,
+      "sha256": "f80a18b72782d9932d050be84141c8ccc76459e34c8df9e5a728e8db29cd4ac7",
+      "bytes": 18005,
+      "lines": 264
+    },
+    {
+      "path": "backend/domains/account_integrations.py",
+      "exists": true,
+      "sha256": "ab4570f9512d9c74ca060deebf91be593ee9248e7680a46b2affbed2e78cd9f9",
+      "bytes": 11551,
+      "lines": 227
+    },
+    {
+      "path": "backend/domains/account_meetings.py",
+      "exists": true,
+      "sha256": "f0eee9a79c73b6f6efd8c268595bf3da310a63390d1a152e730542321fe9ae8d",
+      "bytes": 10590,
+      "lines": 206
+    },
+    {
+      "path": "backend/domains/account_bot_jobs.py",
+      "exists": true,
+      "sha256": "3e1c9f3dd47586b7198a53bdc4d56bb50af40859e4e933b9786b2eaf53f42110",
+      "bytes": 10376,
+      "lines": 144
+    },
+    {
+      "path": "backend/domains/account_jobs.py",
+      "exists": true,
+      "sha256": "c56407f1c5e9c6ba9bca80decbb1d8ce4c1e3bbdd34d1531a20b4d266b19ddcb",
+      "bytes": 4925,
+      "lines": 94
+    },
+    {
+      "path": "backend/domains/account_system_files.py",
+      "exists": true,
+      "sha256": "e40cf01bd699b56c657a4497c5c0cd22978dce0b4a7b25f6814bde5426a1bdae",
+      "bytes": 9870,
+      "lines": 141
+    },
+    {
+      "path": "backend/domains/system.py",
+      "exists": true,
+      "sha256": "5e285ff1eddb3c8ae047f40229190999d62806db53ffabc4f91f29578b662647",
+      "bytes": 23554,
+      "lines": 347
+    },
+    {
+      "path": "backend/domains/files_config.py",
+      "exists": true,
+      "sha256": "4e7fcb1b93d1349a27f958d577eefca8eb7af07765ef7b1a9cb6ef7a3a36a3d3",
+      "bytes": 1273,
+      "lines": 33
+    },
+    {
+      "path": "backend/domains/license.py",
+      "exists": false
+    },
+    {
+      "path": "backend/tests_shared.py",
+      "exists": true,
+      "sha256": "e567f9d8cdbddff19554058057a6715470b3bf81505cf5cb6cfc913b22e2cc65",
+      "bytes": 7278,
+      "lines": 125
+    },
+    {
+      "path": "backend/tests_independent.py",
+      "exists": true,
+      "sha256": "083b57f5fcdb6e39d82fa672c902001b030b9ad98c8729ad5efbfc2327f3374a",
+      "bytes": 8417,
+      "lines": 139
+    },
+    {
+      "path": "tests/test_accounts_contract.py",
+      "exists": true,
+      "sha256": "bf1e45c8318deb00f4f48c7c00a28c96d3173209d2213d0556bfaac479c767fd",
+      "bytes": 3080,
+      "lines": 52
+    }
+  ],
+  "source": [
+    {
+      "path": "app/Models/User.php",
+      "exists": true,
+      "sha256": "59563a996db2397f5d95e6368ea685e48b20ac1022100c72bf917c4b0aa915de",
+      "bytes": 40791,
+      "lines": 1105,
+      "read_ranges": [
+        "380-431",
+        "443-489",
+        "1022-1054"
+      ]
+    },
+    {
+      "path": "app/Models/WebSocketDialog.php",
+      "exists": true,
+      "sha256": "4334008d29f48f6da5f78931a1568111ef415cb8d3a38036c14f232e3b82bfe1",
+      "bytes": 51982,
+      "lines": 1257,
+      "read_ranges": [
+        "484-517"
+      ]
+    },
+    {
+      "path": "app/Http/Controllers/Api/UsersController.php",
+      "exists": true,
+      "sha256": "d3480aae25371d1e5f2d9a32a93e8a13519e0355604ab13a745fe1cfb062fd3f",
+      "bytes": 156843,
+      "lines": 3951,
+      "read_ranges": [
+        "75-176",
+        "620-644"
+      ]
+    },
+    {
+      "path": "app/Http/Controllers/Api/SystemController.php",
+      "exists": true,
+      "sha256": "a1c5691d0c22d837c61d7e8e000baa13525a0784d4e2a65661e39f2bbb7b0cd2",
+      "bytes": 73739,
+      "lines": 1737,
+      "read_ranges": [
+        "878-960",
+        "1356-1358"
+      ]
+    }
+  ]
+}

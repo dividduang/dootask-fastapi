@@ -1,0 +1,139 @@
+{
+  "status": "SOURCE_CHANGED_PUBLIC_PENDING",
+  "permission": "User-approved vendor licensing UI removal only; no other presentation/function changes authorized",
+  "files": [
+    {
+      "path": "frontend/resources/assets/js/routes.js",
+      "original": {
+        "exists": true,
+        "sha256": "1530932d624536c2e74a891300de9a8e83b6cc97e0699a0660eb2672379b38c0",
+        "bytes": 7220,
+        "lines": 201
+      },
+      "current": {
+        "exists": true,
+        "sha256": "f48eb1de2930e4cd85faf13d6fd13801ec1030848530e552cf6b59d1c5b01b18",
+        "bytes": 6986,
+        "lines": 196
+      }
+    },
+    {
+      "path": "frontend/resources/assets/js/pages/manage.vue",
+      "original": {
+        "exists": true,
+        "sha256": "222937776fdcac45521d78c7570804c6c7eb72f26d9eb2caef299271e66d65a8",
+        "bytes": 78780,
+        "lines": 1950
+      },
+      "current": {
+        "exists": true,
+        "sha256": "bb76bf703ba6db3b1e08a6a66ec1950048ad9ba803cceaa22497db68cf8e756c",
+        "bytes": 78715,
+        "lines": 1949
+      }
+    },
+    {
+      "path": "frontend/resources/assets/js/pages/manage/setting/index.vue",
+      "original": {
+        "exists": true,
+        "sha256": "77b8bbb318860df637084797bb73f68c104f0339d84d31d15ef2e47156dff5bc",
+        "bytes": 9636,
+        "lines": 265
+      },
+      "current": {
+        "exists": true,
+        "sha256": "2a83908ce9d06714a10581590f94663b9f1d777fc66ea62d48f94551fed5264c",
+        "bytes": 9575,
+        "lines": 264
+      }
+    },
+    {
+      "path": "frontend/resources/assets/js/pages/manage/dashboard.vue",
+      "original": {
+        "exists": true,
+        "sha256": "c551ef5e675311984716b0c777184d8a5e0ba57673574e83f07f81e3ca3c24f6",
+        "bytes": 49001,
+        "lines": 942
+      },
+      "current": {
+        "exists": true,
+        "sha256": "c89ffdbcf901db96b8a17ad7e6fb1692bf839f53255f607c92838b9670a280ac",
+        "bytes": 47783,
+        "lines": 910
+      }
+    },
+    {
+      "path": "frontend/resources/assets/js/components/AIAssistant/deep-links.js",
+      "original": {
+        "exists": true,
+        "sha256": "3c353738eeff16c435e3f73c4395a974013d670bef3fe6c9e75d0be1919229e8",
+        "bytes": 3691,
+        "lines": 82
+      },
+      "current": {
+        "exists": true,
+        "sha256": "2c9f0ce19527d5dc58d0297f0ca99fd851fe92eef91e3d64a5ab5d6e4fa68670",
+        "bytes": 3621,
+        "lines": 81
+      }
+    },
+    {
+      "path": "frontend/resources/assets/js/store/actions.js",
+      "original": {
+        "exists": true,
+        "sha256": "47bd5bfc389ab8bc21f785679790673b49efdbdbcc63b4f06981e34a6a7f339b",
+        "bytes": 205940,
+        "lines": 5589
+      },
+      "current": {
+        "exists": true,
+        "sha256": "633d67be1b565de5cfbdc1a3eb9a0e315469b23357ae9b805378539bb4344502",
+        "bytes": 205905,
+        "lines": 5588
+      }
+    },
+    {
+      "path": "frontend/resources/assets/sass/pages/page-dashboard.scss",
+      "original": {
+        "exists": true,
+        "sha256": "a78a5e0ea679d49ab97cdd657967250a7c11f0ed4afa57775abb3afa08677c09",
+        "bytes": 62480,
+        "lines": 2162
+      },
+      "current": {
+        "exists": true,
+        "sha256": "fb2c672f103b49173d4822c01f97dbeb1faacbd776fcb89d34f1cf19ddfdb483",
+        "bytes": 62080,
+        "lines": 2146
+      }
+    },
+    {
+      "path": "frontend/resources/ai-kb/_meta/page-links.yaml",
+      "original": {
+        "exists": true,
+        "sha256": "bb12b157be1926daf60a8e11661fd006c7d86eccda3a3125ff6aae995dc8bbdb",
+        "bytes": 4002,
+        "lines": 124
+      },
+      "current": {
+        "exists": true,
+        "sha256": "6de6c710a7a0faa509ff3d62a715a8d9e3ccf080eab2fecc065681ba3475aecd",
+        "bytes": 3875,
+        "lines": 119
+      }
+    },
+    {
+      "path": "frontend/resources/assets/js/pages/manage/setting/license.vue",
+      "original": {
+        "exists": true,
+        "sha256": "3d654c5d9cd88a67f33beda712871f6c28c9c3b448bfb657fdf9826cd751cca1",
+        "bytes": 43588,
+        "lines": 966
+      },
+      "current": {
+        "exists": false
+      }
+    }
+  ],
+  "checks_executed": []
+}

@@ -19,6 +19,30 @@ def avatar_name(name):
         name = name[-2:]
     return name or "D"
 
+def avatar_background(name):
+    # Source RandomColor dark distribution: hue 0..360, saturation 90..100,
+    # brightness [color-specific minimum, minimum+20]. Hash draws keep it stable.
+    digest = hashlib.sha256(name.encode()).digest()
+    hue = int.from_bytes(digest[:8], "big") % 361
+    saturation = 90 + int.from_bytes(digest[8:16], "big") % 11
+    if hue <= 18 or hue >= 334:
+        low, high = 55, 50
+    elif hue <= 46:
+        low, high = 70, 70
+    elif hue <= 62:
+        low, high = 80, 75
+    elif hue <= 178:
+        low, high = 50, 40
+    elif hue <= 257:
+        low, high = 39, 35
+    elif hue <= 282:
+        low, high = 45, 42
+    else:
+        low, high = 75, 73
+    minimum = int(low + (high - low) * (saturation - 90) / 10 + .5)
+    brightness = minimum + int.from_bytes(digest[16:24], "big") % 21
+    return tuple(int(channel * 255) for channel in colorsys.hsv_to_rgb(hue / 360, saturation / 100, brightness / 100))
+
 
 def install_avatar(app, settings):
     font_path = settings.frontend_root / "resources/assets/statics/fonts/Source_Han_Sans_SC_Regular.otf"
@@ -33,10 +57,7 @@ def install_avatar(app, settings):
             if not 16 <= size <= 512:
                 raise ValueError("size")
             foreground = ImageColor.getrgb(request.query_params.get("color") or "#ffffff")
-            hue = int(hashlib.sha256(name.encode()).hexdigest()[:8], 16) / 0xffffffff
-            # Stable dark color replaces the source's randomly cached dark color;
-            # no operational state is invented and restart does not change avatars.
-            background = tuple(round(channel * 255) for channel in colorsys.hsv_to_rgb(hue, .65, .52))
+            background = avatar_background(name)
             if request.query_params.get("color") and request.query_params.get("background"):
                 background = ImageColor.getrgb(request.query_params["background"])
         except (ValueError, TypeError):

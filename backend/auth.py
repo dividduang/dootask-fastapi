@@ -2,6 +2,7 @@ from dataclasses import dataclass
 from datetime import timedelta
 import hashlib
 import json
+import logging
 import math
 import re
 import secrets
@@ -29,10 +30,31 @@ class Actor:
 def split_values(value):
     return [item for item in (value or "").strip(",").split(",") if item]
 
+@dataclass(frozen=True)
+class EmailVerificationRequired:
+    message: str = "您还没有验证邮箱，请先验证邮箱"
+
+    @property
+    def data(self):
+        return {"code": "email"}
+
+
+def is_disabled(user):
+    return bool(user.get("disable_at") or "disable" in split_values(user.get("identity")))
+
+
 
 def require_admin(actor):
     if "admin" not in actor.identities:
         raise ApiError("权限不足")
+
+
+def lock_user(connection, userid):
+    users = db.tables["users"]
+    user = connection.execute(select(users).where(users.c.userid == userid).with_for_update()).mappings().first()
+    if not user:
+        raise ApiError("成员不存在或已被删除")
+    return dict(user)
 
 
 def authenticate(connection, context: RequestContext):
@@ -55,13 +77,18 @@ def authenticate(connection, context: RequestContext):
     # Re-read after acquiring account lock: logout/change-password may have committed while waiting.
     session = connection.execute(select(sessions).where(sessions.c.token_digest == digest(context.token))).mappings().first()
     now = utcnow()
-    if (not user or not cred or not device or not session or session["revoked_at"]
-            or session["expires_at"] <= now or device["deleted_at"]
-            or (device["expired_at"] and device["expired_at"] <= now)
-            or cred["generation"] != session["generation"] or user["email"] != session["email"]
-            or device["userid"] != user["userid"]):
+    if (not user or not cred or not session or session["revoked_at"]
+            or session["expires_at"] <= now
+            or cred["generation"] != session["generation"] or user["email"] != session["email"]):
         raise ApiError("身份已失效,请重新登录", -1)
-    if "disable" in split_values(user["identity"]):
+    if session["purpose"] == "service":
+        valid_device = session["device_id"] is None and session["expires_at"] <= session["created_at"] + timedelta(hours=1)
+    else:
+        valid_device = (session["purpose"] == "interactive" and device and not device["deleted_at"]
+            and (not device["expired_at"] or device["expired_at"] > now) and device["userid"] == user["userid"])
+    if not valid_device:
+        raise ApiError("身份已失效,请重新登录", -1)
+    if is_disabled(user):
         raise ApiError("帐号已停用...", -1)
     updates = {"line_ip": context.ip, "updated_at": now}
     if not user["line_at"] or user["line_at"] < now - timedelta(seconds=30):
@@ -86,49 +113,80 @@ def validate_password(connection, password):
             raise ApiError("请设置包含大小写字母、数字或特殊字符的复杂密码")
 
 
-def require_registration_license():
-    # Source User::reg requires licenseBindingError + native userCreate seat policy.
-    # No documented Python verifier/verification key or authorized artifact exists yet.
-    # Fail closed: neither env flags, CLI nor test mode may mint a license/skip limits.
-    raise ApiError("注册暂不可用：尚未配置可验证的官方许可服务", data={"code": "license_unavailable"})
+def creation_lock(connection):
+    state = db.tables["account_identity_state"]
+    return connection.execute(select(state).where(state.c.id == 1).with_for_update()).mappings().one()
+
+
+def create_account(connection, context, email, password, *, nickname="", identity="", bot=False,
+                   email_verity=False, changepass=False, profession="", departments=()):
+    """Internal creation primitive; public callers enforce registration/admin/directory policy."""
+    from pypinyin import lazy_pinyin
+    from .domains import account_admin
+    from .domains.dialog_core import sync_members, member_ids, send_message
+    from . import jobs
+    if len(email) > 100 or not re.fullmatch(r"[^\s@]+@[^\s@]+\.[^\s@]+", email):
+        raise ApiError("请输入正确的邮箱地址")
+    if not bot and email.casefold().endswith("@bot.system"):
+        raise ApiError("此邮箱域仅用于系统机器人")
+    validate_password(connection, password)
+    state = creation_lock(connection)
+    users = db.tables["users"]
+    if connection.execute(select(users.c.userid).where(users.c.email == email)).first():
+        raise ApiError("邮箱地址已存在")
+    first = not bot and state["owner_userid"] is None
+    if first:
+        identity = ",admin," + ("ldap," if "ldap" in split_values(identity) else "")
+    name = nickname or email.split("@")[0]
+    pinyin = "".join(lazy_pinyin(name))
+    userid = db.insert_row(connection, "users", email=email, nickname=nickname, identity=identity,
+        bot=int(bot), email_verity=int(email_verity), changepass=int(changepass), profession=profession,
+        encrypt=secrets.token_hex(16), password="", created_ip=context.ip,
+        lang=context.language, az=(pinyin[:1] or "#").upper(), pinyin=pinyin)
+    db.insert_row(connection, "auth_credentials", userid=userid, password_hash=password_hash(password),
+                  generation=secrets.token_hex(32))
+    if first:
+        state_table = db.tables["account_identity_state"]
+        connection.execute(state_table.update().where(state_table.c.id == 1).values(owner_userid=userid))
+    user = dict(connection.execute(select(users).where(users.c.userid == userid)).mappings().one())
+    if not bot:
+        from .domains.project_core import push_project, by_id
+        from .domains.projects import project_data
+        project_id = create_personal_project(connection, userid)
+        push_project(connection, context, project_id, "add", project_data(connection, by_id(connection, "projects", project_id), userid))
+        jobs.enqueue(connection, "search.sync", {"type":"project","id":project_id})
+        if departments:
+            user = account_admin.set_departments(connection, context, user, departments)
+        dialogs = db.tables["web_socket_dialogs"]
+        if db.setting(connection, "system", "all_group_autoin", "yes") == "yes":
+            group = connection.execute(select(dialogs.c.id).where(dialogs.c.group_type == "all",
+                dialogs.c.deleted_at.is_(None)).order_by(dialogs.c.id.desc()).limit(1).with_for_update()).first()
+            if group:
+                sync_members(connection, group.id, set(member_ids(connection, group.id)) | {userid})
+                send_message(connection, dialog_id=group.id, sender_id=0, msg_type="notice",
+                    msg={"notice": name + " 已加入群组"}, context=context)
+                jobs.enqueue(connection, "dialog.member_hook", {"dialog_id":group.id,"userid":0,"userids":[userid],"event":"member_join"})
+        jobs.enqueue(connection, "accounts.search", {"userid": userid})
+        jobs.enqueue(connection, "accounts.created", {"userid": userid})
+    return user
 
 
 def register(connection, context, email, password, invite=""):
     if len(email) > 32 or len(password) > 32:
         raise ApiError("账号密码最多可输入32位字符")
-    if not re.fullmatch(r"[^\s@]+@[^\s@]+\.[^\s@]+", email):
-        raise ApiError("请输入正确的邮箱地址")
     mode = db.setting(connection, "system", "reg", "open")
     if mode == "close":
         raise ApiError("未开放注册")
     if mode == "invite" and (not invite or not secrets.compare_digest(invite, str(db.setting(connection, "system", "reg_invite", "")))):
         raise ApiError("请输入正确的邀请码")
-    validate_password(connection, password)
-    users = db.tables["users"]
-    if connection.execute(select(users.c.userid).where(users.c.email == email)).first():
-        raise ApiError("邮箱地址已存在")
-    require_registration_license()
-    # Keep the actual state mutation together for the licensed identity implementation.
-    # No demo account is seeded to bypass the gate above.
-    if db.setting(connection, "emailSetting", "reg_verify") == "open":
-        raise ApiError("注册暂不可用：邮件验证服务尚未配置", data={"code": "email_service_unavailable"})
     identity = ",temp," if db.setting(connection, "system", "reg_identity", "normal") == "temp" else ""
-    userid = db.insert_row(connection, "users", email=email, nickname="", identity=identity,
-                           encrypt=secrets.token_hex(16), password="", created_ip=context.ip,
-                           lang=context.language, az=email[0].upper())
-    db.insert_row(connection, "auth_credentials", userid=userid, password_hash=password_hash(password),
-                  generation=secrets.token_hex(32))
-    dialogs = db.tables["web_socket_dialogs"]
-    if db.setting(connection, "system", "all_group_autoin", "yes") == "yes":
-        group = connection.execute(select(dialogs.c.id).where(dialogs.c.group_type == "all", dialogs.c.deleted_at.is_(None))
-                                   .order_by(dialogs.c.id.desc()).limit(1)).first()
-        if group:
-            # Existing group requires real member messages/webhooks and realtime delivery.
-            raise ApiError("注册暂不可用：全员群入群投递尚未实现")
-    return userid
+    return create_account(connection, context, email, password, identity=identity)["userid"]
 
 
 def issue_token(connection, user, credential, context):
+    current = lock_user(connection, user["userid"])
+    if is_disabled(current):
+        raise ApiError("帐号已停用...")
     now = utcnow()
     days = max(1, int(db.setting(connection, "system", "token_valid_days", 30)))
     expires = now + timedelta(days=days)
@@ -149,11 +207,30 @@ def issue_token(connection, user, credential, context):
     return token
 
 
+def issue_service_token(connection, userid, context):
+    users, credentials = db.tables["users"], db.tables["auth_credentials"]
+    user = connection.execute(select(users).where(users.c.userid == userid).with_for_update()).mappings().first()
+    credential = connection.execute(select(credentials).where(credentials.c.userid == userid)).mappings().first()
+    if not user or not credential or is_disabled(user):
+        raise ApiError("机器人或发送成员身份不可用")
+    now = utcnow()
+    token = secrets.token_urlsafe(48)
+    db.insert_row(connection, "auth_sessions", token_digest=digest(token), userid=userid, device_id=None,
+        purpose="service", generation=credential["generation"], email=user["email"],
+        created_at=now, expires_at=now+timedelta(hours=1))
+    return token
+
+
 def revoke_devices(connection, ids):
     if not ids:
         return
     devices, sessions = db.tables["user_devices"], db.tables["auth_sessions"]
+    users = db.tables["users"]
+    owners = select(devices.c.userid).where(devices.c.id.in_(ids))
+    connection.execute(select(users.c.userid).where(users.c.userid.in_(owners)).order_by(users.c.userid).with_for_update()).all()
     hashes = connection.execute(select(devices.c.hash).where(devices.c.id.in_(ids))).scalars().all()
+    userids = select(devices.c.userid).where(devices.c.id.in_(ids))
+    connection.execute(sessions.update().where(sessions.c.userid.in_(userids), sessions.c.purpose == "service").values(revoked_at=utcnow()))
     now = utcnow()
     connection.execute(devices.update().where(devices.c.id.in_(ids)).values(deleted_at=now, updated_at=now))
     connection.execute(sessions.update().where(sessions.c.device_id.in_(ids)).values(revoked_at=now))
@@ -161,23 +238,33 @@ def revoke_devices(connection, ids):
     connection.execute(delete(aliases).where(aliases.c.device_hash.in_(hashes)))
 
 
-def login(connection, context, email, password, *, registration=False, invite=""):
+def login(connection, context, email, password, *, settings, registration=False, invite=""):
+    from .domains.account_integrations import ldap_login, ldap_sync_local, send_verification
+    if len(email) > 100 or len(password.encode("utf-8")) > 32:
+        raise ApiError("帐号或密码错误", data={"code": "no"})
     if registration:
         register(connection, context, email, password, invite)
     users, credentials = db.tables["users"], db.tables["auth_credentials"]
     user = connection.execute(select(users).where(users.c.email == email).with_for_update()).mappings().first()
+    directory = not registration and (not user or "ldap" in split_values(user["identity"])) and db.setting(connection, "thirdAccessSetting", "ldap_open") == "open"
+    if directory:
+        user = ldap_login(connection, context, email, password, settings)
+        user = connection.execute(select(users).where(users.c.userid == user["userid"]).with_for_update()).mappings().one()
     credential = connection.execute(select(credentials).where(credentials.c.userid == user["userid"])).mappings().first() if user else None
-    if (len(email) > 32 or len(password) > 32 or not credential or not password_verify(password, credential["password_hash"])):
-        # Equal-cost hashing for unknown accounts reduces the timing oracle.
+    if not credential or (not directory and ("ldap" in split_values(user["identity"]) or not password_verify(password, credential["password_hash"]))):
         if not credential:
             password_hash(password[:32])
         raise ApiError("帐号或密码错误", data={"code": "no"})
-    if "ldap" in split_values(user["identity"]):
-        raise ApiError("LDAP登录服务尚未配置")
-    if "disable" in split_values(user["identity"]):
+    if is_disabled(user):
         raise ApiError("帐号已停用...")
     if db.setting(connection, "emailSetting", "reg_verify") == "open" and not user["email_verity"]:
-        raise ApiError("您还没有验证邮箱，请先验证邮箱", data={"code": "email"})
+        send_verification(connection, context, user, deferred=True)
+        return EmailVerificationRequired("注册成功，请验证邮箱后登录" if registration else "您还没有验证邮箱，请先验证邮箱")
+    if not directory:
+        try:
+            ldap_sync_local(connection, user, password, settings)
+        except ApiError:
+            logging.getLogger(__name__).exception("LDAP synchronization failed for user %s", user["userid"])
     now = utcnow()
     changes = {"login_num": (user["login_num"] or 0) + 1, "last_ip": context.ip, "last_at": now,
                "line_ip": context.ip, "line_at": now, "updated_at": now}
@@ -219,6 +306,8 @@ def info(connection, context):
 
 
 def should_refresh(connection, actor):
+    if actor.session["purpose"] != "interactive":
+        return False
     days = max(1, int(db.setting(connection, "system", "token_valid_days", 30)))
     return actor.session["expires_at"] < utcnow() + timedelta(days=math.ceil(days / 3))
 
@@ -241,18 +330,32 @@ def logout(connection, context):
     if row:
         users = db.tables["users"]
         connection.execute(select(users.c.userid).where(users.c.userid == row["userid"]).with_for_update()).first()
-        revoke_devices(connection, [row["device_id"]])
+        if row["purpose"] == "service":
+            connection.execute(sessions.update().where(sessions.c.token_digest == row["token_digest"]).values(revoked_at=utcnow()))
+        else:
+            revoke_devices(connection, [row["device_id"]])
 
 
-def change_password(connection, context, old_password, new_password):
+def change_password(connection, context, old_password, new_password, *, settings):
     actor = authenticate(connection, context)
-    if "ldap" in actor.identities or actor.user.get("bot"):
+    if actor.session["purpose"] == "service":
+        raise ApiError("服务身份不能修改密码")
+    if actor.user.get("bot"):
         raise ApiError("当前帐号不支持此操作")
     if old_password == new_password:
         raise ApiError("新旧密码一致")
     validate_password(connection, new_password)
-    if not password_verify(old_password, actor.credential["password_hash"]):
+    if "ldap" in actor.identities:
+        from .domains.account_integrations import ldap_login, ldap_update
+        verified = ldap_login(connection, context, actor.user["email"], old_password, settings)
+        if verified["userid"] != actor.userid:
+            raise ApiError("请填写正确的旧密码")
+        ldap_update(connection, actor.user["email"], {"userPassword": new_password}, required=True)
+    elif not password_verify(old_password, actor.credential["password_hash"]):
         raise ApiError("请填写正确的旧密码")
+    else:
+        from .domains.account_integrations import ldap_update
+        ldap_update(connection, actor.user["email"], {"userPassword": new_password})
     cred = dict(actor.credential, password_hash=password_hash(new_password), generation=secrets.token_hex(32), updated_at=utcnow())
     credentials, users, devices = db.tables["auth_credentials"], db.tables["users"], db.tables["user_devices"]
     connection.execute(credentials.update().where(credentials.c.userid == actor.userid).values(**cred))
