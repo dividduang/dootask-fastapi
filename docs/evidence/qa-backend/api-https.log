@@ -1,0 +1,639 @@
+INFO:     Started server process [31776]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on https://127.0.0.1:18443 (Press CTRL+C to quit)
+Outbox job 1696 (accounts.created) failed
+Traceback (most recent call last):
+  File "D:\rpa\202610\dootask-fastapi\backend\jobs.py", line 111, in run_once
+    handler(connection, payload, settings)
+  File "D:\rpa\202610\dootask-fastapi\backend\domains\account_jobs.py", line 21, in created_job
+    dispatch_user_hook(c,user,'user_onboard','onboard',[],settings)
+  File "D:\rpa\202610\dootask-fastapi\backend\domains\apps.py", line 137, in dispatch_user_hook
+    raise ApiError("APP_KEY未配置，无法通知应用商店")
+backend.errors.ApiError: APP_KEY未配置，无法通知应用商店
+Outbox job 1700 (accounts.created) failed
+Traceback (most recent call last):
+  File "D:\rpa\202610\dootask-fastapi\backend\jobs.py", line 111, in run_once
+    handler(connection, payload, settings)
+  File "D:\rpa\202610\dootask-fastapi\backend\domains\account_jobs.py", line 21, in created_job
+    dispatch_user_hook(c,user,'user_onboard','onboard',[],settings)
+  File "D:\rpa\202610\dootask-fastapi\backend\domains\apps.py", line 137, in dispatch_user_hook
+    raise ApiError("APP_KEY未配置，无法通知应用商店")
+backend.errors.ApiError: APP_KEY未配置，无法通知应用商店
+Outbox job 3061 (accounts.created) failed
+Traceback (most recent call last):
+  File "D:\rpa\202610\dootask-fastapi\backend\jobs.py", line 111, in run_once
+    handler(connection, payload, settings)
+  File "D:\rpa\202610\dootask-fastapi\backend\domains\account_jobs.py", line 21, in created_job
+    dispatch_user_hook(c,user,'user_onboard','onboard',[],settings)
+  File "D:\rpa\202610\dootask-fastapi\backend\domains\apps.py", line 137, in dispatch_user_hook
+    raise ApiError("APP_KEY未配置，无法通知应用商店")
+backend.errors.ApiError: APP_KEY未配置，无法通知应用商店
+Outbox job 3061 (accounts.created) failed
+Traceback (most recent call last):
+  File "D:\rpa\202610\dootask-fastapi\backend\jobs.py", line 111, in run_once
+    handler(connection, payload, settings)
+  File "D:\rpa\202610\dootask-fastapi\backend\domains\account_jobs.py", line 21, in created_job
+    dispatch_user_hook(c,user,'user_onboard','onboard',[],settings)
+  File "D:\rpa\202610\dootask-fastapi\backend\domains\apps.py", line 137, in dispatch_user_hook
+    raise ApiError("APP_KEY未配置，无法通知应用商店")
+backend.errors.ApiError: APP_KEY未配置，无法通知应用商店
+Outbox job 3061 (accounts.created) failed
+Traceback (most recent call last):
+  File "D:\rpa\202610\dootask-fastapi\backend\jobs.py", line 111, in run_once
+    handler(connection, payload, settings)
+  File "D:\rpa\202610\dootask-fastapi\backend\domains\account_jobs.py", line 21, in created_job
+    dispatch_user_hook(c,user,'user_onboard','onboard',[],settings)
+  File "D:\rpa\202610\dootask-fastapi\backend\domains\apps.py", line 137, in dispatch_user_hook
+    raise ApiError("APP_KEY未配置，无法通知应用商店")
+backend.errors.ApiError: APP_KEY未配置，无法通知应用商店
+Outbox job 3061 (accounts.created) failed
+Traceback (most recent call last):
+  File "D:\rpa\202610\dootask-fastapi\backend\jobs.py", line 111, in run_once
+    handler(connection, payload, settings)
+  File "D:\rpa\202610\dootask-fastapi\backend\domains\account_jobs.py", line 21, in created_job
+    dispatch_user_hook(c,user,'user_onboard','onboard',[],settings)
+  File "D:\rpa\202610\dootask-fastapi\backend\domains\apps.py", line 137, in dispatch_user_hook
+    raise ApiError("APP_KEY未配置，无法通知应用商店")
+backend.errors.ApiError: APP_KEY未配置，无法通知应用商店
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [31776]
+INFO:     Started server process [19424]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on https://127.0.0.1:18443 (Press CTRL+C to quit)
+Outbox worker database failure
+Traceback (most recent call last):
+  File "D:\rpa\202610\dootask-fastapi\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "D:\rpa\202610\dootask-fastapi\.venv\Lib\site-packages\sqlalchemy\engine\default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+  File "D:\rpa\202610\dootask-fastapi\.venv\Lib\site-packages\pymysql\cursors.py", line 170, in execute
+    result = self._query(query)
+             ^^^^^^^^^^^^^^^^^^
+  File "D:\rpa\202610\dootask-fastapi\.venv\Lib\site-packages\pymysql\cursors.py", line 335, in _query
+    conn.query(q)
+  File "D:\rpa\202610\dootask-fastapi\.venv\Lib\site-packages\pymysql\connections.py", line 581, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\rpa\202610\dootask-fastapi\.venv\Lib\site-packages\pymysql\connections.py", line 857, in _read_query_result
+    result.read()
+  File "D:\rpa\202610\dootask-fastapi\.venv\Lib\site-packages\pymysql\connections.py", line 1290, in read
+    first_packet = self.connection._read_packet()
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\rpa\202610\dootask-fastapi\.venv\Lib\site-packages\pymysql\connections.py", line 810, in _read_packet
+    packet.raise_for_error()
+  File "D:\rpa\202610\dootask-fastapi\.venv\Lib\site-packages\pymysql\protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "D:\rpa\202610\dootask-fastapi\.venv\Lib\site-packages\pymysql\err.py", line 154, in raise_mysql_exception
+    raise errorclass(errno, errval, sqlstate=sqlstate)
+pymysql.err.OperationalError: (1213, 'Deadlock found when trying to get lock; try restarting transaction')
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\rpa\202610\dootask-fastapi\backend\jobs.py", line 135, in worker
+    await asyncio.to_thread(tick)
+  File "C:\Users\djren\AppData\Local\Programs\Python\Python312\Lib\asyncio\threads.py", line 25, in to_thread
+    return await loop.run_in_executor(None, func_call)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\djren\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\rpa\202610\dootask-fastapi\backend\jobs.py", line 128, in tick
+    enqueue(connection, kind, payload, dedupe_key=f"schedule:{kind}:{epoch // seconds}")
+  File "D:\rpa\202610\dootask-fastapi\backend\jobs.py", line 42, in enqueue
+    connection.execute(statement.on_duplicate_key_update(id=table.c.id))
+  File "D:\rpa\202610\dootask-fastapi\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1421, in execute
+    return meth(
+           ^^^^^
+  File "D:\rpa\202610\dootask-fastapi\.venv\Lib\site-packages\sqlalchemy\sql\elements.py", line 526, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\rpa\202610\dootask-fastapi\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1643, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\rpa\202610\dootask-fastapi\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1848, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\rpa\202610\dootask-fastapi\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1988, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "D:\rpa\202610\dootask-fastapi\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2365, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "D:\rpa\202610\dootask-fastapi\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "D:\rpa\202610\dootask-fastapi\.venv\Lib\site-packages\sqlalchemy\engine\default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+  File "D:\rpa\202610\dootask-fastapi\.venv\Lib\site-packages\pymysql\cursors.py", line 170, in execute
+    result = self._query(query)
+             ^^^^^^^^^^^^^^^^^^
+  File "D:\rpa\202610\dootask-fastapi\.venv\Lib\site-packages\pymysql\cursors.py", line 335, in _query
+    conn.query(q)
+  File "D:\rpa\202610\dootask-fastapi\.venv\Lib\site-packages\pymysql\connections.py", line 581, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\rpa\202610\dootask-fastapi\.venv\Lib\site-packages\pymysql\connections.py", line 857, in _read_query_result
+    result.read()
+  File "D:\rpa\202610\dootask-fastapi\.venv\Lib\site-packages\pymysql\connections.py", line 1290, in read
+    first_packet = self.connection._read_packet()
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\rpa\202610\dootask-fastapi\.venv\Lib\site-packages\pymysql\connections.py", line 810, in _read_packet
+    packet.raise_for_error()
+  File "D:\rpa\202610\dootask-fastapi\.venv\Lib\site-packages\pymysql\protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "D:\rpa\202610\dootask-fastapi\.venv\Lib\site-packages\pymysql\err.py", line 154, in raise_mysql_exception
+    raise errorclass(errno, errval, sqlstate=sqlstate)
+sqlalchemy.exc.OperationalError: (pymysql.err.OperationalError) (1213, 'Deadlock found when trying to get lock; try restarting transaction')
+[SQL: INSERT INTO backend_outbox (kind, payload, dedupe_key, available_at, created_at) VALUES (%(kind)s, %(payload)s, %(dedupe_key)s, %(available_at)s, %(created_at)s) ON DUPLICATE KEY UPDATE id = backend_outbox.id]
+[parameters: {'kind': 'dialog.maintenance', 'payload': '{}', 'dedupe_key': 'schedule:dialog.maintenance:29862864', 'available_at': datetime.datetime(2026, 10, 12, 10, 24, 0, 416099), 'created_at': datetime.datetime(2026, 10, 12, 10, 24, 0, 416099)}]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+Outbox job 7266 (accounts.created) failed
+Traceback (most recent call last):
+  File "D:\rpa\202610\dootask-fastapi\backend\jobs.py", line 111, in run_once
+    handler(connection, payload, settings)
+  File "D:\rpa\202610\dootask-fastapi\backend\domains\account_jobs.py", line 21, in created_job
+    dispatch_user_hook(c,user,'user_onboard','onboard',[],settings)
+  File "D:\rpa\202610\dootask-fastapi\backend\domains\apps.py", line 137, in dispatch_user_hook
+    raise ApiError("APP_KEY未配置，无法通知应用商店")
+backend.errors.ApiError: APP_KEY未配置，无法通知应用商店
+Outbox job 7307 (accounts.created) failed
+Traceback (most recent call last):
+  File "D:\rpa\202610\dootask-fastapi\backend\jobs.py", line 111, in run_once
+    handler(connection, payload, settings)
+  File "D:\rpa\202610\dootask-fastapi\backend\domains\account_jobs.py", line 21, in created_job
+    dispatch_user_hook(c,user,'user_onboard','onboard',[],settings)
+  File "D:\rpa\202610\dootask-fastapi\backend\domains\apps.py", line 137, in dispatch_user_hook
+    raise ApiError("APP_KEY未配置，无法通知应用商店")
+backend.errors.ApiError: APP_KEY未配置，无法通知应用商店
+Outbox job 7307 (accounts.created) failed
+Traceback (most recent call last):
+  File "D:\rpa\202610\dootask-fastapi\backend\jobs.py", line 111, in run_once
+    handler(connection, payload, settings)
+  File "D:\rpa\202610\dootask-fastapi\backend\domains\account_jobs.py", line 21, in created_job
+    dispatch_user_hook(c,user,'user_onboard','onboard',[],settings)
+  File "D:\rpa\202610\dootask-fastapi\backend\domains\apps.py", line 137, in dispatch_user_hook
+    raise ApiError("APP_KEY未配置，无法通知应用商店")
+backend.errors.ApiError: APP_KEY未配置，无法通知应用商店
+Outbox job 7703 (accounts.created) failed
+Traceback (most recent call last):
+  File "D:\rpa\202610\dootask-fastapi\backend\jobs.py", line 111, in run_once
+    handler(connection, payload, settings)
+  File "D:\rpa\202610\dootask-fastapi\backend\domains\account_jobs.py", line 21, in created_job
+    dispatch_user_hook(c,user,'user_onboard','onboard',[],settings)
+  File "D:\rpa\202610\dootask-fastapi\backend\domains\apps.py", line 137, in dispatch_user_hook
+    raise ApiError("APP_KEY未配置，无法通知应用商店")
+backend.errors.ApiError: APP_KEY未配置，无法通知应用商店
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "D:\rpa\202610\dootask-fastapi\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "D:\rpa\202610\dootask-fastapi\.venv\Lib\site-packages\sqlalchemy\engine\default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+  File "D:\rpa\202610\dootask-fastapi\.venv\Lib\site-packages\pymysql\cursors.py", line 170, in execute
+    result = self._query(query)
+             ^^^^^^^^^^^^^^^^^^
+  File "D:\rpa\202610\dootask-fastapi\.venv\Lib\site-packages\pymysql\cursors.py", line 335, in _query
+    conn.query(q)
+  File "D:\rpa\202610\dootask-fastapi\.venv\Lib\site-packages\pymysql\connections.py", line 581, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\rpa\202610\dootask-fastapi\.venv\Lib\site-packages\pymysql\connections.py", line 857, in _read_query_result
+    result.read()
+  File "D:\rpa\202610\dootask-fastapi\.venv\Lib\site-packages\pymysql\connections.py", line 1290, in read
+    first_packet = self.connection._read_packet()
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\rpa\202610\dootask-fastapi\.venv\Lib\site-packages\pymysql\connections.py", line 810, in _read_packet
+    packet.raise_for_error()
+  File "D:\rpa\202610\dootask-fastapi\.venv\Lib\site-packages\pymysql\protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "D:\rpa\202610\dootask-fastapi\.venv\Lib\site-packages\pymysql\err.py", line 154, in raise_mysql_exception
+    raise errorclass(errno, errval, sqlstate=sqlstate)
+pymysql.err.DataError: (1366, "Incorrect integer value: 'xml' for column `dootask_fastapi`.`webdav_properties`.`value_type` at row 1")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\rpa\202610\dootask-fastapi\.venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py", line 411, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\rpa\202610\dootask-fastapi\.venv\Lib\site-packages\fastapi\applications.py", line 1216, in __call__
+    await super().__call__(scope, receive, send)
+  File "D:\rpa\202610\dootask-fastapi\.venv\Lib\site-packages\starlette\applications.py", line 96, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "D:\rpa\202610\dootask-fastapi\.venv\Lib\site-packages\starlette\middleware\errors.py", line 186, in __call__
+    raise exc
+  File "D:\rpa\202610\dootask-fastapi\.venv\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "D:\rpa\202610\dootask-fastapi\.venv\Lib\site-packages\fastapi\telemetry\_asgi.py", line 151, in __call__
+    await self.app(scope, receive, send)
+  File "D:\rpa\202610\dootask-fastapi\.venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "D:\rpa\202610\dootask-fastapi\.venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "D:\rpa\202610\dootask-fastapi\.venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "D:\rpa\202610\dootask-fastapi\.venv\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "D:\rpa\202610\dootask-fastapi\.venv\Lib\site-packages\starlette\routing.py", line 676, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "D:\rpa\202610\dootask-fastapi\.venv\Lib\site-packages\fastapi\routing.py", line 2786, in app
+    await route.handle(scope, receive, send)
+  File "D:\rpa\202610\dootask-fastapi\.venv\Lib\site-packages\fastapi\routing.py", line 1310, in handle
+    await super().handle(scope, receive, send)
+  File "D:\rpa\202610\dootask-fastapi\.venv\Lib\site-packages\starlette\routing.py", line 282, in handle
+    await self.app(scope, receive, send)
+  File "D:\rpa\202610\dootask-fastapi\.venv\Lib\site-packages\fastapi\routing.py", line 165, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "D:\rpa\202610\dootask-fastapi\.venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "D:\rpa\202610\dootask-fastapi\.venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "D:\rpa\202610\dootask-fastapi\.venv\Lib\site-packages\fastapi\routing.py", line 151, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "D:\rpa\202610\dootask-fastapi\.venv\Lib\site-packages\fastapi\routing.py", line 727, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\rpa\202610\dootask-fastapi\.venv\Lib\site-packages\fastapi\routing.py", line 360, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\rpa\202610\dootask-fastapi\backend\dav.py", line 569, in endpoint
+    return await asyncio.to_thread(run_request, context, normalized_path(path), request.method, dict(request.headers), body, stream, settings)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\djren\AppData\Local\Programs\Python\Python312\Lib\asyncio\threads.py", line 25, in to_thread
+    return await loop.run_in_executor(None, func_call)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\djren\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\rpa\202610\dootask-fastapi\backend\dav.py", line 527, in run_request
+    response = process(connection, context, path, method, headers, body, stream, settings)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\rpa\202610\dootask-fastapi\backend\dav.py", line 438, in process
+    return proppatch(connection, context, path, node, body)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\rpa\202610\dootask-fastapi\backend\dav.py", line 323, in proppatch
+    db.insert_row(connection, 'webdav_properties', userid=context.actor.userid, path=storage_path,
+  File "D:\rpa\202610\dootask-fastapi\backend\db.py", line 70, in insert_row
+    result = connection.execute(table.insert().values(**values))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\rpa\202610\dootask-fastapi\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1421, in execute
+    return meth(
+           ^^^^^
+  File "D:\rpa\202610\dootask-fastapi\.venv\Lib\site-packages\sqlalchemy\sql\elements.py", line 526, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\rpa\202610\dootask-fastapi\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1643, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\rpa\202610\dootask-fastapi\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1848, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\rpa\202610\dootask-fastapi\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1988, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "D:\rpa\202610\dootask-fastapi\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2365, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "D:\rpa\202610\dootask-fastapi\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "D:\rpa\202610\dootask-fastapi\.venv\Lib\site-packages\sqlalchemy\engine\default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+  File "D:\rpa\202610\dootask-fastapi\.venv\Lib\site-packages\pymysql\cursors.py", line 170, in execute
+    result = self._query(query)
+             ^^^^^^^^^^^^^^^^^^
+  File "D:\rpa\202610\dootask-fastapi\.venv\Lib\site-packages\pymysql\cursors.py", line 335, in _query
+    conn.query(q)
+  File "D:\rpa\202610\dootask-fastapi\.venv\Lib\site-packages\pymysql\connections.py", line 581, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\rpa\202610\dootask-fastapi\.venv\Lib\site-packages\pymysql\connections.py", line 857, in _read_query_result
+    result.read()
+  File "D:\rpa\202610\dootask-fastapi\.venv\Lib\site-packages\pymysql\connections.py", line 1290, in read
+    first_packet = self.connection._read_packet()
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\rpa\202610\dootask-fastapi\.venv\Lib\site-packages\pymysql\connections.py", line 810, in _read_packet
+    packet.raise_for_error()
+  File "D:\rpa\202610\dootask-fastapi\.venv\Lib\site-packages\pymysql\protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "D:\rpa\202610\dootask-fastapi\.venv\Lib\site-packages\pymysql\err.py", line 154, in raise_mysql_exception
+    raise errorclass(errno, errval, sqlstate=sqlstate)
+sqlalchemy.exc.DataError: (pymysql.err.DataError) (1366, "Incorrect integer value: 'xml' for column `dootask_fastapi`.`webdav_properties`.`value_type` at row 1")
+[SQL: INSERT INTO webdav_properties (userid, path, path_hash, name, property_hash, value_type, value, created_at, updated_at) VALUES (%(userid)s, %(path)s, %(path_hash)s, %(name)s, %(property_hash)s, %(value_type)s, %(value)s, %(created_at)s, %(updated_at)s)]
+[parameters: {'userid': 13, 'path': 'file:4', 'path_hash': 'd20007be737971f0ab1eb5de9691b74f6ce66501fe4a556b9d5510f76e66ba0b', 'name': '{urn:protocol}label', 'property_hash': '87759b3b8057cff8eb6548e976fd9bf23e3cb2e390e5bc0fe1afe0914443eac7', 'value_type': 'xml', 'value': '<ns0:label xmlns:ns0="urn:protocol">unicode</ns0:label>', 'created_at': datetime.datetime(2026, 10, 12, 10, 25, 4, 643358), 'updated_at': datetime.datetime(2026, 10, 12, 10, 25, 4, 643358)}]
+(Background on this error at: https://sqlalche.me/e/20/9h9h)
+Outbox job 7266 (accounts.created) failed
+Traceback (most recent call last):
+  File "D:\rpa\202610\dootask-fastapi\backend\jobs.py", line 111, in run_once
+    handler(connection, payload, settings)
+  File "D:\rpa\202610\dootask-fastapi\backend\domains\account_jobs.py", line 21, in created_job
+    dispatch_user_hook(c,user,'user_onboard','onboard',[],settings)
+  File "D:\rpa\202610\dootask-fastapi\backend\domains\apps.py", line 137, in dispatch_user_hook
+    raise ApiError("APP_KEY未配置，无法通知应用商店")
+backend.errors.ApiError: APP_KEY未配置，无法通知应用商店
+Outbox job 7857 (accounts.created) failed
+Traceback (most recent call last):
+  File "D:\rpa\202610\dootask-fastapi\backend\jobs.py", line 111, in run_once
+    handler(connection, payload, settings)
+  File "D:\rpa\202610\dootask-fastapi\backend\domains\account_jobs.py", line 21, in created_job
+    dispatch_user_hook(c,user,'user_onboard','onboard',[],settings)
+  File "D:\rpa\202610\dootask-fastapi\backend\domains\apps.py", line 137, in dispatch_user_hook
+    raise ApiError("APP_KEY未配置，无法通知应用商店")
+backend.errors.ApiError: APP_KEY未配置，无法通知应用商店
+Outbox job 8072 (accounts.created) failed
+Traceback (most recent call last):
+  File "D:\rpa\202610\dootask-fastapi\backend\jobs.py", line 111, in run_once
+    handler(connection, payload, settings)
+  File "D:\rpa\202610\dootask-fastapi\backend\domains\account_jobs.py", line 21, in created_job
+    dispatch_user_hook(c,user,'user_onboard','onboard',[],settings)
+  File "D:\rpa\202610\dootask-fastapi\backend\domains\apps.py", line 137, in dispatch_user_hook
+    raise ApiError("APP_KEY未配置，无法通知应用商店")
+backend.errors.ApiError: APP_KEY未配置，无法通知应用商店
+Outbox job 8076 (accounts.created) failed
+Traceback (most recent call last):
+  File "D:\rpa\202610\dootask-fastapi\backend\jobs.py", line 111, in run_once
+    handler(connection, payload, settings)
+  File "D:\rpa\202610\dootask-fastapi\backend\domains\account_jobs.py", line 21, in created_job
+    dispatch_user_hook(c,user,'user_onboard','onboard',[],settings)
+  File "D:\rpa\202610\dootask-fastapi\backend\domains\apps.py", line 137, in dispatch_user_hook
+    raise ApiError("APP_KEY未配置，无法通知应用商店")
+backend.errors.ApiError: APP_KEY未配置，无法通知应用商店
+Outbox job 8516 (accounts.created) failed
+Traceback (most recent call last):
+  File "D:\rpa\202610\dootask-fastapi\backend\jobs.py", line 111, in run_once
+    handler(connection, payload, settings)
+  File "D:\rpa\202610\dootask-fastapi\backend\domains\account_jobs.py", line 21, in created_job
+    dispatch_user_hook(c,user,'user_onboard','onboard',[],settings)
+  File "D:\rpa\202610\dootask-fastapi\backend\domains\apps.py", line 137, in dispatch_user_hook
+    raise ApiError("APP_KEY未配置，无法通知应用商店")
+backend.errors.ApiError: APP_KEY未配置，无法通知应用商店
+Outbox job 8516 (accounts.created) failed
+Traceback (most recent call last):
+  File "D:\rpa\202610\dootask-fastapi\backend\jobs.py", line 111, in run_once
+    handler(connection, payload, settings)
+  File "D:\rpa\202610\dootask-fastapi\backend\domains\account_jobs.py", line 21, in created_job
+    dispatch_user_hook(c,user,'user_onboard','onboard',[],settings)
+  File "D:\rpa\202610\dootask-fastapi\backend\domains\apps.py", line 137, in dispatch_user_hook
+    raise ApiError("APP_KEY未配置，无法通知应用商店")
+backend.errors.ApiError: APP_KEY未配置，无法通知应用商店
+Outbox job 8072 (accounts.created) failed
+Traceback (most recent call last):
+  File "D:\rpa\202610\dootask-fastapi\backend\jobs.py", line 111, in run_once
+    handler(connection, payload, settings)
+  File "D:\rpa\202610\dootask-fastapi\backend\domains\account_jobs.py", line 21, in created_job
+    dispatch_user_hook(c,user,'user_onboard','onboard',[],settings)
+  File "D:\rpa\202610\dootask-fastapi\backend\domains\apps.py", line 137, in dispatch_user_hook
+    raise ApiError("APP_KEY未配置，无法通知应用商店")
+backend.errors.ApiError: APP_KEY未配置，无法通知应用商店
+Outbox job 8076 (accounts.created) failed
+Traceback (most recent call last):
+  File "D:\rpa\202610\dootask-fastapi\backend\jobs.py", line 111, in run_once
+    handler(connection, payload, settings)
+  File "D:\rpa\202610\dootask-fastapi\backend\domains\account_jobs.py", line 21, in created_job
+    dispatch_user_hook(c,user,'user_onboard','onboard',[],settings)
+  File "D:\rpa\202610\dootask-fastapi\backend\domains\apps.py", line 137, in dispatch_user_hook
+    raise ApiError("APP_KEY未配置，无法通知应用商店")
+backend.errors.ApiError: APP_KEY未配置，无法通知应用商店
+Outbox job 7266 (accounts.created) failed
+Traceback (most recent call last):
+  File "D:\rpa\202610\dootask-fastapi\backend\jobs.py", line 111, in run_once
+    handler(connection, payload, settings)
+  File "D:\rpa\202610\dootask-fastapi\backend\domains\account_jobs.py", line 21, in created_job
+    dispatch_user_hook(c,user,'user_onboard','onboard',[],settings)
+  File "D:\rpa\202610\dootask-fastapi\backend\domains\apps.py", line 137, in dispatch_user_hook
+    raise ApiError("APP_KEY未配置，无法通知应用商店")
+backend.errors.ApiError: APP_KEY未配置，无法通知应用商店
+Outbox job 7307 (accounts.created) failed
+Traceback (most recent call last):
+  File "D:\rpa\202610\dootask-fastapi\backend\jobs.py", line 111, in run_once
+    handler(connection, payload, settings)
+  File "D:\rpa\202610\dootask-fastapi\backend\domains\account_jobs.py", line 21, in created_job
+    dispatch_user_hook(c,user,'user_onboard','onboard',[],settings)
+  File "D:\rpa\202610\dootask-fastapi\backend\domains\apps.py", line 137, in dispatch_user_hook
+    raise ApiError("APP_KEY未配置，无法通知应用商店")
+backend.errors.ApiError: APP_KEY未配置，无法通知应用商店
+Outbox job 6097 (accounts.created) failed
+Traceback (most recent call last):
+  File "D:\rpa\202610\dootask-fastapi\backend\jobs.py", line 111, in run_once
+    handler(connection, payload, settings)
+  File "D:\rpa\202610\dootask-fastapi\backend\domains\account_jobs.py", line 21, in created_job
+    dispatch_user_hook(c,user,'user_onboard','onboard',[],settings)
+  File "D:\rpa\202610\dootask-fastapi\backend\domains\apps.py", line 137, in dispatch_user_hook
+    raise ApiError("APP_KEY未配置，无法通知应用商店")
+backend.errors.ApiError: APP_KEY未配置，无法通知应用商店
+Outbox job 8516 (accounts.created) failed
+Traceback (most recent call last):
+  File "D:\rpa\202610\dootask-fastapi\backend\jobs.py", line 111, in run_once
+    handler(connection, payload, settings)
+  File "D:\rpa\202610\dootask-fastapi\backend\domains\account_jobs.py", line 21, in created_job
+    dispatch_user_hook(c,user,'user_onboard','onboard',[],settings)
+  File "D:\rpa\202610\dootask-fastapi\backend\domains\apps.py", line 137, in dispatch_user_hook
+    raise ApiError("APP_KEY未配置，无法通知应用商店")
+backend.errors.ApiError: APP_KEY未配置，无法通知应用商店
+Outbox job 1700 (accounts.created) failed
+Traceback (most recent call last):
+  File "D:\rpa\202610\dootask-fastapi\backend\jobs.py", line 111, in run_once
+    handler(connection, payload, settings)
+  File "D:\rpa\202610\dootask-fastapi\backend\domains\account_jobs.py", line 21, in created_job
+    dispatch_user_hook(c,user,'user_onboard','onboard',[],settings)
+  File "D:\rpa\202610\dootask-fastapi\backend\domains\apps.py", line 137, in dispatch_user_hook
+    raise ApiError("APP_KEY未配置，无法通知应用商店")
+backend.errors.ApiError: APP_KEY未配置，无法通知应用商店
+Outbox job 7707 (accounts.created) failed
+Traceback (most recent call last):
+  File "D:\rpa\202610\dootask-fastapi\backend\jobs.py", line 111, in run_once
+    handler(connection, payload, settings)
+  File "D:\rpa\202610\dootask-fastapi\backend\domains\account_jobs.py", line 21, in created_job
+    dispatch_user_hook(c,user,'user_onboard','onboard',[],settings)
+  File "D:\rpa\202610\dootask-fastapi\backend\domains\apps.py", line 137, in dispatch_user_hook
+    raise ApiError("APP_KEY未配置，无法通知应用商店")
+backend.errors.ApiError: APP_KEY未配置，无法通知应用商店
+Outbox job 8072 (accounts.created) failed
+Traceback (most recent call last):
+  File "D:\rpa\202610\dootask-fastapi\backend\jobs.py", line 111, in run_once
+    handler(connection, payload, settings)
+  File "D:\rpa\202610\dootask-fastapi\backend\domains\account_jobs.py", line 21, in created_job
+    dispatch_user_hook(c,user,'user_onboard','onboard',[],settings)
+  File "D:\rpa\202610\dootask-fastapi\backend\domains\apps.py", line 137, in dispatch_user_hook
+    raise ApiError("APP_KEY未配置，无法通知应用商店")
+backend.errors.ApiError: APP_KEY未配置，无法通知应用商店
+Outbox job 8076 (accounts.created) failed
+Traceback (most recent call last):
+  File "D:\rpa\202610\dootask-fastapi\backend\jobs.py", line 111, in run_once
+    handler(connection, payload, settings)
+  File "D:\rpa\202610\dootask-fastapi\backend\domains\account_jobs.py", line 21, in created_job
+    dispatch_user_hook(c,user,'user_onboard','onboard',[],settings)
+  File "D:\rpa\202610\dootask-fastapi\backend\domains\apps.py", line 137, in dispatch_user_hook
+    raise ApiError("APP_KEY未配置，无法通知应用商店")
+backend.errors.ApiError: APP_KEY未配置，无法通知应用商店
+Outbox job 7266 (accounts.created) failed
+Traceback (most recent call last):
+  File "D:\rpa\202610\dootask-fastapi\backend\jobs.py", line 111, in run_once
+    handler(connection, payload, settings)
+  File "D:\rpa\202610\dootask-fastapi\backend\domains\account_jobs.py", line 21, in created_job
+    dispatch_user_hook(c,user,'user_onboard','onboard',[],settings)
+  File "D:\rpa\202610\dootask-fastapi\backend\domains\apps.py", line 137, in dispatch_user_hook
+    raise ApiError("APP_KEY未配置，无法通知应用商店")
+backend.errors.ApiError: APP_KEY未配置，无法通知应用商店
+Outbox job 7307 (accounts.created) failed
+Traceback (most recent call last):
+  File "D:\rpa\202610\dootask-fastapi\backend\jobs.py", line 111, in run_once
+    handler(connection, payload, settings)
+  File "D:\rpa\202610\dootask-fastapi\backend\domains\account_jobs.py", line 21, in created_job
+    dispatch_user_hook(c,user,'user_onboard','onboard',[],settings)
+  File "D:\rpa\202610\dootask-fastapi\backend\domains\apps.py", line 137, in dispatch_user_hook
+    raise ApiError("APP_KEY未配置，无法通知应用商店")
+backend.errors.ApiError: APP_KEY未配置，无法通知应用商店
+Outbox job 7707 (accounts.created) failed
+Traceback (most recent call last):
+  File "D:\rpa\202610\dootask-fastapi\backend\jobs.py", line 111, in run_once
+    handler(connection, payload, settings)
+  File "D:\rpa\202610\dootask-fastapi\backend\domains\account_jobs.py", line 21, in created_job
+    dispatch_user_hook(c,user,'user_onboard','onboard',[],settings)
+  File "D:\rpa\202610\dootask-fastapi\backend\domains\apps.py", line 137, in dispatch_user_hook
+    raise ApiError("APP_KEY未配置，无法通知应用商店")
+backend.errors.ApiError: APP_KEY未配置，无法通知应用商店
+Outbox job 18376 (accounts.created) failed
+Traceback (most recent call last):
+  File "D:\rpa\202610\dootask-fastapi\backend\jobs.py", line 111, in run_once
+    handler(connection, payload, settings)
+  File "D:\rpa\202610\dootask-fastapi\backend\domains\account_jobs.py", line 21, in created_job
+    dispatch_user_hook(c,user,'user_onboard','onboard',[],settings)
+  File "D:\rpa\202610\dootask-fastapi\backend\domains\apps.py", line 137, in dispatch_user_hook
+    raise ApiError("APP_KEY未配置，无法通知应用商店")
+backend.errors.ApiError: APP_KEY未配置，无法通知应用商店
+Outbox job 18376 (accounts.created) failed
+Traceback (most recent call last):
+  File "D:\rpa\202610\dootask-fastapi\backend\jobs.py", line 111, in run_once
+    handler(connection, payload, settings)
+  File "D:\rpa\202610\dootask-fastapi\backend\domains\account_jobs.py", line 21, in created_job
+    dispatch_user_hook(c,user,'user_onboard','onboard',[],settings)
+  File "D:\rpa\202610\dootask-fastapi\backend\domains\apps.py", line 137, in dispatch_user_hook
+    raise ApiError("APP_KEY未配置，无法通知应用商店")
+backend.errors.ApiError: APP_KEY未配置，无法通知应用商店
+Outbox job 18376 (accounts.created) failed
+Traceback (most recent call last):
+  File "D:\rpa\202610\dootask-fastapi\backend\jobs.py", line 111, in run_once
+    handler(connection, payload, settings)
+  File "D:\rpa\202610\dootask-fastapi\backend\domains\account_jobs.py", line 21, in created_job
+    dispatch_user_hook(c,user,'user_onboard','onboard',[],settings)
+  File "D:\rpa\202610\dootask-fastapi\backend\domains\apps.py", line 137, in dispatch_user_hook
+    raise ApiError("APP_KEY未配置，无法通知应用商店")
+backend.errors.ApiError: APP_KEY未配置，无法通知应用商店
+Outbox job 21062 (accounts.created) failed
+Traceback (most recent call last):
+  File "D:\rpa\202610\dootask-fastapi\backend\jobs.py", line 111, in run_once
+    handler(connection, payload, settings)
+  File "D:\rpa\202610\dootask-fastapi\backend\domains\account_jobs.py", line 21, in created_job
+    dispatch_user_hook(c,user,'user_onboard','onboard',[],settings)
+  File "D:\rpa\202610\dootask-fastapi\backend\domains\apps.py", line 137, in dispatch_user_hook
+    raise ApiError("APP_KEY未配置，无法通知应用商店")
+backend.errors.ApiError: APP_KEY未配置，无法通知应用商店
+Outbox job 21658 (accounts.changed) failed
+Traceback (most recent call last):
+  File "D:\rpa\202610\dootask-fastapi\backend\jobs.py", line 111, in run_once
+    handler(connection, payload, settings)
+  File "D:\rpa\202610\dootask-fastapi\backend\domains\account_jobs.py", line 40, in changed_job
+    elif not before.get('disable_at') and after.get('disable_at'): dispatch_user_hook(c,after,'user_offboard','offboarded',[],settings)
+                                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\rpa\202610\dootask-fastapi\backend\domains\apps.py", line 137, in dispatch_user_hook
+    raise ApiError("APP_KEY未配置，无法通知应用商店")
+backend.errors.ApiError: APP_KEY未配置，无法通知应用商店
+Outbox job 21658 (accounts.changed) failed
+Traceback (most recent call last):
+  File "D:\rpa\202610\dootask-fastapi\backend\jobs.py", line 111, in run_once
+    handler(connection, payload, settings)
+  File "D:\rpa\202610\dootask-fastapi\backend\domains\account_jobs.py", line 40, in changed_job
+    elif not before.get('disable_at') and after.get('disable_at'): dispatch_user_hook(c,after,'user_offboard','offboarded',[],settings)
+                                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\rpa\202610\dootask-fastapi\backend\domains\apps.py", line 137, in dispatch_user_hook
+    raise ApiError("APP_KEY未配置，无法通知应用商店")
+backend.errors.ApiError: APP_KEY未配置，无法通知应用商店
+Outbox job 21658 (accounts.changed) failed
+Traceback (most recent call last):
+  File "D:\rpa\202610\dootask-fastapi\backend\jobs.py", line 111, in run_once
+    handler(connection, payload, settings)
+  File "D:\rpa\202610\dootask-fastapi\backend\domains\account_jobs.py", line 40, in changed_job
+    elif not before.get('disable_at') and after.get('disable_at'): dispatch_user_hook(c,after,'user_offboard','offboarded',[],settings)
+                                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\rpa\202610\dootask-fastapi\backend\domains\apps.py", line 137, in dispatch_user_hook
+    raise ApiError("APP_KEY未配置，无法通知应用商店")
+backend.errors.ApiError: APP_KEY未配置，无法通知应用商店
+Outbox job 18376 (accounts.created) failed
+Traceback (most recent call last):
+  File "D:\rpa\202610\dootask-fastapi\backend\jobs.py", line 111, in run_once
+    handler(connection, payload, settings)
+  File "D:\rpa\202610\dootask-fastapi\backend\domains\account_jobs.py", line 21, in created_job
+    dispatch_user_hook(c,user,'user_onboard','onboard',[],settings)
+  File "D:\rpa\202610\dootask-fastapi\backend\domains\apps.py", line 137, in dispatch_user_hook
+    raise ApiError("APP_KEY未配置，无法通知应用商店")
+backend.errors.ApiError: APP_KEY未配置，无法通知应用商店
+Outbox job 21658 (accounts.changed) failed
+Traceback (most recent call last):
+  File "D:\rpa\202610\dootask-fastapi\backend\jobs.py", line 111, in run_once
+    handler(connection, payload, settings)
+  File "D:\rpa\202610\dootask-fastapi\backend\domains\account_jobs.py", line 40, in changed_job
+    elif not before.get('disable_at') and after.get('disable_at'): dispatch_user_hook(c,after,'user_offboard','offboarded',[],settings)
+                                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\rpa\202610\dootask-fastapi\backend\domains\apps.py", line 137, in dispatch_user_hook
+    raise ApiError("APP_KEY未配置，无法通知应用商店")
+backend.errors.ApiError: APP_KEY未配置，无法通知应用商店
+Outbox job 7266 (accounts.created) failed
+Traceback (most recent call last):
+  File "D:\rpa\202610\dootask-fastapi\backend\jobs.py", line 111, in run_once
+    handler(connection, payload, settings)
+  File "D:\rpa\202610\dootask-fastapi\backend\domains\account_jobs.py", line 21, in created_job
+    dispatch_user_hook(c,user,'user_onboard','onboard',[],settings)
+  File "D:\rpa\202610\dootask-fastapi\backend\domains\apps.py", line 137, in dispatch_user_hook
+    raise ApiError("APP_KEY未配置，无法通知应用商店")
+backend.errors.ApiError: APP_KEY未配置，无法通知应用商店
+Outbox job 7307 (accounts.created) failed
+Traceback (most recent call last):
+  File "D:\rpa\202610\dootask-fastapi\backend\jobs.py", line 111, in run_once
+    handler(connection, payload, settings)
+  File "D:\rpa\202610\dootask-fastapi\backend\domains\account_jobs.py", line 21, in created_job
+    dispatch_user_hook(c,user,'user_onboard','onboard',[],settings)
+  File "D:\rpa\202610\dootask-fastapi\backend\domains\apps.py", line 137, in dispatch_user_hook
+    raise ApiError("APP_KEY未配置，无法通知应用商店")
+backend.errors.ApiError: APP_KEY未配置，无法通知应用商店
+Outbox job 7703 (accounts.created) failed
+Traceback (most recent call last):
+  File "D:\rpa\202610\dootask-fastapi\backend\jobs.py", line 111, in run_once
+    handler(connection, payload, settings)
+  File "D:\rpa\202610\dootask-fastapi\backend\domains\account_jobs.py", line 21, in created_job
+    dispatch_user_hook(c,user,'user_onboard','onboard',[],settings)
+  File "D:\rpa\202610\dootask-fastapi\backend\domains\apps.py", line 137, in dispatch_user_hook
+    raise ApiError("APP_KEY未配置，无法通知应用商店")
+backend.errors.ApiError: APP_KEY未配置，无法通知应用商店
+Outbox job 7707 (accounts.created) failed
+Traceback (most recent call last):
+  File "D:\rpa\202610\dootask-fastapi\backend\jobs.py", line 111, in run_once
+    handler(connection, payload, settings)
+  File "D:\rpa\202610\dootask-fastapi\backend\domains\account_jobs.py", line 21, in created_job
+    dispatch_user_hook(c,user,'user_onboard','onboard',[],settings)
+  File "D:\rpa\202610\dootask-fastapi\backend\domains\apps.py", line 137, in dispatch_user_hook
+    raise ApiError("APP_KEY未配置，无法通知应用商店")
+backend.errors.ApiError: APP_KEY未配置，无法通知应用商店
+Outbox job 7857 (accounts.created) failed
+Traceback (most recent call last):
+  File "D:\rpa\202610\dootask-fastapi\backend\jobs.py", line 111, in run_once
+    handler(connection, payload, settings)
+  File "D:\rpa\202610\dootask-fastapi\backend\domains\account_jobs.py", line 21, in created_job
+    dispatch_user_hook(c,user,'user_onboard','onboard',[],settings)
+  File "D:\rpa\202610\dootask-fastapi\backend\domains\apps.py", line 137, in dispatch_user_hook
+    raise ApiError("APP_KEY未配置，无法通知应用商店")
+backend.errors.ApiError: APP_KEY未配置，无法通知应用商店
+Outbox job 21658 (accounts.changed) failed
+Traceback (most recent call last):
+  File "D:\rpa\202610\dootask-fastapi\backend\jobs.py", line 111, in run_once
+    handler(connection, payload, settings)
+  File "D:\rpa\202610\dootask-fastapi\backend\domains\account_jobs.py", line 40, in changed_job
+    elif not before.get('disable_at') and after.get('disable_at'): dispatch_user_hook(c,after,'user_offboard','offboarded',[],settings)
+                                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\rpa\202610\dootask-fastapi\backend\domains\apps.py", line 137, in dispatch_user_hook
+    raise ApiError("APP_KEY未配置，无法通知应用商店")
+backend.errors.ApiError: APP_KEY未配置，无法通知应用商店
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [19424]

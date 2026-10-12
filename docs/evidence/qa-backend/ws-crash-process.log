@@ -1,0 +1,15 @@
+INFO:     Started server process [12520]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:18081 (Press CTRL+C to quit)
+Outbox job 61347 (accounts.created) failed
+Traceback (most recent call last):
+  File "D:\rpa\202610\dootask-fastapi\backend\jobs.py", line 111, in run_once
+    handler(connection, payload, settings)
+  File "D:\rpa\202610\dootask-fastapi\backend\domains\account_jobs.py", line 21, in created_job
+    dispatch_user_hook(c,user,'user_onboard','onboard',[],settings)
+  File "D:\rpa\202610\dootask-fastapi\backend\domains\apps.py", line 185, in dispatch_user_hook
+    raise ApiError("APP_KEY未配置，无法通知应用商店")
+backend.errors.ApiError: APP_KEY未配置，无法通知应用商店
+INFO:     127.0.0.1:3249 - "WebSocket /ws?action=web&token=[REDACTED]" [accepted]
+INFO:     connection open
