@@ -1,0 +1,60 @@
+[
+  {
+    "argv": [
+      "py",
+      "-3.13",
+      "--version"
+    ],
+    "cwd": null,
+    "started_utc": "2026-10-12T04:55:45.888281+00:00",
+    "ended_utc": "2026-10-12T04:55:45.980495+00:00",
+    "elapsed_seconds": 0.09297699999979159,
+    "exit_code": 0,
+    "stdout": "Python 3.13.7\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "py",
+      "-3.12",
+      "--version"
+    ],
+    "cwd": null,
+    "started_utc": "2026-10-12T04:55:45.888281+00:00",
+    "ended_utc": "2026-10-12T04:55:46.044343+00:00",
+    "elapsed_seconds": 0.1559010999999373,
+    "exit_code": 0,
+    "stdout": "Python 3.12.10\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "py",
+      "-3.12",
+      "-m",
+      "pip",
+      "--version"
+    ],
+    "cwd": null,
+    "started_utc": "2026-10-12T04:55:45.888281+00:00",
+    "ended_utc": "2026-10-12T04:55:46.923837+00:00",
+    "elapsed_seconds": 1.0368238000000929,
+    "exit_code": 0,
+    "stdout": "pip 25.0.1 from C:\\Users\\djren\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pip (python 3.12)\n\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "py",
+      "-3.11",
+      "--version"
+    ],
+    "cwd": null,
+    "started_utc": "2026-10-12T04:55:45.888281+00:00",
+    "ended_utc": "2026-10-12T04:55:46.095353+00:00",
+    "elapsed_seconds": 0.20830960000012055,
+    "exit_code": 0,
+    "stdout": "Python 3.11.9\n",
+    "stderr": ""
+  }
+]

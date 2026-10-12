@@ -1,0 +1,12 @@
+{
+  "observation_date_local": "2026-10-12",
+  "timestamp_note": "Filesystem tools did not return per-call timestamps; this summary claims date precision only. Exact subprocess samples are retained separately.",
+  "observations": [
+    {"tool":"glob","paths":["D:/rpa/202610/dootask/.git","D:/rpa/202610/dootask/node_modules","D:/rpa/202610/dootask/vendor","D:/rpa/202610/dootask/*lock*","D:/rpa/202610/dootask-fastapi/.git"],"observed":{"source_git_present":true,"destination_git_present_before_initialization":false,"node_modules_present":false,"vendor_present":false,"lockfiles_found":["composer.lock"]}},
+    {"tool":"read","path":"D:/rpa/202610/dootask/resources/drawio","result":"(empty directory)"},
+    {"tool":"read","path":"D:/rpa/202610/dootask/resources/mobile","result":"(empty directory)"},
+    {"tool":"glob","paths":["C:/Program Files/Docker/Docker/resources/bin/docker.exe","C:/Program Files/PHP*/php.exe","C:/php/php.exe","C:/xampp/php/php.exe","C:/ProgramData/ComposerSetup/bin/composer*","D:/rpa/202610/dootask/package-lock.json","D:/rpa/202610/dootask/yarn.lock","D:/rpa/202610/dootask/pnpm-lock.yaml"],"result":"No files found matching pattern"},
+    {"tool":"mcp__codegraph_explore","projectPath":"D:/rpa/202610/dootask","result":"No .codegraph/ directory found walking up from project; use built-in tools; no indexing performed."}
+  ],
+  "limits":["Executable PATH and listed conventional locations are not an exhaustive drive scan.","Git tracked status excludes untracked files and does not prove all source filesystem bytes unchanged.","Manifest reference hash inventory does not prove source-to-bundle equivalence, dynamic runtime closure, or service readiness."]
+}

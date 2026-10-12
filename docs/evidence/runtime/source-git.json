@@ -1,0 +1,102 @@
+[
+  {
+    "argv": [
+      "git",
+      "--no-optional-locks",
+      "-c",
+      "core.fsmonitor=false",
+      "-C",
+      "D:/rpa/202610/dootask",
+      "rev-parse",
+      "--show-toplevel",
+      "HEAD"
+    ],
+    "cwd": null,
+    "started_utc": "2026-10-12T04:44:20.585779+00:00",
+    "ended_utc": "2026-10-12T04:44:20.634232+00:00",
+    "elapsed_seconds": 0.04679009999995287,
+    "exit_code": 0,
+    "stdout": "D:/rpa/202610/dootask\n6f111cd97dcbdaea23bf28768cd15dfa38bcae63\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "--no-optional-locks",
+      "-c",
+      "core.fsmonitor=false",
+      "-C",
+      "D:/rpa/202610/dootask",
+      "status",
+      "--porcelain=v1",
+      "--untracked-files=no"
+    ],
+    "cwd": null,
+    "started_utc": "2026-10-12T04:44:20.588308+00:00",
+    "ended_utc": "2026-10-12T04:44:20.953323+00:00",
+    "elapsed_seconds": 0.3655458999999155,
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "--no-optional-locks",
+      "-c",
+      "core.fsmonitor=false",
+      "-C",
+      "D:/rpa/202610/dootask",
+      "submodule",
+      "status"
+    ],
+    "cwd": null,
+    "started_utc": "2026-10-12T04:44:20.588308+00:00",
+    "ended_utc": "2026-10-12T04:44:21.815083+00:00",
+    "elapsed_seconds": 1.2267869000002065,
+    "exit_code": 0,
+    "stdout": "-88ee1f5ab4d40603a8f3aaa0d9d6dc3794c6b3f0 resources/drawio\n-c5c5c100e742c302ae914df882af6210c80582d7 resources/mobile\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "--no-optional-locks",
+      "-c",
+      "core.fsmonitor=false",
+      "-C",
+      "D:/rpa/202610/dootask",
+      "ls-files",
+      "--stage",
+      "resources/drawio",
+      "resources/mobile"
+    ],
+    "cwd": null,
+    "started_utc": "2026-10-12T04:44:20.588308+00:00",
+    "ended_utc": "2026-10-12T04:44:20.638781+00:00",
+    "elapsed_seconds": 0.0506287999999131,
+    "exit_code": 0,
+    "stdout": "160000 88ee1f5ab4d40603a8f3aaa0d9d6dc3794c6b3f0 0\tresources/drawio\n160000 c5c5c100e742c302ae914df882af6210c80582d7 0\tresources/mobile\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "--no-optional-locks",
+      "-c",
+      "core.fsmonitor=false",
+      "-C",
+      "D:/rpa/202610/dootask",
+      "log",
+      "-1",
+      "--format=%H%n%cI%n%s"
+    ],
+    "cwd": null,
+    "started_utc": "2026-10-12T04:44:20.588308+00:00",
+    "ended_utc": "2026-10-12T04:44:20.640785+00:00",
+    "elapsed_seconds": 0.051726599999938117,
+    "exit_code": 0,
+    "stdout": "6f111cd97dcbdaea23bf28768cd15dfa38bcae63\n2026-10-10T09:50:29Z\nrelease: v1.9.66\n",
+    "stderr": ""
+  }
+]

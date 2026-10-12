@@ -1,0 +1,15 @@
+{
+  "argv": [
+    "git",
+    "init",
+    "--initial-branch=main",
+    "D:\\rpa\\202610\\dootask-fastapi"
+  ],
+  "cwd": null,
+  "started_utc": "2026-10-12T05:21:00.948372+00:00",
+  "ended_utc": "2026-10-12T05:21:01.008327+00:00",
+  "elapsed_seconds": 0.05918890000020838,
+  "exit_code": 0,
+  "stdout": "Initialized empty Git repository in D:/rpa/202610/dootask-fastapi/.git/\n",
+  "stderr": ""
+}

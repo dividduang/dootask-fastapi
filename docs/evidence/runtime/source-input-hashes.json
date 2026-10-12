@@ -1,0 +1,60 @@
+{
+  "sampled_utc": "2026-10-12T04:59:44.513377+00:00",
+  "files": [
+    {
+      "path": "AGENTS.md",
+      "bytes": 9,
+      "sha256": "6ebdb617a8104a7756d0cf36578ab01103dc9f07e4dc6feb751296b9c402faf7"
+    },
+    {
+      "path": "CLAUDE.md",
+      "bytes": 6436,
+      "sha256": "9b72bd8e5801b99c9847596162f4e55511444f4bfcd4ef4462795bedd4c6f144"
+    },
+    {
+      "path": ".gitmodules",
+      "bytes": 212,
+      "sha256": "7e43f0a4c904366df8e757d5265df7daf3558134d937b6c84ed6d55f80c0135f"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 914,
+      "sha256": "3e115cff25ae3c6e3973a62dfda3fd8e4fb8ff8f63aac81ffcb2f1ad7c46d7db"
+    },
+    {
+      "path": ".gitattributes",
+      "bytes": 116,
+      "sha256": "c2bbf55af88931b3c32613715330fc78d6b7d0bfca7ec01afb729d1719ce9357"
+    },
+    {
+      "path": "package.json",
+      "bytes": 3347,
+      "sha256": "4135baccc108fafebd905b32e4ed36ab65ac12593338ed0289d59190db8102fe"
+    },
+    {
+      "path": "composer.json",
+      "bytes": 3058,
+      "sha256": "1ce5a57adb938310896a2d8e1319094ff44a0c84e56dae2f694d01b30d1c222a"
+    },
+    {
+      "path": "composer.lock",
+      "bytes": 423532,
+      "sha256": "bdf2c11f8d77abd0b3585c7477b4f7678d34308e3aaace771e7885eb1c420b4a"
+    },
+    {
+      "path": "docker-compose.yml",
+      "bytes": 3582,
+      "sha256": "87a699e23d5a39615f5cd745b7d2616c8e7cb33fd4b8adcc3780edfc1d99bfd0"
+    },
+    {
+      "path": "vite.config.js",
+      "bytes": 5651,
+      "sha256": "70ad1af5f5beb1ab0f5e41d5a45f6aa2a71c90458896327035946b5625f0dfcf"
+    },
+    {
+      "path": "public/manifest.json",
+      "bytes": 126797,
+      "sha256": "18f6f9461fb84debbe3f7799476c5514a31aaedbe6b8a6eb5df8e9ce797666ee"
+    }
+  ]
+}

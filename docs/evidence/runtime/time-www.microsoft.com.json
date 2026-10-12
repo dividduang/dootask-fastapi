@@ -1,0 +1,51 @@
+{
+  "status": 200,
+  "final_url": "https://www.microsoft.com/",
+  "headers": [
+    [
+      "Content-Type",
+      "text/html"
+    ],
+    [
+      "ETag",
+      "\"85de642e1467807f64f7e10807df3869:1711562737.176211\""
+    ],
+    [
+      "Last-Modified",
+      "Tue, 26 Mar 2024 18:16:43 GMT"
+    ],
+    [
+      "Server",
+      "AkamaiNetStorage"
+    ],
+    [
+      "Date",
+      "Mon, 12 Oct 2026 04:40:27 GMT"
+    ],
+    [
+      "Connection",
+      "close"
+    ],
+    [
+      "Vary",
+      "Accept-Encoding"
+    ]
+  ],
+  "url": "https://www.microsoft.com/",
+  "method": "HEAD",
+  "request_headers": {
+    "Host": "www.microsoft.com",
+    "Cache-control": "no-cache",
+    "Pragma": "no-cache",
+    "User-agent": "DooTask-Migration-Evidence/1.0"
+  },
+  "started_utc": "2026-10-12T04:40:16.592659+00:00",
+  "ended_utc": "2026-10-12T04:40:17.427440+00:00",
+  "elapsed_seconds": 0.8349888999998711,
+  "server_date_utc": "2026-10-12T04:40:27+00:00",
+  "server_minus_local_midpoint_seconds": 9.989951,
+  "nominal_server_minus_local_interval_seconds": [
+    9.57256,
+    11.407341
+  ]
+}

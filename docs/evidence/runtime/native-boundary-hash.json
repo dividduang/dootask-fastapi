@@ -1,0 +1,9 @@
+{
+  "sampled_utc": "2026-10-12T06:02:50.726924+00:00",
+  "source_root": "D:/rpa/202610/dootask",
+  "path": "app/Module/Interface/DooSo.php",
+  "observed_lines": "22-44",
+  "bytes": 11342,
+  "sha256": "4fd806d78db64d09ea116f41171e48cef3f5ed087aadcd40667ab2c1676d26d4",
+  "native_artifact_obtained": false
+}

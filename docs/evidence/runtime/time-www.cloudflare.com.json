@@ -1,0 +1,135 @@
+{
+  "status": 200,
+  "final_url": "https://www.cloudflare.com/",
+  "headers": [
+    [
+      "Date",
+      "Mon, 12 Oct 2026 04:40:28 GMT"
+    ],
+    [
+      "Content-Type",
+      "text/html; charset=utf-8"
+    ],
+    [
+      "Connection",
+      "close"
+    ],
+    [
+      "Link",
+      "<https://www.cloudflare.com/.well-known/api-catalog>; rel=\"api-catalog\", <https://www.cloudflare.com/.well-known/agents.json>; rel=\"service-desc\", <https://www.cloudflare.com/.well-known/webmcp.json>; rel=\"service-desc\", <https://www.cloudflare.com/openapi.json>; rel=\"service-desc\", <https://www.cloudflare.com/llms.txt>; rel=\"service-doc\", <https://www.cloudflare.com/sitemap.xml>; rel=\"sitemap\", </fonts/Kunst%20Grotesk%20Regular.woff2>; rel=preload; as=font; type=\"font/woff2\"; crossorigin, </fonts/Kunst%20Grotesk%20Medium.woff2>; rel=preload; as=font; type=\"font/woff2\"; crossorigin, <https://ot.www.cloudflare.com>; rel=preconnect; crossorigin, <https://imagedelivery.net>; rel=preconnect; crossorigin, </static/hero-poster.avif>; rel=preload; as=image; type=\"image/avif\"; fetchpriority=high"
+    ],
+    [
+      "Server-Timing",
+      "cfEdge;dur=5,cfOrigin;dur=0,cfWorker;dur=263"
+    ],
+    [
+      "Cache-Control",
+      "no-store"
+    ],
+    [
+      "Vary",
+      "accept-encoding"
+    ],
+    [
+      "Strict-Transport-Security",
+      "max-age=31536000; includeSubDomains"
+    ],
+    [
+      "Content-Security-Policy",
+      "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://static.cloudflareinsights.com https://static-staging.cloudflareinsights.com https://challenges.cloudflare.com https://*.onetrust.com https://cdn.cookielaw.org https://ot.www.cloudflare.com https://www.googletagmanager.com https://tagmanager.google.com https://www.googleadservices.com https://googleads.g.doubleclick.net https://adservice.google.com https://cdn.bizible.com https://js.adsrvr.org https://*.marketo.net https://platform.twitter.com https://static.ads-twitter.com https://scripts.demandbase.com https://tag.demandbase.com https://*.6sc.co https://*.qualified.com https://snap.licdn.com https://bat.bing.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https://*.googletagmanager.com https://*.google-analytics.com https://*.google.com https://*.doubleclick.net https://www.googleadservices.com https://translate.googleapis.com https://cdn.bizible.com https://js.adsrvr.org https://*.marketo.net https://ads-twitter.com https://analytics.twitter.com https://*.twimg.com https://api.demandbase.com https://scripts.demandbase.com https://tag.demandbase.com https://tag-logger.demandbase.com https://api.company-target.com https://*.6sc.co https://epsilon.6sense.com https://*.qualified.com https://*.ads.linkedin.com https://www.linkedin.com https://bat.bing.com https: wss://*.qualified.com wss://*.registrar.cloudflare.com; frame-src https://*.adsrvr.org https://*.cloudflare.com https://*.videodelivery.net https://*.cloudflarestream.com https://www.googletagmanager.com https://*.qualified.com https://td.doubleclick.net https://bid.g.doubleclick.net https://9309168.fls.doubleclick.net https://9973066.fls.doubleclick.net https://s.company-target.com; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; worker-src 'self' blob:; child-src 'self' blob:; upgrade-insecure-requests"
+    ],
+    [
+      "Cross-Origin-Opener-Policy",
+      "unsafe-none"
+    ],
+    [
+      "Cross-Origin-Resource-Policy",
+      "cross-origin"
+    ],
+    [
+      "Permissions-Policy",
+      "geolocation=(), camera=(), microphone=()"
+    ],
+    [
+      "Referrer-Policy",
+      "strict-origin-when-cross-origin"
+    ],
+    [
+      "X-Content-Type-Options",
+      "nosniff"
+    ],
+    [
+      "X-Frame-Options",
+      "SAMEORIGIN"
+    ],
+    [
+      "X-Served-By",
+      "marketing-site"
+    ],
+    [
+      "X-XSS-Protection",
+      "1; mode=block"
+    ],
+    [
+      "x-RM",
+      "GW"
+    ],
+    [
+      "Set-Cookie",
+      "[REDACTED: unsolicited public response cookie; not needed for time evidence]"
+    ],
+    [
+      "Set-Cookie",
+      "[REDACTED: unsolicited public response cookie; not needed for time evidence]"
+    ],
+    [
+      "Set-Cookie",
+      "[REDACTED: unsolicited public response cookie; not needed for time evidence]"
+    ],
+    [
+      "Set-Cookie",
+      "[REDACTED: unsolicited public response cookie; not needed for time evidence]"
+    ],
+    [
+      "set-cookie",
+      "[REDACTED: unsolicited public response cookie; not needed for time evidence]"
+    ],
+    [
+      "Report-To",
+      "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=6XqNOYXEHNVO9WzHELt9BQiG%2BDFQ7w4cVPvCq7JydEdHgs2QDk9RY5stq3yYri5HIIK4OhiVcrzWnKxbgfcUfEp%2Fqp1xtgTelXqHYi4Pnc%2Ftk3Zi1CF3lyj%2FsznfO099I2eS3A%3D%3D\"}]}"
+    ],
+    [
+      "Nel",
+      "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}"
+    ],
+    [
+      "Server",
+      "cloudflare"
+    ],
+    [
+      "CF-RAY",
+      "a4936d38bda57407-LAX"
+    ],
+    [
+      "alt-svc",
+      "h3=\":443\"; ma=86400"
+    ]
+  ],
+  "url": "https://www.cloudflare.com/",
+  "method": "HEAD",
+  "request_headers": {
+    "Host": "www.cloudflare.com",
+    "Cache-control": "no-cache",
+    "Pragma": "no-cache",
+    "User-agent": "DooTask-Migration-Evidence/1.0"
+  },
+  "started_utc": "2026-10-12T04:40:16.591660+00:00",
+  "ended_utc": "2026-10-12T04:40:18.909096+00:00",
+  "elapsed_seconds": 2.319032399999969,
+  "server_date_utc": "2026-10-12T04:40:28+00:00",
+  "server_minus_local_midpoint_seconds": 10.249622,
+  "nominal_server_minus_local_interval_seconds": [
+    9.090904,
+    12.40834
+  ]
+}

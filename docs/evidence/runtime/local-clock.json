@@ -1,0 +1,15 @@
+{
+  "argv": [
+    "powershell.exe",
+    "-NoProfile",
+    "-Command",
+    "[Console]::OutputEncoding=[System.Text.UTF8Encoding]::new(); $d=Get-Date; [ordered]@{local_iso=$d.ToString('o');utc_iso=$d.ToUniversalTime().ToString('o');timezone=(Get-TimeZone | Select-Object Id,DisplayName,BaseUtcOffset,SupportsDaylightSavingTime);os=[Environment]::OSVersion.VersionString} | ConvertTo-Json -Depth 5"
+  ],
+  "cwd": null,
+  "started_utc": "2026-10-12T04:39:44.328283+00:00",
+  "ended_utc": "2026-10-12T04:39:44.635821+00:00",
+  "elapsed_seconds": 0.30717719999984183,
+  "exit_code": 0,
+  "stdout": "{\n    \"local_iso\":  \"2026-10-12T12:39:44.5411748+08:00\",\n    \"utc_iso\":  \"2026-10-12T04:39:44.5411748Z\",\n    \"timezone\":  {\n                     \"Id\":  \"China Standard Time\",\n                     \"DisplayName\":  \"(UTC+08:00) Beijing, Chongqing, Hong Kong, Urumqi\",\n                     \"BaseUtcOffset\":  {\n                                           \"Ticks\":  288000000000,\n                                           \"Days\":  0,\n                                           \"Hours\":  8,\n                                           \"Milliseconds\":  0,\n                                           \"Minutes\":  0,\n                                           \"Seconds\":  0,\n                                           \"TotalDays\":  0.33333333333333331,\n                                           \"TotalHours\":  8,\n                                           \"TotalMilliseconds\":  28800000,\n                                           \"TotalMinutes\":  480,\n                                           \"TotalSeconds\":  28800\n                                       },\n                     \"SupportsDaylightSavingTime\":  false\n                 },\n    \"os\":  \"Microsoft Windows NT 10.0.26200.0\"\n}\n",
+  "stderr": ""
+}

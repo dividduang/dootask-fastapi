@@ -1,0 +1,85 @@
+[
+  {
+    "argv": [
+      "python",
+      "--version"
+    ],
+    "cwd": null,
+    "started_utc": "2026-10-12T04:44:19.187634+00:00",
+    "ended_utc": "2026-10-12T04:44:19.199925+00:00",
+    "elapsed_seconds": 0.01274539999985791,
+    "exit_code": 0,
+    "stdout": "Python 3.10.9\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "python",
+      "-m",
+      "pip",
+      "--version"
+    ],
+    "cwd": null,
+    "started_utc": "2026-10-12T04:44:19.187634+00:00",
+    "ended_utc": "2026-10-12T04:44:20.585779+00:00",
+    "elapsed_seconds": 1.3981834999999592,
+    "exit_code": 0,
+    "stdout": "pip 22.3.1 from C:\\Users\\djren\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\pip (python 3.10)\n\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "py",
+      "-0p"
+    ],
+    "cwd": null,
+    "started_utc": "2026-10-12T04:44:19.187634+00:00",
+    "ended_utc": "2026-10-12T04:44:19.335798+00:00",
+    "elapsed_seconds": 0.14829869999994116,
+    "exit_code": 0,
+    "stdout": " -V:3.13 *        C:\\Users\\djren\\AppData\\Local\\Programs\\Python\\Python313\\python.exe\n -V:3.12          C:\\Users\\djren\\AppData\\Local\\Programs\\Python\\Python312\\python.exe\n -V:3.11          C:\\Users\\djren\\AppData\\Local\\Programs\\Python\\Python311\\python.exe\n -V:3.10          C:\\Users\\djren\\AppData\\Local\\Programs\\Python\\Python310\\python.exe\n -V:Astral/CPython3.12.9 C:\\Users\\djren\\AppData\\Roaming\\uv\\python\\cpython-3.12.9-windows-x86_64-none\\python.exe\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "node",
+      "--version"
+    ],
+    "cwd": null,
+    "started_utc": "2026-10-12T04:44:19.187634+00:00",
+    "ended_utc": "2026-10-12T04:44:19.220185+00:00",
+    "elapsed_seconds": 0.03189350000002378,
+    "exit_code": 0,
+    "stdout": "v22.23.1\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "cmd.exe",
+      "/d",
+      "/c",
+      "npm.cmd",
+      "--version"
+    ],
+    "cwd": null,
+    "started_utc": "2026-10-12T04:44:19.188637+00:00",
+    "ended_utc": "2026-10-12T04:44:19.334295+00:00",
+    "elapsed_seconds": 0.1470160000001215,
+    "exit_code": 0,
+    "stdout": "11.4.1\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "--version"
+    ],
+    "cwd": null,
+    "started_utc": "2026-10-12T04:44:19.188637+00:00",
+    "ended_utc": "2026-10-12T04:44:19.233357+00:00",
+    "elapsed_seconds": 0.044511499999998705,
+    "exit_code": 0,
+    "stdout": "git version 2.47.1.windows.1\n",
+    "stderr": ""
+  }
+]

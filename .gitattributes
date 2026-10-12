@@ -1,0 +1,16 @@
+# Text is UTF-8 with LF; binary content is preserved by automatic detection.
+* text=auto eol=lf
+*.md text working-tree-encoding=UTF-8
+*.json text working-tree-encoding=UTF-8
+*.jsonl text working-tree-encoding=UTF-8
+*.py text working-tree-encoding=UTF-8
+*.js text working-tree-encoding=UTF-8
+*.mjs text working-tree-encoding=UTF-8
+*.cjs text working-tree-encoding=UTF-8
+*.ts text working-tree-encoding=UTF-8
+*.vue text working-tree-encoding=UTF-8
+*.yml text working-tree-encoding=UTF-8
+*.yaml text working-tree-encoding=UTF-8
+*.toml text working-tree-encoding=UTF-8
+*.sh text working-tree-encoding=UTF-8
+*.ps1 text working-tree-encoding=UTF-8

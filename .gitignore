@@ -1,0 +1,61 @@
+# Dependencies and local environments
+node_modules/
+vendor/
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+
+# Secrets; only reviewed examples belong in Git
+.env
+.env.*
+!.env.example
+!.env.*.example
+secrets/
+credentials/
+*.key
+*.pem
+*.p12
+*.pfx
+
+# Runtime state (evidence under docs/evidence/runtime is intentionally tracked)
+/runtime/
+/logs/
+/uploads/
+/tmp/
+/backup/
+/backups/
+/public/hot
+/public/tmp/
+/public/uploads/
+/storage/logs/
+/storage/framework/
+/storage/app/
+/docker/mysql/data/
+/docker/logs/
+*.log
+*.pid
+*.sqlite
+*.sqlite3
+*.sqlite-wal
+*.sqlite-shm
+*.sqlite3-wal
+*.sqlite3-shm
+
+# Generated dependency/build caches; reviewed shipped frontend assets remain trackable
+/.cache/
+/.pytest_cache/
+/.mypy_cache/
+/.ruff_cache/
+/.coverage
+/htmlcov/
+/dist/
+/build/
+/test-results/
+/playwright-report/
+
+# Workstation files
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
