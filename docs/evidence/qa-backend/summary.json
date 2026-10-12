@@ -36,9 +36,9 @@
     "PASS_RECORDED_SCENARIOS_ONLY": 80
   },
   "services": {
-    "observed_at": "2026-10-12T10:51:37.901662+00:00",
+    "observed_at": "2026-10-12T10:57:00.798192+00:00",
     "http": {
-      "pid": 17896,
+      "pid": 31052,
       "command": [
         "D:\\rpa\\202610\\dootask-fastapi\\.venv\\Scripts\\python.exe",
         "-m",
@@ -52,10 +52,10 @@
         "--no-proxy-headers",
         "--no-access-log"
       ],
-      "running": true
+      "live_log": ".runtime/api-live.log"
     },
     "https": {
-      "pid": 7988,
+      "pid": 5568,
       "command": [
         "D:\\rpa\\202610\\dootask-fastapi\\.venv\\Scripts\\python.exe",
         "-m",
@@ -73,9 +73,10 @@
         "--ssl-certfile",
         "D:\\rpa\\202610\\dootask-fastapi\\.runtime\\protocol-cert.pem"
       ],
-      "running": true
+      "live_log": ".runtime/api-https-live.log"
     },
     "frontend_root": "D:\\rpa\\202610\\dootask-fastapi\\frontend",
-    "extra_crash_worker": "18081 terminated by its own regression test"
+    "extra_crash_worker": "18081 terminated",
+    "note": "After completed network windows, retained evidence logs frozen and leave-running services restarted with ignored private live logs."
   }
 }

@@ -1698,3 +1698,7 @@ Traceback (most recent call last):
   File "D:\rpa\202610\dootask-fastapi\backend\domains\apps.py", line 185, in dispatch_user_hook
     raise ApiError("APP_KEY未配置，无法通知应用商店")
 backend.errors.ApiError: APP_KEY未配置，无法通知应用商店
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [8548]
