@@ -78,5 +78,10 @@
     "frontend_root": "D:\\rpa\\202610\\dootask-fastapi\\frontend",
     "extra_crash_worker": "18081 terminated",
     "note": "After completed network windows, retained evidence logs frozen and leave-running services restarted with ignored private live logs."
+  },
+  "deployment_gate": {
+    "trusted_isolated_loopback": "ALLOWED_FOR_ACCEPTANCE_ONLY",
+    "untrusted_multiuser_or_public": "NO_GO",
+    "evidence": "docs/2026101223-前端运行依赖风险复核-feat.md"
   }
 }

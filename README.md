@@ -4,6 +4,8 @@
 
 **已完成真实隔离运行、核心回归及生产前端构建交付；不是326业务全量验收通过。** 历史334业务保留326入口，8个厂商授权入口退役，222个框架/继承候选拒绝。实际执行记录见 `docs/2026101219-后端真实运行与回归验收-feat.md` 与 `docs/evidence/qa-backend/`；前端 `public` 已由真实Vite构建提升，不再使用旧制品。逐条业务/外部依赖未覆盖仍明确为NOT_RUN/BLOCKED，匿名入口拒绝不等于业务成功。
 
+**部署安全门禁：仅允许loopback/受控隔离环境、可信合成内容验收；不可信多人内网及公网部署NO_GO，不是production ready。** 1223独立复核确认实际可达的Mermaid/TinyMCE及原始HTML信任边界仍未关闭；升级静态制品、第三方LTS许可与必要净化均需要额外授权和真实跨用户回归。见 `docs/2026101223-前端运行依赖风险复核-feat.md`，不可拿基本业务通过或npm聚合数量替代安全决定。
+
 ## 独立 QA 启动
 
 本机 Windows CPython 3.12 `.venv` 的37个锁定runtime包已用于真实运行；安装来源与官方PyPI hash见 `docs/evidence/integration/`。本批未新增Python依赖。不要重复创建已有venv或对已初始化的库执行init-db。
