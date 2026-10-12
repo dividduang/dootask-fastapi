@@ -1,0 +1,35 @@
+{
+  "run": "2026-10-12T10-24-11-396Z",
+  "command": [
+    "C:\\nvm4w\\nodejs\\node.exe",
+    "D:\\rpa\\202610\\dootask-fastapi\\tests\\protocol_pgp.mjs",
+    "http://127.0.0.1:18080"
+  ],
+  "node": "v22.23.1",
+  "crypto_module": "D:\\rpa\\202610\\dootask-fastapi\\.runtime\\frontend-build\\node_modules\\openpgp_hi\\dist\\lightweight\\openpgp.min.mjs",
+  "crypto_sha256": "c5454f2da4c8cba197a166dbdc8157f1efc7b1f0f2592cd76e01b9dedc122740",
+  "frames": [
+    {
+      "utc": "2026-10-12T10:24:11.969Z",
+      "path": "users/login",
+      "http": 200,
+      "elapsed_ms": 286,
+      "request_ciphertext_sha256": "62e6256163a4364ba06601e47b808edddddabed88d88495ac74acc624dff9cb2",
+      "request_ciphertext_bytes": 770,
+      "response_ciphertext_sha256": "b0885496fbb0ca6bbd11088ebad1349c6324f16d79f0a2dbf07dfd0236c8091a",
+      "response_ciphertext_bytes": 316,
+      "decrypted": {
+        "ret": 0,
+        "msg": "账号密码最多可输入32位字符",
+        "data": []
+      }
+    }
+  ],
+  "status": "FAIL",
+  "exchange": {
+    "status": 200,
+    "ret": 1,
+    "public_key_sha256": "8a25d3337a181d246676ee68937087e8975bb9b2a821b65343ffd1b1d6726f98"
+  },
+  "error": "AssertionError [ERR_ASSERTION]: users/login: 账号密码最多可输入32位字符\n\nfalse !== true\n\n    at encryptedCall (file:///D:/rpa/202610/dootask-fastapi/tests/protocol_pgp.mjs:51:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at async file:///D:/rpa/202610/dootask-fastapi/tests/protocol_pgp.mjs:54:22"
+}

@@ -1,0 +1,12 @@
+{
+  "command": [
+    "D:\\rpa\\202610\\dootask-fastapi\\.venv\\Scripts\\python.exe",
+    "-m",
+    "tests.backend_inventory_acceptance"
+  ],
+  "started_at": "2026-10-12T10:44:53.966270+00:00",
+  "duration_seconds": 0.172,
+  "exit_code": 0,
+  "stdout": "Real authenticated local app inventory checks passed\r\n",
+  "stderr": ""
+}

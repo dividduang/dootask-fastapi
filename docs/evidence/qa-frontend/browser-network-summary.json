@@ -1,0 +1,89 @@
+{
+  "requests": 200,
+  "origins": [
+    "http://127.0.0.1:18080",
+    "null"
+  ],
+  "vendorAuthorizationRequests": [],
+  "failed": [
+    {
+      "seq": 1572,
+      "ts": 1791800991947,
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/appstore/api/v1/internal/installed",
+      "queryKeys": [],
+      "resourceType": "xhr",
+      "status": 404,
+      "ok": false,
+      "durationMs": 8
+    },
+    {
+      "seq": 1598,
+      "ts": 1791801014021,
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/appstore/api/v1/internal/installed",
+      "queryKeys": [],
+      "resourceType": "xhr",
+      "status": 404,
+      "ok": false,
+      "durationMs": 4
+    },
+    {
+      "seq": 1717,
+      "ts": 1791801014460,
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/appstore/api/v1/internal/installed",
+      "queryKeys": [],
+      "resourceType": "xhr",
+      "status": 404,
+      "ok": false,
+      "durationMs": 0
+    },
+    {
+      "seq": 1727,
+      "ts": 1791801021370,
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/license.af00c469.js",
+      "queryKeys": [],
+      "resourceType": "fetch",
+      "status": 404,
+      "ok": false,
+      "durationMs": 62
+    },
+    {
+      "seq": 1728,
+      "ts": 1791801021370,
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/pro.dcd2a750.js",
+      "queryKeys": [],
+      "resourceType": "fetch",
+      "status": 404,
+      "ok": false,
+      "durationMs": 62
+    }
+  ],
+  "runtimeEntry": {
+    "seq": 1605,
+    "ts": 1791801014066,
+    "method": "GET",
+    "origin": "http://127.0.0.1:18080",
+    "path": "/js/build/app.95b8d539.js",
+    "queryKeys": [],
+    "resourceType": "script",
+    "status": 200,
+    "ok": true,
+    "durationMs": 0
+  },
+  "browser": "Chrome/154.0.8037.98",
+  "viewport": {
+    "width": 1440,
+    "height": 1000,
+    "deviceScaleFactor": 1.25
+  },
+  "coverage": "Last 200 retained browser requests only (seq 1529-1728); not complete scenario HAR. No vendor request observed in retained window. Earlier UI/registration requests observed live; no global absence claim."
+}

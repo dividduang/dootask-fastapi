@@ -1,0 +1,920 @@
+{
+  "observed_at": "2026-10-12T10:45:31.606Z",
+  "url": "http://127.0.0.1:18080/manage/dashboard",
+  "context": "new isolated browser context; real original UI login",
+  "responses": [
+    {
+      "at": "2026-10-12T10:45:27.692Z",
+      "path": "/login",
+      "status": 200,
+      "method": "GET",
+      "type": "document"
+    },
+    {
+      "at": "2026-10-12T10:45:27.865Z",
+      "path": "/js/build/app.8920178d.css",
+      "status": 200,
+      "method": "GET",
+      "type": "stylesheet"
+    },
+    {
+      "at": "2026-10-12T10:45:27.866Z",
+      "path": "/css/iview.css",
+      "status": 200,
+      "method": "GET",
+      "type": "stylesheet"
+    },
+    {
+      "at": "2026-10-12T10:45:27.867Z",
+      "path": "/css/loading.css",
+      "status": 200,
+      "method": "GET",
+      "type": "stylesheet"
+    },
+    {
+      "at": "2026-10-12T10:45:27.874Z",
+      "path": "/js/loading-theme.js",
+      "status": 200,
+      "method": "GET",
+      "type": "script"
+    },
+    {
+      "at": "2026-10-12T10:45:27.901Z",
+      "path": "/js/build/app.95b8d539.js",
+      "status": 200,
+      "method": "GET",
+      "type": "script"
+    },
+    {
+      "at": "2026-10-12T10:45:27.952Z",
+      "path": "/js/build/dayjs.d911487c.js",
+      "status": 200,
+      "method": "GET",
+      "type": "script"
+    },
+    {
+      "at": "2026-10-12T10:45:27.953Z",
+      "path": "/js/build/jquery.f3b04b8d.js",
+      "status": 200,
+      "method": "GET",
+      "type": "script"
+    },
+    {
+      "at": "2026-10-12T10:45:27.954Z",
+      "path": "/js/build/markdown-it-link-attributes.e1d5d151.js",
+      "status": 200,
+      "method": "GET",
+      "type": "script"
+    },
+    {
+      "at": "2026-10-12T10:45:27.954Z",
+      "path": "/js/build/localforage.1d2bfa1a.js",
+      "status": 200,
+      "method": "GET",
+      "type": "script"
+    },
+    {
+      "at": "2026-10-12T10:45:27.955Z",
+      "path": "/js/build/markdown-it.a32176fe.js",
+      "status": 200,
+      "method": "GET",
+      "type": "script"
+    },
+    {
+      "at": "2026-10-12T10:45:27.956Z",
+      "path": "/js/build/vuex.cc7cb26e.js",
+      "status": 200,
+      "method": "GET",
+      "type": "script"
+    },
+    {
+      "at": "2026-10-12T10:45:27.956Z",
+      "path": "/js/build/axios.b1f1dd94.js",
+      "status": 200,
+      "method": "GET",
+      "type": "script"
+    },
+    {
+      "at": "2026-10-12T10:45:27.957Z",
+      "path": "/js/build/vue.d9ae1698.js",
+      "status": 200,
+      "method": "GET",
+      "type": "script"
+    },
+    {
+      "at": "2026-10-12T10:45:27.967Z",
+      "path": "/js/build/@traptitech.06ef763c.js",
+      "status": 200,
+      "method": "GET",
+      "type": "script"
+    },
+    {
+      "at": "2026-10-12T10:45:27.970Z",
+      "path": "/js/build/mitt.1ea0a2a3.js",
+      "status": 200,
+      "method": "GET",
+      "type": "script"
+    },
+    {
+      "at": "2026-10-12T10:45:27.971Z",
+      "path": "/js/build/highlight.js.00c1079e.js",
+      "status": 200,
+      "method": "GET",
+      "type": "script"
+    },
+    {
+      "at": "2026-10-12T10:45:27.973Z",
+      "path": "/js/build/quill-hi.b812af0d.js",
+      "status": 200,
+      "method": "GET",
+      "type": "script"
+    },
+    {
+      "at": "2026-10-12T10:45:27.973Z",
+      "path": "/js/build/openpgp_hi.15f91b1d.js",
+      "status": 200,
+      "method": "GET",
+      "type": "script"
+    },
+    {
+      "at": "2026-10-12T10:45:27.973Z",
+      "path": "/js/build/quill-mention-hi.4f2f7670.js",
+      "status": 200,
+      "method": "GET",
+      "type": "script"
+    },
+    {
+      "at": "2026-10-12T10:45:27.974Z",
+      "path": "/js/build/quill-delta.1ca1e180.js",
+      "status": 200,
+      "method": "GET",
+      "type": "script"
+    },
+    {
+      "at": "2026-10-12T10:45:27.975Z",
+      "path": "/js/build/html-to-md.50a87632.js",
+      "status": 200,
+      "method": "GET",
+      "type": "script"
+    },
+    {
+      "at": "2026-10-12T10:45:27.976Z",
+      "path": "/js/build/vue-router.2d566cd7.js",
+      "status": 200,
+      "method": "GET",
+      "type": "script"
+    },
+    {
+      "at": "2026-10-12T10:45:27.976Z",
+      "path": "/js/build/lodash.710f94d1.js",
+      "status": 200,
+      "method": "GET",
+      "type": "script"
+    },
+    {
+      "at": "2026-10-12T10:45:27.977Z",
+      "path": "/js/build/vue-clipboard2.75089409.js",
+      "status": 200,
+      "method": "GET",
+      "type": "script"
+    },
+    {
+      "at": "2026-10-12T10:45:27.977Z",
+      "path": "/js/build/vuedraggable.b71d4bc8.js",
+      "status": 200,
+      "method": "GET",
+      "type": "script"
+    },
+    {
+      "at": "2026-10-12T10:45:27.977Z",
+      "path": "/js/build/vue-resize-observer.6692fc88.js",
+      "status": 200,
+      "method": "GET",
+      "type": "script"
+    },
+    {
+      "at": "2026-10-12T10:45:27.979Z",
+      "path": "/js/build/@babel.2ffbfeed.js",
+      "status": 200,
+      "method": "GET",
+      "type": "script"
+    },
+    {
+      "at": "2026-10-12T10:45:27.979Z",
+      "path": "/js/build/mdurl.ce6c1dd8.js",
+      "status": 200,
+      "method": "GET",
+      "type": "script"
+    },
+    {
+      "at": "2026-10-12T10:45:27.980Z",
+      "path": "/js/build/uc.micro.8d343c98.js",
+      "status": 200,
+      "method": "GET",
+      "type": "script"
+    },
+    {
+      "at": "2026-10-12T10:45:27.981Z",
+      "path": "/js/build/entities.c6e13047.js",
+      "status": 200,
+      "method": "GET",
+      "type": "script"
+    },
+    {
+      "at": "2026-10-12T10:45:27.986Z",
+      "path": "/js/build/view-design-hi.01808dc5.js",
+      "status": 200,
+      "method": "GET",
+      "type": "script"
+    },
+    {
+      "at": "2026-10-12T10:45:27.986Z",
+      "path": "/js/build/punycode.js.4b3f125a.js",
+      "status": 200,
+      "method": "GET",
+      "type": "script"
+    },
+    {
+      "at": "2026-10-12T10:45:27.987Z",
+      "path": "/js/build/linkify-it.a36c65e2.js",
+      "status": 200,
+      "method": "GET",
+      "type": "script"
+    },
+    {
+      "at": "2026-10-12T10:45:27.988Z",
+      "path": "/js/build/parchment.d5c5924e.js",
+      "status": 200,
+      "method": "GET",
+      "type": "script"
+    },
+    {
+      "at": "2026-10-12T10:45:27.989Z",
+      "path": "/js/build/lodash-es.76e3a28b.js",
+      "status": 200,
+      "method": "GET",
+      "type": "script"
+    },
+    {
+      "at": "2026-10-12T10:45:27.989Z",
+      "path": "/js/build/eventemitter3.78b735ad.js",
+      "status": 200,
+      "method": "GET",
+      "type": "script"
+    },
+    {
+      "at": "2026-10-12T10:45:27.989Z",
+      "path": "/js/build/element-sea.854640d9.js",
+      "status": 200,
+      "method": "GET",
+      "type": "script"
+    },
+    {
+      "at": "2026-10-12T10:45:27.989Z",
+      "path": "/js/build/fast-diff.f17881f3.js",
+      "status": 200,
+      "method": "GET",
+      "type": "script"
+    },
+    {
+      "at": "2026-10-12T10:45:27.989Z",
+      "path": "/js/build/lodash.isequal.b7622c5a.js",
+      "status": 200,
+      "method": "GET",
+      "type": "script"
+    },
+    {
+      "at": "2026-10-12T10:45:27.989Z",
+      "path": "/js/build/lodash.clonedeep.12ad9787.js",
+      "status": 200,
+      "method": "GET",
+      "type": "script"
+    },
+    {
+      "at": "2026-10-12T10:45:27.990Z",
+      "path": "/js/build/clipboard.c7c649a3.js",
+      "status": 200,
+      "method": "GET",
+      "type": "script"
+    },
+    {
+      "at": "2026-10-12T10:45:27.990Z",
+      "path": "/js/build/deepmerge.cecf392e.js",
+      "status": 200,
+      "method": "GET",
+      "type": "script"
+    },
+    {
+      "at": "2026-10-12T10:45:27.990Z",
+      "path": "/js/build/sortablejs.2e5ca97f.js",
+      "status": 200,
+      "method": "GET",
+      "type": "script"
+    },
+    {
+      "at": "2026-10-12T10:45:27.990Z",
+      "path": "/js/build/resize-observer-polyfill.1966c0de.js",
+      "status": 200,
+      "method": "GET",
+      "type": "script"
+    },
+    {
+      "at": "2026-10-12T10:45:27.990Z",
+      "path": "/js/build/throttle-debounce.7c3948b2.js",
+      "status": 200,
+      "method": "GET",
+      "type": "script"
+    },
+    {
+      "at": "2026-10-12T10:45:27.990Z",
+      "path": "/js/build/normalize-wheel.2a034b9f.js",
+      "status": 200,
+      "method": "GET",
+      "type": "script"
+    },
+    {
+      "at": "2026-10-12T10:45:27.991Z",
+      "path": "/js/build/babel-helper-vue-jsx-merge-props.5ed215c3.js",
+      "status": 200,
+      "method": "GET",
+      "type": "script"
+    },
+    {
+      "at": "2026-10-12T10:45:27.991Z",
+      "path": "/js/build/babel-runtime.4773988a.js",
+      "status": 200,
+      "method": "GET",
+      "type": "script"
+    },
+    {
+      "at": "2026-10-12T10:45:27.991Z",
+      "path": "/js/build/async-validator.3824ea35.js",
+      "status": 200,
+      "method": "GET",
+      "type": "script"
+    },
+    {
+      "at": "2026-10-12T10:45:27.991Z",
+      "path": "/js/build/core-js.314b4a1d.js",
+      "status": 200,
+      "method": "GET",
+      "type": "script"
+    },
+    {
+      "at": "2026-10-12T10:45:28.073Z",
+      "path": "/favicon.ico",
+      "status": 200,
+      "method": "GET",
+      "type": "other"
+    },
+    {
+      "at": "2026-10-12T10:45:28.082Z",
+      "path": "/js/jsencrypt.min.js",
+      "status": 200,
+      "method": "GET",
+      "type": "script"
+    },
+    {
+      "at": "2026-10-12T10:45:28.093Z",
+      "path": "/api/system/setting",
+      "status": 200,
+      "method": "GET",
+      "type": "xhr"
+    },
+    {
+      "at": "2026-10-12T10:45:28.093Z",
+      "path": "/js/scroll-into-view.min.js",
+      "status": 200,
+      "method": "GET",
+      "type": "script"
+    },
+    {
+      "at": "2026-10-12T10:45:28.097Z",
+      "path": "/language/web/key.js",
+      "status": 200,
+      "method": "GET",
+      "type": "script"
+    },
+    {
+      "at": "2026-10-12T10:45:28.102Z",
+      "path": "/language/web/en.js",
+      "status": 200,
+      "method": "GET",
+      "type": "script"
+    },
+    {
+      "at": "2026-10-12T10:45:28.106Z",
+      "path": "/language/iview/en.js",
+      "status": 200,
+      "method": "GET",
+      "type": "script"
+    },
+    {
+      "at": "2026-10-12T10:45:28.130Z",
+      "path": "/js/build/login.a6debcf0.js",
+      "status": 200,
+      "method": "GET",
+      "type": "script"
+    },
+    {
+      "at": "2026-10-12T10:45:28.130Z",
+      "path": "/js/build/@chenfengyuan.dfd1ecb7.js",
+      "status": 200,
+      "method": "GET",
+      "type": "script"
+    },
+    {
+      "at": "2026-10-12T10:45:28.130Z",
+      "path": "/js/build/index.40a8e116.js",
+      "status": 200,
+      "method": "GET",
+      "type": "script"
+    },
+    {
+      "at": "2026-10-12T10:45:28.131Z",
+      "path": "/js/build/preview.40943d7f.js",
+      "status": 200,
+      "method": "GET",
+      "type": "script"
+    },
+    {
+      "at": "2026-10-12T10:45:28.309Z",
+      "path": "/js/build/logo.060180f3.svg",
+      "status": 200,
+      "method": "GET",
+      "type": "image"
+    },
+    {
+      "at": "2026-10-12T10:45:28.317Z",
+      "path": "/api/users/key/client",
+      "status": 200,
+      "method": "GET",
+      "type": "xhr"
+    },
+    {
+      "at": "2026-10-12T10:45:28.327Z",
+      "path": "/api/system/prefetch",
+      "status": 200,
+      "method": "GET",
+      "type": "xhr"
+    },
+    {
+      "at": "2026-10-12T10:45:28.327Z",
+      "path": "/api/system/version",
+      "status": 200,
+      "method": "GET",
+      "type": "xhr"
+    },
+    {
+      "at": "2026-10-12T10:45:28.327Z",
+      "path": "/css/fonts/ionicons.woff2",
+      "status": 200,
+      "method": "GET",
+      "type": "font"
+    },
+    {
+      "at": "2026-10-12T10:45:28.328Z",
+      "path": "/api/users/reg/needinvite",
+      "status": 200,
+      "method": "GET",
+      "type": "xhr"
+    },
+    {
+      "at": "2026-10-12T10:45:28.330Z",
+      "path": "/js/build/iconfont.3688aee2.woff2",
+      "status": 200,
+      "method": "GET",
+      "type": "font"
+    },
+    {
+      "at": "2026-10-12T10:45:28.330Z",
+      "path": "/api/system/demo",
+      "status": 200,
+      "method": "GET",
+      "type": "xhr"
+    },
+    {
+      "at": "2026-10-12T10:45:29.139Z",
+      "path": "/api/users/login/needcode",
+      "status": 200,
+      "method": "GET",
+      "type": "xhr"
+    },
+    {
+      "at": "2026-10-12T10:45:29.321Z",
+      "path": "/api/users/login",
+      "status": 200,
+      "method": "GET",
+      "type": "xhr"
+    },
+    {
+      "at": "2026-10-12T10:45:29.338Z",
+      "path": "/js/build/manage.afbc17f2.css",
+      "status": 200,
+      "method": "GET",
+      "type": "stylesheet"
+    },
+    {
+      "at": "2026-10-12T10:45:29.338Z",
+      "path": "/js/build/CheckinExport.cc850ba4.css",
+      "status": 200,
+      "method": "GET",
+      "type": "stylesheet"
+    },
+    {
+      "at": "2026-10-12T10:45:29.338Z",
+      "path": "/js/build/SearchButton.de48b996.js",
+      "status": 200,
+      "method": "GET",
+      "type": "script"
+    },
+    {
+      "at": "2026-10-12T10:45:29.345Z",
+      "path": "/js/build/TaskDetail.2777c8b1.css",
+      "status": 200,
+      "method": "GET",
+      "type": "stylesheet"
+    },
+    {
+      "at": "2026-10-12T10:45:29.346Z",
+      "path": "/js/build/index.530c499c.js",
+      "status": 200,
+      "method": "GET",
+      "type": "script"
+    },
+    {
+      "at": "2026-10-12T10:45:29.346Z",
+      "path": "/js/build/CheckinExport.26205c9d.js",
+      "status": 200,
+      "method": "GET",
+      "type": "script"
+    },
+    {
+      "at": "2026-10-12T10:45:29.346Z",
+      "path": "/js/build/manage.cf99928c.js",
+      "status": 200,
+      "method": "GET",
+      "type": "script"
+    },
+    {
+      "at": "2026-10-12T10:45:29.350Z",
+      "path": "/js/build/add.c57cc156.css",
+      "status": 200,
+      "method": "GET",
+      "type": "stylesheet"
+    },
+    {
+      "at": "2026-10-12T10:45:29.350Z",
+      "path": "/js/build/index.3dd67196.css",
+      "status": 200,
+      "method": "GET",
+      "type": "stylesheet"
+    },
+    {
+      "at": "2026-10-12T10:45:29.350Z",
+      "path": "/js/build/dashboard.f03a7e9c.css",
+      "status": 200,
+      "method": "GET",
+      "type": "stylesheet"
+    },
+    {
+      "at": "2026-10-12T10:45:29.350Z",
+      "path": "/js/build/DepartmentOwnerView.35ebba97.css",
+      "status": 200,
+      "method": "GET",
+      "type": "stylesheet"
+    },
+    {
+      "at": "2026-10-12T10:45:29.360Z",
+      "path": "/js/build/ImgUpload.db3a9a0f.js",
+      "status": 200,
+      "method": "GET",
+      "type": "script"
+    },
+    {
+      "at": "2026-10-12T10:45:29.361Z",
+      "path": "/js/build/chunkedUpload.4c01d55b.js",
+      "status": 200,
+      "method": "GET",
+      "type": "script"
+    },
+    {
+      "at": "2026-10-12T10:45:29.372Z",
+      "path": "/js/build/spark-md5.0443325f.js",
+      "status": 200,
+      "method": "GET",
+      "type": "script"
+    },
+    {
+      "at": "2026-10-12T10:45:29.375Z",
+      "path": "/js/build/file.5e8166ad.js",
+      "status": 200,
+      "method": "GET",
+      "type": "script"
+    },
+    {
+      "at": "2026-10-12T10:45:29.376Z",
+      "path": "/js/build/add.977d606f.js",
+      "status": 200,
+      "method": "GET",
+      "type": "script"
+    },
+    {
+      "at": "2026-10-12T10:45:29.377Z",
+      "path": "/js/build/TaskDetail.ee440903.js",
+      "status": 200,
+      "method": "GET",
+      "type": "script"
+    },
+    {
+      "at": "2026-10-12T10:45:29.377Z",
+      "path": "/js/build/vue-virtual-scroll-list-hi.ec6f4bce.js",
+      "status": 200,
+      "method": "GET",
+      "type": "script"
+    },
+    {
+      "at": "2026-10-12T10:45:29.378Z",
+      "path": "/js/build/DialogWrapper.fb341657.js",
+      "status": 200,
+      "method": "GET",
+      "type": "script"
+    },
+    {
+      "at": "2026-10-12T10:45:29.383Z",
+      "path": "/js/build/webhook.378987f3.js",
+      "status": 200,
+      "method": "GET",
+      "type": "script"
+    },
+    {
+      "at": "2026-10-12T10:45:29.383Z",
+      "path": "/js/build/TEditor.453f833e.js",
+      "status": 200,
+      "method": "GET",
+      "type": "script"
+    },
+    {
+      "at": "2026-10-12T10:45:29.388Z",
+      "path": "/js/build/ReportEdit.70002757.js",
+      "status": 200,
+      "method": "GET",
+      "type": "script"
+    },
+    {
+      "at": "2026-10-12T10:45:29.392Z",
+      "path": "/js/build/ReportDetail.42f94267.js",
+      "status": 200,
+      "method": "GET",
+      "type": "script"
+    },
+    {
+      "at": "2026-10-12T10:45:29.393Z",
+      "path": "/js/build/index.a778b6f8.js",
+      "status": 200,
+      "method": "GET",
+      "type": "script"
+    },
+    {
+      "at": "2026-10-12T10:45:29.394Z",
+      "path": "/js/build/notification-koro1.99b93615.js",
+      "status": 200,
+      "method": "GET",
+      "type": "script"
+    },
+    {
+      "at": "2026-10-12T10:45:29.399Z",
+      "path": "/js/build/tinymce.7c9b69d1.js",
+      "status": 200,
+      "method": "GET",
+      "type": "script"
+    },
+    {
+      "at": "2026-10-12T10:45:29.400Z",
+      "path": "/js/build/DepartmentOwnerView.0c84802e.js",
+      "status": 200,
+      "method": "GET",
+      "type": "script"
+    },
+    {
+      "at": "2026-10-12T10:45:29.401Z",
+      "path": "/js/build/@micro-zoe.18e41a02.js",
+      "status": 200,
+      "method": "GET",
+      "type": "script"
+    },
+    {
+      "at": "2026-10-12T10:45:29.410Z",
+      "path": "/js/build/dashboard.fb638c5c.js",
+      "status": 200,
+      "method": "GET",
+      "type": "script"
+    },
+    {
+      "at": "2026-10-12T10:45:29.412Z",
+      "path": "/js/build/tslib.891692d0.js",
+      "status": 200,
+      "method": "GET",
+      "type": "script"
+    },
+    {
+      "at": "2026-10-12T10:45:29.412Z",
+      "path": "/js/build/echarts.523e56b1.js",
+      "status": 200,
+      "method": "GET",
+      "type": "script"
+    },
+    {
+      "at": "2026-10-12T10:45:29.412Z",
+      "path": "/js/build/zrender.6f9469d4.js",
+      "status": 200,
+      "method": "GET",
+      "type": "script"
+    },
+    {
+      "at": "2026-10-12T10:45:29.455Z",
+      "path": "/favicon.ico",
+      "status": 200,
+      "method": "GET",
+      "type": "other"
+    },
+    {
+      "at": "2026-10-12T10:45:29.463Z",
+      "path": "/api/users/basic",
+      "status": 200,
+      "method": "GET",
+      "type": "xhr"
+    },
+    {
+      "at": "2026-10-12T10:45:29.483Z",
+      "path": "/api/users/info",
+      "status": 200,
+      "method": "GET",
+      "type": "xhr"
+    },
+    {
+      "at": "2026-10-12T10:45:29.486Z",
+      "path": "/avatar/qa-ui-1791800521757.png",
+      "status": 200,
+      "method": "GET",
+      "type": "image"
+    },
+    {
+      "at": "2026-10-12T10:45:29.580Z",
+      "path": "/api/dialog/todo",
+      "status": 200,
+      "method": "GET",
+      "type": "xhr"
+    },
+    {
+      "at": "2026-10-12T10:45:29.601Z",
+      "path": "/api/project/task/lists",
+      "status": 200,
+      "method": "GET",
+      "type": "xhr"
+    },
+    {
+      "at": "2026-10-12T10:45:29.617Z",
+      "path": "/images/dashboard/chevron.svg",
+      "status": 200,
+      "method": "GET",
+      "type": "image"
+    },
+    {
+      "at": "2026-10-12T10:45:29.618Z",
+      "path": "/images/dashboard/task.svg",
+      "status": 200,
+      "method": "GET",
+      "type": "image"
+    },
+    {
+      "at": "2026-10-12T10:45:29.618Z",
+      "path": "/images/dashboard/status.svg",
+      "status": 200,
+      "method": "GET",
+      "type": "image"
+    },
+    {
+      "at": "2026-10-12T10:45:29.618Z",
+      "path": "/images/dashboard/project.svg",
+      "status": 200,
+      "method": "GET",
+      "type": "image"
+    },
+    {
+      "at": "2026-10-12T10:45:29.618Z",
+      "path": "/images/dashboard/subtask.svg",
+      "status": 200,
+      "method": "GET",
+      "type": "image"
+    },
+    {
+      "at": "2026-10-12T10:45:29.618Z",
+      "path": "/images/dashboard/priority.svg",
+      "status": 200,
+      "method": "GET",
+      "type": "image"
+    },
+    {
+      "at": "2026-10-12T10:45:29.623Z",
+      "path": "/images/dashboard/calendar.svg",
+      "status": 200,
+      "method": "GET",
+      "type": "image"
+    },
+    {
+      "at": "2026-10-12T10:45:29.670Z",
+      "path": "/api/dialog/lists",
+      "status": 200,
+      "method": "GET",
+      "type": "xhr"
+    },
+    {
+      "at": "2026-10-12T10:45:29.675Z",
+      "path": "/api/apps/functions",
+      "status": 200,
+      "method": "GET",
+      "type": "xhr"
+    },
+    {
+      "at": "2026-10-12T10:45:29.685Z",
+      "path": "/appstore/api/v1/internal/installed",
+      "status": 200,
+      "method": "GET",
+      "type": "xhr"
+    },
+    {
+      "at": "2026-10-12T10:45:29.719Z",
+      "path": "/api/project/lists",
+      "status": 200,
+      "method": "GET",
+      "type": "xhr"
+    },
+    {
+      "at": "2026-10-12T10:45:29.722Z",
+      "path": "image/svg+xml;base64,PHN2ZyB0PSIxNjIyMzkwODExNTQxIiBjbGFzcz0iaWNvbiIgdmlld0JveD0iMCAwIDEwMjQgMTAyNCIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHAtaWQ9IjI0OTk3IiB3aWR0aD0iNDgiIGhlaWdodD0iNDgiPjxwYXRoIGQ9Ik0zNjYuMTgyNCAxMDguMjM2OEw4MTIuMDMyIDQyOC4wMzJhMTAyLjQgMTAyLjQgMCAwIDEgMCAxNjYuNTAyNEwzNjYuMTgyNCA5MTQuMzI5NmExMDIuNCAxMDIuNCAwIDAgMS0xNjIuMDk5Mi04My4yNTEyVjE5MS40ODhhMTAyLjQgMTAyLjQgMCAwIDEgMTYyLjA5OTItODMuMjUxMnoiIHAtaWQ9IjI0OTk4IiBmaWxsPSIjOTk5OTk5Ij48L3BhdGg+PC9zdmc+",
+      "status": 200,
+      "method": "GET",
+      "type": "image"
+    },
+    {
+      "at": "2026-10-12T10:45:29.728Z",
+      "path": "/api/dialog/msg/latest",
+      "status": 200,
+      "method": "POST",
+      "type": "xhr"
+    },
+    {
+      "at": "2026-10-12T10:45:29.747Z",
+      "path": "/api/dialog/beyond",
+      "status": 200,
+      "method": "GET",
+      "type": "xhr"
+    },
+    {
+      "at": "2026-10-12T10:45:29.751Z",
+      "path": "/api/system/microapp_menu",
+      "status": 200,
+      "method": "GET",
+      "type": "xhr"
+    },
+    {
+      "at": "2026-10-12T10:45:29.769Z",
+      "path": "/api/apps/badge/list",
+      "status": 200,
+      "method": "GET",
+      "type": "xhr"
+    },
+    {
+      "at": "2026-10-12T10:45:30.504Z",
+      "path": "/api/system/priority",
+      "status": 200,
+      "method": "GET",
+      "type": "xhr"
+    },
+    {
+      "at": "2026-10-12T10:45:30.510Z",
+      "path": "/api/report/unread",
+      "status": 200,
+      "method": "GET",
+      "type": "xhr"
+    }
+  ],
+  "errors": [],
+  "failures": [],
+  "consoleEntries": [
+    {
+      "type": "verbose",
+      "text": "[DOM] Password field is not contained in a form: (More info: https://goo.gl/9p2vKq) %o"
+    },
+    {
+      "type": "log",
+      "text": "您曾级拒绝显示通知 请在设置中更改设置"
+    }
+  ],
+  "inventoryBody": {
+    "code": 200,
+    "data": []
+  },
+  "pass": true
+}

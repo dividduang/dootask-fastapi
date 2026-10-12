@@ -50,8 +50,8 @@ def row(connection, name, ident, *, key='id', lock=False):
     return dict(result) if result else None
 
 
-def change(connection, name, ident, **values):
-    table = tables[name]
+def change(connection, table_name, ident, **values):
+    table = tables[table_name]
     if 'updated_at' in table.c:
         values['updated_at'] = utcnow()
     connection.execute(update(table).where(table.c.id == ident).values(**values))
@@ -109,7 +109,11 @@ def store_stream(settings, stream, *, maximum=10 * 1024**3, expected_hash=None):
         relative = 'blobs/' + sha.hexdigest()[:2] + '/' + sha.hexdigest()
         destination = confined_path(root, relative)
         destination.parent.mkdir(parents=True, exist_ok=True)
-        os.replace(temporary, destination)
+        try:
+            # Publish immutable content without replacing a blob another reader has open.
+            os.link(temporary, destination)
+        except FileExistsError:
+            pass
         return {'url': relative, 'size': size, 'hash': digest, 'sha256': sha.hexdigest()}
     finally:
         if os.path.exists(temporary):

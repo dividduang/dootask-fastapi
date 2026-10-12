@@ -1,0 +1,12 @@
+{
+  "command": [
+    "D:\\rpa\\202610\\dootask-fastapi\\.venv\\Scripts\\python.exe",
+    "-c",
+    "import os,pymysql; c=pymysql.connect(host=os.environ['DB_HOST'],port=int(os.environ['DB_PORT']),user=os.environ['DB_USERNAME'],password=os.environ['DB_PASSWORD'],database=os.environ['DB_DATABASE']); q=c.cursor(); q.execute('SELECT DATABASE(),COUNT(*) FROM information_schema.tables WHERE table_schema=DATABASE()'); print(q.fetchall()); c.close()"
+  ],
+  "started_at": "2026-10-12T10:11:41.789453+00:00",
+  "duration_seconds": 2.219,
+  "exit_code": 1,
+  "stdout": "",
+  "stderr": "Traceback (most recent call last):\r\n  File \"D:\\rpa\\202610\\dootask-fastapi\\.venv\\Lib\\site-packages\\pymysql\\connections.py\", line 681, in connect\r\n    sock = socket.create_connection(\r\n           ^^^^^^^^^^^^^^^^^^^^^^^^^\r\n  File \"C:\\Users\\djren\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\socket.py\", line 865, in create_connection\r\n    raise exceptions[0]\r\n  File \"C:\\Users\\djren\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\socket.py\", line 850, in create_connection\r\n    sock.connect(sa)\r\nConnectionRefusedError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。\r\n\r\nDuring handling of the above exception, another exception occurred:\r\n\r\nTraceback (most recent call last):\r\n  File \"<string>\", line 1, in <module>\r\n  File \"D:\\rpa\\202610\\dootask-fastapi\\.venv\\Lib\\site-packages\\pymysql\\connections.py\", line 373, in __init__\r\n    self.connect()\r\n  File \"D:\\rpa\\202610\\dootask-fastapi\\.venv\\Lib\\site-packages\\pymysql\\connections.py\", line 744, in connect\r\n    raise exc\r\npymysql.err.OperationalError: (2003, \"Can't connect to MySQL server on '127.0.0.1' ([WinError 10061] 由于目标计算机积极拒绝，无法连接。)\")\r\n"
+}

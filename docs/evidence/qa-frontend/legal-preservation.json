@@ -1,0 +1,113 @@
+{
+  "files": [
+    {
+      "path": "LICENSE",
+      "source_sha256": "6da1054eef20b8949622f2acc5a89c3243ff3b3d7aa8c2bb8fa5c04d15113c00",
+      "candidate_sha256": "6da1054eef20b8949622f2acc5a89c3243ff3b3d7aa8c2bb8fa5c04d15113c00",
+      "preserved": true
+    },
+    {
+      "path": "public/docs/vendor/path-to-regexp/LICENSE",
+      "source_sha256": "0d7960d23eafc2db69e2ed5ed8218063fc5123114b2ba68ef75112e44ad4472f",
+      "candidate_sha256": "0d7960d23eafc2db69e2ed5ed8218063fc5123114b2ba68ef75112e44ad4472f",
+      "preserved": true
+    },
+    {
+      "path": "resources/ai-kb/zh/menu-map/menu-navigation/license.md",
+      "source_sha256": "087c2f008d7e4334d07bafd963db38ae20dd06abf8a124ed74525afd85b26c20",
+      "candidate_sha256": "087c2f008d7e4334d07bafd963db38ae20dd06abf8a124ed74525afd85b26c20",
+      "preserved": true
+    },
+    {
+      "path": "resources/assets/js/components/AIAssistant/aria/NOTICE.txt",
+      "source_sha256": "b9c4d65a3440c0f05dcc07c3d66d066520f3f30ef75c191cd33bf178bd8443b6",
+      "candidate_sha256": "b9c4d65a3440c0f05dcc07c3d66d066520f3f30ef75c191cd33bf178bd8443b6",
+      "preserved": true
+    },
+    {
+      "path": "resources/drawio/LICENSE",
+      "source_sha256": "43070e2d4e532684de521b885f385d0841030efa2b1a20bafb76133a5e1379c1",
+      "candidate_sha256": "43070e2d4e532684de521b885f385d0841030efa2b1a20bafb76133a5e1379c1",
+      "preserved": true
+    },
+    {
+      "path": "resources/drawio/src/main/webapp/img/LICENSE",
+      "source_sha256": "55f8931a59e1f6e3ffff6c950c44339981c4806925ac0d97517a71164b0ca2ea",
+      "candidate_sha256": "55f8931a59e1f6e3ffff6c950c44339981c4806925ac0d97517a71164b0ca2ea",
+      "preserved": true
+    },
+    {
+      "path": "resources/drawio/src/main/webapp/img/lib/azure2/identity/AAD_Licenses.svg",
+      "source_sha256": "65a9cdb15c3d644cfe647e630a4d14641877fda138a153fbf5ebceada24f8e24",
+      "candidate_sha256": "65a9cdb15c3d644cfe647e630a4d14641877fda138a153fbf5ebceada24f8e24",
+      "preserved": true
+    },
+    {
+      "path": "resources/drawio/src/main/webapp/img/lib/mscae/GetMoreLicense.svg",
+      "source_sha256": "e4d3c943d06eb5c680f81ab056fa7a664d6c31e19d6bc2e9365474a06ae17d32",
+      "candidate_sha256": "e4d3c943d06eb5c680f81ab056fa7a664d6c31e19d6bc2e9365474a06ae17d32",
+      "preserved": true
+    },
+    {
+      "path": "resources/drawio/src/main/webapp/shapes/LICENSE",
+      "source_sha256": "55f8931a59e1f6e3ffff6c950c44339981c4806925ac0d97517a71164b0ca2ea",
+      "candidate_sha256": "55f8931a59e1f6e3ffff6c950c44339981c4806925ac0d97517a71164b0ca2ea",
+      "preserved": true
+    },
+    {
+      "path": "resources/drawio/src/main/webapp/stencils/LICENSE",
+      "source_sha256": "f4098ff053b5954abbf69b15811ef06cd277847ca49934beda355c3d841ebdac",
+      "candidate_sha256": "f4098ff053b5954abbf69b15811ef06cd277847ca49934beda355c3d841ebdac",
+      "preserved": true
+    },
+    {
+      "path": "resources/drawio/src/main/webapp/templates/LICENSE",
+      "source_sha256": "ee8790799bd0e807be1058ab1db714b61d5908ded4f8ed3c239f9827c52c1076",
+      "candidate_sha256": "ee8790799bd0e807be1058ab1db714b61d5908ded4f8ed3c239f9827c52c1076",
+      "preserved": true
+    },
+    {
+      "path": "resources/mobile/LICENSE",
+      "source_sha256": "d310b9037bef9d6e5d9aada01bc1e039e83614525187d499615923af08c8b901",
+      "candidate_sha256": "d310b9037bef9d6e5d9aada01bc1e039e83614525187d499615923af08c8b901",
+      "preserved": true
+    },
+    {
+      "path": "resources/mobile/plugins/eeui/WeexSDK/android/license/LICENSE",
+      "source_sha256": "39ca8960d75ef7b3cfe38dc961093aa093e736a4ab2667a7baf837b39d32cd24",
+      "candidate_sha256": "39ca8960d75ef7b3cfe38dc961093aa093e736a4ab2667a7baf837b39d32cd24",
+      "preserved": true
+    },
+    {
+      "path": "resources/mobile/plugins/eeui/WeexSDK/weex_core/Source/android/jsengine/dependence/icu/LICENSE",
+      "source_sha256": "6d994ace1fbd6848e84cb2aad2a487a8ae3d4f5906546505dbac12b19bb2d10c",
+      "candidate_sha256": "6d994ace1fbd6848e84cb2aad2a487a8ae3d4f5906546505dbac12b19bb2d10c",
+      "preserved": true
+    },
+    {
+      "path": "resources/mobile/plugins/eeui/WeexSDK/weex_core/test/third_party/googletest/LICENSE",
+      "source_sha256": "9702de7e4117a8e2b20dafab11ffda58c198aede066406496bef670d40a22138",
+      "candidate_sha256": "9702de7e4117a8e2b20dafab11ffda58c198aede066406496bef670d40a22138",
+      "preserved": true
+    },
+    {
+      "path": "resources/mobile/plugins/eeui/WeexSDK/weex_core/test/third_party/googletest/googlemock/LICENSE",
+      "source_sha256": "9702de7e4117a8e2b20dafab11ffda58c198aede066406496bef670d40a22138",
+      "candidate_sha256": "9702de7e4117a8e2b20dafab11ffda58c198aede066406496bef670d40a22138",
+      "preserved": true
+    },
+    {
+      "path": "resources/mobile/plugins/eeui/WeexSDK/weex_core/test/third_party/googletest/googlemock/scripts/generator/LICENSE",
+      "source_sha256": "5e0df8c845c742e76f2f64d2d9ce1b7e74a2422fddbc577ae6a56319083de0bf",
+      "candidate_sha256": "5e0df8c845c742e76f2f64d2d9ce1b7e74a2422fddbc577ae6a56319083de0bf",
+      "preserved": true
+    },
+    {
+      "path": "resources/mobile/plugins/eeui/WeexSDK/weex_core/test/third_party/googletest/googletest/LICENSE",
+      "source_sha256": "9702de7e4117a8e2b20dafab11ffda58c198aede066406496bef670d40a22138",
+      "candidate_sha256": "9702de7e4117a8e2b20dafab11ffda58c198aede066406496bef670d40a22138",
+      "preserved": true
+    }
+  ],
+  "all_preserved": true
+}

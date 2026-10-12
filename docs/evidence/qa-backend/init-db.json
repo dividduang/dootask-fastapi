@@ -1,0 +1,16 @@
+{
+  "command": [
+    "powershell.exe",
+    "-NoProfile",
+    "-ExecutionPolicy",
+    "Bypass",
+    "-File",
+    "run.ps1",
+    "init-db"
+  ],
+  "started_at": "2026-10-12T10:12:30.480406+00:00",
+  "duration_seconds": 2.672,
+  "exit_code": 0,
+  "stdout": "Applied schema.sql sha256=a18b77cbc31dc239c961170456404b4cb06f26ba3b336d93ce4c3181b797776a\r\nApplied security.sql sha256=14d5960aebd7959b858668f92e44cafcb1fc74374a4e59f83fac623516411285\r\nApplied outbox.sql sha256=cac559bd1c0c883de117503274160fc65281580edbf40fe893482b4a8da7cf0b\r\nApplied domains/files.sql sha256=5b5c30cbd6f1391932c8e18e0fc5d4a2fbc400d5cd60f7bde6c62aa65c9b44d8\r\nApplied domains/accounts.sql sha256=09e8e68a984f5737a235a6fe0f0f0f775b190f449471d66915104d5959d3c41c\r\nApplied schema_seed.sql sha256=74e843435f3f1b0b4b58d06637ce38265ee977fa04f67821971dbd392709b9cd\r\nInitialized empty MariaDB schema. No accounts or license were fabricated.\r\n",
+  "stderr": ""
+}

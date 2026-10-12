@@ -1,0 +1,16 @@
+{
+  "command": [
+    "powershell.exe",
+    "-NoProfile",
+    "-ExecutionPolicy",
+    "Bypass",
+    "-File",
+    "run.ps1",
+    "runtime-down"
+  ],
+  "started_at": "2026-10-12T10:31:18.629104+00:00",
+  "duration_seconds": 2.672,
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": " Container dootask-fastapi-isolated-mariadb-1  Stopping\n Container dootask-fastapi-isolated-redis-1  Stopping\n Container dootask-fastapi-isolated-redis-1  Stopped\n Container dootask-fastapi-isolated-redis-1  Removing\n Container dootask-fastapi-isolated-redis-1  Removed\n Container dootask-fastapi-isolated-mariadb-1  Stopped\n Container dootask-fastapi-isolated-mariadb-1  Removing\n Container dootask-fastapi-isolated-mariadb-1  Removed\n Network dootask-fastapi-isolated_default  Removing\n Network dootask-fastapi-isolated_default  Removed\n"
+}

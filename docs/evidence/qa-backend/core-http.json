@@ -1,0 +1,961 @@
+[
+  {
+    "at": "2026-10-12T10:26:24.648602+00:00",
+    "path": "users/login",
+    "method": "POST",
+    "authenticated": false,
+    "input": {
+      "email": "80ff8b741@example.test",
+      "password": "[REDACTED]"
+    },
+    "status": 200,
+    "duration_ms": 141,
+    "response": {
+      "ret": 1,
+      "msg": "登录成功",
+      "data": {
+        "userid": 1,
+        "identity": [
+          "admin"
+        ],
+        "department": [],
+        "az": "8",
+        "pinyin": "80ff8b741",
+        "email": "80ff8b741@example.test",
+        "tel": "",
+        "nickname": "80ff8b741",
+        "profession": "",
+        "birthday": null,
+        "address": null,
+        "introduction": null,
+        "userimg": "http://127.0.0.1:18080/avatar/80ff8b741.png",
+        "changepass": 0,
+        "login_num": 4,
+        "last_ip": "127.0.0.1",
+        "last_at": "2026-10-12 10:26:24",
+        "line_ip": "127.0.0.1",
+        "line_at": "2026-10-12 10:26:24",
+        "task_dialog_id": 0,
+        "created_ip": "127.0.0.1",
+        "disable_at": null,
+        "email_verity": 0,
+        "bot": 0,
+        "lang": "zh",
+        "created_at": "2026-10-12 10:21:00",
+        "token": "[REDACTED]"
+      }
+    }
+  },
+  {
+    "at": "2026-10-12T10:26:24.847443+00:00",
+    "path": "users/login",
+    "method": "POST",
+    "authenticated": false,
+    "input": {
+      "type": "reg",
+      "email": "b1791800784@example.test",
+      "password": "[REDACTED]"
+    },
+    "status": 200,
+    "duration_ms": 203,
+    "response": {
+      "ret": 1,
+      "msg": "注册成功",
+      "data": {
+        "userid": 18,
+        "identity": [],
+        "department": [],
+        "az": "B",
+        "pinyin": "b1791800784",
+        "email": "b1791800784@example.test",
+        "tel": "",
+        "nickname": "b1791800784",
+        "profession": "",
+        "birthday": null,
+        "address": null,
+        "introduction": null,
+        "userimg": "http://127.0.0.1:18080/avatar/b1791800784.png",
+        "changepass": 0,
+        "login_num": 1,
+        "last_ip": "127.0.0.1",
+        "last_at": "2026-10-12 10:26:24",
+        "line_ip": "127.0.0.1",
+        "line_at": "2026-10-12 10:26:24",
+        "task_dialog_id": 0,
+        "created_ip": "127.0.0.1",
+        "disable_at": null,
+        "email_verity": 0,
+        "bot": 0,
+        "lang": "zh",
+        "created_at": "2026-10-12 10:26:24",
+        "token": "[REDACTED]"
+      }
+    }
+  },
+  {
+    "at": "2026-10-12T10:26:25.030814+00:00",
+    "path": "users/editpass",
+    "method": "POST",
+    "authenticated": true,
+    "input": {
+      "oldpass": "Core-Pass79!1791800784",
+      "newpass": "Core-Pass79!1791800784x"
+    },
+    "status": 200,
+    "duration_ms": 187,
+    "response": {
+      "ret": 1,
+      "msg": "修改成功",
+      "data": {
+        "userid": 18,
+        "identity": [],
+        "department": [],
+        "az": "B",
+        "pinyin": "b1791800784",
+        "email": "b1791800784@example.test",
+        "tel": "",
+        "nickname": "b1791800784",
+        "profession": "",
+        "birthday": null,
+        "address": null,
+        "introduction": null,
+        "userimg": "http://127.0.0.1:18080/avatar/b1791800784.png",
+        "changepass": 0,
+        "login_num": 1,
+        "last_ip": "127.0.0.1",
+        "last_at": "2026-10-12 10:26:24",
+        "line_ip": "127.0.0.1",
+        "line_at": "2026-10-12 10:26:24",
+        "task_dialog_id": 0,
+        "created_ip": "127.0.0.1",
+        "disable_at": null,
+        "email_verity": 0,
+        "bot": 0,
+        "lang": "zh",
+        "created_at": "2026-10-12 10:26:24",
+        "token": "[REDACTED]"
+      }
+    }
+  },
+  {
+    "at": "2026-10-12T10:26:25.053125+00:00",
+    "path": "users/info",
+    "method": "POST",
+    "authenticated": true,
+    "input": {},
+    "status": 200,
+    "duration_ms": 16,
+    "response": {
+      "ret": -1,
+      "msg": "身份已失效,请重新登录",
+      "data": []
+    }
+  },
+  {
+    "at": "2026-10-12T10:26:25.065789+00:00",
+    "path": "users/logout",
+    "method": "POST",
+    "authenticated": true,
+    "input": {},
+    "status": 200,
+    "duration_ms": 16,
+    "response": {
+      "ret": 1,
+      "msg": "退出成功",
+      "data": []
+    }
+  },
+  {
+    "at": "2026-10-12T10:26:25.071083+00:00",
+    "path": "users/info",
+    "method": "POST",
+    "authenticated": true,
+    "input": {},
+    "status": 200,
+    "duration_ms": 0,
+    "response": {
+      "ret": -1,
+      "msg": "身份已失效,请重新登录",
+      "data": []
+    }
+  },
+  {
+    "at": "2026-10-12T10:26:25.176777+00:00",
+    "path": "users/login",
+    "method": "POST",
+    "authenticated": false,
+    "input": {
+      "email": "b1791800784@example.test",
+      "password": "[REDACTED]"
+    },
+    "status": 200,
+    "duration_ms": 109,
+    "response": {
+      "ret": 1,
+      "msg": "登录成功",
+      "data": {
+        "userid": 18,
+        "identity": [],
+        "department": [],
+        "az": "B",
+        "pinyin": "b1791800784",
+        "email": "b1791800784@example.test",
+        "tel": "",
+        "nickname": "b1791800784",
+        "profession": "",
+        "birthday": null,
+        "address": null,
+        "introduction": null,
+        "userimg": "http://127.0.0.1:18080/avatar/b1791800784.png",
+        "changepass": 0,
+        "login_num": 2,
+        "last_ip": "127.0.0.1",
+        "last_at": "2026-10-12 10:26:25",
+        "line_ip": "127.0.0.1",
+        "line_at": "2026-10-12 10:26:25",
+        "task_dialog_id": 0,
+        "created_ip": "127.0.0.1",
+        "disable_at": null,
+        "email_verity": 0,
+        "bot": 0,
+        "lang": "zh",
+        "created_at": "2026-10-12 10:26:24",
+        "token": "[REDACTED]"
+      }
+    }
+  },
+  {
+    "at": "2026-10-12T10:26:25.283238+00:00",
+    "path": "users/login",
+    "method": "POST",
+    "authenticated": false,
+    "input": {
+      "email": "backend-outsider@example.test",
+      "password": "[REDACTED]"
+    },
+    "status": 200,
+    "duration_ms": 109,
+    "response": {
+      "ret": 1,
+      "msg": "登录成功",
+      "data": {
+        "userid": 6,
+        "identity": [],
+        "department": [],
+        "az": "B",
+        "pinyin": "backend-outsider",
+        "email": "backend-outsider@example.test",
+        "tel": "",
+        "nickname": "backend-outsider",
+        "profession": "",
+        "birthday": null,
+        "address": null,
+        "introduction": null,
+        "userimg": "http://127.0.0.1:18080/avatar/backend-outsider.png",
+        "changepass": 0,
+        "login_num": 2,
+        "last_ip": "127.0.0.1",
+        "last_at": "2026-10-12 10:26:25",
+        "line_ip": "127.0.0.1",
+        "line_at": "2026-10-12 10:26:25",
+        "task_dialog_id": 0,
+        "created_ip": "127.0.0.1",
+        "disable_at": null,
+        "email_verity": 0,
+        "bot": 0,
+        "lang": "zh",
+        "created_at": "2026-10-12 10:21:53",
+        "token": "[REDACTED]"
+      }
+    }
+  },
+  {
+    "at": "2026-10-12T10:26:25.339791+00:00",
+    "path": "project/add",
+    "method": "POST",
+    "authenticated": true,
+    "input": {
+      "name": "HTTP core 1791800784",
+      "columns": "Backlog,Done"
+    },
+    "status": 200,
+    "duration_ms": 47,
+    "response": {
+      "ret": 1,
+      "msg": "操作成功",
+      "data": {
+        "id": 19,
+        "name": "HTTP core 1791800784",
+        "desc": "",
+        "userid": 1,
+        "personal": 0,
+        "archive_method": "system",
+        "archive_days": 30,
+        "ai_auto_analyze": "open",
+        "task_template_share": "open",
+        "department_owner_view": "open",
+        "user_simple": "1|1",
+        "dialog_id": 23,
+        "archived_at": null,
+        "archived_userid": 0,
+        "created_at": "2026-10-12 10:26:25",
+        "updated_at": "2026-10-12 10:26:25",
+        "deleted_at": null,
+        "owner": 1,
+        "top_at": null,
+        "sort": 0,
+        "owner_userid": 1,
+        "deputy_userids": [],
+        "department_readonly": false,
+        "task_num": 0,
+        "task_complete": 0,
+        "task_percent": 0,
+        "task_my_num": 0,
+        "task_my_complete": 0,
+        "task_my_percent": 0
+      }
+    }
+  },
+  {
+    "at": "2026-10-12T10:26:25.371056+00:00",
+    "path": "project/one",
+    "method": "POST",
+    "authenticated": true,
+    "input": {
+      "project_id": 19
+    },
+    "status": 200,
+    "duration_ms": 31,
+    "response": {
+      "ret": -4001,
+      "msg": "项目不存在或不在成员列表内",
+      "data": {
+        "project_id": 19
+      }
+    }
+  },
+  {
+    "at": "2026-10-12T10:26:25.374570+00:00",
+    "path": "project/one",
+    "method": "POST",
+    "authenticated": false,
+    "input": {
+      "project_id": 19
+    },
+    "status": 200,
+    "duration_ms": 16,
+    "response": {
+      "ret": -1,
+      "msg": "请登录后继续...",
+      "data": []
+    }
+  },
+  {
+    "at": "2026-10-12T10:26:25.436088+00:00",
+    "path": "project/user",
+    "method": "POST",
+    "authenticated": true,
+    "input": {
+      "project_id": 19,
+      "userid": [
+        1,
+        18
+      ]
+    },
+    "status": 200,
+    "duration_ms": 63,
+    "response": {
+      "ret": 1,
+      "msg": "操作成功",
+      "data": {
+        "id": 19
+      }
+    }
+  },
+  {
+    "at": "2026-10-12T10:26:25.462681+00:00",
+    "path": "project/column/lists",
+    "method": "POST",
+    "authenticated": true,
+    "input": {
+      "project_id": 19
+    },
+    "status": 200,
+    "duration_ms": 15,
+    "response": {
+      "ret": 1,
+      "msg": "操作成功",
+      "data": {
+        "current_page": 1,
+        "data": [
+          {
+            "id": 20,
+            "project_id": 19,
+            "name": "Backlog",
+            "color": "",
+            "sort": 0,
+            "created_at": "2026-10-12 10:26:25",
+            "updated_at": "2026-10-12 10:26:25",
+            "deleted_at": null
+          },
+          {
+            "id": 21,
+            "project_id": 19,
+            "name": "Done",
+            "color": "",
+            "sort": 1,
+            "created_at": "2026-10-12 10:26:25",
+            "updated_at": "2026-10-12 10:26:25",
+            "deleted_at": null
+          }
+        ],
+        "first_page_url": "[REDACTED]",
+        "from": 1,
+        "last_page": 1,
+        "last_page_url": "[REDACTED]",
+        "next_page_url": "[REDACTED]",
+        "path": "",
+        "per_page": 100,
+        "prev_page_url": "[REDACTED]",
+        "to": 2,
+        "total": 2
+      }
+    }
+  },
+  {
+    "at": "2026-10-12T10:26:25.535715+00:00",
+    "path": "project/task/add",
+    "method": "POST",
+    "authenticated": true,
+    "input": {
+      "project_id": 19,
+      "column_id": 20,
+      "name": "Persistent HTTP task 1791800784",
+      "owner": [
+        18
+      ]
+    },
+    "status": 200,
+    "duration_ms": 78,
+    "response": {
+      "ret": 1,
+      "msg": "操作成功",
+      "data": {
+        "id": 3,
+        "parent_id": 0,
+        "project_id": 19,
+        "column_id": 20,
+        "dialog_id": 0,
+        "flow_item_id": 0,
+        "flow_item_name": "",
+        "name": "Persistent HTTP task 1791800784",
+        "color": "",
+        "desc": "",
+        "start_at": null,
+        "end_at": null,
+        "archived_at": null,
+        "archived_userid": 0,
+        "archived_follow": 0,
+        "complete_at": null,
+        "userid": 1,
+        "visibility": 1,
+        "p_level": 1,
+        "p_name": "重要且紧急",
+        "p_color": "#ED4014",
+        "sort": 1,
+        "loop": "",
+        "loop_at": null,
+        "created_at": "2026-10-12 10:26:25",
+        "updated_at": "2026-10-12 10:26:25",
+        "deleted_at": null,
+        "deleted_userid": 0,
+        "task_user": [
+          {
+            "id": 4,
+            "project_id": 19,
+            "task_id": 3,
+            "task_pid": 3,
+            "userid": 18,
+            "owner": 1,
+            "created_at": "2026-10-12 10:26:25",
+            "updated_at": "2026-10-12 10:26:25"
+          }
+        ],
+        "task_tag": [],
+        "owner": null,
+        "assist": 0,
+        "sub_num": 0,
+        "sub_complete": 0,
+        "percent": 0,
+        "file_num": 0,
+        "msg_num": 0,
+        "today": false,
+        "overdue": false,
+        "project_name": "HTTP core 1791800784",
+        "column_name": "Backlog",
+        "project_deleted": 0,
+        "project_archived": 0,
+        "department_readonly": false,
+        "visibility_appointor": [
+          0
+        ],
+        "is_visible": 1
+      }
+    }
+  },
+  {
+    "at": "2026-10-12T10:26:25.573355+00:00",
+    "path": "project/task/update",
+    "method": "POST",
+    "authenticated": true,
+    "input": {
+      "task_id": 3,
+      "name": "Not allowed"
+    },
+    "status": 200,
+    "duration_ms": 32,
+    "response": {
+      "ret": -4002,
+      "msg": "无任务权限",
+      "data": {
+        "task_id": 3,
+        "force": 1
+      }
+    }
+  },
+  {
+    "at": "2026-10-12T10:26:25.656983+00:00",
+    "path": "project/task/dialog",
+    "method": "POST",
+    "authenticated": true,
+    "input": {
+      "task_id": 3
+    },
+    "status": 200,
+    "duration_ms": 93,
+    "response": {
+      "ret": 1,
+      "msg": "操作成功",
+      "data": {
+        "id": 3,
+        "dialog_id": 24,
+        "dialog_data": {
+          "id": 24,
+          "type": "group",
+          "group_type": "task",
+          "session_id": 0,
+          "name": "Persistent HTTP task 1791800784",
+          "avatar": "",
+          "owner_id": 1,
+          "link_id": 3,
+          "top_userid": 0,
+          "top_msg_id": 0,
+          "created_at": "2026-10-12 10:26:25",
+          "updated_at": "2026-10-12 10:26:25",
+          "deleted_at": null,
+          "top_at": null,
+          "last_at": null,
+          "mark_unread": 0,
+          "silence": 0,
+          "hide": 0,
+          "color": "",
+          "unread": 0,
+          "unread_one": 0,
+          "mention": 0,
+          "mention_ids": [],
+          "user_at": "2026-10-12 10:26:25",
+          "user_ms": 1791771985608,
+          "todo_num": 0,
+          "last_msg": null,
+          "people": 2,
+          "people_user": 2,
+          "people_bot": 0,
+          "deputy_ids": [],
+          "quick_msgs": [],
+          "dialog_user": null,
+          "group_info": {
+            "id": 3,
+            "name": "Persistent HTTP task 1791800784",
+            "archived_at": null,
+            "deleted_at": null,
+            "complete_at": null
+          },
+          "bot": 0,
+          "has_tag": false,
+          "has_todo": false,
+          "has_image": false,
+          "has_file": false,
+          "has_link": false
+        }
+      }
+    }
+  },
+  {
+    "at": "2026-10-12T10:26:25.716399+00:00",
+    "path": "dialog/msg/sendtext",
+    "method": "POST",
+    "authenticated": true,
+    "input": {
+      "dialog_id": 24,
+      "text": "Real task comment 1791800784"
+    },
+    "status": 200,
+    "duration_ms": 47,
+    "response": {
+      "ret": 1,
+      "msg": "操作成功",
+      "data": {
+        "id": 207,
+        "dialog_id": 24,
+        "dialog_type": "group",
+        "session_id": 0,
+        "userid": 18,
+        "type": "text",
+        "mtype": "text",
+        "msg": {
+          "text": "Real task comment 1791800784"
+        },
+        "emoji": [],
+        "key": "[REDACTED]",
+        "read": 0,
+        "send": 1,
+        "tag": 0,
+        "todo": 0,
+        "link": 0,
+        "modify": 0,
+        "bot": 0,
+        "reply_num": 0,
+        "reply_id": 0,
+        "forward_id": 0,
+        "forward_num": 0,
+        "created_at": "2026-10-12 10:26:25",
+        "updated_at": "2026-10-12 10:26:25",
+        "deleted_at": null,
+        "percentage": 100
+      }
+    }
+  },
+  {
+    "at": "2026-10-12T10:26:25.753027+00:00",
+    "path": "dialog/msg/sendtext",
+    "method": "POST",
+    "authenticated": true,
+    "input": {
+      "dialog_id": 24,
+      "text": "Rejected outsider"
+    },
+    "status": 200,
+    "duration_ms": 31,
+    "response": {
+      "ret": 0,
+      "msg": "您不在此会话内",
+      "data": []
+    }
+  },
+  {
+    "at": "2026-10-12T10:26:25.859507+00:00",
+    "path": "project/task/add",
+    "method": "POST",
+    "authenticated": true,
+    "input": {
+      "project_id": 19,
+      "column_id": 20,
+      "name": "rollback child",
+      "owner": [
+        99999999
+      ]
+    },
+    "status": 200,
+    "duration_ms": 62,
+    "response": {
+      "ret": 0,
+      "msg": "任务负责人或协助人员不在项目内",
+      "data": []
+    }
+  },
+  {
+    "at": "2026-10-12T10:26:25.978785+00:00",
+    "path": "file/content/upload",
+    "method": "POST",
+    "authenticated": true,
+    "input": null,
+    "status": 200,
+    "duration_ms": 63,
+    "response": {
+      "ret": 1,
+      "msg": "操作成功",
+      "data": [
+        {
+          "id": 5,
+          "pid": 0,
+          "pids": "",
+          "cid": 0,
+          "name": "core",
+          "type": "txt",
+          "ext": "txt",
+          "size": 37,
+          "hash": "6f82009bdf4a65c302157527c64bf53f",
+          "userid": 1,
+          "share": 0,
+          "guest_access": 0,
+          "pshare": 0,
+          "created_id": 1,
+          "created_at": "2026-10-12 10:26:25",
+          "updated_at": "2026-10-12 10:26:25",
+          "deleted_at": null,
+          "full_name": "core.txt",
+          "overwrite": 0
+        }
+      ]
+    }
+  },
+  {
+    "at": "2026-10-12T10:26:26.017258+00:00",
+    "path": "file/content",
+    "method": "POST",
+    "authenticated": true,
+    "input": {
+      "id": 5,
+      "down": "yes"
+    },
+    "status": 200,
+    "duration_ms": 47,
+    "response": {
+      "sha256": "409ffc32885fe61dd57523c9b505ae1702155c5b3b10c3c80e41a8e6477edf5f",
+      "bytes": 37
+    }
+  },
+  {
+    "at": "2026-10-12T10:26:26.053248+00:00",
+    "path": "file/one",
+    "method": "POST",
+    "authenticated": true,
+    "input": {
+      "id": 5
+    },
+    "status": 200,
+    "duration_ms": 31,
+    "response": {
+      "ret": 0,
+      "msg": "没有查看访问权限",
+      "data": []
+    }
+  },
+  {
+    "at": "2026-10-12T10:26:26.091442+00:00",
+    "path": "report/store",
+    "method": "POST",
+    "authenticated": true,
+    "input": {
+      "title": "HTTP report 1791800784",
+      "content": "<p>Actual completed task</p>",
+      "type": "daily",
+      "receive": [
+        18
+      ]
+    },
+    "status": 200,
+    "duration_ms": 31,
+    "response": {
+      "ret": 1,
+      "msg": "操作成功",
+      "data": {
+        "id": 1,
+        "created_at": "2026-10-12 10:26:26",
+        "updated_at": "2026-10-12 10:26:26",
+        "title": "HTTP report 1791800784",
+        "type": "daily",
+        "userid": 1,
+        "content": "<p>Actual completed task</p>",
+        "sign": "120261012",
+        "receives_user": [
+          {
+            "userid": 18,
+            "nickname": "",
+            "email": "b1791800784@example.test",
+            "userimg": "",
+            "pivot": {
+              "rid": 1,
+              "userid": 18,
+              "read": 0,
+              "receive_at": "2026-10-12 10:26:26"
+            }
+          }
+        ],
+        "receives": [
+          18
+        ]
+      }
+    }
+  },
+  {
+    "at": "2026-10-12T10:26:26.121416+00:00",
+    "path": "report/detail",
+    "method": "POST",
+    "authenticated": true,
+    "input": {
+      "id": 1
+    },
+    "status": 200,
+    "duration_ms": 31,
+    "response": {
+      "ret": 1,
+      "msg": "操作成功",
+      "data": {
+        "id": 1,
+        "created_at": "2026-10-12 10:26:26",
+        "updated_at": "2026-10-12 10:26:26",
+        "title": "HTTP report 1791800784",
+        "type": "daily",
+        "userid": 1,
+        "content": "<p>Actual completed task</p>",
+        "sign": "120261012",
+        "receives_user": [
+          {
+            "userid": 18,
+            "nickname": "",
+            "email": "b1791800784@example.test",
+            "userimg": "",
+            "pivot": {
+              "rid": 1,
+              "userid": 18,
+              "read": 0,
+              "receive_at": "2026-10-12 10:26:26"
+            }
+          }
+        ],
+        "receives": [
+          18
+        ],
+        "type_val": "daily",
+        "ai_analysis": null
+      }
+    }
+  },
+  {
+    "at": "2026-10-12T10:26:26.145001+00:00",
+    "path": "report/detail",
+    "method": "POST",
+    "authenticated": true,
+    "input": {
+      "id": 1
+    },
+    "status": 200,
+    "duration_ms": 32,
+    "response": {
+      "ret": 0,
+      "msg": "无权访问该工作汇报",
+      "data": []
+    }
+  },
+  {
+    "at": "2026-10-12T10:26:26.150093+00:00",
+    "path": "system/setting",
+    "method": "POST",
+    "authenticated": true,
+    "input": {},
+    "status": 200,
+    "duration_ms": 0,
+    "response": {
+      "ret": 1,
+      "msg": "success",
+      "data": {
+        "reg": "open",
+        "project_invite": "open",
+        "login_code": "[REDACTED]",
+        "system_alias": "DooTask",
+        "reg_identity": "normal",
+        "temp_account_alias": "",
+        "password_policy": "[REDACTED]",
+        "chat_information": "optional",
+        "anon_message": "open",
+        "convert_video": "close",
+        "compress_video": "close",
+        "e2e_message": "close",
+        "msg_rev_limit": "",
+        "msg_edit_limit": "",
+        "auto_archived": "close",
+        "archived_day": 7,
+        "task_visible": "close",
+        "all_group_mute": "open",
+        "todo_set_permission": "open",
+        "all_group_autoin": "yes",
+        "user_private_chat_mute": "open",
+        "user_group_chat_mute": "open",
+        "file_upload_limit": "",
+        "unclaimed_task_reminder": "close",
+        "unclaimed_task_reminder_time": "",
+        "task_ai_auto_analyze": "open",
+        "department_owner_project_view": "open",
+        "project_task_handoff": "close",
+        "project_task_handoff_role": "owner",
+        "project_task_handoff_candidates": "department",
+        "project_task_handoff_adjust": "department",
+        "project_task_handoff_note": "optional",
+        "login_logo": "",
+        "app_ai_hidden": false,
+        "server_timezone": "UTC",
+        "server_version": "1.9.66",
+        "deployment": {
+          "mode": "independent",
+          "commercial_authorization_required": false,
+          "vendor_authorized": false
+        }
+      }
+    }
+  },
+  {
+    "at": "2026-10-12T10:26:26.180025+00:00",
+    "path": "system/setting",
+    "method": "POST",
+    "authenticated": true,
+    "input": {
+      "type": "save",
+      "system_name": "Not allowed"
+    },
+    "status": 200,
+    "duration_ms": 31,
+    "response": {
+      "ret": 0,
+      "msg": "权限不足",
+      "data": []
+    }
+  },
+  {
+    "at": "2026-10-12T10:26:26.304181+00:00",
+    "path": "users/login",
+    "method": "POST",
+    "authenticated": false,
+    "input": {
+      "email": "b1791800784@example.test",
+      "password": "[REDACTED]"
+    },
+    "status": 200,
+    "duration_ms": 125,
+    "response": {
+      "ret": 0,
+      "msg": "帐号或密码错误",
+      "data": {
+        "code": "[REDACTED]"
+      }
+    }
+  },
+  {
+    "persistent_state": {
+      "project_id": 19,
+      "task_id": 3,
+      "task_name": "Persistent HTTP task 1791800784",
+      "file_id": 5,
+      "file_sha256": "409ffc32885fe61dd57523c9b505ae1702155c5b3b10c3c80e41a8e6477edf5f",
+      "report_id": 1,
+      "message_id": 207
+    },
+    "database": [
+      {
+        "id": 19,
+        "name": "HTTP core 1791800784"
+      }
+    ],
+    "result": "PASS"
+  }
+]

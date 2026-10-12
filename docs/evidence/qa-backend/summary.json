@@ -1,0 +1,81 @@
+{
+  "observed_at": "2026-10-12T10:54:38.687369+00:00",
+  "overall": "PARTIAL_ACCEPTANCE_NOT_FULL_326",
+  "passed": [
+    "fresh HTTP singleton administrator registration",
+    "205 service tokens and concurrency password reset",
+    "8 shared/host tests",
+    "accounts/files/projects/messaging/integration checks",
+    "core HTTP role/rollback/file/report workflow",
+    "same-volume DB Redis and new-process HTTP/browser readback",
+    "original-client PGP; WS201 revoked scope; DAV12; >10MiB upload",
+    "scheduler multiworker deadlock regression",
+    "send-before-commit real process crash recovery",
+    "real local installed inventory HTTP and clean browser dashboard"
+  ],
+  "historical_failures_fixed": [
+    "WSL path escaping",
+    "WSL runtime lifetime",
+    "SSE business error transport",
+    "legacy media header",
+    "Windows immutable blob overwrite",
+    "DAV property type",
+    "shared file rename parameter collision",
+    "scheduler lock cycle",
+    "missing local installed registry endpoint"
+  ],
+  "open_observations": [
+    "Original-client cursor/cache non-atomic persistence; exact original dual-cursor loss not conclusively reproduced"
+  ],
+  "blocked": [
+    "Manticore official image unavailable after registry timeout; no cache/binary",
+    "optional SMTP LDAP AI Office appstore external hooks/installer and other providers not configured"
+  ],
+  "coverage": {
+    "NOT_RUN": 246,
+    "PASS_RECORDED_SCENARIOS_ONLY": 80
+  },
+  "services": {
+    "observed_at": "2026-10-12T10:51:37.901662+00:00",
+    "http": {
+      "pid": 17896,
+      "command": [
+        "D:\\rpa\\202610\\dootask-fastapi\\.venv\\Scripts\\python.exe",
+        "-m",
+        "uvicorn",
+        "backend.main:create_app",
+        "--factory",
+        "--host",
+        "127.0.0.1",
+        "--port",
+        "18080",
+        "--no-proxy-headers",
+        "--no-access-log"
+      ],
+      "running": true
+    },
+    "https": {
+      "pid": 7988,
+      "command": [
+        "D:\\rpa\\202610\\dootask-fastapi\\.venv\\Scripts\\python.exe",
+        "-m",
+        "uvicorn",
+        "backend.main:create_app",
+        "--factory",
+        "--host",
+        "127.0.0.1",
+        "--port",
+        "18443",
+        "--no-proxy-headers",
+        "--no-access-log",
+        "--ssl-keyfile",
+        "D:\\rpa\\202610\\dootask-fastapi\\.runtime\\protocol-key.pem",
+        "--ssl-certfile",
+        "D:\\rpa\\202610\\dootask-fastapi\\.runtime\\protocol-cert.pem"
+      ],
+      "running": true
+    },
+    "frontend_root": "D:\\rpa\\202610\\dootask-fastapi\\frontend",
+    "extra_crash_worker": "18081 terminated by its own regression test"
+  }
+}

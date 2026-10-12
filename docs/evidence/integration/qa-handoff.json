@@ -1,5 +1,8 @@
 {
-  "status": "NOT_RUN",
+  "status": "EXECUTED_PARTIAL_ACCEPTANCE",
+  "current_report": "docs/2026101219-后端真实运行与回归验收-feat.md",
+  "runtime_coverage": "docs/evidence/qa-backend/endpoint-runtime-coverage.json",
+  "note": "Commands below are retained original handoff. Current execution evidence supersedes NOT_RUN for named scenarios only; 326 complete business contracts are not claimed passed.",
   "launch": [
     ".\\run.ps1 runtime-up",
     ".\\run.ps1 secrets (only if backend.env absent)",

@@ -1,0 +1,13 @@
+{
+  "command": [
+    "powershell.exe",
+    "-NoProfile",
+    "-Command",
+    "Get-CimInstance Win32_Process | Where-Object {$_.CommandLine -match 'backend.main:create_app|backend.tests_independent'} | Select-Object ProcessId,CommandLine | ConvertTo-Json"
+  ],
+  "started_at": "2026-10-12T10:20:20.959019+00:00",
+  "duration_seconds": 0.406,
+  "exit_code": 0,
+  "stdout": "[\r\n    {\r\n        \"ProcessId\":  4868,\r\n        \"CommandLine\":  \"D:\\\\rpa\\\\202610\\\\dootask-fastapi\\\\.venv\\\\Scripts\\\\python.exe -m uvicorn backend.main:create_app --factory --host 127.0.0.1 --port 18080 --no-proxy-headers --no-access-log\"\r\n    },\r\n    {\r\n        \"ProcessId\":  26180,\r\n        \"CommandLine\":  \"\\\"C:\\\\Users\\\\djren\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python312\\\\python.exe\\\" -m uvicorn backend.main:create_app --factory --host 127.0.0.1 --port 18080 --no-proxy-headers --no-access-log\"\r\n    },\r\n    {\r\n        \"ProcessId\":  28932,\r\n        \"CommandLine\":  \"powershell.exe -NoProfile -Command \\\"Get-CimInstance Win32_Process | Where-Object {$_.CommandLine -match \\u0027backend.main:create_app|backend.tests_independent\\u0027} | Select-Object ProcessId,CommandLine | ConvertTo-Json\\\"\"\r\n    }\r\n]\r\n",
+  "stderr": ""
+}

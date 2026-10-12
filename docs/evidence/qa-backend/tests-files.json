@@ -1,0 +1,12 @@
+{
+  "command": [
+    "D:\\rpa\\202610\\dootask-fastapi\\.venv\\Scripts\\python.exe",
+    "-m",
+    "backend.tests_files"
+  ],
+  "started_at": "2026-10-12T10:21:55.908394+00:00",
+  "duration_seconds": 0.422,
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": ""
+}

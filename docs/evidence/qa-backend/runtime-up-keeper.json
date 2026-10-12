@@ -1,0 +1,16 @@
+{
+  "command": [
+    "powershell.exe",
+    "-NoProfile",
+    "-ExecutionPolicy",
+    "Bypass",
+    "-File",
+    "run.ps1",
+    "runtime-up"
+  ],
+  "started_at": "2026-10-12T10:13:55.942310+00:00",
+  "duration_seconds": 13.843,
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": " Container dootask-fastapi-isolated-redis-1  Created\n Container dootask-fastapi-isolated-mariadb-1  Created\n Container dootask-fastapi-isolated-redis-1  Starting\n Container dootask-fastapi-isolated-mariadb-1  Starting\n Container dootask-fastapi-isolated-redis-1  Started\n Container dootask-fastapi-isolated-mariadb-1  Started\n Container dootask-fastapi-isolated-mariadb-1  Waiting\n Container dootask-fastapi-isolated-redis-1  Waiting\n Container dootask-fastapi-isolated-redis-1  Healthy\n Container dootask-fastapi-isolated-mariadb-1  Healthy\n"
+}

@@ -1,0 +1,15 @@
+{
+  "purpose": "Project-only TLS material for real DAV HTTPS; no system trust modifications",
+  "commands": [
+    {"command": ".\\.venv\\Scripts\\python.exe tests/protocol_tls.py", "cwd": "D:/rpa/202610/dootask-fastapi", "exit_code": 127, "wall_seconds": 0.08, "stderr": "command not found: ..venvScriptspython.exe"},
+    {"command": "./.venv/Scripts/python.exe tests/protocol_tls.py", "cwd": "D:/rpa/202610/dootask-fastapi", "exit_code": 127, "wall_seconds": 0.07, "stderr": "command not found: ./.venv/Scripts/python.exe"},
+    {"command": "D:/rpa/202610/dootask-fastapi/.venv/Scripts/python.exe D:/rpa/202610/dootask-fastapi/tests/protocol_tls.py", "cwd": "D:/rpa/202610/dootask-fastapi", "exit_code": 0, "wall_seconds": 0.23, "stdout": "Created project-only loopback TLS certificate, SHA256=56e8208ff9c44b7085f1262811ca871302260cc4b5bb94811d66fde4efe973c8"}
+  ],
+  "certificate": ".runtime/protocol-cert.pem",
+  "private_key": "Excluded from public evidence and Git; runtime only",
+  "san": ["localhost", "127.0.0.1"],
+  "valid_days": 7,
+  "client_policy": "ssl.create_default_context(cafile=project_certificate); no verify=False; no global trust installation",
+  "server_owner": "BackendAcceptance",
+  "url": "https://127.0.0.1:18443"
+}

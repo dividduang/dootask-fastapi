@@ -44,6 +44,10 @@ def run():
         stored = store_stream(settings, io.BytesIO(raw), expected_hash=hashlib.md5(raw).hexdigest())
         assert (settings.storage_root / stored['url']).read_bytes() == raw
         assert stored['size'] == len(raw) and stored['sha256'] == hashlib.sha256(raw).hexdigest()
+        with (settings.storage_root / stored['url']).open('rb') as source:
+            duplicate = store_stream(settings, source)
+            assert duplicate == stored
+            assert source.seek(0) == 0 and source.read() == raw
         raises(ApiError, lambda: store_stream(settings, io.BytesIO(raw), maximum=1))
         raises(ApiError, lambda: store_stream(settings, io.BytesIO(raw), expected_hash='0' * 32))
         first, second = Path(directory) / 'one', Path(directory) / 'two'

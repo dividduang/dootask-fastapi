@@ -2,11 +2,11 @@
 
 修改日期：2026-10-12。源 `dootask` 只读；全新数据库、全新账号，不导入旧密码或 Token。不依赖 doo.so、原厂商业席位或设备授权，不伪造官方授权，不运行 PHP 业务或更新器。保留适用 AGPL、版权、第三方 notice 与对应源码义务。
 
-**当前为实现整合、尚未运行验收。** 历史 334 业务中 326 入口已按显式域表接入，8 个厂商授权入口（含system/license）按用户决定退役；222 个框架/继承候选仍拒绝。独立部署元数据放在既有system/setting，不保留死授权路由。注册、登录、领域功能的代码安装不等于行为已验证。用户已批准移除原厂授权前端页面/菜单；该源码切片已改变，`frontend/public` 仍是旧制品，须下一批集中构建、像素/真实 UI 验证后才能交付，不宣称独立 UI 已完成。
+**已完成真实隔离运行、核心回归及生产前端构建交付；不是326业务全量验收通过。** 历史334业务保留326入口，8个厂商授权入口退役，222个框架/继承候选拒绝。实际执行记录见 `docs/2026101219-后端真实运行与回归验收-feat.md` 与 `docs/evidence/qa-backend/`；前端 `public` 已由真实Vite构建提升，不再使用旧制品。逐条业务/外部依赖未覆盖仍明确为NOT_RUN/BLOCKED，匿名入口拒绝不等于业务成功。
 
 ## 独立 QA 启动
 
-本批没有运行 build、tests、lint、formatter、smoke、服务或数据库初始化。已有 Windows CPython 3.12 项目 `.venv` 已安装全部 37 个锁定 runtime 包，新增包安装来源与官方 PyPI hash 交叉见 `docs/evidence/integration/`。勿重复创建已存在 venv。
+本机 Windows CPython 3.12 `.venv` 的37个锁定runtime包已用于真实运行；安装来源与官方PyPI hash见 `docs/evidence/integration/`。本批未新增Python依赖。不要重复创建已有venv或对已初始化的库执行init-db。
 
 新检出环境：
 
@@ -18,16 +18,19 @@ py -3.12 -m venv .venv
 
 锁为 Windows amd64 / CPython 3.12；PGPy sdist 的隔离构建工具链不在 runtime lock 内。`.runtime/runtime.env`、`redis.conf` 为既有本机私密配置，不提交。新机器须按 `docs/evidence/acquisition/runtime-plan.json` 创建随机密码与相匹配 Redis 配置；不可用空密码替代。`secrets` 拒绝覆盖已有 `.runtime/backend.env`。
 
-在 `dootask-fastapi` 根目录，由 QA 依次执行：
+在 `dootask-fastapi` 根目录执行。此主机WSL在没有前台Linux进程时会退出，即使Docker/systemd仍有服务；先在一个独立终端保持 `.\run.ps1 runtime-hold`，不要关闭它，再在第二个终端启动隔离服务：
 
 ```powershell
+# 终端1，保持运行：
+.\run.ps1 runtime-hold
+# 终端2：
 .\run.ps1 runtime-up
 .\run.ps1 secrets # 仅 backend.env 尚不存在时
 .\run.ps1 init-db
 .\run.ps1 serve -ListenHost 127.0.0.1 -Port 18080
 ```
 
-`runtime-up` 使用 WSL `Ubuntu-22.04`、项目 `dootask-fastapi-isolated`、独立 volumes、MariaDB `127.0.0.1:13306`、Redis `127.0.0.1:16379`。不连接已有用户库或 3306/6379。映射及镜像来源仍须 QA 实测，Docker image ID 的静态存在不是运行通过。`runtime-down` 不删除 volumes。
+`runtime-up` 使用WSL `Ubuntu-22.04`、项目 `dootask-fastapi-isolated`、独立volumes、MariaDB `127.0.0.1:13306`、Redis `127.0.0.1:16379`；本次健康检查、端口映射及同卷down/up重启已实测。不连接既有3306/6379或旧业务库；`runtime-down`不删除volumes。`runtime-hold`只保持本WSL进程存活，不停止任何已有服务。正式宿主默认 `frontend/`，无需设置候选FRONTEND_ROOT。
 
 `init-db` **仅空新库**，按 `schema.sql → security.sql → outbox.sql → domains/files.sql → domains/accounts.sql → schema_seed.sql` 执行；反射业务/安全/上传/下载/账号初始化状态表。MariaDB DDL 隐式提交，失败需保留日志并仅恢复专用新库，不能声称自动原子回滚。此命令不是生产升级迁移器，不能对已有库重复执行。
 
@@ -36,10 +39,12 @@ py -3.12 -m venv .venv
 初次初始化应仅开放 loopback，由 QA 在 `/login` 使用原注册流程，或发送 `POST /api/users/login` JSON：
 
 ```json
-{"type":"reg","email":"qa-owner@example.test","password":"Replace-With-A-Unique-Strong-Password"}
+{"type":"reg","email":"qa-owner@example.test","password":"ChangeMe-Unique-Pass79!"}
 ```
 
 首次本地 human 通过数据库单例锁取得管理员身份；之后注册不提升权限。无需原厂 license。尊重注册开关/邀请/邮箱/LDAP策略：若开启邮箱验证，返回 `ret=0,data.code=email` 但合法账号、验证记录和 SMTP outbox 已提交，不签发会话；配置真实 SMTP、完成验证后再登录，不能将该响应当事务回滚或伪邮件成功。所有普通 ApiError 仍回滚。创建另外两个本地测试用户用于对象权限检查。不要公开未完成首管理员注册的端口。
+
+示例密码仅说明格式，部署时换为唯一随机密码；原注册邮箱长度最多32字符、密码UTF-8最多32字节的约束保留。当前隔离库已通过真实并发HTTP注册产生唯一首管理员，私密凭据仅留本机 `.runtime/qa-accounts.json`，不写入报告或Git；再次注册不会变成管理员。一次错误登录可触发验证码，自动化不能把随后的无验证码拒绝误报成改密失效。
 
 ### 验收命令
 
@@ -53,21 +58,30 @@ foreach ($file in @('.runtime/runtime.env','.runtime/backend.env')) {
     }
   }
 }
-.\.venv\Scripts\python.exe -m unittest backend.tests_shared backend.templates.tests_host tests.test_accounts_contract
+$env:DOOTASK_TEST_EMAIL='<synthetic account email>'
+$env:DOOTASK_TEST_PASSWORD='<synthetic account current password>'
+.\.venv\Scripts\python.exe -m unittest backend.tests_shared backend.templates.tests_host
+.\.venv\Scripts\python.exe -m tests.test_accounts_contract
 .\.venv\Scripts\python.exe -m backend.tests_files
 .\.venv\Scripts\python.exe -m backend.tests_projects
 .\.venv\Scripts\python.exe -m backend.tests_messaging
 .\.venv\Scripts\python.exe -m backend.tests_integration
 $env:DOOTASK_INTEGRATION_TOKEN='<isolated synthetic administrator token>'
 .\.venv\Scripts\python.exe -m backend.tests_integration --database
+$env:DOOTASK_PROJECT_TEST_TOKENS='["<admin token>","<member token>","<outsider token>"]'
+.\.venv\Scripts\python.exe -m backend.tests_projects --integration
+.\.venv\Scripts\python.exe -m backend.tests_messaging --users <admin-id> <member-id> <outsider-id>
+.\.venv\Scripts\python.exe -c "from backend.tests_integration import scheduler_checks; scheduler_checks()"
 ```
 
-各检查的实时数据库前提另见检查文件；项目三用户 token 和消息三用户 ID 检查必须执行，不以纯函数检查代替。完整验收矩阵、外部服务前提及安全切换见 `docs/2026101217-全域整合与运行准备-feat.md`。
+**fresh顺序约束：** `backend.tests_independent`必须在init-db后、任何注册前执行，并设置 `DOOTASK_TEST_INDEPENDENT=1`；设置 `DOOTASK_TEST_BASE_URL=http://127.0.0.1:18080`可通过真实HTTP并发注册，`DOOTASK_TEST_ACCOUNTS_FILE`只能指向私密忽略目录。它会保留两个新账号并重置普通成员测试密码，当前版本把随机合成凭据仅存指定私密文件；不能在当前非空库重跑或清空未知库来迁就它。之后再运行上面的共享/域/真实DB检查。可重放入口为 `python -m tests.backend_core_acceptance [--readback]`、`python -m tests.backend_persistence_snapshot <label>`（当前合成fixture IDs）、`python -m tests.backend_inventory_acceptance`、`python -m tests.ws_crash_acceptance`；均使用本机私密合成账号状态与隔离库，crash场景只创建并终止专用18081进程。
+
+仍未验证/缺真实服务：SMTP与邮件验证、LDAP、Manticore/embedding历史权限索引、AI/SSE成功流、外部appstore安装器/hooks、Office/nginx/预览、LibreOffice、Agora/推送/人脸等。Manticore无本地镜像/程序，官方Docker Hub实际拉取超时；不是缺用户密码。`/appstore/api/v1/internal/installed`现由独立后端认证后读取真实本地安装registry与package菜单，空新环境诚实返回零安装，浏览器不再因该入口404报错；不伪造外部商店、安装或hook成功。APP_KEY未配置的onboard/offboard outbox仍保留失败并退避，不是商业授权门禁。核心push/message/ZIP通知均已真实消费，观察窗口没有未注册kind重试。完整边界见1219及前端/协议验收报告。
 
 ## 安全与可靠性边界
 
 - 业务共享 SQLAlchemy Connection；显式事务和持久 outbox。进程 lifespan 安装 jobs/scopes 后启动唯一每进程 worker，shutdown 发 stop 并等待当前事务完成再释放引擎。唯一考勤提醒为 `checkin.remind`。
-- 原 JSON/form/multipart、5MiB blob 分片、Response/空 body/raw JSON、大小写/双下划线与 `assistant/match-elements` 保留。`dootask-token` header/query 优先于 Office body JWT。POST-only handoff 使用真实 HTTP method。
+- 原JSON/form/multipart、5MiB blob分片、Response/空body/raw JSON、大小写/双下划线与 `assistant/match-elements` 保留；兼容原Axios实际 `OPTIONS, application/json` 媒体头并拒绝歧义多媒体类型。`dootask-token` header/query优先于Office body JWT；POST-only handoff使用真实HTTP method。
 - HTTP/login/WS/DAV 统一停用检查；Token 不来自 Cookie。短 webhook service token 无交互设备、最多一小时，不能建立 WS；撤销/改密/禁用继续有效。TLS、可信反向代理 IP 与日志脱敏仍由部署方配置。
 - WebSocket outbox完成、ASGI发送完成、客户端 receipt 为三个不同状态。成功 send 后记 `transport_sent_at`，不伪 ACK，不因原客户端丢 msgId 每15秒无限重投；发送失败保留未发记录重连补送，ACL撤销单独 discarded 不堵塞后续 tombstone。send 后落库前崩溃可能重复；send 完成不保证浏览器业务处理，重连原消费者刷新持久业务状态。没有 exactly-once 承诺。
 - 静态宿主最后注册，拒绝 PHP、dotfiles、配置/源码/秘密；`/health` 仅进程存活，不是数据库 readiness。`/api/*`、DAV、根 desktop publish 按源免 CSRF，其余 Index 写方法校验签名 Cookie/token。

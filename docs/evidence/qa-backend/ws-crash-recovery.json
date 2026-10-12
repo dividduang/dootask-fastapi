@@ -1,0 +1,515 @@
+[
+  {
+    "utc": "2026-10-12T10:47:55.577074+00:00",
+    "case": "WS-SEND-COMMIT-PROCESS-CRASH",
+    "kind": "http",
+    "method": "POST",
+    "url": "http://127.0.0.1:18080/api/users/login",
+    "request_json": {
+      "type": "reg",
+      "email": "pq-1ddcdd4ad1f971@example.test",
+      "password": "[REDACTED]"
+    },
+    "request_headers": {
+      "User-Agent": "DooTask-Protocol-Acceptance/1",
+      "Content-Type": "application/json"
+    },
+    "request_bytes": 101,
+    "request_sha256": "9167e6198a37d8e799bd193fd1b6b3d9a45df5c7b6c1f65a6e1ebc6ebeacc3e7",
+    "status": 200,
+    "response_headers": {
+      "Date": "Mon, 12 Oct 2026 10:47:54 GMT",
+      "Server": "uvicorn",
+      "Cache-Control": "no-store",
+      "X-Request-Id": "5401383475778e1f0638fc98d7396faa",
+      "Content-Length": "735",
+      "Content-Type": "application/json",
+      "Connection": "close"
+    },
+    "response": {
+      "ret": 1,
+      "msg": "注册成功",
+      "data": {
+        "userid": 47,
+        "identity": [],
+        "department": [],
+        "az": "P",
+        "pinyin": "pq-1ddcdd4ad1f971",
+        "email": "pq-1ddcdd4ad1f971@example.test",
+        "tel": "",
+        "nickname": "pq-1ddcdd4ad1f971",
+        "profession": "",
+        "birthday": null,
+        "address": null,
+        "introduction": null,
+        "userimg": "http://127.0.0.1:18080/avatar/pq-1ddcdd4ad1f971.png",
+        "changepass": 0,
+        "login_num": 1,
+        "last_ip": "127.0.0.1",
+        "last_at": "2026-10-12 10:47:55",
+        "line_ip": "127.0.0.1",
+        "line_at": "2026-10-12 10:47:55",
+        "task_dialog_id": 0,
+        "created_ip": "127.0.0.1",
+        "disable_at": null,
+        "email_verity": 0,
+        "bot": 0,
+        "lang": "zh",
+        "created_at": "2026-10-12 10:47:55",
+        "token": "[REDACTED]"
+      }
+    },
+    "response_bytes": 735,
+    "response_sha256": "4e91518208267b47f8e9483edc1de8c4e8dc57fbd3fa35f4aa70f9ca65f99237",
+    "elapsed_seconds": 0.2029999999977008
+  },
+  {
+    "utc": "2026-10-12T10:47:55.781258+00:00",
+    "case": "WS-SEND-COMMIT-PROCESS-CRASH",
+    "kind": "http",
+    "method": "POST",
+    "url": "http://127.0.0.1:18080/api/users/login",
+    "request_json": {
+      "type": "reg",
+      "email": "pq-d390a80f9b1fa0@example.test",
+      "password": "[REDACTED]"
+    },
+    "request_headers": {
+      "User-Agent": "DooTask-Protocol-Acceptance/1",
+      "Content-Type": "application/json"
+    },
+    "request_bytes": 101,
+    "request_sha256": "443035ac140a59b98a7572c522d9b92243a7fec74af22736a794cb51e5e39cbb",
+    "status": 200,
+    "response_headers": {
+      "Date": "Mon, 12 Oct 2026 10:47:54 GMT",
+      "Server": "uvicorn",
+      "Cache-Control": "no-store",
+      "X-Request-Id": "300ec4bdc925f68738ca25aecba7681a",
+      "Content-Length": "735",
+      "Content-Type": "application/json",
+      "Connection": "close"
+    },
+    "response": {
+      "ret": 1,
+      "msg": "注册成功",
+      "data": {
+        "userid": 48,
+        "identity": [],
+        "department": [],
+        "az": "P",
+        "pinyin": "pq-d390a80f9b1fa0",
+        "email": "pq-d390a80f9b1fa0@example.test",
+        "tel": "",
+        "nickname": "pq-d390a80f9b1fa0",
+        "profession": "",
+        "birthday": null,
+        "address": null,
+        "introduction": null,
+        "userimg": "http://127.0.0.1:18080/avatar/pq-d390a80f9b1fa0.png",
+        "changepass": 0,
+        "login_num": 1,
+        "last_ip": "127.0.0.1",
+        "last_at": "2026-10-12 10:47:55",
+        "line_ip": "127.0.0.1",
+        "line_at": "2026-10-12 10:47:55",
+        "task_dialog_id": 0,
+        "created_ip": "127.0.0.1",
+        "disable_at": null,
+        "email_verity": 0,
+        "bot": 0,
+        "lang": "zh",
+        "created_at": "2026-10-12 10:47:55",
+        "token": "[REDACTED]"
+      }
+    },
+    "response_bytes": 735,
+    "response_sha256": "c02fd41b9724298a4ce7f722b7405276f4ec8933a2824ac5905cd7c98ceef2da",
+    "elapsed_seconds": 0.20300000000133878
+  },
+  {
+    "utc": "2026-10-12T10:47:55.810177+00:00",
+    "case": "WS-SEND-COMMIT-PROCESS-CRASH",
+    "kind": "http",
+    "method": "POST",
+    "url": "http://127.0.0.1:18080/api/dialog/open/user",
+    "request_json": {
+      "userid": 48
+    },
+    "request_headers": {
+      "User-Agent": "DooTask-Protocol-Acceptance/1",
+      "Content-Type": "application/json"
+    },
+    "request_bytes": 14,
+    "request_sha256": "374d9860929b878b6b4e7b4cae134283969789a123b494df82aa2329703317c0",
+    "status": 200,
+    "response_headers": {
+      "Date": "Mon, 12 Oct 2026 10:47:55 GMT",
+      "Server": "uvicorn",
+      "Cache-Control": "no-store",
+      "X-Request-Id": "13785cd86e6b41fe642880dd31205506",
+      "Content-Length": "952",
+      "Content-Type": "application/json",
+      "Connection": "close"
+    },
+    "response": {
+      "ret": 1,
+      "msg": "操作成功",
+      "data": {
+        "id": 72,
+        "type": "user",
+        "group_type": "",
+        "session_id": 0,
+        "name": "",
+        "avatar": "",
+        "owner_id": 0,
+        "link_id": 0,
+        "top_userid": 0,
+        "top_msg_id": 0,
+        "created_at": "2026-10-12 10:47:55",
+        "updated_at": "2026-10-12 10:47:55",
+        "deleted_at": null,
+        "top_at": null,
+        "last_at": null,
+        "mark_unread": 0,
+        "silence": 0,
+        "hide": 0,
+        "color": "",
+        "unread": 0,
+        "unread_one": 0,
+        "mention": 0,
+        "mention_ids": [],
+        "user_at": "2026-10-12 10:47:55",
+        "user_ms": 1791773275790,
+        "todo_num": 0,
+        "last_msg": null,
+        "people": 2,
+        "people_user": 2,
+        "people_bot": 0,
+        "deputy_ids": [],
+        "quick_msgs": [],
+        "dialog_user": {
+          "userid": 48,
+          "nickname": "",
+          "email": "pq-d390a80f9b1fa0@example.test",
+          "userimg": "",
+          "bot": 0
+        },
+        "group_info": null,
+        "bot": 0,
+        "has_tag": false,
+        "has_todo": false,
+        "has_image": false,
+        "has_file": false,
+        "has_link": false,
+        "email": "pq-d390a80f9b1fa0@example.test",
+        "userimg": "",
+        "is_disable": 0,
+        "dialog_mute": null
+      }
+    },
+    "response_bytes": 952,
+    "response_sha256": "86e309064199b6b07183f0115846ffb9de40d75b329c56c0861a7fa2de27f702",
+    "elapsed_seconds": 0.01599999999962165
+  },
+  {
+    "utc": "2026-10-12T10:47:55.815377+00:00",
+    "case": "WS-SEND-COMMIT-PROCESS-CRASH",
+    "kind": "owned_process_started",
+    "pid": 15284,
+    "command": [
+      "D:\\rpa\\202610\\dootask-fastapi\\.venv\\Scripts\\python.exe",
+      "-m",
+      "tests.ws_crash_acceptance",
+      "--server"
+    ]
+  },
+  {
+    "utc": "2026-10-12T10:47:57.072455+00:00",
+    "case": "WS-SEND-COMMIT-PROCESS-CRASH",
+    "kind": "ws_frame",
+    "client": "before-crash",
+    "direction": "in",
+    "frame": {
+      "type": "open",
+      "data": {
+        "fd": 39,
+        "ud": 48
+      }
+    }
+  },
+  {
+    "utc": "2026-10-12T10:47:57.106333+00:00",
+    "case": "WS-SEND-COMMIT-PROCESS-CRASH",
+    "kind": "ws_frame",
+    "client": "before-crash",
+    "direction": "in",
+    "frame": {
+      "type": "project",
+      "action": "add",
+      "data": {
+        "id": 53,
+        "name": "📝 个人项目",
+        "desc": "注册时系统自动创建项目，你可以自由删除。",
+        "userid": 48,
+        "personal": 1,
+        "archive_method": "system",
+        "archive_days": 30,
+        "ai_auto_analyze": "open",
+        "task_template_share": "open",
+        "department_owner_view": "open",
+        "user_simple": "",
+        "dialog_id": 71,
+        "archived_at": null,
+        "archived_userid": 0,
+        "created_at": "2026-10-12 10:47:55",
+        "updated_at": "2026-10-12 10:47:55",
+        "deleted_at": null,
+        "owner": 1,
+        "sort": 0,
+        "owner_userid": 48,
+        "deputy_userids": [],
+        "department_readonly": false,
+        "task_num": 0,
+        "task_complete": 0,
+        "task_percent": 0,
+        "task_my_num": 0,
+        "task_my_complete": 0,
+        "task_my_percent": 0
+      },
+      "msgId": "8973a8f6342249d0897a293ff8c450f3"
+    }
+  },
+  {
+    "utc": "2026-10-12T10:47:59.109947+00:00",
+    "case": "WS-SEND-COMMIT-PROCESS-CRASH",
+    "kind": "http",
+    "method": "POST",
+    "url": "http://127.0.0.1:18080/api/dialog/msg/sendtext",
+    "request_json": {
+      "dialog_id": 72,
+      "text": "real-crash-window-20261012T104754Z",
+      "text_type": "md"
+    },
+    "request_headers": {
+      "User-Agent": "DooTask-Protocol-Acceptance/1",
+      "Content-Type": "application/json"
+    },
+    "request_bytes": 82,
+    "request_sha256": "7c84330f0b885bac3836c162a438b85fa2aa7325b8bcc5aa0f4cf016bc21ecd8",
+    "status": 200,
+    "response_headers": {
+      "Date": "Mon, 12 Oct 2026 10:47:58 GMT",
+      "Server": "uvicorn",
+      "Cache-Control": "no-store",
+      "X-Request-Id": "e2a962e10764da0b027474d869e47225",
+      "Content-Length": "541",
+      "Content-Type": "application/json",
+      "Connection": "close"
+    },
+    "response": {
+      "ret": 1,
+      "msg": "操作成功",
+      "data": {
+        "id": 225,
+        "dialog_id": 72,
+        "dialog_type": "user",
+        "session_id": 0,
+        "userid": 47,
+        "type": "text",
+        "mtype": "text",
+        "msg": {
+          "text": "real-crash-window-20261012T104754Z",
+          "type": "md"
+        },
+        "emoji": [],
+        "key": "real-crash-window-20261012T104754Z",
+        "read": 0,
+        "send": 1,
+        "tag": 0,
+        "todo": 0,
+        "link": 0,
+        "modify": 0,
+        "bot": 0,
+        "reply_num": 0,
+        "reply_id": 0,
+        "forward_id": 0,
+        "forward_num": 0,
+        "created_at": "2026-10-12 10:47:59",
+        "updated_at": "2026-10-12 10:47:59",
+        "deleted_at": null,
+        "percentage": 100
+      }
+    },
+    "response_bytes": 541,
+    "response_sha256": "f9ea0a9fe2d7111a9f3c4ff134427ab898c689b5954ce043d3ff1b9b858557f9",
+    "elapsed_seconds": 0.0459999999984575
+  },
+  {
+    "utc": "2026-10-12T10:47:59.612973+00:00",
+    "case": "WS-SEND-COMMIT-PROCESS-CRASH",
+    "kind": "ws_frame",
+    "client": "before-crash",
+    "direction": "in",
+    "frame": {
+      "type": "dialog",
+      "mode": "add",
+      "silence": 0,
+      "data": {
+        "id": 225,
+        "dialog_id": 72,
+        "dialog_type": "user",
+        "session_id": 0,
+        "userid": 47,
+        "type": "text",
+        "mtype": "text",
+        "msg": {
+          "text": "real-crash-window-20261012T104754Z",
+          "type": "md"
+        },
+        "emoji": [],
+        "key": "real-crash-window-20261012T104754Z",
+        "read": 0,
+        "send": 1,
+        "tag": 0,
+        "todo": 0,
+        "link": 0,
+        "modify": 0,
+        "bot": 0,
+        "reply_num": 0,
+        "reply_id": 0,
+        "forward_id": 0,
+        "forward_num": 0,
+        "created_at": "2026-10-12 10:47:59",
+        "updated_at": "2026-10-12 10:47:59",
+        "deleted_at": null,
+        "percentage": 100,
+        "mention": 0,
+        "dot": 0,
+        "user_at": "2026-10-12 10:47:59",
+        "user_ms": 1791773279089
+      },
+      "msgId": "a8e90aa456de4452b0dbd7898cedfa6a"
+    }
+  },
+  {
+    "utc": "2026-10-12T10:47:59.665807+00:00",
+    "case": "WS-SEND-COMMIT-PROCESS-CRASH",
+    "kind": "database_readonly",
+    "query": "SELECT msg_id,transport_sent_at,acknowledged_at FROM backend_deliveries WHERE msg_id=%s",
+    "parameters": [
+      "a8e90aa456de4452b0dbd7898cedfa6a"
+    ],
+    "rows": [
+      {
+        "msg_id": "a8e90aa456de4452b0dbd7898cedfa6a",
+        "transport_sent_at": null,
+        "acknowledged_at": null
+      }
+    ]
+  },
+  {
+    "utc": "2026-10-12T10:47:59.665807+00:00",
+    "case": "WS-SEND-COMMIT-PROCESS-CRASH",
+    "kind": "breakpoint_observed",
+    "userid": 48,
+    "fd": "39",
+    "msg_id": "a8e90aa456de4452b0dbd7898cedfa6a",
+    "pid": 12520,
+    "location": "_transport_sent entry after successful ASGI send; no DB sent commit yet"
+  },
+  {
+    "utc": "2026-10-12T10:47:59.870290+00:00",
+    "case": "WS-SEND-COMMIT-PROCESS-CRASH",
+    "kind": "owned_process_terminated",
+    "pid": 15284,
+    "exit_code": 1,
+    "stdout": "SUCCESS: The process with PID 12520 (child process of PID 15284) has been terminated.\r\nSUCCESS: The process with PID 15284 (child process of PID 4092) has been terminated.\r\n"
+  },
+  {
+    "utc": "2026-10-12T10:47:59.903325+00:00",
+    "case": "WS-SEND-COMMIT-PROCESS-CRASH",
+    "kind": "ws_frame",
+    "client": "other-worker-open",
+    "direction": "in",
+    "frame": {
+      "type": "open",
+      "data": {
+        "fd": 40,
+        "ud": 48
+      }
+    }
+  },
+  {
+    "utc": "2026-10-12T10:49:30.621759+00:00",
+    "case": "WS-SEND-COMMIT-PROCESS-CRASH",
+    "kind": "ws_frame",
+    "client": "other-worker-recovery",
+    "direction": "in",
+    "frame": {
+      "type": "dialog",
+      "mode": "add",
+      "silence": 0,
+      "data": {
+        "id": 225,
+        "dialog_id": 72,
+        "dialog_type": "user",
+        "session_id": 0,
+        "userid": 47,
+        "type": "text",
+        "mtype": "text",
+        "msg": {
+          "text": "real-crash-window-20261012T104754Z",
+          "type": "md"
+        },
+        "emoji": [],
+        "key": "real-crash-window-20261012T104754Z",
+        "read": 0,
+        "send": 1,
+        "tag": 0,
+        "todo": 0,
+        "link": 0,
+        "modify": 0,
+        "bot": 0,
+        "reply_num": 0,
+        "reply_id": 0,
+        "forward_id": 0,
+        "forward_num": 0,
+        "created_at": "2026-10-12 10:47:59",
+        "updated_at": "2026-10-12 10:47:59",
+        "deleted_at": null,
+        "percentage": 100,
+        "mention": 0,
+        "dot": 0,
+        "user_at": "2026-10-12 10:47:59",
+        "user_ms": 1791773279089
+      },
+      "msgId": "a8e90aa456de4452b0dbd7898cedfa6a"
+    }
+  },
+  {
+    "utc": "2026-10-12T10:49:30.667504+00:00",
+    "case": "WS-SEND-COMMIT-PROCESS-CRASH",
+    "kind": "database_readonly",
+    "query": "SELECT msg_id,transport_sent_at,acknowledged_at FROM backend_deliveries WHERE msg_id=%s",
+    "parameters": [
+      "a8e90aa456de4452b0dbd7898cedfa6a"
+    ],
+    "rows": [
+      {
+        "msg_id": "a8e90aa456de4452b0dbd7898cedfa6a",
+        "transport_sent_at": "2026-10-12 10:49:30.621759",
+        "acknowledged_at": null
+      }
+    ]
+  },
+  {
+    "utc": "2026-10-12T10:49:30.667504+00:00",
+    "case": "WS-SEND-COMMIT-PROCESS-CRASH",
+    "kind": "result",
+    "status": "PASS",
+    "same_message_redelivered": true,
+    "false_ack": false,
+    "lease_recovery_bound_seconds": 120
+  }
+]

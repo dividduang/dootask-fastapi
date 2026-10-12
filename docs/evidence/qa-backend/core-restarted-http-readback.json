@@ -1,0 +1,12 @@
+{
+  "command": [
+    "D:\\rpa\\202610\\dootask-fastapi\\.venv\\Scripts\\python.exe",
+    "docs/evidence/qa-backend/core_scenario.py",
+    "--readback"
+  ],
+  "started_at": "2026-10-12T10:32:12.741384+00:00",
+  "duration_seconds": 0.797,
+  "exit_code": 0,
+  "stdout": "Core real HTTP readback passed\r\n",
+  "stderr": ""
+}

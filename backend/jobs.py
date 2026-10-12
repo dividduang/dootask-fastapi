@@ -123,8 +123,9 @@ def run_once(settings):
 def tick():
     now = utcnow()
     epoch = int(now.timestamp())
-    with db.transaction() as connection:
-        for kind, (seconds, payload) in SCHEDULES.items():
+    for kind, (seconds, payload) in SCHEDULES.items():
+        # Do not hold several scheduled rows while workers lock and emit their own jobs.
+        with db.transaction() as connection:
             enqueue(connection, kind, payload, dedupe_key=f"schedule:{kind}:{epoch // seconds}")
 
 

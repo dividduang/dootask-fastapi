@@ -1,0 +1,16 @@
+{
+  "rule": "Bearer query values removed; real errors retained",
+  "counts": {
+    "api-candidate.log": 9,
+    "api-final.log": 17,
+    "api-https-final.log": 0,
+    "api-https-inventory.log": 0,
+    "api-https-repaired.log": 0,
+    "api-https.log": 0,
+    "api-inventory.log": 2,
+    "api-process.log": 0,
+    "api-repaired.log": 11,
+    "manticore-pull.log": 0,
+    "ws-crash-process.log": 1
+  }
+}

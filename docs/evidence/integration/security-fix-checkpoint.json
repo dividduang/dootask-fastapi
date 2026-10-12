@@ -1,5 +1,7 @@
 {
   "observed_at": "2026-10-12T10:03:59.347061+00:00",
+  "current_runtime_evidence": {"R1": "docs/evidence/qa-protocol/20261012T102458Z.json", "R2": "docs/evidence/qa-backend/tests-independent-http.json", "R3": "docs/evidence/qa-protocol/20261012T103242Z.json", "R4": "docs/evidence/qa-backend/tests-independent-http.json", "R5": "docs/evidence/qa-backend/manticore-acquisition.json", "R6": "docs/evidence/qa-protocol/20261012T102458Z.json"},
+  "current_runtime_note": "R1/R2/R3/R4/R6 observed PASS for recorded scenarios; R5 BLOCKED real provider unavailable. Original source checkpoint below is historical, not a current verification claim.",
   "findings": [
     {
       "finding": "WS_HEAD_OF_LINE",

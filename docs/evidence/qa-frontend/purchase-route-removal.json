@@ -1,0 +1,11 @@
+{
+  "path": "frontend/resources/assets/js/pages/pro.vue",
+  "original_sha256": "407e2705b99a27e5549c532962ff8950b147d835a0c31030a4709fd684e759f7",
+  "original_bytes": 343,
+  "current_exists": false,
+  "reason": "Only mounted hook redirects /pro to vendor site/{zh,en}/price.html; parent confirmed same approved purchase-entry removal scope",
+  "consumers": [
+    "frontend/resources/assets/js/routes.js"
+  ],
+  "permission": "Main message 2026-10-12: remove route and purchase-only component; actual exception count 10"
+}

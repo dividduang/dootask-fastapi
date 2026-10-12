@@ -1,0 +1,22 @@
+{
+  "scope": "Real network protocol and negative-permission acceptance; not 326 business-success coverage",
+  "database_policy": "Read-only SELECT against dootask_fastapi:13306; all mutations via real HTTP",
+  "cases": [
+    {"id":"PGP-ORIGINAL-CLIENT","status":"PASS","evidence":"2026-10-12T10-25-08-678Z-pgp.json","checks":["Curve25519 original openpgp_hi/lightweight","server RSA key exchange","encrypted registration/login","encrypted response and errors","logout and token rejection"]},
+    {"id":"API-326-DISPATCH","status":"PASS","evidence":"20261012T102403Z.json","coverage":"326 canonical routes and every declared alias, anonymous/error/raw dispatch only; no claim of 326 successful authorized mutations"},
+    {"id":"API-222-REJECT","status":"PASS","evidence":"20261012T102403Z.json","coverage":"222 inherited/framework candidates rejected, plus retired vendor and unknown paths"},
+    {"id":"ZIP-FIRST-BOT-R6","status":"PASS","evidence":"20261012T102458Z.json","checks":["system-msg absent before and present after","real Unicode archive content","denied outsider cannot obtain capability"]},
+    {"id":"MULTIPART-GT10M","status":"PASS","evidence":"20261012T102919Z.json","bytes":10486491,"sha256":"bf37e27f4d68d9b1b3f408a47ccac79f394c039ced0fbb82e0ff1fd10141e104","checks":["init/chunk/merge/cancel","5MiB chunk 0 repeated then 2 then 1","foreign chunk/merge denied","foreign cancel leaves owner pending","incomplete merge denied","merge replay unchanged","cancel blocks chunk and merge","Unicode filename","traversal rejected","download byte equality"]},
+    {"id":"WS-TRANSPORT-NO-RECEIPT","status":"PASS","evidence":"20261012T102458Z.json","seconds_without_receipt":18,"checks":["two real users open/fd/ud","project/dialog push","transport_sent_at present, acknowledged_at NULL","no repeat beyond 15 seconds"]},
+    {"id":"WS-HEAD-OF-LINE-R1","status":"PASS","evidence":"20261012T102458Z.json","discarded_scope_revoked":201,"false_acks":0,"checks":["201 real HTTP-created offline messages","project member removed","reconnect no old private payload","groupExit delivered","another authorized dialog message delivered"]},
+    {"id":"WS-LOGOUT-DISABLE","status":"PASS","evidence":"20261012T102458Z.json","observed_close_code":1011,"checks":["logout closes established session","admin disables synthetic owner and closes established session","HTTP token rejected afterward"]},
+    {"id":"DAV-12-METHODS","status":"PASS","evidence":"20261012T103242Z.json","sha256":"c2c77d0eda255a2701e9178b84996276edeb6d14cfdef093a02b65719f092206","methods":["OPTIONS","PROPFIND","GET","HEAD","PUT","DELETE","MKCOL","MOVE","COPY","PROPPATCH","LOCK","UNLOCK"],"checks":["project-only trusted HTTPS; HTTP rejected","Unicode path and byte hash","Range and HEAD","Depth0/1 and infinity rejection","XXE and encoded traversal rejected","exclusive lock/refresh/unlock","wrong lock and If-Match/If-None-Match conflicts","scalar and complex custom XML properties survive COPY/MOVE","Overwrite:F collision rejected","concurrent real PUT and HTTP revoke have no500; both post-revoke DAV calls401","read-only SQL confirms credential revoked"]},
+    {"id":"SSE-INVALID-CAPABILITY","status":"PASS","evidence":"20261012T102403Z.json","before":"HTTP500 in 20261012T102141Z.json","after":"HTTP401 ret=-1, real controlled rejection"},
+    {"id":"OFFICE-NGINX","status":"NOT_RUN","blocker":"Real Office installation/JWT configuration and nginx DNS/reverse proxy unavailable"},
+    {"id":"AI-SSE-PROVIDER","status":"NOT_RUN","blocker":"Real appstore/plugin/provider not configured; no fake upstream used"},
+    {"id":"MANTICORE-HISTORY-R5","status":"NOT_RUN","blocker":"Real Manticore/embedding/index unavailable"},
+    {"id":"WS-PROCESS-CRASH-FAULT","status":"NOT_RUN","blocker":"Protocol owner does not terminate shared app; no send/commit crash injection in this network window"}
+  ],
+  "security_findings_not_duplicated": {"R2":"BackendAcceptance existing service-token real database scenario","R4":"BackendAcceptance existing concurrent password-change scenario"},
+  "failure_evidence_policy":"Initial failed captures retained unchanged; current PASS rows cite only later observed repaired path evidence"
+}

@@ -1,0 +1,62 @@
+{
+  "baseline": "../frontend/frontend-byte-manifest.json",
+  "checked_existing_nonpublic_files": 2267,
+  "authorized_deltas": [
+    {
+      "path": "resources/ai-kb/_meta/page-links.yaml",
+      "old_sha256": "bb12b157be1926daf60a8e11661fd006c7d86eccda3a3125ff6aae995dc8bbdb",
+      "new_sha256": "6de6c710a7a0faa509ff3d62a715a8d9e3ccf080eab2fecc065681ba3475aecd"
+    },
+    {
+      "path": "resources/assets/js/components/AIAssistant/deep-links.js",
+      "old_sha256": "3c353738eeff16c435e3f73c4395a974013d670bef3fe6c9e75d0be1919229e8",
+      "new_sha256": "2c9f0ce19527d5dc58d0297f0ca99fd851fe92eef91e3d64a5ab5d6e4fa68670"
+    },
+    {
+      "path": "resources/assets/js/pages/manage/dashboard.vue",
+      "old_sha256": "c551ef5e675311984716b0c777184d8a5e0ba57673574e83f07f81e3ca3c24f6",
+      "new_sha256": "c89ffdbcf901db96b8a17ad7e6fb1692bf839f53255f607c92838b9670a280ac"
+    },
+    {
+      "path": "resources/assets/js/pages/manage/setting/index.vue",
+      "old_sha256": "77b8bbb318860df637084797bb73f68c104f0339d84d31d15ef2e47156dff5bc",
+      "new_sha256": "2a83908ce9d06714a10581590f94663b9f1d777fc66ea62d48f94551fed5264c"
+    },
+    {
+      "path": "resources/assets/js/pages/manage/setting/license.vue",
+      "old_sha256": "3d654c5d9cd88a67f33beda712871f6c28c9c3b448bfb657fdf9826cd751cca1",
+      "new_sha256": null
+    },
+    {
+      "path": "resources/assets/js/pages/manage.vue",
+      "old_sha256": "222937776fdcac45521d78c7570804c6c7eb72f26d9eb2caef299271e66d65a8",
+      "new_sha256": "bb76bf703ba6db3b1e08a6a66ec1950048ad9ba803cceaa22497db68cf8e756c"
+    },
+    {
+      "path": "resources/assets/js/pages/pro.vue",
+      "old_sha256": "407e2705b99a27e5549c532962ff8950b147d835a0c31030a4709fd684e759f7",
+      "new_sha256": null
+    },
+    {
+      "path": "resources/assets/js/routes.js",
+      "old_sha256": "1530932d624536c2e74a891300de9a8e83b6cc97e0699a0660eb2672379b38c0",
+      "new_sha256": "bc92c7d864c61b4065cc0f45c4a52e064c28a5d70848ecb1ff950735ad57d01d"
+    },
+    {
+      "path": "resources/assets/js/store/actions.js",
+      "old_sha256": "47bd5bfc389ab8bc21f785679790673b49efdbdbcc63b4f06981e34a6a7f339b",
+      "new_sha256": "633d67be1b565de5cfbdc1a3eb9a0e315469b23357ae9b805378539bb4344502"
+    },
+    {
+      "path": "resources/assets/sass/pages/page-dashboard.scss",
+      "old_sha256": "a78a5e0ea679d49ab97cdd657967250a7c11f0ed4afa57775abb3afa08677c09",
+      "new_sha256": "fb2c672f103b49173d4822c01f97dbeb1faacbd776fcb89d34f1cf19ddfdb483"
+    }
+  ],
+  "new_build_inputs": [
+    "frontend/package-lock.json",
+    "frontend/scripts/build-independent.mjs"
+  ],
+  "non_authorized_source_deltas": [],
+  "additional_purchase_only_removal": "purchase-route-removal.json"
+}

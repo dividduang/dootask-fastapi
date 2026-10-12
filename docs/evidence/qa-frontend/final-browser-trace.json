@@ -1,0 +1,3374 @@
+{
+  "requests": [
+    {
+      "at": "2026-10-12T10:34:47.547Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/manage/dashboard",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "document"
+    },
+    {
+      "at": "2026-10-12T10:34:47.558Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/css/iview.css",
+      "queryKeys": [
+        "v"
+      ],
+      "status": 200,
+      "resourceType": "stylesheet"
+    },
+    {
+      "at": "2026-10-12T10:34:47.559Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/css/loading.css",
+      "queryKeys": [
+        "v"
+      ],
+      "status": 200,
+      "resourceType": "stylesheet"
+    },
+    {
+      "at": "2026-10-12T10:34:47.559Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/loading-theme.js",
+      "queryKeys": [
+        "v"
+      ],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:47.559Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/app.8920178d.css",
+      "queryKeys": [],
+      "status": 304,
+      "resourceType": "stylesheet"
+    },
+    {
+      "at": "2026-10-12T10:34:47.563Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/iconfont.3688aee2.woff2",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "font"
+    },
+    {
+      "at": "2026-10-12T10:34:47.563Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/css/fonts/ionicons.woff2",
+      "queryKeys": [
+        "v"
+      ],
+      "status": 200,
+      "resourceType": "font"
+    },
+    {
+      "at": "2026-10-12T10:34:47.564Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/app.95b8d539.js",
+      "queryKeys": [],
+      "status": 304,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:47.577Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/dayjs.d911487c.js",
+      "queryKeys": [],
+      "status": 304,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:47.579Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/jquery.f3b04b8d.js",
+      "queryKeys": [],
+      "status": 304,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:47.581Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/highlight.js.00c1079e.js",
+      "queryKeys": [],
+      "status": 304,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:47.581Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/localforage.1d2bfa1a.js",
+      "queryKeys": [],
+      "status": 304,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:47.582Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/markdown-it.a32176fe.js",
+      "queryKeys": [],
+      "status": 304,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:47.584Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/markdown-it-link-attributes.e1d5d151.js",
+      "queryKeys": [],
+      "status": 304,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:47.587Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/@traptitech.06ef763c.js",
+      "queryKeys": [],
+      "status": 304,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:47.587Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/vue.d9ae1698.js",
+      "queryKeys": [],
+      "status": 304,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:47.596Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/openpgp_hi.15f91b1d.js",
+      "queryKeys": [],
+      "status": 304,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:47.597Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/vuex.cc7cb26e.js",
+      "queryKeys": [],
+      "status": 304,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:47.597Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/axios.b1f1dd94.js",
+      "queryKeys": [],
+      "status": 304,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:47.598Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/mitt.1ea0a2a3.js",
+      "queryKeys": [],
+      "status": 304,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:47.600Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/quill-hi.b812af0d.js",
+      "queryKeys": [],
+      "status": 304,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:47.601Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/view-design-hi.01808dc5.js",
+      "queryKeys": [],
+      "status": 304,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:47.601Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/quill-mention-hi.4f2f7670.js",
+      "queryKeys": [],
+      "status": 304,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:47.601Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/html-to-md.50a87632.js",
+      "queryKeys": [],
+      "status": 304,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:47.602Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/quill-delta.1ca1e180.js",
+      "queryKeys": [],
+      "status": 304,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:47.603Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/lodash.710f94d1.js",
+      "queryKeys": [],
+      "status": 304,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:47.603Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/vue-router.2d566cd7.js",
+      "queryKeys": [],
+      "status": 304,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:47.604Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/element-sea.854640d9.js",
+      "queryKeys": [],
+      "status": 304,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:47.606Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/vuedraggable.b71d4bc8.js",
+      "queryKeys": [],
+      "status": 304,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:47.606Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/vue-resize-observer.6692fc88.js",
+      "queryKeys": [],
+      "status": 304,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:47.607Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/vue-clipboard2.75089409.js",
+      "queryKeys": [],
+      "status": 304,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:47.608Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/@babel.2ffbfeed.js",
+      "queryKeys": [],
+      "status": 304,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:47.608Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/entities.c6e13047.js",
+      "queryKeys": [],
+      "status": 304,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:47.608Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/uc.micro.8d343c98.js",
+      "queryKeys": [],
+      "status": 304,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:47.609Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/linkify-it.a36c65e2.js",
+      "queryKeys": [],
+      "status": 304,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:47.612Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/punycode.js.4b3f125a.js",
+      "queryKeys": [],
+      "status": 304,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:47.612Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/mdurl.ce6c1dd8.js",
+      "queryKeys": [],
+      "status": 304,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:47.613Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/parchment.d5c5924e.js",
+      "queryKeys": [],
+      "status": 304,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:47.613Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/lodash-es.76e3a28b.js",
+      "queryKeys": [],
+      "status": 304,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:47.613Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/fast-diff.f17881f3.js",
+      "queryKeys": [],
+      "status": 304,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:47.613Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/eventemitter3.78b735ad.js",
+      "queryKeys": [],
+      "status": 304,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:47.613Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/lodash.isequal.b7622c5a.js",
+      "queryKeys": [],
+      "status": 304,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:47.613Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/lodash.clonedeep.12ad9787.js",
+      "queryKeys": [],
+      "status": 304,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:47.613Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/clipboard.c7c649a3.js",
+      "queryKeys": [],
+      "status": 304,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:47.613Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/sortablejs.2e5ca97f.js",
+      "queryKeys": [],
+      "status": 304,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:47.613Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/deepmerge.cecf392e.js",
+      "queryKeys": [],
+      "status": 304,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:47.615Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/resize-observer-polyfill.1966c0de.js",
+      "queryKeys": [],
+      "status": 304,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:47.615Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/throttle-debounce.7c3948b2.js",
+      "queryKeys": [],
+      "status": 304,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:47.615Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/babel-helper-vue-jsx-merge-props.5ed215c3.js",
+      "queryKeys": [],
+      "status": 304,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:47.616Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/normalize-wheel.2a034b9f.js",
+      "queryKeys": [],
+      "status": 304,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:47.616Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/async-validator.3824ea35.js",
+      "queryKeys": [],
+      "status": 304,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:47.617Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/babel-runtime.4773988a.js",
+      "queryKeys": [],
+      "status": 304,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:47.617Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/core-js.314b4a1d.js",
+      "queryKeys": [],
+      "status": 304,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:47.645Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/jsencrypt.min.js",
+      "queryKeys": [
+        "hash"
+      ],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:47.646Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/scroll-into-view.min.js",
+      "queryKeys": [
+        "hash"
+      ],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:47.646Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/language/web/key.js",
+      "queryKeys": [
+        "hash"
+      ],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:47.646Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/language/web/zh.js",
+      "queryKeys": [
+        "hash"
+      ],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:47.647Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/language/iview/zh.js",
+      "queryKeys": [
+        "hash"
+      ],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:47.674Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/manage.afbc17f2.css",
+      "queryKeys": [],
+      "status": 304,
+      "resourceType": "stylesheet"
+    },
+    {
+      "at": "2026-10-12T10:34:47.674Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/api/system/setting",
+      "queryKeys": [
+        "_nocache"
+      ],
+      "status": 200,
+      "resourceType": "xhr"
+    },
+    {
+      "at": "2026-10-12T10:34:47.675Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/manage.cf99928c.js",
+      "queryKeys": [],
+      "status": 304,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:47.675Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/CheckinExport.cc850ba4.css",
+      "queryKeys": [],
+      "status": 304,
+      "resourceType": "stylesheet"
+    },
+    {
+      "at": "2026-10-12T10:34:47.675Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/SearchButton.de48b996.js",
+      "queryKeys": [],
+      "status": 304,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:47.675Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/CheckinExport.26205c9d.js",
+      "queryKeys": [],
+      "status": 304,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:47.676Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/TaskDetail.2777c8b1.css",
+      "queryKeys": [],
+      "status": 304,
+      "resourceType": "stylesheet"
+    },
+    {
+      "at": "2026-10-12T10:34:47.677Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/add.c57cc156.css",
+      "queryKeys": [],
+      "status": 304,
+      "resourceType": "stylesheet"
+    },
+    {
+      "at": "2026-10-12T10:34:47.677Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/DepartmentOwnerView.35ebba97.css",
+      "queryKeys": [],
+      "status": 304,
+      "resourceType": "stylesheet"
+    },
+    {
+      "at": "2026-10-12T10:34:47.677Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/dashboard.f03a7e9c.css",
+      "queryKeys": [],
+      "status": 304,
+      "resourceType": "stylesheet"
+    },
+    {
+      "at": "2026-10-12T10:34:47.677Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/index.3dd67196.css",
+      "queryKeys": [],
+      "status": 304,
+      "resourceType": "stylesheet"
+    },
+    {
+      "at": "2026-10-12T10:34:47.678Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/index.530c499c.js",
+      "queryKeys": [],
+      "status": 304,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:47.679Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/ImgUpload.db3a9a0f.js",
+      "queryKeys": [],
+      "status": 304,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:47.679Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/chunkedUpload.4c01d55b.js",
+      "queryKeys": [],
+      "status": 304,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:47.681Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/file.5e8166ad.js",
+      "queryKeys": [],
+      "status": 304,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:47.682Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/spark-md5.0443325f.js",
+      "queryKeys": [],
+      "status": 304,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:47.683Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/add.977d606f.js",
+      "queryKeys": [],
+      "status": 304,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:47.683Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/TaskDetail.ee440903.js",
+      "queryKeys": [],
+      "status": 304,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:47.699Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/webhook.378987f3.js",
+      "queryKeys": [],
+      "status": 304,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:47.701Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/DialogWrapper.fb341657.js",
+      "queryKeys": [],
+      "status": 304,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:47.703Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/vue-virtual-scroll-list-hi.ec6f4bce.js",
+      "queryKeys": [],
+      "status": 304,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:47.703Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/api/users/key/client",
+      "queryKeys": [
+        "client_id",
+        "_nocache"
+      ],
+      "status": 200,
+      "resourceType": "xhr"
+    },
+    {
+      "at": "2026-10-12T10:34:47.704Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/TEditor.453f833e.js",
+      "queryKeys": [],
+      "status": 304,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:47.704Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/tinymce.7c9b69d1.js",
+      "queryKeys": [],
+      "status": 304,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:47.704Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/index.a778b6f8.js",
+      "queryKeys": [],
+      "status": 304,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:47.706Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/ReportDetail.42f94267.js",
+      "queryKeys": [],
+      "status": 304,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:47.710Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/ReportEdit.70002757.js",
+      "queryKeys": [],
+      "status": 304,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:47.710Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/DepartmentOwnerView.0c84802e.js",
+      "queryKeys": [],
+      "status": 304,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:47.710Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/notification-koro1.99b93615.js",
+      "queryKeys": [],
+      "status": 304,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:47.710Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/@micro-zoe.18e41a02.js",
+      "queryKeys": [],
+      "status": 304,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:47.710Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/dashboard.fb638c5c.js",
+      "queryKeys": [],
+      "status": 304,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:47.710Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/echarts.523e56b1.js",
+      "queryKeys": [],
+      "status": 304,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:47.711Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/tslib.891692d0.js",
+      "queryKeys": [],
+      "status": 304,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:47.711Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/api/system/prefetch",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "xhr"
+    },
+    {
+      "at": "2026-10-12T10:34:47.711Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/zrender.6f9469d4.js",
+      "queryKeys": [],
+      "status": 304,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:47.711Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/preview.40943d7f.js",
+      "queryKeys": [],
+      "status": 304,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:47.723Z",
+      "method": "GET",
+      "origin": "null",
+      "path": "image/svg+xml;base64,PHN2ZyB0PSIxNjIyMzkwODExNTQxIiBjbGFzcz0iaWNvbiIgdmlld0JveD0iMCAwIDEwMjQgMTAyNCIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHAtaWQ9IjI0OTk3IiB3aWR0aD0iNDgiIGhlaWdodD0iNDgiPjxwYXRoIGQ9Ik0zNjYuMTgyNCAxMDguMjM2OEw4MTIuMDMyIDQyOC4wMzJhMTAyLjQgMTAyLjQgMCAwIDEgMCAxNjYuNTAyNEwzNjYuMTgyNCA5MTQuMzI5NmExMDIuNCAxMDIuNCAwIDAgMS0xNjIuMDk5Mi04My4yNTEyVjE5MS40ODhhMTAyLjQgMTAyLjQgMCAwIDEgMTYyLjA5OTItODMuMjUxMnoiIHAtaWQ9IjI0OTk4IiBmaWxsPSIjOTk5OTk5Ij48L3BhdGg+PC9zdmc+",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "image"
+    },
+    {
+      "at": "2026-10-12T10:34:47.723Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/index.40a8e116.js",
+      "queryKeys": [],
+      "status": 304,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:47.723Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/api/system/version",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "xhr"
+    },
+    {
+      "at": "2026-10-12T10:34:47.724Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/avatar/qa-ui-1791800521757.png",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "image"
+    },
+    {
+      "at": "2026-10-12T10:34:47.735Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/api/users/basic",
+      "queryKeys": [
+        "userid[]",
+        "_nocache"
+      ],
+      "status": 200,
+      "resourceType": "xhr"
+    },
+    {
+      "at": "2026-10-12T10:34:47.744Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/api/users/info",
+      "queryKeys": [
+        "_nocache"
+      ],
+      "status": 200,
+      "resourceType": "xhr"
+    },
+    {
+      "at": "2026-10-12T10:34:47.761Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/appstore/api/v1/internal/installed",
+      "queryKeys": [],
+      "status": 404,
+      "resourceType": "xhr"
+    },
+    {
+      "at": "2026-10-12T10:34:47.816Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/api/dialog/lists",
+      "queryKeys": [
+        "page",
+        "pagesize",
+        "timerange",
+        "_nocache"
+      ],
+      "status": 200,
+      "resourceType": "xhr"
+    },
+    {
+      "at": "2026-10-12T10:34:47.819Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/api/dialog/todo",
+      "queryKeys": [
+        "dialog_id",
+        "_nocache"
+      ],
+      "status": 200,
+      "resourceType": "xhr"
+    },
+    {
+      "at": "2026-10-12T10:34:47.832Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/api/project/task/lists",
+      "queryKeys": [
+        "timerange",
+        "_nocache"
+      ],
+      "status": 200,
+      "resourceType": "xhr"
+    },
+    {
+      "at": "2026-10-12T10:34:47.834Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/api/apps/functions",
+      "queryKeys": [
+        "_nocache"
+      ],
+      "status": 200,
+      "resourceType": "xhr"
+    },
+    {
+      "at": "2026-10-12T10:34:47.844Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/api/project/lists",
+      "queryKeys": [
+        "timerange",
+        "_nocache"
+      ],
+      "status": 200,
+      "resourceType": "xhr"
+    },
+    {
+      "at": "2026-10-12T10:34:47.862Z",
+      "method": "POST",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/api/dialog/msg/latest",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "xhr"
+    },
+    {
+      "at": "2026-10-12T10:34:48.519Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/manage/file/0/6",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "document"
+    },
+    {
+      "at": "2026-10-12T10:34:48.526Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/app.8920178d.css",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "stylesheet"
+    },
+    {
+      "at": "2026-10-12T10:34:48.526Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/css/iview.css",
+      "queryKeys": [
+        "v"
+      ],
+      "status": 200,
+      "resourceType": "stylesheet"
+    },
+    {
+      "at": "2026-10-12T10:34:48.526Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/css/loading.css",
+      "queryKeys": [
+        "v"
+      ],
+      "status": 200,
+      "resourceType": "stylesheet"
+    },
+    {
+      "at": "2026-10-12T10:34:48.526Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/loading-theme.js",
+      "queryKeys": [
+        "v"
+      ],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:48.526Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/app.95b8d539.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:48.540Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/jquery.f3b04b8d.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:48.540Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/dayjs.d911487c.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:48.540Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/localforage.1d2bfa1a.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:48.540Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/markdown-it.a32176fe.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:48.540Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/highlight.js.00c1079e.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:48.540Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/markdown-it-link-attributes.e1d5d151.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:48.540Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/@traptitech.06ef763c.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:48.540Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/vue.d9ae1698.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:48.541Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/vuex.cc7cb26e.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:48.541Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/openpgp_hi.15f91b1d.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:48.541Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/axios.b1f1dd94.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:48.541Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/mitt.1ea0a2a3.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:48.541Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/quill-hi.b812af0d.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:48.541Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/quill-mention-hi.4f2f7670.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:48.541Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/view-design-hi.01808dc5.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:48.541Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/html-to-md.50a87632.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:48.541Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/quill-delta.1ca1e180.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:48.541Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/lodash.710f94d1.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:48.541Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/vue-router.2d566cd7.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:48.541Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/vue-clipboard2.75089409.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:48.541Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/vuedraggable.b71d4bc8.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:48.541Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/vue-resize-observer.6692fc88.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:48.541Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/element-sea.854640d9.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:48.541Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/@babel.2ffbfeed.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:48.541Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/mdurl.ce6c1dd8.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:48.541Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/uc.micro.8d343c98.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:48.541Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/entities.c6e13047.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:48.541Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/linkify-it.a36c65e2.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:48.541Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/punycode.js.4b3f125a.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:48.541Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/parchment.d5c5924e.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:48.541Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/eventemitter3.78b735ad.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:48.541Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/lodash-es.76e3a28b.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:48.541Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/fast-diff.f17881f3.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:48.541Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/lodash.clonedeep.12ad9787.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:48.541Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/lodash.isequal.b7622c5a.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:48.541Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/clipboard.c7c649a3.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:48.541Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/sortablejs.2e5ca97f.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:48.541Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/deepmerge.cecf392e.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:48.541Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/resize-observer-polyfill.1966c0de.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:48.541Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/throttle-debounce.7c3948b2.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:48.541Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/babel-helper-vue-jsx-merge-props.5ed215c3.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:48.542Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/normalize-wheel.2a034b9f.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:48.542Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/async-validator.3824ea35.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:48.542Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/babel-runtime.4773988a.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:48.542Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/core-js.314b4a1d.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:48.542Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/iconfont.3688aee2.woff2",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "font"
+    },
+    {
+      "at": "2026-10-12T10:34:48.542Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/css/fonts/ionicons.woff2",
+      "queryKeys": [
+        "v"
+      ],
+      "status": 200,
+      "resourceType": "font"
+    },
+    {
+      "at": "2026-10-12T10:34:48.563Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/jsencrypt.min.js",
+      "queryKeys": [
+        "hash"
+      ],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:48.563Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/scroll-into-view.min.js",
+      "queryKeys": [
+        "hash"
+      ],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:48.563Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/language/web/key.js",
+      "queryKeys": [
+        "hash"
+      ],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:48.564Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/language/web/zh.js",
+      "queryKeys": [
+        "hash"
+      ],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:48.564Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/language/iview/zh.js",
+      "queryKeys": [
+        "hash"
+      ],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:48.586Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/manage.cf99928c.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:48.586Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/manage.afbc17f2.css",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "stylesheet"
+    },
+    {
+      "at": "2026-10-12T10:34:48.586Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/SearchButton.de48b996.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:48.586Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/CheckinExport.26205c9d.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:48.586Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/CheckinExport.cc850ba4.css",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "stylesheet"
+    },
+    {
+      "at": "2026-10-12T10:34:48.587Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/index.530c499c.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:48.587Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/ImgUpload.db3a9a0f.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:48.587Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/chunkedUpload.4c01d55b.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:48.587Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/spark-md5.0443325f.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:48.587Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/file.5e8166ad.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:48.587Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/TaskDetail.ee440903.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:48.588Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/TaskDetail.2777c8b1.css",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "stylesheet"
+    },
+    {
+      "at": "2026-10-12T10:34:48.588Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/add.977d606f.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:48.588Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/add.c57cc156.css",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "stylesheet"
+    },
+    {
+      "at": "2026-10-12T10:34:48.588Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/DialogWrapper.fb341657.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:48.588Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/vue-virtual-scroll-list-hi.ec6f4bce.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:48.589Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/webhook.378987f3.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:48.589Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/TEditor.453f833e.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:48.589Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/tinymce.7c9b69d1.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:48.589Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/ReportEdit.70002757.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:48.589Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/ReportDetail.42f94267.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:48.589Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/index.a778b6f8.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:48.589Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/index.3dd67196.css",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "stylesheet"
+    },
+    {
+      "at": "2026-10-12T10:34:48.589Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/@micro-zoe.18e41a02.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:48.589Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/notification-koro1.99b93615.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:48.589Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/DepartmentOwnerView.0c84802e.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:48.589Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/DepartmentOwnerView.35ebba97.css",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "stylesheet"
+    },
+    {
+      "at": "2026-10-12T10:34:48.590Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/preview.40943d7f.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:48.590Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/index.40a8e116.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:48.591Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/file.46b175d3.css",
+      "queryKeys": [],
+      "status": 304,
+      "resourceType": "stylesheet"
+    },
+    {
+      "at": "2026-10-12T10:34:48.592Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/api/system/setting",
+      "queryKeys": [
+        "_nocache"
+      ],
+      "status": 200,
+      "resourceType": "xhr"
+    },
+    {
+      "at": "2026-10-12T10:34:48.592Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/file.e7afc325.js",
+      "queryKeys": [],
+      "status": 304,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:48.593Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/api/system/prefetch",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "xhr"
+    },
+    {
+      "at": "2026-10-12T10:34:48.594Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/api/system/version",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "xhr"
+    },
+    {
+      "at": "2026-10-12T10:34:48.594Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/api/users/key/client",
+      "queryKeys": [
+        "client_id",
+        "_nocache"
+      ],
+      "status": 200,
+      "resourceType": "xhr"
+    },
+    {
+      "at": "2026-10-12T10:34:48.624Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/avatar/qa-ui-1791800521757.png",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "image"
+    },
+    {
+      "at": "2026-10-12T10:34:48.624Z",
+      "method": "GET",
+      "origin": "null",
+      "path": "image/svg+xml;base64,PHN2ZyB0PSIxNjIyMzkwODExNTQxIiBjbGFzcz0iaWNvbiIgdmlld0JveD0iMCAwIDEwMjQgMTAyNCIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHAtaWQ9IjI0OTk3IiB3aWR0aD0iNDgiIGhlaWdodD0iNDgiPjxwYXRoIGQ9Ik0zNjYuMTgyNCAxMDguMjM2OEw4MTIuMDMyIDQyOC4wMzJhMTAyLjQgMTAyLjQgMCAwIDEgMCAxNjYuNTAyNEwzNjYuMTgyNCA5MTQuMzI5NmExMDIuNCAxMDIuNCAwIDAgMS0xNjIuMDk5Mi04My4yNTEyVjE5MS40ODhhMTAyLjQgMTAyLjQgMCAwIDEgMTYyLjA5OTItODMuMjUxMnoiIHAtaWQ9IjI0OTk4IiBmaWxsPSIjOTk5OTk5Ij48L3BhdGg+PC9zdmc+",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "image"
+    },
+    {
+      "at": "2026-10-12T10:34:48.624Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/FileContent.47dd3edf.css",
+      "queryKeys": [],
+      "status": 304,
+      "resourceType": "stylesheet"
+    },
+    {
+      "at": "2026-10-12T10:34:48.631Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/txt.f3c209c9.svg",
+      "queryKeys": [],
+      "status": 304,
+      "resourceType": "image"
+    },
+    {
+      "at": "2026-10-12T10:34:48.631Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/FileContent.665bdeee.js",
+      "queryKeys": [],
+      "status": 304,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:48.631Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/IFrame.d28b2f81.js",
+      "queryKeys": [],
+      "status": 304,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:48.631Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/api/users/basic",
+      "queryKeys": [
+        "userid[]",
+        "_nocache"
+      ],
+      "status": 200,
+      "resourceType": "xhr"
+    },
+    {
+      "at": "2026-10-12T10:34:48.633Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/api/file/lists",
+      "queryKeys": [
+        "pid",
+        "scope",
+        "_nocache"
+      ],
+      "status": 200,
+      "resourceType": "xhr"
+    },
+    {
+      "at": "2026-10-12T10:34:48.646Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/api/users/info",
+      "queryKeys": [
+        "_nocache"
+      ],
+      "status": 200,
+      "resourceType": "xhr"
+    },
+    {
+      "at": "2026-10-12T10:34:48.657Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/api/file/content",
+      "queryKeys": [
+        "id",
+        "_nocache"
+      ],
+      "status": 200,
+      "resourceType": "xhr"
+    },
+    {
+      "at": "2026-10-12T10:34:48.664Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/appstore/api/v1/internal/installed",
+      "queryKeys": [],
+      "status": 404,
+      "resourceType": "xhr"
+    },
+    {
+      "at": "2026-10-12T10:34:48.664Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/AceEditor.e7a289c4.js",
+      "queryKeys": [],
+      "status": 304,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:48.665Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/ace/ace.js",
+      "queryKeys": [
+        "hash"
+      ],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:48.668Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/ace/mode-json.js",
+      "queryKeys": [
+        "hash"
+      ],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:48.674Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/ace/keybinding-vscode.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:48.674Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/ace/theme-dracula-dark.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:48.718Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/api/dialog/lists",
+      "queryKeys": [
+        "page",
+        "pagesize",
+        "timerange",
+        "_nocache"
+      ],
+      "status": 200,
+      "resourceType": "xhr"
+    },
+    {
+      "at": "2026-10-12T10:34:48.720Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/api/dialog/todo",
+      "queryKeys": [
+        "dialog_id",
+        "_nocache"
+      ],
+      "status": 200,
+      "resourceType": "xhr"
+    },
+    {
+      "at": "2026-10-12T10:34:48.729Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/api/project/task/lists",
+      "queryKeys": [
+        "timerange",
+        "_nocache"
+      ],
+      "status": 200,
+      "resourceType": "xhr"
+    },
+    {
+      "at": "2026-10-12T10:34:48.740Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/api/project/lists",
+      "queryKeys": [
+        "timerange",
+        "_nocache"
+      ],
+      "status": 200,
+      "resourceType": "xhr"
+    },
+    {
+      "at": "2026-10-12T10:34:48.743Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/api/apps/functions",
+      "queryKeys": [
+        "_nocache"
+      ],
+      "status": 200,
+      "resourceType": "xhr"
+    },
+    {
+      "at": "2026-10-12T10:34:48.752Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/api/users/basic",
+      "queryKeys": [
+        "userid[]",
+        "_nocache"
+      ],
+      "status": 200,
+      "resourceType": "xhr"
+    },
+    {
+      "at": "2026-10-12T10:34:48.769Z",
+      "method": "POST",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/api/dialog/msg/latest",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "xhr"
+    },
+    {
+      "at": "2026-10-12T10:34:49.353Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/FilePreview.ea86324b.js",
+      "queryKeys": [],
+      "status": 304,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:49.382Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/api/file/content",
+      "queryKeys": [
+        "id",
+        "_nocache"
+      ],
+      "status": 200,
+      "resourceType": "xhr"
+    },
+    {
+      "at": "2026-10-12T10:34:49.413Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/manage/setting/license",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "document"
+    },
+    {
+      "at": "2026-10-12T10:34:49.420Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/app.8920178d.css",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "stylesheet"
+    },
+    {
+      "at": "2026-10-12T10:34:49.420Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/css/iview.css",
+      "queryKeys": [
+        "v"
+      ],
+      "status": 200,
+      "resourceType": "stylesheet"
+    },
+    {
+      "at": "2026-10-12T10:34:49.421Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/css/loading.css",
+      "queryKeys": [
+        "v"
+      ],
+      "status": 200,
+      "resourceType": "stylesheet"
+    },
+    {
+      "at": "2026-10-12T10:34:49.421Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/loading-theme.js",
+      "queryKeys": [
+        "v"
+      ],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:49.421Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/app.95b8d539.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:49.433Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/jquery.f3b04b8d.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:49.433Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/dayjs.d911487c.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:49.433Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/localforage.1d2bfa1a.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:49.433Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/markdown-it.a32176fe.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:49.433Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/highlight.js.00c1079e.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:49.433Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/markdown-it-link-attributes.e1d5d151.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:49.434Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/@traptitech.06ef763c.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:49.434Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/vue.d9ae1698.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:49.434Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/vuex.cc7cb26e.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:49.434Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/openpgp_hi.15f91b1d.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:49.434Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/axios.b1f1dd94.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:49.434Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/mitt.1ea0a2a3.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:49.434Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/quill-hi.b812af0d.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:49.434Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/quill-mention-hi.4f2f7670.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:49.434Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/view-design-hi.01808dc5.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:49.434Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/html-to-md.50a87632.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:49.434Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/quill-delta.1ca1e180.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:49.434Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/lodash.710f94d1.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:49.434Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/vue-router.2d566cd7.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:49.434Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/vue-clipboard2.75089409.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:49.434Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/vuedraggable.b71d4bc8.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:49.434Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/vue-resize-observer.6692fc88.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:49.434Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/element-sea.854640d9.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:49.434Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/@babel.2ffbfeed.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:49.434Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/mdurl.ce6c1dd8.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:49.434Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/uc.micro.8d343c98.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:49.434Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/entities.c6e13047.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:49.434Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/linkify-it.a36c65e2.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:49.434Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/punycode.js.4b3f125a.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:49.434Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/parchment.d5c5924e.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:49.434Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/eventemitter3.78b735ad.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:49.434Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/lodash-es.76e3a28b.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:49.434Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/fast-diff.f17881f3.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:49.434Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/lodash.clonedeep.12ad9787.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:49.434Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/lodash.isequal.b7622c5a.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:49.434Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/clipboard.c7c649a3.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:49.434Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/sortablejs.2e5ca97f.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:49.434Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/deepmerge.cecf392e.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:49.434Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/resize-observer-polyfill.1966c0de.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:49.434Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/throttle-debounce.7c3948b2.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:49.435Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/babel-helper-vue-jsx-merge-props.5ed215c3.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:49.435Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/normalize-wheel.2a034b9f.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:49.435Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/async-validator.3824ea35.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:49.435Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/babel-runtime.4773988a.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:49.435Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/core-js.314b4a1d.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:49.435Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/iconfont.3688aee2.woff2",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "font"
+    },
+    {
+      "at": "2026-10-12T10:34:49.435Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/css/fonts/ionicons.woff2",
+      "queryKeys": [
+        "v"
+      ],
+      "status": 200,
+      "resourceType": "font"
+    },
+    {
+      "at": "2026-10-12T10:34:49.455Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/jsencrypt.min.js",
+      "queryKeys": [
+        "hash"
+      ],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:49.456Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/scroll-into-view.min.js",
+      "queryKeys": [
+        "hash"
+      ],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:49.456Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/language/web/key.js",
+      "queryKeys": [
+        "hash"
+      ],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:49.456Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/language/web/zh.js",
+      "queryKeys": [
+        "hash"
+      ],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:49.456Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/language/iview/zh.js",
+      "queryKeys": [
+        "hash"
+      ],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:49.470Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/preview.40943d7f.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:49.470Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/index.40a8e116.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:49.471Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/404.b621a9cf.css",
+      "queryKeys": [],
+      "status": 304,
+      "resourceType": "stylesheet"
+    },
+    {
+      "at": "2026-10-12T10:34:49.471Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/api/system/setting",
+      "queryKeys": [
+        "_nocache"
+      ],
+      "status": 200,
+      "resourceType": "xhr"
+    },
+    {
+      "at": "2026-10-12T10:34:49.471Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/404.dd517f90.js",
+      "queryKeys": [],
+      "status": 304,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:49.476Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/api/system/prefetch",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "xhr"
+    },
+    {
+      "at": "2026-10-12T10:34:49.476Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/api/system/version",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "xhr"
+    },
+    {
+      "at": "2026-10-12T10:34:49.480Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/api/users/key/client",
+      "queryKeys": [
+        "client_id",
+        "_nocache"
+      ],
+      "status": 200,
+      "resourceType": "xhr"
+    },
+    {
+      "at": "2026-10-12T10:34:50.502Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/pro",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "document"
+    },
+    {
+      "at": "2026-10-12T10:34:50.508Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/app.8920178d.css",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "stylesheet"
+    },
+    {
+      "at": "2026-10-12T10:34:50.508Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/css/iview.css",
+      "queryKeys": [
+        "v"
+      ],
+      "status": 200,
+      "resourceType": "stylesheet"
+    },
+    {
+      "at": "2026-10-12T10:34:50.508Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/css/loading.css",
+      "queryKeys": [
+        "v"
+      ],
+      "status": 200,
+      "resourceType": "stylesheet"
+    },
+    {
+      "at": "2026-10-12T10:34:50.509Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/loading-theme.js",
+      "queryKeys": [
+        "v"
+      ],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:50.509Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/app.95b8d539.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:50.516Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/jquery.f3b04b8d.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:50.517Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/dayjs.d911487c.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:50.517Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/localforage.1d2bfa1a.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:50.517Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/markdown-it.a32176fe.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:50.518Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/highlight.js.00c1079e.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:50.519Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/markdown-it-link-attributes.e1d5d151.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:50.520Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/@traptitech.06ef763c.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:50.520Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/vue.d9ae1698.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:50.520Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/vuex.cc7cb26e.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:50.521Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/openpgp_hi.15f91b1d.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:50.521Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/axios.b1f1dd94.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:50.521Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/mitt.1ea0a2a3.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:50.521Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/quill-hi.b812af0d.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:50.521Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/quill-mention-hi.4f2f7670.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:50.521Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/view-design-hi.01808dc5.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:50.521Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/html-to-md.50a87632.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:50.521Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/quill-delta.1ca1e180.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:50.521Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/lodash.710f94d1.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:50.521Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/vue-router.2d566cd7.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:50.521Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/vue-clipboard2.75089409.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:50.521Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/vuedraggable.b71d4bc8.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:50.521Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/vue-resize-observer.6692fc88.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:50.522Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/element-sea.854640d9.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:50.522Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/@babel.2ffbfeed.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:50.522Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/mdurl.ce6c1dd8.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:50.522Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/uc.micro.8d343c98.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:50.522Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/entities.c6e13047.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:50.522Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/linkify-it.a36c65e2.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:50.522Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/punycode.js.4b3f125a.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:50.522Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/parchment.d5c5924e.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:50.522Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/eventemitter3.78b735ad.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:50.522Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/lodash-es.76e3a28b.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:50.522Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/fast-diff.f17881f3.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:50.522Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/lodash.clonedeep.12ad9787.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:50.522Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/lodash.isequal.b7622c5a.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:50.522Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/clipboard.c7c649a3.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:50.522Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/sortablejs.2e5ca97f.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:50.522Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/deepmerge.cecf392e.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:50.522Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/resize-observer-polyfill.1966c0de.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:50.522Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/throttle-debounce.7c3948b2.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:50.522Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/babel-helper-vue-jsx-merge-props.5ed215c3.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:50.522Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/normalize-wheel.2a034b9f.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:50.522Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/async-validator.3824ea35.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:50.522Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/babel-runtime.4773988a.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:50.522Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/core-js.314b4a1d.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:50.523Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/iconfont.3688aee2.woff2",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "font"
+    },
+    {
+      "at": "2026-10-12T10:34:50.523Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/css/fonts/ionicons.woff2",
+      "queryKeys": [
+        "v"
+      ],
+      "status": 200,
+      "resourceType": "font"
+    },
+    {
+      "at": "2026-10-12T10:34:50.543Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/jsencrypt.min.js",
+      "queryKeys": [
+        "hash"
+      ],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:50.544Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/scroll-into-view.min.js",
+      "queryKeys": [
+        "hash"
+      ],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:50.544Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/language/web/key.js",
+      "queryKeys": [
+        "hash"
+      ],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:50.544Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/language/web/zh.js",
+      "queryKeys": [
+        "hash"
+      ],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:50.544Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/language/iview/zh.js",
+      "queryKeys": [
+        "hash"
+      ],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:50.559Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/404.dd517f90.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:50.559Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/404.b621a9cf.css",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "stylesheet"
+    },
+    {
+      "at": "2026-10-12T10:34:50.559Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/preview.40943d7f.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:50.559Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/js/build/index.40a8e116.js",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "at": "2026-10-12T10:34:50.560Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/api/system/setting",
+      "queryKeys": [
+        "_nocache"
+      ],
+      "status": 200,
+      "resourceType": "xhr"
+    },
+    {
+      "at": "2026-10-12T10:34:50.563Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/api/system/prefetch",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "xhr"
+    },
+    {
+      "at": "2026-10-12T10:34:50.564Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/api/system/version",
+      "queryKeys": [],
+      "status": 200,
+      "resourceType": "xhr"
+    },
+    {
+      "at": "2026-10-12T10:34:50.567Z",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18080",
+      "path": "/api/users/key/client",
+      "queryKeys": [
+        "client_id",
+        "_nocache"
+      ],
+      "status": 200,
+      "resourceType": "xhr"
+    }
+  ],
+  "failures": [],
+  "errors": [
+    "N: AxiosError: Request failed with status code 404",
+    "N: AxiosError: Request failed with status code 404"
+  ],
+  "coverage": "Continuous response/pageerror listeners during final four-route production run; no interception. Headers/query values/bodies omitted."
+}

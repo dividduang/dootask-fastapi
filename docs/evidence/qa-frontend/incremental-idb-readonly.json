@@ -1,0 +1,44 @@
+{
+  "stores": [
+    "common",
+    "local-forage-detect-blob-support"
+  ],
+  "taskRecords": [
+    {
+      "store": "common",
+      "key": "callAt",
+      "value": [
+        {
+          "__last": 1791801320,
+          "key": "dialogs::",
+          "updated": 1791801320,
+          "deleted": 0
+        },
+        {
+          "__last": 1791801320,
+          "key": "tasks::",
+          "updated": 1791801170,
+          "deleted": 0
+        },
+        {
+          "__last": 1791801320,
+          "key": "projects::",
+          "updated": 1791801170,
+          "deleted": 0
+        },
+        {
+          "__last": 1791801320,
+          "key": "tasks::project_id%3D7",
+          "updated": 1791801170,
+          "deleted": 0
+        },
+        {
+          "__last": 1791801170,
+          "key": "tasks::parent_id%3D5",
+          "updated": 0,
+          "deleted": 0
+        }
+      ]
+    }
+  ]
+}

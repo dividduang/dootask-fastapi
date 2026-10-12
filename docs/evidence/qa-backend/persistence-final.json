@@ -1,0 +1,234 @@
+{
+  "at": "2026-10-12T10:54:38.610501+00:00",
+  "database": "dootask_fastapi",
+  "port": 13306,
+  "projects": [
+    {
+      "id": 7,
+      "name": "📝 个人项目",
+      "userid": 7
+    },
+    {
+      "id": 19,
+      "name": "HTTP core 1791800784",
+      "userid": 1
+    }
+  ],
+  "project_tasks": [
+    {
+      "id": 3,
+      "project_id": 19,
+      "name": "Persistent HTTP task 1791800784",
+      "dialog_id": 24
+    },
+    {
+      "id": 5,
+      "project_id": 7,
+      "name": "Frontend production acceptance task",
+      "dialog_id": 30
+    }
+  ],
+  "files": [
+    {
+      "id": 5,
+      "name": "core",
+      "ext": "txt",
+      "size": 37,
+      "hash": "6f82009bdf4a65c302157527c64bf53f"
+    },
+    {
+      "id": 6,
+      "name": "upload-fixture",
+      "ext": "txt",
+      "size": 78,
+      "hash": "4a5392197c5b0b1595099a3ee587888e"
+    }
+  ],
+  "file_bytes": [
+    {
+      "id": 5,
+      "sha256": "409ffc32885fe61dd57523c9b505ae1702155c5b3b10c3c80e41a8e6477edf5f",
+      "bytes": 37
+    },
+    {
+      "id": 6,
+      "sha256": "97008397fd2d5c07dab2849035449264911949d41fa6cc70237ad6c4eaed4618",
+      "bytes": 78
+    }
+  ],
+  "outbox": [
+    {
+      "kind": "accounts.changed",
+      "n": 20,
+      "completed": "7",
+      "attempts": 10,
+      "last_error": "ApiError: APP_KEY未配置，无法通知应用商店"
+    },
+    {
+      "kind": "accounts.close_meetings",
+      "n": 5,
+      "completed": "5",
+      "attempts": 1,
+      "last_error": null
+    },
+    {
+      "kind": "accounts.created",
+      "n": 45,
+      "completed": "0",
+      "attempts": 10,
+      "last_error": "ApiError: APP_KEY未配置，无法通知应用商店"
+    },
+    {
+      "kind": "accounts.expire",
+      "n": 1,
+      "completed": "1",
+      "attempts": 1,
+      "last_error": null
+    },
+    {
+      "kind": "accounts.search",
+      "n": 45,
+      "completed": "45",
+      "attempts": 1,
+      "last_error": null
+    },
+    {
+      "kind": "checkin.remind",
+      "n": 37,
+      "completed": "37",
+      "attempts": 1,
+      "last_error": null
+    },
+    {
+      "kind": "complaints.notify",
+      "n": 1,
+      "completed": "1",
+      "attempts": 1,
+      "last_error": null
+    },
+    {
+      "kind": "dialog.delete_bot_messages",
+      "n": 1,
+      "completed": "1",
+      "attempts": 1,
+      "last_error": null
+    },
+    {
+      "kind": "dialog.email_notice",
+      "n": 37,
+      "completed": "37",
+      "attempts": 1,
+      "last_error": null
+    },
+    {
+      "kind": "dialog.joke_soup",
+      "n": 1,
+      "completed": "1",
+      "attempts": 1,
+      "last_error": null
+    },
+    {
+      "kind": "dialog.maintenance",
+      "n": 37,
+      "completed": "37",
+      "attempts": 1,
+      "last_error": null
+    },
+    {
+      "kind": "dialog.member_hook",
+      "n": 6,
+      "completed": "6",
+      "attempts": 1,
+      "last_error": null
+    },
+    {
+      "kind": "dialog.message_effects",
+      "n": 224,
+      "completed": "224",
+      "attempts": 1,
+      "last_error": null
+    },
+    {
+      "kind": "dialog.todo_remind",
+      "n": 37,
+      "completed": "37",
+      "attempts": 1,
+      "last_error": null
+    },
+    {
+      "kind": "file.pack",
+      "n": 1,
+      "completed": "1",
+      "attempts": 1,
+      "last_error": null
+    },
+    {
+      "kind": "files.attachment_backfill",
+      "n": 37,
+      "completed": "37",
+      "attempts": 1,
+      "last_error": null
+    },
+    {
+      "kind": "files.expire",
+      "n": 1,
+      "completed": "1",
+      "attempts": 1,
+      "last_error": null
+    },
+    {
+      "kind": "projects.ai_scan",
+      "n": 37,
+      "completed": "37",
+      "attempts": 1,
+      "last_error": null
+    },
+    {
+      "kind": "projects.maintenance",
+      "n": 37,
+      "completed": "37",
+      "attempts": 1,
+      "last_error": null
+    },
+    {
+      "kind": "projects.notify",
+      "n": 11,
+      "completed": "11",
+      "attempts": 1,
+      "last_error": null
+    },
+    {
+      "kind": "realtime.push",
+      "n": 700,
+      "completed": "700",
+      "attempts": 1,
+      "last_error": null
+    },
+    {
+      "kind": "search.dialog_members",
+      "n": 15,
+      "completed": "15",
+      "attempts": 1,
+      "last_error": null
+    },
+    {
+      "kind": "search.sync",
+      "n": 436,
+      "completed": "436",
+      "attempts": 1,
+      "last_error": null
+    }
+  ],
+  "system_bots": [
+    {
+      "userid": 10,
+      "email": "system-msg@bot.system",
+      "bot": 1
+    },
+    {
+      "userid": 19,
+      "email": "task-alert@bot.system",
+      "bot": 1
+    }
+  ]
+}

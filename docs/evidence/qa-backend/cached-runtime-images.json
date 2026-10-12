@@ -1,0 +1,18 @@
+{
+  "command": [
+    "wsl.exe",
+    "-d",
+    "Ubuntu-22.04",
+    "--",
+    "docker",
+    "image",
+    "ls",
+    "--format",
+    "{{.Repository}}:{{.Tag}}\t{{.ID}}\t{{.Size}}"
+  ],
+  "started_at": "2026-10-12T10:35:31.204621+00:00",
+  "duration_seconds": 0.281,
+  "exit_code": 0,
+  "stdout": "khan:nolicense-noredis-atproxy\t33d600940d53\t370MB\nnanobot-nanobot-gateway:latest\t22d9e6e0d506\t720MB\nnanobot-nanobot-cli:latest\t853c88d67871\t720MB\nnanobot:latest\ta5df8bae5d54\t720MB\nnanobot-nanobot-api:latest\tfc4e354d12d6\t720MB\nghcr.io/xixu-me/xget:latest\t118bf391ed8e\t399MB\ndocker-instock:latest\t3d211076be05\t1.87GB\nrustfs/rustfs:latest\t42efc5eb4ac1\t215MB\nclickhouse/clickhouse-server:latest\td0207e6d8732\t799MB\nmariadb:latest\ta914eff5d2eb\t336MB\ncalciumion/new-api:latest\tb5beacd96b0e\t45.1MB\nmysql:8.4.3\t3818a28b4a67\t594MB\nredis:7.4.1\t2724e40d4303\t117MB\n",
+  "stderr": ""
+}

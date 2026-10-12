@@ -1,0 +1,15 @@
+{
+  "ret": 1,
+  "msg": "操作成功",
+  "data": {
+    "webdav_enabled": "open",
+    "webdav_permission_type": "all",
+    "webdav_permission_userids": [],
+    "webdav_max_credentials": 5,
+    "webdav_default_expire_days": 90,
+    "webdav_max_expire_days": 365,
+    "webdav_max_file_bytes": 1073741824,
+    "webdav_copy_max_nodes": 1000,
+    "webdav_audit_retention_days": 90
+  }
+}

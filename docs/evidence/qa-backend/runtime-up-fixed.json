@@ -1,0 +1,16 @@
+{
+  "command": [
+    "powershell.exe",
+    "-NoProfile",
+    "-ExecutionPolicy",
+    "Bypass",
+    "-File",
+    "run.ps1",
+    "runtime-up"
+  ],
+  "started_at": "2026-10-12T10:12:12.027392+00:00",
+  "duration_seconds": 18.343,
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": " Network dootask-fastapi-isolated_default  Creating\n Network dootask-fastapi-isolated_default  Created\n Volume \"dootask-fastapi-isolated_redis-data\"  Creating\n Volume \"dootask-fastapi-isolated_redis-data\"  Created\n Volume \"dootask-fastapi-isolated_mariadb-data\"  Creating\n Volume \"dootask-fastapi-isolated_mariadb-data\"  Created\n Container dootask-fastapi-isolated-redis-1  Creating\n Container dootask-fastapi-isolated-mariadb-1  Creating\n Container dootask-fastapi-isolated-redis-1  Created\n Container dootask-fastapi-isolated-mariadb-1  Created\n Container dootask-fastapi-isolated-mariadb-1  Starting\n Container dootask-fastapi-isolated-redis-1  Starting\n Container dootask-fastapi-isolated-mariadb-1  Started\n Container dootask-fastapi-isolated-redis-1  Started\n Container dootask-fastapi-isolated-redis-1  Waiting\n Container dootask-fastapi-isolated-mariadb-1  Waiting\n Container dootask-fastapi-isolated-redis-1  Healthy\n Container dootask-fastapi-isolated-mariadb-1  Healthy\n"
+}

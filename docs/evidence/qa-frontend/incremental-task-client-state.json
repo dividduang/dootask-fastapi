@@ -1,0 +1,108 @@
+{
+  "callAt": [
+    {
+      "__last": 1791801320,
+      "key": "dialogs::",
+      "updated": 1791801320,
+      "deleted": 0
+    },
+    {
+      "__last": 1791801320,
+      "key": "tasks::",
+      "updated": 1791801170,
+      "deleted": 0
+    },
+    {
+      "__last": 1791801320,
+      "key": "projects::",
+      "updated": 1791801170,
+      "deleted": 0
+    },
+    {
+      "__last": 1791801320,
+      "key": "tasks::project_id%3D7",
+      "updated": 1791801170,
+      "deleted": 0
+    },
+    {
+      "__last": 1791801170,
+      "key": "tasks::parent_id%3D5",
+      "updated": 0,
+      "deleted": 0
+    }
+  ],
+  "tasks": [],
+  "columns": [
+    {
+      "id": 8,
+      "project_id": 7,
+      "name": "Default",
+      "color": "",
+      "sort": 0,
+      "created_at": "2026-10-12 10:24:12",
+      "updated_at": "2026-10-12 10:24:12",
+      "deleted_at": null
+    }
+  ],
+  "project": [
+    {
+      "id": 7,
+      "name": "📝 个人项目",
+      "desc": "注册时系统自动创建项目，你可以自由删除。",
+      "userid": 7,
+      "personal": 1,
+      "archive_method": "system",
+      "archive_days": 30,
+      "ai_auto_analyze": "open",
+      "task_template_share": "open",
+      "department_owner_view": "open",
+      "user_simple": "",
+      "dialog_id": 9,
+      "archived_at": null,
+      "archived_userid": 0,
+      "created_at": "2026-10-12 10:24:12",
+      "updated_at": "2026-10-12 10:24:12",
+      "deleted_at": null,
+      "owner": 1,
+      "owner_userid": 7,
+      "deputy_userids": [],
+      "department_readonly": false,
+      "top_at": null,
+      "sort": 0,
+      "task_num": 1,
+      "task_complete": 0,
+      "task_percent": 0,
+      "task_my_num": 1,
+      "task_my_complete": 0,
+      "task_my_percent": 0,
+      "project_user": [
+        {
+          "id": 11,
+          "project_id": 7,
+          "userid": 7,
+          "owner": 1,
+          "top_at": null,
+          "sort": 0,
+          "created_at": "2026-10-12 10:24:12",
+          "updated_at": "2026-10-12 10:24:12"
+        }
+      ],
+      "userid_list": [
+        7
+      ],
+      "cacheParameter": {
+        "project_id": 7,
+        "menuInit": true,
+        "menuType": "table",
+        "chat": false,
+        "showMy": true,
+        "showHelp": true,
+        "showUndone": true,
+        "showCompleted": false,
+        "completedTask": false
+      },
+      "favorited": false
+    }
+  ],
+  "projectId": 7
+}

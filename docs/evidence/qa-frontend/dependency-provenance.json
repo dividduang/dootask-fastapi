@@ -1,0 +1,28 @@
+{
+  "node": "v22.23.1",
+  "npm": "11.4.1",
+  "original_lock": "ABSENT; new resolution is not reproduction of original release",
+  "package_json_unchanged": true,
+  "package_json_sha256": "4135baccc108fafebd905b32e4ed36ab65ac12593338ed0289d59190db8102fe",
+  "lock_sha256": "6136e44836187d9ed8a47a4a1b8154aa9fb3665221ab0399001099a14bb6b5ba",
+  "lockfile_version": 3,
+  "package_count": 1231,
+  "missing_integrity": [],
+  "registry_hosts": [
+    "registry.npmjs.org"
+  ],
+  "npm_resolution_audit": {
+    "low": 11,
+    "moderate": 29,
+    "high": 23,
+    "critical": 2
+  },
+  "selected_versions": {
+    "vue": "2.6.14",
+    "vue-template-compiler": "2.6.14",
+    "vite": "2.9.18",
+    "vite-plugin-vue2": "2.0.3",
+    "sass": "1.77.4",
+    "openpgp_hi": "5.7.0-1"
+  }
+}

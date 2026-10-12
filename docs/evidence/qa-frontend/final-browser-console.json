@@ -1,0 +1,105 @@
+{
+  "entries": [
+    {
+      "seq": 1,
+      "ts": 1791801169885.655,
+      "type": "console",
+      "level": "log",
+      "text": "您曾级拒绝显示通知 请在设置中更改设置",
+      "location": "http://127.0.0.1:18080/js/build/manage.cf99928c.js:15:6333",
+      "args": [
+        "您曾级拒绝显示通知 请在设置中更改设置"
+      ]
+    },
+    {
+      "seq": 3,
+      "ts": 1791801170070.965,
+      "type": "console",
+      "level": "log",
+      "text": "您曾级拒绝显示通知 请在设置中更改设置",
+      "location": "http://127.0.0.1:18080/js/build/manage.cf99928c.js:15:6333",
+      "args": [
+        "您曾级拒绝显示通知 请在设置中更改设置"
+      ]
+    },
+    {
+      "seq": 5,
+      "ts": 1791801170600.154,
+      "type": "console",
+      "level": "log",
+      "text": "[32:50.600 Recorder]Import Recorder i18n lang=\"zh-CN\"",
+      "location": "http://127.0.0.1:18080/js/recorder/recorder.mp3.min.js?hash=1.9.66:5:10157",
+      "args": [
+        "[32:50.600 Recorder]Import Recorder i18n lang=\"zh-CN\""
+      ]
+    },
+    {
+      "seq": 6,
+      "ts": 1791801170975.981,
+      "type": "console",
+      "level": "log",
+      "text": "您曾级拒绝显示通知 请在设置中更改设置",
+      "location": "http://127.0.0.1:18080/js/build/manage.cf99928c.js:15:6333",
+      "args": [
+        "您曾级拒绝显示通知 请在设置中更改设置"
+      ]
+    },
+    {
+      "seq": 8,
+      "ts": 1791801204336.608,
+      "type": "console",
+      "level": "log",
+      "text": "您曾级拒绝显示通知 请在设置中更改设置",
+      "location": "http://127.0.0.1:18080/js/build/manage.cf99928c.js:15:6333",
+      "args": [
+        "您曾级拒绝显示通知 请在设置中更改设置"
+      ]
+    },
+    {
+      "seq": 10,
+      "ts": 1791801205231.345,
+      "type": "console",
+      "level": "log",
+      "text": "您曾级拒绝显示通知 请在设置中更改设置",
+      "location": "http://127.0.0.1:18080/js/build/manage.cf99928c.js:15:6333",
+      "args": [
+        "您曾级拒绝显示通知 请在设置中更改设置"
+      ]
+    },
+    {
+      "seq": 12,
+      "ts": 1791801287718.59,
+      "type": "console",
+      "level": "log",
+      "text": "您曾级拒绝显示通知 请在设置中更改设置",
+      "location": "http://127.0.0.1:18080/js/build/manage.cf99928c.js:15:6333",
+      "args": [
+        "您曾级拒绝显示通知 请在设置中更改设置"
+      ]
+    },
+    {
+      "seq": 14,
+      "ts": 1791801288612.411,
+      "type": "console",
+      "level": "log",
+      "text": "您曾级拒绝显示通知 请在设置中更改设置",
+      "location": "http://127.0.0.1:18080/js/build/manage.cf99928c.js:15:6333",
+      "args": [
+        "您曾级拒绝显示通知 请在设置中更改设置"
+      ]
+    },
+    {
+      "seq": 16,
+      "ts": 1791801320517.933,
+      "type": "console",
+      "level": "log",
+      "text": "您曾级拒绝显示通知 请在设置中更改设置",
+      "location": "http://127.0.0.1:18080/js/build/manage.cf99928c.js:15:6333",
+      "args": [
+        "您曾级拒绝显示通知 请在设置中更改设置"
+      ]
+    }
+  ],
+  "nextSeq": 16,
+  "dropped": 0
+}

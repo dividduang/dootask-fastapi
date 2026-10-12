@@ -1,0 +1,18 @@
+{
+  "command": [
+    "wsl.exe",
+    "-d",
+    "Ubuntu-22.04",
+    "--",
+    "docker",
+    "pull",
+    "manticoresearch/manticore:latest"
+  ],
+  "started_at": "2026-10-12T10:35:52.170227+00:00",
+  "exit_code": 1,
+  "log": "manticore-pull.log",
+  "cached_image": false,
+  "installed_binary": false,
+  "result": "BLOCKED_PROVIDER_UNAVAILABLE",
+  "reason": "Official Docker Hub registry connection timed out; no cached image or local searchd. Not a missing credential."
+}

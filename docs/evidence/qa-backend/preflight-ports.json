@@ -1,0 +1,13 @@
+{
+  "command": [
+    "powershell.exe",
+    "-NoProfile",
+    "-Command",
+    "Get-NetTCPConnection -State Listen -ErrorAction SilentlyContinue | Where-Object {$_.LocalPort -in 13306,16379,18080} | Select-Object LocalAddress,LocalPort,OwningProcess | ConvertTo-Json"
+  ],
+  "started_at": "2026-10-12T10:10:54.610813+00:00",
+  "duration_seconds": 1.438,
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": ""
+}

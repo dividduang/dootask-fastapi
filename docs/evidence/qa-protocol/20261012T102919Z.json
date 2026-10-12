@@ -1,0 +1,1704 @@
+{
+  "run": "20261012T102919Z",
+  "command": [
+    "D:/rpa/202610/dootask-fastapi/tests/protocol_acceptance.py",
+    "--only",
+    "uploads,dav"
+  ],
+  "results": [
+    {
+      "id": "uploads",
+      "status": "PASS",
+      "elapsed_seconds": 1.4220000000022992
+    },
+    {
+      "id": "dav",
+      "status": "FAIL",
+      "error": "DAV MOVE expected 201, got 500",
+      "traceback": "Traceback (most recent call last):\n  File \"D:\\rpa\\202610\\dootask-fastapi\\tests\\protocol_acceptance.py\", line 405, in <module>\n    globals()[name]()\n  File \"D:\\rpa\\202610\\dootask-fastapi\\tests\\protocol_acceptance.py\", line 292, in dav\n    send('MOVE',copied,headers={'Destination':ARGS.https+moved},expected=201)\n  File \"D:\\rpa\\202610\\dootask-fastapi\\tests\\protocol_acceptance.py\", line 249, in send\n    check(result[0] in ([expected] if isinstance(expected,int) else expected), f'DAV {method} expected {expected}, got {result[0]}')\n  File \"D:\\rpa\\202610\\dootask-fastapi\\tests\\protocol_acceptance.py\", line 67, in check\n    assert condition, message\n           ^^^^^^^^^\nAssertionError: DAV MOVE expected 201, got 500\n",
+      "elapsed_seconds": 3.1719999999986612
+    }
+  ],
+  "events": [
+    {
+      "utc": "2026-10-12T10:29:19.231871+00:00",
+      "case": "",
+      "kind": "provenance",
+      "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+      "source_hashes": {
+        "tests\\protocol_acceptance.py": "0400a3fa1b29ee2d3122f352fd7ad624bc9249eafe09ea693787733cfe2c4fde",
+        "backend\\main.py": "9cabae8907a4d46e3989391ef19b3a023416e0ed66d29439347773a91dee9983",
+        "backend\\realtime.py": "70f9c9863cccccbcf64b62cd7db9d83397699d2af60c4a6a422308881ec3a431",
+        "backend\\dav.py": "3d05359be6dbbc94b2d1fb0dbe6b448a8da19d91d11c0b62b12099a56696cae1",
+        "backend\\domains\\upload.py": "d7265fa5075a7c6c0d3ff0c20de45b393bdd71dc59d523043e50857788224824",
+        "backend\\domains\\files_jobs.py": "8ddbd2e7d5f2835c8c6ad8998854f3e6a0e7243014816d6f320028e100c4c0f4"
+      }
+    },
+    {
+      "utc": "2026-10-12T10:29:19.584961+00:00",
+      "case": "uploads",
+      "kind": "http",
+      "method": "POST",
+      "url": "http://127.0.0.1:18080/api/users/login",
+      "request_json": {
+        "type": "reg",
+        "email": "pq-fe45ffdfb025ad@example.test",
+        "password": "[REDACTED]"
+      },
+      "request_headers": {
+        "User-Agent": "DooTask-Protocol-Acceptance/1",
+        "Content-Type": "application/json"
+      },
+      "request_bytes": 101,
+      "request_sha256": "ef7612d74a49d3e3f618809d3c257b093c74a99de10a5029bfd1a8dad3efc44d",
+      "status": 200,
+      "response_headers": {
+        "Date": "Mon, 12 Oct 2026 10:29:18 GMT",
+        "Server": "uvicorn",
+        "Cache-Control": "no-store",
+        "X-Request-Id": "04b9c19cd899374c8ada98adaa609282",
+        "Content-Length": "735",
+        "Content-Type": "application/json",
+        "Connection": "close"
+      },
+      "response": {
+        "ret": 1,
+        "msg": "注册成功",
+        "data": {
+          "userid": 20,
+          "identity": [],
+          "department": [],
+          "az": "P",
+          "pinyin": "pq-fe45ffdfb025ad",
+          "email": "pq-fe45ffdfb025ad@example.test",
+          "tel": "",
+          "nickname": "pq-fe45ffdfb025ad",
+          "profession": "",
+          "birthday": null,
+          "address": null,
+          "introduction": null,
+          "userimg": "http://127.0.0.1:18080/avatar/pq-fe45ffdfb025ad.png",
+          "changepass": 0,
+          "login_num": 1,
+          "last_ip": "127.0.0.1",
+          "last_at": "2026-10-12 10:29:19",
+          "line_ip": "127.0.0.1",
+          "line_at": "2026-10-12 10:29:19",
+          "task_dialog_id": 0,
+          "created_ip": "127.0.0.1",
+          "disable_at": null,
+          "email_verity": 0,
+          "bot": 0,
+          "lang": "zh",
+          "created_at": "2026-10-12 10:29:19",
+          "token": "[REDACTED]"
+        }
+      },
+      "response_bytes": 735,
+      "response_sha256": "0c56e91d8d41a681979d6309ee37f628202e8a5a0f501d5c1c08a6830df04157",
+      "elapsed_seconds": 0.35900000000037835
+    },
+    {
+      "utc": "2026-10-12T10:29:19.788800+00:00",
+      "case": "uploads",
+      "kind": "http",
+      "method": "POST",
+      "url": "http://127.0.0.1:18080/api/users/login",
+      "request_json": {
+        "type": "reg",
+        "email": "pq-0644740a6c21ba@example.test",
+        "password": "[REDACTED]"
+      },
+      "request_headers": {
+        "User-Agent": "DooTask-Protocol-Acceptance/1",
+        "Content-Type": "application/json"
+      },
+      "request_bytes": 101,
+      "request_sha256": "b00700dc724b4de60c9f149707e5cc1b22945292f4dc4c5809b94886149a7d11",
+      "status": 200,
+      "response_headers": {
+        "Date": "Mon, 12 Oct 2026 10:29:19 GMT",
+        "Server": "uvicorn",
+        "Cache-Control": "no-store",
+        "X-Request-Id": "861f69762927598331c800ff9277a8d2",
+        "Content-Length": "735",
+        "Content-Type": "application/json",
+        "Connection": "close"
+      },
+      "response": {
+        "ret": 1,
+        "msg": "注册成功",
+        "data": {
+          "userid": 21,
+          "identity": [],
+          "department": [],
+          "az": "P",
+          "pinyin": "pq-0644740a6c21ba",
+          "email": "pq-0644740a6c21ba@example.test",
+          "tel": "",
+          "nickname": "pq-0644740a6c21ba",
+          "profession": "",
+          "birthday": null,
+          "address": null,
+          "introduction": null,
+          "userimg": "http://127.0.0.1:18080/avatar/pq-0644740a6c21ba.png",
+          "changepass": 0,
+          "login_num": 1,
+          "last_ip": "127.0.0.1",
+          "last_at": "2026-10-12 10:29:19",
+          "line_ip": "127.0.0.1",
+          "line_at": "2026-10-12 10:29:19",
+          "task_dialog_id": 0,
+          "created_ip": "127.0.0.1",
+          "disable_at": null,
+          "email_verity": 0,
+          "bot": 0,
+          "lang": "zh",
+          "created_at": "2026-10-12 10:29:19",
+          "token": "[REDACTED]"
+        }
+      },
+      "response_bytes": 735,
+      "response_sha256": "46c667a611f57379fa4626c2f014df6c504c601658342f2ef72eff4e92beb251",
+      "elapsed_seconds": 0.20300000000133878
+    },
+    {
+      "utc": "2026-10-12T10:29:19.838622+00:00",
+      "case": "uploads",
+      "kind": "http",
+      "method": "POST",
+      "url": "http://127.0.0.1:18080/api/upload/init",
+      "request_json": {
+        "hash": "0baed422fe16b3b87753a532b0406078",
+        "size": 10486491,
+        "name": "大文件-雪-β.bin",
+        "scene": "file_cabinet",
+        "scene_params": {
+          "pid": 0
+        }
+      },
+      "request_headers": {
+        "User-Agent": "DooTask-Protocol-Acceptance/1",
+        "Content-Type": "application/json"
+      },
+      "request_bytes": 147,
+      "request_sha256": "4040c6dfdb97ae238968fcff6851b9097ae006f28fbc2a0e906ec9929111a6e2",
+      "status": 200,
+      "response_headers": {
+        "Date": "Mon, 12 Oct 2026 10:29:19 GMT",
+        "Server": "uvicorn",
+        "Cache-Control": "no-store",
+        "X-Request-Id": "517bdf54fccd94e999e380061a0fc4d2",
+        "Content-Length": "164",
+        "Content-Type": "application/json",
+        "Connection": "close"
+      },
+      "response": {
+        "ret": 1,
+        "msg": "操作成功",
+        "data": {
+          "done": false,
+          "upload_id": "ca1cf8fb7f4eeea637f9680a39743d7d",
+          "chunk_size": 5242880,
+          "chunk_count": 3,
+          "received": []
+        }
+      },
+      "response_bytes": 164,
+      "response_sha256": "6707dab901a7e1837541cfaffacce8ba521e85b789f7b32c018c14d576a1c40c",
+      "elapsed_seconds": 0.030999999999039574
+    },
+    {
+      "utc": "2026-10-12T10:29:19.848955+00:00",
+      "case": "uploads",
+      "kind": "http",
+      "method": "POST",
+      "url": "http://127.0.0.1:18080/api/upload/merge",
+      "request_json": {
+        "upload_id": "ca1cf8fb7f4eeea637f9680a39743d7d"
+      },
+      "request_headers": {
+        "User-Agent": "DooTask-Protocol-Acceptance/1",
+        "Content-Type": "application/json"
+      },
+      "request_bytes": 49,
+      "request_sha256": "235de421cd1c4a80effa7beda55d3f93a96de24cc71d7bb66c922f459f1cddbe",
+      "status": 200,
+      "response_headers": {
+        "Date": "Mon, 12 Oct 2026 10:29:19 GMT",
+        "Server": "uvicorn",
+        "Cache-Control": "no-store",
+        "X-Request-Id": "4465087ed5add743f87e0841051b7a2c",
+        "Content-Length": "66",
+        "Content-Type": "application/json",
+        "Connection": "close"
+      },
+      "response": {
+        "ret": 0,
+        "msg": "上传会话不存在或已过期",
+        "data": []
+      },
+      "response_bytes": 66,
+      "response_sha256": "61de306574e36cdd01d65d8ece4f2ffcaf04ee1ce761f80c1ab8a346634a3de0",
+      "elapsed_seconds": 0.01599999999962165
+    },
+    {
+      "utc": "2026-10-12T10:29:19.882425+00:00",
+      "case": "uploads",
+      "kind": "http",
+      "method": "POST",
+      "url": "http://127.0.0.1:18080/api/upload/cancel",
+      "request_json": {
+        "upload_id": "ca1cf8fb7f4eeea637f9680a39743d7d"
+      },
+      "request_headers": {
+        "User-Agent": "DooTask-Protocol-Acceptance/1",
+        "Content-Type": "application/json"
+      },
+      "request_bytes": 49,
+      "request_sha256": "235de421cd1c4a80effa7beda55d3f93a96de24cc71d7bb66c922f459f1cddbe",
+      "status": 200,
+      "response_headers": {
+        "Date": "Mon, 12 Oct 2026 10:29:19 GMT",
+        "Server": "uvicorn",
+        "Cache-Control": "no-store",
+        "X-Request-Id": "da45ce22fcf25dc2534e0f56fc9dd866",
+        "Content-Length": "45",
+        "Content-Type": "application/json",
+        "Connection": "close"
+      },
+      "response": {
+        "ret": 1,
+        "msg": "操作成功",
+        "data": []
+      },
+      "response_bytes": 45,
+      "response_sha256": "5ce1d0a4a48ffdcd1c2465c137f10aa2252d35b40c8becee3c30b60494042e91",
+      "elapsed_seconds": 0.031000000002677552
+    },
+    {
+      "utc": "2026-10-12T10:29:19.914068+00:00",
+      "case": "uploads",
+      "kind": "database_readonly",
+      "query": "SELECT state FROM backend_uploads WHERE id=%s",
+      "parameters": [
+        "ca1cf8fb7f4eeea637f9680a39743d7d"
+      ],
+      "rows": [
+        {
+          "state": "pending"
+        }
+      ]
+    },
+    {
+      "utc": "2026-10-12T10:29:19.938523+00:00",
+      "case": "uploads",
+      "kind": "http",
+      "method": "POST",
+      "url": "http://127.0.0.1:18080/api/upload/merge",
+      "request_json": {
+        "upload_id": "ca1cf8fb7f4eeea637f9680a39743d7d"
+      },
+      "request_headers": {
+        "User-Agent": "DooTask-Protocol-Acceptance/1",
+        "Content-Type": "application/json"
+      },
+      "request_bytes": 49,
+      "request_sha256": "235de421cd1c4a80effa7beda55d3f93a96de24cc71d7bb66c922f459f1cddbe",
+      "status": 200,
+      "response_headers": {
+        "Date": "Mon, 12 Oct 2026 10:29:19 GMT",
+        "Server": "uvicorn",
+        "Cache-Control": "no-store",
+        "X-Request-Id": "ec85510e77016d3b0f7e662dd5080fb8",
+        "Content-Length": "63",
+        "Content-Type": "application/json",
+        "Connection": "close"
+      },
+      "response": {
+        "ret": 0,
+        "msg": "分片不完整，无法合并",
+        "data": []
+      },
+      "response_bytes": 63,
+      "response_sha256": "62bb62481011bdbdcecec1d7186b1153074963678fbcd18851fd0ea930b43d29",
+      "elapsed_seconds": 0.0319999999992433
+    },
+    {
+      "utc": "2026-10-12T10:29:19.986333+00:00",
+      "case": "uploads",
+      "kind": "http",
+      "method": "POST",
+      "url": "http://127.0.0.1:18080/api/upload/chunk",
+      "request_json": null,
+      "request_headers": {
+        "User-Agent": "DooTask-Protocol-Acceptance/1",
+        "Content-Type": "multipart/form-data; boundary=protocol-805b37a10cdec69a7183945d"
+      },
+      "request_bytes": 5243276,
+      "request_sha256": "8fe79ad25f875ecf45ff2765acfb2b1e9929a26a4705ac688d126c4dd8d338a6",
+      "status": 200,
+      "response_headers": {
+        "Date": "Mon, 12 Oct 2026 10:29:19 GMT",
+        "Server": "uvicorn",
+        "Cache-Control": "no-store",
+        "X-Request-Id": "d13898ed6c74e04a5ef12b0617db76ef",
+        "Content-Length": "66",
+        "Content-Type": "application/json",
+        "Connection": "close"
+      },
+      "response": {
+        "ret": 0,
+        "msg": "上传会话不存在或已过期",
+        "data": []
+      },
+      "response_bytes": 66,
+      "response_sha256": "61de306574e36cdd01d65d8ece4f2ffcaf04ee1ce761f80c1ab8a346634a3de0",
+      "elapsed_seconds": 0.0459999999984575
+    },
+    {
+      "utc": "2026-10-12T10:29:20.048791+00:00",
+      "case": "uploads",
+      "kind": "http",
+      "method": "POST",
+      "url": "http://127.0.0.1:18080/api/upload/chunk",
+      "request_json": null,
+      "request_headers": {
+        "User-Agent": "DooTask-Protocol-Acceptance/1",
+        "Content-Type": "multipart/form-data; boundary=protocol-23e622e5d8007ead523fb8f3"
+      },
+      "request_bytes": 5243276,
+      "request_sha256": "22426147184e273f80f1a54133901552fa52ddba2263cd88c41c1d1f79af9dd7",
+      "status": 200,
+      "response_headers": {
+        "Date": "Mon, 12 Oct 2026 10:29:19 GMT",
+        "Server": "uvicorn",
+        "Cache-Control": "no-store",
+        "X-Request-Id": "691fa43688976ba93e54b079239c0557",
+        "Content-Length": "109",
+        "Content-Type": "application/json",
+        "Connection": "close"
+      },
+      "response": {
+        "ret": 1,
+        "msg": "操作成功",
+        "data": {
+          "upload_id": "ca1cf8fb7f4eeea637f9680a39743d7d",
+          "received": [
+            0
+          ]
+        }
+      },
+      "response_bytes": 109,
+      "response_sha256": "9f0be34d62073d6041e5f762db54d3617f77b503af2d9bc617ef5d59b55feeac",
+      "elapsed_seconds": 0.06300000000192085
+    },
+    {
+      "utc": "2026-10-12T10:29:20.111302+00:00",
+      "case": "uploads",
+      "kind": "http",
+      "method": "POST",
+      "url": "http://127.0.0.1:18080/api/upload/chunk",
+      "request_json": null,
+      "request_headers": {
+        "User-Agent": "DooTask-Protocol-Acceptance/1",
+        "Content-Type": "multipart/form-data; boundary=protocol-86776a68cb7689e0208885bc"
+      },
+      "request_bytes": 5243276,
+      "request_sha256": "082d299231642a19f5f5fb33d30a8e4d5077f4743bf46eb5f1224b5b26e5c81c",
+      "status": 200,
+      "response_headers": {
+        "Date": "Mon, 12 Oct 2026 10:29:19 GMT",
+        "Server": "uvicorn",
+        "Cache-Control": "no-store",
+        "X-Request-Id": "e879c8be26a89c0496e02be249d41a8b",
+        "Content-Length": "109",
+        "Content-Type": "application/json",
+        "Connection": "close"
+      },
+      "response": {
+        "ret": 1,
+        "msg": "操作成功",
+        "data": {
+          "upload_id": "ca1cf8fb7f4eeea637f9680a39743d7d",
+          "received": [
+            0
+          ]
+        }
+      },
+      "response_bytes": 109,
+      "response_sha256": "9f0be34d62073d6041e5f762db54d3617f77b503af2d9bc617ef5d59b55feeac",
+      "elapsed_seconds": 0.06199999999807915
+    },
+    {
+      "utc": "2026-10-12T10:29:20.128672+00:00",
+      "case": "uploads",
+      "kind": "http",
+      "method": "POST",
+      "url": "http://127.0.0.1:18080/api/upload/chunk",
+      "request_json": null,
+      "request_headers": {
+        "User-Agent": "DooTask-Protocol-Acceptance/1",
+        "Content-Type": "multipart/form-data; boundary=protocol-0693f5dd3c9d9f054c9fb62d"
+      },
+      "request_bytes": 1127,
+      "request_sha256": "7ed3da9e76176cf1716e5ea6783c71261c84abd997f471dd207a2d0a15cc3ad5",
+      "status": 200,
+      "response_headers": {
+        "Date": "Mon, 12 Oct 2026 10:29:19 GMT",
+        "Server": "uvicorn",
+        "Cache-Control": "no-store",
+        "X-Request-Id": "addb0a5332fd8f36cec2e4b0d150e0b4",
+        "Content-Length": "112",
+        "Content-Type": "application/json",
+        "Connection": "close"
+      },
+      "response": {
+        "ret": 1,
+        "msg": "操作成功",
+        "data": {
+          "upload_id": "ca1cf8fb7f4eeea637f9680a39743d7d",
+          "received": [
+            0,
+            2
+          ]
+        }
+      },
+      "response_bytes": 112,
+      "response_sha256": "67e93e3ca94141ac85799d6d95a0613dfd88528b74664d13155f20385d686e3a",
+      "elapsed_seconds": 0.01600000000325963
+    },
+    {
+      "utc": "2026-10-12T10:29:20.201843+00:00",
+      "case": "uploads",
+      "kind": "http",
+      "method": "POST",
+      "url": "http://127.0.0.1:18080/api/upload/chunk",
+      "request_json": null,
+      "request_headers": {
+        "User-Agent": "DooTask-Protocol-Acceptance/1",
+        "Content-Type": "multipart/form-data; boundary=protocol-03690f7274ceaa4c7bbab4a0"
+      },
+      "request_bytes": 5243276,
+      "request_sha256": "a2c0aeb5acf553f9c8b34061c19d0e765954b916508274b7464708a07d3362cc",
+      "status": 200,
+      "response_headers": {
+        "Date": "Mon, 12 Oct 2026 10:29:19 GMT",
+        "Server": "uvicorn",
+        "Cache-Control": "no-store",
+        "X-Request-Id": "7c9c6d5f72e2eb7721bd643c3804a23a",
+        "Content-Length": "115",
+        "Content-Type": "application/json",
+        "Connection": "close"
+      },
+      "response": {
+        "ret": 1,
+        "msg": "操作成功",
+        "data": {
+          "upload_id": "ca1cf8fb7f4eeea637f9680a39743d7d",
+          "received": [
+            0,
+            1,
+            2
+          ]
+        }
+      },
+      "response_bytes": 115,
+      "response_sha256": "5bdc5514cdd0708f1b123fdc891238e447d4583d3cdf2a9694f49d6dcbcba2e3",
+      "elapsed_seconds": 0.0779999999977008
+    },
+    {
+      "utc": "2026-10-12T10:29:20.309284+00:00",
+      "case": "uploads",
+      "kind": "http",
+      "method": "POST",
+      "url": "http://127.0.0.1:18080/api/upload/merge",
+      "request_json": {
+        "upload_id": "ca1cf8fb7f4eeea637f9680a39743d7d"
+      },
+      "request_headers": {
+        "User-Agent": "DooTask-Protocol-Acceptance/1",
+        "Content-Type": "application/json"
+      },
+      "request_bytes": 49,
+      "request_sha256": "235de421cd1c4a80effa7beda55d3f93a96de24cc71d7bb66c922f459f1cddbe",
+      "status": 200,
+      "response_headers": {
+        "Date": "Mon, 12 Oct 2026 10:29:19 GMT",
+        "Server": "uvicorn",
+        "Cache-Control": "no-store",
+        "X-Request-Id": "99ce1057ec9e7026447a4efbdcee4743",
+        "Content-Length": "425",
+        "Content-Type": "application/json",
+        "Connection": "close"
+      },
+      "response": {
+        "ret": 1,
+        "msg": "操作成功",
+        "data": [
+          {
+            "id": 7,
+            "pid": 0,
+            "pids": "",
+            "cid": 0,
+            "name": "大文件-雪-β",
+            "type": "",
+            "ext": "bin",
+            "size": 10486491,
+            "hash": "0baed422fe16b3b87753a532b0406078",
+            "userid": 20,
+            "share": 0,
+            "guest_access": 0,
+            "pshare": 0,
+            "created_id": 20,
+            "created_at": "2026-10-12 10:29:20",
+            "updated_at": "2026-10-12 10:29:20",
+            "deleted_at": null,
+            "full_name": "大文件-雪-β.bin",
+            "overwrite": 0
+          }
+        ]
+      },
+      "response_bytes": 425,
+      "response_sha256": "7ecaaec5e22c2df21a675d289c33e77d3d6a6037b5f592055da1dcbeaaad874b",
+      "elapsed_seconds": 0.09400000000096043
+    },
+    {
+      "utc": "2026-10-12T10:29:20.338669+00:00",
+      "case": "uploads",
+      "kind": "http",
+      "method": "POST",
+      "url": "http://127.0.0.1:18080/api/upload/merge",
+      "request_json": {
+        "upload_id": "ca1cf8fb7f4eeea637f9680a39743d7d"
+      },
+      "request_headers": {
+        "User-Agent": "DooTask-Protocol-Acceptance/1",
+        "Content-Type": "application/json"
+      },
+      "request_bytes": 49,
+      "request_sha256": "235de421cd1c4a80effa7beda55d3f93a96de24cc71d7bb66c922f459f1cddbe",
+      "status": 200,
+      "response_headers": {
+        "Date": "Mon, 12 Oct 2026 10:29:19 GMT",
+        "Server": "uvicorn",
+        "Cache-Control": "no-store",
+        "X-Request-Id": "bd14be0a7599dabb2073ea8ecd9a96b3",
+        "Content-Length": "425",
+        "Content-Type": "application/json",
+        "Connection": "close"
+      },
+      "response": {
+        "ret": 1,
+        "msg": "操作成功",
+        "data": [
+          {
+            "id": 7,
+            "pid": 0,
+            "pids": "",
+            "cid": 0,
+            "name": "大文件-雪-β",
+            "type": "",
+            "ext": "bin",
+            "size": 10486491,
+            "hash": "0baed422fe16b3b87753a532b0406078",
+            "userid": 20,
+            "share": 0,
+            "guest_access": 0,
+            "pshare": 0,
+            "created_id": 20,
+            "created_at": "2026-10-12 10:29:20",
+            "updated_at": "2026-10-12 10:29:20",
+            "deleted_at": null,
+            "full_name": "大文件-雪-β.bin",
+            "overwrite": 0
+          }
+        ]
+      },
+      "response_bytes": 425,
+      "response_sha256": "7ecaaec5e22c2df21a675d289c33e77d3d6a6037b5f592055da1dcbeaaad874b",
+      "elapsed_seconds": 0.030999999999039574
+    },
+    {
+      "utc": "2026-10-12T10:29:20.449756+00:00",
+      "case": "uploads",
+      "kind": "http",
+      "method": "GET",
+      "url": "http://127.0.0.1:18080/api/file/content?id=7&down=yes",
+      "request_json": null,
+      "request_headers": {
+        "User-Agent": "DooTask-Protocol-Acceptance/1"
+      },
+      "request_bytes": 0,
+      "request_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "status": 200,
+      "response_headers": {
+        "Date": "Mon, 12 Oct 2026 10:29:19 GMT",
+        "Server": "uvicorn",
+        "Content-Type": "application/octet-stream",
+        "Accept-Ranges": "bytes",
+        "Content-Disposition": "attachment; filename*=utf-8''%E5%A4%A7%E6%96%87%E4%BB%B6-%E9%9B%AA-%CE%B2.bin",
+        "Content-Length": "10486491",
+        "Last-Modified": "Mon, 12 Oct 2026 10:25:01 GMT",
+        "Etag": "\"381d7e04d61f52ecaf37ed33a60081a1\"",
+        "Connection": "close"
+      },
+      "response": null,
+      "response_bytes": 10486491,
+      "response_sha256": "bf37e27f4d68d9b1b3f408a47ccac79f394c039ced0fbb82e0ff1fd10141e104",
+      "elapsed_seconds": 0.11000000000058208
+    },
+    {
+      "utc": "2026-10-12T10:29:20.454828+00:00",
+      "case": "uploads",
+      "kind": "large_file_hash",
+      "bytes": 10486491,
+      "sha256": "bf37e27f4d68d9b1b3f408a47ccac79f394c039ced0fbb82e0ff1fd10141e104",
+      "id": 7
+    },
+    {
+      "utc": "2026-10-12T10:29:20.488748+00:00",
+      "case": "uploads",
+      "kind": "http",
+      "method": "POST",
+      "url": "http://127.0.0.1:18080/api/upload/init",
+      "request_json": {
+        "hash": "10aec35353f9c4096a71c38654c3d402",
+        "size": 6,
+        "name": "取消.bin",
+        "scene": "file_cabinet",
+        "scene_params": {
+          "pid": 0
+        }
+      },
+      "request_headers": {
+        "User-Agent": "DooTask-Protocol-Acceptance/1",
+        "Content-Type": "application/json"
+      },
+      "request_bytes": 130,
+      "request_sha256": "2e145411fdaadbc810bdba775dc0105bed2746c52757ca2365d60c8e024a0bde",
+      "status": 200,
+      "response_headers": {
+        "Date": "Mon, 12 Oct 2026 10:29:20 GMT",
+        "Server": "uvicorn",
+        "Cache-Control": "no-store",
+        "X-Request-Id": "fc674593b97887754985946f080ad4b3",
+        "Content-Length": "164",
+        "Content-Type": "application/json",
+        "Connection": "close"
+      },
+      "response": {
+        "ret": 1,
+        "msg": "操作成功",
+        "data": {
+          "done": false,
+          "upload_id": "8347ef6ed9f50f0add9ded6dbb4b19e4",
+          "chunk_size": 5242880,
+          "chunk_count": 1,
+          "received": []
+        }
+      },
+      "response_bytes": 164,
+      "response_sha256": "7ae73beb61492b8207fe58f95d5e6b97fe1345b69887d7e14c09de064f19982e",
+      "elapsed_seconds": 0.030999999999039574
+    },
+    {
+      "utc": "2026-10-12T10:29:20.514281+00:00",
+      "case": "uploads",
+      "kind": "http",
+      "method": "POST",
+      "url": "http://127.0.0.1:18080/api/upload/cancel",
+      "request_json": {
+        "upload_id": "8347ef6ed9f50f0add9ded6dbb4b19e4"
+      },
+      "request_headers": {
+        "User-Agent": "DooTask-Protocol-Acceptance/1",
+        "Content-Type": "application/json"
+      },
+      "request_bytes": 49,
+      "request_sha256": "96dbebb9f7649e2339634103d954c30cd24824d352237d60117a3557bbd19c24",
+      "status": 200,
+      "response_headers": {
+        "Date": "Mon, 12 Oct 2026 10:29:20 GMT",
+        "Server": "uvicorn",
+        "Cache-Control": "no-store",
+        "X-Request-Id": "0aa0f5eaa26a3a206842d0839beaa2aa",
+        "Content-Length": "45",
+        "Content-Type": "application/json",
+        "Connection": "close"
+      },
+      "response": {
+        "ret": 1,
+        "msg": "操作成功",
+        "data": []
+      },
+      "response_bytes": 45,
+      "response_sha256": "5ce1d0a4a48ffdcd1c2465c137f10aa2252d35b40c8becee3c30b60494042e91",
+      "elapsed_seconds": 0.03200000000288128
+    },
+    {
+      "utc": "2026-10-12T10:29:20.545207+00:00",
+      "case": "uploads",
+      "kind": "http",
+      "method": "POST",
+      "url": "http://127.0.0.1:18080/api/upload/chunk",
+      "request_json": null,
+      "request_headers": {
+        "User-Agent": "DooTask-Protocol-Acceptance/1",
+        "Content-Type": "multipart/form-data; boundary=protocol-39990e9026e0c51d3db46406"
+      },
+      "request_bytes": 405,
+      "request_sha256": "a005630a576811b5842f2cf3e99f8ec64d920755022bee1cbc9d6c5ac1f3acd2",
+      "status": 200,
+      "response_headers": {
+        "Date": "Mon, 12 Oct 2026 10:29:20 GMT",
+        "Server": "uvicorn",
+        "Cache-Control": "no-store",
+        "X-Request-Id": "0ac9b50268240b58ad4bde09611b926a",
+        "Content-Length": "66",
+        "Content-Type": "application/json",
+        "Connection": "close"
+      },
+      "response": {
+        "ret": 0,
+        "msg": "上传会话不存在或已过期",
+        "data": []
+      },
+      "response_bytes": 66,
+      "response_sha256": "61de306574e36cdd01d65d8ece4f2ffcaf04ee1ce761f80c1ab8a346634a3de0",
+      "elapsed_seconds": 0.030999999999039574
+    },
+    {
+      "utc": "2026-10-12T10:29:20.576158+00:00",
+      "case": "uploads",
+      "kind": "http",
+      "method": "POST",
+      "url": "http://127.0.0.1:18080/api/upload/merge",
+      "request_json": {
+        "upload_id": "8347ef6ed9f50f0add9ded6dbb4b19e4"
+      },
+      "request_headers": {
+        "User-Agent": "DooTask-Protocol-Acceptance/1",
+        "Content-Type": "application/json"
+      },
+      "request_bytes": 49,
+      "request_sha256": "96dbebb9f7649e2339634103d954c30cd24824d352237d60117a3557bbd19c24",
+      "status": 200,
+      "response_headers": {
+        "Date": "Mon, 12 Oct 2026 10:29:20 GMT",
+        "Server": "uvicorn",
+        "Cache-Control": "no-store",
+        "X-Request-Id": "e83855438e3c342fbe8c0542945c03e6",
+        "Content-Length": "66",
+        "Content-Type": "application/json",
+        "Connection": "close"
+      },
+      "response": {
+        "ret": 0,
+        "msg": "上传会话不存在或已过期",
+        "data": []
+      },
+      "response_bytes": 66,
+      "response_sha256": "61de306574e36cdd01d65d8ece4f2ffcaf04ee1ce761f80c1ab8a346634a3de0",
+      "elapsed_seconds": 0.030999999999039574
+    },
+    {
+      "utc": "2026-10-12T10:29:20.605509+00:00",
+      "case": "uploads",
+      "kind": "http",
+      "method": "POST",
+      "url": "http://127.0.0.1:18080/api/upload/init",
+      "request_json": {
+        "hash": "0baed422fe16b3b87753a532b0406078",
+        "size": 10486491,
+        "name": "../escape.bin",
+        "scene": "file_cabinet",
+        "scene_params": {
+          "pid": 0
+        }
+      },
+      "request_headers": {
+        "User-Agent": "DooTask-Protocol-Acceptance/1",
+        "Content-Type": "application/json"
+      },
+      "request_bytes": 140,
+      "request_sha256": "af110365e416bfae27ba7d044501043db8be6d283946a0a5a78dac21cac9de52",
+      "status": 200,
+      "response_headers": {
+        "Date": "Mon, 12 Oct 2026 10:29:20 GMT",
+        "Server": "uvicorn",
+        "Cache-Control": "no-store",
+        "X-Request-Id": "d1945314c1d83fa6926d60f71faad444",
+        "Content-Length": "54",
+        "Content-Type": "application/json",
+        "Connection": "close"
+      },
+      "response": {
+        "ret": 0,
+        "msg": "文件名称不合法",
+        "data": []
+      },
+      "response_bytes": 54,
+      "response_sha256": "b26dd6e303f5e50491d702c659928ddfecea57c1bf1bf9a51541424662d1eaf9",
+      "elapsed_seconds": 0.01599999999962165
+    },
+    {
+      "utc": "2026-10-12T10:29:20.651167+00:00",
+      "case": "uploads",
+      "kind": "database_readonly",
+      "query": "SELECT id,userid,size,name,state,received FROM backend_uploads WHERE id IN (%s,%s)",
+      "parameters": [
+        "ca1cf8fb7f4eeea637f9680a39743d7d",
+        "8347ef6ed9f50f0add9ded6dbb4b19e4"
+      ],
+      "rows": [
+        {
+          "id": "8347ef6ed9f50f0add9ded6dbb4b19e4",
+          "userid": 20,
+          "size": 6,
+          "name": "取消.bin",
+          "state": "cancelled",
+          "received": "{}"
+        },
+        {
+          "id": "ca1cf8fb7f4eeea637f9680a39743d7d",
+          "userid": 20,
+          "size": 10486491,
+          "name": "大文件-雪-β.bin",
+          "state": "complete",
+          "received": "{\"0\":{\"url\":\"blobs/2e/2e7cab6314e9614b6f2da12630661c3038e5592025f6534ba5823c3b340a1cb6\",\"size\":5242880,\"hash\":\"006a88ed7d5826af90d38dba4666fd89\",\"sha256\":\"2e7cab6314e9614b6f2da12630661c3038e5592025f6534ba5823c3b340a1cb6\"},\"2\":{\"url\":\"blobs/ea/eaf0b2261bd97ce641654452d0a304fe2ceffbfa630a17493ab4b0a15ddedb9b\",\"size\":731,\"hash\":\"719e9e46ea6db8201a342f7c9494952d\",\"sha256\":\"eaf0b2261bd97ce641654452d0a304fe2ceffbfa630a17493ab4b0a15ddedb9b\"},\"1\":{\"url\":\"blobs/2e/2e7cab6314e9614b6f2da12630661c3038e5592025f6534ba5823c3b340a1cb6\",\"size\":5242880,\"hash\":\"006a88ed7d5826af90d38dba4666fd89\",\"sha256\":\"2e7cab6314e9614b6f2da12630661c3038e5592025f6534ba5823c3b340a1cb6\"}}"
+        }
+      ]
+    },
+    {
+      "utc": "2026-10-12T10:29:20.866928+00:00",
+      "case": "dav",
+      "kind": "http",
+      "method": "POST",
+      "url": "http://127.0.0.1:18080/api/users/login",
+      "request_json": {
+        "type": "reg",
+        "email": "pq-0cb6ca5ea3afa3@example.test",
+        "password": "[REDACTED]"
+      },
+      "request_headers": {
+        "User-Agent": "DooTask-Protocol-Acceptance/1",
+        "Content-Type": "application/json"
+      },
+      "request_bytes": 101,
+      "request_sha256": "69c354b1787d7fbc31134714c8b4636d8fcf678647a26c7000e8279920e81cfe",
+      "status": 200,
+      "response_headers": {
+        "Date": "Mon, 12 Oct 2026 10:29:20 GMT",
+        "Server": "uvicorn",
+        "Cache-Control": "no-store",
+        "X-Request-Id": "81cad6c6f605f486d687342e2a287537",
+        "Content-Length": "735",
+        "Content-Type": "application/json",
+        "Connection": "close"
+      },
+      "response": {
+        "ret": 1,
+        "msg": "注册成功",
+        "data": {
+          "userid": 22,
+          "identity": [],
+          "department": [],
+          "az": "P",
+          "pinyin": "pq-0cb6ca5ea3afa3",
+          "email": "pq-0cb6ca5ea3afa3@example.test",
+          "tel": "",
+          "nickname": "pq-0cb6ca5ea3afa3",
+          "profession": "",
+          "birthday": null,
+          "address": null,
+          "introduction": null,
+          "userimg": "http://127.0.0.1:18080/avatar/pq-0cb6ca5ea3afa3.png",
+          "changepass": 0,
+          "login_num": 1,
+          "last_ip": "127.0.0.1",
+          "last_at": "2026-10-12 10:29:20",
+          "line_ip": "127.0.0.1",
+          "line_at": "2026-10-12 10:29:20",
+          "task_dialog_id": 0,
+          "created_ip": "127.0.0.1",
+          "disable_at": null,
+          "email_verity": 0,
+          "bot": 0,
+          "lang": "zh",
+          "created_at": "2026-10-12 10:29:20",
+          "token": "[REDACTED]"
+        }
+      },
+      "response_bytes": 735,
+      "response_sha256": "ebcfe04ef05c787409e63f23157d81a788b2cf4fa713f4fdb6406e2699102f8a",
+      "elapsed_seconds": 0.21799999999711872
+    },
+    {
+      "utc": "2026-10-12T10:29:20.886074+00:00",
+      "case": "dav",
+      "kind": "http",
+      "method": "POST",
+      "url": "http://127.0.0.1:18080/api/file/dav/create",
+      "request_json": {
+        "name": "HTTP rejected"
+      },
+      "request_headers": {
+        "User-Agent": "DooTask-Protocol-Acceptance/1",
+        "Content-Type": "application/json"
+      },
+      "request_bytes": 25,
+      "request_sha256": "8200318a7bd98e87ae8971d9f7df944b07e43319cef8fc81650694bb07f2ab43",
+      "status": 200,
+      "response_headers": {
+        "Date": "Mon, 12 Oct 2026 10:29:20 GMT",
+        "Server": "uvicorn",
+        "Cache-Control": "no-store",
+        "X-Request-Id": "1a54ee0709dfe70a98dd4879f49d506a",
+        "Content-Length": "65",
+        "Content-Type": "application/json",
+        "Connection": "close"
+      },
+      "response": {
+        "ret": 0,
+        "msg": "WebDAV 必须通过 HTTPS 使用",
+        "data": []
+      },
+      "response_bytes": 65,
+      "response_sha256": "9b63eaa094c8f274baecc1ab62efd80309a8b639aa46fccf1b4f5761da3a845d",
+      "elapsed_seconds": 0.01600000000325963
+    },
+    {
+      "utc": "2026-10-12T10:29:20.987291+00:00",
+      "case": "dav",
+      "kind": "http",
+      "method": "POST",
+      "url": "https://127.0.0.1:18443/api/file/dav/create",
+      "request_json": {
+        "name": "真实协议客户端",
+        "expire_days": 1
+      },
+      "request_headers": {
+        "User-Agent": "DooTask-Protocol-Acceptance/1",
+        "Content-Type": "application/json"
+      },
+      "request_bytes": 51,
+      "request_sha256": "4e4db05f805b85469726e92f182da63a73aeac6808744c08e00b0e732e9aca6b",
+      "status": 200,
+      "response_headers": {
+        "Date": "Mon, 12 Oct 2026 10:29:19 GMT",
+        "Server": "uvicorn",
+        "Cache-Control": "no-store",
+        "X-Request-Id": "2c4cacc156ca579f3a4ad2b438daf5b0",
+        "Content-Length": "259",
+        "Content-Type": "application/json",
+        "Connection": "close"
+      },
+      "response": {
+        "ret": 1,
+        "msg": "操作成功",
+        "data": {
+          "id": 3,
+          "public_id": "dav_b6b492e71b09509dff8a75e2",
+          "password": "[REDACTED]",
+          "password_suffix": "vD-s",
+          "url": "https://127.0.0.1:18443/dav/",
+          "expires_at": "2026-10-13 10:29:20"
+        }
+      },
+      "response_bytes": 259,
+      "response_sha256": "912ad373426bf5f3e41d48f3fc3e41e7c96248fda04b568ea55b63734e925918",
+      "elapsed_seconds": 0.10899999999674037
+    },
+    {
+      "utc": "2026-10-12T10:29:21.013715+00:00",
+      "case": "dav",
+      "kind": "http",
+      "method": "OPTIONS",
+      "url": "http://127.0.0.1:18080/dav/",
+      "request_json": null,
+      "request_headers": {
+        "User-Agent": "DooTask-Protocol-Acceptance/1"
+      },
+      "request_bytes": 0,
+      "request_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "status": 403,
+      "response_headers": {
+        "Date": "Mon, 12 Oct 2026 10:29:20 GMT",
+        "Server": "uvicorn",
+        "Content-Length": "152",
+        "Content-Type": "application/xml",
+        "Connection": "close"
+      },
+      "response": "<?xml version='1.0' encoding='utf-8'?>\n<d:error xmlns:d=\"DAV:\"><d:responsedescription>WebDAV 必须通过 HTTPS 使用</d:responsedescription></d:error>",
+      "response_bytes": 152,
+      "response_sha256": "b2f43107e8ea15f73d203b0216103270b441c0992cf7a5935c5c983bc15f1599",
+      "elapsed_seconds": 0.03200000000288128
+    },
+    {
+      "utc": "2026-10-12T10:29:21.030452+00:00",
+      "case": "dav",
+      "kind": "http",
+      "method": "PROPFIND",
+      "url": "https://127.0.0.1:18443/dav/files/%2e%2e/secret",
+      "request_json": null,
+      "request_headers": {
+        "User-Agent": "DooTask-Protocol-Acceptance/1",
+        "Depth": "0"
+      },
+      "request_bytes": 0,
+      "request_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "status": 400,
+      "response_headers": {
+        "Date": "Mon, 12 Oct 2026 10:29:20 GMT",
+        "Server": "uvicorn",
+        "Content-Length": "12",
+        "Connection": "close"
+      },
+      "response": null,
+      "response_bytes": 12,
+      "response_sha256": "610cf07590e16615345a3a6977caa886f656bb36bcf4f49380bf27f43a11d3c1",
+      "elapsed_seconds": 0.014999999999417923
+    },
+    {
+      "utc": "2026-10-12T10:29:21.146428+00:00",
+      "case": "dav",
+      "kind": "http",
+      "method": "OPTIONS",
+      "url": "https://127.0.0.1:18443/dav/",
+      "request_json": null,
+      "request_headers": {
+        "User-Agent": "DooTask-Protocol-Acceptance/1"
+      },
+      "request_bytes": 0,
+      "request_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "status": 200,
+      "response_headers": {
+        "Date": "Mon, 12 Oct 2026 10:29:20 GMT",
+        "Server": "uvicorn",
+        "Dav": "1, 2",
+        "Allow": "OPTIONS, PROPFIND, GET, HEAD, PUT, DELETE, MKCOL, MOVE, COPY, PROPPATCH, LOCK, UNLOCK",
+        "Ms-Author-Via": "DAV",
+        "Content-Length": "0",
+        "Connection": "close"
+      },
+      "response": null,
+      "response_bytes": 0,
+      "response_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "elapsed_seconds": 0.11000000000058208
+    },
+    {
+      "utc": "2026-10-12T10:29:21.262008+00:00",
+      "case": "dav",
+      "kind": "http",
+      "method": "MKCOL",
+      "url": "https://127.0.0.1:18443/dav/files/%E5%8D%8F%E8%AE%AEDAV-ca15d708",
+      "request_json": null,
+      "request_headers": {
+        "User-Agent": "DooTask-Protocol-Acceptance/1"
+      },
+      "request_bytes": 0,
+      "request_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "status": 201,
+      "response_headers": {
+        "Date": "Mon, 12 Oct 2026 10:29:20 GMT",
+        "Server": "uvicorn",
+        "Content-Length": "0",
+        "Connection": "close"
+      },
+      "response": null,
+      "response_bytes": 0,
+      "response_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "elapsed_seconds": 0.10900000000037835
+    },
+    {
+      "utc": "2026-10-12T10:29:21.403041+00:00",
+      "case": "dav",
+      "kind": "http",
+      "method": "PUT",
+      "url": "https://127.0.0.1:18443/dav/files/%E5%8D%8F%E8%AE%AEDAV-ca15d708/%E9%9B%AA-%CE%B1.txt",
+      "request_json": null,
+      "request_headers": {
+        "User-Agent": "DooTask-Protocol-Acceptance/1"
+      },
+      "request_bytes": 640,
+      "request_sha256": "c2c77d0eda255a2701e9178b84996276edeb6d14cfdef093a02b65719f092206",
+      "status": 201,
+      "response_headers": {
+        "Date": "Mon, 12 Oct 2026 10:29:20 GMT",
+        "Server": "uvicorn",
+        "Etag": "\"7816b835c214a568c54600f29243bf5147af3658d1398bb13ba5f0b5364f110f\"",
+        "Content-Length": "0",
+        "Connection": "close"
+      },
+      "response": null,
+      "response_bytes": 0,
+      "response_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "elapsed_seconds": 0.14099999999962165
+    },
+    {
+      "utc": "2026-10-12T10:29:21.603246+00:00",
+      "case": "dav",
+      "kind": "http",
+      "method": "GET",
+      "url": "https://127.0.0.1:18443/dav/files/%E5%8D%8F%E8%AE%AEDAV-ca15d708/%E9%9B%AA-%CE%B1.txt",
+      "request_json": null,
+      "request_headers": {
+        "User-Agent": "DooTask-Protocol-Acceptance/1"
+      },
+      "request_bytes": 0,
+      "request_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "status": 200,
+      "response_headers": {
+        "Date": "Mon, 12 Oct 2026 10:29:20 GMT",
+        "Server": "uvicorn",
+        "Etag": "\"7816b835c214a568c54600f29243bf5147af3658d1398bb13ba5f0b5364f110f\"",
+        "Content-Type": "text/plain; charset=utf-8",
+        "Accept-Ranges": "bytes",
+        "Content-Disposition": "inline; filename*=utf-8''%E9%9B%AA-%CE%B1.txt",
+        "Content-Length": "640",
+        "Last-Modified": "Mon, 12 Oct 2026 10:25:04 GMT",
+        "Connection": "close"
+      },
+      "response": "真实DAV字节\n真实DAV字节\n真实DAV字节\n真实DAV字节\n真实DAV字节\n真实DAV字节\n真实DAV字节\n真实DAV字节\n真实DAV字节\n真实DAV字节\n真实DAV字节\n真实DAV字节\n真实DAV字节\n真实DAV字节\n真实DAV字节\n真实DAV字节\n真实DAV字节\n真实DAV字节\n真实DAV字节\n真实DAV字节\n真实DAV字节\n真实DAV字节\n真实DAV字节\n真实DAV字节\n真实DAV字节\n真实DAV字节\n真实DAV字节\n真实DAV字节\n真实DAV字节\n真实DAV字节\n真实DAV字节\n真实DAV字节\n真实DAV字节\n真实DAV字节\n真实DAV字节\n真实DAV字节\n真实DAV字节\n真实DAV字节\n真实DAV字节\n真实DAV字节\n",
+      "response_bytes": 640,
+      "response_sha256": "c2c77d0eda255a2701e9178b84996276edeb6d14cfdef093a02b65719f092206",
+      "elapsed_seconds": 0.2029999999977008
+    },
+    {
+      "utc": "2026-10-12T10:29:21.703342+00:00",
+      "case": "dav",
+      "kind": "http",
+      "method": "HEAD",
+      "url": "https://127.0.0.1:18443/dav/files/%E5%8D%8F%E8%AE%AEDAV-ca15d708/%E9%9B%AA-%CE%B1.txt",
+      "request_json": null,
+      "request_headers": {
+        "User-Agent": "DooTask-Protocol-Acceptance/1"
+      },
+      "request_bytes": 0,
+      "request_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "status": 200,
+      "response_headers": {
+        "Date": "Mon, 12 Oct 2026 10:29:20 GMT",
+        "Server": "uvicorn",
+        "Etag": "\"7816b835c214a568c54600f29243bf5147af3658d1398bb13ba5f0b5364f110f\"",
+        "Content-Type": "text/plain; charset=utf-8",
+        "Accept-Ranges": "bytes",
+        "Content-Disposition": "inline; filename*=utf-8''%E9%9B%AA-%CE%B1.txt",
+        "Content-Length": "640",
+        "Last-Modified": "Mon, 12 Oct 2026 10:25:04 GMT",
+        "Connection": "close"
+      },
+      "response": "",
+      "response_bytes": 0,
+      "response_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "elapsed_seconds": 0.10900000000037835
+    },
+    {
+      "utc": "2026-10-12T10:29:21.841969+00:00",
+      "case": "dav",
+      "kind": "http",
+      "method": "GET",
+      "url": "https://127.0.0.1:18443/dav/files/%E5%8D%8F%E8%AE%AEDAV-ca15d708/%E9%9B%AA-%CE%B1.txt",
+      "request_json": null,
+      "request_headers": {
+        "User-Agent": "DooTask-Protocol-Acceptance/1",
+        "Range": "bytes=3-27"
+      },
+      "request_bytes": 0,
+      "request_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "status": 206,
+      "response_headers": {
+        "Date": "Mon, 12 Oct 2026 10:29:20 GMT",
+        "Server": "uvicorn",
+        "Etag": "\"7816b835c214a568c54600f29243bf5147af3658d1398bb13ba5f0b5364f110f\"",
+        "Content-Type": "text/plain; charset=utf-8",
+        "Accept-Ranges": "bytes",
+        "Content-Disposition": "inline; filename*=utf-8''%E9%9B%AA-%CE%B1.txt",
+        "Content-Length": "25",
+        "Last-Modified": "Mon, 12 Oct 2026 10:25:04 GMT",
+        "Content-Range": "bytes 3-27/640",
+        "Connection": "close"
+      },
+      "response": "实DAV字节\n真实DAV字",
+      "response_bytes": 25,
+      "response_sha256": "9b8a52d0b33c7012ed90b94d29844befa8e3b1e6b43d6192c82372c81d66a395",
+      "elapsed_seconds": 0.14099999999962165
+    },
+    {
+      "utc": "2026-10-12T10:29:21.945006+00:00",
+      "case": "dav",
+      "kind": "http",
+      "method": "PUT",
+      "url": "https://127.0.0.1:18443/dav/files/%E5%8D%8F%E8%AE%AEDAV-ca15d708/%E9%9B%AA-%CE%B1.txt",
+      "request_json": null,
+      "request_headers": {
+        "User-Agent": "DooTask-Protocol-Acceptance/1",
+        "If-Match": "\"wrong\""
+      },
+      "request_bytes": 9,
+      "request_sha256": "43ed5c457b799abe72e15e5ce574960937404f72402c5c15837044c1fc1a3a4a",
+      "status": 412,
+      "response_headers": {
+        "Date": "Mon, 12 Oct 2026 10:29:20 GMT",
+        "Server": "uvicorn",
+        "Content-Length": "135",
+        "Content-Type": "application/xml",
+        "Connection": "close"
+      },
+      "response": "<?xml version='1.0' encoding='utf-8'?>\n<d:error xmlns:d=\"DAV:\"><d:responsedescription>If-Match failed</d:responsedescription></d:error>",
+      "response_bytes": 135,
+      "response_sha256": "de09f5235ea79d38156510a811f73b8fe26e5c2c0009125ded72c807d9cfc783",
+      "elapsed_seconds": 0.09400000000096043
+    },
+    {
+      "utc": "2026-10-12T10:29:22.048612+00:00",
+      "case": "dav",
+      "kind": "http",
+      "method": "PUT",
+      "url": "https://127.0.0.1:18443/dav/files/%E5%8D%8F%E8%AE%AEDAV-ca15d708/%E9%9B%AA-%CE%B1.txt",
+      "request_json": null,
+      "request_headers": {
+        "User-Agent": "DooTask-Protocol-Acceptance/1",
+        "If-None-Match": "*"
+      },
+      "request_bytes": 9,
+      "request_sha256": "43ed5c457b799abe72e15e5ce574960937404f72402c5c15837044c1fc1a3a4a",
+      "status": 412,
+      "response_headers": {
+        "Date": "Mon, 12 Oct 2026 10:29:20 GMT",
+        "Server": "uvicorn",
+        "Content-Length": "140",
+        "Content-Type": "application/xml",
+        "Connection": "close"
+      },
+      "response": "<?xml version='1.0' encoding='utf-8'?>\n<d:error xmlns:d=\"DAV:\"><d:responsedescription>If-None-Match failed</d:responsedescription></d:error>",
+      "response_bytes": 140,
+      "response_sha256": "0a6f80ac327a369363a9a34f20210cc7fe356d4fedad47ba73b9cecdcf5038d3",
+      "elapsed_seconds": 0.10900000000037835
+    },
+    {
+      "utc": "2026-10-12T10:29:22.151894+00:00",
+      "case": "dav",
+      "kind": "http",
+      "method": "PROPFIND",
+      "url": "https://127.0.0.1:18443/dav/files/%E5%8D%8F%E8%AE%AEDAV-ca15d708",
+      "request_json": null,
+      "request_headers": {
+        "User-Agent": "DooTask-Protocol-Acceptance/1",
+        "Depth": "0"
+      },
+      "request_bytes": 52,
+      "request_sha256": "e6fdd540f26523d0d47780e63151597cd83b75f11c67640a3aea8db3552502d5",
+      "status": 207,
+      "response_headers": {
+        "Date": "Mon, 12 Oct 2026 10:29:21 GMT",
+        "Server": "uvicorn",
+        "Content-Length": "915",
+        "Content-Type": "application/xml",
+        "Connection": "close"
+      },
+      "response": "<?xml version='1.0' encoding='utf-8'?>\n<d:multistatus xmlns:d=\"DAV:\"><d:response><d:href>/dav/files/%E5%8D%8F%E8%AE%AEDAV-ca15d708/</d:href><d:propstat><d:prop><d:supportedlock><d:lockentry><d:lockscope><d:exclusive /></d:lockscope><d:locktype><d:write /></d:locktype></d:lockentry><d:lockentry><d:lockscope><d:shared /></d:lockscope><d:locktype><d:write /></d:locktype></d:lockentry></d:supportedlock><d:getlastmodified>Mon, 12 Oct 2026 10:29:21 GMT</d:getlastmodified><d:getetag>\"6066cc942468a98f09b4dedbc2223e18c101a98c38fb952be3b85600e7fc5c75\"</d:getetag><d:creationdate>2026-10-12T10:29:21Z</d:creationdate><d:getcontenttype>httpd/unix-directory</d:getcontenttype><d:resourcetype><d:collection /></d:resourcetype><d:lockdiscovery /><d:getcontentlength>0</d:getcontentlength><d:displayname>协议DAV-ca15d708</d:displayname></d:prop><d:status>HTTP/1.1 200 OK</d:status></d:propstat></d:response></d:multistatus>",
+      "response_bytes": 915,
+      "response_sha256": "db233baf5e76983d75426dcb7af52e8bea36d373820ccc3807cc5ee75f16a4dd",
+      "elapsed_seconds": 0.09400000000096043
+    },
+    {
+      "utc": "2026-10-12T10:29:22.264367+00:00",
+      "case": "dav",
+      "kind": "http",
+      "method": "PROPFIND",
+      "url": "https://127.0.0.1:18443/dav/files/%E5%8D%8F%E8%AE%AEDAV-ca15d708",
+      "request_json": null,
+      "request_headers": {
+        "User-Agent": "DooTask-Protocol-Acceptance/1",
+        "Depth": "1"
+      },
+      "request_bytes": 52,
+      "request_sha256": "e6fdd540f26523d0d47780e63151597cd83b75f11c67640a3aea8db3552502d5",
+      "status": 207,
+      "response_headers": {
+        "Date": "Mon, 12 Oct 2026 10:29:21 GMT",
+        "Server": "uvicorn",
+        "Content-Length": "1718",
+        "Content-Type": "application/xml",
+        "Connection": "close"
+      },
+      "response": "<?xml version='1.0' encoding='utf-8'?>\n<d:multistatus xmlns:d=\"DAV:\"><d:response><d:href>/dav/files/%E5%8D%8F%E8%AE%AEDAV-ca15d708/</d:href><d:propstat><d:prop><d:supportedlock><d:lockentry><d:lockscope><d:exclusive /></d:lockscope><d:locktype><d:write /></d:locktype></d:lockentry><d:lockentry><d:lockscope><d:shared /></d:lockscope><d:locktype><d:write /></d:locktype></d:lockentry></d:supportedlock><d:getlastmodified>Mon, 12 Oct 2026 10:29:21 GMT</d:getlastmodified><d:getetag>\"6066cc942468a98f09b4dedbc2223e18c101a98c38fb952be3b85600e7fc5c75\"</d:getetag><d:creationdate>2026-10-12T10:29:21Z</d:creationdate><d:getcontenttype>httpd/unix-directory</d:getcontenttype><d:resourcetype><d:collection /></d:resourcetype><d:lockdiscovery /><d:getcontentlength>0</d:getcontentlength><d:displayname>协议DAV-ca15d708</d:displayname></d:prop><d:status>HTTP/1.1 200 OK</d:status></d:propstat></d:response><d:response><d:href>/dav/files/%E5%8D%8F%E8%AE%AEDAV-ca15d708/%E9%9B%AA-%CE%B1.txt</d:href><d:propstat><d:prop><d:supportedlock><d:lockentry><d:lockscope><d:exclusive /></d:lockscope><d:locktype><d:write /></d:locktype></d:lockentry><d:lockentry><d:lockscope><d:shared /></d:lockscope><d:locktype><d:write /></d:locktype></d:lockentry></d:supportedlock><d:getlastmodified>Mon, 12 Oct 2026 10:29:21 GMT</d:getlastmodified><d:getetag>\"7816b835c214a568c54600f29243bf5147af3658d1398bb13ba5f0b5364f110f\"</d:getetag><d:creationdate>2026-10-12T10:29:21Z</d:creationdate><d:getcontenttype>text/plain</d:getcontenttype><d:resourcetype /><d:lockdiscovery /><d:getcontentlength>640</d:getcontentlength><d:displayname>雪-α.txt</d:displayname></d:prop><d:status>HTTP/1.1 200 OK</d:status></d:propstat></d:response></d:multistatus>",
+      "response_bytes": 1718,
+      "response_sha256": "5222d4e577209f6c31c2d33a4cf1d622ff4fb9282910336cedb3dc5e0d91cb4b",
+      "elapsed_seconds": 0.125
+    },
+    {
+      "utc": "2026-10-12T10:29:22.363903+00:00",
+      "case": "dav",
+      "kind": "http",
+      "method": "PROPFIND",
+      "url": "https://127.0.0.1:18443/dav/files/%E5%8D%8F%E8%AE%AEDAV-ca15d708",
+      "request_json": null,
+      "request_headers": {
+        "User-Agent": "DooTask-Protocol-Acceptance/1",
+        "Depth": "infinity"
+      },
+      "request_bytes": 52,
+      "request_sha256": "e6fdd540f26523d0d47780e63151597cd83b75f11c67640a3aea8db3552502d5",
+      "status": 403,
+      "response_headers": {
+        "Date": "Mon, 12 Oct 2026 10:29:21 GMT",
+        "Server": "uvicorn",
+        "Content-Length": "168",
+        "Content-Type": "application/xml",
+        "Connection": "close"
+      },
+      "response": "<?xml version='1.0' encoding='utf-8'?>\n<d:error xmlns:d=\"DAV:\"><d:propfind-finite-depth /><d:responsedescription>Finite depth required</d:responsedescription></d:error>",
+      "response_bytes": 168,
+      "response_sha256": "ba80df9e29d03cffe39e7952bb3e13dca4faf42dbdc7a9838c5f238dcfa30ede",
+      "elapsed_seconds": 0.09299999999711872
+    },
+    {
+      "utc": "2026-10-12T10:29:22.473237+00:00",
+      "case": "dav",
+      "kind": "http",
+      "method": "PROPFIND",
+      "url": "https://127.0.0.1:18443/dav/files/%E5%8D%8F%E8%AE%AEDAV-ca15d708",
+      "request_json": null,
+      "request_headers": {
+        "User-Agent": "DooTask-Protocol-Acceptance/1",
+        "Depth": "0"
+      },
+      "request_bytes": 64,
+      "request_sha256": "c026f0bc60692bb369f7eb7c9abce34f31f0295b3eaec35aa239ccc33e872bbe",
+      "status": 400,
+      "response_headers": {
+        "Date": "Mon, 12 Oct 2026 10:29:21 GMT",
+        "Server": "uvicorn",
+        "Content-Length": "130",
+        "Content-Type": "application/xml",
+        "Connection": "close"
+      },
+      "response": "<?xml version='1.0' encoding='utf-8'?>\n<d:error xmlns:d=\"DAV:\"><d:responsedescription>Unsafe XML</d:responsedescription></d:error>",
+      "response_bytes": 130,
+      "response_sha256": "10d7827c3527f2c6c6f0b53eb88efc4bfb74bb9442a3f6bf52d443205a3478f4",
+      "elapsed_seconds": 0.11000000000058208
+    },
+    {
+      "utc": "2026-10-12T10:29:22.586106+00:00",
+      "case": "dav",
+      "kind": "http",
+      "method": "LOCK",
+      "url": "https://127.0.0.1:18443/dav/files/%E5%8D%8F%E8%AE%AEDAV-ca15d708/%E9%9B%AA-%CE%B1.txt",
+      "request_json": null,
+      "request_headers": {
+        "User-Agent": "DooTask-Protocol-Acceptance/1",
+        "Depth": "0",
+        "Timeout": "Second-300"
+      },
+      "request_bytes": 143,
+      "request_sha256": "c7321e7ffe908537b710478f629951846b1091ea5bf5ad763efb7f5771f0d0bc",
+      "status": 200,
+      "response_headers": {
+        "Date": "Mon, 12 Oct 2026 10:29:21 GMT",
+        "Server": "uvicorn",
+        "Lock-Token": "<opaquelocktoken:db08d3eb-f664-4fa8-81da-9f152d76f6d7>",
+        "Content-Length": "493",
+        "Content-Type": "application/xml",
+        "Connection": "close"
+      },
+      "response": "<?xml version='1.0' encoding='utf-8'?>\n<d:prop xmlns:d=\"DAV:\"><d:lockdiscovery><d:activelock><d:lockscope><d:exclusive /></d:lockscope><d:locktype><d:write /></d:locktype><d:depth>0</d:depth><d:owner>protocol</d:owner><d:timeout>Second-299</d:timeout><d:locktoken><d:href>opaquelocktoken:db08d3eb-f664-4fa8-81da-9f152d76f6d7</d:href></d:locktoken><d:lockroot><d:href>/dav/files/%E5%8D%8F%E8%AE%AEDAV-ca15d708/%E9%9B%AA-%CE%B1.txt</d:href></d:lockroot></d:activelock></d:lockdiscovery></d:prop>",
+      "response_bytes": 493,
+      "response_sha256": "af7e527d8e3afa902945e2aa5b8f7739566cbc30c9346e74e15574d1294983c2",
+      "elapsed_seconds": 0.10900000000037835
+    },
+    {
+      "utc": "2026-10-12T10:29:22.696525+00:00",
+      "case": "dav",
+      "kind": "http",
+      "method": "PUT",
+      "url": "https://127.0.0.1:18443/dav/files/%E5%8D%8F%E8%AE%AEDAV-ca15d708/%E9%9B%AA-%CE%B1.txt",
+      "request_json": null,
+      "request_headers": {
+        "User-Agent": "DooTask-Protocol-Acceptance/1"
+      },
+      "request_bytes": 9,
+      "request_sha256": "43ed5c457b799abe72e15e5ce574960937404f72402c5c15837044c1fc1a3a4a",
+      "status": 423,
+      "response_headers": {
+        "Date": "Mon, 12 Oct 2026 10:29:21 GMT",
+        "Server": "uvicorn",
+        "Content-Length": "144",
+        "Content-Type": "application/xml",
+        "Connection": "close"
+      },
+      "response": "<?xml version='1.0' encoding='utf-8'?>\n<d:error xmlns:d=\"DAV:\"><d:responsedescription>文件已被WebDAV锁定</d:responsedescription></d:error>",
+      "response_bytes": 144,
+      "response_sha256": "72c5f61154b8844289dcb55d53ac85d0645109569b2d1c990fd290dc47b4b37b",
+      "elapsed_seconds": 0.11000000000058208
+    },
+    {
+      "utc": "2026-10-12T10:29:22.812775+00:00",
+      "case": "dav",
+      "kind": "http",
+      "method": "PUT",
+      "url": "https://127.0.0.1:18443/dav/files/%E5%8D%8F%E8%AE%AEDAV-ca15d708/%E9%9B%AA-%CE%B1.txt",
+      "request_json": null,
+      "request_headers": {
+        "User-Agent": "DooTask-Protocol-Acceptance/1",
+        "If": "(<opaquelocktoken:invalid>)"
+      },
+      "request_bytes": 9,
+      "request_sha256": "43ed5c457b799abe72e15e5ce574960937404f72402c5c15837044c1fc1a3a4a",
+      "status": 412,
+      "response_headers": {
+        "Date": "Mon, 12 Oct 2026 10:29:21 GMT",
+        "Server": "uvicorn",
+        "Content-Length": "139",
+        "Content-Type": "application/xml",
+        "Connection": "close"
+      },
+      "response": "<?xml version='1.0' encoding='utf-8'?>\n<d:error xmlns:d=\"DAV:\"><d:responsedescription>If condition failed</d:responsedescription></d:error>",
+      "response_bytes": 139,
+      "response_sha256": "70482bb9f7998b74e10d0b1a2e01629e93bc324b9dbeb1510bd959b46e0fc006",
+      "elapsed_seconds": 0.125
+    },
+    {
+      "utc": "2026-10-12T10:29:22.927032+00:00",
+      "case": "dav",
+      "kind": "http",
+      "method": "PUT",
+      "url": "https://127.0.0.1:18443/dav/files/%E5%8D%8F%E8%AE%AEDAV-ca15d708/%E9%9B%AA-%CE%B1.txt",
+      "request_json": null,
+      "request_headers": {
+        "User-Agent": "DooTask-Protocol-Acceptance/1",
+        "If": "(<opaquelocktoken:db08d3eb-f664-4fa8-81da-9f152d76f6d7>)"
+      },
+      "request_bytes": 640,
+      "request_sha256": "c2c77d0eda255a2701e9178b84996276edeb6d14cfdef093a02b65719f092206",
+      "status": 204,
+      "response_headers": {
+        "Date": "Mon, 12 Oct 2026 10:29:21 GMT",
+        "Server": "uvicorn",
+        "Etag": "\"4d68634b9e27896b85c6a73487f88f584b58477a501de7bf5fcc0d047ea06835\"",
+        "Connection": "close"
+      },
+      "response": null,
+      "response_bytes": 0,
+      "response_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "elapsed_seconds": 0.10900000000037835
+    },
+    {
+      "utc": "2026-10-12T10:29:23.039865+00:00",
+      "case": "dav",
+      "kind": "http",
+      "method": "LOCK",
+      "url": "https://127.0.0.1:18443/dav/files/%E5%8D%8F%E8%AE%AEDAV-ca15d708/%E9%9B%AA-%CE%B1.txt",
+      "request_json": null,
+      "request_headers": {
+        "User-Agent": "DooTask-Protocol-Acceptance/1",
+        "If": "(<opaquelocktoken:db08d3eb-f664-4fa8-81da-9f152d76f6d7>)",
+        "Timeout": "Second-300"
+      },
+      "request_bytes": 0,
+      "request_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "status": 200,
+      "response_headers": {
+        "Date": "Mon, 12 Oct 2026 10:29:21 GMT",
+        "Server": "uvicorn",
+        "Lock-Token": "<opaquelocktoken:db08d3eb-f664-4fa8-81da-9f152d76f6d7>",
+        "Content-Length": "493",
+        "Content-Type": "application/xml",
+        "Connection": "close"
+      },
+      "response": "<?xml version='1.0' encoding='utf-8'?>\n<d:prop xmlns:d=\"DAV:\"><d:lockdiscovery><d:activelock><d:lockscope><d:exclusive /></d:lockscope><d:locktype><d:write /></d:locktype><d:depth>0</d:depth><d:owner>protocol</d:owner><d:timeout>Second-300</d:timeout><d:locktoken><d:href>opaquelocktoken:db08d3eb-f664-4fa8-81da-9f152d76f6d7</d:href></d:locktoken><d:lockroot><d:href>/dav/files/%E5%8D%8F%E8%AE%AEDAV-ca15d708/%E9%9B%AA-%CE%B1.txt</d:href></d:lockroot></d:activelock></d:lockdiscovery></d:prop>",
+      "response_bytes": 493,
+      "response_sha256": "231126f8ae45a63a333b9b5237f1a99bd8aa21fb51364815ffdc5fea028dc25d",
+      "elapsed_seconds": 0.10900000000037835
+    },
+    {
+      "utc": "2026-10-12T10:29:23.139318+00:00",
+      "case": "dav",
+      "kind": "http",
+      "method": "UNLOCK",
+      "url": "https://127.0.0.1:18443/dav/files/%E5%8D%8F%E8%AE%AEDAV-ca15d708/%E9%9B%AA-%CE%B1.txt",
+      "request_json": null,
+      "request_headers": {
+        "User-Agent": "DooTask-Protocol-Acceptance/1",
+        "Lock-Token": "<opaquelocktoken:invalid>"
+      },
+      "request_bytes": 0,
+      "request_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "status": 409,
+      "response_headers": {
+        "Date": "Mon, 12 Oct 2026 10:29:22 GMT",
+        "Server": "uvicorn",
+        "Content-Length": "159",
+        "Content-Type": "application/xml",
+        "Connection": "close"
+      },
+      "response": "<?xml version='1.0' encoding='utf-8'?>\n<d:error xmlns:d=\"DAV:\"><d:responsedescription>Lock token does not match this resource</d:responsedescription></d:error>",
+      "response_bytes": 159,
+      "response_sha256": "e1ccb5422ac42328cf6cfa8ba420e266cbf5006a4a9bf217d04a58cb74e9a7ad",
+      "elapsed_seconds": 0.11000000000058208
+    },
+    {
+      "utc": "2026-10-12T10:29:23.247592+00:00",
+      "case": "dav",
+      "kind": "http",
+      "method": "UNLOCK",
+      "url": "https://127.0.0.1:18443/dav/files/%E5%8D%8F%E8%AE%AEDAV-ca15d708/%E9%9B%AA-%CE%B1.txt",
+      "request_json": null,
+      "request_headers": {
+        "User-Agent": "DooTask-Protocol-Acceptance/1",
+        "Lock-Token": "<opaquelocktoken:db08d3eb-f664-4fa8-81da-9f152d76f6d7>"
+      },
+      "request_bytes": 0,
+      "request_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "status": 204,
+      "response_headers": {
+        "Date": "Mon, 12 Oct 2026 10:29:22 GMT",
+        "Server": "uvicorn",
+        "Connection": "close"
+      },
+      "response": null,
+      "response_bytes": 0,
+      "response_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "elapsed_seconds": 0.09299999999711872
+    },
+    {
+      "utc": "2026-10-12T10:29:23.357306+00:00",
+      "case": "dav",
+      "kind": "http",
+      "method": "PROPPATCH",
+      "url": "https://127.0.0.1:18443/dav/files/%E5%8D%8F%E8%AE%AEDAV-ca15d708/%E9%9B%AA-%CE%B1.txt",
+      "request_json": null,
+      "request_headers": {
+        "User-Agent": "DooTask-Protocol-Acceptance/1"
+      },
+      "request_bytes": 133,
+      "request_sha256": "11878a7a50f89c848cc6e29962f5fe8d353baac2b71fa14fda6f068109ab1a2e",
+      "status": 207,
+      "response_headers": {
+        "Date": "Mon, 12 Oct 2026 10:29:22 GMT",
+        "Server": "uvicorn",
+        "Content-Length": "305",
+        "Content-Type": "application/xml",
+        "Connection": "close"
+      },
+      "response": "<?xml version='1.0' encoding='utf-8'?>\n<d:multistatus xmlns:d=\"DAV:\" xmlns:ns1=\"urn:protocol\"><d:response><d:href>/dav/files/%E5%8D%8F%E8%AE%AEDAV-ca15d708/%E9%9B%AA-%CE%B1.txt</d:href><d:propstat><d:prop><ns1:label /></d:prop><d:status>HTTP/1.1 200 OK</d:status></d:propstat></d:response></d:multistatus>",
+      "response_bytes": 305,
+      "response_sha256": "99578009f2204f468291793ab583d6ad0be29978924d46f06c3a610bf2e07f81",
+      "elapsed_seconds": 0.125
+    },
+    {
+      "utc": "2026-10-12T10:29:23.468027+00:00",
+      "case": "dav",
+      "kind": "http",
+      "method": "PROPFIND",
+      "url": "https://127.0.0.1:18443/dav/files/%E5%8D%8F%E8%AE%AEDAV-ca15d708/%E9%9B%AA-%CE%B1.txt",
+      "request_json": null,
+      "request_headers": {
+        "User-Agent": "DooTask-Protocol-Acceptance/1",
+        "Depth": "0"
+      },
+      "request_bytes": 52,
+      "request_sha256": "e6fdd540f26523d0d47780e63151597cd83b75f11c67640a3aea8db3552502d5",
+      "status": 207,
+      "response_headers": {
+        "Date": "Mon, 12 Oct 2026 10:29:22 GMT",
+        "Server": "uvicorn",
+        "Content-Length": "943",
+        "Content-Type": "application/xml",
+        "Connection": "close"
+      },
+      "response": "<?xml version='1.0' encoding='utf-8'?>\n<d:multistatus xmlns:d=\"DAV:\" xmlns:ns1=\"urn:protocol\"><d:response><d:href>/dav/files/%E5%8D%8F%E8%AE%AEDAV-ca15d708/%E9%9B%AA-%CE%B1.txt</d:href><d:propstat><d:prop><d:supportedlock><d:lockentry><d:lockscope><d:exclusive /></d:lockscope><d:locktype><d:write /></d:locktype></d:lockentry><d:lockentry><d:lockscope><d:shared /></d:lockscope><d:locktype><d:write /></d:locktype></d:lockentry></d:supportedlock><d:getlastmodified>Mon, 12 Oct 2026 10:29:22 GMT</d:getlastmodified><d:getetag>\"4d68634b9e27896b85c6a73487f88f584b58477a501de7bf5fcc0d047ea06835\"</d:getetag><d:creationdate>2026-10-12T10:29:21Z</d:creationdate><d:getcontenttype>text/plain</d:getcontenttype><d:resourcetype /><d:lockdiscovery /><d:getcontentlength>640</d:getcontentlength><d:displayname>雪-α.txt</d:displayname><ns1:label>unicode</ns1:label></d:prop><d:status>HTTP/1.1 200 OK</d:status></d:propstat></d:response></d:multistatus>",
+      "response_bytes": 943,
+      "response_sha256": "dc448f3c9c275709e1591dae832fcff6f56bc6d146fb9735c262d048b9c772cf",
+      "elapsed_seconds": 0.11000000000058208
+    },
+    {
+      "utc": "2026-10-12T10:29:23.597140+00:00",
+      "case": "dav",
+      "kind": "http",
+      "method": "COPY",
+      "url": "https://127.0.0.1:18443/dav/files/%E5%8D%8F%E8%AE%AEDAV-ca15d708/%E9%9B%AA-%CE%B1.txt",
+      "request_json": null,
+      "request_headers": {
+        "User-Agent": "DooTask-Protocol-Acceptance/1",
+        "Destination": "https://127.0.0.1:18443/dav/files/%E5%8D%8F%E8%AE%AEDAV-ca15d708/%E5%A4%8D%E5%88%B6.txt",
+        "Depth": "0"
+      },
+      "request_bytes": 0,
+      "request_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "status": 201,
+      "response_headers": {
+        "Date": "Mon, 12 Oct 2026 10:29:22 GMT",
+        "Server": "uvicorn",
+        "Content-Length": "0",
+        "Connection": "close"
+      },
+      "response": null,
+      "response_bytes": 0,
+      "response_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "elapsed_seconds": 0.125
+    },
+    {
+      "utc": "2026-10-12T10:29:23.682217+00:00",
+      "case": "dav",
+      "kind": "http",
+      "method": "COPY",
+      "url": "https://127.0.0.1:18443/dav/files/%E5%8D%8F%E8%AE%AEDAV-ca15d708/%E9%9B%AA-%CE%B1.txt",
+      "request_json": null,
+      "request_headers": {
+        "User-Agent": "DooTask-Protocol-Acceptance/1",
+        "Destination": "https://127.0.0.1:18443/dav/files/%E5%8D%8F%E8%AE%AEDAV-ca15d708/%E5%A4%8D%E5%88%B6.txt",
+        "Overwrite": "F"
+      },
+      "request_bytes": 0,
+      "request_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "status": 412,
+      "response_headers": {
+        "Date": "Mon, 12 Oct 2026 10:29:22 GMT",
+        "Server": "uvicorn",
+        "Content-Length": "138",
+        "Content-Type": "application/xml",
+        "Connection": "close"
+      },
+      "response": "<?xml version='1.0' encoding='utf-8'?>\n<d:error xmlns:d=\"DAV:\"><d:responsedescription>Destination exists</d:responsedescription></d:error>",
+      "response_bytes": 138,
+      "response_sha256": "796ab3fef4490ba11b328399f61e7e8b355d2232406dbf903e8af37cbe17fccf",
+      "elapsed_seconds": 0.07800000000133878
+    },
+    {
+      "utc": "2026-10-12T10:29:23.815706+00:00",
+      "case": "dav",
+      "kind": "http",
+      "method": "MOVE",
+      "url": "https://127.0.0.1:18443/dav/files/%E5%8D%8F%E8%AE%AEDAV-ca15d708/%E5%A4%8D%E5%88%B6.txt",
+      "request_json": null,
+      "request_headers": {
+        "User-Agent": "DooTask-Protocol-Acceptance/1",
+        "Destination": "https://127.0.0.1:18443/dav/files/%E5%8D%8F%E8%AE%AEDAV-ca15d708/%E7%A7%BB%E5%8A%A8.txt"
+      },
+      "request_bytes": 0,
+      "request_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "status": 500,
+      "response_headers": {
+        "Date": "Mon, 12 Oct 2026 10:29:22 GMT",
+        "Server": "uvicorn",
+        "Content-Length": "21",
+        "Content-Type": "text/plain; charset=utf-8",
+        "Connection": "close"
+      },
+      "response": "Internal Server Error",
+      "response_bytes": 21,
+      "response_sha256": "e41656eb2ba6c6293bf6dd928e5a88cdbc50535cab661c1969e0f598e497ed62",
+      "elapsed_seconds": 0.14099999999962165
+    },
+    {
+      "utc": "2026-10-12T10:29:23.819234+00:00",
+      "case": "dav",
+      "kind": "execution_end",
+      "exit_code": 1,
+      "elapsed_seconds": 4.59400000000096
+    }
+  ]
+}

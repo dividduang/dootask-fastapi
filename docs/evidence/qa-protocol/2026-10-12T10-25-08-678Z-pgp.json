@@ -1,0 +1,215 @@
+{
+  "run": "2026-10-12T10-25-08-678Z",
+  "command": [
+    "C:\\nvm4w\\nodejs\\node.exe",
+    "D:\\rpa\\202610\\dootask-fastapi\\tests\\protocol_pgp.mjs",
+    "http://127.0.0.1:18080"
+  ],
+  "node": "v22.23.1",
+  "crypto_module": "D:\\rpa\\202610\\dootask-fastapi\\.runtime\\frontend-build\\node_modules\\openpgp_hi\\dist\\lightweight\\openpgp.min.mjs",
+  "crypto_sha256": "c5454f2da4c8cba197a166dbdc8157f1efc7b1f0f2592cd76e01b9dedc122740",
+  "frames": [
+    {
+      "utc": "2026-10-12T10:25:09.329Z",
+      "path": "users/login",
+      "http": 200,
+      "elapsed_ms": 363,
+      "request_ciphertext_sha256": "0db75316fc8083108d7dd223353b4e01f91544172548f3f563681cdf7f22a008",
+      "request_ciphertext_bytes": 750,
+      "response_ciphertext_sha256": "903bd2ebb1dd6bbfe3e161b645d478095d36ffebae980f3299732b2a200fc29f",
+      "response_ciphertext_bytes": 1166,
+      "decrypted": {
+        "ret": 1,
+        "msg": "注册成功",
+        "data": {
+          "userid": 16,
+          "identity": [],
+          "department": [],
+          "az": "P",
+          "pinyin": "pgp-6c52474e97518d",
+          "email": "pgp-6c52474e97518d@example.test",
+          "tel": "",
+          "nickname": "pgp-6c52474e97518d",
+          "profession": "",
+          "birthday": null,
+          "address": null,
+          "introduction": null,
+          "userimg": "http://127.0.0.1:18080/avatar/pgp-6c52474e97518d.png",
+          "changepass": 0,
+          "login_num": 1,
+          "last_ip": "127.0.0.1",
+          "last_at": "2026-10-12 10:25:09",
+          "line_ip": "127.0.0.1",
+          "line_at": "2026-10-12 10:25:09",
+          "task_dialog_id": 0,
+          "created_ip": "127.0.0.1",
+          "disable_at": null,
+          "email_verity": 0,
+          "bot": 0,
+          "lang": "zh",
+          "created_at": "2026-10-12 10:25:09",
+          "token": "[REDACTED]"
+        }
+      }
+    },
+    {
+      "utc": "2026-10-12T10:25:09.500Z",
+      "path": "users/logout",
+      "http": 200,
+      "elapsed_ms": 170,
+      "request_ciphertext_sha256": "ac4d9d21efa12056e7f37c889791cdde53df01c8c05c3d4782ea441785ebc7bb",
+      "request_ciphertext_bytes": 620,
+      "response_ciphertext_sha256": "b91bfd1301aed734bd3c3e160beac88c01a2918191b0859ef844c6722d48742b",
+      "response_ciphertext_bytes": 282,
+      "decrypted": {
+        "ret": 1,
+        "msg": "退出成功",
+        "data": []
+      }
+    },
+    {
+      "utc": "2026-10-12T10:25:09.770Z",
+      "path": "users/login",
+      "http": 200,
+      "elapsed_ms": 269,
+      "request_ciphertext_sha256": "18039286a89c444dbaac297982d77fc1f556cdb19b6e2bd95bd10b2dfa6c8824",
+      "request_ciphertext_bytes": 729,
+      "response_ciphertext_sha256": "cc7600c3aca5f219e0344bf0af8f936e6b2bdddc6c62c35063561d31d808c03e",
+      "response_ciphertext_bytes": 1166,
+      "decrypted": {
+        "ret": 1,
+        "msg": "登录成功",
+        "data": {
+          "userid": 16,
+          "identity": [],
+          "department": [],
+          "az": "P",
+          "pinyin": "pgp-6c52474e97518d",
+          "email": "pgp-6c52474e97518d@example.test",
+          "tel": "",
+          "nickname": "pgp-6c52474e97518d",
+          "profession": "",
+          "birthday": null,
+          "address": null,
+          "introduction": null,
+          "userimg": "http://127.0.0.1:18080/avatar/pgp-6c52474e97518d.png",
+          "changepass": 0,
+          "login_num": 2,
+          "last_ip": "127.0.0.1",
+          "last_at": "2026-10-12 10:25:09",
+          "line_ip": "127.0.0.1",
+          "line_at": "2026-10-12 10:25:09",
+          "task_dialog_id": 0,
+          "created_ip": "127.0.0.1",
+          "disable_at": null,
+          "email_verity": 0,
+          "bot": 0,
+          "lang": "zh",
+          "created_at": "2026-10-12 10:25:09",
+          "token": "[REDACTED]"
+        }
+      }
+    },
+    {
+      "utc": "2026-10-12T10:25:09.950Z",
+      "path": "users/info",
+      "http": 200,
+      "elapsed_ms": 178,
+      "request_ciphertext_sha256": "ba466bcbea6b4aab8ded8eb6ef9f454ded39f877d888df4ccccceeb0c5d95ac3",
+      "request_ciphertext_bytes": 620,
+      "response_ciphertext_sha256": "ec5ec8e6a14236504787f9b4a290b08a67315ca9b91d190d6d66184fc673c329",
+      "response_ciphertext_bytes": 1290,
+      "decrypted": {
+        "ret": 1,
+        "msg": "success",
+        "data": {
+          "userid": 16,
+          "identity": [],
+          "department": [],
+          "az": "P",
+          "pinyin": "pgp-6c52474e97518d",
+          "email": "pgp-6c52474e97518d@example.test",
+          "tel": "",
+          "nickname": "pgp-6c52474e97518d",
+          "profession": "",
+          "birthday": null,
+          "address": null,
+          "introduction": null,
+          "userimg": "http://127.0.0.1:18080/avatar/pgp-6c52474e97518d.png",
+          "changepass": 0,
+          "login_num": 2,
+          "last_ip": "127.0.0.1",
+          "last_at": "2026-10-12 10:25:09",
+          "line_ip": "127.0.0.1",
+          "line_at": "2026-10-12 10:25:09",
+          "task_dialog_id": 0,
+          "created_ip": "127.0.0.1",
+          "disable_at": null,
+          "email_verity": 0,
+          "bot": 0,
+          "lang": "zh",
+          "created_at": "2026-10-12 10:25:09",
+          "token": "[REDACTED]",
+          "nickname_original": "",
+          "department_name": "",
+          "department_owner": false,
+          "managed_departments": []
+        }
+      }
+    },
+    {
+      "utc": "2026-10-12T10:25:10.194Z",
+      "path": "users/login",
+      "http": 200,
+      "elapsed_ms": 243,
+      "request_ciphertext_sha256": "d9f53f40b0c02bf2f0dbfdb444144e4c882c62245534b4c04d25f372bd2abafd",
+      "request_ciphertext_bytes": 737,
+      "response_ciphertext_sha256": "8e6925bfac8753fa32495324fdc32857458048773e439a0baa520deaa05588b5",
+      "response_ciphertext_bytes": 312,
+      "decrypted": {
+        "ret": 0,
+        "msg": "帐号或密码错误",
+        "data": {
+          "code": "need"
+        }
+      }
+    },
+    {
+      "utc": "2026-10-12T10:25:10.365Z",
+      "path": "users/logout",
+      "http": 200,
+      "elapsed_ms": 169,
+      "request_ciphertext_sha256": "8aaf2fd70764fe7ab22eb02ddd61d4a8fafdb53e730e8db7ed2cf39f0ef422af",
+      "request_ciphertext_bytes": 620,
+      "response_ciphertext_sha256": "0d25f7478864c6ff2366a6d0a1a704e30c10427bf9390427261bd38b0509688e",
+      "response_ciphertext_bytes": 282,
+      "decrypted": {
+        "ret": 1,
+        "msg": "退出成功",
+        "data": []
+      }
+    },
+    {
+      "utc": "2026-10-12T10:25:10.525Z",
+      "path": "users/info",
+      "http": 200,
+      "elapsed_ms": 159,
+      "request_ciphertext_sha256": "c356b1b1217aa44819bba2de296a8ab58a4f055b1dc14cfc7776719e41ef3666",
+      "request_ciphertext_bytes": 620,
+      "response_ciphertext_sha256": "19b0622a09d001b6721eea24021fc3c5aaa05bf83e0d4b6a5299634e9a27863d",
+      "response_ciphertext_bytes": 308,
+      "decrypted": {
+        "ret": -1,
+        "msg": "身份已失效,请重新登录",
+        "data": []
+      }
+    }
+  ],
+  "status": "PASS",
+  "exchange": {
+    "status": 200,
+    "ret": 1,
+    "public_key_sha256": "309422b07627c54f080e607a0479957e54147910880c6e4be6aac387dfbbfdbd"
+  },
+  "contract": "Original openpgp_hi/lightweight 5.7.0-1 Curve25519 client, RSA3072 server exchange, encrypted registration/login/response/errors/logout/revocation"
+}

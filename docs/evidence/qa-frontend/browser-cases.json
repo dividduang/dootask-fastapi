@@ -1,0 +1,1208 @@
+[
+  {
+    "id": "01-login",
+    "note": "Rendered real production login; no injected UI",
+    "url": "http://127.0.0.1:18080/login",
+    "title": "Login",
+    "screenshot": "01-login.png",
+    "observed_at": "2026-10-12T10:21:54.484Z",
+    "elements": [
+      {
+        "id": 1,
+        "role": "textbox",
+        "name": "Enter your email",
+        "states": []
+      },
+      {
+        "id": 2,
+        "role": "textbox",
+        "name": "Enter your password",
+        "states": []
+      },
+      {
+        "id": 3,
+        "role": "button",
+        "name": "Login",
+        "states": []
+      },
+      {
+        "id": 4,
+        "role": "link",
+        "name": "Register account",
+        "states": []
+      },
+      {
+        "id": 5,
+        "role": "link",
+        "name": "Reset Password",
+        "states": []
+      },
+      {
+        "id": 6,
+        "role": "button",
+        "name": "",
+        "states": []
+      },
+      {
+        "id": 7,
+        "role": "button",
+        "name": "",
+        "states": []
+      }
+    ]
+  },
+  {
+    "id": "02-registration",
+    "note": "Real synthetic account registration form, passwords masked",
+    "url": "http://127.0.0.1:18080/login",
+    "title": "Login",
+    "screenshot": "02-registration.png",
+    "observed_at": "2026-10-12T10:22:02.195Z",
+    "elements": [
+      {
+        "id": 1,
+        "role": "textbox",
+        "name": "Enter your email",
+        "value": "qa-ui-1791800521757@example.test",
+        "states": []
+      },
+      {
+        "id": 2,
+        "role": "textbox",
+        "name": "Enter your password",
+        "value": "••••••••••••••••••••••••••••••••••••••••",
+        "states": []
+      },
+      {
+        "id": 3,
+        "role": "textbox",
+        "name": "Enter confirmation password",
+        "value": "••••••••••••••••••••••••••••••••••••••••",
+        "states": [
+          "focused"
+        ]
+      },
+      {
+        "id": 4,
+        "role": "button",
+        "name": "Register",
+        "states": []
+      },
+      {
+        "id": 5,
+        "role": "link",
+        "name": "Login account",
+        "states": []
+      },
+      {
+        "id": 6,
+        "role": "link",
+        "name": "Reset Password",
+        "states": []
+      },
+      {
+        "id": 7,
+        "role": "button",
+        "name": "",
+        "states": []
+      },
+      {
+        "id": 8,
+        "role": "button",
+        "name": "",
+        "states": []
+      }
+    ]
+  },
+  {
+    "id": "03-registration-failure",
+    "note": "Real registration failed with Incorrect account or password; reported to backend owner",
+    "url": "http://127.0.0.1:18080/login",
+    "title": "Login",
+    "screenshot": "03-registration-failure.png",
+    "observed_at": "2026-10-12T10:23:15.557Z",
+    "elements": [
+      {
+        "id": 1,
+        "role": "textbox",
+        "name": "Enter your email",
+        "value": "qa-ui-1791800521757@example.test",
+        "states": []
+      },
+      {
+        "id": 2,
+        "role": "textbox",
+        "name": "Enter your password",
+        "value": "••••••••••••••••••••••••••••••••••••••••",
+        "states": []
+      },
+      {
+        "id": 3,
+        "role": "textbox",
+        "name": "Enter confirmation password",
+        "value": "••••••••••••••••••••••••••••••••••••••••",
+        "states": []
+      },
+      {
+        "id": 4,
+        "role": "button",
+        "name": "Register",
+        "states": [
+          "focused"
+        ]
+      },
+      {
+        "id": 5,
+        "role": "link",
+        "name": "Login account",
+        "states": []
+      },
+      {
+        "id": 6,
+        "role": "link",
+        "name": "Reset Password",
+        "states": []
+      },
+      {
+        "id": 7,
+        "role": "button",
+        "name": "",
+        "states": []
+      },
+      {
+        "id": 8,
+        "role": "button",
+        "name": "",
+        "states": []
+      },
+      {
+        "id": 9,
+        "role": "button",
+        "name": "Confirm",
+        "states": []
+      }
+    ]
+  },
+  {
+    "id": "04-dashboard",
+    "note": "Successful real UI registration with 24-byte password; persistent local account",
+    "url": "http://127.0.0.1:18080/manage/dashboard",
+    "title": "Dashboard",
+    "screenshot": "04-dashboard.png",
+    "observed_at": "2026-10-12T10:24:12.974Z",
+    "elements": [
+      {
+        "id": 1,
+        "role": "button",
+        "name": " Create new task",
+        "states": []
+      },
+      {
+        "id": 2,
+        "role": "button",
+        "name": "",
+        "states": []
+      },
+      {
+        "id": 3,
+        "role": "button",
+        "name": "",
+        "states": []
+      },
+      {
+        "id": 4,
+        "role": "button",
+        "name": "",
+        "states": []
+      }
+    ]
+  },
+  {
+    "id": "07-task-create-failure",
+    "note": "Actual task POST rejected unsupported request format; backend owner notified",
+    "url": "http://127.0.0.1:18080/manage/project/7",
+    "title": "📝 个人项目",
+    "screenshot": "07-task-create-failure.png",
+    "observed_at": "2026-10-12T10:25:29.530Z",
+    "elements": [
+      {
+        "id": 1,
+        "role": "button",
+        "name": " Create new task",
+        "states": []
+      },
+      {
+        "id": 2,
+        "role": "button",
+        "name": "",
+        "states": []
+      },
+      {
+        "id": 3,
+        "role": "button",
+        "name": "",
+        "states": []
+      },
+      {
+        "id": 4,
+        "role": "button",
+        "name": "",
+        "states": []
+      },
+      {
+        "id": 5,
+        "role": "textbox",
+        "name": "Task description, press Enter to create",
+        "value": "Frontend production acceptance task",
+        "states": [
+          "multiline",
+          "focused"
+        ]
+      },
+      {
+        "id": 6,
+        "role": "button",
+        "name": "",
+        "states": []
+      },
+      {
+        "id": 7,
+        "role": "button",
+        "name": "",
+        "states": []
+      },
+      {
+        "id": 8,
+        "role": "button",
+        "name": "Confirm",
+        "states": []
+      }
+    ]
+  },
+  {
+    "id": "08-dark-theme",
+    "note": "Selected Dark via unmodified theme settings",
+    "url": "http://127.0.0.1:18080/manage/setting/theme",
+    "title": "Theme settings",
+    "screenshot": "08-dark-theme.png",
+    "observed_at": "2026-10-12T10:27:45.879Z",
+    "elements": [
+      {
+        "id": 1,
+        "role": "button",
+        "name": " Create new task",
+        "states": []
+      },
+      {
+        "id": 2,
+        "role": "button",
+        "name": "",
+        "states": []
+      },
+      {
+        "id": 3,
+        "role": "button",
+        "name": "Submit",
+        "states": [
+          "focused"
+        ]
+      },
+      {
+        "id": 4,
+        "role": "button",
+        "name": "Reset",
+        "states": []
+      },
+      {
+        "id": 5,
+        "role": "button",
+        "name": "",
+        "states": []
+      },
+      {
+        "id": 6,
+        "role": "button",
+        "name": "",
+        "states": []
+      }
+    ]
+  },
+  {
+    "id": "09-language-chinese",
+    "note": "Confirmed locale reload through actual dialog; dark theme persists",
+    "url": "http://127.0.0.1:18080/manage/setting/language",
+    "title": "语言设置",
+    "screenshot": "09-language-chinese.png",
+    "observed_at": "2026-10-12T10:28:19.215Z",
+    "elements": [
+      {
+        "id": 1,
+        "role": "button",
+        "name": " 新建任务",
+        "states": []
+      },
+      {
+        "id": 2,
+        "role": "button",
+        "name": "",
+        "states": []
+      },
+      {
+        "id": 3,
+        "role": "button",
+        "name": "提交",
+        "states": []
+      },
+      {
+        "id": 4,
+        "role": "button",
+        "name": "重置",
+        "states": []
+      },
+      {
+        "id": 5,
+        "role": "button",
+        "name": "",
+        "states": []
+      },
+      {
+        "id": 6,
+        "role": "button",
+        "name": "",
+        "states": []
+      }
+    ]
+  },
+  {
+    "id": "10-retired-purchase-route",
+    "note": "Direct /pro renders real 404, no vendor redirect",
+    "url": "http://127.0.0.1:18080/pro",
+    "title": "DooTask",
+    "screenshot": "10-retired-purchase-route.png",
+    "observed_at": "2026-10-12T10:28:19.512Z",
+    "elements": [
+      {
+        "id": 1,
+        "role": "button",
+        "name": "",
+        "states": []
+      },
+      {
+        "id": 2,
+        "role": "button",
+        "name": "",
+        "states": []
+      }
+    ]
+  },
+  {
+    "id": "11-retired-license-route",
+    "note": "Direct vendor license route renders real 404",
+    "url": "http://127.0.0.1:18080/manage/setting/license",
+    "title": "DooTask",
+    "screenshot": "11-retired-license-route.png",
+    "observed_at": "2026-10-12T10:28:19.700Z",
+    "elements": [
+      {
+        "id": 1,
+        "role": "button",
+        "name": "",
+        "states": []
+      },
+      {
+        "id": 2,
+        "role": "button",
+        "name": "",
+        "states": []
+      }
+    ]
+  },
+  {
+    "id": "12-file-upload",
+    "note": "Real nonempty file uploaded through unmodified input/multipart transport",
+    "url": "http://127.0.0.1:18080/manage/file",
+    "title": "文件",
+    "screenshot": "12-file-upload.png",
+    "observed_at": "2026-10-12T10:29:03.897Z",
+    "elements": [
+      {
+        "id": 1,
+        "role": "button",
+        "name": " 新建任务",
+        "states": []
+      },
+      {
+        "id": 2,
+        "role": "button",
+        "name": "",
+        "states": []
+      },
+      {
+        "id": 3,
+        "role": "button",
+        "name": "",
+        "states": []
+      },
+      {
+        "id": 4,
+        "role": "textbox",
+        "name": "搜索名称",
+        "states": []
+      },
+      {
+        "id": 5,
+        "role": "button",
+        "name": "",
+        "states": [
+          "focused"
+        ]
+      },
+      {
+        "id": 6,
+        "role": "button",
+        "name": "",
+        "states": []
+      },
+      {
+        "id": 7,
+        "role": "checkbox",
+        "name": "",
+        "states": [
+          "checked=false"
+        ]
+      },
+      {
+        "id": 8,
+        "role": "button",
+        "name": "",
+        "states": []
+      },
+      {
+        "id": 9,
+        "role": "button",
+        "name": "",
+        "states": []
+      }
+    ]
+  },
+  {
+    "id": "13-file-refresh",
+    "note": "Uploaded file survives direct route reload",
+    "url": "http://127.0.0.1:18080/manage/file",
+    "title": "文件",
+    "screenshot": "13-file-refresh.png",
+    "observed_at": "2026-10-12T10:29:04.215Z",
+    "elements": [
+      {
+        "id": 1,
+        "role": "button",
+        "name": " 新建任务",
+        "states": []
+      },
+      {
+        "id": 2,
+        "role": "button",
+        "name": "",
+        "states": []
+      },
+      {
+        "id": 3,
+        "role": "textbox",
+        "name": "搜索名称",
+        "states": []
+      },
+      {
+        "id": 4,
+        "role": "button",
+        "name": "",
+        "states": []
+      },
+      {
+        "id": 5,
+        "role": "button",
+        "name": "",
+        "states": []
+      },
+      {
+        "id": 6,
+        "role": "checkbox",
+        "name": "",
+        "states": [
+          "checked=false"
+        ]
+      },
+      {
+        "id": 7,
+        "role": "button",
+        "name": "",
+        "states": []
+      },
+      {
+        "id": 8,
+        "role": "button",
+        "name": "",
+        "states": []
+      }
+    ]
+  },
+  {
+    "id": "14-project-task",
+    "note": "Task add succeeds after backend media-type compatibility repair",
+    "url": "http://127.0.0.1:18080/manage/project/7",
+    "title": "📝 个人项目",
+    "screenshot": "14-project-task.png",
+    "observed_at": "2026-10-12T10:29:04.873Z",
+    "elements": [
+      {
+        "id": 1,
+        "role": "button",
+        "name": " 新建任务",
+        "states": []
+      },
+      {
+        "id": 2,
+        "role": "button",
+        "name": "",
+        "states": []
+      },
+      {
+        "id": 3,
+        "role": "button",
+        "name": "",
+        "states": []
+      },
+      {
+        "id": 4,
+        "role": "button",
+        "name": "",
+        "states": []
+      },
+      {
+        "id": 5,
+        "role": "button",
+        "name": "Default",
+        "states": []
+      },
+      {
+        "id": 6,
+        "role": "button",
+        "name": "重要且紧急",
+        "states": []
+      },
+      {
+        "id": 7,
+        "role": "button",
+        "name": "Default",
+        "states": []
+      },
+      {
+        "id": 8,
+        "role": "button",
+        "name": "重要且紧急",
+        "states": []
+      },
+      {
+        "id": 9,
+        "role": "button",
+        "name": "",
+        "states": []
+      },
+      {
+        "id": 10,
+        "role": "button",
+        "name": "",
+        "states": []
+      }
+    ]
+  },
+  {
+    "id": "15-task-refresh",
+    "note": "Persisted task survives reload from real API",
+    "url": "http://127.0.0.1:18080/manage/project/7",
+    "title": "📝 个人项目",
+    "screenshot": "15-task-refresh.png",
+    "observed_at": "2026-10-12T10:29:11.662Z",
+    "elements": [
+      {
+        "id": 1,
+        "role": "button",
+        "name": " 新建任务",
+        "states": []
+      },
+      {
+        "id": 2,
+        "role": "button",
+        "name": "",
+        "states": []
+      },
+      {
+        "id": 3,
+        "role": "button",
+        "name": "",
+        "states": []
+      },
+      {
+        "id": 4,
+        "role": "button",
+        "name": "",
+        "states": []
+      },
+      {
+        "id": 5,
+        "role": "button",
+        "name": "Default",
+        "states": []
+      },
+      {
+        "id": 6,
+        "role": "button",
+        "name": "重要且紧急",
+        "states": []
+      },
+      {
+        "id": 7,
+        "role": "button",
+        "name": "Default",
+        "states": []
+      },
+      {
+        "id": 8,
+        "role": "button",
+        "name": "重要且紧急",
+        "states": []
+      },
+      {
+        "id": 9,
+        "role": "button",
+        "name": "",
+        "states": []
+      },
+      {
+        "id": 10,
+        "role": "button",
+        "name": "",
+        "states": []
+      }
+    ]
+  },
+  {
+    "id": "16-task-chat",
+    "note": "Real task discussion message submitted from preserved Quill composer",
+    "url": "http://127.0.0.1:18080/manage/project/7",
+    "title": "📝 个人项目",
+    "screenshot": "16-task-chat.png",
+    "observed_at": "2026-10-12T10:29:24.131Z",
+    "elements": [
+      {
+        "id": 1,
+        "role": "button",
+        "name": " 新建任务",
+        "states": []
+      },
+      {
+        "id": 2,
+        "role": "button",
+        "name": "",
+        "states": []
+      },
+      {
+        "id": 3,
+        "role": "button",
+        "name": "",
+        "states": []
+      },
+      {
+        "id": 4,
+        "role": "button",
+        "name": "",
+        "states": []
+      },
+      {
+        "id": 5,
+        "role": "button",
+        "name": "Default",
+        "states": []
+      },
+      {
+        "id": 6,
+        "role": "button",
+        "name": "重要且紧急",
+        "states": []
+      },
+      {
+        "id": 7,
+        "role": "button",
+        "name": "Default",
+        "states": []
+      },
+      {
+        "id": 8,
+        "role": "button",
+        "name": "重要且紧急",
+        "states": []
+      },
+      {
+        "id": 9,
+        "role": "button",
+        "name": "",
+        "states": []
+      },
+      {
+        "id": 10,
+        "role": "button",
+        "name": "",
+        "states": []
+      },
+      {
+        "id": 11,
+        "role": "textbox",
+        "name": "",
+        "value": "Frontend production acceptance task",
+        "states": [
+          "multiline"
+        ]
+      },
+      {
+        "id": 12,
+        "role": "generic",
+        "name": "",
+        "value": "Frontend browser chat acceptance",
+        "states": [
+          "focused"
+        ]
+      },
+      {
+        "id": 13,
+        "role": "textbox",
+        "name": "",
+        "states": []
+      }
+    ]
+  },
+  {
+    "id": "17-chat-refresh",
+    "note": "Message reread from backend after complete document reload",
+    "url": "http://127.0.0.1:18080/manage/project/7",
+    "title": "📝 个人项目",
+    "screenshot": "17-chat-refresh.png",
+    "observed_at": "2026-10-12T10:29:32.339Z",
+    "elements": [
+      {
+        "id": 1,
+        "role": "button",
+        "name": " 新建任务",
+        "states": []
+      },
+      {
+        "id": 2,
+        "role": "button",
+        "name": "",
+        "states": []
+      },
+      {
+        "id": 3,
+        "role": "button",
+        "name": "",
+        "states": []
+      },
+      {
+        "id": 4,
+        "role": "button",
+        "name": "",
+        "states": []
+      },
+      {
+        "id": 5,
+        "role": "button",
+        "name": "Default",
+        "states": []
+      },
+      {
+        "id": 6,
+        "role": "button",
+        "name": "重要且紧急",
+        "states": []
+      },
+      {
+        "id": 7,
+        "role": "button",
+        "name": "Default",
+        "states": []
+      },
+      {
+        "id": 8,
+        "role": "button",
+        "name": "重要且紧急",
+        "states": []
+      },
+      {
+        "id": 9,
+        "role": "button",
+        "name": "",
+        "states": []
+      },
+      {
+        "id": 10,
+        "role": "button",
+        "name": "",
+        "states": []
+      },
+      {
+        "id": 11,
+        "role": "textbox",
+        "name": "",
+        "value": "Frontend production acceptance task",
+        "states": [
+          "multiline"
+        ]
+      },
+      {
+        "id": 12,
+        "role": "textbox",
+        "name": "",
+        "states": []
+      }
+    ]
+  },
+  {
+    "id": "18-messenger",
+    "note": "Actual standalone messenger layout loaded",
+    "url": "http://127.0.0.1:18080/manage/messenger",
+    "title": "消息",
+    "screenshot": "18-messenger.png",
+    "observed_at": "2026-10-12T10:29:32.552Z",
+    "elements": [
+      {
+        "id": 1,
+        "role": "button",
+        "name": " 新建任务",
+        "states": []
+      },
+      {
+        "id": 2,
+        "role": "button",
+        "name": "",
+        "states": []
+      },
+      {
+        "id": 3,
+        "role": "searchbox",
+        "name": "搜索",
+        "states": []
+      },
+      {
+        "id": 4,
+        "role": "button",
+        "name": "",
+        "states": []
+      },
+      {
+        "id": 5,
+        "role": "button",
+        "name": "",
+        "states": []
+      },
+      {
+        "id": 6,
+        "role": "button",
+        "name": "",
+        "states": []
+      }
+    ]
+  },
+  {
+    "id": "19-dynamic-text-preview",
+    "note": "Uploaded real content rendered; lazy Ace scripts 200 from retained nonmanifest resources",
+    "url": "http://127.0.0.1:18080/manage/file/0/6",
+    "title": "文件",
+    "screenshot": "19-dynamic-text-preview.png",
+    "observed_at": "2026-10-12T10:29:51.630Z",
+    "elements": [
+      {
+        "id": 1,
+        "role": "button",
+        "name": " 新建任务",
+        "states": []
+      },
+      {
+        "id": 2,
+        "role": "button",
+        "name": "",
+        "states": []
+      },
+      {
+        "id": 3,
+        "role": "textbox",
+        "name": "搜索名称",
+        "states": []
+      },
+      {
+        "id": 4,
+        "role": "button",
+        "name": "",
+        "states": []
+      },
+      {
+        "id": 5,
+        "role": "button",
+        "name": "",
+        "states": []
+      },
+      {
+        "id": 6,
+        "role": "checkbox",
+        "name": "",
+        "states": [
+          "checked=false"
+        ]
+      },
+      {
+        "id": 7,
+        "role": "button",
+        "name": "",
+        "states": []
+      },
+      {
+        "id": 8,
+        "role": "button",
+        "name": "",
+        "states": []
+      },
+      {
+        "id": 9,
+        "role": "button",
+        "name": "保存",
+        "states": [
+          "disabled"
+        ]
+      },
+      {
+        "id": 10,
+        "role": "textbox",
+        "name": "",
+        "states": [
+          "multiline"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "20-admin-system-menu",
+    "note": "Real administrator credentials login; preserved system menu excludes vendor license",
+    "url": "http://127.0.0.1:18080/manage/setting/system",
+    "title": "系统设置",
+    "screenshot": "20-admin-system-menu.png",
+    "observed_at": "2026-10-12T10:30:14.368Z",
+    "elements": [
+      {
+        "id": 1,
+        "role": "button",
+        "name": " 新建任务",
+        "states": []
+      },
+      {
+        "id": 2,
+        "role": "button",
+        "name": "",
+        "states": []
+      },
+      {
+        "id": 3,
+        "role": "textbox",
+        "name": "",
+        "states": []
+      },
+      {
+        "id": 4,
+        "role": "textbox",
+        "name": "欢迎您，{username}",
+        "states": []
+      },
+      {
+        "id": 5,
+        "role": "button",
+        "name": " 提交",
+        "states": []
+      },
+      {
+        "id": 6,
+        "role": "button",
+        "name": " 重置",
+        "states": []
+      },
+      {
+        "id": 7,
+        "role": "button",
+        "name": "",
+        "states": []
+      },
+      {
+        "id": 8,
+        "role": "button",
+        "name": "",
+        "states": []
+      }
+    ]
+  },
+  {
+    "id": "21-final-restart-task-chat",
+    "note": "Final frontend/public after owned app+MariaDB+Redis same-volume restart; new tab real password login and persisted task/chat reread",
+    "url": "http://127.0.0.1:18080/manage/project/7",
+    "title": "📝 个人项目",
+    "screenshot": "21-final-restart-task-chat.png",
+    "observed_at": "2026-10-12T10:32:50.760Z",
+    "elements": [
+      {
+        "id": 1,
+        "role": "button",
+        "name": " 新建任务",
+        "states": []
+      },
+      {
+        "id": 2,
+        "role": "button",
+        "name": "",
+        "states": []
+      },
+      {
+        "id": 3,
+        "role": "button",
+        "name": "",
+        "states": []
+      },
+      {
+        "id": 4,
+        "role": "button",
+        "name": "",
+        "states": []
+      },
+      {
+        "id": 5,
+        "role": "button",
+        "name": "Default",
+        "states": []
+      },
+      {
+        "id": 6,
+        "role": "button",
+        "name": "重要且紧急",
+        "states": []
+      },
+      {
+        "id": 7,
+        "role": "button",
+        "name": "Default",
+        "states": []
+      },
+      {
+        "id": 8,
+        "role": "button",
+        "name": "重要且紧急",
+        "states": []
+      },
+      {
+        "id": 9,
+        "role": "button",
+        "name": "",
+        "states": []
+      },
+      {
+        "id": 10,
+        "role": "button",
+        "name": "",
+        "states": []
+      },
+      {
+        "id": 11,
+        "role": "textbox",
+        "name": "",
+        "value": "Frontend production acceptance task",
+        "states": [
+          "multiline"
+        ]
+      },
+      {
+        "id": 12,
+        "role": "textbox",
+        "name": "",
+        "states": []
+      }
+    ]
+  },
+  {
+    "id": "22-final-restart-file",
+    "note": "Final root after services restart; file6 real stored bytes rendered through lazy Ace",
+    "url": "http://127.0.0.1:18080/manage/file/0/6",
+    "title": "文件",
+    "screenshot": "22-final-restart-file.png",
+    "observed_at": "2026-10-12T10:32:51.322Z",
+    "elements": [
+      {
+        "id": 1,
+        "role": "button",
+        "name": " 新建任务",
+        "states": []
+      },
+      {
+        "id": 2,
+        "role": "button",
+        "name": "",
+        "states": []
+      },
+      {
+        "id": 3,
+        "role": "textbox",
+        "name": "搜索名称",
+        "states": []
+      },
+      {
+        "id": 4,
+        "role": "button",
+        "name": "",
+        "states": []
+      },
+      {
+        "id": 5,
+        "role": "button",
+        "name": "",
+        "states": []
+      },
+      {
+        "id": 6,
+        "role": "checkbox",
+        "name": "",
+        "states": [
+          "checked=false"
+        ]
+      },
+      {
+        "id": 7,
+        "role": "button",
+        "name": "",
+        "states": []
+      },
+      {
+        "id": 8,
+        "role": "button",
+        "name": "",
+        "states": []
+      },
+      {
+        "id": 9,
+        "role": "button",
+        "name": "保存",
+        "states": [
+          "disabled"
+        ]
+      },
+      {
+        "id": 10,
+        "role": "textbox",
+        "name": "",
+        "states": [
+          "multiline"
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,17 @@
+{
+  "command": [
+    "wsl.exe",
+    "-d",
+    "Ubuntu-22.04",
+    "--",
+    "docker",
+    "ps",
+    "--format",
+    "{{.Names}}\t{{.Ports}}\t{{.Status}}"
+  ],
+  "started_at": "2026-10-12T10:32:52.043893+00:00",
+  "duration_seconds": 0.344,
+  "exit_code": 0,
+  "stdout": "dootask-fastapi-isolated-redis-1\t127.0.0.1:16379->6379/tcp\tUp About a minute (healthy)\ndootask-fastapi-isolated-mariadb-1\t127.0.0.1:13306->3306/tcp\tUp About a minute (healthy)\n1Panel-mysql-d471\t0.0.0.0:3306->3306/tcp, :::3306->3306/tcp, 33060/tcp\tUp 18 minutes\n1Panel-redis-DUZS\t0.0.0.0:6379->6379/tcp, :::6379->6379/tcp\tUp 18 minutes\nnanobot-api\t0.0.0.0:8900->8900/tcp, :::8900->8900/tcp, 18790/tcp\tUp 18 minutes\nnanobot-gateway\t0.0.0.0:18790->18790/tcp, :::18790->18790/tcp\tUp 18 minutes\nxget\t0.0.0.0:8080->8080/tcp, :::8080->8080/tcp\tUp 18 minutes\nnewapi\t0.0.0.0:3007->3000/tcp, [::]:3007->3000/tcp\tUp 18 minutes\n",
+  "stderr": ""
+}

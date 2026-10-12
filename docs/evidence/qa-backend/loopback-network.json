@@ -1,0 +1,13 @@
+{
+  "command": [
+    "powershell.exe",
+    "-NoProfile",
+    "-Command",
+    "Test-NetConnection 127.0.0.1 -Port 13306 | Select-Object ComputerName,RemotePort,TcpTestSucceeded | ConvertTo-Json"
+  ],
+  "started_at": "2026-10-12T10:13:35.227945+00:00",
+  "duration_seconds": 9.594,
+  "exit_code": 0,
+  "stdout": "WARNING: TCP connect to (127.0.0.1 : 13306) failed\n{\r\n    \"ComputerName\":  \"127.0.0.1\",\r\n    \"RemotePort\":  13306,\r\n    \"TcpTestSucceeded\":  false\r\n}\r\n",
+  "stderr": ""
+}

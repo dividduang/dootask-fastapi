@@ -1,12 +1,16 @@
-"""Real MariaDB identity checks. NOT_RUN during implementation.
+"""Real MariaDB identity checks on a newly initialized isolated database.
 
-Run on a newly initialized isolated database (workers stopped):
 DOOTASK_TEST_INDEPENDENT=1 python -m backend.tests_independent
+Optional DOOTASK_TEST_BASE_URL registers through the real running HTTP server;
+DOOTASK_TEST_ACCOUNTS_FILE retains synthetic credentials in a private ignored path.
 The concurrency check commits two genuinely registered accounts; never run on production.
 """
 import os
 import secrets
 from concurrent.futures import ThreadPoolExecutor
+import json
+from pathlib import Path
+from urllib.request import Request, urlopen
 from threading import Barrier
 from sqlalchemy import select, func
 from . import auth, db
@@ -45,21 +49,30 @@ def main():
             assert db.setting(c,'emailSetting','reg_verify')!='open', 'SMTP branch has separate live-provider acceptance'
             assert db.setting(c,'thirdAccessSetting','ldap_open')!='open'
         barrier=Barrier(2)
-        password='Independent-Password7'
+        password='Qa7!'+secrets.token_urlsafe(15)
         suffix=secrets.token_hex(4)
         def register(index):
             email=f'{suffix}{index}@example.test'
             barrier.wait(timeout=15)
-            with db.transaction() as c:
-                result=auth.login(c,context('register'),email,password,settings=settings,registration=True)
-                assert result['token']
-                return result
+            if base_url := os.environ.get('DOOTASK_TEST_BASE_URL'):
+                request=Request(base_url+'/api/users/login',data=json.dumps({'type':'reg','email':email,'password':password}).encode(),headers={'Content-Type':'application/json'})
+                with urlopen(request,timeout=30) as response:
+                    envelope=json.load(response)
+                assert envelope['ret']==1, envelope
+                result=envelope['data']
+            else:
+                with db.transaction() as c:
+                    result=auth.login(c,context('register'),email,password,settings=settings,registration=True)
+            assert result['token']
+            return result
         with ThreadPoolExecutor(max_workers=2) as pool:
             futures=[pool.submit(register,i) for i in range(2)]
             users=[f.result(timeout=45) for f in futures]
         assert sum('admin' in u['identity'] for u in users)==1
         admin=next(u for u in users if 'admin' in u['identity'])
         normal=next(u for u in users if 'admin' not in u['identity'])
+        if private_output := os.environ.get('DOOTASK_TEST_ACCOUNTS_FILE'):
+            Path(private_output).write_text(json.dumps({'admin':{**admin,'password':password},'member':{**normal,'password':password}}),encoding='utf-8')
         with engine.connect() as c:
             transaction=c.begin()
             try:
@@ -91,7 +104,6 @@ def main():
                 rejected(lambda: auth.authenticate(c,context('disabled',relogin['token'])))
                 rejected(lambda: auth.login(c,context('disabled-login'),normal['email'],password,settings=settings))
                 from dataclasses import replace
-                from pathlib import Path
                 from tempfile import TemporaryDirectory
                 from .domains import account_system_files
                 from .domains.dialog_core import ensure_user_dialog
@@ -114,14 +126,16 @@ def main():
                 transaction.rollback()
         # Admin password reset versus the user's own change: both now lock users before credentials.
         gate=Barrier(2)
+        reset_password='Qa7!'+secrets.token_urlsafe(15)
+        self_password='Qa7!'+secrets.token_urlsafe(15)
         def change(admin_reset):
             gate.wait(timeout=15)
             with db.transaction() as c:
                 if admin_reset:
-                    account_admin.operation(c,context('admin-reset',admin['token']),{'userid':normal['userid'],'password':'Reset-Password7'},settings)
+                    account_admin.operation(c,context('admin-reset',admin['token']),{'userid':normal['userid'],'password':reset_password},settings)
                 else:
                     try:
-                        auth.change_password(c,context('self-change',normal['token']),password,'Self-Password7',settings=settings)
+                        auth.change_password(c,context('self-change',normal['token']),password,self_password,settings=settings)
                     except ApiError:
                         pass  # A committed administrator reset legitimately revokes the old session.
         with ThreadPoolExecutor(max_workers=2) as pool:
@@ -129,7 +143,10 @@ def main():
             for future in futures:
                 future.result(timeout=45)
         with db.transaction() as c:
-            assert auth.login(c,context('reset-login'),normal['email'],'Reset-Password7',settings=settings)['userid']==normal['userid']
+            restored=auth.login(c,context('reset-login'),normal['email'],reset_password,settings=settings)
+            assert restored['userid']==normal['userid']
+        if private_output:
+            Path(private_output).write_text(json.dumps({'admin':{**admin,'password':password},'member':{**restored,'password':reset_password}}),encoding='utf-8')
         print('Independent MariaDB identity checks passed; two new local accounts retained in isolated database')
     finally:
         engine.dispose()

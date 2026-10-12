@@ -252,7 +252,11 @@ def properties(connection, context, node):
     if node['id']:
         t = db.tables['webdav_properties']
         for prop in connection.execute(select(t).where(t.c.path == 'file:' + str(node['id']), t.c.userid == context.actor.userid)).mappings():
-            values[prop['name']] = xml_parse(prop['value'].encode())
+            if prop['value_type'] == 2:
+                values[prop['name']] = xml_parse(prop['value'].encode())
+            else:
+                values[prop['name']] = ET.Element(prop['name'])
+                values[prop['name']].text = prop['value']
     return values
 
 
@@ -323,7 +327,8 @@ def proppatch(connection, context, path, node, body):
                 db.insert_row(connection, 'webdav_properties', userid=context.actor.userid, path=storage_path,
                     path_hash=hashlib.sha256(storage_path.encode()).hexdigest(), name=prop.tag,
                     property_hash=hashlib.sha256((storage_path + '\0' + prop.tag).encode()).hexdigest(),
-                    value=ET.tostring(prop, encoding='unicode'), value_type='xml')
+                    value=ET.tostring(prop, encoding='unicode') if len(prop) or prop.attrib else (prop.text or ''),
+                    value_type=2 if len(prop) or prop.attrib else 1)
     return xml_response(result)
 
 

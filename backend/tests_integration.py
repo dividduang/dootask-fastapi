@@ -47,6 +47,43 @@ def pure_checks():
         finally:
             await request.state.upload_form.close()
     asyncio.run(multipart())
+    async def legacy_json():
+        async def receive():
+            return {'type': 'http.request', 'body': b'{"name":"real task"}', 'more_body': False}
+        scope = {'type': 'http', 'method': 'POST', 'path': '/api/project/task/add',
+                 'query_string': b'', 'headers': [(b'content-type', b'OPTIONS, application/json')]}
+        assert await read_inputs(Request(scope, receive)) == {'name': 'real task'}
+        scope['headers'] = [(b'content-type', b'application/json, text/plain')]
+        try:
+            await read_inputs(Request(scope, receive))
+        except ApiError:
+            pass
+        else:
+            raise AssertionError('Ambiguous media types must be rejected')
+    asyncio.run(legacy_json())
+
+
+def scheduler_checks():
+    from concurrent.futures import ThreadPoolExecutor
+    from . import jobs
+    from .domains import accounts, dialog, assistant, search
+    settings = Settings.from_env()
+    if settings.db_database != 'dootask_fastapi' or settings.db_port != 13306:
+        raise RuntimeError('Only the dedicated isolated database is accepted')
+    engine = db.configure(settings)
+    try:
+        for module in (accounts, projects, dialog, assistant, files, reports, search):
+            module.register_jobs()
+        with ThreadPoolExecutor(max_workers=2) as pool:
+            for result in pool.map(lambda _: jobs.tick(), range(40)):
+                assert result is None
+        with db.transaction() as connection:
+            table = db.tables['backend_outbox']
+            for kind in jobs.SCHEDULES:
+                assert connection.execute(select(table.c.id).where(table.c.kind == kind).limit(1)).first()
+        print('Concurrent real scheduler transactions passed')
+    finally:
+        engine.dispose()
 
 
 def database_checks():

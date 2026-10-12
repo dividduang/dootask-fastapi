@@ -1,0 +1,14 @@
+{
+  "command": [
+    "curl.exe",
+    "--max-time",
+    "5",
+    "-v",
+    "http://127.0.0.1:18080/health"
+  ],
+  "started_at": "2026-10-12T10:20:40.394433+00:00",
+  "duration_seconds": 0.015,
+  "exit_code": 0,
+  "stdout": "ok",
+  "stderr": "*   Trying 127.0.0.1:18080...\r\n* Established connection to 127.0.0.1 (127.0.0.1 port 18080) from 127.0.0.1 port 12253 \r\n  % Total    % Received % Xferd  Average Speed  Time    Time    Time   Current\r\n                                 Dload  Upload  Total   Spent   Left   Speed\r\n\r  0      0   0      0   0      0      0      0                              0* using HTTP/1.x\r\n> GET /health HTTP/1.1\r\r\n> Host: 127.0.0.1:18080\r\r\n> User-Agent: curl/8.21.0\r\r\n> Accept: */*\r\r\n> \r\r\n* Request completely sent off\r\n< HTTP/1.1 200 OK\r\r\n< date: Mon, 12 Oct 2026 10:20:40 GMT\r\r\n< server: uvicorn\r\r\n< content-length: 2\r\r\n< content-type: text/plain; charset=utf-8\r\r\n< \r\r\n{ [2 bytes data]\r\n\r100      2 100      2   0      0    664      0                              0\r100      2 100      2   0      0    641      0                              0\r100      2 100      2   0      0    621      0                              0\r\n* Connection #0 to host 127.0.0.1:18080 left intact\r\n"
+}

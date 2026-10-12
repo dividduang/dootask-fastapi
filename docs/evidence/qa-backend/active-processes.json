@@ -1,0 +1,43 @@
+{
+  "observed_at": "2026-10-12T10:51:37.901662+00:00",
+  "http": {
+    "pid": 17896,
+    "command": [
+      "D:\\rpa\\202610\\dootask-fastapi\\.venv\\Scripts\\python.exe",
+      "-m",
+      "uvicorn",
+      "backend.main:create_app",
+      "--factory",
+      "--host",
+      "127.0.0.1",
+      "--port",
+      "18080",
+      "--no-proxy-headers",
+      "--no-access-log"
+    ],
+    "running": true
+  },
+  "https": {
+    "pid": 7988,
+    "command": [
+      "D:\\rpa\\202610\\dootask-fastapi\\.venv\\Scripts\\python.exe",
+      "-m",
+      "uvicorn",
+      "backend.main:create_app",
+      "--factory",
+      "--host",
+      "127.0.0.1",
+      "--port",
+      "18443",
+      "--no-proxy-headers",
+      "--no-access-log",
+      "--ssl-keyfile",
+      "D:\\rpa\\202610\\dootask-fastapi\\.runtime\\protocol-key.pem",
+      "--ssl-certfile",
+      "D:\\rpa\\202610\\dootask-fastapi\\.runtime\\protocol-cert.pem"
+    ],
+    "running": true
+  },
+  "frontend_root": "D:\\rpa\\202610\\dootask-fastapi\\frontend",
+  "extra_crash_worker": "18081 terminated by its own regression test"
+}

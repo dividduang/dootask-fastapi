@@ -1,0 +1,19 @@
+{
+  "command": [
+    "wsl.exe",
+    "-d",
+    "Ubuntu-22.04",
+    "--",
+    "docker",
+    "ps",
+    "--filter",
+    "label=com.docker.compose.project=dootask-fastapi-isolated",
+    "--format",
+    "{{.Names}}\t{{.Ports}}\t{{.Status}}"
+  ],
+  "started_at": "2026-10-12T10:13:27.663225+00:00",
+  "duration_seconds": 7.453,
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": ""
+}

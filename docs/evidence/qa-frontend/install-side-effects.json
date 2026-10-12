@@ -1,0 +1,48 @@
+{
+  "native_files": [],
+  "installed_lifecycle_script_declarations": [
+    {
+      "package": "node_modules/canvg/node_modules/core-js",
+      "version": "3.50.0",
+      "scripts": {
+        "postinstall": "node -e \"try{require('./postinstall')}catch(e){}\""
+      }
+    },
+    {
+      "package": "node_modules/core-js",
+      "version": "2.6.12",
+      "scripts": {
+        "postinstall": "node -e \"try{require('./postinstall')}catch(e){}\""
+      }
+    },
+    {
+      "package": "node_modules/esbuild",
+      "version": "0.14.54",
+      "scripts": {
+        "postinstall": "node install.js"
+      }
+    },
+    {
+      "package": "node_modules/jspdf-qz/node_modules/core-js",
+      "version": "3.50.0",
+      "scripts": {
+        "postinstall": "node -e \"try{require('./postinstall')}catch(e){}\""
+      }
+    },
+    {
+      "package": "node_modules/jspdf/node_modules/core-js",
+      "version": "3.50.0",
+      "scripts": {
+        "postinstall": "node -e \"try{require('./postinstall')}catch(e){}\""
+      }
+    }
+  ],
+  "note": "npm ci ran real lifecycle scripts (not --ignore-scripts). These declarations inventory possible install hooks; declaration alone is not claim each ran. Captured npm-ci.log and resulting native binary SHA256 bind the install.",
+  "installed_executables": [
+    {
+      "path": "node_modules/esbuild-windows-64/esbuild.exe",
+      "bytes": 8511488,
+      "sha256": "0735a0ae6ea7c5a1523c2291775d30154e5903cbf0b5d0c1eeefb03a551ba7e9"
+    }
+  ]
+}

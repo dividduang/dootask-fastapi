@@ -1,0 +1,7 @@
+{
+  "projects": true,
+  "project_tasks": true,
+  "files": true,
+  "file_bytes": true,
+  "system_bots": true
+}

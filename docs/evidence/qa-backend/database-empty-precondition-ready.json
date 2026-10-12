@@ -1,0 +1,12 @@
+{
+  "command": [
+    "D:\\rpa\\202610\\dootask-fastapi\\.venv\\Scripts\\python.exe",
+    "-c",
+    "import os,pymysql; c=pymysql.connect(host=os.environ['DB_HOST'],port=int(os.environ['DB_PORT']),user=os.environ['DB_USERNAME'],password=os.environ['DB_PASSWORD'],database=os.environ['DB_DATABASE']); q=c.cursor(); q.execute('SELECT DATABASE(),COUNT(*) FROM information_schema.tables WHERE table_schema=DATABASE()'); print(q.fetchall()); c.close()"
+  ],
+  "started_at": "2026-10-12T10:12:30.362252+00:00",
+  "duration_seconds": 0.11,
+  "exit_code": 0,
+  "stdout": "(('dootask_fastapi', 0),)\r\n",
+  "stderr": ""
+}

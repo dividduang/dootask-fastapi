@@ -84,9 +84,18 @@ def input_pairs(pairs):
     return result
 
 
+def request_media(request):
+    # Original Axios clients can combine a method token with the actual media type.
+    media = {part.split(';', 1)[0].strip().lower()
+             for part in request.headers.get('content-type', '').split(',') if '/' in part}
+    if len(media) > 1:
+        raise ApiError('请求内容格式错误')
+    return next(iter(media), '')
+
+
 async def read_inputs(request):
     data = input_pairs(request.query_params.multi_items())
-    media = request.headers.get("content-type", "").split(";", 1)[0].strip().lower()
+    media = request_media(request)
     if media == "multipart/form-data":
         # Starlette spools files to disk; never copy a multi-GB upload into RAM.
         total = 0
@@ -252,11 +261,16 @@ def create_app(settings=None):
                   lifespan=lifespan, docs_url=None, redoc_url=None, openapi_url=None)
     app.state.settings = settings
 
+    @app.exception_handler(ApiError)
+    async def business_error(request: Request, exc: ApiError):
+        return JSONResponse(failure(exc), status_code=401 if exc.ret == -1 else 400,
+                            headers={"Cache-Control": "no-store"})
+
     @app.api_route("/api/{path:path}", methods=METHODS, include_in_schema=False)
     async def api(request: Request, path: str):
         handler = ALLOWLIST.get(path.lower()) or DOMAIN_ROUTES.get(path.lower())
         if not handler:
-            if request.headers.get("content-type") == "application/json":
+            if request_media(request) == "application/json":
                 return JSONResponse(failure(ApiError("接口不存在")))
             return Response(status_code=404, headers={"X-Error-Message-Base64": base64.b64encode("接口不存在".encode()).decode()})
         ctx = RequestContext(request_id=secrets.token_hex(16), language=request.headers.get("language", settings.locale),
@@ -283,6 +297,7 @@ def create_app(settings=None):
     install_avatar(app, settings)
     realtime.install_realtime(app, settings)
     assistant.install_sse(app, settings)
+    apps.install_inventory(app, settings)
     install_dav(app, settings)
     index.install_index(app, settings)
     install_host(app, settings)

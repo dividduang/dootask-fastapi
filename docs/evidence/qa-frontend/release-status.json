@@ -1,0 +1,35 @@
+{
+  "status": "PRODUCTION_ARTIFACT_PROMOTED_CORE_UI_EXERCISED_WITH_OPEN_GATES",
+  "built": true,
+  "promoted": true,
+  "finalRoot": "frontend",
+  "manifestSha256": "5d1ca7bc51802dd98dc991b7c2cdd76456a2dbbf632d93f275a7caf7a375568d",
+  "entry": "js/build/app.95b8d539.js",
+  "sourceExceptionFiles": 10,
+  "packageJsonUnchanged": true,
+  "upstreamLockAbsent": true,
+  "webBrowser": "Chrome/154.0.8037.98",
+  "syntheticObjects": {
+    "userid": 7,
+    "projectId": 7,
+    "taskId": 5,
+    "fileId": 6
+  },
+  "openGates": [
+    "Observed task-list cache loss unresolved for original occurrence; source non-atomic cursor/cache 598ms window measured, controlled boundary recovered via new project cursor; clean context persistence refresh passed. No unauthorized cache fix.",
+    "dependency runtime-high and separately retained dynamic bundle security review",
+    "Electron/mobile native devices not run",
+    "full all-route/all-business parity not claimed"
+  ],
+  "evidence": "2026101220 report, browser-cases.json, final-browser-trace.json, source/public reconciliation, dependency-security-triage.json",
+  "cleanContextRefresh": true,
+  "cacheBoundaryTrace": "cache-boundary-trace.json",
+  "localInstalledRegistry": {
+    "status": "PASS",
+    "evidence": "app-registry-regression.json",
+    "requests": 128,
+    "httpErrors": 0,
+    "pageErrors": 0,
+    "note": "Current actual local installed registry empty; external installer/hooks not certified"
+  }
+}

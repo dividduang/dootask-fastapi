@@ -1,0 +1,16 @@
+{
+  "command": [
+    "powershell.exe",
+    "-NoProfile",
+    "-ExecutionPolicy",
+    "Bypass",
+    "-File",
+    "run.ps1",
+    "runtime-up"
+  ],
+  "started_at": "2026-10-12T10:11:35.214581+00:00",
+  "duration_seconds": 6.313,
+  "exit_code": 1,
+  "stdout": "",
+  "stderr": "wslpath: D:rpa202610dootask-fastapi\nYou cannot call a method on a null-valued expression.\r\nAt D:\\rpa\\202610\\dootask-fastapi\\run.ps1:14 char:5\r\n+     $LinuxRoot = (& wsl.exe -d Ubuntu-22.04 -- wslpath -a $Root).Trim ...\r\n+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\r\n    + CategoryInfo          : InvalidOperation: (:) [], ParentContainsErrorRecordException\r\n    + FullyQualifiedErrorId : InvokeMethodOnNull\r\n \r\n"
+}

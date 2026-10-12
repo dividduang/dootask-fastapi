@@ -34,21 +34,27 @@ def require_installed(settings, appid):
     return config
 
 
+def package_config(settings, appid, config):
+    version = str(config.get("install_version", ""))
+    if version and not re.fullmatch(r"[\w.+-]+", version):
+        raise ApiError("应用版本配置错误")
+    package = settings.appstore_root / "apps" / appid
+    paths = [package / version / "config.yml", package / "config.yml"] if version else [package / "config.yml"]
+    for path in paths:
+        if path.is_file():
+            value = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
+            if not isinstance(value, dict):
+                raise ApiError("应用配置格式错误")
+            return value
+    return {}
+
+
 def menu_config(connection, settings, appid, menu_key=""):
     config = installed_config(settings, appid)
     if config:
-        version = str(config.get("install_version", ""))
-        if version and not re.fullmatch(r"[\w.+-]+", version):
-            raise ApiError("应用版本配置错误")
-        package = settings.appstore_root / "apps" / appid
-        paths = [package / version / "config.yml", package / "config.yml"] if version else [package / "config.yml"]
-        package_config = {}
-        for path in paths:
-            if path.is_file():
-                package_config = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
-                break
-        menus = package_config.get("menu_items") or [{"key": "", "visible_to": "all"}]
-        default = package_config.get("visible_to", "all")
+        package = package_config(settings, appid, config)
+        menus = package.get("menu_items") or [{"key": "", "visible_to": "all"}]
+        default = package.get("visible_to", "all")
     else:
         custom = db.setting(connection, "microapp_menu") or []
         app = next((a for a in custom if isinstance(a, dict) and str(a.get("id")) == appid), None)
@@ -128,6 +134,48 @@ def functions(connection, context, data, settings):
     params = (config or {}).get("params", {})
     return {"installed": config is not None, "functions": {name: config is not None and on(params.get(name.upper(), True))
         for name in ("report", "calendar", "favorite", "recent", "checkin")}}
+
+
+def installed_inventory(connection, context, settings):
+    """Read the same local installation registry used for plugin authorization."""
+    user = auth.authenticate(connection, context)
+    directory = settings.appstore_root / 'config'
+    result = []
+    if directory.is_dir():
+        from .system import normalize_apps
+        for path in sorted(directory.iterdir()):
+            if not path.is_dir() or not re.fullmatch(r'[a-zA-Z0-9_-]+', path.name):
+                continue
+            config = installed_config(settings, path.name)
+            if config is None:
+                continue
+            package = package_config(settings, path.name, config)
+            default = package.get('visible_to', 'all')
+            if not _visible(user.user, {'visible_to': default}):
+                continue
+            menus = [menu for menu in package.get('menu_items', [])
+                     if isinstance(menu, dict) and _visible(user.user, {'visible_to': menu.get('visible_to', default)})]
+            # Only public menu fields pass through; install parameters/app_secret never do.
+            item = {'id': path.name, 'name': package.get('name', path.name),
+                    'version': str(config.get('install_version', '')), 'menu_items': menus}
+            normalized = normalize_apps([item])
+            item['menu_items'] = normalized[0]['menu_items'] if normalized else []
+            result.append(item)
+    return {'code': 200, 'data': result}
+
+
+def install_inventory(app, settings):
+    from fastapi import Request
+    from starlette.concurrency import run_in_threadpool
+    from ..context import RequestContext
+    async def endpoint(request: Request):
+        context = RequestContext(request_id='installed-apps', token=request.headers.get('dootask-token') or request.headers.get('token', ''),
+                                 ip=request.client.host if request.client else '', base_url=str(request.base_url))
+        def load():
+            with db.transaction() as connection:
+                return installed_inventory(connection, context, settings)
+        return await run_in_threadpool(load)
+    app.add_api_route('/appstore/api/v1/internal/installed', endpoint, methods=['GET'])
 
 
 def dispatch_user_hook(connection, user, action, event_type, changed_fields, settings):

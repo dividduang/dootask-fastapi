@@ -1,0 +1,18 @@
+{
+  "command": [
+    "wsl.exe",
+    "-d",
+    "Ubuntu-22.04",
+    "--",
+    "docker",
+    "ps",
+    "-a",
+    "--format",
+    "{{.Names}}\t{{.Ports}}\t{{.Status}}"
+  ],
+  "started_at": "2026-10-12T10:10:47.254537+00:00",
+  "duration_seconds": 7.063,
+  "exit_code": 0,
+  "stdout": "khan\t0.0.0.0:8073->8073/tcp, :::8073->8073/tcp\tExited (255) 3 months ago\n1Panel-mysql-d471\t0.0.0.0:3306->3306/tcp, :::3306->3306/tcp, 33060/tcp\tUp 1 second\n1Panel-redis-DUZS\t0.0.0.0:6379->6379/tcp, :::6379->6379/tcp\tUp 1 second\nnanobot-api\t0.0.0.0:8900->8900/tcp, :::8900->8900/tcp, 18790/tcp\tUp 1 second\nnanobot-gateway\t0.0.0.0:18790->18790/tcp, :::18790->18790/tcp\tUp 1 second\nxget\t0.0.0.0:8080->8080/tcp, :::8080->8080/tcp\tUp 1 second\nrustfs_container\t0.0.0.0:9000-9001->9000-9001/tcp, :::9000-9001->9000-9001/tcp\tExited (255) 6 months ago\nInStock\t0.0.0.0:9988->9988/tcp, :::9988->9988/tcp\tExited (255) 11 months ago\nInStockClickHouse\t\tExited (0) 11 months ago\nInStockDbService\t3306/tcp\tExited (255) 11 months ago\nnewapi\t0.0.0.0:3007->3000/tcp, [::]:3007->3000/tcp\tUp 1 second\n",
+  "stderr": ""
+}

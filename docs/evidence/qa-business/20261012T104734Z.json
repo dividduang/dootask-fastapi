@@ -1,0 +1,334 @@
+{
+  "run": "20261012T104734Z",
+  "command": [
+    "D:/rpa/202610/dootask-fastapi/tests/business_acceptance.py",
+    "--only",
+    "organization_resume"
+  ],
+  "results": [
+    {
+      "id": "organization_resume",
+      "status": "PASS",
+      "elapsed_seconds": 12.765999999999622
+    }
+  ],
+  "events": [
+    {
+      "utc": "2026-10-12T10:47:34.254900+00:00",
+      "case": "",
+      "kind": "provenance",
+      "command": [
+        "D:/rpa/202610/dootask-fastapi/tests/business_acceptance.py",
+        "--only",
+        "organization_resume"
+      ],
+      "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+      "source_hashes": {
+        "D:\\rpa\\202610\\dootask-fastapi\\backend\\domains\\accounts.py": "58e4b10ae9a731040af28e9e80cc6fd1eeeed99e665a8a089949930b6cf08168",
+        "D:\\rpa\\202610\\dootask-fastapi\\backend\\domains\\account_admin.py": "f80a18b72782d9932d050be84141c8ccc76459e34c8df9e5a728e8db29cd4ac7",
+        "D:\\rpa\\202610\\dootask-fastapi\\backend\\domains\\account_bot_jobs.py": "3e1c9f3dd47586b7198a53bdc4d56bb50af40859e4e933b9786b2eaf53f42110",
+        "D:\\rpa\\202610\\dootask-fastapi\\backend\\domains\\account_checkin.py": "b7ff9862a00fb31121ef4bc9d751364e908691e39b4f9135e3fc2dbbd74fdb17",
+        "D:\\rpa\\202610\\dootask-fastapi\\backend\\domains\\account_common.py": "708116b019fcf1de21b5424983b5554dbdf611a6e17a52911fa09e18afcdce51",
+        "D:\\rpa\\202610\\dootask-fastapi\\backend\\domains\\account_history.py": "42ad0660ae159d30935af9472b05a4bd9e419cfb720a30b32912fa51704fd964",
+        "D:\\rpa\\202610\\dootask-fastapi\\backend\\domains\\account_import.py": "699e06f15b75b352ff192c57bff57ae5c28a149fff7c5c2f89113d941e8eb4be",
+        "D:\\rpa\\202610\\dootask-fastapi\\backend\\domains\\account_integrations.py": "ab4570f9512d9c74ca060deebf91be593ee9248e7680a46b2affbed2e78cd9f9",
+        "D:\\rpa\\202610\\dootask-fastapi\\backend\\domains\\account_jobs.py": "c56407f1c5e9c6ba9bca80decbb1d8ce4c1e3bbdd34d1531a20b4d266b19ddcb",
+        "D:\\rpa\\202610\\dootask-fastapi\\backend\\domains\\account_meetings.py": "f0eee9a79c73b6f6efd8c268595bf3da310a63390d1a152e730542321fe9ae8d",
+        "D:\\rpa\\202610\\dootask-fastapi\\backend\\domains\\account_misc.py": "06fd07c11a7483c5198512556739c9c63b969b5c4f95fe3e4922d0e87787fc1e",
+        "D:\\rpa\\202610\\dootask-fastapi\\backend\\domains\\account_system_files.py": "e40cf01bd699b56c657a4497c5c0cd22978dce0b4a7b25f6814bde5426a1bdae",
+        "D:\\rpa\\202610\\dootask-fastapi\\backend\\domains\\apps.py": "c9f79234b88f13ec203e5dd95e71a5a623bf3f97f62b462feff9e28e36c73e3e",
+        "D:\\rpa\\202610\\dootask-fastapi\\backend\\domains\\assistant.py": "f023523964df5caff74cd69a093ee8e5df464a8c9629e064cf2a32c80efe8e88",
+        "D:\\rpa\\202610\\dootask-fastapi\\backend\\domains\\checkin.py": "fe4546af256328c0887dec59c968500978347c432c2a37cf7ea7c9ed20224a05",
+        "D:\\rpa\\202610\\dootask-fastapi\\backend\\domains\\complaints.py": "d16a279b1c8e265b4cd1666175760e6a2d94841c1a8a6fb7f02ad2acd2f427c7",
+        "D:\\rpa\\202610\\dootask-fastapi\\backend\\domains\\dashboard.py": "0891486035410dbfa225aaba11724a9a87f69c9edb0d24bcc3e65492062eb59e",
+        "D:\\rpa\\202610\\dootask-fastapi\\backend\\domains\\dialog.py": "c796d05a1712804f0dcdff3600c7df304dbec6bdf42546dbeb30705a9b0e8917",
+        "D:\\rpa\\202610\\dootask-fastapi\\backend\\domains\\dialog_core.py": "2b5d878e74a71d1ecf8718f69ffddf2fdbce5e92ba8b341310152fb9ea225470",
+        "D:\\rpa\\202610\\dootask-fastapi\\backend\\domains\\filedav.py": "3e91b73db69f5a5561e74315a61302ba2b58eee8ac96eb24aa74d0c7e19b3bc8",
+        "D:\\rpa\\202610\\dootask-fastapi\\backend\\domains\\files.py": "433354fe301457dd9bdacfa09c4908a20d75ab1c354b313a35097bb463a1e1d2",
+        "D:\\rpa\\202610\\dootask-fastapi\\backend\\domains\\files_collaboration.py": "856b71f0178b478ffdf776aad63e413fb183e0560032c96776e534404c688a93",
+        "D:\\rpa\\202610\\dootask-fastapi\\backend\\domains\\files_config.py": "4e7fcb1b93d1349a27f958d577eefca8eb7af07765ef7b1a9cb6ef7a3a36a3d3",
+        "D:\\rpa\\202610\\dootask-fastapi\\backend\\domains\\files_external.py": "0861e5c7aa2a40b8b2a98f2b4e9d27666c432193df1ea93e8dddb440ab8d56b5",
+        "D:\\rpa\\202610\\dootask-fastapi\\backend\\domains\\files_jobs.py": "8ddbd2e7d5f2835c8c6ad8998854f3e6a0e7243014816d6f320028e100c4c0f4",
+        "D:\\rpa\\202610\\dootask-fastapi\\backend\\domains\\files_locks.py": "3f8a3e043a37c7b6cad29ea59fd5f70873efd204e268c31ee6ff35d518ede1c2",
+        "D:\\rpa\\202610\\dootask-fastapi\\backend\\domains\\files_support.py": "7421f0bac8e71ad73c9e08819bc76954ec85e160e048418435151cca3890ee92",
+        "D:\\rpa\\202610\\dootask-fastapi\\backend\\domains\\index.py": "0314d5cb6b38017d9f9af083b6c1802cf80869c6ec9fbcd9b847a73992320e17",
+        "D:\\rpa\\202610\\dootask-fastapi\\backend\\domains\\messaging_ai.py": "b2d55258bb3e05de0d3c24d36d3acbdcebea3af76458d87eb0c02f7172837289",
+        "D:\\rpa\\202610\\dootask-fastapi\\backend\\domains\\messaging_jobs.py": "67b658922f03dd9f3a8aee16615efa68964218ef415ead7b73b0ecdf8c1880ab",
+        "D:\\rpa\\202610\\dootask-fastapi\\backend\\domains\\messaging_markup.py": "cc6d9b1bc94005b8d17d70061b38522778ba0c44090309d188042b57bd5cfccd",
+        "D:\\rpa\\202610\\dootask-fastapi\\backend\\domains\\messaging_push.py": "f2303cb82d70abc5d721ce7210d127b16080d84c4f2c7f767de31b5752793484",
+        "D:\\rpa\\202610\\dootask-fastapi\\backend\\domains\\projects.py": "6ce1bd31f51f4cbacab9155e84da24f8e7f57a278a5b63068ede291982a5df17",
+        "D:\\rpa\\202610\\dootask-fastapi\\backend\\domains\\project_ai.py": "c4fb845be28b7a23472d4c61f08ba4a06bfe4f16481cb326f821ab877fd685b3",
+        "D:\\rpa\\202610\\dootask-fastapi\\backend\\domains\\project_configuration.py": "b115683654123f98dfb6b0cad18a6e4a1a5a60cda6ed490904f4a07fcd3730fa",
+        "D:\\rpa\\202610\\dootask-fastapi\\backend\\domains\\project_core.py": "bad29f3bde7214e3cdfbf381c9fae6414d139c340de538db46866c47d4b81a15",
+        "D:\\rpa\\202610\\dootask-fastapi\\backend\\domains\\project_jobs.py": "967f61b7b658062a49b149b34e9cfee0461c4aaa99aec6aa5d41f5ab12158e71",
+        "D:\\rpa\\202610\\dootask-fastapi\\backend\\domains\\project_queries.py": "c09420293902f638c5a8e3b9b9e24069cd9d8bfc4220caa7841d51a83da751c9",
+        "D:\\rpa\\202610\\dootask-fastapi\\backend\\domains\\project_tasks.py": "8922ee1e2e992950c7d62baa47112b56a5691f9e8a4fa23d7e87b6853cc14aa8",
+        "D:\\rpa\\202610\\dootask-fastapi\\backend\\domains\\reports.py": "9e0248304381ed93d6b8bcdf9722a32667e736839cf8f67b5beb0d81c9f912c8",
+        "D:\\rpa\\202610\\dootask-fastapi\\backend\\domains\\search.py": "6714c3d7ef923237e22eb04670800c61ed778310ae72e9875d938335427c425a",
+        "D:\\rpa\\202610\\dootask-fastapi\\backend\\domains\\system.py": "5e285ff1eddb3c8ae047f40229190999d62806db53ffabc4f91f29578b662647",
+        "D:\\rpa\\202610\\dootask-fastapi\\backend\\domains\\upload.py": "d7265fa5075a7c6c0d3ff0c20de45b393bdd71dc59d523043e50857788224824",
+        "D:\\rpa\\202610\\dootask-fastapi\\backend\\main.py": "7ecad337e6b006e4a6f4ecd922162422cc36627faf80794275c37f6cfd4d7613",
+        "D:\\rpa\\202610\\dootask-fastapi\\tests\\business_acceptance.py": "5ddbe02e6c12b913fcf716ca1511cfd497beddffa9c9ffe07df3cb59e05d1076",
+        "D:\\rpa\\202610\\dootask-fastapi\\tests\\protocol_acceptance.py": "4127321465f72b910f487da14cf3a2ae814e2a0495b767ae27f23ae070cfeaae",
+        "D:\\rpa\\202610\\dootask\\app\\Http\\Controllers\\Api\\ProjectController.php": "a3d03cabc38d9e2a2b414340111770c243bfa151486706681666f0e1ce451e92",
+        "D:\\rpa\\202610\\dootask\\app\\Http\\Controllers\\Api\\ProjectTaskHandoffController.php": "424448f595e4c86dbf3192a310d4bc558a9f6bc1498ee505593836a100c11199",
+        "D:\\rpa\\202610\\dootask\\app\\Http\\Controllers\\Api\\UsersController.php": "d3480aae25371d1e5f2d9a32a93e8a13519e0355604ab13a745fe1cfb062fd3f",
+        "D:\\rpa\\202610\\dootask\\app\\Http\\Controllers\\Api\\ReportController.php": "f53ecef337e44a5bff4ae6b62aed39a2d1fcb963f4546de03fe39141a9292ddf",
+        "D:\\rpa\\202610\\dootask\\app\\Http\\Controllers\\Api\\FileController.php": "e52f7fb5ddf66e97f6257cbe3742dd0f15e771d8aed6de95d669250d59bef884",
+        "D:\\rpa\\202610\\dootask\\app\\Http\\Controllers\\Api\\ComplaintController.php": "2bf37082f713d07249fbcb634ce3076fe42b277491eb91340845a1132d18dcbf",
+        "D:\\rpa\\202610\\dootask\\app\\Http\\Controllers\\Api\\DashboardController.php": "dd456dd52368d429407063ef04d73f8068429bf961d4cb8843e7e97d29bbfa9c",
+        "D:\\rpa\\202610\\dootask\\app\\Http\\Controllers\\Api\\SearchController.php": "5d9ef2ecde6ce0c1febe9fd68cd79f59a9638c77fda266fc2f6aa1eddea83030"
+      },
+      "constraints": "HTTP business writes only; SQL read-only isolated 13306; no browser, no external mocks"
+    },
+    {
+      "utc": "2026-10-12T10:47:34.311382+00:00",
+      "case": "organization_resume",
+      "kind": "http",
+      "method": "POST",
+      "url": "http://127.0.0.1:18080/api/users/login/codejson",
+      "request_json": {},
+      "request_headers": {
+        "User-Agent": "DooTask-Protocol-Acceptance/1",
+        "version": "1.9.0",
+        "Content-Type": "application/json"
+      },
+      "request_bytes": 2,
+      "request_sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "status": 200,
+      "response_headers": {
+        "Date": "Mon, 12 Oct 2026 10:47:33 GMT",
+        "Server": "uvicorn",
+        "Cache-Control": "no-store",
+        "X-Request-Id": "e58569dd334ec1de39f8b8be1ef13b04",
+        "Content-Length": "4546",
+        "Content-Type": "application/json",
+        "Connection": "close"
+      },
+      "response": {
+        "ret": 1,
+        "msg": "success",
+        "data": {
+          "sensitive": false,
+          "key": "[REDACTED]",
+          "img": "data:image/png;base64,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"
+        }
+      },
+      "response_bytes": 4546,
+      "response_sha256": "f1a3ed55be17d3c68d91e2e96b477847ee39280c9a33d677dedb85a0e0dc992f",
+      "elapsed_seconds": 0.06299999999828287,
+      "role": "anonymous"
+    },
+    {
+      "utc": "2026-10-12T10:47:46.821271+00:00",
+      "case": "organization_resume",
+      "kind": "assertion",
+      "assertion": "visible CAPTCHA answer supplied within challenge expiry",
+      "passed": true
+    },
+    {
+      "utc": "2026-10-12T10:47:46.934054+00:00",
+      "case": "organization_resume",
+      "kind": "http",
+      "method": "POST",
+      "url": "http://127.0.0.1:18080/api/users/login",
+      "request_json": {
+        "email": "bq86dd382881b716@example.test",
+        "password": "[REDACTED]",
+        "code_key": "[REDACTED]",
+        "code": "[REDACTED]"
+      },
+      "request_headers": {
+        "User-Agent": "DooTask-Protocol-Acceptance/1",
+        "version": "1.9.0",
+        "Content-Type": "application/json"
+      },
+      "request_bytes": 177,
+      "request_sha256": "98cabc461b1dbff1a6373603401ef94d231c7e0944c04932b3323307c453b793",
+      "status": 200,
+      "response_headers": {
+        "Date": "Mon, 12 Oct 2026 10:47:46 GMT",
+        "Server": "uvicorn",
+        "Cache-Control": "no-store",
+        "X-Request-Id": "24e828c505d801985b88ebdbef7a9860",
+        "Content-Length": "731",
+        "Content-Type": "application/json",
+        "Connection": "close"
+      },
+      "response": {
+        "ret": 1,
+        "msg": "登录成功",
+        "data": {
+          "userid": 46,
+          "identity": [],
+          "department": [],
+          "az": "B",
+          "pinyin": "bq86dd382881b716",
+          "email": "bq86dd382881b716@example.test",
+          "tel": "",
+          "nickname": "bq86dd382881b716",
+          "profession": "",
+          "birthday": null,
+          "address": null,
+          "introduction": null,
+          "userimg": "http://127.0.0.1:18080/avatar/bq86dd382881b716.png",
+          "changepass": 0,
+          "login_num": 4,
+          "last_ip": "127.0.0.1",
+          "last_at": "2026-10-12 10:47:46",
+          "line_ip": "127.0.0.1",
+          "line_at": "2026-10-12 10:47:46",
+          "task_dialog_id": 0,
+          "created_ip": "127.0.0.1",
+          "disable_at": null,
+          "email_verity": 0,
+          "bot": 0,
+          "lang": "zh",
+          "created_at": "2026-10-12 10:46:43",
+          "token": "[REDACTED]"
+        }
+      },
+      "response_bytes": 731,
+      "response_sha256": "52c7a68242100e1373298ce8a21e8012630988c9e1bb8eec6a08c5c8ae07e8d0",
+      "elapsed_seconds": 0.10900000000037835,
+      "role": "anonymous"
+    },
+    {
+      "utc": "2026-10-12T10:47:46.964729+00:00",
+      "case": "organization_resume",
+      "kind": "http",
+      "method": "POST",
+      "url": "http://127.0.0.1:18080/api/users/info",
+      "request_json": {},
+      "request_headers": {
+        "User-Agent": "DooTask-Protocol-Acceptance/1",
+        "version": "1.9.0",
+        "Content-Type": "application/json"
+      },
+      "request_bytes": 2,
+      "request_sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "status": 200,
+      "response_headers": {
+        "Date": "Mon, 12 Oct 2026 10:47:46 GMT",
+        "Server": "uvicorn",
+        "Cache-Control": "no-store",
+        "X-Request-Id": "2b85cf7354808f5aa1ae969a551b15c8",
+        "Content-Length": "828",
+        "Content-Type": "application/json",
+        "Connection": "close"
+      },
+      "response": {
+        "ret": 1,
+        "msg": "success",
+        "data": {
+          "userid": 46,
+          "identity": [],
+          "department": [],
+          "az": "B",
+          "pinyin": "bq86dd382881b716",
+          "email": "bq86dd382881b716@example.test",
+          "tel": "",
+          "nickname": "bq86dd382881b716",
+          "profession": "",
+          "birthday": null,
+          "address": null,
+          "introduction": null,
+          "userimg": "http://127.0.0.1:18080/avatar/bq86dd382881b716.png",
+          "changepass": 0,
+          "login_num": 4,
+          "last_ip": "127.0.0.1",
+          "last_at": "2026-10-12 10:47:46",
+          "line_ip": "127.0.0.1",
+          "line_at": "2026-10-12 10:47:46",
+          "task_dialog_id": 0,
+          "created_ip": "127.0.0.1",
+          "disable_at": null,
+          "email_verity": 0,
+          "bot": 0,
+          "lang": "zh",
+          "created_at": "2026-10-12 10:46:43",
+          "token": "[REDACTED]",
+          "nickname_original": "",
+          "department_name": "",
+          "department_owner": false,
+          "managed_departments": []
+        }
+      },
+      "response_bytes": 828,
+      "response_sha256": "52280038226abced6186b72a41b6cd7740496981c8a42d8f6f266c309d6e0525",
+      "elapsed_seconds": 0.014999999999417923,
+      "role": "role-subject"
+    },
+    {
+      "utc": "2026-10-12T10:47:46.964729+00:00",
+      "case": "organization_resume",
+      "kind": "assertion",
+      "assertion": "reenabled account authenticates after visible CAPTCHA",
+      "passed": true
+    },
+    {
+      "utc": "2026-10-12T10:47:46.993368+00:00",
+      "case": "organization_resume",
+      "kind": "http",
+      "method": "POST",
+      "url": "http://127.0.0.1:18080/api/users/department/list",
+      "request_json": {},
+      "request_headers": {
+        "User-Agent": "DooTask-Protocol-Acceptance/1",
+        "version": "1.9.0",
+        "Content-Type": "application/json"
+      },
+      "request_bytes": 2,
+      "request_sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "status": 200,
+      "response_headers": {
+        "Date": "Mon, 12 Oct 2026 10:47:46 GMT",
+        "Server": "uvicorn",
+        "Cache-Control": "no-store",
+        "X-Request-Id": "7ffd4cd9d1ede8c8ccd31c7d5002b073",
+        "Content-Length": "45",
+        "Content-Type": "application/json",
+        "Connection": "close"
+      },
+      "response": {
+        "ret": 0,
+        "msg": "权限不足",
+        "data": []
+      },
+      "response_bytes": 45,
+      "response_sha256": "7df8140f1684964ea9c2176379ab347a8c6318d6bda888aa6f6522e7c748318a",
+      "elapsed_seconds": 0.030999999999039574,
+      "role": "role-subject"
+    },
+    {
+      "utc": "2026-10-12T10:47:47.022324+00:00",
+      "case": "organization_resume",
+      "kind": "database_readonly",
+      "query": "SELECT userid,identity,disable_at FROM users WHERE userid=%s",
+      "parameters": [
+        46
+      ],
+      "rows": [
+        {
+          "userid": 46,
+          "identity": ",,",
+          "disable_at": null
+        }
+      ]
+    },
+    {
+      "utc": "2026-10-12T10:47:47.024863+00:00",
+      "case": "organization_resume",
+      "kind": "assertion",
+      "assertion": "reenabled ordinary role persists without administrator or disabled flags",
+      "passed": true
+    },
+    {
+      "utc": "2026-10-12T10:47:47.024863+00:00",
+      "case": "organization_resume",
+      "kind": "execution_end",
+      "exit_code": 0,
+      "elapsed_seconds": 12.765999999999622
+    }
+  ]
+}

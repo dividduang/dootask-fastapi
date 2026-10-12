@@ -1,0 +1,11 @@
+{
+  "command": [
+    "D:\\rpa\\202610\\dootask-fastapi\\.venv\\Scripts\\python.exe",
+    "docs/evidence/qa-backend/core_scenario.py"
+  ],
+  "started_at": "2026-10-12T10:25:42.205535+00:00",
+  "duration_seconds": 0.906,
+  "exit_code": 1,
+  "stdout": "",
+  "stderr": "Traceback (most recent call last):\r\n  File \"D:\\rpa\\202610\\dootask-fastapi\\docs\\evidence\\qa-backend\\core_scenario.py\", line 88, in <module>\r\n    member = ok('users/login', {'email':email,'password':password+'x'})\r\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n  File \"D:\\rpa\\202610\\dootask-fastapi\\docs\\evidence\\qa-backend\\core_scenario.py\", line 51, in ok\r\n    assert result['ret'] == 1, (path, result)\r\n           ^^^^^^^^^^^^^^^^^^\r\nAssertionError: ('users/login', {'ret': 0, 'msg': '请输入验证码', 'data': {'code': 'need'}})\r\n"
+}

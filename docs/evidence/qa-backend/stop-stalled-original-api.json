@@ -1,0 +1,14 @@
+{
+  "command": [
+    "taskkill.exe",
+    "/PID",
+    "4868",
+    "/T",
+    "/F"
+  ],
+  "started_at": "2026-10-12T10:20:51.733406+00:00",
+  "duration_seconds": 0.344,
+  "exit_code": 0,
+  "stdout": "SUCCESS: The process with PID 26180 (child process of PID 4868) has been terminated.\r\nSUCCESS: The process with PID 4868 (child process of PID 5820) has been terminated.\r\n",
+  "stderr": ""
+}

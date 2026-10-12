@@ -5,11 +5,6 @@ export default [
         component: () => import('./pages/index.vue')
     },
     {
-        name: 'pro',
-        path: '/pro',
-        component: () => import('./pages/pro.vue'),
-    },
-    {
         name: 'meeting',
         path: '/meeting/:meetingId?/:sharekey?',
         component: () => import('./pages/meeting.vue'),

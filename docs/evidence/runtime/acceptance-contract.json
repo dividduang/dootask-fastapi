@@ -1,7 +1,9 @@
 {
   "kind": "independent-acceptance-contract",
   "version": 1,
-  "execution_status": "NOT_RUN",
+  "execution_status": "PARTIAL_REAL_ACCEPTANCE",
+  "current_evidence": ["docs/evidence/qa-backend/endpoint-runtime-coverage.json", "docs/evidence/qa-backend/ws-crash-recovery.json", "docs/evidence/qa-protocol/matrix.json", "docs/evidence/qa-frontend/release-status.json", "docs/evidence/qa-business/matrix.json"],
+  "historical_contract_note": "Cases below retain original whole-system obligations, not selective-smoke PASS. NATIVE-COMPAT is superseded for the approved fresh independent/no-old-data boundary in 1215/1216; no native compatibility claim.",
   "implementation_scope": "Complete source feature/route/model/event/file/integration ledger, not a CRUD subset",
   "required_row_fields": ["id", "source_path_lines", "source_sha256", "frontend_entry", "api_method_path_or_ws_event", "role_matrix", "persistence_entities", "side_effects", "implementation_path", "case_ids", "expected_result", "actual_result", "evidence_paths", "status", "blocker"],
   "allowed_statuses": ["NOT_RUN", "PASS", "FAIL", "BLOCKED"],
@@ -27,5 +29,5 @@
     {"id":"LEGAL-DELIVERY","status":"NOT_RUN","steps":"Cross-check final copied source and delivered artifacts against protocol/license report and pinned dependency/submodule versions; inspect notices, modification dates and corresponding-source access.","oracle":"No removed LICENSE/copyright, false MIT relabel, brand/online-license bypass or unproven redistribution rights; same-version provenance recorded."}
   ],
   "evidence_requirements": ["UTC/local time and clock caveat", "source and destination commit IDs", "source/artifact SHA-256", "exact command and exit code", "browser URL/viewport/account role without secrets", "redacted request-response/HAR/WS frame evidence", "before-after persistent-state evidence", "screenshots", "process ownership/start-stop-restart transcript", "one result row per source obligation"],
-  "current_gate": "G1 evidence only; zero application/build/lint/test executions in this assignment"
+  "current_gate": "Real core/runtime/frontend acceptance executed; complete 326-business and optional-provider obligations remain unverified. See current_evidence, not old G1 nonexecution assumptions."
 }

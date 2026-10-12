@@ -1,0 +1,68 @@
+[
+  {
+    "label": "npm-resolve",
+    "command": [
+      "npm.cmd",
+      "install",
+      "--package-lock-only",
+      "--ignore-scripts",
+      "--registry=https://registry.npmjs.org"
+    ],
+    "cwd": "D:\\rpa\\202610\\dootask-fastapi\\.runtime\\frontend-build",
+    "started_at": "2026-10-12T10:11:46.068906+00:00",
+    "elapsed_seconds": 75.375,
+    "exit_code": 0,
+    "log": "npm-resolve.log"
+  },
+  {
+    "label": "npm-ci",
+    "command": [
+      "npm.cmd",
+      "ci",
+      "--registry=https://registry.npmjs.org"
+    ],
+    "cwd": "D:\\rpa\\202610\\dootask-fastapi\\.runtime\\frontend-build",
+    "started_at": "2026-10-12T10:13:18.782133+00:00",
+    "elapsed_seconds": 13.688,
+    "exit_code": 0,
+    "log": "npm-ci.log"
+  },
+  {
+    "label": "production-build",
+    "command": [
+      "node",
+      "scripts/build-independent.mjs"
+    ],
+    "cwd": "D:\\rpa\\202610\\dootask-fastapi\\.runtime\\frontend-build",
+    "started_at": "2026-10-12T10:13:44.021825+00:00",
+    "elapsed_seconds": 19.5,
+    "exit_code": 0,
+    "log": "production-build.log"
+  },
+  {
+    "label": "npm-audit",
+    "command": [
+      "npm.cmd",
+      "audit",
+      "--json",
+      "--registry=https://registry.npmjs.org"
+    ],
+    "cwd": "D:\\rpa\\202610\\dootask-fastapi\\.runtime\\frontend-build",
+    "started_at": "2026-10-12T10:15:27.688168+00:00",
+    "elapsed_seconds": 1.64,
+    "exit_code": 1,
+    "log": "npm-audit.log"
+  },
+  {
+    "label": "production-build-purchase-fix",
+    "command": [
+      "node",
+      "scripts/build-independent.mjs"
+    ],
+    "cwd": "D:\\rpa\\202610\\dootask-fastapi\\.runtime\\frontend-build",
+    "started_at": "2026-10-12T10:17:38.052287+00:00",
+    "elapsed_seconds": 18.562,
+    "exit_code": 0,
+    "log": "production-build-purchase-fix.log"
+  }
+]

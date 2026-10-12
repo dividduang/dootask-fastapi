@@ -1,0 +1,169 @@
+{
+  "events": [
+    {
+      "at": 1791801548139,
+      "kind": "readonly-idb-snapshot",
+      "path": "/login",
+      "cursor": [],
+      "task5": false,
+      "taskKeyExists": false
+    },
+    {
+      "at": 1791801549010,
+      "kind": "login-click"
+    },
+    {
+      "at": 1791801549253,
+      "kind": "readonly-idb-snapshot",
+      "path": "/manage/dashboard",
+      "cursor": [
+        {
+          "key": "tasks::",
+          "updated": 0
+        }
+      ],
+      "task5": false,
+      "taskKeyExists": false
+    },
+    {
+      "at": 1791801549361,
+      "kind": "task-list-response",
+      "queryKeys": [
+        "timerange",
+        "_nocache"
+      ],
+      "total": 1,
+      "ids": [
+        5
+      ],
+      "deleted_id": []
+    },
+    {
+      "at": 1791801549358,
+      "kind": "readonly-idb-snapshot",
+      "path": "/manage/dashboard",
+      "cursor": [
+        {
+          "key": "tasks::",
+          "updated": 1791801549
+        }
+      ],
+      "task5": false,
+      "taskKeyExists": false
+    },
+    {
+      "at": 1791801549362,
+      "kind": "controlled-hard-navigation-in-cursor-before-task-window"
+    },
+    {
+      "at": 1791801549453,
+      "kind": "readonly-idb-snapshot",
+      "path": "/manage/project/7",
+      "cursor": [
+        {
+          "key": "tasks::",
+          "updated": 1791801549
+        }
+      ],
+      "task5": false,
+      "taskKeyExists": false
+    },
+    {
+      "at": 1791801549731,
+      "kind": "readonly-idb-snapshot",
+      "path": "/manage/project/7",
+      "cursor": [
+        {
+          "key": "tasks::",
+          "updated": 1791801549
+        },
+        {
+          "key": "tasks::project_id%3D7",
+          "updated": 0
+        }
+      ],
+      "task5": false,
+      "taskKeyExists": false
+    },
+    {
+      "at": 1791801549779,
+      "kind": "task-list-response",
+      "queryKeys": [
+        "timerange",
+        "_nocache"
+      ],
+      "total": 0,
+      "ids": [],
+      "deleted_id": []
+    },
+    {
+      "at": 1791801549849,
+      "kind": "task-list-response",
+      "queryKeys": [
+        "project_id",
+        "timerange",
+        "_nocache"
+      ],
+      "total": 1,
+      "ids": [
+        5
+      ],
+      "deleted_id": []
+    },
+    {
+      "at": 1791801549849,
+      "kind": "readonly-idb-snapshot",
+      "path": "/manage/project/7",
+      "cursor": [
+        {
+          "key": "tasks::",
+          "updated": 1791801549
+        },
+        {
+          "key": "tasks::project_id%3D7",
+          "updated": 1791801549
+        }
+      ],
+      "task5": false,
+      "taskKeyExists": false
+    },
+    {
+      "at": 1791801550447,
+      "kind": "readonly-idb-snapshot",
+      "path": "/manage/project/7",
+      "cursor": [
+        {
+          "key": "tasks::",
+          "updated": 1791801549
+        },
+        {
+          "key": "tasks::project_id%3D7",
+          "updated": 1791801549
+        }
+      ],
+      "task5": true,
+      "taskKeyExists": true
+    }
+  ],
+  "final": {
+    "text": "qa-ui-1791800521757\n\nDashboard\n1\n\nMessage\n1\n\nFile\n\nApply\n📝 个人项目\n1\n Create new task\n📝 个人项目\n\n注册时系统自动创建项目，你可以自由删除。\n\nAll (1)\n\n\n\n# Task name\nList\nPriority\nOwner\nDue time\n\nMy tasks\n(1)\nFrontend production acceptance task\n\n1\nDefault\n重要且紧急\nqa-ui-1791800521757\nAdd Task\n\nAssisted tasks\n(0)\nNo tasks yet\n\nUnfinished tasks\n(1)\nFrontend production acceptance task\n\n1\nDefault\n重要且紧急\nqa-ui-1791800521757",
+    "cache": {
+      "cursor": [
+        {
+          "key": "tasks::",
+          "updated": 1791801549
+        },
+        {
+          "key": "tasks::project_id%3D7",
+          "updated": 1791801549
+        }
+      ],
+      "task5": true,
+      "taskKeyExists": true
+    },
+    "tasks": [
+      5
+    ]
+  },
+  "method": "Read-only IDB polling every20ms; no interception, mutation, API mock or delay change. Single controlled hard navigation after observed persisted cursor and before persisted task5."
+}

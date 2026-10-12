@@ -1,0 +1,52 @@
+[
+  {
+    "run": "20261012T104525Z",
+    "command": [
+      "D:/rpa/202610/dootask-fastapi/tests/business_acceptance.py"
+    ],
+    "start_utc": "2026-10-12T10:45:25.013679+00:00",
+    "end_utc": "2026-10-12T10:45:36.578208+00:00",
+    "exit_code": 1,
+    "elapsed_seconds": 11.56199999999808,
+    "evidence_sha256": "41507219d3751efcd5a49288af1ae45083982be377e074a19b2433d9c73caf14"
+  },
+  {
+    "run": "20261012T104640Z",
+    "command": [
+      "D:/rpa/202610/dootask-fastapi/tests/business_acceptance.py",
+      "--only",
+      "reports,files,organization"
+    ],
+    "start_utc": "2026-10-12T10:46:40.298640+00:00",
+    "end_utc": "2026-10-12T10:46:45.452559+00:00",
+    "exit_code": 1,
+    "elapsed_seconds": 5.15599999999904,
+    "evidence_sha256": "f4be131a358a6788950000e3a70f61e4a7b95871502bb45be246fed9d561f6d8"
+  },
+  {
+    "run": "20261012T104734Z",
+    "command": [
+      "D:/rpa/202610/dootask-fastapi/tests/business_acceptance.py",
+      "--only",
+      "organization_resume"
+    ],
+    "start_utc": "2026-10-12T10:47:34.254900+00:00",
+    "end_utc": "2026-10-12T10:47:47.024863+00:00",
+    "exit_code": 0,
+    "elapsed_seconds": 12.765999999999622,
+    "evidence_sha256": "33f25d30fddcb2d4962424a20357b1276e3747d581351246742fecc444e2425b"
+  },
+  {
+    "run": "20261012T104914Z",
+    "command": [
+      "D:/rpa/202610/dootask-fastapi/tests/business_acceptance.py",
+      "--only",
+      "navigation_delta"
+    ],
+    "start_utc": "2026-10-12T10:49:14.973419+00:00",
+    "end_utc": "2026-10-12T10:49:17.485097+00:00",
+    "exit_code": 0,
+    "elapsed_seconds": 2.514999999999418,
+    "evidence_sha256": "37ea9e26fa1d1aa3ac8748006dc5fcf082069e0d8b496b3220638065ff76bc4e"
+  }
+]

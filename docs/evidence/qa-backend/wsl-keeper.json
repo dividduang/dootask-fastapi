@@ -1,0 +1,12 @@
+{
+  "pid": 31644,
+  "command": [
+    "wsl.exe",
+    "-d",
+    "Ubuntu-22.04",
+    "--",
+    "sleep",
+    "infinity"
+  ],
+  "reason": "WSL exited when no foreground Linux process remained; owned no-op process keeps isolated Docker services reachable"
+}

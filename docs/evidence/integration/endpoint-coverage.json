@@ -1,6 +1,8 @@
 {
   "observed_at": "2026-10-12T10:04:27.128371+00:00",
   "method": "AST/source-only explicit-map resolution; no application imports or execution",
+  "current_runtime_ledger": "docs/evidence/qa-backend/endpoint-runtime-coverage.json",
+  "historical_snapshot_note": "This file retains implementation-time bindings and statuses. Current 326-row runtime results are separate; source binding is never converted into runtime PASS.",
   "counts": {
     "INSTALLED_IMPLEMENTATION_NOT_VERIFIED": 326,
     "REJECTED_EXPLICIT_ALLOWLIST": 222,

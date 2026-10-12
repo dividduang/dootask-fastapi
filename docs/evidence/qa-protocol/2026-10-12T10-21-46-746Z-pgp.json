@@ -1,0 +1,37 @@
+{
+  "run": "2026-10-12T10-21-46-746Z",
+  "command": [
+    "C:\\nvm4w\\nodejs\\node.exe",
+    "D:\\rpa\\202610\\dootask-fastapi\\tests\\protocol_pgp.mjs",
+    "http://127.0.0.1:18080"
+  ],
+  "node": "v22.23.1",
+  "crypto_module": "D:\\rpa\\202610\\dootask-fastapi\\.runtime\\frontend-build\\node_modules\\openpgp_hi\\dist\\lightweight\\openpgp.min.mjs",
+  "crypto_sha256": "c5454f2da4c8cba197a166dbdc8157f1efc7b1f0f2592cd76e01b9dedc122740",
+  "frames": [
+    {
+      "utc": "2026-10-12T10:21:47.179Z",
+      "path": "users/login",
+      "http": 200,
+      "elapsed_ms": 194,
+      "request_ciphertext_sha256": "691148944ccaf568232a3fc15c960e309bc1fd673bdbd6c0be7d3dc04d10787a",
+      "request_ciphertext_bytes": 786,
+      "response_ciphertext_sha256": "5642e175b55e897087ac738d620993563d8712c424ab78388ad42bb3dd93b446",
+      "response_ciphertext_bytes": 308,
+      "decrypted": {
+        "ret": 0,
+        "msg": "帐号或密码错误",
+        "data": {
+          "code": "no"
+        }
+      }
+    }
+  ],
+  "status": "FAIL",
+  "exchange": {
+    "status": 200,
+    "ret": 1,
+    "public_key_sha256": "a004f9f670c69723cda45507d75ade00fd480548e743ecc4e7f970c79d393aa5"
+  },
+  "error": "AssertionError [ERR_ASSERTION]: users/login: 帐号或密码错误\n\nfalse !== true\n\n    at encryptedCall (file:///D:/rpa/202610/dootask-fastapi/tests/protocol_pgp.mjs:51:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at async file:///D:/rpa/202610/dootask-fastapi/tests/protocol_pgp.mjs:54:22"
+}

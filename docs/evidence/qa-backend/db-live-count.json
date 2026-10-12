@@ -1,0 +1,12 @@
+{
+  "command": [
+    "D:\\rpa\\202610\\dootask-fastapi\\.venv\\Scripts\\python.exe",
+    "-c",
+    "import os,pymysql; c=pymysql.connect(host=os.environ['DB_HOST'],port=int(os.environ['DB_PORT']),user=os.environ['DB_USERNAME'],password=os.environ['DB_PASSWORD'],database=os.environ['DB_DATABASE'],connect_timeout=5,read_timeout=5);q=c.cursor();q.execute('SELECT COUNT(*) FROM pre_users');print(q.fetchall())"
+  ],
+  "started_at": "2026-10-12T10:20:40.257783+00:00",
+  "duration_seconds": 0.141,
+  "exit_code": 1,
+  "stdout": "",
+  "stderr": "Traceback (most recent call last):\r\n  File \"<string>\", line 1, in <module>\r\n  File \"D:\\rpa\\202610\\dootask-fastapi\\.venv\\Lib\\site-packages\\pymysql\\cursors.py\", line 170, in execute\r\n    result = self._query(query)\r\n             ^^^^^^^^^^^^^^^^^^\r\n  File \"D:\\rpa\\202610\\dootask-fastapi\\.venv\\Lib\\site-packages\\pymysql\\cursors.py\", line 335, in _query\r\n    conn.query(q)\r\n  File \"D:\\rpa\\202610\\dootask-fastapi\\.venv\\Lib\\site-packages\\pymysql\\connections.py\", line 581, in query\r\n    self._affected_rows = self._read_query_result(unbuffered=unbuffered)\r\n                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n  File \"D:\\rpa\\202610\\dootask-fastapi\\.venv\\Lib\\site-packages\\pymysql\\connections.py\", line 857, in _read_query_result\r\n    result.read()\r\n  File \"D:\\rpa\\202610\\dootask-fastapi\\.venv\\Lib\\site-packages\\pymysql\\connections.py\", line 1290, in read\r\n    first_packet = self.connection._read_packet()\r\n                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n  File \"D:\\rpa\\202610\\dootask-fastapi\\.venv\\Lib\\site-packages\\pymysql\\connections.py\", line 810, in _read_packet\r\n    packet.raise_for_error()\r\n  File \"D:\\rpa\\202610\\dootask-fastapi\\.venv\\Lib\\site-packages\\pymysql\\protocol.py\", line 219, in raise_for_error\r\n    err.raise_mysql_exception(self._data)\r\n  File \"D:\\rpa\\202610\\dootask-fastapi\\.venv\\Lib\\site-packages\\pymysql\\err.py\", line 154, in raise_mysql_exception\r\n    raise errorclass(errno, errval, sqlstate=sqlstate)\r\npymysql.err.ProgrammingError: (1146, \"Table 'dootask_fastapi.pre_users' doesn't exist\")\r\n"
+}

@@ -1,0 +1,17 @@
+{
+  "pid": 20132,
+  "command": [
+    "D:\\rpa\\202610\\dootask-fastapi\\.venv\\Scripts\\python.exe",
+    "-m",
+    "uvicorn",
+    "backend.main:create_app",
+    "--factory",
+    "--host",
+    "127.0.0.1",
+    "--port",
+    "18080",
+    "--no-proxy-headers",
+    "--no-access-log"
+  ],
+  "started_at": "2026-10-12T10:13:05.279552+00:00"
+}

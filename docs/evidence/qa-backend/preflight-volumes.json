@@ -1,0 +1,18 @@
+{
+  "command": [
+    "wsl.exe",
+    "-d",
+    "Ubuntu-22.04",
+    "--",
+    "docker",
+    "volume",
+    "ls",
+    "--filter",
+    "label=com.docker.compose.project=dootask-fastapi-isolated"
+  ],
+  "started_at": "2026-10-12T10:10:54.313697+00:00",
+  "duration_seconds": 0.296,
+  "exit_code": 0,
+  "stdout": "DRIVER    VOLUME NAME\n",
+  "stderr": ""
+}

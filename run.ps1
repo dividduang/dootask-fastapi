@@ -1,5 +1,5 @@
 param(
-    [ValidateSet('serve', 'init-db', 'secrets', 'runtime-up', 'runtime-down')]
+    [ValidateSet('serve', 'init-db', 'secrets', 'runtime-up', 'runtime-down', 'runtime-hold')]
     [string]$Command = 'serve',
     [string]$ListenHost = '127.0.0.1',
     [int]$Port = 18080
@@ -7,12 +7,18 @@ param(
 $ErrorActionPreference = 'Stop'
 $Root = $PSScriptRoot
 Set-Location $Root
+if ($Command -eq 'runtime-hold') {
+    # WSL systemd services alone do not keep the distribution alive on this host.
+    & wsl.exe -d Ubuntu-22.04 -- sleep infinity
+    exit $LASTEXITCODE
+}
 if ($Command -in @('runtime-up', 'runtime-down')) {
     if (!(Test-Path (Join-Path $Root '.runtime/runtime.env')) -or !(Test-Path (Join-Path $Root '.runtime/redis.conf'))) {
         throw 'Missing private isolated runtime.env or redis.conf; see runtime-plan.json.'
     }
-    $LinuxRoot = (& wsl.exe -d Ubuntu-22.04 -- wslpath -a $Root).Trim()
-    if ($LASTEXITCODE -ne 0) { throw 'Cannot resolve project path in isolated WSL distribution.' }
+    $LinuxRoot = & wsl.exe -d Ubuntu-22.04 -- wslpath -a ($Root.Replace('\', '/'))
+    if ($LASTEXITCODE -ne 0 -or !$LinuxRoot) { throw 'Cannot resolve project path in isolated WSL distribution.' }
+    $LinuxRoot = $LinuxRoot.Trim()
     $Arguments = @('-d', 'Ubuntu-22.04', '--', 'docker', 'compose', '--project-directory', "$LinuxRoot/.runtime", '--env-file', "$LinuxRoot/.runtime/runtime.env", '-f', "$LinuxRoot/.runtime/compose.yaml")
     if ($Command -eq 'runtime-up') { $Arguments += @('up', '-d', '--wait') }
     else { $Arguments += @('down') } # Never remove database volumes.

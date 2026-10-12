@@ -1,0 +1,12 @@
+{
+  "command": [
+    "D:\\rpa\\202610\\dootask-fastapi\\.venv\\Scripts\\python.exe",
+    "-c",
+    "from backend.tests_integration import scheduler_checks; scheduler_checks()"
+  ],
+  "started_at": "2026-10-12T10:29:49.907605+00:00",
+  "duration_seconds": 1.688,
+  "exit_code": 0,
+  "stdout": "Concurrent real scheduler transactions passed\r\n",
+  "stderr": ""
+}

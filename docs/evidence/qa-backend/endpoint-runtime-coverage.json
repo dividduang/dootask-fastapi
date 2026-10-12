@@ -1,0 +1,4957 @@
+{
+  "observed_at": "2026-10-12T10:52:15.417224+00:00",
+  "counts": {
+    "NOT_RUN": 246,
+    "PASS_RECORDED_SCENARIOS_ONLY": 80
+  },
+  "scope": "326 explicit rows; dispatch and scenario success separate, complete-contract coverage remains NOT_RUN",
+  "retired_vendor_handlers": 8,
+  "rejected_framework_candidates": 222,
+  "source_ledger": "docs/evidence/integration/endpoint-coverage.json",
+  "handlers": [
+    {
+      "id": "AppsController::badge__set",
+      "canonical_url": "api/apps/badge/set",
+      "aliases": [
+        "api/apps/badge__set"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "AppsController::badge__clear",
+      "canonical_url": "api/apps/badge/clear",
+      "aliases": [
+        "api/apps/badge__clear"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "AppsController::badge__list",
+      "canonical_url": "api/apps/badge/list",
+      "aliases": [
+        "api/apps/badge__list"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "AppsController::functions",
+      "canonical_url": "api/apps/functions",
+      "aliases": [],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity.",
+      "ui_observation": {
+        "scope": "final dashboard real network observation",
+        "evidence": [
+          "docs/2026101220-独立前端生产构建与界面验收-feat.md",
+          "docs/evidence/qa-frontend/release-status.json",
+          "docs/evidence/qa-frontend/app-registry-regression.json"
+        ],
+        "status": "RECORDED_UI_SCENARIO_ONLY_NOT_ALL_BRANCHES"
+      }
+    },
+    {
+      "id": "AssistantController::auth",
+      "canonical_url": "api/assistant/auth",
+      "aliases": [],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "AssistantController::models",
+      "canonical_url": "api/assistant/models",
+      "aliases": [],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "AssistantController::match_elements",
+      "canonical_url": "api/assistant/match_elements",
+      "aliases": [],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "AssistantController::log__search",
+      "canonical_url": "api/assistant/log/search",
+      "aliases": [
+        "api/assistant/log__search"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "AssistantController::feedback__save",
+      "canonical_url": "api/assistant/feedback/save",
+      "aliases": [
+        "api/assistant/feedback__save"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "AssistantController::operation__dispatch",
+      "canonical_url": "api/assistant/operation/dispatch",
+      "aliases": [
+        "api/assistant/operation__dispatch"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "AssistantController::operation__result",
+      "canonical_url": "api/assistant/operation/result",
+      "aliases": [
+        "api/assistant/operation__result"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "AssistantController::session__list",
+      "canonical_url": "api/assistant/session/list",
+      "aliases": [
+        "api/assistant/session__list"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "AssistantController::session__save",
+      "canonical_url": "api/assistant/session/save",
+      "aliases": [
+        "api/assistant/session__save"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "AssistantController::session__delete",
+      "canonical_url": "api/assistant/session/delete",
+      "aliases": [
+        "api/assistant/session__delete"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "ComplaintController::lists",
+      "canonical_url": "api/complaint/lists",
+      "aliases": [],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "PASS_RECORDED_SCENARIOS_ONLY",
+      "complete_business_contract": "NOT_RUN",
+      "observed": {
+        "successful_requests": 5,
+        "denied_requests": 0,
+        "evidence": [
+          "docs/evidence/qa-business/matrix.json"
+        ],
+        "scenarios": [
+          "complaints_search"
+        ]
+      },
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "ComplaintController::submit",
+      "canonical_url": "api/complaint/submit",
+      "aliases": [],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "PASS_RECORDED_SCENARIOS_ONLY",
+      "complete_business_contract": "NOT_RUN",
+      "observed": {
+        "successful_requests": 1,
+        "denied_requests": 1,
+        "evidence": [
+          "docs/evidence/qa-business/matrix.json"
+        ],
+        "scenarios": [
+          "complaints_search"
+        ]
+      },
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "ComplaintController::action",
+      "canonical_url": "api/complaint/action",
+      "aliases": [],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "PASS_RECORDED_SCENARIOS_ONLY",
+      "complete_business_contract": "NOT_RUN",
+      "observed": {
+        "successful_requests": 2,
+        "denied_requests": 1,
+        "evidence": [
+          "docs/evidence/qa-business/matrix.json"
+        ],
+        "scenarios": [
+          "complaints_search"
+        ]
+      },
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "ContactsController::departments",
+      "canonical_url": "api/contacts/departments",
+      "aliases": [],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "DashboardController::team__stats",
+      "canonical_url": "api/dashboard/team/stats",
+      "aliases": [
+        "api/dashboard/team__stats"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "PASS_RECORDED_SCENARIOS_ONLY",
+      "complete_business_contract": "NOT_RUN",
+      "observed": {
+        "successful_requests": 4,
+        "denied_requests": 2,
+        "evidence": [
+          "docs/evidence/qa-business/matrix.json"
+        ],
+        "scenarios": [
+          "organization"
+        ]
+      },
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "DashboardController::team__tasks",
+      "canonical_url": "api/dashboard/team/tasks",
+      "aliases": [
+        "api/dashboard/team__tasks"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "PASS_RECORDED_SCENARIOS_ONLY",
+      "complete_business_contract": "NOT_RUN",
+      "observed": {
+        "successful_requests": 2,
+        "denied_requests": 0,
+        "evidence": [
+          "docs/evidence/qa-business/matrix.json"
+        ],
+        "scenarios": [
+          "organization"
+        ]
+      },
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "DialogController::lists",
+      "canonical_url": "api/dialog/lists",
+      "aliases": [],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "DialogController::beyond",
+      "canonical_url": "api/dialog/beyond",
+      "aliases": [],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "DialogController::search",
+      "canonical_url": "api/dialog/search",
+      "aliases": [],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "DialogController::search__tag",
+      "canonical_url": "api/dialog/search/tag",
+      "aliases": [
+        "api/dialog/search__tag"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "DialogController::one",
+      "canonical_url": "api/dialog/one",
+      "aliases": [],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": {
+        "successful_requests": 0,
+        "denied_requests": 1,
+        "evidence": [
+          "docs/evidence/qa-protocol/20261012T102458Z.json"
+        ],
+        "scenarios": [
+          "websocket"
+        ]
+      },
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "DialogController::user",
+      "canonical_url": "api/dialog/user",
+      "aliases": [],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "DialogController::todo",
+      "canonical_url": "api/dialog/todo",
+      "aliases": [],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "DialogController::top",
+      "canonical_url": "api/dialog/top",
+      "aliases": [],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "DialogController::hide",
+      "canonical_url": "api/dialog/hide",
+      "aliases": [],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "DialogController::tel",
+      "canonical_url": "api/dialog/tel",
+      "aliases": [],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "DialogController::open__user",
+      "canonical_url": "api/dialog/open/user",
+      "aliases": [
+        "api/dialog/open__user"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "PASS_RECORDED_SCENARIOS_ONLY",
+      "complete_business_contract": "NOT_RUN",
+      "observed": {
+        "successful_requests": 1,
+        "denied_requests": 0,
+        "evidence": [
+          "docs/evidence/qa-protocol/20261012T102458Z.json"
+        ],
+        "scenarios": [
+          "websocket"
+        ]
+      },
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "DialogController::open__event",
+      "canonical_url": "api/dialog/open/event",
+      "aliases": [
+        "api/dialog/open__event"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "DialogController::msg__list",
+      "canonical_url": "api/dialog/msg/list",
+      "aliases": [
+        "api/dialog/msg__list"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "DialogController::msg__latest",
+      "canonical_url": "api/dialog/msg/latest",
+      "aliases": [
+        "api/dialog/msg__latest"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "DialogController::msg__one",
+      "canonical_url": "api/dialog/msg/one",
+      "aliases": [
+        "api/dialog/msg__one"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "DialogController::msg__dot",
+      "canonical_url": "api/dialog/msg/dot",
+      "aliases": [
+        "api/dialog/msg__dot"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "DialogController::msg__read",
+      "canonical_url": "api/dialog/msg/read",
+      "aliases": [
+        "api/dialog/msg__read"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "DialogController::msg__unread",
+      "canonical_url": "api/dialog/msg/unread",
+      "aliases": [
+        "api/dialog/msg__unread"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "DialogController::msg__checked",
+      "canonical_url": "api/dialog/msg/checked",
+      "aliases": [
+        "api/dialog/msg__checked"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "DialogController::msg__stream",
+      "canonical_url": "api/dialog/msg/stream",
+      "aliases": [
+        "api/dialog/msg__stream"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "DialogController::msg__ai_generate",
+      "canonical_url": "api/dialog/msg/ai_generate",
+      "aliases": [
+        "api/dialog/msg__ai_generate"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "DialogController::msg__sendtext",
+      "canonical_url": "api/dialog/msg/sendtext",
+      "aliases": [
+        "api/dialog/msg__sendtext"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "PASS_RECORDED_SCENARIOS_ONLY",
+      "complete_business_contract": "NOT_RUN",
+      "observed": {
+        "successful_requests": 205,
+        "denied_requests": 1,
+        "evidence": [
+          "docs/evidence/qa-backend/core-http.json",
+          "docs/evidence/qa-business/matrix.json",
+          "docs/evidence/qa-protocol/20261012T102458Z.json"
+        ],
+        "scenarios": [
+          "core_http",
+          "handoff_relations",
+          "websocket"
+        ]
+      },
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity.",
+      "ui_observation": {
+        "scope": "real task chat interaction",
+        "evidence": [
+          "docs/2026101220-独立前端生产构建与界面验收-feat.md",
+          "docs/evidence/qa-frontend/release-status.json",
+          "docs/evidence/qa-frontend/app-registry-regression.json"
+        ],
+        "status": "RECORDED_UI_SCENARIO_ONLY_NOT_ALL_BRANCHES"
+      }
+    },
+    {
+      "id": "DialogController::msg__sendnotice",
+      "canonical_url": "api/dialog/msg/sendnotice",
+      "aliases": [
+        "api/dialog/msg__sendnotice"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "DialogController::msg__sendtemplate",
+      "canonical_url": "api/dialog/msg/sendtemplate",
+      "aliases": [
+        "api/dialog/msg__sendtemplate"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "DialogController::msg__sendapprove",
+      "canonical_url": "api/dialog/msg/sendapprove",
+      "aliases": [
+        "api/dialog/msg__sendapprove"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "DialogController::msg__sendrecord",
+      "canonical_url": "api/dialog/msg/sendrecord",
+      "aliases": [
+        "api/dialog/msg__sendrecord"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "DialogController::msg__convertrecord",
+      "canonical_url": "api/dialog/msg/convertrecord",
+      "aliases": [
+        "api/dialog/msg__convertrecord"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "DialogController::msg__sendfile",
+      "canonical_url": "api/dialog/msg/sendfile",
+      "aliases": [
+        "api/dialog/msg__sendfile"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "DialogController::msg__sendfiles",
+      "canonical_url": "api/dialog/msg/sendfiles",
+      "aliases": [
+        "api/dialog/msg__sendfiles"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "DialogController::msg__sendfileid",
+      "canonical_url": "api/dialog/msg/sendfileid",
+      "aliases": [
+        "api/dialog/msg__sendfileid"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "DialogController::msg__sendtaskid",
+      "canonical_url": "api/dialog/msg/sendtaskid",
+      "aliases": [
+        "api/dialog/msg__sendtaskid"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "DialogController::msg__sendanon",
+      "canonical_url": "api/dialog/msg/sendanon",
+      "aliases": [
+        "api/dialog/msg__sendanon"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "DialogController::msg__sendbot",
+      "canonical_url": "api/dialog/msg/sendbot",
+      "aliases": [
+        "api/dialog/msg__sendbot"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "DialogController::msg__send_ai_assistant",
+      "canonical_url": "api/dialog/msg/send_ai_assistant",
+      "aliases": [
+        "api/dialog/msg__send_ai_assistant"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "DialogController::msg__sendlocation",
+      "canonical_url": "api/dialog/msg/sendlocation",
+      "aliases": [
+        "api/dialog/msg__sendlocation"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "DialogController::msg__readlist",
+      "canonical_url": "api/dialog/msg/readlist",
+      "aliases": [
+        "api/dialog/msg__readlist"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "DialogController::msg__detail",
+      "canonical_url": "api/dialog/msg/detail",
+      "aliases": [
+        "api/dialog/msg__detail"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "DialogController::msg__download",
+      "canonical_url": "api/dialog/msg/download",
+      "aliases": [
+        "api/dialog/msg__download"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "DialogController::msg__withdraw",
+      "canonical_url": "api/dialog/msg/withdraw",
+      "aliases": [
+        "api/dialog/msg__withdraw"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "DialogController::msg__voice2text",
+      "canonical_url": "api/dialog/msg/voice2text",
+      "aliases": [
+        "api/dialog/msg__voice2text"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "DialogController::msg__translation",
+      "canonical_url": "api/dialog/msg/translation",
+      "aliases": [
+        "api/dialog/msg__translation"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "DialogController::msg__mark",
+      "canonical_url": "api/dialog/msg/mark",
+      "aliases": [
+        "api/dialog/msg__mark"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "DialogController::msg__silence",
+      "canonical_url": "api/dialog/msg/silence",
+      "aliases": [
+        "api/dialog/msg__silence"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "DialogController::msg__forward",
+      "canonical_url": "api/dialog/msg/forward",
+      "aliases": [
+        "api/dialog/msg__forward"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "DialogController::msg__mergeforward",
+      "canonical_url": "api/dialog/msg/mergeforward",
+      "aliases": [
+        "api/dialog/msg__mergeforward"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "DialogController::msg__mergedetail",
+      "canonical_url": "api/dialog/msg/mergedetail",
+      "aliases": [
+        "api/dialog/msg__mergedetail"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "DialogController::msg__emoji",
+      "canonical_url": "api/dialog/msg/emoji",
+      "aliases": [
+        "api/dialog/msg__emoji"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "DialogController::msg__tag",
+      "canonical_url": "api/dialog/msg/tag",
+      "aliases": [
+        "api/dialog/msg__tag"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "DialogController::msg__todo",
+      "canonical_url": "api/dialog/msg/todo",
+      "aliases": [
+        "api/dialog/msg__todo"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "DialogController::msg__todolist",
+      "canonical_url": "api/dialog/msg/todolist",
+      "aliases": [
+        "api/dialog/msg__todolist"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "DialogController::msg__todoremind",
+      "canonical_url": "api/dialog/msg/todoremind",
+      "aliases": [
+        "api/dialog/msg__todoremind"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "DialogController::msg__done",
+      "canonical_url": "api/dialog/msg/done",
+      "aliases": [
+        "api/dialog/msg__done"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "DialogController::msg__color",
+      "canonical_url": "api/dialog/msg/color",
+      "aliases": [
+        "api/dialog/msg__color"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "DialogController::msg__webhookmsg2ai",
+      "canonical_url": "api/dialog/msg/webhookmsg2ai",
+      "aliases": [
+        "api/dialog/msg__webhookmsg2ai"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "DialogController::group__add",
+      "canonical_url": "api/dialog/group/add",
+      "aliases": [
+        "api/dialog/group__add"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "DialogController::group__edit",
+      "canonical_url": "api/dialog/group/edit",
+      "aliases": [
+        "api/dialog/group__edit"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "DialogController::group__adduser",
+      "canonical_url": "api/dialog/group/adduser",
+      "aliases": [
+        "api/dialog/group__adduser"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "DialogController::group__deluser",
+      "canonical_url": "api/dialog/group/deluser",
+      "aliases": [
+        "api/dialog/group__deluser"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "DialogController::group__transfer",
+      "canonical_url": "api/dialog/group/transfer",
+      "aliases": [
+        "api/dialog/group__transfer"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "DialogController::group__adddeputy",
+      "canonical_url": "api/dialog/group/adddeputy",
+      "aliases": [
+        "api/dialog/group__adddeputy"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "DialogController::group__deldeputy",
+      "canonical_url": "api/dialog/group/deldeputy",
+      "aliases": [
+        "api/dialog/group__deldeputy"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "DialogController::group__disband",
+      "canonical_url": "api/dialog/group/disband",
+      "aliases": [
+        "api/dialog/group__disband"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "DialogController::group__searchuser",
+      "canonical_url": "api/dialog/group/searchuser",
+      "aliases": [
+        "api/dialog/group__searchuser"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "DialogController::common__list",
+      "canonical_url": "api/dialog/common/list",
+      "aliases": [
+        "api/dialog/common__list"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "DialogController::okr__add",
+      "canonical_url": "api/dialog/okr/add",
+      "aliases": [
+        "api/dialog/okr__add"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "DialogController::okr__push",
+      "canonical_url": "api/dialog/okr/push",
+      "aliases": [
+        "api/dialog/okr__push"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "DialogController::msg__wordchain",
+      "canonical_url": "api/dialog/msg/wordchain",
+      "aliases": [
+        "api/dialog/msg__wordchain"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "DialogController::msg__vote",
+      "canonical_url": "api/dialog/msg/vote",
+      "aliases": [
+        "api/dialog/msg__vote"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "DialogController::msg__top",
+      "canonical_url": "api/dialog/msg/top",
+      "aliases": [
+        "api/dialog/msg__top"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "DialogController::msg__topinfo",
+      "canonical_url": "api/dialog/msg/topinfo",
+      "aliases": [
+        "api/dialog/msg__topinfo"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "DialogController::msg__applied",
+      "canonical_url": "api/dialog/msg/applied",
+      "aliases": [
+        "api/dialog/msg__applied"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "DialogController::sticker__search",
+      "canonical_url": "api/dialog/sticker/search",
+      "aliases": [
+        "api/dialog/sticker__search"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "DialogController::config",
+      "canonical_url": "api/dialog/config",
+      "aliases": [],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "DialogController::config__save",
+      "canonical_url": "api/dialog/config/save",
+      "aliases": [
+        "api/dialog/config__save"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "DialogController::session__create",
+      "canonical_url": "api/dialog/session/create",
+      "aliases": [
+        "api/dialog/session__create"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "DialogController::session__list",
+      "canonical_url": "api/dialog/session/list",
+      "aliases": [
+        "api/dialog/session__list"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "DialogController::session__open",
+      "canonical_url": "api/dialog/session/open",
+      "aliases": [
+        "api/dialog/session__open"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "DialogController::session__rename",
+      "canonical_url": "api/dialog/session/rename",
+      "aliases": [
+        "api/dialog/session__rename"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "FileController::collaboration__lists",
+      "canonical_url": "api/file/collaboration/lists",
+      "aliases": [
+        "api/file/collaboration__lists"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "FileController::collaboration__download",
+      "canonical_url": "api/file/collaboration/download",
+      "aliases": [
+        "api/file/collaboration__download"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "FileController::lists",
+      "canonical_url": "api/file/lists",
+      "aliases": [],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "PASS_RECORDED_SCENARIOS_ONLY",
+      "complete_business_contract": "NOT_RUN",
+      "observed": {
+        "successful_requests": 3,
+        "denied_requests": 0,
+        "evidence": [
+          "docs/evidence/qa-business/matrix.json"
+        ],
+        "scenarios": [
+          "files"
+        ]
+      },
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity.",
+      "ui_observation": {
+        "scope": "restart UI file readback",
+        "evidence": [
+          "docs/2026101220-独立前端生产构建与界面验收-feat.md",
+          "docs/evidence/qa-frontend/release-status.json",
+          "docs/evidence/qa-frontend/app-registry-regression.json"
+        ],
+        "status": "RECORDED_UI_SCENARIO_ONLY_NOT_ALL_BRANCHES"
+      }
+    },
+    {
+      "id": "FileController::one",
+      "canonical_url": "api/file/one",
+      "aliases": [],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "PASS_RECORDED_SCENARIOS_ONLY",
+      "complete_business_contract": "NOT_RUN",
+      "observed": {
+        "successful_requests": 1,
+        "denied_requests": 3,
+        "evidence": [
+          "docs/evidence/qa-backend/core-http.json",
+          "docs/evidence/qa-business/matrix.json",
+          "docs/evidence/qa-protocol/20261012T102458Z.json"
+        ],
+        "scenarios": [
+          "core_http",
+          "files",
+          "zip_first"
+        ]
+      },
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "FileController::fetch",
+      "canonical_url": "api/file/fetch",
+      "aliases": [],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "FileController::search",
+      "canonical_url": "api/file/search",
+      "aliases": [],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "FileController::add",
+      "canonical_url": "api/file/add",
+      "aliases": [],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "PASS_RECORDED_SCENARIOS_ONLY",
+      "complete_business_contract": "NOT_RUN",
+      "observed": {
+        "successful_requests": 7,
+        "denied_requests": 0,
+        "evidence": [
+          "docs/evidence/qa-business/matrix.json"
+        ],
+        "scenarios": [
+          "files",
+          "navigation_delta"
+        ]
+      },
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "FileController::copy",
+      "canonical_url": "api/file/copy",
+      "aliases": [],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "FileController::move",
+      "canonical_url": "api/file/move",
+      "aliases": [],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "PASS_RECORDED_SCENARIOS_ONLY",
+      "complete_business_contract": "NOT_RUN",
+      "observed": {
+        "successful_requests": 2,
+        "denied_requests": 1,
+        "evidence": [
+          "docs/evidence/qa-business/matrix.json"
+        ],
+        "scenarios": [
+          "files"
+        ]
+      },
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "FileController::remove",
+      "canonical_url": "api/file/remove",
+      "aliases": [],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "FileController::content",
+      "canonical_url": "api/file/content",
+      "aliases": [],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "PASS_RECORDED_SCENARIOS_ONLY",
+      "complete_business_contract": "NOT_RUN",
+      "observed": {
+        "successful_requests": 12,
+        "denied_requests": 2,
+        "evidence": [
+          "docs/evidence/qa-backend/core-http.json",
+          "docs/evidence/qa-backend/core-readback.json",
+          "docs/evidence/qa-business/matrix.json",
+          "docs/evidence/qa-protocol/20261012T102919Z.json"
+        ],
+        "scenarios": [
+          "core_http",
+          "files",
+          "restart_readback",
+          "uploads"
+        ]
+      },
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "FileController::content__save",
+      "canonical_url": "api/file/content/save",
+      "aliases": [
+        "api/file/content__save"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "PASS_RECORDED_SCENARIOS_ONLY",
+      "complete_business_contract": "NOT_RUN",
+      "observed": {
+        "successful_requests": 4,
+        "denied_requests": 2,
+        "evidence": [
+          "docs/evidence/qa-business/matrix.json"
+        ],
+        "scenarios": [
+          "files"
+        ]
+      },
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "FileController::office__token",
+      "canonical_url": "api/file/office/token",
+      "aliases": [
+        "api/file/office__token"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "FileController::content__office",
+      "canonical_url": "api/file/content/office",
+      "aliases": [
+        "api/file/content__office"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "FileController::content__upload",
+      "canonical_url": "api/file/content/upload",
+      "aliases": [
+        "api/file/content__upload"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "PASS_RECORDED_SCENARIOS_ONLY",
+      "complete_business_contract": "NOT_RUN",
+      "observed": {
+        "successful_requests": 2,
+        "denied_requests": 0,
+        "evidence": [
+          "docs/evidence/qa-backend/core-http.json",
+          "docs/evidence/qa-protocol/20261012T102458Z.json"
+        ],
+        "scenarios": [
+          "core_http",
+          "zip_first"
+        ]
+      },
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity.",
+      "ui_observation": {
+        "scope": "real file upload",
+        "evidence": [
+          "docs/2026101220-独立前端生产构建与界面验收-feat.md",
+          "docs/evidence/qa-frontend/release-status.json",
+          "docs/evidence/qa-frontend/app-registry-regression.json"
+        ],
+        "status": "RECORDED_UI_SCENARIO_ONLY_NOT_ALL_BRANCHES"
+      }
+    },
+    {
+      "id": "FileController::content__history",
+      "canonical_url": "api/file/content/history",
+      "aliases": [
+        "api/file/content__history"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "PASS_RECORDED_SCENARIOS_ONLY",
+      "complete_business_contract": "NOT_RUN",
+      "observed": {
+        "successful_requests": 4,
+        "denied_requests": 0,
+        "evidence": [
+          "docs/evidence/qa-business/matrix.json"
+        ],
+        "scenarios": [
+          "files"
+        ]
+      },
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "FileController::content__restore",
+      "canonical_url": "api/file/content/restore",
+      "aliases": [
+        "api/file/content__restore"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "PASS_RECORDED_SCENARIOS_ONLY",
+      "complete_business_contract": "NOT_RUN",
+      "observed": {
+        "successful_requests": 2,
+        "denied_requests": 2,
+        "evidence": [
+          "docs/evidence/qa-business/matrix.json"
+        ],
+        "scenarios": [
+          "files"
+        ]
+      },
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "FileController::share",
+      "canonical_url": "api/file/share",
+      "aliases": [],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "FileController::share__update",
+      "canonical_url": "api/file/share/update",
+      "aliases": [
+        "api/file/share__update"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "PASS_RECORDED_SCENARIOS_ONLY",
+      "complete_business_contract": "NOT_RUN",
+      "observed": {
+        "successful_requests": 8,
+        "denied_requests": 0,
+        "evidence": [
+          "docs/evidence/qa-business/matrix.json"
+        ],
+        "scenarios": [
+          "files",
+          "navigation_delta"
+        ]
+      },
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "FileController::share__out",
+      "canonical_url": "api/file/share/out",
+      "aliases": [
+        "api/file/share__out"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "FileController::link",
+      "canonical_url": "api/file/link",
+      "aliases": [],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "FileController::download__pack",
+      "canonical_url": "api/file/download/pack",
+      "aliases": [
+        "api/file/download__pack"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "PASS_RECORDED_SCENARIOS_ONLY",
+      "complete_business_contract": "NOT_RUN",
+      "observed": {
+        "successful_requests": 2,
+        "denied_requests": 1,
+        "evidence": [
+          "docs/evidence/qa-protocol/20261012T102458Z.json"
+        ],
+        "scenarios": [
+          "zip_first"
+        ]
+      },
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "FileDavController::dav__status",
+      "canonical_url": "api/file/dav/status",
+      "aliases": [],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "FileDavController::dav__credentials",
+      "canonical_url": "api/file/dav/credentials",
+      "aliases": [],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "FileDavController::dav__create",
+      "canonical_url": "api/file/dav/create",
+      "aliases": [],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "PASS_RECORDED_SCENARIOS_ONLY",
+      "complete_business_contract": "NOT_RUN",
+      "observed": {
+        "successful_requests": 1,
+        "denied_requests": 1,
+        "evidence": [
+          "docs/evidence/qa-protocol/20261012T103242Z.json"
+        ],
+        "scenarios": [
+          "dav"
+        ]
+      },
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "FileDavController::dav__revoke",
+      "canonical_url": "api/file/dav/revoke",
+      "aliases": [],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "PASS_RECORDED_SCENARIOS_ONLY",
+      "complete_business_contract": "NOT_RUN",
+      "observed": {
+        "successful_requests": 1,
+        "denied_requests": 0,
+        "evidence": [
+          "docs/evidence/qa-protocol/20261012T103242Z.json"
+        ],
+        "scenarios": [
+          "dav"
+        ]
+      },
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "FileDavController::dav__delete",
+      "canonical_url": "api/file/dav/delete",
+      "aliases": [],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "FileDavController::dav__adminsetting",
+      "canonical_url": "api/file/dav/adminsetting",
+      "aliases": [],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "FileDavController::dav__adminstatus",
+      "canonical_url": "api/file/dav/adminstatus",
+      "aliases": [],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "FileDavController::dav__conflicts",
+      "canonical_url": "api/file/dav/conflicts",
+      "aliases": [],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "FileDavController::dav__conflictrename",
+      "canonical_url": "api/file/dav/conflictrename",
+      "aliases": [],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "FileDavController::dav__userrevoke",
+      "canonical_url": "api/file/dav/userrevoke",
+      "aliases": [],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "ProjectController::lists",
+      "canonical_url": "api/project/lists",
+      "aliases": [],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "PASS_RECORDED_SCENARIOS_ONLY",
+      "complete_business_contract": "NOT_RUN",
+      "observed": {
+        "successful_requests": 2,
+        "denied_requests": 0,
+        "evidence": [
+          "docs/evidence/qa-business/matrix.json"
+        ],
+        "scenarios": [
+          "navigation_delta"
+        ]
+      },
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "ProjectController::one",
+      "canonical_url": "api/project/one",
+      "aliases": [],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "PASS_RECORDED_SCENARIOS_ONLY",
+      "complete_business_contract": "NOT_RUN",
+      "observed": {
+        "successful_requests": 1,
+        "denied_requests": 3,
+        "evidence": [
+          "docs/evidence/qa-backend/core-http.json",
+          "docs/evidence/qa-backend/core-readback.json",
+          "docs/evidence/qa-protocol/20261012T102458Z.json"
+        ],
+        "scenarios": [
+          "core_http",
+          "restart_readback",
+          "websocket"
+        ]
+      },
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "ProjectController::add",
+      "canonical_url": "api/project/add",
+      "aliases": [],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "PASS_RECORDED_SCENARIOS_ONLY",
+      "complete_business_contract": "NOT_RUN",
+      "observed": {
+        "successful_requests": 8,
+        "denied_requests": 0,
+        "evidence": [
+          "docs/evidence/qa-backend/core-http.json",
+          "docs/evidence/qa-business/matrix.json",
+          "docs/evidence/qa-protocol/20261012T102458Z.json"
+        ],
+        "scenarios": [
+          "complaints_search",
+          "core_http",
+          "handoff_relations",
+          "navigation_delta",
+          "organization",
+          "project_states",
+          "websocket"
+        ]
+      },
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "ProjectController::update",
+      "canonical_url": "api/project/update",
+      "aliases": [],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "ProjectController::user",
+      "canonical_url": "api/project/user",
+      "aliases": [],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "PASS_RECORDED_SCENARIOS_ONLY",
+      "complete_business_contract": "NOT_RUN",
+      "observed": {
+        "successful_requests": 9,
+        "denied_requests": 0,
+        "evidence": [
+          "docs/evidence/qa-backend/core-http.json",
+          "docs/evidence/qa-business/matrix.json",
+          "docs/evidence/qa-protocol/20261012T102458Z.json"
+        ],
+        "scenarios": [
+          "complaints_search",
+          "core_http",
+          "handoff_relations",
+          "navigation_delta",
+          "project_states",
+          "websocket"
+        ]
+      },
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "ProjectController::invite",
+      "canonical_url": "api/project/invite",
+      "aliases": [],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "ProjectController::invite__info",
+      "canonical_url": "api/project/invite/info",
+      "aliases": [
+        "api/project/invite__info"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "ProjectController::invite__join",
+      "canonical_url": "api/project/invite/join",
+      "aliases": [
+        "api/project/invite__join"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "ProjectController::transfer",
+      "canonical_url": "api/project/transfer",
+      "aliases": [],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "ProjectController::adddeputy",
+      "canonical_url": "api/project/adddeputy",
+      "aliases": [],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "ProjectController::deldeputy",
+      "canonical_url": "api/project/deldeputy",
+      "aliases": [],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "ProjectController::sort",
+      "canonical_url": "api/project/sort",
+      "aliases": [],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "PASS_RECORDED_SCENARIOS_ONLY",
+      "complete_business_contract": "NOT_RUN",
+      "observed": {
+        "successful_requests": 1,
+        "denied_requests": 0,
+        "evidence": [
+          "docs/evidence/qa-business/matrix.json"
+        ],
+        "scenarios": [
+          "project_states"
+        ]
+      },
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "ProjectController::user__sort",
+      "canonical_url": "api/project/user/sort",
+      "aliases": [
+        "api/project/user__sort"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "ProjectController::exit",
+      "canonical_url": "api/project/exit",
+      "aliases": [],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "ProjectController::archived",
+      "canonical_url": "api/project/archived",
+      "aliases": [],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "PASS_RECORDED_SCENARIOS_ONLY",
+      "complete_business_contract": "NOT_RUN",
+      "observed": {
+        "successful_requests": 2,
+        "denied_requests": 0,
+        "evidence": [
+          "docs/evidence/qa-business/matrix.json"
+        ],
+        "scenarios": [
+          "project_states"
+        ]
+      },
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "ProjectController::remove",
+      "canonical_url": "api/project/remove",
+      "aliases": [],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "ProjectController::column__lists",
+      "canonical_url": "api/project/column/lists",
+      "aliases": [
+        "api/project/column__lists"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "PASS_RECORDED_SCENARIOS_ONLY",
+      "complete_business_contract": "NOT_RUN",
+      "observed": {
+        "successful_requests": 3,
+        "denied_requests": 0,
+        "evidence": [
+          "docs/evidence/qa-backend/core-http.json",
+          "docs/evidence/qa-business/matrix.json"
+        ],
+        "scenarios": [
+          "core_http",
+          "project_states"
+        ]
+      },
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "ProjectController::column__add",
+      "canonical_url": "api/project/column/add",
+      "aliases": [
+        "api/project/column__add"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "ProjectController::column__update",
+      "canonical_url": "api/project/column/update",
+      "aliases": [
+        "api/project/column__update"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "ProjectController::column__remove",
+      "canonical_url": "api/project/column/remove",
+      "aliases": [
+        "api/project/column__remove"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "ProjectController::column__one",
+      "canonical_url": "api/project/column/one",
+      "aliases": [
+        "api/project/column__one"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "ProjectController::task__lists",
+      "canonical_url": "api/project/task/lists",
+      "aliases": [
+        "api/project/task__lists"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "PASS_RECORDED_SCENARIOS_ONLY",
+      "complete_business_contract": "NOT_RUN",
+      "observed": {
+        "successful_requests": 11,
+        "denied_requests": 0,
+        "evidence": [
+          "docs/evidence/qa-business/matrix.json"
+        ],
+        "scenarios": [
+          "navigation_delta",
+          "project_states"
+        ]
+      },
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity.",
+      "ui_observation": {
+        "scope": "actual incremental empty response plus fresh-profile full readback; cache race remains noted",
+        "evidence": [
+          "docs/2026101220-独立前端生产构建与界面验收-feat.md",
+          "docs/evidence/qa-frontend/release-status.json",
+          "docs/evidence/qa-frontend/app-registry-regression.json"
+        ],
+        "status": "RECORDED_UI_SCENARIO_ONLY_NOT_ALL_BRANCHES"
+      }
+    },
+    {
+      "id": "ProjectController::user__projects",
+      "canonical_url": "api/project/user/projects",
+      "aliases": [
+        "api/project/user__projects"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "ProjectController::user__tasks",
+      "canonical_url": "api/project/user/tasks",
+      "aliases": [
+        "api/project/user__tasks"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "ProjectController::user__counts",
+      "canonical_url": "api/project/user/counts",
+      "aliases": [
+        "api/project/user__counts"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "ProjectController::task__easylists",
+      "canonical_url": "api/project/task/easylists",
+      "aliases": [
+        "api/project/task__easylists"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "ProjectController::task__export",
+      "canonical_url": "api/project/task/export",
+      "aliases": [
+        "api/project/task__export"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "ProjectController::task__exportoverdue",
+      "canonical_url": "api/project/task/exportoverdue",
+      "aliases": [
+        "api/project/task__exportoverdue"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "ProjectController::task__down",
+      "canonical_url": "api/project/task/down",
+      "aliases": [
+        "api/project/task__down"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "ProjectController::task__one",
+      "canonical_url": "api/project/task/one",
+      "aliases": [
+        "api/project/task__one"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "PASS_RECORDED_SCENARIOS_ONLY",
+      "complete_business_contract": "NOT_RUN",
+      "observed": {
+        "successful_requests": 9,
+        "denied_requests": 1,
+        "evidence": [
+          "docs/evidence/qa-backend/core-readback.json",
+          "docs/evidence/qa-business/matrix.json"
+        ],
+        "scenarios": [
+          "organization",
+          "project_states",
+          "restart_readback"
+        ]
+      },
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity.",
+      "ui_observation": {
+        "scope": "restart and fresh-profile task readback",
+        "evidence": [
+          "docs/2026101220-独立前端生产构建与界面验收-feat.md",
+          "docs/evidence/qa-frontend/release-status.json",
+          "docs/evidence/qa-frontend/app-registry-regression.json"
+        ],
+        "status": "RECORDED_UI_SCENARIO_ONLY_NOT_ALL_BRANCHES"
+      }
+    },
+    {
+      "id": "ProjectController::task__subdata",
+      "canonical_url": "api/project/task/subdata",
+      "aliases": [
+        "api/project/task__subdata"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "PASS_RECORDED_SCENARIOS_ONLY",
+      "complete_business_contract": "NOT_RUN",
+      "observed": {
+        "successful_requests": 1,
+        "denied_requests": 0,
+        "evidence": [
+          "docs/evidence/qa-business/matrix.json"
+        ],
+        "scenarios": [
+          "project_states"
+        ]
+      },
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "ProjectController::task__related",
+      "canonical_url": "api/project/task/related",
+      "aliases": [
+        "api/project/task__related"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "PASS_RECORDED_SCENARIOS_ONLY",
+      "complete_business_contract": "NOT_RUN",
+      "observed": {
+        "successful_requests": 2,
+        "denied_requests": 0,
+        "evidence": [
+          "docs/evidence/qa-business/matrix.json"
+        ],
+        "scenarios": [
+          "handoff_relations"
+        ]
+      },
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "ProjectController::task__related_delete",
+      "canonical_url": "api/project/task/related_delete",
+      "aliases": [
+        "api/project/task__related_delete"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "PASS_RECORDED_SCENARIOS_ONLY",
+      "complete_business_contract": "NOT_RUN",
+      "observed": {
+        "successful_requests": 1,
+        "denied_requests": 0,
+        "evidence": [
+          "docs/evidence/qa-business/matrix.json"
+        ],
+        "scenarios": [
+          "handoff_relations"
+        ]
+      },
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "ProjectController::task__content",
+      "canonical_url": "api/project/task/content",
+      "aliases": [
+        "api/project/task__content"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "ProjectController::task__content_history",
+      "canonical_url": "api/project/task/content_history",
+      "aliases": [
+        "api/project/task__content_history"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "ProjectController::task__files",
+      "canonical_url": "api/project/task/files",
+      "aliases": [
+        "api/project/task__files"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "ProjectController::task__filedelete",
+      "canonical_url": "api/project/task/filedelete",
+      "aliases": [
+        "api/project/task__filedelete"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "ProjectController::task__filedetail",
+      "canonical_url": "api/project/task/filedetail",
+      "aliases": [
+        "api/project/task__filedetail"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "ProjectController::task__filedown",
+      "canonical_url": "api/project/task/filedown",
+      "aliases": [
+        "api/project/task__filedown"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "ProjectController::task__add",
+      "canonical_url": "api/project/task/add",
+      "aliases": [
+        "api/project/task__add"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "PASS_RECORDED_SCENARIOS_ONLY",
+      "complete_business_contract": "NOT_RUN",
+      "observed": {
+        "successful_requests": 8,
+        "denied_requests": 1,
+        "evidence": [
+          "docs/evidence/qa-backend/core-http.json",
+          "docs/evidence/qa-business/matrix.json"
+        ],
+        "scenarios": [
+          "complaints_search",
+          "core_http",
+          "handoff_relations",
+          "navigation_delta",
+          "organization",
+          "project_states"
+        ]
+      },
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity.",
+      "ui_observation": {
+        "scope": "real task creation after media repair",
+        "evidence": [
+          "docs/2026101220-独立前端生产构建与界面验收-feat.md",
+          "docs/evidence/qa-frontend/release-status.json",
+          "docs/evidence/qa-frontend/app-registry-regression.json"
+        ],
+        "status": "RECORDED_UI_SCENARIO_ONLY_NOT_ALL_BRANCHES"
+      }
+    },
+    {
+      "id": "ProjectController::task__addsub",
+      "canonical_url": "api/project/task/addsub",
+      "aliases": [
+        "api/project/task__addsub"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "PASS_RECORDED_SCENARIOS_ONLY",
+      "complete_business_contract": "NOT_RUN",
+      "observed": {
+        "successful_requests": 1,
+        "denied_requests": 0,
+        "evidence": [
+          "docs/evidence/qa-business/matrix.json"
+        ],
+        "scenarios": [
+          "project_states"
+        ]
+      },
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "ProjectController::task__upgrade",
+      "canonical_url": "api/project/task/upgrade",
+      "aliases": [
+        "api/project/task__upgrade"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "ProjectController::task__update",
+      "canonical_url": "api/project/task/update",
+      "aliases": [
+        "api/project/task__update"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "PASS_RECORDED_SCENARIOS_ONLY",
+      "complete_business_contract": "NOT_RUN",
+      "observed": {
+        "successful_requests": 6,
+        "denied_requests": 5,
+        "evidence": [
+          "docs/evidence/qa-backend/core-http.json",
+          "docs/evidence/qa-business/matrix.json"
+        ],
+        "scenarios": [
+          "core_http",
+          "organization",
+          "project_states"
+        ]
+      },
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "ProjectController::task__dialog",
+      "canonical_url": "api/project/task/dialog",
+      "aliases": [
+        "api/project/task__dialog"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "PASS_RECORDED_SCENARIOS_ONLY",
+      "complete_business_contract": "NOT_RUN",
+      "observed": {
+        "successful_requests": 2,
+        "denied_requests": 0,
+        "evidence": [
+          "docs/evidence/qa-backend/core-http.json",
+          "docs/evidence/qa-business/matrix.json"
+        ],
+        "scenarios": [
+          "core_http",
+          "handoff_relations"
+        ]
+      },
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "ProjectController::task__archived",
+      "canonical_url": "api/project/task/archived",
+      "aliases": [
+        "api/project/task__archived"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "PASS_RECORDED_SCENARIOS_ONLY",
+      "complete_business_contract": "NOT_RUN",
+      "observed": {
+        "successful_requests": 2,
+        "denied_requests": 0,
+        "evidence": [
+          "docs/evidence/qa-business/matrix.json"
+        ],
+        "scenarios": [
+          "project_states"
+        ]
+      },
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "ProjectController::task__remove",
+      "canonical_url": "api/project/task/remove",
+      "aliases": [
+        "api/project/task__remove"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "PASS_RECORDED_SCENARIOS_ONLY",
+      "complete_business_contract": "NOT_RUN",
+      "observed": {
+        "successful_requests": 2,
+        "denied_requests": 0,
+        "evidence": [
+          "docs/evidence/qa-business/matrix.json"
+        ],
+        "scenarios": [
+          "navigation_delta"
+        ]
+      },
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "ProjectController::task__resetfromlog",
+      "canonical_url": "api/project/task/resetfromlog",
+      "aliases": [
+        "api/project/task__resetfromlog"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "ProjectController::task__flow",
+      "canonical_url": "api/project/task/flow",
+      "aliases": [
+        "api/project/task__flow"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "ProjectController::task__move",
+      "canonical_url": "api/project/task/move",
+      "aliases": [
+        "api/project/task__move"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "ProjectController::task__copy",
+      "canonical_url": "api/project/task/copy",
+      "aliases": [
+        "api/project/task__copy"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "ProjectController::task__ai_generate",
+      "canonical_url": "api/project/task/ai_generate",
+      "aliases": [
+        "api/project/task__ai_generate"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "ProjectController::ai__generate",
+      "canonical_url": "api/project/ai/generate",
+      "aliases": [
+        "api/project/ai__generate"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "ProjectController::flow__list",
+      "canonical_url": "api/project/flow/list",
+      "aliases": [
+        "api/project/flow__list"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "PASS_RECORDED_SCENARIOS_ONLY",
+      "complete_business_contract": "NOT_RUN",
+      "observed": {
+        "successful_requests": 1,
+        "denied_requests": 0,
+        "evidence": [
+          "docs/evidence/qa-business/matrix.json"
+        ],
+        "scenarios": [
+          "project_states"
+        ]
+      },
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "ProjectController::flow__save",
+      "canonical_url": "api/project/flow/save",
+      "aliases": [
+        "api/project/flow__save"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "ProjectController::flow__delete",
+      "canonical_url": "api/project/flow/delete",
+      "aliases": [
+        "api/project/flow__delete"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "ProjectController::log__lists",
+      "canonical_url": "api/project/log/lists",
+      "aliases": [
+        "api/project/log__lists"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "ProjectController::top",
+      "canonical_url": "api/project/top",
+      "aliases": [],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "ProjectController::permission",
+      "canonical_url": "api/project/permission",
+      "aliases": [],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "PASS_RECORDED_SCENARIOS_ONLY",
+      "complete_business_contract": "NOT_RUN",
+      "observed": {
+        "successful_requests": 2,
+        "denied_requests": 0,
+        "evidence": [
+          "docs/evidence/qa-business/matrix.json"
+        ],
+        "scenarios": [
+          "project_states"
+        ]
+      },
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "ProjectController::permission__update",
+      "canonical_url": "api/project/permission/update",
+      "aliases": [
+        "api/project/permission__update"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "PASS_RECORDED_SCENARIOS_ONLY",
+      "complete_business_contract": "NOT_RUN",
+      "observed": {
+        "successful_requests": 1,
+        "denied_requests": 1,
+        "evidence": [
+          "docs/evidence/qa-business/matrix.json"
+        ],
+        "scenarios": [
+          "project_states"
+        ]
+      },
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "ProjectController::task__template_list",
+      "canonical_url": "api/project/task/template_list",
+      "aliases": [
+        "api/project/task__template_list"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "ProjectController::task__template_visible",
+      "canonical_url": "api/project/task/template_visible",
+      "aliases": [
+        "api/project/task__template_visible"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "ProjectController::task__template_search",
+      "canonical_url": "api/project/task/template_search",
+      "aliases": [
+        "api/project/task__template_search"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "ProjectController::task__template_save",
+      "canonical_url": "api/project/task/template_save",
+      "aliases": [
+        "api/project/task__template_save"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "ProjectController::task__template_sort",
+      "canonical_url": "api/project/task/template_sort",
+      "aliases": [
+        "api/project/task__template_sort"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "ProjectController::task__template_delete",
+      "canonical_url": "api/project/task/template_delete",
+      "aliases": [
+        "api/project/task__template_delete"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "ProjectController::task__template_default",
+      "canonical_url": "api/project/task/template_default",
+      "aliases": [
+        "api/project/task__template_default"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "ProjectController::tag__save",
+      "canonical_url": "api/project/tag/save",
+      "aliases": [
+        "api/project/tag__save"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "ProjectController::tag__sort",
+      "canonical_url": "api/project/tag/sort",
+      "aliases": [
+        "api/project/tag__sort"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "ProjectController::tag__delete",
+      "canonical_url": "api/project/tag/delete",
+      "aliases": [
+        "api/project/tag__delete"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "ProjectController::tag__list",
+      "canonical_url": "api/project/tag/list",
+      "aliases": [
+        "api/project/tag__list"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "ProjectController::task__ai_apply",
+      "canonical_url": "api/project/task/ai_apply",
+      "aliases": [
+        "api/project/task__ai_apply"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "ProjectController::task__ai_dismiss",
+      "canonical_url": "api/project/task/ai_dismiss",
+      "aliases": [
+        "api/project/task__ai_dismiss"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "ProjectTaskHandoffController::lists",
+      "canonical_url": "api/projecttaskhandoff/lists",
+      "aliases": [],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "PASS_RECORDED_SCENARIOS_ONLY",
+      "complete_business_contract": "NOT_RUN",
+      "observed": {
+        "successful_requests": 1,
+        "denied_requests": 0,
+        "evidence": [
+          "docs/evidence/qa-business/matrix.json"
+        ],
+        "scenarios": [
+          "handoff_relations"
+        ]
+      },
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "ProjectTaskHandoffController::options",
+      "canonical_url": "api/projecttaskhandoff/options",
+      "aliases": [],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "PASS_RECORDED_SCENARIOS_ONLY",
+      "complete_business_contract": "NOT_RUN",
+      "observed": {
+        "successful_requests": 3,
+        "denied_requests": 0,
+        "evidence": [
+          "docs/evidence/qa-business/matrix.json"
+        ],
+        "scenarios": [
+          "handoff_relations"
+        ]
+      },
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "ProjectTaskHandoffController::assign",
+      "canonical_url": "api/projecttaskhandoff/assign",
+      "aliases": [],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "PASS_RECORDED_SCENARIOS_ONLY",
+      "complete_business_contract": "NOT_RUN",
+      "observed": {
+        "successful_requests": 1,
+        "denied_requests": 1,
+        "evidence": [
+          "docs/evidence/qa-business/matrix.json"
+        ],
+        "scenarios": [
+          "handoff_relations"
+        ]
+      },
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "PublicController::checkin__install",
+      "canonical_url": "api/public/checkin/install",
+      "aliases": [
+        "api/public/checkin__install"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "PublicController::checkin__report",
+      "canonical_url": "api/public/checkin/report",
+      "aliases": [
+        "api/public/checkin__report"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "ReportController::my",
+      "canonical_url": "api/report/my",
+      "aliases": [],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "PASS_RECORDED_SCENARIOS_ONLY",
+      "complete_business_contract": "NOT_RUN",
+      "observed": {
+        "successful_requests": 4,
+        "denied_requests": 0,
+        "evidence": [
+          "docs/evidence/qa-business/matrix.json"
+        ],
+        "scenarios": [
+          "reports"
+        ]
+      },
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "ReportController::receive",
+      "canonical_url": "api/report/receive",
+      "aliases": [],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "PASS_RECORDED_SCENARIOS_ONLY",
+      "complete_business_contract": "NOT_RUN",
+      "observed": {
+        "successful_requests": 3,
+        "denied_requests": 0,
+        "evidence": [
+          "docs/evidence/qa-business/matrix.json"
+        ],
+        "scenarios": [
+          "reports"
+        ]
+      },
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "ReportController::store",
+      "canonical_url": "api/report/store",
+      "aliases": [],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "PASS_RECORDED_SCENARIOS_ONLY",
+      "complete_business_contract": "NOT_RUN",
+      "observed": {
+        "successful_requests": 4,
+        "denied_requests": 2,
+        "evidence": [
+          "docs/evidence/qa-backend/core-http.json",
+          "docs/evidence/qa-business/matrix.json"
+        ],
+        "scenarios": [
+          "core_http",
+          "reports"
+        ]
+      },
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "ReportController::template",
+      "canonical_url": "api/report/template",
+      "aliases": [],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "ReportController::detail",
+      "canonical_url": "api/report/detail",
+      "aliases": [],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "PASS_RECORDED_SCENARIOS_ONLY",
+      "complete_business_contract": "NOT_RUN",
+      "observed": {
+        "successful_requests": 7,
+        "denied_requests": 4,
+        "evidence": [
+          "docs/evidence/qa-backend/core-http.json",
+          "docs/evidence/qa-backend/core-readback.json",
+          "docs/evidence/qa-business/matrix.json"
+        ],
+        "scenarios": [
+          "core_http",
+          "reports",
+          "restart_readback"
+        ]
+      },
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "ReportController::analysave",
+      "canonical_url": "api/report/analysave",
+      "aliases": [],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "ReportController::mark",
+      "canonical_url": "api/report/mark",
+      "aliases": [],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "PASS_RECORDED_SCENARIOS_ONLY",
+      "complete_business_contract": "NOT_RUN",
+      "observed": {
+        "successful_requests": 1,
+        "denied_requests": 0,
+        "evidence": [
+          "docs/evidence/qa-business/matrix.json"
+        ],
+        "scenarios": [
+          "reports"
+        ]
+      },
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "ReportController::share",
+      "canonical_url": "api/report/share",
+      "aliases": [],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "PASS_RECORDED_SCENARIOS_ONLY",
+      "complete_business_contract": "NOT_RUN",
+      "observed": {
+        "successful_requests": 1,
+        "denied_requests": 0,
+        "evidence": [
+          "docs/evidence/qa-business/matrix.json"
+        ],
+        "scenarios": [
+          "reports"
+        ]
+      },
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "ReportController::last_submitter",
+      "canonical_url": "api/report/last_submitter",
+      "aliases": [],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "ReportController::unread",
+      "canonical_url": "api/report/unread",
+      "aliases": [],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "PASS_RECORDED_SCENARIOS_ONLY",
+      "complete_business_contract": "NOT_RUN",
+      "observed": {
+        "successful_requests": 9,
+        "denied_requests": 0,
+        "evidence": [
+          "docs/evidence/qa-business/matrix.json"
+        ],
+        "scenarios": [
+          "reports"
+        ]
+      },
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "ReportController::read",
+      "canonical_url": "api/report/read",
+      "aliases": [],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "PASS_RECORDED_SCENARIOS_ONLY",
+      "complete_business_contract": "NOT_RUN",
+      "observed": {
+        "successful_requests": 1,
+        "denied_requests": 0,
+        "evidence": [
+          "docs/evidence/qa-business/matrix.json"
+        ],
+        "scenarios": [
+          "reports"
+        ]
+      },
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "SearchController::contact",
+      "canonical_url": "api/search/contact",
+      "aliases": [],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "SearchController::project",
+      "canonical_url": "api/search/project",
+      "aliases": [],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "PASS_RECORDED_SCENARIOS_ONLY",
+      "complete_business_contract": "NOT_RUN",
+      "observed": {
+        "successful_requests": 1,
+        "denied_requests": 0,
+        "evidence": [
+          "docs/evidence/qa-business/matrix.json"
+        ],
+        "scenarios": [
+          "complaints_search"
+        ]
+      },
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "SearchController::task",
+      "canonical_url": "api/search/task",
+      "aliases": [],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "PASS_RECORDED_SCENARIOS_ONLY",
+      "complete_business_contract": "NOT_RUN",
+      "observed": {
+        "successful_requests": 3,
+        "denied_requests": 0,
+        "evidence": [
+          "docs/evidence/qa-business/matrix.json"
+        ],
+        "scenarios": [
+          "complaints_search"
+        ]
+      },
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "SearchController::file",
+      "canonical_url": "api/search/file",
+      "aliases": [],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "PASS_RECORDED_SCENARIOS_ONLY",
+      "complete_business_contract": "NOT_RUN",
+      "observed": {
+        "successful_requests": 2,
+        "denied_requests": 0,
+        "evidence": [
+          "docs/evidence/qa-business/matrix.json"
+        ],
+        "scenarios": [
+          "navigation_delta"
+        ]
+      },
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "SearchController::message",
+      "canonical_url": "api/search/message",
+      "aliases": [],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "SystemController::setting",
+      "canonical_url": "api/system/setting",
+      "aliases": [],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "PASS_RECORDED_SCENARIOS_ONLY",
+      "complete_business_contract": "NOT_RUN",
+      "observed": {
+        "successful_requests": 4,
+        "denied_requests": 1,
+        "evidence": [
+          "docs/evidence/qa-backend/core-http.json",
+          "docs/evidence/qa-business/matrix.json"
+        ],
+        "scenarios": [
+          "core_http",
+          "handoff_relations"
+        ]
+      },
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity.",
+      "ui_observation": {
+        "scope": "real administrator settings/menu",
+        "evidence": [
+          "docs/2026101220-独立前端生产构建与界面验收-feat.md",
+          "docs/evidence/qa-frontend/release-status.json",
+          "docs/evidence/qa-frontend/app-registry-regression.json"
+        ],
+        "status": "RECORDED_UI_SCENARIO_ONLY_NOT_ALL_BRANCHES"
+      }
+    },
+    {
+      "id": "SystemController::setting__email",
+      "canonical_url": "api/system/setting/email",
+      "aliases": [
+        "api/system/setting__email"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "SystemController::setting__meeting",
+      "canonical_url": "api/system/setting/meeting",
+      "aliases": [
+        "api/system/setting__meeting"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "SystemController::setting__ai",
+      "canonical_url": "api/system/setting/ai",
+      "aliases": [
+        "api/system/setting__ai"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "SystemController::setting__aibot",
+      "canonical_url": "api/system/setting/aibot",
+      "aliases": [
+        "api/system/setting__aibot"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "SystemController::setting__aibot_models",
+      "canonical_url": "api/system/setting/aibot_models",
+      "aliases": [
+        "api/system/setting__aibot_models"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "SystemController::setting__aibot_defmodels",
+      "canonical_url": "api/system/setting/aibot_defmodels",
+      "aliases": [
+        "api/system/setting__aibot_defmodels"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "SystemController::setting__checkin",
+      "canonical_url": "api/system/setting/checkin",
+      "aliases": [
+        "api/system/setting__checkin"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "SystemController::setting__apppush",
+      "canonical_url": "api/system/setting/apppush",
+      "aliases": [
+        "api/system/setting__apppush"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "SystemController::setting__thirdaccess",
+      "canonical_url": "api/system/setting/thirdaccess",
+      "aliases": [
+        "api/system/setting__thirdaccess"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "SystemController::setting__file",
+      "canonical_url": "api/system/setting/file",
+      "aliases": [
+        "api/system/setting__file"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "SystemController::demo",
+      "canonical_url": "api/system/demo",
+      "aliases": [],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "SystemController::priority",
+      "canonical_url": "api/system/priority",
+      "aliases": [],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "SystemController::microapp_menu",
+      "canonical_url": "api/system/microapp_menu",
+      "aliases": [],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "SystemController::column__template",
+      "canonical_url": "api/system/column/template",
+      "aliases": [
+        "api/system/column__template"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "SystemController::get__info",
+      "canonical_url": "api/system/get/info",
+      "aliases": [
+        "api/system/get__info"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "SystemController::get__ip",
+      "canonical_url": "api/system/get/ip",
+      "aliases": [
+        "api/system/get__ip"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "SystemController::get__cnip",
+      "canonical_url": "api/system/get/cnip",
+      "aliases": [
+        "api/system/get__cnip"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "SystemController::imgupload",
+      "canonical_url": "api/system/imgupload",
+      "aliases": [],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "SystemController::imgview",
+      "canonical_url": "api/system/imgview",
+      "aliases": [],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "SystemController::fileupload",
+      "canonical_url": "api/system/fileupload",
+      "aliases": [],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "SystemController::get__updatelog",
+      "canonical_url": "api/system/get/updatelog",
+      "aliases": [
+        "api/system/get__updatelog"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "SystemController::email__check",
+      "canonical_url": "api/system/email/check",
+      "aliases": [
+        "api/system/email__check"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "SystemController::checkin__export",
+      "canonical_url": "api/system/checkin/export",
+      "aliases": [
+        "api/system/checkin__export"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "SystemController::checkin__down",
+      "canonical_url": "api/system/checkin/down",
+      "aliases": [
+        "api/system/checkin__down"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "SystemController::version",
+      "canonical_url": "api/system/version",
+      "aliases": [],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "SystemController::update__check",
+      "canonical_url": "api/system/update/check",
+      "aliases": [
+        "api/system/update__check"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "SystemController::update__start",
+      "canonical_url": "api/system/update/start",
+      "aliases": [
+        "api/system/update__start"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "SystemController::update__status",
+      "canonical_url": "api/system/update/status",
+      "aliases": [
+        "api/system/update__status"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "SystemController::prefetch",
+      "canonical_url": "api/system/prefetch",
+      "aliases": [],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "UploadController::init",
+      "canonical_url": "api/upload/init",
+      "aliases": [],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "PASS_RECORDED_SCENARIOS_ONLY",
+      "complete_business_contract": "NOT_RUN",
+      "observed": {
+        "successful_requests": 2,
+        "denied_requests": 1,
+        "evidence": [
+          "docs/evidence/qa-protocol/20261012T102919Z.json"
+        ],
+        "scenarios": [
+          "uploads"
+        ]
+      },
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "UploadController::chunk",
+      "canonical_url": "api/upload/chunk",
+      "aliases": [],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "PASS_RECORDED_SCENARIOS_ONLY",
+      "complete_business_contract": "NOT_RUN",
+      "observed": {
+        "successful_requests": 4,
+        "denied_requests": 2,
+        "evidence": [
+          "docs/evidence/qa-protocol/20261012T102919Z.json"
+        ],
+        "scenarios": [
+          "uploads"
+        ]
+      },
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "UploadController::merge",
+      "canonical_url": "api/upload/merge",
+      "aliases": [],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "PASS_RECORDED_SCENARIOS_ONLY",
+      "complete_business_contract": "NOT_RUN",
+      "observed": {
+        "successful_requests": 2,
+        "denied_requests": 3,
+        "evidence": [
+          "docs/evidence/qa-protocol/20261012T102919Z.json"
+        ],
+        "scenarios": [
+          "uploads"
+        ]
+      },
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "UploadController::cancel",
+      "canonical_url": "api/upload/cancel",
+      "aliases": [],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "PASS_RECORDED_SCENARIOS_ONLY",
+      "complete_business_contract": "NOT_RUN",
+      "observed": {
+        "successful_requests": 2,
+        "denied_requests": 0,
+        "evidence": [
+          "docs/evidence/qa-protocol/20261012T102919Z.json"
+        ],
+        "scenarios": [
+          "uploads"
+        ]
+      },
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "UsersController::login",
+      "canonical_url": "api/users/login",
+      "aliases": [],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "PASS_RECORDED_SCENARIOS_ONLY",
+      "complete_business_contract": "NOT_RUN",
+      "observed": {
+        "successful_requests": 42,
+        "denied_requests": 4,
+        "evidence": [
+          "docs/evidence/qa-backend/core-http.json",
+          "docs/evidence/qa-backend/core-readback.json",
+          "docs/evidence/qa-business/matrix.json",
+          "docs/evidence/qa-protocol/20261012T102458Z.json",
+          "docs/evidence/qa-protocol/20261012T102919Z.json",
+          "docs/evidence/qa-protocol/20261012T103242Z.json"
+        ],
+        "scenarios": [
+          "complaints_search",
+          "core_http",
+          "dav",
+          "files",
+          "handoff_relations",
+          "navigation_delta",
+          "organization",
+          "organization_resume",
+          "project_states",
+          "reports",
+          "restart_readback",
+          "uploads",
+          "websocket",
+          "zip_first"
+        ]
+      },
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity.",
+      "ui_observation": {
+        "scope": "real UI registration/login",
+        "evidence": [
+          "docs/2026101220-独立前端生产构建与界面验收-feat.md",
+          "docs/evidence/qa-frontend/release-status.json",
+          "docs/evidence/qa-frontend/app-registry-regression.json"
+        ],
+        "status": "RECORDED_UI_SCENARIO_ONLY_NOT_ALL_BRANCHES"
+      }
+    },
+    {
+      "id": "UsersController::login__qrcode",
+      "canonical_url": "api/users/login/qrcode",
+      "aliases": [
+        "api/users/login__qrcode"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "UsersController::login__needcode",
+      "canonical_url": "api/users/login/needcode",
+      "aliases": [
+        "api/users/login__needcode"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "UsersController::login__codeimg",
+      "canonical_url": "api/users/login/codeimg",
+      "aliases": [
+        "api/users/login__codeimg"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "UsersController::login__codejson",
+      "canonical_url": "api/users/login/codejson",
+      "aliases": [
+        "api/users/login__codejson"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "PASS_RECORDED_SCENARIOS_ONLY",
+      "complete_business_contract": "NOT_RUN",
+      "observed": {
+        "successful_requests": 2,
+        "denied_requests": 0,
+        "evidence": [
+          "docs/evidence/qa-business/matrix.json"
+        ],
+        "scenarios": [
+          "organization",
+          "organization_resume"
+        ]
+      },
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "UsersController::logout",
+      "canonical_url": "api/users/logout",
+      "aliases": [],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "PASS_RECORDED_SCENARIOS_ONLY",
+      "complete_business_contract": "NOT_RUN",
+      "observed": {
+        "successful_requests": 2,
+        "denied_requests": 0,
+        "evidence": [
+          "docs/evidence/qa-backend/core-http.json",
+          "docs/evidence/qa-protocol/20261012T102458Z.json"
+        ],
+        "scenarios": [
+          "core_http",
+          "websocket"
+        ]
+      },
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "UsersController::token__expire",
+      "canonical_url": "api/users/token/expire",
+      "aliases": [
+        "api/users/token__expire"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "UsersController::reg__needinvite",
+      "canonical_url": "api/users/reg/needinvite",
+      "aliases": [
+        "api/users/reg__needinvite"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "UsersController::info",
+      "canonical_url": "api/users/info",
+      "aliases": [],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "PASS_RECORDED_SCENARIOS_ONLY",
+      "complete_business_contract": "NOT_RUN",
+      "observed": {
+        "successful_requests": 7,
+        "denied_requests": 10,
+        "evidence": [
+          "docs/evidence/qa-backend/core-http.json",
+          "docs/evidence/qa-business/matrix.json",
+          "docs/evidence/qa-protocol/20261012T102458Z.json"
+        ],
+        "scenarios": [
+          "core_http",
+          "organization",
+          "organization_resume",
+          "websocket"
+        ]
+      },
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "UsersController::info__managed_departments",
+      "canonical_url": "api/users/info/managed_departments",
+      "aliases": [
+        "api/users/info__managed_departments"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "PASS_RECORDED_SCENARIOS_ONLY",
+      "complete_business_contract": "NOT_RUN",
+      "observed": {
+        "successful_requests": 8,
+        "denied_requests": 0,
+        "evidence": [
+          "docs/evidence/qa-business/matrix.json"
+        ],
+        "scenarios": [
+          "organization"
+        ]
+      },
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "UsersController::info__departments",
+      "canonical_url": "api/users/info/departments",
+      "aliases": [
+        "api/users/info__departments"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "PASS_RECORDED_SCENARIOS_ONLY",
+      "complete_business_contract": "NOT_RUN",
+      "observed": {
+        "successful_requests": 2,
+        "denied_requests": 0,
+        "evidence": [
+          "docs/evidence/qa-business/matrix.json"
+        ],
+        "scenarios": [
+          "organization"
+        ]
+      },
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "UsersController::editdata",
+      "canonical_url": "api/users/editdata",
+      "aliases": [],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "UsersController::editpass",
+      "canonical_url": "api/users/editpass",
+      "aliases": [],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "PASS_RECORDED_SCENARIOS_ONLY",
+      "complete_business_contract": "NOT_RUN",
+      "observed": {
+        "successful_requests": 1,
+        "denied_requests": 0,
+        "evidence": [
+          "docs/evidence/qa-backend/core-http.json"
+        ],
+        "scenarios": [
+          "core_http"
+        ]
+      },
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "UsersController::search",
+      "canonical_url": "api/users/search",
+      "aliases": [],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "UsersController::search__ai",
+      "canonical_url": "api/users/search/ai",
+      "aliases": [
+        "api/users/search__ai"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "UsersController::basic",
+      "canonical_url": "api/users/basic",
+      "aliases": [],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "UsersController::extra",
+      "canonical_url": "api/users/extra",
+      "aliases": [],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "UsersController::lists",
+      "canonical_url": "api/users/lists",
+      "aliases": [],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "UsersController::operation",
+      "canonical_url": "api/users/operation",
+      "aliases": [],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "PASS_RECORDED_SCENARIOS_ONLY",
+      "complete_business_contract": "NOT_RUN",
+      "observed": {
+        "successful_requests": 13,
+        "denied_requests": 2,
+        "evidence": [
+          "docs/evidence/qa-business/matrix.json",
+          "docs/evidence/qa-protocol/20261012T102458Z.json"
+        ],
+        "scenarios": [
+          "organization",
+          "websocket"
+        ]
+      },
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "UsersController::createuser",
+      "canonical_url": "api/users/createuser",
+      "aliases": [],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "UsersController::import__preview",
+      "canonical_url": "api/users/import/preview",
+      "aliases": [
+        "api/users/import__preview"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "UsersController::import",
+      "canonical_url": "api/users/import",
+      "aliases": [],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "UsersController::import__template",
+      "canonical_url": "api/users/import/template",
+      "aliases": [
+        "api/users/import__template"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "UsersController::email__verification",
+      "canonical_url": "api/users/email/verification",
+      "aliases": [
+        "api/users/email__verification"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "UsersController::umeng__alias",
+      "canonical_url": "api/users/umeng/alias",
+      "aliases": [
+        "api/users/umeng__alias"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "UsersController::meeting__open",
+      "canonical_url": "api/users/meeting/open",
+      "aliases": [
+        "api/users/meeting__open"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "UsersController::tags__lists",
+      "canonical_url": "api/users/tags/lists",
+      "aliases": [
+        "api/users/tags__lists"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "UsersController::tags__add",
+      "canonical_url": "api/users/tags/add",
+      "aliases": [
+        "api/users/tags__add"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "UsersController::tags__update",
+      "canonical_url": "api/users/tags/update",
+      "aliases": [
+        "api/users/tags__update"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "UsersController::tags__delete",
+      "canonical_url": "api/users/tags/delete",
+      "aliases": [
+        "api/users/tags__delete"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "UsersController::tags__recognize",
+      "canonical_url": "api/users/tags/recognize",
+      "aliases": [
+        "api/users/tags__recognize"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "UsersController::meeting__link",
+      "canonical_url": "api/users/meeting/link",
+      "aliases": [
+        "api/users/meeting__link"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "UsersController::meeting__tourist",
+      "canonical_url": "api/users/meeting/tourist",
+      "aliases": [
+        "api/users/meeting__tourist"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "UsersController::meeting__invitation",
+      "canonical_url": "api/users/meeting/invitation",
+      "aliases": [
+        "api/users/meeting__invitation"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "UsersController::email__send",
+      "canonical_url": "api/users/email/send",
+      "aliases": [
+        "api/users/email__send"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "UsersController::email__edit",
+      "canonical_url": "api/users/email/edit",
+      "aliases": [
+        "api/users/email__edit"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "UsersController::delete__account",
+      "canonical_url": "api/users/delete/account",
+      "aliases": [
+        "api/users/delete__account"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "UsersController::department__list",
+      "canonical_url": "api/users/department/list",
+      "aliases": [
+        "api/users/department__list"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "PASS_RECORDED_SCENARIOS_ONLY",
+      "complete_business_contract": "NOT_RUN",
+      "observed": {
+        "successful_requests": 6,
+        "denied_requests": 3,
+        "evidence": [
+          "docs/evidence/qa-business/matrix.json"
+        ],
+        "scenarios": [
+          "organization",
+          "organization_resume"
+        ]
+      },
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "UsersController::department__add",
+      "canonical_url": "api/users/department/add",
+      "aliases": [
+        "api/users/department__add"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "PASS_RECORDED_SCENARIOS_ONLY",
+      "complete_business_contract": "NOT_RUN",
+      "observed": {
+        "successful_requests": 2,
+        "denied_requests": 2,
+        "evidence": [
+          "docs/evidence/qa-business/matrix.json"
+        ],
+        "scenarios": [
+          "organization"
+        ]
+      },
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "UsersController::department__adddeputy",
+      "canonical_url": "api/users/department/adddeputy",
+      "aliases": [
+        "api/users/department__adddeputy"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "PASS_RECORDED_SCENARIOS_ONLY",
+      "complete_business_contract": "NOT_RUN",
+      "observed": {
+        "successful_requests": 2,
+        "denied_requests": 0,
+        "evidence": [
+          "docs/evidence/qa-business/matrix.json"
+        ],
+        "scenarios": [
+          "organization"
+        ]
+      },
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "UsersController::department__deldeputy",
+      "canonical_url": "api/users/department/deldeputy",
+      "aliases": [
+        "api/users/department__deldeputy"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "PASS_RECORDED_SCENARIOS_ONLY",
+      "complete_business_contract": "NOT_RUN",
+      "observed": {
+        "successful_requests": 2,
+        "denied_requests": 0,
+        "evidence": [
+          "docs/evidence/qa-business/matrix.json"
+        ],
+        "scenarios": [
+          "organization"
+        ]
+      },
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "UsersController::department__del",
+      "canonical_url": "api/users/department/del",
+      "aliases": [
+        "api/users/department__del"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "UsersController::department__sync",
+      "canonical_url": "api/users/department/sync",
+      "aliases": [
+        "api/users/department__sync"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "UsersController::checkin__get",
+      "canonical_url": "api/users/checkin/get",
+      "aliases": [
+        "api/users/checkin__get"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "UsersController::checkin__save",
+      "canonical_url": "api/users/checkin/save",
+      "aliases": [
+        "api/users/checkin__save"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "UsersController::checkin__list",
+      "canonical_url": "api/users/checkin/list",
+      "aliases": [
+        "api/users/checkin__list"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "UsersController::socket__status",
+      "canonical_url": "api/users/socket/status",
+      "aliases": [
+        "api/users/socket__status"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "UsersController::key__client",
+      "canonical_url": "api/users/key/client",
+      "aliases": [
+        "api/users/key__client"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "UsersController::bot__list",
+      "canonical_url": "api/users/bot/list",
+      "aliases": [
+        "api/users/bot__list"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "UsersController::bot__info",
+      "canonical_url": "api/users/bot/info",
+      "aliases": [
+        "api/users/bot__info"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "UsersController::bot__edit",
+      "canonical_url": "api/users/bot/edit",
+      "aliases": [
+        "api/users/bot__edit"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "UsersController::bot__delete",
+      "canonical_url": "api/users/bot/delete",
+      "aliases": [
+        "api/users/bot__delete"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "UsersController::share__list",
+      "canonical_url": "api/users/share/list",
+      "aliases": [
+        "api/users/share__list"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "UsersController::annual__report",
+      "canonical_url": "api/users/annual/report",
+      "aliases": [
+        "api/users/annual__report"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "UsersController::device__list",
+      "canonical_url": "api/users/device/list",
+      "aliases": [
+        "api/users/device__list"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "UsersController::device__logout",
+      "canonical_url": "api/users/device/logout",
+      "aliases": [
+        "api/users/device__logout"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "UsersController::device__edit",
+      "canonical_url": "api/users/device/edit",
+      "aliases": [
+        "api/users/device__edit"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "UsersController::task__browse",
+      "canonical_url": "api/users/task/browse",
+      "aliases": [
+        "api/users/task__browse"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "PASS_RECORDED_SCENARIOS_ONLY",
+      "complete_business_contract": "NOT_RUN",
+      "observed": {
+        "successful_requests": 2,
+        "denied_requests": 0,
+        "evidence": [
+          "docs/evidence/qa-business/matrix.json"
+        ],
+        "scenarios": [
+          "project_states"
+        ]
+      },
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "UsersController::task__browse_save",
+      "canonical_url": "api/users/task/browse_save",
+      "aliases": [
+        "api/users/task__browse_save"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "PASS_RECORDED_SCENARIOS_ONLY",
+      "complete_business_contract": "NOT_RUN",
+      "observed": {
+        "successful_requests": 2,
+        "denied_requests": 0,
+        "evidence": [
+          "docs/evidence/qa-business/matrix.json"
+        ],
+        "scenarios": [
+          "navigation_delta",
+          "project_states"
+        ]
+      },
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "UsersController::task__browse_clean",
+      "canonical_url": "api/users/task/browse_clean",
+      "aliases": [
+        "api/users/task__browse_clean"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "UsersController::recent__browse",
+      "canonical_url": "api/users/recent/browse",
+      "aliases": [
+        "api/users/recent__browse"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "PASS_RECORDED_SCENARIOS_ONLY",
+      "complete_business_contract": "NOT_RUN",
+      "observed": {
+        "successful_requests": 4,
+        "denied_requests": 0,
+        "evidence": [
+          "docs/evidence/qa-business/matrix.json"
+        ],
+        "scenarios": [
+          "navigation_delta",
+          "project_states"
+        ]
+      },
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "UsersController::recent__delete",
+      "canonical_url": "api/users/recent/delete",
+      "aliases": [
+        "api/users/recent__delete"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "PASS_RECORDED_SCENARIOS_ONLY",
+      "complete_business_contract": "NOT_RUN",
+      "observed": {
+        "successful_requests": 1,
+        "denied_requests": 0,
+        "evidence": [
+          "docs/evidence/qa-business/matrix.json"
+        ],
+        "scenarios": [
+          "navigation_delta"
+        ]
+      },
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "UsersController::appsort",
+      "canonical_url": "api/users/appsort",
+      "aliases": [],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "UsersController::appsort__save",
+      "canonical_url": "api/users/appsort/save",
+      "aliases": [
+        "api/users/appsort__save"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "UsersController::favorites",
+      "canonical_url": "api/users/favorites",
+      "aliases": [],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "PASS_RECORDED_SCENARIOS_ONLY",
+      "complete_business_contract": "NOT_RUN",
+      "observed": {
+        "successful_requests": 3,
+        "denied_requests": 0,
+        "evidence": [
+          "docs/evidence/qa-business/matrix.json"
+        ],
+        "scenarios": [
+          "navigation_delta",
+          "project_states"
+        ]
+      },
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "UsersController::favorite__toggle",
+      "canonical_url": "api/users/favorite/toggle",
+      "aliases": [
+        "api/users/favorite__toggle"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "PASS_RECORDED_SCENARIOS_ONLY",
+      "complete_business_contract": "NOT_RUN",
+      "observed": {
+        "successful_requests": 3,
+        "denied_requests": 1,
+        "evidence": [
+          "docs/evidence/qa-business/matrix.json"
+        ],
+        "scenarios": [
+          "navigation_delta",
+          "project_states"
+        ]
+      },
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "UsersController::favorite__remark",
+      "canonical_url": "api/users/favorite/remark",
+      "aliases": [
+        "api/users/favorite__remark"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "PASS_RECORDED_SCENARIOS_ONLY",
+      "complete_business_contract": "NOT_RUN",
+      "observed": {
+        "successful_requests": 1,
+        "denied_requests": 0,
+        "evidence": [
+          "docs/evidence/qa-business/matrix.json"
+        ],
+        "scenarios": [
+          "navigation_delta"
+        ]
+      },
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "UsersController::favorites__clean",
+      "canonical_url": "api/users/favorites/clean",
+      "aliases": [
+        "api/users/favorites__clean"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "NOT_RUN",
+      "complete_business_contract": "NOT_RUN",
+      "observed": null,
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    },
+    {
+      "id": "UsersController::favorite__check",
+      "canonical_url": "api/users/favorite/check",
+      "aliases": [
+        "api/users/favorite__check"
+      ],
+      "dispatch_status": "PASS_ANONYMOUS_DISPATCH_ONLY",
+      "dispatch_evidence": "docs/evidence/qa-protocol/20261012T102403Z.json",
+      "business_status": "PASS_RECORDED_SCENARIOS_ONLY",
+      "complete_business_contract": "NOT_RUN",
+      "observed": {
+        "successful_requests": 1,
+        "denied_requests": 0,
+        "evidence": [
+          "docs/evidence/qa-business/matrix.json"
+        ],
+        "scenarios": [
+          "navigation_delta"
+        ]
+      },
+      "note": "Only linked executed scenarios; no claim of complete method/role/input/side-effect parity."
+    }
+  ],
+  "observation_policy": "Backend core+protocol successful cases+BusinessAcceptance scenario counts merged. UI observations remain separately linked, never inferred from mere route existence or screenshot alone. External requirements remain NOT_RUN/BLOCKED in reports."
+}

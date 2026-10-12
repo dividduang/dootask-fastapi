@@ -1,0 +1,16 @@
+{
+  "kind": "real-protocol-command-ledger",
+  "cwd": "D:/rpa/202610/dootask-fastapi",
+  "commands": [
+    {"command": "D:/rpa/202610/dootask-fastapi/.venv/Scripts/python.exe D:/rpa/202610/dootask-fastapi/tests/protocol_acceptance.py", "exit_code": 1, "wall_seconds": 6.31, "evidence": "20261012T102141Z.json", "outcome": "Synthetic password length and raw-response client errors; genuine SSE 500 captured"},
+    {"command": "node D:/rpa/202610/dootask-fastapi/tests/protocol_pgp.mjs http://127.0.0.1:18080", "exit_code": 1, "wall_seconds": 0.60, "evidence": "2026-10-12T10-21-46-746Z-pgp.json", "outcome": "Synthetic password >32 bytes correctly rejected after real PGP encryption/decryption"},
+    {"command": "D:/rpa/202610/dootask-fastapi/.venv/Scripts/python.exe D:/rpa/202610/dootask-fastapi/tests/protocol_acceptance.py", "exit_code": 1, "wall_seconds": 12.77, "evidence": "20261012T102403Z.json", "outcome": "326 dispatch/222 rejects and repaired SSE PASS; synthetic email length blocked account scenarios"},
+    {"command": "node D:/rpa/202610/dootask-fastapi/tests/protocol_pgp.mjs http://127.0.0.1:18080", "exit_code": 1, "wall_seconds": 0.74, "evidence": "2026-10-12T10-24-11-396Z-pgp.json", "outcome": "Synthetic email >32 characters correctly rejected"},
+    {"command": "D:/rpa/202610/dootask-fastapi/.venv/Scripts/python.exe D:/rpa/202610/dootask-fastapi/tests/protocol_acceptance.py --only zip_first,uploads,dav,websocket", "exit_code": 1, "wall_seconds": 94.88, "evidence": "20261012T102458Z.json", "outcome": "ZIP first bot and WS PASS; genuine upload merge and DAV PROPPATCH 500 failures"},
+    {"command": "node D:/rpa/202610/dootask-fastapi/tests/protocol_pgp.mjs http://127.0.0.1:18080", "exit_code": 0, "wall_seconds": 2.01, "evidence": "2026-10-12T10-25-08-678Z-pgp.json", "outcome": "Encrypted original client registration/login/error/logout/revocation PASS"},
+    {"command": "D:/rpa/202610/dootask-fastapi/.venv/Scripts/python.exe D:/rpa/202610/dootask-fastapi/tests/protocol_acceptance.py --only uploads,dav", "exit_code": 1, "wall_seconds": 4.83, "evidence": "20261012T102919Z.json", "outcome": "Upload repaired path PASS; PROPPATCH/COPY repaired path PASS; genuine DAV MOVE 500 captured"},
+    {"command": "D:/rpa/202610/dootask-fastapi/.venv/Scripts/python.exe D:/rpa/202610/dootask-fastapi/tests/protocol_acceptance.py --only dav", "exit_code": 0, "wall_seconds": 4.18, "evidence": "20261012T103242Z.json", "outcome": "Complete DAV 12 real methods, scalar/complex XML property copy/move, concurrent PUT/revoke and post-revoke401 PASS"}
+  ],
+  "stdout_policy": "Tool stdout was JSON pointing to complete result/events evidence. Exact assertion errors and traceback are retained in each evidence results entry; no secret-bearing raw service logs copied.",
+  "retry_policy": "No passed WS/ZIP/route/PGP paths rerun after completion; only failed input/scenario or repaired implementation paths plus directly required protocol regressions."
+}

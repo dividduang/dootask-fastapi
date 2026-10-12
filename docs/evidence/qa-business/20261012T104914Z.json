@@ -1,0 +1,1750 @@
+{
+  "run": "20261012T104914Z",
+  "command": [
+    "D:/rpa/202610/dootask-fastapi/tests/business_acceptance.py",
+    "--only",
+    "navigation_delta"
+  ],
+  "results": [
+    {
+      "id": "navigation_delta",
+      "status": "PASS",
+      "elapsed_seconds": 2.514999999999418
+    }
+  ],
+  "events": [
+    {
+      "utc": "2026-10-12T10:49:14.973419+00:00",
+      "case": "",
+      "kind": "provenance",
+      "command": [
+        "D:/rpa/202610/dootask-fastapi/tests/business_acceptance.py",
+        "--only",
+        "navigation_delta"
+      ],
+      "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+      "source_hashes": {
+        "D:\\rpa\\202610\\dootask-fastapi\\backend\\domains\\accounts.py": "58e4b10ae9a731040af28e9e80cc6fd1eeeed99e665a8a089949930b6cf08168",
+        "D:\\rpa\\202610\\dootask-fastapi\\backend\\domains\\account_admin.py": "f80a18b72782d9932d050be84141c8ccc76459e34c8df9e5a728e8db29cd4ac7",
+        "D:\\rpa\\202610\\dootask-fastapi\\backend\\domains\\account_bot_jobs.py": "3e1c9f3dd47586b7198a53bdc4d56bb50af40859e4e933b9786b2eaf53f42110",
+        "D:\\rpa\\202610\\dootask-fastapi\\backend\\domains\\account_checkin.py": "b7ff9862a00fb31121ef4bc9d751364e908691e39b4f9135e3fc2dbbd74fdb17",
+        "D:\\rpa\\202610\\dootask-fastapi\\backend\\domains\\account_common.py": "708116b019fcf1de21b5424983b5554dbdf611a6e17a52911fa09e18afcdce51",
+        "D:\\rpa\\202610\\dootask-fastapi\\backend\\domains\\account_history.py": "42ad0660ae159d30935af9472b05a4bd9e419cfb720a30b32912fa51704fd964",
+        "D:\\rpa\\202610\\dootask-fastapi\\backend\\domains\\account_import.py": "699e06f15b75b352ff192c57bff57ae5c28a149fff7c5c2f89113d941e8eb4be",
+        "D:\\rpa\\202610\\dootask-fastapi\\backend\\domains\\account_integrations.py": "ab4570f9512d9c74ca060deebf91be593ee9248e7680a46b2affbed2e78cd9f9",
+        "D:\\rpa\\202610\\dootask-fastapi\\backend\\domains\\account_jobs.py": "c56407f1c5e9c6ba9bca80decbb1d8ce4c1e3bbdd34d1531a20b4d266b19ddcb",
+        "D:\\rpa\\202610\\dootask-fastapi\\backend\\domains\\account_meetings.py": "f0eee9a79c73b6f6efd8c268595bf3da310a63390d1a152e730542321fe9ae8d",
+        "D:\\rpa\\202610\\dootask-fastapi\\backend\\domains\\account_misc.py": "06fd07c11a7483c5198512556739c9c63b969b5c4f95fe3e4922d0e87787fc1e",
+        "D:\\rpa\\202610\\dootask-fastapi\\backend\\domains\\account_system_files.py": "e40cf01bd699b56c657a4497c5c0cd22978dce0b4a7b25f6814bde5426a1bdae",
+        "D:\\rpa\\202610\\dootask-fastapi\\backend\\domains\\apps.py": "c9f79234b88f13ec203e5dd95e71a5a623bf3f97f62b462feff9e28e36c73e3e",
+        "D:\\rpa\\202610\\dootask-fastapi\\backend\\domains\\assistant.py": "f023523964df5caff74cd69a093ee8e5df464a8c9629e064cf2a32c80efe8e88",
+        "D:\\rpa\\202610\\dootask-fastapi\\backend\\domains\\checkin.py": "fe4546af256328c0887dec59c968500978347c432c2a37cf7ea7c9ed20224a05",
+        "D:\\rpa\\202610\\dootask-fastapi\\backend\\domains\\complaints.py": "d16a279b1c8e265b4cd1666175760e6a2d94841c1a8a6fb7f02ad2acd2f427c7",
+        "D:\\rpa\\202610\\dootask-fastapi\\backend\\domains\\dashboard.py": "0891486035410dbfa225aaba11724a9a87f69c9edb0d24bcc3e65492062eb59e",
+        "D:\\rpa\\202610\\dootask-fastapi\\backend\\domains\\dialog.py": "c796d05a1712804f0dcdff3600c7df304dbec6bdf42546dbeb30705a9b0e8917",
+        "D:\\rpa\\202610\\dootask-fastapi\\backend\\domains\\dialog_core.py": "2b5d878e74a71d1ecf8718f69ffddf2fdbce5e92ba8b341310152fb9ea225470",
+        "D:\\rpa\\202610\\dootask-fastapi\\backend\\domains\\filedav.py": "3e91b73db69f5a5561e74315a61302ba2b58eee8ac96eb24aa74d0c7e19b3bc8",
+        "D:\\rpa\\202610\\dootask-fastapi\\backend\\domains\\files.py": "433354fe301457dd9bdacfa09c4908a20d75ab1c354b313a35097bb463a1e1d2",
+        "D:\\rpa\\202610\\dootask-fastapi\\backend\\domains\\files_collaboration.py": "856b71f0178b478ffdf776aad63e413fb183e0560032c96776e534404c688a93",
+        "D:\\rpa\\202610\\dootask-fastapi\\backend\\domains\\files_config.py": "4e7fcb1b93d1349a27f958d577eefca8eb7af07765ef7b1a9cb6ef7a3a36a3d3",
+        "D:\\rpa\\202610\\dootask-fastapi\\backend\\domains\\files_external.py": "0861e5c7aa2a40b8b2a98f2b4e9d27666c432193df1ea93e8dddb440ab8d56b5",
+        "D:\\rpa\\202610\\dootask-fastapi\\backend\\domains\\files_jobs.py": "8ddbd2e7d5f2835c8c6ad8998854f3e6a0e7243014816d6f320028e100c4c0f4",
+        "D:\\rpa\\202610\\dootask-fastapi\\backend\\domains\\files_locks.py": "3f8a3e043a37c7b6cad29ea59fd5f70873efd204e268c31ee6ff35d518ede1c2",
+        "D:\\rpa\\202610\\dootask-fastapi\\backend\\domains\\files_support.py": "7421f0bac8e71ad73c9e08819bc76954ec85e160e048418435151cca3890ee92",
+        "D:\\rpa\\202610\\dootask-fastapi\\backend\\domains\\index.py": "0314d5cb6b38017d9f9af083b6c1802cf80869c6ec9fbcd9b847a73992320e17",
+        "D:\\rpa\\202610\\dootask-fastapi\\backend\\domains\\messaging_ai.py": "b2d55258bb3e05de0d3c24d36d3acbdcebea3af76458d87eb0c02f7172837289",
+        "D:\\rpa\\202610\\dootask-fastapi\\backend\\domains\\messaging_jobs.py": "67b658922f03dd9f3a8aee16615efa68964218ef415ead7b73b0ecdf8c1880ab",
+        "D:\\rpa\\202610\\dootask-fastapi\\backend\\domains\\messaging_markup.py": "cc6d9b1bc94005b8d17d70061b38522778ba0c44090309d188042b57bd5cfccd",
+        "D:\\rpa\\202610\\dootask-fastapi\\backend\\domains\\messaging_push.py": "f2303cb82d70abc5d721ce7210d127b16080d84c4f2c7f767de31b5752793484",
+        "D:\\rpa\\202610\\dootask-fastapi\\backend\\domains\\projects.py": "6ce1bd31f51f4cbacab9155e84da24f8e7f57a278a5b63068ede291982a5df17",
+        "D:\\rpa\\202610\\dootask-fastapi\\backend\\domains\\project_ai.py": "c4fb845be28b7a23472d4c61f08ba4a06bfe4f16481cb326f821ab877fd685b3",
+        "D:\\rpa\\202610\\dootask-fastapi\\backend\\domains\\project_configuration.py": "b115683654123f98dfb6b0cad18a6e4a1a5a60cda6ed490904f4a07fcd3730fa",
+        "D:\\rpa\\202610\\dootask-fastapi\\backend\\domains\\project_core.py": "bad29f3bde7214e3cdfbf381c9fae6414d139c340de538db46866c47d4b81a15",
+        "D:\\rpa\\202610\\dootask-fastapi\\backend\\domains\\project_jobs.py": "967f61b7b658062a49b149b34e9cfee0461c4aaa99aec6aa5d41f5ab12158e71",
+        "D:\\rpa\\202610\\dootask-fastapi\\backend\\domains\\project_queries.py": "c09420293902f638c5a8e3b9b9e24069cd9d8bfc4220caa7841d51a83da751c9",
+        "D:\\rpa\\202610\\dootask-fastapi\\backend\\domains\\project_tasks.py": "8922ee1e2e992950c7d62baa47112b56a5691f9e8a4fa23d7e87b6853cc14aa8",
+        "D:\\rpa\\202610\\dootask-fastapi\\backend\\domains\\reports.py": "9e0248304381ed93d6b8bcdf9722a32667e736839cf8f67b5beb0d81c9f912c8",
+        "D:\\rpa\\202610\\dootask-fastapi\\backend\\domains\\search.py": "6714c3d7ef923237e22eb04670800c61ed778310ae72e9875d938335427c425a",
+        "D:\\rpa\\202610\\dootask-fastapi\\backend\\domains\\system.py": "5e285ff1eddb3c8ae047f40229190999d62806db53ffabc4f91f29578b662647",
+        "D:\\rpa\\202610\\dootask-fastapi\\backend\\domains\\upload.py": "d7265fa5075a7c6c0d3ff0c20de45b393bdd71dc59d523043e50857788224824",
+        "D:\\rpa\\202610\\dootask-fastapi\\backend\\main.py": "7ecad337e6b006e4a6f4ecd922162422cc36627faf80794275c37f6cfd4d7613",
+        "D:\\rpa\\202610\\dootask-fastapi\\tests\\business_acceptance.py": "76e44920231e3377062fdb940517b6dfa1b515699207a60234be033f582461b5",
+        "D:\\rpa\\202610\\dootask-fastapi\\tests\\protocol_acceptance.py": "4127321465f72b910f487da14cf3a2ae814e2a0495b767ae27f23ae070cfeaae",
+        "D:\\rpa\\202610\\dootask\\app\\Http\\Controllers\\Api\\ProjectController.php": "a3d03cabc38d9e2a2b414340111770c243bfa151486706681666f0e1ce451e92",
+        "D:\\rpa\\202610\\dootask\\app\\Http\\Controllers\\Api\\ProjectTaskHandoffController.php": "424448f595e4c86dbf3192a310d4bc558a9f6bc1498ee505593836a100c11199",
+        "D:\\rpa\\202610\\dootask\\app\\Http\\Controllers\\Api\\UsersController.php": "d3480aae25371d1e5f2d9a32a93e8a13519e0355604ab13a745fe1cfb062fd3f",
+        "D:\\rpa\\202610\\dootask\\app\\Http\\Controllers\\Api\\ReportController.php": "f53ecef337e44a5bff4ae6b62aed39a2d1fcb963f4546de03fe39141a9292ddf",
+        "D:\\rpa\\202610\\dootask\\app\\Http\\Controllers\\Api\\FileController.php": "e52f7fb5ddf66e97f6257cbe3742dd0f15e771d8aed6de95d669250d59bef884",
+        "D:\\rpa\\202610\\dootask\\app\\Http\\Controllers\\Api\\ComplaintController.php": "2bf37082f713d07249fbcb634ce3076fe42b277491eb91340845a1132d18dcbf",
+        "D:\\rpa\\202610\\dootask\\app\\Http\\Controllers\\Api\\DashboardController.php": "dd456dd52368d429407063ef04d73f8068429bf961d4cb8843e7e97d29bbfa9c",
+        "D:\\rpa\\202610\\dootask\\app\\Http\\Controllers\\Api\\SearchController.php": "5d9ef2ecde6ce0c1febe9fd68cd79f59a9638c77fda266fc2f6aa1eddea83030"
+      },
+      "constraints": "HTTP business writes only; SQL read-only isolated 13306; no browser, no external mocks"
+    },
+    {
+      "utc": "2026-10-12T10:49:15.209872+00:00",
+      "case": "navigation_delta",
+      "kind": "http",
+      "method": "POST",
+      "url": "http://127.0.0.1:18080/api/users/login",
+      "request_json": {
+        "type": "reg",
+        "email": "bq0ed93a5393ba57@example.test",
+        "password": "[REDACTED]"
+      },
+      "request_headers": {
+        "User-Agent": "DooTask-Protocol-Acceptance/1",
+        "version": "1.9.0",
+        "Content-Type": "application/json"
+      },
+      "request_bytes": 95,
+      "request_sha256": "7dcc5bb88195f8946b2777966c346c463d4842c52f2708efa433fdacffaf6d1a",
+      "status": 200,
+      "response_headers": {
+        "Date": "Mon, 12 Oct 2026 10:49:14 GMT",
+        "Server": "uvicorn",
+        "Cache-Control": "no-store",
+        "X-Request-Id": "8e8e345be765119f76ae6db7a0f98c09",
+        "Content-Length": "731",
+        "Content-Type": "application/json",
+        "Connection": "close"
+      },
+      "response": {
+        "ret": 1,
+        "msg": "注册成功",
+        "data": {
+          "userid": 49,
+          "identity": [],
+          "department": [],
+          "az": "B",
+          "pinyin": "bq0ed93a5393ba57",
+          "email": "bq0ed93a5393ba57@example.test",
+          "tel": "",
+          "nickname": "bq0ed93a5393ba57",
+          "profession": "",
+          "birthday": null,
+          "address": null,
+          "introduction": null,
+          "userimg": "http://127.0.0.1:18080/avatar/bq0ed93a5393ba57.png",
+          "changepass": 0,
+          "login_num": 1,
+          "last_ip": "127.0.0.1",
+          "last_at": "2026-10-12 10:49:15",
+          "line_ip": "127.0.0.1",
+          "line_at": "2026-10-12 10:49:15",
+          "task_dialog_id": 0,
+          "created_ip": "127.0.0.1",
+          "disable_at": null,
+          "email_verity": 0,
+          "bot": 0,
+          "lang": "zh",
+          "created_at": "2026-10-12 10:49:15",
+          "token": "[REDACTED]"
+        }
+      },
+      "response_bytes": 731,
+      "response_sha256": "1f5dd50840a277e4fd4682c407d9444e6ed002074d5d1c4af0c1658e3725e9a3",
+      "elapsed_seconds": 0.23400000000037835,
+      "role": "anonymous"
+    },
+    {
+      "utc": "2026-10-12T10:49:15.209872+00:00",
+      "case": "navigation_delta",
+      "kind": "assertion",
+      "assertion": "real registration initializes account and session",
+      "passed": true
+    },
+    {
+      "utc": "2026-10-12T10:49:15.421893+00:00",
+      "case": "navigation_delta",
+      "kind": "http",
+      "method": "POST",
+      "url": "http://127.0.0.1:18080/api/users/login",
+      "request_json": {
+        "type": "reg",
+        "email": "bq9bdeb2347ea1e5@example.test",
+        "password": "[REDACTED]"
+      },
+      "request_headers": {
+        "User-Agent": "DooTask-Protocol-Acceptance/1",
+        "version": "1.9.0",
+        "Content-Type": "application/json"
+      },
+      "request_bytes": 95,
+      "request_sha256": "c2a3af6db2c72c6d10562671c4c49079e606e9702dbc1d49392eabfb53db1985",
+      "status": 200,
+      "response_headers": {
+        "Date": "Mon, 12 Oct 2026 10:49:14 GMT",
+        "Server": "uvicorn",
+        "Cache-Control": "no-store",
+        "X-Request-Id": "23384db8d0c8b770f3eeb781be8e6d20",
+        "Content-Length": "731",
+        "Content-Type": "application/json",
+        "Connection": "close"
+      },
+      "response": {
+        "ret": 1,
+        "msg": "注册成功",
+        "data": {
+          "userid": 50,
+          "identity": [],
+          "department": [],
+          "az": "B",
+          "pinyin": "bq9bdeb2347ea1e5",
+          "email": "bq9bdeb2347ea1e5@example.test",
+          "tel": "",
+          "nickname": "bq9bdeb2347ea1e5",
+          "profession": "",
+          "birthday": null,
+          "address": null,
+          "introduction": null,
+          "userimg": "http://127.0.0.1:18080/avatar/bq9bdeb2347ea1e5.png",
+          "changepass": 0,
+          "login_num": 1,
+          "last_ip": "127.0.0.1",
+          "last_at": "2026-10-12 10:49:15",
+          "line_ip": "127.0.0.1",
+          "line_at": "2026-10-12 10:49:15",
+          "task_dialog_id": 0,
+          "created_ip": "127.0.0.1",
+          "disable_at": null,
+          "email_verity": 0,
+          "bot": 0,
+          "lang": "zh",
+          "created_at": "2026-10-12 10:49:15",
+          "token": "[REDACTED]"
+        }
+      },
+      "response_bytes": 731,
+      "response_sha256": "94beeaf638220aaed834b93d6d98eb1838f050dac83dbea3676f05542b369b3d",
+      "elapsed_seconds": 0.21900000000096043,
+      "role": "anonymous"
+    },
+    {
+      "utc": "2026-10-12T10:49:15.421893+00:00",
+      "case": "navigation_delta",
+      "kind": "assertion",
+      "assertion": "real registration initializes account and session",
+      "passed": true
+    },
+    {
+      "utc": "2026-10-12T10:49:15.472947+00:00",
+      "case": "navigation_delta",
+      "kind": "http",
+      "method": "POST",
+      "url": "http://127.0.0.1:18080/api/project/add",
+      "request_json": {
+        "name": "业务验收94076039",
+        "columns": "待办,进行,结束",
+        "flow": "close"
+      },
+      "request_headers": {
+        "User-Agent": "DooTask-Protocol-Acceptance/1",
+        "version": "1.9.0",
+        "Content-Type": "application/json"
+      },
+      "request_bytes": 84,
+      "request_sha256": "961858dbb6ea18b11dcce4df468ea4dc997740ba605c8c3f3b0edc8af0b9fd3c",
+      "status": 200,
+      "response_headers": {
+        "Date": "Mon, 12 Oct 2026 10:49:14 GMT",
+        "Server": "uvicorn",
+        "Cache-Control": "no-store",
+        "X-Request-Id": "3feb1e68f55c0eb05727be4b6c27482f",
+        "Content-Length": "670",
+        "Content-Type": "application/json",
+        "Connection": "close"
+      },
+      "response": {
+        "ret": 1,
+        "msg": "操作成功",
+        "data": {
+          "id": 56,
+          "name": "业务验收94076039",
+          "desc": "",
+          "userid": 49,
+          "personal": 0,
+          "archive_method": "system",
+          "archive_days": 30,
+          "ai_auto_analyze": "open",
+          "task_template_share": "open",
+          "department_owner_view": "open",
+          "user_simple": "1|49",
+          "dialog_id": 75,
+          "archived_at": null,
+          "archived_userid": 0,
+          "created_at": "2026-10-12 10:49:15",
+          "updated_at": "2026-10-12 10:49:15",
+          "deleted_at": null,
+          "owner": 1,
+          "top_at": null,
+          "sort": 0,
+          "owner_userid": 49,
+          "deputy_userids": [],
+          "department_readonly": false,
+          "task_num": 0,
+          "task_complete": 0,
+          "task_percent": 0,
+          "task_my_num": 0,
+          "task_my_complete": 0,
+          "task_my_percent": 0
+        }
+      },
+      "response_bytes": 670,
+      "response_sha256": "a5386d7e15baa66992d4014f22226409a52ebd339fb8dd7eaf9ff6c6766a3591",
+      "elapsed_seconds": 0.046999999998661224,
+      "role": "navigation-owner"
+    },
+    {
+      "utc": "2026-10-12T10:49:15.544420+00:00",
+      "case": "navigation_delta",
+      "kind": "http",
+      "method": "POST",
+      "url": "http://127.0.0.1:18080/api/project/user",
+      "request_json": {
+        "project_id": 56,
+        "userid": [
+          49,
+          50
+        ]
+      },
+      "request_headers": {
+        "User-Agent": "DooTask-Protocol-Acceptance/1",
+        "version": "1.9.0",
+        "Content-Type": "application/json"
+      },
+      "request_bytes": 38,
+      "request_sha256": "c6f8d9bfd2ec37dcb54d3df55463802b3978d4567711e923daf8e28955880f8d",
+      "status": 200,
+      "response_headers": {
+        "Date": "Mon, 12 Oct 2026 10:49:14 GMT",
+        "Server": "uvicorn",
+        "Cache-Control": "no-store",
+        "X-Request-Id": "c887ba575dd9ebfc15af266750a8c3a5",
+        "Content-Length": "53",
+        "Content-Type": "application/json",
+        "Connection": "close"
+      },
+      "response": {
+        "ret": 1,
+        "msg": "操作成功",
+        "data": {
+          "id": 56
+        }
+      },
+      "response_bytes": 53,
+      "response_sha256": "8a26fdd0e19ecf2522b124130e95deb83b1c3c701bb18f040ebb277f76ebc91f",
+      "elapsed_seconds": 0.062000000001717126,
+      "role": "navigation-owner"
+    },
+    {
+      "utc": "2026-10-12T10:49:15.637973+00:00",
+      "case": "navigation_delta",
+      "kind": "http",
+      "method": "POST",
+      "url": "http://127.0.0.1:18080/api/project/task/add",
+      "request_json": {
+        "project_id": 56,
+        "name": "导航游标任务fbad31",
+        "owner": [
+          49
+        ]
+      },
+      "request_headers": {
+        "User-Agent": "DooTask-Protocol-Acceptance/1",
+        "version": "1.9.0",
+        "Content-Type": "application/json"
+      },
+      "request_bytes": 69,
+      "request_sha256": "52d5bc024b281034079bfd24b5e04c320b12981ed4d60c374727fa11806d87e7",
+      "status": 200,
+      "response_headers": {
+        "Date": "Mon, 12 Oct 2026 10:49:14 GMT",
+        "Server": "uvicorn",
+        "Cache-Control": "no-store",
+        "X-Request-Id": "68ae3cb6971b413aeee01a2e20d6297d",
+        "Content-Length": "1106",
+        "Content-Type": "application/json",
+        "Connection": "close"
+      },
+      "response": {
+        "ret": 1,
+        "msg": "操作成功",
+        "data": {
+          "id": 13,
+          "parent_id": 0,
+          "project_id": 56,
+          "column_id": 68,
+          "dialog_id": 0,
+          "flow_item_id": 0,
+          "flow_item_name": "",
+          "name": "导航游标任务fbad31",
+          "color": "",
+          "desc": "",
+          "start_at": null,
+          "end_at": null,
+          "archived_at": null,
+          "archived_userid": 0,
+          "archived_follow": 0,
+          "complete_at": null,
+          "userid": 49,
+          "visibility": 1,
+          "p_level": 1,
+          "p_name": "重要且紧急",
+          "p_color": "#ED4014",
+          "sort": 1,
+          "loop": "",
+          "loop_at": null,
+          "created_at": "2026-10-12 10:49:15",
+          "updated_at": "2026-10-12 10:49:15",
+          "deleted_at": null,
+          "deleted_userid": 0,
+          "task_user": [
+            {
+              "id": 14,
+              "project_id": 56,
+              "task_id": 13,
+              "task_pid": 13,
+              "userid": 49,
+              "owner": 1,
+              "created_at": "2026-10-12 10:49:15",
+              "updated_at": "2026-10-12 10:49:15"
+            }
+          ],
+          "task_tag": [],
+          "owner": 1,
+          "assist": 1,
+          "sub_num": 0,
+          "sub_complete": 0,
+          "percent": 0,
+          "file_num": 0,
+          "msg_num": 0,
+          "today": false,
+          "overdue": false,
+          "project_name": "业务验收94076039",
+          "column_name": "待办",
+          "project_deleted": 0,
+          "project_archived": 0,
+          "department_readonly": false,
+          "visibility_appointor": [
+            0
+          ],
+          "is_visible": 1
+        }
+      },
+      "response_bytes": 1106,
+      "response_sha256": "03a4ec062bc626ab65c0218a303c2863e3278782f681f049bc00ab24d3e37149",
+      "elapsed_seconds": 0.09400000000096043,
+      "role": "navigation-owner"
+    },
+    {
+      "utc": "2026-10-12T10:49:15.686018+00:00",
+      "case": "navigation_delta",
+      "kind": "http",
+      "method": "POST",
+      "url": "http://127.0.0.1:18080/api/project/lists",
+      "request_json": {
+        "getstatistics": "yes"
+      },
+      "request_headers": {
+        "User-Agent": "DooTask-Protocol-Acceptance/1",
+        "version": "1.9.0",
+        "Content-Type": "application/json"
+      },
+      "request_bytes": 24,
+      "request_sha256": "2a624f46d17824a964dafc850e23aa86ab1c913a67df7c1f5d82649c70046d5b",
+      "status": 200,
+      "response_headers": {
+        "Date": "Mon, 12 Oct 2026 10:49:14 GMT",
+        "Server": "uvicorn",
+        "Cache-Control": "no-store",
+        "X-Request-Id": "b6b905dbbd4ca75ad425a52da57ef029",
+        "Content-Length": "1589",
+        "Content-Type": "application/json",
+        "Connection": "close"
+      },
+      "response": {
+        "ret": 1,
+        "msg": "操作成功",
+        "data": {
+          "current_page": 1,
+          "data": [
+            {
+              "id": 56,
+              "name": "业务验收94076039",
+              "desc": "",
+              "userid": 49,
+              "personal": 0,
+              "archive_method": "system",
+              "archive_days": 30,
+              "ai_auto_analyze": "open",
+              "task_template_share": "open",
+              "department_owner_view": "open",
+              "user_simple": "2|49,50",
+              "dialog_id": 75,
+              "archived_at": null,
+              "archived_userid": 0,
+              "created_at": "2026-10-12 10:49:15",
+              "updated_at": "2026-10-12 10:49:15",
+              "deleted_at": null,
+              "owner": 0,
+              "top_at": null,
+              "sort": 0,
+              "owner_userid": 49,
+              "deputy_userids": [],
+              "department_readonly": false,
+              "task_num": 1,
+              "task_complete": 0,
+              "task_percent": 0,
+              "task_my_num": 0,
+              "task_my_complete": 0,
+              "task_my_percent": 0
+            },
+            {
+              "id": 55,
+              "name": "📝 个人项目",
+              "desc": "注册时系统自动创建项目，你可以自由删除。",
+              "userid": 50,
+              "personal": 1,
+              "archive_method": "system",
+              "archive_days": 30,
+              "ai_auto_analyze": "open",
+              "task_template_share": "open",
+              "department_owner_view": "open",
+              "user_simple": "",
+              "dialog_id": 74,
+              "archived_at": null,
+              "archived_userid": 0,
+              "created_at": "2026-10-12 10:49:15",
+              "updated_at": "2026-10-12 10:49:15",
+              "deleted_at": null,
+              "owner": 1,
+              "top_at": null,
+              "sort": 0,
+              "owner_userid": 50,
+              "deputy_userids": [],
+              "department_readonly": false,
+              "task_num": 0,
+              "task_complete": 0,
+              "task_percent": 0,
+              "task_my_num": 0,
+              "task_my_complete": 0,
+              "task_my_percent": 0
+            }
+          ],
+          "first_page_url": null,
+          "from": 1,
+          "last_page": 1,
+          "last_page_url": null,
+          "next_page_url": null,
+          "path": "",
+          "per_page": 50,
+          "prev_page_url": null,
+          "to": 2,
+          "total": 2,
+          "total_all": 2,
+          "deleted_id": []
+        }
+      },
+      "response_bytes": 1589,
+      "response_sha256": "f2346c8d37e9a614cab92c8404ed0cb43b6e2fe0ddaebae9ef20080d3cab9246",
+      "elapsed_seconds": 0.06299999999828287,
+      "role": "navigation-member"
+    },
+    {
+      "utc": "2026-10-12T10:49:15.686018+00:00",
+      "case": "navigation_delta",
+      "kind": "assertion",
+      "assertion": "full project list contains joined project",
+      "passed": true
+    },
+    {
+      "utc": "2026-10-12T10:49:16.815191+00:00",
+      "case": "navigation_delta",
+      "kind": "http",
+      "method": "POST",
+      "url": "http://127.0.0.1:18080/api/project/lists",
+      "request_json": {
+        "timerange": "1791802156,0",
+        "getstatistics": "yes"
+      },
+      "request_headers": {
+        "User-Agent": "DooTask-Protocol-Acceptance/1",
+        "version": "1.9.0",
+        "Content-Type": "application/json"
+      },
+      "request_bytes": 53,
+      "request_sha256": "7fdf61e7fe818af955f71eac5558860b22ab96b25cc0974d97b6c4c839334fb0",
+      "status": 200,
+      "response_headers": {
+        "Date": "Mon, 12 Oct 2026 10:49:16 GMT",
+        "Server": "uvicorn",
+        "Cache-Control": "no-store",
+        "X-Request-Id": "648f3e2e24672af3eaff83f53b049eac",
+        "Content-Length": "283",
+        "Content-Type": "application/json",
+        "Connection": "close"
+      },
+      "response": {
+        "ret": 1,
+        "msg": "操作成功",
+        "data": {
+          "current_page": 1,
+          "data": [],
+          "first_page_url": null,
+          "from": null,
+          "last_page": 1,
+          "last_page_url": null,
+          "next_page_url": null,
+          "path": "",
+          "per_page": 50,
+          "prev_page_url": null,
+          "to": null,
+          "total": 0,
+          "total_all": 2,
+          "deleted_id": []
+        }
+      },
+      "response_bytes": 283,
+      "response_sha256": "fd022a80b4d0d6472fbe38bf77dbbf8009a594219a090aff99c2d9dfe710ef35",
+      "elapsed_seconds": 0.0319999999992433,
+      "role": "navigation-member"
+    },
+    {
+      "utc": "2026-10-12T10:49:16.815191+00:00",
+      "case": "navigation_delta",
+      "kind": "assertion",
+      "assertion": "original seconds cursor omits unchanged projects but retains total_all",
+      "passed": true
+    },
+    {
+      "utc": "2026-10-12T10:49:16.845138+00:00",
+      "case": "navigation_delta",
+      "kind": "http",
+      "method": "POST",
+      "url": "http://127.0.0.1:18080/api/project/task/lists",
+      "request_json": {
+        "project_id": 56,
+        "timerange": "1791802156,0"
+      },
+      "request_headers": {
+        "User-Agent": "DooTask-Protocol-Acceptance/1",
+        "version": "1.9.0",
+        "Content-Type": "application/json"
+      },
+      "request_bytes": 47,
+      "request_sha256": "a0b5a7ba5d6f3e13f61ffa287b43d06868da4ca789de50f4c6e76abe9e946a74",
+      "status": 200,
+      "response_headers": {
+        "Date": "Mon, 12 Oct 2026 10:49:16 GMT",
+        "Server": "uvicorn",
+        "Cache-Control": "no-store",
+        "X-Request-Id": "deecfc9c9d23189330c06e03b3afe269",
+        "Content-Length": "268",
+        "Content-Type": "application/json",
+        "Connection": "close"
+      },
+      "response": {
+        "ret": 1,
+        "msg": "操作成功",
+        "data": {
+          "current_page": 1,
+          "data": [],
+          "first_page_url": null,
+          "from": null,
+          "last_page": 1,
+          "last_page_url": null,
+          "next_page_url": null,
+          "path": "",
+          "per_page": 100,
+          "prev_page_url": null,
+          "to": null,
+          "total": 0,
+          "deleted_id": []
+        }
+      },
+      "response_bytes": 268,
+      "response_sha256": "58adc779adb298ed9fd727f37d3260fd6517f0708febe547982af9c5909f020b",
+      "elapsed_seconds": 0.030999999999039574,
+      "role": "navigation-member"
+    },
+    {
+      "utc": "2026-10-12T10:49:16.847676+00:00",
+      "case": "navigation_delta",
+      "kind": "assertion",
+      "assertion": "original seconds cursor returns empty unchanged task delta without deletion",
+      "passed": true
+    },
+    {
+      "utc": "2026-10-12T10:49:16.883332+00:00",
+      "case": "navigation_delta",
+      "kind": "http",
+      "method": "POST",
+      "url": "http://127.0.0.1:18080/api/project/task/lists",
+      "request_json": {
+        "project_id": 56
+      },
+      "request_headers": {
+        "User-Agent": "DooTask-Protocol-Acceptance/1",
+        "version": "1.9.0",
+        "Content-Type": "application/json"
+      },
+      "request_bytes": 18,
+      "request_sha256": "89816d78ce2f0ccdda63503a48d3a89686997dbae4b41df7d81b674033da5e3c",
+      "status": 200,
+      "response_headers": {
+        "Date": "Mon, 12 Oct 2026 10:49:16 GMT",
+        "Server": "uvicorn",
+        "Cache-Control": "no-store",
+        "X-Request-Id": "5179322ef6d1488f27d0b0a5cd0fc18c",
+        "Content-Length": "1311",
+        "Content-Type": "application/json",
+        "Connection": "close"
+      },
+      "response": {
+        "ret": 1,
+        "msg": "操作成功",
+        "data": {
+          "current_page": 1,
+          "data": [
+            {
+              "id": 13,
+              "parent_id": 0,
+              "project_id": 56,
+              "column_id": 68,
+              "dialog_id": 0,
+              "flow_item_id": 0,
+              "flow_item_name": "",
+              "name": "导航游标任务fbad31",
+              "color": "",
+              "desc": "",
+              "start_at": null,
+              "end_at": null,
+              "archived_at": null,
+              "archived_userid": 0,
+              "archived_follow": 0,
+              "complete_at": null,
+              "userid": 49,
+              "visibility": 1,
+              "p_level": 1,
+              "p_name": "重要且紧急",
+              "p_color": "#ED4014",
+              "sort": 1,
+              "loop": "",
+              "loop_at": null,
+              "created_at": "2026-10-12 10:49:15",
+              "updated_at": "2026-10-12 10:49:15",
+              "deleted_at": null,
+              "deleted_userid": 0,
+              "task_user": [
+                {
+                  "id": 14,
+                  "project_id": 56,
+                  "task_id": 13,
+                  "task_pid": 13,
+                  "userid": 49,
+                  "owner": 1,
+                  "created_at": "2026-10-12 10:49:15",
+                  "updated_at": "2026-10-12 10:49:15"
+                }
+              ],
+              "task_tag": [],
+              "owner": null,
+              "assist": 0,
+              "sub_num": 0,
+              "sub_complete": 0,
+              "percent": 0,
+              "file_num": 0,
+              "msg_num": 0,
+              "today": false,
+              "overdue": false,
+              "project_name": "业务验收94076039",
+              "column_name": "待办",
+              "project_deleted": 0,
+              "project_archived": 0,
+              "department_readonly": false,
+              "visibility_appointor": [
+                0
+              ]
+            }
+          ],
+          "first_page_url": null,
+          "from": 1,
+          "last_page": 1,
+          "last_page_url": null,
+          "next_page_url": null,
+          "path": "",
+          "per_page": 100,
+          "prev_page_url": null,
+          "to": 1,
+          "total": 1,
+          "deleted_id": []
+        }
+      },
+      "response_bytes": 1311,
+      "response_sha256": "8a6cdd2d2ef1d34ad16581fd0e9ad6699f434174f3965e82ac2156cef8c8c660",
+      "elapsed_seconds": 0.031000000002677552,
+      "role": "navigation-member"
+    },
+    {
+      "utc": "2026-10-12T10:49:16.883332+00:00",
+      "case": "navigation_delta",
+      "kind": "assertion",
+      "assertion": "cursor-independent full task refresh remains available",
+      "passed": true
+    },
+    {
+      "utc": "2026-10-12T10:49:16.932656+00:00",
+      "case": "navigation_delta",
+      "kind": "http",
+      "method": "POST",
+      "url": "http://127.0.0.1:18080/api/project/task/remove",
+      "request_json": {
+        "task_id": 13
+      },
+      "request_headers": {
+        "User-Agent": "DooTask-Protocol-Acceptance/1",
+        "version": "1.9.0",
+        "Content-Type": "application/json"
+      },
+      "request_bytes": 15,
+      "request_sha256": "7e75bbfd86565cf0b5b847d3b11d994089d888c53166bf8f0fbbf52e8d1aa315",
+      "status": 200,
+      "response_headers": {
+        "Date": "Mon, 12 Oct 2026 10:49:16 GMT",
+        "Server": "uvicorn",
+        "Cache-Control": "no-store",
+        "X-Request-Id": "4f5cb5c3925407a1842964403104a6c4",
+        "Content-Length": "53",
+        "Content-Type": "application/json",
+        "Connection": "close"
+      },
+      "response": {
+        "ret": 1,
+        "msg": "操作成功",
+        "data": {
+          "id": 13
+        }
+      },
+      "response_bytes": 53,
+      "response_sha256": "77dbe410c882677441d180155643cbb6e9e1116756091518fb841937fec9c81c",
+      "elapsed_seconds": 0.046999999998661224,
+      "role": "navigation-owner"
+    },
+    {
+      "utc": "2026-10-12T10:49:16.967096+00:00",
+      "case": "navigation_delta",
+      "kind": "http",
+      "method": "POST",
+      "url": "http://127.0.0.1:18080/api/project/task/lists",
+      "request_json": {
+        "project_id": 56,
+        "timerange": "1791802156,0"
+      },
+      "request_headers": {
+        "User-Agent": "DooTask-Protocol-Acceptance/1",
+        "version": "1.9.0",
+        "Content-Type": "application/json"
+      },
+      "request_bytes": 47,
+      "request_sha256": "a0b5a7ba5d6f3e13f61ffa287b43d06868da4ca789de50f4c6e76abe9e946a74",
+      "status": 200,
+      "response_headers": {
+        "Date": "Mon, 12 Oct 2026 10:49:16 GMT",
+        "Server": "uvicorn",
+        "Cache-Control": "no-store",
+        "X-Request-Id": "b5a6c23b2e4dff92a58a2377330f7aa1",
+        "Content-Length": "270",
+        "Content-Type": "application/json",
+        "Connection": "close"
+      },
+      "response": {
+        "ret": 1,
+        "msg": "操作成功",
+        "data": {
+          "current_page": 1,
+          "data": [],
+          "first_page_url": null,
+          "from": null,
+          "last_page": 1,
+          "last_page_url": null,
+          "next_page_url": null,
+          "path": "",
+          "per_page": 100,
+          "prev_page_url": null,
+          "to": null,
+          "total": 0,
+          "deleted_id": [
+            13
+          ]
+        }
+      },
+      "response_bytes": 270,
+      "response_sha256": "b8c63dd9f3fca0f2fc3c4524eaee2eb589118256e221458825691c370dbc5dbe",
+      "elapsed_seconds": 0.046999999998661224,
+      "role": "navigation-member"
+    },
+    {
+      "utc": "2026-10-12T10:49:16.967096+00:00",
+      "case": "navigation_delta",
+      "kind": "assertion",
+      "assertion": "task soft deletion emits cache tombstone without live row",
+      "passed": true
+    },
+    {
+      "utc": "2026-10-12T10:49:17.041596+00:00",
+      "case": "navigation_delta",
+      "kind": "http",
+      "method": "POST",
+      "url": "http://127.0.0.1:18080/api/project/task/remove",
+      "request_json": {
+        "task_id": 13,
+        "type": "recovery"
+      },
+      "request_headers": {
+        "User-Agent": "DooTask-Protocol-Acceptance/1",
+        "version": "1.9.0",
+        "Content-Type": "application/json"
+      },
+      "request_bytes": 35,
+      "request_sha256": "5fc7977b9440684cee25ed38bdc9483bf2c67ed0f2ac6da83e2b779405dc3194",
+      "status": 200,
+      "response_headers": {
+        "Date": "Mon, 12 Oct 2026 10:49:16 GMT",
+        "Server": "uvicorn",
+        "Cache-Control": "no-store",
+        "X-Request-Id": "7101ecc6e519d6a1d0d34cf203cca007",
+        "Content-Length": "53",
+        "Content-Type": "application/json",
+        "Connection": "close"
+      },
+      "response": {
+        "ret": 1,
+        "msg": "操作成功",
+        "data": {
+          "id": 13
+        }
+      },
+      "response_bytes": 53,
+      "response_sha256": "77dbe410c882677441d180155643cbb6e9e1116756091518fb841937fec9c81c",
+      "elapsed_seconds": 0.062000000001717126,
+      "role": "navigation-owner"
+    },
+    {
+      "utc": "2026-10-12T10:49:17.089816+00:00",
+      "case": "navigation_delta",
+      "kind": "http",
+      "method": "POST",
+      "url": "http://127.0.0.1:18080/api/project/task/lists",
+      "request_json": {
+        "project_id": 56,
+        "timerange": "1791802156,0"
+      },
+      "request_headers": {
+        "User-Agent": "DooTask-Protocol-Acceptance/1",
+        "version": "1.9.0",
+        "Content-Type": "application/json"
+      },
+      "request_bytes": 47,
+      "request_sha256": "a0b5a7ba5d6f3e13f61ffa287b43d06868da4ca789de50f4c6e76abe9e946a74",
+      "status": 200,
+      "response_headers": {
+        "Date": "Mon, 12 Oct 2026 10:49:16 GMT",
+        "Server": "uvicorn",
+        "Cache-Control": "no-store",
+        "X-Request-Id": "60aa6287f07f02f7efb3875b917671a1",
+        "Content-Length": "1312",
+        "Content-Type": "application/json",
+        "Connection": "close"
+      },
+      "response": {
+        "ret": 1,
+        "msg": "操作成功",
+        "data": {
+          "current_page": 1,
+          "data": [
+            {
+              "id": 13,
+              "parent_id": 0,
+              "project_id": 56,
+              "column_id": 68,
+              "dialog_id": 0,
+              "flow_item_id": 0,
+              "flow_item_name": "",
+              "name": "导航游标任务fbad31",
+              "color": "",
+              "desc": "",
+              "start_at": null,
+              "end_at": null,
+              "archived_at": null,
+              "archived_userid": 0,
+              "archived_follow": 0,
+              "complete_at": null,
+              "userid": 49,
+              "visibility": 1,
+              "p_level": 1,
+              "p_name": "重要且紧急",
+              "p_color": "#ED4014",
+              "sort": 1,
+              "loop": "",
+              "loop_at": null,
+              "created_at": "2026-10-12 10:49:15",
+              "updated_at": "2026-10-12 10:49:17",
+              "deleted_at": null,
+              "deleted_userid": 49,
+              "task_user": [
+                {
+                  "id": 14,
+                  "project_id": 56,
+                  "task_id": 13,
+                  "task_pid": 13,
+                  "userid": 49,
+                  "owner": 1,
+                  "created_at": "2026-10-12 10:49:15",
+                  "updated_at": "2026-10-12 10:49:15"
+                }
+              ],
+              "task_tag": [],
+              "owner": null,
+              "assist": 0,
+              "sub_num": 0,
+              "sub_complete": 0,
+              "percent": 0,
+              "file_num": 0,
+              "msg_num": 0,
+              "today": false,
+              "overdue": false,
+              "project_name": "业务验收94076039",
+              "column_name": "待办",
+              "project_deleted": 0,
+              "project_archived": 0,
+              "department_readonly": false,
+              "visibility_appointor": [
+                0
+              ]
+            }
+          ],
+          "first_page_url": null,
+          "from": 1,
+          "last_page": 1,
+          "last_page_url": null,
+          "next_page_url": null,
+          "path": "",
+          "per_page": 100,
+          "prev_page_url": null,
+          "to": 1,
+          "total": 1,
+          "deleted_id": []
+        }
+      },
+      "response_bytes": 1312,
+      "response_sha256": "7ff766cdc2b57fe35f2c14995e00df4ede8fcb75cdbdd9b35d61b866d4928e41",
+      "elapsed_seconds": 0.046999999998661224,
+      "role": "navigation-member"
+    },
+    {
+      "utc": "2026-10-12T10:49:17.089816+00:00",
+      "case": "navigation_delta",
+      "kind": "assertion",
+      "assertion": "restored task reappears in original-wire incremental response",
+      "passed": true
+    },
+    {
+      "utc": "2026-10-12T10:49:17.117437+00:00",
+      "case": "navigation_delta",
+      "kind": "http",
+      "method": "POST",
+      "url": "http://127.0.0.1:18080/api/users/task/browse_save",
+      "request_json": {
+        "task_id": 13
+      },
+      "request_headers": {
+        "User-Agent": "DooTask-Protocol-Acceptance/1",
+        "version": "1.9.0",
+        "Content-Type": "application/json"
+      },
+      "request_bytes": 15,
+      "request_sha256": "7e75bbfd86565cf0b5b847d3b11d994089d888c53166bf8f0fbbf52e8d1aa315",
+      "status": 200,
+      "response_headers": {
+        "Date": "Mon, 12 Oct 2026 10:49:16 GMT",
+        "Server": "uvicorn",
+        "Cache-Control": "no-store",
+        "X-Request-Id": "45850736147e246d434ef7174945d87e",
+        "Content-Length": "45",
+        "Content-Type": "application/json",
+        "Connection": "close"
+      },
+      "response": {
+        "ret": 1,
+        "msg": "记录成功",
+        "data": []
+      },
+      "response_bytes": 45,
+      "response_sha256": "5539d25940ae410105c4db29a68c2dffb335fe7202825c1b5161de26b4acac0c",
+      "elapsed_seconds": 0.030999999999039574,
+      "role": "navigation-member"
+    },
+    {
+      "utc": "2026-10-12T10:49:17.155155+00:00",
+      "case": "navigation_delta",
+      "kind": "http",
+      "method": "POST",
+      "url": "http://127.0.0.1:18080/api/users/recent/browse",
+      "request_json": {},
+      "request_headers": {
+        "User-Agent": "DooTask-Protocol-Acceptance/1",
+        "version": "1.9.0",
+        "Content-Type": "application/json"
+      },
+      "request_bytes": 2,
+      "request_sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "status": 200,
+      "response_headers": {
+        "Date": "Mon, 12 Oct 2026 10:49:16 GMT",
+        "Server": "uvicorn",
+        "Cache-Control": "no-store",
+        "X-Request-Id": "5cab143e3d3fa9066ce5713787cc81da",
+        "Content-Length": "436",
+        "Content-Type": "application/json",
+        "Connection": "close"
+      },
+      "response": {
+        "ret": 1,
+        "msg": "操作成功",
+        "data": {
+          "list": [
+            {
+              "record_id": 3,
+              "source_type": "project",
+              "source_id": 0,
+              "browsed_at": "2026-10-12 10:49:17",
+              "type": "task",
+              "id": 13,
+              "name": "导航游标任务fbad31",
+              "project_id": 56,
+              "column_id": 68,
+              "flow_item_id": 0,
+              "complete_at": null,
+              "flow_item_name": "",
+              "flow_item_status": "",
+              "flow_item_color": "",
+              "project_name": "业务验收94076039"
+            }
+          ],
+          "page": 1,
+          "page_size": 20,
+          "total": 1
+        }
+      },
+      "response_bytes": 436,
+      "response_sha256": "da2976f345f8facaf9abc93f242a4ac23539c3dfe2576181474123fde43591a9",
+      "elapsed_seconds": 0.0470000000022992,
+      "role": "navigation-member"
+    },
+    {
+      "utc": "2026-10-12T10:49:17.183206+00:00",
+      "case": "navigation_delta",
+      "kind": "http",
+      "method": "POST",
+      "url": "http://127.0.0.1:18080/api/users/recent/delete",
+      "request_json": {
+        "id": 3
+      },
+      "request_headers": {
+        "User-Agent": "DooTask-Protocol-Acceptance/1",
+        "version": "1.9.0",
+        "Content-Type": "application/json"
+      },
+      "request_bytes": 9,
+      "request_sha256": "e7e47cffe2c803349c298b11ac2b371dc4b15dade05ae740a774992f0bf25b62",
+      "status": 200,
+      "response_headers": {
+        "Date": "Mon, 12 Oct 2026 10:49:16 GMT",
+        "Server": "uvicorn",
+        "Cache-Control": "no-store",
+        "X-Request-Id": "431f3e7101ce81f587a4e6776ec875c8",
+        "Content-Length": "45",
+        "Content-Type": "application/json",
+        "Connection": "close"
+      },
+      "response": {
+        "ret": 1,
+        "msg": "删除成功",
+        "data": []
+      },
+      "response_bytes": 45,
+      "response_sha256": "007a09feacb3611e6109540874daab5deb299f860f0302ece1294a4dc7d18091",
+      "elapsed_seconds": 0.01599999999962165,
+      "role": "navigation-member"
+    },
+    {
+      "utc": "2026-10-12T10:49:17.203555+00:00",
+      "case": "navigation_delta",
+      "kind": "http",
+      "method": "POST",
+      "url": "http://127.0.0.1:18080/api/users/recent/browse",
+      "request_json": {},
+      "request_headers": {
+        "User-Agent": "DooTask-Protocol-Acceptance/1",
+        "version": "1.9.0",
+        "Content-Type": "application/json"
+      },
+      "request_bytes": 2,
+      "request_sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "status": 200,
+      "response_headers": {
+        "Date": "Mon, 12 Oct 2026 10:49:16 GMT",
+        "Server": "uvicorn",
+        "Cache-Control": "no-store",
+        "X-Request-Id": "ffc180396e9d602baf354906dc93e599",
+        "Content-Length": "95",
+        "Content-Type": "application/json",
+        "Connection": "close"
+      },
+      "response": {
+        "ret": 1,
+        "msg": "操作成功",
+        "data": {
+          "list": [],
+          "page": 1,
+          "page_size": 20,
+          "total": 0
+        }
+      },
+      "response_bytes": 95,
+      "response_sha256": "e8451ae21ebd69ad7673bda9c357db16654224ff178b9bc9c7ba74bc33562df7",
+      "elapsed_seconds": 0.030999999999039574,
+      "role": "navigation-member"
+    },
+    {
+      "utc": "2026-10-12T10:49:17.203555+00:00",
+      "case": "navigation_delta",
+      "kind": "assertion",
+      "assertion": "explicit recent removal survives refresh",
+      "passed": true
+    },
+    {
+      "utc": "2026-10-12T10:49:17.218988+00:00",
+      "case": "navigation_delta",
+      "kind": "http",
+      "method": "POST",
+      "url": "http://127.0.0.1:18080/api/users/favorite/toggle",
+      "request_json": {
+        "type": "task",
+        "id": 13
+      },
+      "request_headers": {
+        "User-Agent": "DooTask-Protocol-Acceptance/1",
+        "version": "1.9.0",
+        "Content-Type": "application/json"
+      },
+      "request_bytes": 26,
+      "request_sha256": "deedcd9934977ecf4f48a52854487258bc51cc7ac68df6146092521209a6d722",
+      "status": 200,
+      "response_headers": {
+        "Date": "Mon, 12 Oct 2026 10:49:16 GMT",
+        "Server": "uvicorn",
+        "Cache-Control": "no-store",
+        "X-Request-Id": "e8b84d88aedd8db99c2b8194e15ad115",
+        "Content-Length": "95",
+        "Content-Type": "application/json",
+        "Connection": "close"
+      },
+      "response": {
+        "ret": 1,
+        "msg": "收藏成功",
+        "data": {
+          "favorited": true,
+          "action": "added",
+          "remark": ""
+        }
+      },
+      "response_bytes": 95,
+      "response_sha256": "171cd5417547d21402737cc599370ca02a18e4f1ed1394ef133a4846f3203512",
+      "elapsed_seconds": 0.01599999999962165,
+      "role": "navigation-member"
+    },
+    {
+      "utc": "2026-10-12T10:49:17.253146+00:00",
+      "case": "navigation_delta",
+      "kind": "http",
+      "method": "POST",
+      "url": "http://127.0.0.1:18080/api/users/favorite/remark",
+      "request_json": {
+        "type": "task",
+        "id": 13,
+        "remark": "业务导航备注"
+      },
+      "request_headers": {
+        "User-Agent": "DooTask-Protocol-Acceptance/1",
+        "version": "1.9.0",
+        "Content-Type": "application/json"
+      },
+      "request_bytes": 58,
+      "request_sha256": "e9e6330dd4bb330b813c6111fc495f9e06453e14461d582ec87c937613d22423",
+      "status": 200,
+      "response_headers": {
+        "Date": "Mon, 12 Oct 2026 10:49:16 GMT",
+        "Server": "uvicorn",
+        "Cache-Control": "no-store",
+        "X-Request-Id": "e0ff58ee9ade5e23b19ee34aa1b18fe4",
+        "Content-Length": "81",
+        "Content-Type": "application/json",
+        "Connection": "close"
+      },
+      "response": {
+        "ret": 1,
+        "msg": "修改备注成功",
+        "data": {
+          "remark": "业务导航备注"
+        }
+      },
+      "response_bytes": 81,
+      "response_sha256": "c5a68538e2b15296b80f6ea34805dea04e9961bf8f01b4e6ef4ec55d090bb9a5",
+      "elapsed_seconds": 0.031000000002677552,
+      "role": "navigation-member"
+    },
+    {
+      "utc": "2026-10-12T10:49:17.285188+00:00",
+      "case": "navigation_delta",
+      "kind": "http",
+      "method": "POST",
+      "url": "http://127.0.0.1:18080/api/users/favorites",
+      "request_json": {},
+      "request_headers": {
+        "User-Agent": "DooTask-Protocol-Acceptance/1",
+        "version": "1.9.0",
+        "Content-Type": "application/json"
+      },
+      "request_bytes": 2,
+      "request_sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "status": 200,
+      "response_headers": {
+        "Date": "Mon, 12 Oct 2026 10:49:16 GMT",
+        "Server": "uvicorn",
+        "Cache-Control": "no-store",
+        "X-Request-Id": "b6c15fcec3479d9bf203fec41f5ab3ed",
+        "Content-Length": "458",
+        "Content-Type": "application/json",
+        "Connection": "close"
+      },
+      "response": {
+        "ret": 1,
+        "msg": "操作成功",
+        "data": {
+          "data": {
+            "tasks": [
+              {
+                "id": 13,
+                "favorited_at": "2026-10-12 10:49:17",
+                "remark": "业务导航备注",
+                "name": "导航游标任务fbad31",
+                "project_id": 56,
+                "flow_item_id": 0,
+                "complete_at": null,
+                "flow_item_name": "",
+                "flow_item_status": "",
+                "flow_item_color": "",
+                "project_name": "业务验收94076039"
+              }
+            ],
+            "projects": [],
+            "files": [],
+            "messages": []
+          },
+          "total": 1,
+          "current_page": 1,
+          "per_page": 20,
+          "last_page": 1
+        }
+      },
+      "response_bytes": 458,
+      "response_sha256": "13f27c7d220a6db960ea0b24d725417b37dab1bbafcd123476145165fb736e4f",
+      "elapsed_seconds": 0.030999999999039574,
+      "role": "navigation-member"
+    },
+    {
+      "utc": "2026-10-12T10:49:17.285188+00:00",
+      "case": "navigation_delta",
+      "kind": "assertion",
+      "assertion": "favorite remark persists for consumer",
+      "passed": true
+    },
+    {
+      "utc": "2026-10-12T10:49:17.299815+00:00",
+      "case": "navigation_delta",
+      "kind": "http",
+      "method": "POST",
+      "url": "http://127.0.0.1:18080/api/users/favorite/toggle",
+      "request_json": {
+        "type": "task",
+        "id": 13
+      },
+      "request_headers": {
+        "User-Agent": "DooTask-Protocol-Acceptance/1",
+        "version": "1.9.0",
+        "Content-Type": "application/json"
+      },
+      "request_bytes": 26,
+      "request_sha256": "deedcd9934977ecf4f48a52854487258bc51cc7ac68df6146092521209a6d722",
+      "status": 200,
+      "response_headers": {
+        "Date": "Mon, 12 Oct 2026 10:49:16 GMT",
+        "Server": "uvicorn",
+        "Cache-Control": "no-store",
+        "X-Request-Id": "3f99b1471fcb9ec10a3df68dbc9a2bbb",
+        "Content-Length": "104",
+        "Content-Type": "application/json",
+        "Connection": "close"
+      },
+      "response": {
+        "ret": 1,
+        "msg": "取消收藏成功",
+        "data": {
+          "favorited": false,
+          "action": "removed",
+          "remark": ""
+        }
+      },
+      "response_bytes": 104,
+      "response_sha256": "bdd6ea5bd611f3268d2891b5b7816e1533442e246a3f1dc16e6f3a2fcd434de9",
+      "elapsed_seconds": 0.01599999999962165,
+      "role": "navigation-member"
+    },
+    {
+      "utc": "2026-10-12T10:49:17.310604+00:00",
+      "case": "navigation_delta",
+      "kind": "http",
+      "method": "POST",
+      "url": "http://127.0.0.1:18080/api/users/favorite/check",
+      "request_json": {
+        "type": "task",
+        "id": 13
+      },
+      "request_headers": {
+        "User-Agent": "DooTask-Protocol-Acceptance/1",
+        "version": "1.9.0",
+        "Content-Type": "application/json"
+      },
+      "request_bytes": 26,
+      "request_sha256": "deedcd9934977ecf4f48a52854487258bc51cc7ac68df6146092521209a6d722",
+      "status": 200,
+      "response_headers": {
+        "Date": "Mon, 12 Oct 2026 10:49:16 GMT",
+        "Server": "uvicorn",
+        "Cache-Control": "no-store",
+        "X-Request-Id": "89eada96093e3d5de364cdb01d433196",
+        "Content-Length": "63",
+        "Content-Type": "application/json",
+        "Connection": "close"
+      },
+      "response": {
+        "ret": 1,
+        "msg": "操作成功",
+        "data": {
+          "favorited": false
+        }
+      },
+      "response_bytes": 63,
+      "response_sha256": "264afa286fd9d9222032da523554e1e0d35a3b9611561ebf1bc192f02c05d8bd",
+      "elapsed_seconds": 0.01599999999962165,
+      "role": "navigation-member"
+    },
+    {
+      "utc": "2026-10-12T10:49:17.310604+00:00",
+      "case": "navigation_delta",
+      "kind": "assertion",
+      "assertion": "favorite toggle removal confirmed by check endpoint",
+      "passed": true
+    },
+    {
+      "utc": "2026-10-12T10:49:17.349825+00:00",
+      "case": "navigation_delta",
+      "kind": "http",
+      "method": "POST",
+      "url": "http://127.0.0.1:18080/api/file/add",
+      "request_json": {
+        "name": "检索文件1c7814e5",
+        "type": "document"
+      },
+      "request_headers": {
+        "User-Agent": "DooTask-Protocol-Acceptance/1",
+        "version": "1.9.0",
+        "Content-Type": "application/json"
+      },
+      "request_bytes": 52,
+      "request_sha256": "804574eb6c06d91afcceb44300f971340c418e7f7a27982db073efb78d656664",
+      "status": 200,
+      "response_headers": {
+        "Date": "Mon, 12 Oct 2026 10:49:16 GMT",
+        "Server": "uvicorn",
+        "Cache-Control": "no-store",
+        "X-Request-Id": "913268f37b791d237b5f9ba7960567b1",
+        "Content-Length": "345",
+        "Content-Type": "application/json",
+        "Connection": "close"
+      },
+      "response": {
+        "ret": 1,
+        "msg": "操作成功",
+        "data": {
+          "id": 20,
+          "pid": 0,
+          "pids": "",
+          "cid": 0,
+          "name": "检索文件1c7814e5",
+          "type": "document",
+          "ext": "md",
+          "size": 0,
+          "hash": null,
+          "userid": 49,
+          "share": 0,
+          "guest_access": 0,
+          "pshare": 0,
+          "created_id": 49,
+          "created_at": "2026-10-12 10:49:17",
+          "updated_at": "2026-10-12 10:49:17",
+          "deleted_at": null
+        }
+      },
+      "response_bytes": 345,
+      "response_sha256": "bad0471388983699097bb47c38d9dfc0815f5006ed4f536f5dee775f6449982c",
+      "elapsed_seconds": 0.030999999999039574,
+      "role": "navigation-owner"
+    },
+    {
+      "utc": "2026-10-12T10:49:17.396280+00:00",
+      "case": "navigation_delta",
+      "kind": "http",
+      "method": "POST",
+      "url": "http://127.0.0.1:18080/api/file/share/update",
+      "request_json": {
+        "id": 20,
+        "userids": [
+          50
+        ],
+        "permission": 0
+      },
+      "request_headers": {
+        "User-Agent": "DooTask-Protocol-Acceptance/1",
+        "version": "1.9.0",
+        "Content-Type": "application/json"
+      },
+      "request_bytes": 44,
+      "request_sha256": "7108e3822ec8e81cd69bccdef71e1f4419b75d88d58740fdd1e291bbb9afa0eb",
+      "status": 200,
+      "response_headers": {
+        "Date": "Mon, 12 Oct 2026 10:49:16 GMT",
+        "Server": "uvicorn",
+        "Cache-Control": "no-store",
+        "X-Request-Id": "aee9f8ddabaaf136d403b0b0124d7095",
+        "Content-Length": "346",
+        "Content-Type": "application/json",
+        "Connection": "close"
+      },
+      "response": {
+        "ret": 1,
+        "msg": "操作成功",
+        "data": {
+          "id": 20,
+          "pid": 0,
+          "pids": "",
+          "cid": 0,
+          "name": "检索文件1c7814e5",
+          "type": "document",
+          "ext": "md",
+          "size": 0,
+          "hash": null,
+          "userid": 49,
+          "share": 1,
+          "guest_access": 0,
+          "pshare": 20,
+          "created_id": 49,
+          "created_at": "2026-10-12 10:49:17",
+          "updated_at": "2026-10-12 10:49:17",
+          "deleted_at": null
+        }
+      },
+      "response_bytes": 346,
+      "response_sha256": "edd67a7bef269a349a324ee1a4d31fbb16e807994e7c82c316f2d1fc4aa50f26",
+      "elapsed_seconds": 0.0470000000022992,
+      "role": "navigation-owner"
+    },
+    {
+      "utc": "2026-10-12T10:49:17.409009+00:00",
+      "case": "navigation_delta",
+      "kind": "http",
+      "method": "POST",
+      "url": "http://127.0.0.1:18080/api/search/file",
+      "request_json": {
+        "key": "检索文件1c7814e5",
+        "search_type": "text"
+      },
+      "request_headers": {
+        "User-Agent": "DooTask-Protocol-Acceptance/1",
+        "version": "1.9.0",
+        "Content-Type": "application/json"
+      },
+      "request_bytes": 54,
+      "request_sha256": "454cf1c1d6d88dec379511296a88f6173e895f49da262a592cd4223fbc6f5952",
+      "status": 200,
+      "response_headers": {
+        "Date": "Mon, 12 Oct 2026 10:49:16 GMT",
+        "Server": "uvicorn",
+        "Cache-Control": "no-store",
+        "X-Request-Id": "80b071f3ffcf51df62c9d2eee9857b75",
+        "Content-Length": "389",
+        "Content-Type": "application/json",
+        "Connection": "close"
+      },
+      "response": {
+        "ret": 1,
+        "msg": "操作成功",
+        "data": [
+          {
+            "id": 20,
+            "pid": 0,
+            "pids": "",
+            "cid": 0,
+            "name": "检索文件1c7814e5",
+            "type": "document",
+            "ext": "md",
+            "size": 0,
+            "hash": null,
+            "userid": 49,
+            "share": 1,
+            "guest_access": 0,
+            "pshare": 20,
+            "created_id": 49,
+            "created_at": "2026-10-12 10:49:17",
+            "updated_at": "2026-10-12 10:49:17",
+            "deleted_at": null,
+            "content_preview": null,
+            "relevance": 0
+          }
+        ]
+      },
+      "response_bytes": 389,
+      "response_sha256": "40bc75c81d9ee0e1efbb60d6b8cb36ad2e1bd9e111ec02189a2c9b84186ca320",
+      "elapsed_seconds": 0.014999999999417923,
+      "role": "navigation-member"
+    },
+    {
+      "utc": "2026-10-12T10:49:17.409009+00:00",
+      "case": "navigation_delta",
+      "kind": "assertion",
+      "assertion": "file fallback search returns authorized shared document",
+      "passed": true
+    },
+    {
+      "utc": "2026-10-12T10:49:17.459393+00:00",
+      "case": "navigation_delta",
+      "kind": "http",
+      "method": "POST",
+      "url": "http://127.0.0.1:18080/api/file/share/update",
+      "request_json": {
+        "id": 20,
+        "userids": [
+          50
+        ],
+        "permission": -1
+      },
+      "request_headers": {
+        "User-Agent": "DooTask-Protocol-Acceptance/1",
+        "version": "1.9.0",
+        "Content-Type": "application/json"
+      },
+      "request_bytes": 45,
+      "request_sha256": "e12a8820bd25766ae59ebe1dc83d2d55b37a1cb85809aceb24d59a0760d9a85a",
+      "status": 200,
+      "response_headers": {
+        "Date": "Mon, 12 Oct 2026 10:49:16 GMT",
+        "Server": "uvicorn",
+        "Cache-Control": "no-store",
+        "X-Request-Id": "b5f5ac4707eefb2799b5598ad9963892",
+        "Content-Length": "345",
+        "Content-Type": "application/json",
+        "Connection": "close"
+      },
+      "response": {
+        "ret": 1,
+        "msg": "操作成功",
+        "data": {
+          "id": 20,
+          "pid": 0,
+          "pids": "",
+          "cid": 0,
+          "name": "检索文件1c7814e5",
+          "type": "document",
+          "ext": "md",
+          "size": 0,
+          "hash": null,
+          "userid": 49,
+          "share": 0,
+          "guest_access": 0,
+          "pshare": 0,
+          "created_id": 49,
+          "created_at": "2026-10-12 10:49:17",
+          "updated_at": "2026-10-12 10:49:17",
+          "deleted_at": null
+        }
+      },
+      "response_bytes": 345,
+      "response_sha256": "bad0471388983699097bb47c38d9dfc0815f5006ed4f536f5dee775f6449982c",
+      "elapsed_seconds": 0.046999999998661224,
+      "role": "navigation-owner"
+    },
+    {
+      "utc": "2026-10-12T10:49:17.482563+00:00",
+      "case": "navigation_delta",
+      "kind": "http",
+      "method": "POST",
+      "url": "http://127.0.0.1:18080/api/search/file",
+      "request_json": {
+        "key": "检索文件1c7814e5",
+        "search_type": "text"
+      },
+      "request_headers": {
+        "User-Agent": "DooTask-Protocol-Acceptance/1",
+        "version": "1.9.0",
+        "Content-Type": "application/json"
+      },
+      "request_bytes": 54,
+      "request_sha256": "454cf1c1d6d88dec379511296a88f6173e895f49da262a592cd4223fbc6f5952",
+      "status": 200,
+      "response_headers": {
+        "Date": "Mon, 12 Oct 2026 10:49:16 GMT",
+        "Server": "uvicorn",
+        "Cache-Control": "no-store",
+        "X-Request-Id": "96723e4beb10de6faf5fae0b0e6a1fa4",
+        "Content-Length": "45",
+        "Content-Type": "application/json",
+        "Connection": "close"
+      },
+      "response": {
+        "ret": 1,
+        "msg": "操作成功",
+        "data": []
+      },
+      "response_bytes": 45,
+      "response_sha256": "5ce1d0a4a48ffdcd1c2465c137f10aa2252d35b40c8becee3c30b60494042e91",
+      "elapsed_seconds": 0.030999999999039574,
+      "role": "navigation-member"
+    },
+    {
+      "utc": "2026-10-12T10:49:17.482563+00:00",
+      "case": "navigation_delta",
+      "kind": "assertion",
+      "assertion": "file search removes document immediately after share revocation",
+      "passed": true
+    },
+    {
+      "utc": "2026-10-12T10:49:17.485097+00:00",
+      "case": "navigation_delta",
+      "kind": "execution_end",
+      "exit_code": 0,
+      "elapsed_seconds": 2.514999999999418
+    }
+  ]
+}

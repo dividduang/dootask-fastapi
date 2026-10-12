@@ -1,0 +1,2571 @@
+{
+  "utc": "2026-10-12T10:50:12.939388+00:00",
+  "scope": "Supplemental local HTTP business acceptance only; no 326-complete claim",
+  "counts": {
+    "canonical_installed": 326,
+    "observed_endpoints": 68,
+    "not_run_here": 258,
+    "http_requests": 292,
+    "assertions_passed": 140,
+    "assertions_failed_historical": 1
+  },
+  "scenarios": [
+    {
+      "id": "reports",
+      "status": "PASS",
+      "evidence": [
+        "20261012T104640Z.json"
+      ]
+    },
+    {
+      "id": "files",
+      "status": "PASS",
+      "evidence": [
+        "20261012T104640Z.json"
+      ]
+    },
+    {
+      "id": "organization",
+      "status": "PASS_WITH_CLIENT_RESUME",
+      "evidence": [
+        "20261012T104640Z.json",
+        "20261012T104734Z.json"
+      ],
+      "note": "Full department/role/dashboard sequence completed up to reenable; stdin EOF resumed only real visible CAPTCHA login, no product bypass."
+    },
+    {
+      "id": "project_states",
+      "status": "PASS",
+      "evidence": [
+        "20261012T104525Z.json"
+      ]
+    },
+    {
+      "id": "handoff_relations",
+      "status": "PASS",
+      "evidence": [
+        "20261012T104525Z.json"
+      ]
+    },
+    {
+      "id": "complaints_search",
+      "status": "PASS",
+      "evidence": [
+        "20261012T104525Z.json"
+      ]
+    },
+    {
+      "id": "navigation_delta",
+      "status": "PASS",
+      "evidence": [
+        "20261012T104914Z.json"
+      ]
+    }
+  ],
+  "endpoints": [
+    {
+      "canonical_url": "api/apps/badge/set",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/apps/badge/clear",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/apps/badge/list",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/apps/functions",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/assistant/auth",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/assistant/models",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/assistant/match_elements",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/assistant/log/search",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/assistant/feedback/save",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/assistant/operation/dispatch",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/assistant/operation/result",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/assistant/session/list",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/assistant/session/save",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/assistant/session/delete",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/complaint/lists",
+      "status": "HTTP_SCENARIO_OBSERVED_NOT_ALL_BRANCHES",
+      "roles": [
+        "administrator"
+      ],
+      "scenarios": [
+        "complaints_search"
+      ],
+      "http_count": 5,
+      "success_count": 5,
+      "rejection_count": 0,
+      "runs": [
+        "20261012T104525Z.json"
+      ]
+    },
+    {
+      "canonical_url": "api/complaint/submit",
+      "status": "HTTP_SCENARIO_OBSERVED_NOT_ALL_BRANCHES",
+      "roles": [
+        "complaint-member",
+        "search-outsider"
+      ],
+      "scenarios": [
+        "complaints_search"
+      ],
+      "http_count": 2,
+      "success_count": 1,
+      "rejection_count": 1,
+      "runs": [
+        "20261012T104525Z.json"
+      ]
+    },
+    {
+      "canonical_url": "api/complaint/action",
+      "status": "HTTP_SCENARIO_OBSERVED_NOT_ALL_BRANCHES",
+      "roles": [
+        "administrator",
+        "complaint-member"
+      ],
+      "scenarios": [
+        "complaints_search"
+      ],
+      "http_count": 3,
+      "success_count": 2,
+      "rejection_count": 1,
+      "runs": [
+        "20261012T104525Z.json"
+      ]
+    },
+    {
+      "canonical_url": "api/contacts/departments",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/dashboard/team/stats",
+      "status": "HTTP_SCENARIO_OBSERVED_NOT_ALL_BRANCHES",
+      "roles": [
+        "department-owner",
+        "role-subject"
+      ],
+      "scenarios": [
+        "organization"
+      ],
+      "http_count": 6,
+      "success_count": 4,
+      "rejection_count": 2,
+      "runs": [
+        "20261012T104525Z.json",
+        "20261012T104640Z.json"
+      ]
+    },
+    {
+      "canonical_url": "api/dashboard/team/tasks",
+      "status": "HTTP_SCENARIO_OBSERVED_NOT_ALL_BRANCHES",
+      "roles": [
+        "department-owner"
+      ],
+      "scenarios": [
+        "organization"
+      ],
+      "http_count": 2,
+      "success_count": 2,
+      "rejection_count": 0,
+      "runs": [
+        "20261012T104525Z.json",
+        "20261012T104640Z.json"
+      ]
+    },
+    {
+      "canonical_url": "api/dialog/lists",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/dialog/beyond",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/dialog/search",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/dialog/search/tag",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/dialog/one",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/dialog/user",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/dialog/todo",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/dialog/top",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/dialog/hide",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/dialog/tel",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/dialog/open/user",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/dialog/open/event",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/dialog/msg/list",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/dialog/msg/latest",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/dialog/msg/one",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/dialog/msg/dot",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/dialog/msg/read",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/dialog/msg/unread",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/dialog/msg/checked",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/dialog/msg/stream",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/dialog/msg/ai_generate",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/dialog/msg/sendtext",
+      "status": "HTTP_SCENARIO_OBSERVED_NOT_ALL_BRANCHES",
+      "roles": [
+        "handoff-owner"
+      ],
+      "scenarios": [
+        "handoff_relations"
+      ],
+      "http_count": 1,
+      "success_count": 1,
+      "rejection_count": 0,
+      "runs": [
+        "20261012T104525Z.json"
+      ]
+    },
+    {
+      "canonical_url": "api/dialog/msg/sendnotice",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/dialog/msg/sendtemplate",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/dialog/msg/sendapprove",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/dialog/msg/sendrecord",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/dialog/msg/convertrecord",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/dialog/msg/sendfile",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/dialog/msg/sendfiles",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/dialog/msg/sendfileid",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/dialog/msg/sendtaskid",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/dialog/msg/sendanon",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/dialog/msg/sendbot",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/dialog/msg/send_ai_assistant",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/dialog/msg/sendlocation",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/dialog/msg/readlist",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/dialog/msg/detail",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/dialog/msg/download",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/dialog/msg/withdraw",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/dialog/msg/voice2text",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/dialog/msg/translation",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/dialog/msg/mark",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/dialog/msg/silence",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/dialog/msg/forward",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/dialog/msg/mergeforward",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/dialog/msg/mergedetail",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/dialog/msg/emoji",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/dialog/msg/tag",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/dialog/msg/todo",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/dialog/msg/todolist",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/dialog/msg/todoremind",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/dialog/msg/done",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/dialog/msg/color",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/dialog/msg/webhookmsg2ai",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/dialog/group/add",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/dialog/group/edit",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/dialog/group/adduser",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/dialog/group/deluser",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/dialog/group/transfer",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/dialog/group/adddeputy",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/dialog/group/deldeputy",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/dialog/group/disband",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/dialog/group/searchuser",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/dialog/common/list",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/dialog/okr/add",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/dialog/okr/push",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/dialog/msg/wordchain",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/dialog/msg/vote",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/dialog/msg/top",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/dialog/msg/topinfo",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/dialog/msg/applied",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/dialog/sticker/search",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/dialog/config",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/dialog/config/save",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/dialog/session/create",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/dialog/session/list",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/dialog/session/open",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/dialog/session/rename",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/file/collaboration/lists",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/file/collaboration/download",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/file/lists",
+      "status": "HTTP_SCENARIO_OBSERVED_NOT_ALL_BRANCHES",
+      "roles": [
+        "file-owner"
+      ],
+      "scenarios": [
+        "files"
+      ],
+      "http_count": 3,
+      "success_count": 3,
+      "rejection_count": 0,
+      "runs": [
+        "20261012T104525Z.json",
+        "20261012T104640Z.json"
+      ]
+    },
+    {
+      "canonical_url": "api/file/one",
+      "status": "HTTP_SCENARIO_OBSERVED_NOT_ALL_BRANCHES",
+      "roles": [
+        "file-owner",
+        "file-shared-reader"
+      ],
+      "scenarios": [
+        "files"
+      ],
+      "http_count": 2,
+      "success_count": 1,
+      "rejection_count": 1,
+      "runs": [
+        "20261012T104640Z.json"
+      ]
+    },
+    {
+      "canonical_url": "api/file/fetch",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/file/search",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/file/add",
+      "status": "HTTP_SCENARIO_OBSERVED_NOT_ALL_BRANCHES",
+      "roles": [
+        "file-owner",
+        "navigation-owner"
+      ],
+      "scenarios": [
+        "files",
+        "navigation_delta"
+      ],
+      "http_count": 7,
+      "success_count": 7,
+      "rejection_count": 0,
+      "runs": [
+        "20261012T104525Z.json",
+        "20261012T104640Z.json",
+        "20261012T104914Z.json"
+      ]
+    },
+    {
+      "canonical_url": "api/file/copy",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/file/move",
+      "status": "HTTP_SCENARIO_OBSERVED_NOT_ALL_BRANCHES",
+      "roles": [
+        "file-owner"
+      ],
+      "scenarios": [
+        "files"
+      ],
+      "http_count": 3,
+      "success_count": 2,
+      "rejection_count": 1,
+      "runs": [
+        "20261012T104525Z.json",
+        "20261012T104640Z.json"
+      ]
+    },
+    {
+      "canonical_url": "api/file/remove",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/file/content",
+      "status": "HTTP_SCENARIO_OBSERVED_NOT_ALL_BRANCHES",
+      "roles": [
+        "file-owner",
+        "file-shared-reader"
+      ],
+      "scenarios": [
+        "files"
+      ],
+      "http_count": 11,
+      "success_count": 9,
+      "rejection_count": 2,
+      "runs": [
+        "20261012T104525Z.json",
+        "20261012T104640Z.json"
+      ]
+    },
+    {
+      "canonical_url": "api/file/content/save",
+      "status": "HTTP_SCENARIO_OBSERVED_NOT_ALL_BRANCHES",
+      "roles": [
+        "file-owner",
+        "file-shared-reader"
+      ],
+      "scenarios": [
+        "files"
+      ],
+      "http_count": 6,
+      "success_count": 4,
+      "rejection_count": 2,
+      "runs": [
+        "20261012T104525Z.json",
+        "20261012T104640Z.json"
+      ]
+    },
+    {
+      "canonical_url": "api/file/office/token",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/file/content/office",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/file/content/upload",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/file/content/history",
+      "status": "HTTP_SCENARIO_OBSERVED_NOT_ALL_BRANCHES",
+      "roles": [
+        "file-owner"
+      ],
+      "scenarios": [
+        "files"
+      ],
+      "http_count": 4,
+      "success_count": 4,
+      "rejection_count": 0,
+      "runs": [
+        "20261012T104525Z.json",
+        "20261012T104640Z.json"
+      ]
+    },
+    {
+      "canonical_url": "api/file/content/restore",
+      "status": "HTTP_SCENARIO_OBSERVED_NOT_ALL_BRANCHES",
+      "roles": [
+        "file-shared-reader"
+      ],
+      "scenarios": [
+        "files"
+      ],
+      "http_count": 4,
+      "success_count": 2,
+      "rejection_count": 2,
+      "runs": [
+        "20261012T104525Z.json",
+        "20261012T104640Z.json"
+      ]
+    },
+    {
+      "canonical_url": "api/file/share",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/file/share/update",
+      "status": "HTTP_SCENARIO_OBSERVED_NOT_ALL_BRANCHES",
+      "roles": [
+        "file-owner",
+        "navigation-owner"
+      ],
+      "scenarios": [
+        "files",
+        "navigation_delta"
+      ],
+      "http_count": 8,
+      "success_count": 8,
+      "rejection_count": 0,
+      "runs": [
+        "20261012T104525Z.json",
+        "20261012T104640Z.json",
+        "20261012T104914Z.json"
+      ]
+    },
+    {
+      "canonical_url": "api/file/share/out",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/file/link",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/file/download/pack",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/file/dav/status",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/file/dav/credentials",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/file/dav/create",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/file/dav/revoke",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/file/dav/delete",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/file/dav/adminsetting",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/file/dav/adminstatus",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/file/dav/conflicts",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/file/dav/conflictrename",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/file/dav/userrevoke",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/project/lists",
+      "status": "HTTP_SCENARIO_OBSERVED_NOT_ALL_BRANCHES",
+      "roles": [
+        "navigation-member"
+      ],
+      "scenarios": [
+        "navigation_delta"
+      ],
+      "http_count": 2,
+      "success_count": 2,
+      "rejection_count": 0,
+      "runs": [
+        "20261012T104914Z.json"
+      ]
+    },
+    {
+      "canonical_url": "api/project/one",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/project/add",
+      "status": "HTTP_SCENARIO_OBSERVED_NOT_ALL_BRANCHES",
+      "roles": [
+        "complaint-owner",
+        "department-member",
+        "handoff-owner",
+        "navigation-owner",
+        "project-owner"
+      ],
+      "scenarios": [
+        "complaints_search",
+        "handoff_relations",
+        "navigation_delta",
+        "organization",
+        "project_states"
+      ],
+      "http_count": 6,
+      "success_count": 6,
+      "rejection_count": 0,
+      "runs": [
+        "20261012T104525Z.json",
+        "20261012T104640Z.json",
+        "20261012T104914Z.json"
+      ]
+    },
+    {
+      "canonical_url": "api/project/update",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/project/user",
+      "status": "HTTP_SCENARIO_OBSERVED_NOT_ALL_BRANCHES",
+      "roles": [
+        "complaint-owner",
+        "handoff-owner",
+        "navigation-owner",
+        "project-owner"
+      ],
+      "scenarios": [
+        "complaints_search",
+        "handoff_relations",
+        "navigation_delta",
+        "project_states"
+      ],
+      "http_count": 6,
+      "success_count": 6,
+      "rejection_count": 0,
+      "runs": [
+        "20261012T104525Z.json",
+        "20261012T104914Z.json"
+      ]
+    },
+    {
+      "canonical_url": "api/project/invite",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/project/invite/info",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/project/invite/join",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/project/transfer",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/project/adddeputy",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/project/deldeputy",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/project/sort",
+      "status": "HTTP_SCENARIO_OBSERVED_NOT_ALL_BRANCHES",
+      "roles": [
+        "project-owner"
+      ],
+      "scenarios": [
+        "project_states"
+      ],
+      "http_count": 1,
+      "success_count": 1,
+      "rejection_count": 0,
+      "runs": [
+        "20261012T104525Z.json"
+      ]
+    },
+    {
+      "canonical_url": "api/project/user/sort",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/project/exit",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/project/archived",
+      "status": "HTTP_SCENARIO_OBSERVED_NOT_ALL_BRANCHES",
+      "roles": [
+        "project-owner"
+      ],
+      "scenarios": [
+        "project_states"
+      ],
+      "http_count": 2,
+      "success_count": 2,
+      "rejection_count": 0,
+      "runs": [
+        "20261012T104525Z.json"
+      ]
+    },
+    {
+      "canonical_url": "api/project/remove",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/project/column/lists",
+      "status": "HTTP_SCENARIO_OBSERVED_NOT_ALL_BRANCHES",
+      "roles": [
+        "project-member",
+        "project-owner"
+      ],
+      "scenarios": [
+        "project_states"
+      ],
+      "http_count": 2,
+      "success_count": 2,
+      "rejection_count": 0,
+      "runs": [
+        "20261012T104525Z.json"
+      ]
+    },
+    {
+      "canonical_url": "api/project/column/add",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/project/column/update",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/project/column/remove",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/project/column/one",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/project/task/lists",
+      "status": "HTTP_SCENARIO_OBSERVED_NOT_ALL_BRANCHES",
+      "roles": [
+        "navigation-member",
+        "project-member"
+      ],
+      "scenarios": [
+        "navigation_delta",
+        "project_states"
+      ],
+      "http_count": 11,
+      "success_count": 11,
+      "rejection_count": 0,
+      "runs": [
+        "20261012T104525Z.json",
+        "20261012T104914Z.json"
+      ]
+    },
+    {
+      "canonical_url": "api/project/user/projects",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/project/user/tasks",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/project/user/counts",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/project/task/easylists",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/project/task/export",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/project/task/exportoverdue",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/project/task/down",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/project/task/one",
+      "status": "HTTP_SCENARIO_OBSERVED_NOT_ALL_BRANCHES",
+      "roles": [
+        "department-member",
+        "project-member",
+        "project-owner"
+      ],
+      "scenarios": [
+        "organization",
+        "project_states"
+      ],
+      "http_count": 9,
+      "success_count": 8,
+      "rejection_count": 1,
+      "runs": [
+        "20261012T104525Z.json",
+        "20261012T104640Z.json"
+      ]
+    },
+    {
+      "canonical_url": "api/project/task/subdata",
+      "status": "HTTP_SCENARIO_OBSERVED_NOT_ALL_BRANCHES",
+      "roles": [
+        "project-member"
+      ],
+      "scenarios": [
+        "project_states"
+      ],
+      "http_count": 1,
+      "success_count": 1,
+      "rejection_count": 0,
+      "runs": [
+        "20261012T104525Z.json"
+      ]
+    },
+    {
+      "canonical_url": "api/project/task/related",
+      "status": "HTTP_SCENARIO_OBSERVED_NOT_ALL_BRANCHES",
+      "roles": [
+        "handoff-member"
+      ],
+      "scenarios": [
+        "handoff_relations"
+      ],
+      "http_count": 2,
+      "success_count": 2,
+      "rejection_count": 0,
+      "runs": [
+        "20261012T104525Z.json"
+      ]
+    },
+    {
+      "canonical_url": "api/project/task/related_delete",
+      "status": "HTTP_SCENARIO_OBSERVED_NOT_ALL_BRANCHES",
+      "roles": [
+        "handoff-owner"
+      ],
+      "scenarios": [
+        "handoff_relations"
+      ],
+      "http_count": 1,
+      "success_count": 1,
+      "rejection_count": 0,
+      "runs": [
+        "20261012T104525Z.json"
+      ]
+    },
+    {
+      "canonical_url": "api/project/task/content",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/project/task/content_history",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/project/task/files",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/project/task/filedelete",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/project/task/filedetail",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/project/task/filedown",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/project/task/add",
+      "status": "HTTP_SCENARIO_OBSERVED_NOT_ALL_BRANCHES",
+      "roles": [
+        "complaint-owner",
+        "department-member",
+        "handoff-owner",
+        "navigation-owner",
+        "project-owner"
+      ],
+      "scenarios": [
+        "complaints_search",
+        "handoff_relations",
+        "navigation_delta",
+        "organization",
+        "project_states"
+      ],
+      "http_count": 7,
+      "success_count": 7,
+      "rejection_count": 0,
+      "runs": [
+        "20261012T104525Z.json",
+        "20261012T104640Z.json",
+        "20261012T104914Z.json"
+      ]
+    },
+    {
+      "canonical_url": "api/project/task/addsub",
+      "status": "HTTP_SCENARIO_OBSERVED_NOT_ALL_BRANCHES",
+      "roles": [
+        "project-owner"
+      ],
+      "scenarios": [
+        "project_states"
+      ],
+      "http_count": 1,
+      "success_count": 1,
+      "rejection_count": 0,
+      "runs": [
+        "20261012T104525Z.json"
+      ]
+    },
+    {
+      "canonical_url": "api/project/task/upgrade",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/project/task/update",
+      "status": "HTTP_SCENARIO_OBSERVED_NOT_ALL_BRANCHES",
+      "roles": [
+        "department-member",
+        "department-owner",
+        "project-member",
+        "project-owner"
+      ],
+      "scenarios": [
+        "organization",
+        "project_states"
+      ],
+      "http_count": 10,
+      "success_count": 6,
+      "rejection_count": 4,
+      "runs": [
+        "20261012T104525Z.json",
+        "20261012T104640Z.json"
+      ]
+    },
+    {
+      "canonical_url": "api/project/task/dialog",
+      "status": "HTTP_SCENARIO_OBSERVED_NOT_ALL_BRANCHES",
+      "roles": [
+        "handoff-owner"
+      ],
+      "scenarios": [
+        "handoff_relations"
+      ],
+      "http_count": 1,
+      "success_count": 1,
+      "rejection_count": 0,
+      "runs": [
+        "20261012T104525Z.json"
+      ]
+    },
+    {
+      "canonical_url": "api/project/task/archived",
+      "status": "HTTP_SCENARIO_OBSERVED_NOT_ALL_BRANCHES",
+      "roles": [
+        "project-owner"
+      ],
+      "scenarios": [
+        "project_states"
+      ],
+      "http_count": 2,
+      "success_count": 2,
+      "rejection_count": 0,
+      "runs": [
+        "20261012T104525Z.json"
+      ]
+    },
+    {
+      "canonical_url": "api/project/task/remove",
+      "status": "HTTP_SCENARIO_OBSERVED_NOT_ALL_BRANCHES",
+      "roles": [
+        "navigation-owner"
+      ],
+      "scenarios": [
+        "navigation_delta"
+      ],
+      "http_count": 2,
+      "success_count": 2,
+      "rejection_count": 0,
+      "runs": [
+        "20261012T104914Z.json"
+      ]
+    },
+    {
+      "canonical_url": "api/project/task/resetfromlog",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/project/task/flow",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/project/task/move",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/project/task/copy",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/project/task/ai_generate",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/project/ai/generate",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/project/flow/list",
+      "status": "HTTP_SCENARIO_OBSERVED_NOT_ALL_BRANCHES",
+      "roles": [
+        "project-owner"
+      ],
+      "scenarios": [
+        "project_states"
+      ],
+      "http_count": 1,
+      "success_count": 1,
+      "rejection_count": 0,
+      "runs": [
+        "20261012T104525Z.json"
+      ]
+    },
+    {
+      "canonical_url": "api/project/flow/save",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/project/flow/delete",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/project/log/lists",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/project/top",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/project/permission",
+      "status": "HTTP_SCENARIO_OBSERVED_NOT_ALL_BRANCHES",
+      "roles": [
+        "project-owner"
+      ],
+      "scenarios": [
+        "project_states"
+      ],
+      "http_count": 2,
+      "success_count": 2,
+      "rejection_count": 0,
+      "runs": [
+        "20261012T104525Z.json"
+      ]
+    },
+    {
+      "canonical_url": "api/project/permission/update",
+      "status": "HTTP_SCENARIO_OBSERVED_NOT_ALL_BRANCHES",
+      "roles": [
+        "project-member",
+        "project-owner"
+      ],
+      "scenarios": [
+        "project_states"
+      ],
+      "http_count": 2,
+      "success_count": 1,
+      "rejection_count": 1,
+      "runs": [
+        "20261012T104525Z.json"
+      ]
+    },
+    {
+      "canonical_url": "api/project/task/template_list",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/project/task/template_visible",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/project/task/template_search",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/project/task/template_save",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/project/task/template_sort",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/project/task/template_delete",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/project/task/template_default",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/project/tag/save",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/project/tag/sort",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/project/tag/delete",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/project/tag/list",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/project/task/ai_apply",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/project/task/ai_dismiss",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/projecttaskhandoff/lists",
+      "status": "HTTP_SCENARIO_OBSERVED_NOT_ALL_BRANCHES",
+      "roles": [
+        "handoff-member"
+      ],
+      "scenarios": [
+        "handoff_relations"
+      ],
+      "http_count": 1,
+      "success_count": 1,
+      "rejection_count": 0,
+      "runs": [
+        "20261012T104525Z.json"
+      ]
+    },
+    {
+      "canonical_url": "api/projecttaskhandoff/options",
+      "status": "HTTP_SCENARIO_OBSERVED_NOT_ALL_BRANCHES",
+      "roles": [
+        "handoff-member",
+        "handoff-owner"
+      ],
+      "scenarios": [
+        "handoff_relations"
+      ],
+      "http_count": 3,
+      "success_count": 3,
+      "rejection_count": 0,
+      "runs": [
+        "20261012T104525Z.json"
+      ]
+    },
+    {
+      "canonical_url": "api/projecttaskhandoff/assign",
+      "status": "HTTP_SCENARIO_OBSERVED_NOT_ALL_BRANCHES",
+      "roles": [
+        "handoff-owner"
+      ],
+      "scenarios": [
+        "handoff_relations"
+      ],
+      "http_count": 2,
+      "success_count": 1,
+      "rejection_count": 1,
+      "runs": [
+        "20261012T104525Z.json"
+      ]
+    },
+    {
+      "canonical_url": "api/public/checkin/install",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/public/checkin/report",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/report/my",
+      "status": "HTTP_SCENARIO_OBSERVED_NOT_ALL_BRANCHES",
+      "roles": [
+        "report-author"
+      ],
+      "scenarios": [
+        "reports"
+      ],
+      "http_count": 4,
+      "success_count": 4,
+      "rejection_count": 0,
+      "runs": [
+        "20261012T104525Z.json",
+        "20261012T104640Z.json"
+      ]
+    },
+    {
+      "canonical_url": "api/report/receive",
+      "status": "HTTP_SCENARIO_OBSERVED_NOT_ALL_BRANCHES",
+      "roles": [
+        "report-recipient"
+      ],
+      "scenarios": [
+        "reports"
+      ],
+      "http_count": 3,
+      "success_count": 3,
+      "rejection_count": 0,
+      "runs": [
+        "20261012T104525Z.json",
+        "20261012T104640Z.json"
+      ]
+    },
+    {
+      "canonical_url": "api/report/store",
+      "status": "HTTP_SCENARIO_OBSERVED_NOT_ALL_BRANCHES",
+      "roles": [
+        "report-author",
+        "report-recipient"
+      ],
+      "scenarios": [
+        "reports"
+      ],
+      "http_count": 5,
+      "success_count": 3,
+      "rejection_count": 2,
+      "runs": [
+        "20261012T104525Z.json",
+        "20261012T104640Z.json"
+      ]
+    },
+    {
+      "canonical_url": "api/report/template",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/report/detail",
+      "status": "HTTP_SCENARIO_OBSERVED_NOT_ALL_BRANCHES",
+      "roles": [
+        "report-author",
+        "report-outsider",
+        "report-recipient"
+      ],
+      "scenarios": [
+        "reports"
+      ],
+      "http_count": 8,
+      "success_count": 5,
+      "rejection_count": 3,
+      "runs": [
+        "20261012T104525Z.json",
+        "20261012T104640Z.json"
+      ]
+    },
+    {
+      "canonical_url": "api/report/analysave",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/report/mark",
+      "status": "HTTP_SCENARIO_OBSERVED_NOT_ALL_BRANCHES",
+      "roles": [
+        "report-recipient"
+      ],
+      "scenarios": [
+        "reports"
+      ],
+      "http_count": 1,
+      "success_count": 1,
+      "rejection_count": 0,
+      "runs": [
+        "20261012T104640Z.json"
+      ]
+    },
+    {
+      "canonical_url": "api/report/share",
+      "status": "HTTP_SCENARIO_OBSERVED_NOT_ALL_BRANCHES",
+      "roles": [
+        "report-author"
+      ],
+      "scenarios": [
+        "reports"
+      ],
+      "http_count": 1,
+      "success_count": 1,
+      "rejection_count": 0,
+      "runs": [
+        "20261012T104640Z.json"
+      ]
+    },
+    {
+      "canonical_url": "api/report/last_submitter",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/report/unread",
+      "status": "HTTP_SCENARIO_OBSERVED_NOT_ALL_BRANCHES",
+      "roles": [
+        "report-recipient"
+      ],
+      "scenarios": [
+        "reports"
+      ],
+      "http_count": 9,
+      "success_count": 9,
+      "rejection_count": 0,
+      "runs": [
+        "20261012T104525Z.json",
+        "20261012T104640Z.json"
+      ]
+    },
+    {
+      "canonical_url": "api/report/read",
+      "status": "HTTP_SCENARIO_OBSERVED_NOT_ALL_BRANCHES",
+      "roles": [
+        "report-recipient"
+      ],
+      "scenarios": [
+        "reports"
+      ],
+      "http_count": 1,
+      "success_count": 1,
+      "rejection_count": 0,
+      "runs": [
+        "20261012T104640Z.json"
+      ]
+    },
+    {
+      "canonical_url": "api/search/contact",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/search/project",
+      "status": "HTTP_SCENARIO_OBSERVED_NOT_ALL_BRANCHES",
+      "roles": [
+        "complaint-member"
+      ],
+      "scenarios": [
+        "complaints_search"
+      ],
+      "http_count": 1,
+      "success_count": 1,
+      "rejection_count": 0,
+      "runs": [
+        "20261012T104525Z.json"
+      ]
+    },
+    {
+      "canonical_url": "api/search/task",
+      "status": "HTTP_SCENARIO_OBSERVED_NOT_ALL_BRANCHES",
+      "roles": [
+        "complaint-member",
+        "search-outsider"
+      ],
+      "scenarios": [
+        "complaints_search"
+      ],
+      "http_count": 3,
+      "success_count": 3,
+      "rejection_count": 0,
+      "runs": [
+        "20261012T104525Z.json"
+      ]
+    },
+    {
+      "canonical_url": "api/search/file",
+      "status": "HTTP_SCENARIO_OBSERVED_NOT_ALL_BRANCHES",
+      "roles": [
+        "navigation-member"
+      ],
+      "scenarios": [
+        "navigation_delta"
+      ],
+      "http_count": 2,
+      "success_count": 2,
+      "rejection_count": 0,
+      "runs": [
+        "20261012T104914Z.json"
+      ]
+    },
+    {
+      "canonical_url": "api/search/message",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/system/setting",
+      "status": "HTTP_SCENARIO_OBSERVED_NOT_ALL_BRANCHES",
+      "roles": [
+        "administrator"
+      ],
+      "scenarios": [
+        "handoff_relations"
+      ],
+      "http_count": 3,
+      "success_count": 3,
+      "rejection_count": 0,
+      "runs": [
+        "20261012T104525Z.json"
+      ]
+    },
+    {
+      "canonical_url": "api/system/setting/email",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/system/setting/meeting",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/system/setting/ai",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/system/setting/aibot",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/system/setting/aibot_models",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/system/setting/aibot_defmodels",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/system/setting/checkin",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/system/setting/apppush",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/system/setting/thirdaccess",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/system/setting/file",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/system/demo",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/system/priority",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/system/microapp_menu",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/system/column/template",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/system/get/info",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/system/get/ip",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/system/get/cnip",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/system/imgupload",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/system/imgview",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/system/fileupload",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/system/get/updatelog",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/system/email/check",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/system/checkin/export",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/system/checkin/down",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/system/version",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/system/update/check",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/system/update/start",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/system/update/status",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/system/prefetch",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/upload/init",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/upload/chunk",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/upload/merge",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/upload/cancel",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/users/login",
+      "status": "HTTP_SCENARIO_OBSERVED_NOT_ALL_BRANCHES",
+      "roles": [
+        "anonymous",
+        "request failed before role annotation"
+      ],
+      "scenarios": [
+        "complaints_search",
+        "files",
+        "handoff_relations",
+        "navigation_delta",
+        "organization",
+        "organization_resume",
+        "project_states",
+        "reports"
+      ],
+      "http_count": 33,
+      "success_count": 30,
+      "rejection_count": 3,
+      "runs": [
+        "20261012T104525Z.json",
+        "20261012T104640Z.json",
+        "20261012T104734Z.json",
+        "20261012T104914Z.json"
+      ]
+    },
+    {
+      "canonical_url": "api/users/login/qrcode",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/users/login/needcode",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/users/login/codeimg",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/users/login/codejson",
+      "status": "HTTP_SCENARIO_OBSERVED_NOT_ALL_BRANCHES",
+      "roles": [
+        "anonymous"
+      ],
+      "scenarios": [
+        "organization",
+        "organization_resume"
+      ],
+      "http_count": 2,
+      "success_count": 2,
+      "rejection_count": 0,
+      "runs": [
+        "20261012T104640Z.json",
+        "20261012T104734Z.json"
+      ]
+    },
+    {
+      "canonical_url": "api/users/logout",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/users/token/expire",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/users/reg/needinvite",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/users/info",
+      "status": "HTTP_SCENARIO_OBSERVED_NOT_ALL_BRANCHES",
+      "roles": [
+        "role-subject"
+      ],
+      "scenarios": [
+        "organization",
+        "organization_resume"
+      ],
+      "http_count": 13,
+      "success_count": 7,
+      "rejection_count": 6,
+      "runs": [
+        "20261012T104525Z.json",
+        "20261012T104640Z.json",
+        "20261012T104734Z.json"
+      ]
+    },
+    {
+      "canonical_url": "api/users/info/managed_departments",
+      "status": "HTTP_SCENARIO_OBSERVED_NOT_ALL_BRANCHES",
+      "roles": [
+        "department-member",
+        "department-owner"
+      ],
+      "scenarios": [
+        "organization"
+      ],
+      "http_count": 8,
+      "success_count": 8,
+      "rejection_count": 0,
+      "runs": [
+        "20261012T104525Z.json",
+        "20261012T104640Z.json"
+      ]
+    },
+    {
+      "canonical_url": "api/users/info/departments",
+      "status": "HTTP_SCENARIO_OBSERVED_NOT_ALL_BRANCHES",
+      "roles": [
+        "department-member"
+      ],
+      "scenarios": [
+        "organization"
+      ],
+      "http_count": 2,
+      "success_count": 2,
+      "rejection_count": 0,
+      "runs": [
+        "20261012T104525Z.json",
+        "20261012T104640Z.json"
+      ]
+    },
+    {
+      "canonical_url": "api/users/editdata",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/users/editpass",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/users/search",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/users/search/ai",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/users/basic",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/users/extra",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/users/lists",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/users/operation",
+      "status": "HTTP_SCENARIO_OBSERVED_NOT_ALL_BRANCHES",
+      "roles": [
+        "administrator",
+        "department-member"
+      ],
+      "scenarios": [
+        "organization"
+      ],
+      "http_count": 14,
+      "success_count": 12,
+      "rejection_count": 2,
+      "runs": [
+        "20261012T104525Z.json",
+        "20261012T104640Z.json"
+      ]
+    },
+    {
+      "canonical_url": "api/users/createuser",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/users/import/preview",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/users/import",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/users/import/template",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/users/email/verification",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/users/umeng/alias",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/users/meeting/open",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/users/tags/lists",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/users/tags/add",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/users/tags/update",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/users/tags/delete",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/users/tags/recognize",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/users/meeting/link",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/users/meeting/tourist",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/users/meeting/invitation",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/users/email/send",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/users/email/edit",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/users/delete/account",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/users/department/list",
+      "status": "HTTP_SCENARIO_OBSERVED_NOT_ALL_BRANCHES",
+      "roles": [
+        "administrator",
+        "role-subject"
+      ],
+      "scenarios": [
+        "organization",
+        "organization_resume"
+      ],
+      "http_count": 9,
+      "success_count": 6,
+      "rejection_count": 3,
+      "runs": [
+        "20261012T104525Z.json",
+        "20261012T104640Z.json",
+        "20261012T104734Z.json"
+      ]
+    },
+    {
+      "canonical_url": "api/users/department/add",
+      "status": "HTTP_SCENARIO_OBSERVED_NOT_ALL_BRANCHES",
+      "roles": [
+        "administrator",
+        "department-member"
+      ],
+      "scenarios": [
+        "organization"
+      ],
+      "http_count": 4,
+      "success_count": 2,
+      "rejection_count": 2,
+      "runs": [
+        "20261012T104525Z.json",
+        "20261012T104640Z.json"
+      ]
+    },
+    {
+      "canonical_url": "api/users/department/adddeputy",
+      "status": "HTTP_SCENARIO_OBSERVED_NOT_ALL_BRANCHES",
+      "roles": [
+        "administrator"
+      ],
+      "scenarios": [
+        "organization"
+      ],
+      "http_count": 2,
+      "success_count": 2,
+      "rejection_count": 0,
+      "runs": [
+        "20261012T104525Z.json",
+        "20261012T104640Z.json"
+      ]
+    },
+    {
+      "canonical_url": "api/users/department/deldeputy",
+      "status": "HTTP_SCENARIO_OBSERVED_NOT_ALL_BRANCHES",
+      "roles": [
+        "administrator"
+      ],
+      "scenarios": [
+        "organization"
+      ],
+      "http_count": 2,
+      "success_count": 2,
+      "rejection_count": 0,
+      "runs": [
+        "20261012T104525Z.json",
+        "20261012T104640Z.json"
+      ]
+    },
+    {
+      "canonical_url": "api/users/department/del",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/users/department/sync",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/users/checkin/get",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/users/checkin/save",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/users/checkin/list",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/users/socket/status",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/users/key/client",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/users/bot/list",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/users/bot/info",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/users/bot/edit",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/users/bot/delete",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/users/share/list",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/users/annual/report",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/users/device/list",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/users/device/logout",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/users/device/edit",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/users/task/browse",
+      "status": "HTTP_SCENARIO_OBSERVED_NOT_ALL_BRANCHES",
+      "roles": [
+        "project-member"
+      ],
+      "scenarios": [
+        "project_states"
+      ],
+      "http_count": 2,
+      "success_count": 2,
+      "rejection_count": 0,
+      "runs": [
+        "20261012T104525Z.json"
+      ]
+    },
+    {
+      "canonical_url": "api/users/task/browse_save",
+      "status": "HTTP_SCENARIO_OBSERVED_NOT_ALL_BRANCHES",
+      "roles": [
+        "navigation-member",
+        "project-member"
+      ],
+      "scenarios": [
+        "navigation_delta",
+        "project_states"
+      ],
+      "http_count": 2,
+      "success_count": 2,
+      "rejection_count": 0,
+      "runs": [
+        "20261012T104525Z.json",
+        "20261012T104914Z.json"
+      ]
+    },
+    {
+      "canonical_url": "api/users/task/browse_clean",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/users/recent/browse",
+      "status": "HTTP_SCENARIO_OBSERVED_NOT_ALL_BRANCHES",
+      "roles": [
+        "navigation-member",
+        "project-member"
+      ],
+      "scenarios": [
+        "navigation_delta",
+        "project_states"
+      ],
+      "http_count": 4,
+      "success_count": 4,
+      "rejection_count": 0,
+      "runs": [
+        "20261012T104525Z.json",
+        "20261012T104914Z.json"
+      ]
+    },
+    {
+      "canonical_url": "api/users/recent/delete",
+      "status": "HTTP_SCENARIO_OBSERVED_NOT_ALL_BRANCHES",
+      "roles": [
+        "navigation-member"
+      ],
+      "scenarios": [
+        "navigation_delta"
+      ],
+      "http_count": 1,
+      "success_count": 1,
+      "rejection_count": 0,
+      "runs": [
+        "20261012T104914Z.json"
+      ]
+    },
+    {
+      "canonical_url": "api/users/appsort",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/users/appsort/save",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/users/favorites",
+      "status": "HTTP_SCENARIO_OBSERVED_NOT_ALL_BRANCHES",
+      "roles": [
+        "navigation-member",
+        "project-member"
+      ],
+      "scenarios": [
+        "navigation_delta",
+        "project_states"
+      ],
+      "http_count": 3,
+      "success_count": 3,
+      "rejection_count": 0,
+      "runs": [
+        "20261012T104525Z.json",
+        "20261012T104914Z.json"
+      ]
+    },
+    {
+      "canonical_url": "api/users/favorite/toggle",
+      "status": "HTTP_SCENARIO_OBSERVED_NOT_ALL_BRANCHES",
+      "roles": [
+        "navigation-member",
+        "project-member"
+      ],
+      "scenarios": [
+        "navigation_delta",
+        "project_states"
+      ],
+      "http_count": 4,
+      "success_count": 3,
+      "rejection_count": 1,
+      "runs": [
+        "20261012T104525Z.json",
+        "20261012T104914Z.json"
+      ]
+    },
+    {
+      "canonical_url": "api/users/favorite/remark",
+      "status": "HTTP_SCENARIO_OBSERVED_NOT_ALL_BRANCHES",
+      "roles": [
+        "navigation-member"
+      ],
+      "scenarios": [
+        "navigation_delta"
+      ],
+      "http_count": 1,
+      "success_count": 1,
+      "rejection_count": 0,
+      "runs": [
+        "20261012T104914Z.json"
+      ]
+    },
+    {
+      "canonical_url": "api/users/favorites/clean",
+      "status": "NOT_RUN_BY_BUSINESS_ACCEPTANCE",
+      "reason": "No executed business scenario for this endpoint in this supplemental slice; see other owners for independent evidence."
+    },
+    {
+      "canonical_url": "api/users/favorite/check",
+      "status": "HTTP_SCENARIO_OBSERVED_NOT_ALL_BRANCHES",
+      "roles": [
+        "navigation-member"
+      ],
+      "scenarios": [
+        "navigation_delta"
+      ],
+      "http_count": 1,
+      "success_count": 1,
+      "rejection_count": 0,
+      "runs": [
+        "20261012T104914Z.json"
+      ]
+    }
+  ],
+  "unexercised": [
+    "External SMTP/LDAP/Agora/Office/AI/Manticore integrations and installed-but-misconfigured search error: no real provider configuration; no fake installation",
+    "Full all-local handler/branch coverage, >300 items pagination, concurrent handoff race, import/export and all recurring jobs",
+    "Electron/mobile and browser UI are not this slice; FrontendRelease owns UI"
+  ],
+  "integrity": {
+    "20261012T104525Z.json": "41507219d3751efcd5a49288af1ae45083982be377e074a19b2433d9c73caf14",
+    "20261012T104640Z.json": "f4be131a358a6788950000e3a70f61e4a7b95871502bb45be246fed9d561f6d8",
+    "20261012T104734Z.json": "33f25d30fddcb2d4962424a20357b1276e3747d581351246742fecc444e2425b",
+    "20261012T104914Z.json": "37ea9e26fa1d1aa3ac8748006dc5fcf082069e0d8b496b3220638065ff76bc4e"
+  },
+  "client_sha256": "d3791c0d8d9ae85730e8810bffd34b809cd7b941474aba1d4bb963efe137b09d"
+}

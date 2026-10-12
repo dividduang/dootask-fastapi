@@ -1,0 +1,12 @@
+{
+  "command": [
+    "D:\\rpa\\202610\\dootask-fastapi\\.venv\\Scripts\\python.exe",
+    "-c",
+    "import os,pymysql,json;c=pymysql.connect(host=os.environ['DB_HOST'],port=int(os.environ['DB_PORT']),user=os.environ['DB_USERNAME'],password=os.environ['DB_PASSWORD'],database=os.environ['DB_DATABASE']);q=c.cursor(pymysql.cursors.DictCursor);q.execute('SELECT kind,COUNT(*) n,SUM(completed_at IS NOT NULL) done,MAX(attempts) attempts,MAX(last_error) last_error FROM backend_outbox GROUP BY kind');print(json.dumps(q.fetchall(),default=str,ensure_ascii=False))"
+  ],
+  "started_at": "2026-10-12T10:22:24.619565+00:00",
+  "duration_seconds": 0.141,
+  "exit_code": 0,
+  "stdout": "[{\"kind\": \"accounts.changed\", \"n\": 1, \"done\": \"1\", \"attempts\": 1, \"last_error\": null}, {\"kind\": \"accounts.close_meetings\", \"n\": 2, \"done\": \"2\", \"attempts\": 1, \"last_error\": null}, {\"kind\": \"accounts.created\", \"n\": 3, \"done\": \"0\", \"attempts\": 6, \"last_error\": \"ApiError: APP_KEY未配置，无法通知应用商店\"}, {\"kind\": \"accounts.expire\", \"n\": 1, \"done\": \"1\", \"attempts\": 1, \"last_error\": null}, {\"kind\": \"accounts.search\", \"n\": 3, \"done\": \"3\", \"attempts\": 1, \"last_error\": null}, {\"kind\": \"checkin.remind\", \"n\": 5, \"done\": \"5\", \"attempts\": 1, \"last_error\": null}, {\"kind\": \"dialog.delete_bot_messages\", \"n\": 1, \"done\": \"1\", \"attempts\": 1, \"last_error\": null}, {\"kind\": \"dialog.email_notice\", \"n\": 5, \"done\": \"5\", \"attempts\": 1, \"last_error\": null}, {\"kind\": \"dialog.joke_soup\", \"n\": 1, \"done\": \"1\", \"attempts\": 1, \"last_error\": null}, {\"kind\": \"dialog.maintenance\", \"n\": 5, \"done\": \"5\", \"attempts\": 1, \"last_error\": null}, {\"kind\": \"dialog.todo_remind\", \"n\": 5, \"done\": \"5\", \"attempts\": 1, \"last_error\": null}, {\"kind\": \"files.attachment_backfill\", \"n\": 5, \"done\": \"5\", \"attempts\": 1, \"last_error\": null}, {\"kind\": \"files.expire\", \"n\": 1, \"done\": \"1\", \"attempts\": 1, \"last_error\": null}, {\"kind\": \"projects.ai_scan\", \"n\": 5, \"done\": \"5\", \"attempts\": 1, \"last_error\": null}, {\"kind\": \"projects.maintenance\", \"n\": 5, \"done\": \"5\", \"attempts\": 1, \"last_error\": null}, {\"kind\": \"realtime.push\", \"n\": 3, \"done\": \"3\", \"attempts\": 1, \"last_error\": null}, {\"kind\": \"search.sync\", \"n\": 6, \"done\": \"6\", \"attempts\": 1, \"last_error\": null}]\r\n",
+  "stderr": ""
+}

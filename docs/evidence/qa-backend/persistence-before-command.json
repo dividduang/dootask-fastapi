@@ -1,0 +1,12 @@
+{
+  "command": [
+    "D:\\rpa\\202610\\dootask-fastapi\\.venv\\Scripts\\python.exe",
+    "docs/evidence/qa-backend/persistence_snapshot.py",
+    "before"
+  ],
+  "started_at": "2026-10-12T10:31:18.107540+00:00",
+  "duration_seconds": 0.141,
+  "exit_code": 0,
+  "stdout": "Read-only persistence snapshot captured: before\r\n",
+  "stderr": ""
+}

@@ -1,0 +1,8 @@
+{
+  "authenticated_status": 200,
+  "anonymous_status": 401,
+  "registry_exists": false,
+  "installed_count": 0,
+  "result": "PASS",
+  "scope": "Actual local installation inventory, not external installer/hooks"
+}

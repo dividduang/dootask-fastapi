@@ -1,0 +1,78 @@
+{
+  "entries": [
+    {
+      "seq": 2,
+      "ts": 1791801169919.932,
+      "type": "pageerror",
+      "level": "error",
+      "text": "AxiosError: Request failed with status code 404",
+      "location": "http://127.0.0.1:18080/js/build/axios.b1f1dd94.js:2:12282",
+      "stack": "AxiosError: Request failed with status code 404\n    at Kt (http://127.0.0.1:18080/js/build/axios.b1f1dd94.js:3:12283)\n    at XMLHttpRequest.h (http://127.0.0.1:18080/js/build/axios.b1f1dd94.js:3:19694)"
+    },
+    {
+      "seq": 4,
+      "ts": 1791801170170.182,
+      "type": "pageerror",
+      "level": "error",
+      "text": "AxiosError: Request failed with status code 404",
+      "location": "http://127.0.0.1:18080/js/build/axios.b1f1dd94.js:2:12282",
+      "stack": "AxiosError: Request failed with status code 404\n    at Kt (http://127.0.0.1:18080/js/build/axios.b1f1dd94.js:3:12283)\n    at XMLHttpRequest.h (http://127.0.0.1:18080/js/build/axios.b1f1dd94.js:3:19694)"
+    },
+    {
+      "seq": 7,
+      "ts": 1791801171015.863,
+      "type": "pageerror",
+      "level": "error",
+      "text": "AxiosError: Request failed with status code 404",
+      "location": "http://127.0.0.1:18080/js/build/axios.b1f1dd94.js:2:12282",
+      "stack": "AxiosError: Request failed with status code 404\n    at Kt (http://127.0.0.1:18080/js/build/axios.b1f1dd94.js:3:12283)\n    at XMLHttpRequest.h (http://127.0.0.1:18080/js/build/axios.b1f1dd94.js:3:19694)"
+    },
+    {
+      "seq": 9,
+      "ts": 1791801204377.209,
+      "type": "pageerror",
+      "level": "error",
+      "text": "AxiosError: Request failed with status code 404",
+      "location": "http://127.0.0.1:18080/js/build/axios.b1f1dd94.js:2:12282",
+      "stack": "AxiosError: Request failed with status code 404\n    at Kt (http://127.0.0.1:18080/js/build/axios.b1f1dd94.js:3:12283)\n    at XMLHttpRequest.h (http://127.0.0.1:18080/js/build/axios.b1f1dd94.js:3:19694)"
+    },
+    {
+      "seq": 11,
+      "ts": 1791801205292.432,
+      "type": "pageerror",
+      "level": "error",
+      "text": "AxiosError: Request failed with status code 404",
+      "location": "http://127.0.0.1:18080/js/build/axios.b1f1dd94.js:2:12282",
+      "stack": "AxiosError: Request failed with status code 404\n    at Kt (http://127.0.0.1:18080/js/build/axios.b1f1dd94.js:3:12283)\n    at XMLHttpRequest.h (http://127.0.0.1:18080/js/build/axios.b1f1dd94.js:3:19694)"
+    },
+    {
+      "seq": 13,
+      "ts": 1791801287755.507,
+      "type": "pageerror",
+      "level": "error",
+      "text": "AxiosError: Request failed with status code 404",
+      "location": "http://127.0.0.1:18080/js/build/axios.b1f1dd94.js:2:12282",
+      "stack": "AxiosError: Request failed with status code 404\n    at Kt (http://127.0.0.1:18080/js/build/axios.b1f1dd94.js:3:12283)\n    at XMLHttpRequest.h (http://127.0.0.1:18080/js/build/axios.b1f1dd94.js:3:19694)"
+    },
+    {
+      "seq": 15,
+      "ts": 1791801288663.975,
+      "type": "pageerror",
+      "level": "error",
+      "text": "AxiosError: Request failed with status code 404",
+      "location": "http://127.0.0.1:18080/js/build/axios.b1f1dd94.js:2:12282",
+      "stack": "AxiosError: Request failed with status code 404\n    at Kt (http://127.0.0.1:18080/js/build/axios.b1f1dd94.js:3:12283)\n    at XMLHttpRequest.h (http://127.0.0.1:18080/js/build/axios.b1f1dd94.js:3:19694)"
+    },
+    {
+      "seq": 17,
+      "ts": 1791801320584.696,
+      "type": "pageerror",
+      "level": "error",
+      "text": "AxiosError: Request failed with status code 404",
+      "location": "http://127.0.0.1:18080/js/build/axios.b1f1dd94.js:2:12282",
+      "stack": "AxiosError: Request failed with status code 404\n    at Kt (http://127.0.0.1:18080/js/build/axios.b1f1dd94.js:3:12283)\n    at XMLHttpRequest.h (http://127.0.0.1:18080/js/build/axios.b1f1dd94.js:3:19694)"
+    }
+  ],
+  "nextSeq": 17,
+  "dropped": 0
+}

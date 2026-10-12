@@ -1,0 +1,12 @@
+{
+  "command": [
+    "D:\\rpa\\202610\\dootask-fastapi\\.venv\\Scripts\\python.exe",
+    "-c",
+    "import os,pymysql;c=pymysql.connect(host=os.environ['DB_HOST'],port=int(os.environ['DB_PORT']),user=os.environ['DB_USERNAME'],password=os.environ['DB_PASSWORD'],database=os.environ['DB_DATABASE'],read_timeout=5);q=c.cursor();q.execute('SELECT COUNT(*) FROM users');print(q.fetchall())"
+  ],
+  "started_at": "2026-10-12T10:20:51.588248+00:00",
+  "duration_seconds": 0.156,
+  "exit_code": 0,
+  "stdout": "((0,),)\r\n",
+  "stderr": ""
+}

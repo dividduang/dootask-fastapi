@@ -1,0 +1,26 @@
+{
+  "api-repaired.log": {
+    "deadlock_count": 0,
+    "unregistered_kind_count": 0,
+    "appstore_missing_config_errors": 38,
+    "graceful_shutdown_complete": true
+  },
+  "api-https-repaired.log": {
+    "deadlock_count": 0,
+    "unregistered_kind_count": 0,
+    "appstore_missing_config_errors": 32,
+    "graceful_shutdown_complete": true
+  },
+  "api-final.log": {
+    "deadlock_count": 0,
+    "unregistered_kind_count": 0,
+    "appstore_missing_config_errors": 8,
+    "graceful_shutdown_complete": false
+  },
+  "api-https-final.log": {
+    "deadlock_count": 0,
+    "unregistered_kind_count": 0,
+    "appstore_missing_config_errors": 6,
+    "graceful_shutdown_complete": false
+  }
+}

@@ -1,0 +1,57 @@
+[
+  {
+    "path": "/api/project/task/lists",
+    "query": {
+      "timerange": "1791801170,0",
+      "_nocache": "1791801320556"
+    },
+    "status": 200,
+    "body": {
+      "ret": 1,
+      "msg": "操作成功",
+      "data": {
+        "current_page": 1,
+        "data": [],
+        "first_page_url": null,
+        "from": null,
+        "last_page": 1,
+        "last_page_url": null,
+        "next_page_url": null,
+        "path": "",
+        "per_page": 100,
+        "prev_page_url": null,
+        "to": null,
+        "total": 0,
+        "deleted_id": []
+      }
+    }
+  },
+  {
+    "path": "/api/project/task/lists",
+    "query": {
+      "project_id": "7",
+      "timerange": "1791801170,0",
+      "_nocache": "1791801320572"
+    },
+    "status": 200,
+    "body": {
+      "ret": 1,
+      "msg": "操作成功",
+      "data": {
+        "current_page": 1,
+        "data": [],
+        "first_page_url": null,
+        "from": null,
+        "last_page": 1,
+        "last_page_url": null,
+        "next_page_url": null,
+        "path": "",
+        "per_page": 100,
+        "prev_page_url": null,
+        "to": null,
+        "total": 0,
+        "deleted_id": []
+      }
+    }
+  }
+]
