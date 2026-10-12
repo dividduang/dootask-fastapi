@@ -1,0 +1,29 @@
+{
+  "url": "https://codeload.github.com/jgraph/drawio/tar.gz/88ee1f5ab4d40603a8f3aaa0d9d6dc3794c6b3f0",
+  "started_at": "2026-10-12T07:49:38.623146+00:00",
+  "artifact": "drawio-88ee1f5ab4d40603a8f3aaa0d9d6dc3794c6b3f0.tar.gz",
+  "status": 200,
+  "final_url": "https://codeload.github.com/jgraph/drawio/tar.gz/88ee1f5ab4d40603a8f3aaa0d9d6dc3794c6b3f0",
+  "headers": {
+    "Access-Control-Allow-Origin": "https://render.githubusercontent.com",
+    "content-disposition": "attachment; filename=drawio-88ee1f5ab4d40603a8f3aaa0d9d6dc3794c6b3f0.tar.gz",
+    "Content-Security-Policy": "default-src 'none'; style-src 'unsafe-inline'; sandbox",
+    "Content-Type": "application/x-gzip",
+    "cross-origin-resource-policy": "cross-origin",
+    "ETag": "\"3d17ccd3d99a524e47a78531e997b244a2f6e78e9a36414940b7b7d41a0309e0\"",
+    "Strict-Transport-Security": "max-age=31536000",
+    "Vary": "Authorization,Accept-Encoding",
+    "X-Content-Type-Options": "nosniff",
+    "X-Frame-Options": "deny",
+    "X-XSS-Protection": "1; mode=block",
+    "Date": "Mon, 12 Oct 2026 07:49:49 GMT",
+    "Transfer-Encoding": "chunked",
+    "X-GitHub-Request-Id": "2FDD:3D96E1:3047:A0E8:6ACC911C",
+    "x-github-edge-region": "southeastasia",
+    "connection": "close"
+  },
+  "bytes": 63697216,
+  "sha256": "d9a686a4772ed5ac6a50e8395bc96e411f283baca92f7d9ea04490c76752985a",
+  "ok": true,
+  "finished_at": "2026-10-12T07:49:44.414372+00:00"
+}

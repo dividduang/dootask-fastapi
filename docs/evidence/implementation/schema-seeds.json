@@ -1,0 +1,202 @@
+{
+  "scope": "Required new-install seed data only; no import of source demo data",
+  "rows": [
+    {
+      "table": "settings",
+      "name": "system",
+      "value": {
+        "reg": "open",
+        "project_invite": "open",
+        "login_code": "auto"
+      },
+      "source": {
+        "source": "database/seeders/SettingsTableSeeder.php",
+        "sha256": "8997339fc419a22942b7a9c1ca7edc947145000928d6b7d2ea997959f5e5abc0",
+        "start_line": 15,
+        "end_line": 44
+      }
+    },
+    {
+      "table": "settings",
+      "name": "priority",
+      "value": [
+        {
+          "name": "重要且紧急",
+          "color": "#ED4014",
+          "days": 1,
+          "priority": 1,
+          "is_default": 1
+        },
+        {
+          "name": "重要不紧急",
+          "color": "#F16B62",
+          "days": 3,
+          "priority": 2,
+          "is_default": 0
+        },
+        {
+          "name": "紧急不重要",
+          "color": "#19C919",
+          "days": 5,
+          "priority": 3,
+          "is_default": 0
+        },
+        {
+          "name": "不重要不紧急",
+          "color": "#2D8CF0",
+          "days": 0,
+          "priority": 4,
+          "is_default": 0
+        }
+      ],
+      "source": {
+        "source": "database/seeders/SettingsTableSeeder.php",
+        "sha256": "8997339fc419a22942b7a9c1ca7edc947145000928d6b7d2ea997959f5e5abc0",
+        "start_line": 15,
+        "end_line": 44
+      }
+    },
+    {
+      "table": "settings",
+      "name": "columnTemplate",
+      "value": [
+        {
+          "name": "软件开发",
+          "columns": [
+            "产品规划",
+            "前端开发",
+            "后端开发",
+            "测试",
+            "发布",
+            "其他"
+          ]
+        },
+        {
+          "name": "产品开发",
+          "columns": [
+            "产品计划",
+            "正在设计",
+            "正在研发",
+            "测试",
+            "准备发布",
+            "发布成功"
+          ]
+        }
+      ],
+      "source": {
+        "source": "database/migrations/2022_02_08_211051_insert_setting_column_template.php",
+        "sha256": "ea46c057f9bd577af42b70c7730ff05de53475d10c984e0739a68c52baa1bb44",
+        "start_line": 12,
+        "end_line": 27
+      }
+    },
+    {
+      "table": "settings",
+      "name": "checkinSetting",
+      "value": {
+        "modes": [
+          "auto"
+        ]
+      },
+      "source": {
+        "source": "database/migrations/2023_08_05_140046_setting_checkin_modes_value.php",
+        "sha256": "03c1ffad3312ba17d6f72500929e1a1d27fd5aeb2c4f98448b61bdd9d48520c6",
+        "start_line": 13,
+        "end_line": 18
+      }
+    },
+    {
+      "table": "settings",
+      "name": "emailSetting",
+      "value": {
+        "msg_unread_time_ranges": [
+          [
+            "00:00",
+            "09:00"
+          ],
+          [
+            "18:00",
+            "23:59"
+          ]
+        ]
+      },
+      "source": {
+        "source": "database/migrations/2024_11_12_195318_update_setting_email_settings.php",
+        "sha256": "493ed5af560b94fe63cc41094d707c209f3081cbfb6e37f6a8daa6e25d9df5ad",
+        "start_line": 14,
+        "end_line": 24
+      }
+    },
+    {
+      "table": "web_socket_dialog_msg_attachment_backfills",
+      "status": "completed",
+      "before_msg_id": 0,
+      "last_msg_id": 0,
+      "timestamps": "single transaction CURRENT_TIMESTAMP at install time",
+      "source": {
+        "source": "database/migrations/2026_08_04_000002_create_web_socket_dialog_msg_attachment_backfills_table.php",
+        "sha256": "9f34edc67dfad5c741506638331a9b721c64a38d48ebb1fab380f7e3d535770c",
+        "start_line": 10,
+        "end_line": 41
+      }
+    }
+  ],
+  "source_evidence": [
+    {
+      "source": "database/seeders/SettingsTableSeeder.php",
+      "sha256": "8997339fc419a22942b7a9c1ca7edc947145000928d6b7d2ea997959f5e5abc0",
+      "start_line": 15,
+      "end_line": 44
+    },
+    {
+      "source": "database/seeders/DatabaseSeeder.php",
+      "sha256": "a05ecb1d435872ad223f305346ef50e7a9d526a4ffc8df74d460d739b9e39d62",
+      "start_line": 14,
+      "end_line": 36
+    },
+    {
+      "source": "database/seeders/UsersTableSeeder.php",
+      "sha256": "2f53465031995e7c6dd078c8075f18e6141bda94789dc15d1d0134a2daf2818e",
+      "start_line": 15,
+      "end_line": 73
+    },
+    {
+      "source": "app/Module/Base.php",
+      "sha256": "cea42a294d669494411dc6309eba4afd9f8fb625b618d6b53c59126c5accfd26",
+      "start_line": 1315,
+      "end_line": 1341
+    }
+  ],
+  "seeder_snapshot": [
+    {
+      "source": "database/seeders/SettingsTableSeeder.php",
+      "sha256": "8997339fc419a22942b7a9c1ca7edc947145000928d6b7d2ea997959f5e5abc0",
+      "text": "<?php\n\nnamespace Database\\Seeders;\n\nuse Illuminate\\Database\\Seeder;\n\nclass SettingsTableSeeder extends Seeder\n{\n\n    /**\n     * Auto generated seed file\n     *\n     * @return void\n     */\n    public function run()\n    {\n\n        $system = \\DB::table('settings')->where('name', 'system')->first();\n        if ($system) {\n            $system = json_decode($system->setting, true);\n            if (isset($system['reg'])) {\n                return;\n            }\n            \\DB::table('settings')->delete();\n        }\n\n        \\DB::table('settings')->insert(array (\n            0 =>\n            array (\n                'name' => 'system',\n                'desc' => '',\n                'setting' => '{\"reg\":\"open\",\"project_invite\":\"open\",\"login_code\":\"auto\"}',\n                'created_at' => seeders_at('2021-07-01 11:05:06'),\n                'updated_at' => seeders_at('2021-07-01 12:27:12'),\n            ),\n            1 =>\n            array (\n                'name' => 'priority',\n                'desc' => '',\n                'setting' => '[{\"name\":\"\\\\u91cd\\\\u8981\\\\u4e14\\\\u7d27\\\\u6025\",\"color\":\"#ED4014\",\"days\":1,\"priority\":1,\"is_default\":1},{\"name\":\"\\\\u91cd\\\\u8981\\\\u4e0d\\\\u7d27\\\\u6025\",\"color\":\"#F16B62\",\"days\":3,\"priority\":2,\"is_default\":0},{\"name\":\"\\\\u7d27\\\\u6025\\\\u4e0d\\\\u91cd\\\\u8981\",\"color\":\"#19C919\",\"days\":5,\"priority\":3,\"is_default\":0},{\"name\":\"\\\\u4e0d\\\\u91cd\\\\u8981\\\\u4e0d\\\\u7d27\\\\u6025\",\"color\":\"#2D8CF0\",\"days\":0,\"priority\":4,\"is_default\":0}]',\n                'created_at' => seeders_at('2021-07-01 08:04:30'),\n                'updated_at' => seeders_at('2021-07-01 09:20:26'),\n            ),\n        ));\n\n\n    }\n}\n"
+    },
+    {
+      "source": "database/seeders/DatabaseSeeder.php",
+      "sha256": "a05ecb1d435872ad223f305346ef50e7a9d526a4ffc8df74d460d739b9e39d62",
+      "text": "<?php\n\nnamespace Database\\Seeders;\n\nuse Illuminate\\Database\\Seeder;\n\nclass DatabaseSeeder extends Seeder\n{\n    /**\n     * Seed the application's database.\n     *\n     * @return void\n     */\n    public function run()\n    {\n\n        $this->call(FileContentsTableSeeder::class);\n        $this->call(FilesTableSeeder::class);\n        $this->call(FileUsersTableSeeder::class);\n        $this->call(ProjectColumnsTableSeeder::class);\n        $this->call(ProjectFlowItemsTableSeeder::class);\n        $this->call(ProjectFlowsTableSeeder::class);\n        $this->call(ProjectLogsTableSeeder::class);\n        $this->call(ProjectTaskContentsTableSeeder::class);\n        $this->call(ProjectTaskUsersTableSeeder::class);\n        $this->call(ProjectTasksTableSeeder::class);\n        $this->call(ProjectUsersTableSeeder::class);\n        $this->call(ProjectsTableSeeder::class);\n        $this->call(SettingsTableSeeder::class);\n        $this->call(UsersTableSeeder::class);\n        $this->call(WebSocketDialogMsgReadsTableSeeder::class);\n        $this->call(WebSocketDialogMsgsTableSeeder::class);\n        $this->call(WebSocketDialogUsersTableSeeder::class);\n        $this->call(WebSocketDialogsTableSeeder::class);\n        $this->call(WebSocketsTableSeeder::class);\n    }\n}\n"
+    },
+    {
+      "source": "database/seeders/UsersTableSeeder.php",
+      "sha256": "2f53465031995e7c6dd078c8075f18e6141bda94789dc15d1d0134a2daf2818e",
+      "text": "<?php\n\nnamespace Database\\Seeders;\n\nuse Illuminate\\Database\\Seeder;\n\nclass UsersTableSeeder extends Seeder\n{\n\n    /**\n     * Auto generated seed file\n     *\n     * @return void\n     */\n    public function run()\n    {\n\n\n        if (\\DB::table('users')->count() > 0) {\n            return;\n        }\n\n        \\DB::table('users')->insert(array (\n            0 =>\n            array (\n                'userid' => 1,\n                'identity' => ',admin,',\n                'az' => 'A',\n                'email' => 'admin@dootask.com',\n                'nickname' => '',\n                'profession' => '管理员',\n                'userimg' => '',\n                'encrypt' => 'AJnoOb',\n                'password' => '7d996ac317f1b9db564750ef3b8790fc',\n                'changepass' => 0,\n                'login_num' => 73,\n                'last_ip' => '127.0.0.1',\n                'last_at' => seeders_at('2021-07-01 16:58:16'),\n                'line_ip' => '127.0.0.1',\n                'line_at' => seeders_at('2021-07-01 17:43:48'),\n                'task_dialog_id' => 18,\n                'email_verity' => 1,\n                'created_ip' => '',\n                'disable_at' => null,\n                'created_at' => seeders_at('2021-07-01 11:01:14'),\n                'updated_at' => seeders_at('2021-07-01 17:43:48'),\n            ),\n            1 =>\n            array (\n                'userid' => 2,\n                'identity' => '',\n                'az' => 'T',\n                'email' => 'test@dootask.com',\n                'nickname' => '',\n                'profession' => '测试员',\n                'userimg' => '',\n                'encrypt' => '18cZzh',\n                'password' => '7eedd4cbf70da996d21f641bcc6cb412',\n                'changepass' => 0,\n                'login_num' => 63,\n                'last_ip' => '127.0.0.1',\n                'last_at' => seeders_at('2021-07-01 16:57:40'),\n                'line_ip' => '127.0.0.1',\n                'line_at' => seeders_at('2021-07-01 16:57:40'),\n                'task_dialog_id' => 16,\n                'email_verity' => 1,\n                'created_ip' => '',\n                'disable_at' => null,\n                'created_at' => seeders_at('2021-07-01 11:01:14'),\n                'updated_at' => seeders_at('2021-07-01 16:58:00'),\n            ),\n        ));\n    }\n}\n"
+    }
+  ],
+  "exclusions": [
+    "Demo admin@dootask.com/test@dootask.com and legacy password material are not seeded",
+    "Demo projects, tasks, files, logs, chat messages, memberships and websocket rows are not seeded",
+    "No default global/project/dialog roles are manufactured: role identities are column encodings and memberships created by business flows",
+    "No app installed/license/activation state is fabricated",
+    "Laravel migrations bookkeeping table is not a business table and is not ported to the non-PHP application"
+  ],
+  "checks": {
+    "database": "NOT_RUN",
+    "tests": "NOT_RUN",
+    "build": "NOT_RUN",
+    "lint": "NOT_RUN",
+    "formatter": "NOT_RUN",
+    "smoke": "NOT_RUN"
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "version": "1",
+  "pip_version": "25.0.1",
+  "install": [
+    {
+      "download_info": {
+        "url": "https://pypi.tuna.tsinghua.edu.cn/packages/e8/02/89e2ed7e85db6c93dfa9e8f691c5087df4e3551ab39081a4d7c6d1f90e05/redis-6.4.0-py3-none-any.whl",
+        "archive_info": {
+          "hash": "sha256=f0544fa9604264e9464cdf4814e7d4830f74b165d52f2a330a760a88dd248b7f",
+          "hashes": {
+            "sha256": "f0544fa9604264e9464cdf4814e7d4830f74b165d52f2a330a760a88dd248b7f"
+          }
+        }
+      },
+      "is_direct": false,
+      "is_yanked": false,
+      "requested": true,
+      "metadata": {
+        "metadata_version": "2.4",
+        "name": "redis",
+        "version": "6.4.0",
+        "summary": "Python client for Redis database and key-value store",
+        "description": "# redis-py\n\nThe Python interface to the Redis key-value store.\n\n[![CI](https://github.com/redis/redis-py/workflows/CI/badge.svg?branch=master)](https://github.com/redis/redis-py/actions?query=workflow%3ACI+branch%3Amaster)\n[![docs](https://readthedocs.org/projects/redis/badge/?version=stable&style=flat)](https://redis.readthedocs.io/en/stable/)\n[![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE)\n[![pypi](https://badge.fury.io/py/redis.svg)](https://pypi.org/project/redis/)\n[![pre-release](https://img.shields.io/github/v/release/redis/redis-py?include_prereleases&label=latest-prerelease)](https://github.com/redis/redis-py/releases)\n[![codecov](https://codecov.io/gh/redis/redis-py/branch/master/graph/badge.svg?token=yenl5fzxxr)](https://codecov.io/gh/redis/redis-py)\n\n[Installation](#installation) |  [Usage](#usage) | [Advanced Topics](#advanced-topics) | [Contributing](https://github.com/redis/redis-py/blob/master/CONTRIBUTING.md)\n\n---------------------------------------------\n\n**Note:** redis-py 5.0 will be the last version of redis-py to support Python 3.7, as it has reached [end of life](https://devguide.python.org/versions/). redis-py 5.1 will support Python 3.8+.\n**Note:** redis-py 6.1.0 will be the last version of redis-py to support Python 3.8, as it has reached [end of life](https://devguide.python.org/versions/). redis-py 6.2.0 will support Python 3.9+.\n---------------------------------------------\n\n## How do I Redis?\n\n[Learn for free at Redis University](https://redis.io/learn/university)\n\n[Try the Redis Cloud](https://redis.io/try-free/)\n\n[Dive in developer tutorials](https://redis.io/learn)\n\n[Join the Redis community](https://redis.io/community/)\n\n[Work at Redis](https://redis.io/careers/)\n\n## Installation\n\nStart a redis via docker (for Redis versions >= 8.0):\n\n``` bash\ndocker run -p 6379:6379 -it redis:latest\n```\n\nStart a redis via docker (for Redis versions < 8.0):\n\n``` bash\ndocker run -p 6379:6379 -it redis/redis-stack:latest\n```\nTo install redis-py, simply:\n\n``` bash\n$ pip install redis\n```\n\nFor faster performance, install redis with hiredis support, this provides a compiled response parser, and *for most cases* requires zero code changes.\nBy default, if hiredis >= 1.0 is available, redis-py will attempt to use it for response parsing.\n\n``` bash\n$ pip install \"redis[hiredis]\"\n```\n\nLooking for a high-level library to handle object mapping? See [redis-om-python](https://github.com/redis/redis-om-python)!\n\n## Supported Redis Versions\n\nThe most recent version of this library supports Redis version [7.2](https://github.com/redis/redis/blob/7.2/00-RELEASENOTES), [7.4](https://github.com/redis/redis/blob/7.4/00-RELEASENOTES) and [8.0](https://github.com/redis/redis/blob/8.0/00-RELEASENOTES).\n\nThe table below highlights version compatibility of the most-recent library versions and redis versions.\n\n| Library version | Supported redis versions |\n|-----------------|-------------------|\n| 3.5.3 | <= 6.2 Family of releases |\n| >= 4.5.0 | Version 5.0 to 7.0 |\n| >= 5.0.0 | Version 5.0 to 7.4 |\n| >= 6.0.0 | Version 7.2 to current |\n\n\n## Usage\n\n### Basic Example\n\n``` python\n>>> import redis\n>>> r = redis.Redis(host='localhost', port=6379, db=0)\n>>> r.set('foo', 'bar')\nTrue\n>>> r.get('foo')\nb'bar'\n```\n\nThe above code connects to localhost on port 6379, sets a value in Redis, and retrieves it. All responses are returned as bytes in Python, to receive decoded strings, set *decode_responses=True*.  For this, and more connection options, see [these examples](https://redis.readthedocs.io/en/stable/examples.html).\n\n\n#### RESP3 Support\nTo enable support for RESP3, ensure you have at least version 5.0 of the client, and change your connection object to include *protocol=3*\n\n``` python\n>>> import redis\n>>> r = redis.Redis(host='localhost', port=6379, db=0, protocol=3)\n```\n\n### Connection Pools\n\nBy default, redis-py uses a connection pool to manage connections. Each instance of a Redis class receives its own connection pool. You can however define your own [redis.ConnectionPool](https://redis.readthedocs.io/en/stable/connections.html#connection-pools).\n\n``` python\n>>> pool = redis.ConnectionPool(host='localhost', port=6379, db=0)\n>>> r = redis.Redis(connection_pool=pool)\n```\n\nAlternatively, you might want to look at [Async connections](https://redis.readthedocs.io/en/stable/examples/asyncio_examples.html), or [Cluster connections](https://redis.readthedocs.io/en/stable/connections.html#cluster-client), or even [Async Cluster connections](https://redis.readthedocs.io/en/stable/connections.html#async-cluster-client).\n\n### Redis Commands\n\nThere is built-in support for all of the [out-of-the-box Redis commands](https://redis.io/commands). They are exposed using the raw Redis command names (`HSET`, `HGETALL`, etc.) except where a word (i.e. del) is reserved by the language. The complete set of commands can be found [here](https://github.com/redis/redis-py/tree/master/redis/commands), or [the documentation](https://redis.readthedocs.io/en/stable/commands.html).\n\n## Advanced Topics\n\nThe [official Redis command documentation](https://redis.io/commands)\ndoes a great job of explaining each command in detail. redis-py attempts\nto adhere to the official command syntax. There are a few exceptions:\n\n-   **MULTI/EXEC**: These are implemented as part of the Pipeline class.\n    The pipeline is wrapped with the MULTI and EXEC statements by\n    default when it is executed, which can be disabled by specifying\n    transaction=False. See more about Pipelines below.\n\n-   **SUBSCRIBE/LISTEN**: Similar to pipelines, PubSub is implemented as\n    a separate class as it places the underlying connection in a state\n    where it can\\'t execute non-pubsub commands. Calling the pubsub\n    method from the Redis client will return a PubSub instance where you\n    can subscribe to channels and listen for messages. You can only call\n    PUBLISH from the Redis client (see [this comment on issue\n    #151](https://github.com/redis/redis-py/issues/151#issuecomment-1545015)\n    for details).\n\nFor more details, please see the documentation on [advanced topics page](https://redis.readthedocs.io/en/stable/advanced_features.html).\n\n### Pipelines\n\nThe following is a basic example of a [Redis pipeline](https://redis.io/docs/manual/pipelining/), a method to optimize round-trip calls, by batching Redis commands, and receiving their results as a list.\n\n\n``` python\n>>> pipe = r.pipeline()\n>>> pipe.set('foo', 5)\n>>> pipe.set('bar', 18.5)\n>>> pipe.set('blee', \"hello world!\")\n>>> pipe.execute()\n[True, True, True]\n```\n\n### PubSub\n\nThe following example shows how to utilize [Redis Pub/Sub](https://redis.io/docs/manual/pubsub/) to subscribe to specific channels.\n\n``` python\n>>> r = redis.Redis(...)\n>>> p = r.pubsub()\n>>> p.subscribe('my-first-channel', 'my-second-channel', ...)\n>>> p.get_message()\n{'pattern': None, 'type': 'subscribe', 'channel': b'my-second-channel', 'data': 1}\n```\n\n### Redis’ search and query capabilities default dialect\n\nRelease 6.0.0 introduces a client-side default dialect for Redis’ search and query capabilities.\nBy default, the client now overrides the server-side dialect with version 2, automatically appending *DIALECT 2* to commands like *FT.AGGREGATE* and *FT.SEARCH*.\n\n**Important**: Be aware that the query dialect may impact the results returned. If needed, you can revert to a different dialect version by configuring the client accordingly.\n\n``` python\n>>> from redis.commands.search.field import TextField\n>>> from redis.commands.search.query import Query\n>>> from redis.commands.search.index_definition import IndexDefinition\n>>> import redis\n\n>>> r = redis.Redis(host='localhost', port=6379, db=0)\n>>> r.ft().create_index(\n>>>     (TextField(\"name\"), TextField(\"lastname\")),\n>>>     definition=IndexDefinition(prefix=[\"test:\"]),\n>>> )\n\n>>> r.hset(\"test:1\", \"name\", \"James\")\n>>> r.hset(\"test:1\", \"lastname\", \"Brown\")\n\n>>> # Query with default DIALECT 2\n>>> query = \"@name: James Brown\"\n>>> q = Query(query)\n>>> res = r.ft().search(q)\n\n>>> # Query with explicit DIALECT 1\n>>> query = \"@name: James Brown\"\n>>> q = Query(query).dialect(1)\n>>> res = r.ft().search(q)\n```\n\nYou can find further details in the [query dialect documentation](https://redis.io/docs/latest/develop/interact/search-and-query/advanced-concepts/dialects/).\n\n---------------------------------------------\n\n### Author\n\nredis-py is developed and maintained by [Redis Inc](https://redis.io). It can be found [here](\nhttps://github.com/redis/redis-py), or downloaded from [pypi](https://pypi.org/project/redis/).\n\nSpecial thanks to:\n\n-   Andy McCurdy (<sedrik@gmail.com>) the original author of redis-py.\n-   Ludovico Magnocavallo, author of the original Python Redis client,\n    from which some of the socket code is still used.\n-   Alexander Solovyov for ideas on the generic response callback\n    system.\n-   Paul Hubbard for initial packaging support.\n\n[![Redis](./docs/_static/logo-redis.svg)](https://redis.io)\n",
+        "description_content_type": "text/markdown",
+        "keywords": [
+          "Redis",
+          "database",
+          "key-value-store"
+        ],
+        "author_email": "\"Redis Inc.\" <oss@redis.com>",
+        "license_expression": "MIT",
+        "license_file": [
+          "LICENSE"
+        ],
+        "classifier": [
+          "Development Status :: 5 - Production/Stable",
+          "Environment :: Console",
+          "Intended Audience :: Developers",
+          "License :: OSI Approved :: MIT License",
+          "Operating System :: OS Independent",
+          "Programming Language :: Python",
+          "Programming Language :: Python :: 3",
+          "Programming Language :: Python :: 3 :: Only",
+          "Programming Language :: Python :: 3.9",
+          "Programming Language :: Python :: 3.10",
+          "Programming Language :: Python :: 3.11",
+          "Programming Language :: Python :: 3.12",
+          "Programming Language :: Python :: 3.13",
+          "Programming Language :: Python :: Implementation :: CPython",
+          "Programming Language :: Python :: Implementation :: PyPy"
+        ],
+        "requires_dist": [
+          "async-timeout>=4.0.3; python_full_version < '3.11.3'",
+          "hiredis>=3.2.0; extra == 'hiredis'",
+          "pyjwt>=2.9.0; extra == 'jwt'",
+          "cryptography>=36.0.1; extra == 'ocsp'",
+          "pyopenssl>=20.0.1; extra == 'ocsp'",
+          "requests>=2.31.0; extra == 'ocsp'"
+        ],
+        "requires_python": ">=3.9",
+        "project_url": [
+          "Changes, https://github.com/redis/redis-py/releases",
+          "Code, https://github.com/redis/redis-py",
+          "Documentation, https://redis.readthedocs.io/en/latest/",
+          "Homepage, https://github.com/redis/redis-py",
+          "Issue tracker, https://github.com/redis/redis-py/issues"
+        ],
+        "provides_extra": [
+          "hiredis",
+          "jwt",
+          "ocsp"
+        ]
+      }
+    }
+  ],
+  "environment": {
+    "implementation_name": "cpython",
+    "implementation_version": "3.12.10",
+    "os_name": "nt",
+    "platform_machine": "AMD64",
+    "platform_release": "11",
+    "platform_system": "Windows",
+    "platform_version": "10.0.26200",
+    "python_full_version": "3.12.10",
+    "platform_python_implementation": "CPython",
+    "python_version": "3.12",
+    "sys_platform": "win32"
+  }
+}

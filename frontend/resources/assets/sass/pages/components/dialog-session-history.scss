@@ -1,0 +1,178 @@
+.dialog-session-history {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    .session-history-title {
+        text-align: center;
+        height: 56px;
+        line-height: 56px;
+        border-bottom: 1px solid #eeeeee;
+        font-size: 16px;
+        font-weight: 500;
+        padding: 0 24px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+
+    .session-history-list {
+        flex: 1;
+        overflow: auto;
+        padding: 6px;
+
+        ul {
+            > li {
+                list-style: none;
+                padding: 12px;
+                margin: 0 6px;
+                position: relative;
+
+                &::after {
+                    display: table;
+                    clear: both;
+                    content: "";
+                }
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                    right: 0;
+                    height: 1px;
+                    background: #eeeeee;
+                }
+
+                &:hover {
+                    background-color: rgba($primary-desc-color, 0.1);
+                }
+
+                &:last-child {
+                    &::before {
+                        display: none;
+                    }
+                }
+
+                .history-title {
+                    float: left;
+                    line-height: 20px;
+
+                    .history-load {
+                        display: inline-block;
+                        width: 16px;
+                        height: 16px;
+                        vertical-align: top;
+                        margin-top: 2px;
+                        margin-right: 6px;
+                    }
+
+                    > em {
+                        font-style: normal;
+                        font-size: 12px;
+                        margin-right: 6px;
+                        background: #666;
+                        color: #ffffff;
+                        padding: 0 6px;
+                        border-radius: 6px;
+                        line-height: 20px;
+                        display: inline-block;
+                    }
+                }
+
+                .history-meta {
+                    float: right;
+                    display: flex;
+                    align-items: center;
+
+                    .history-rename {
+                        font-size: 18px;
+                        color: #999;
+                        cursor: pointer;
+                        margin-right: 8px;
+                        opacity: 0;
+                        pointer-events: none;
+                        transition: color 0.2s, opacity 0.2s;
+
+                        &:hover {
+                            color: $primary-desc-color;
+                        }
+                    }
+
+                    .history-rename-load {
+                        width: 16px;
+                        height: 16px;
+                        margin-right: 8px;
+
+                        .common-loading {
+                            width: 16px;
+                            height: 16px;
+                        }
+                    }
+
+                    .history-time {
+                        opacity: 0.5;
+                        font-size: 13px;
+                    }
+                }
+
+                &:hover,
+                &:focus-within {
+                    .history-meta {
+                        .history-rename {
+                            opacity: 1;
+                            pointer-events: auto;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .session-history-load {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 36px;
+        .common-loading {
+            width: 20px;
+            height: 20px;
+        }
+    }
+}
+
+@media (pointer: coarse) {
+    .dialog-session-history {
+        .session-history-list {
+            ul {
+                > li {
+                    .history-meta {
+                        .history-rename {
+                            opacity: 1;
+                            pointer-events: auto;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+body.window-portrait {
+    .dialog-session-history {
+        .session-history-list {
+            > ul {
+                > li {
+                    &:hover {
+                        background-color: transparent;
+                    }
+                }
+            }
+        }
+    }
+}

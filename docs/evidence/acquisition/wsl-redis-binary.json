@@ -1,0 +1,19 @@
+{
+  "command": [
+    "wsl.exe",
+    "-d",
+    "Ubuntu-22.04",
+    "--exec",
+    "which",
+    "redis-server",
+    "gcc",
+    "make",
+    "curl",
+    "tar"
+  ],
+  "started_at": "2026-10-12T08:08:03.447718+00:00",
+  "exit_code": 1,
+  "stdout": "/usr/bin/gcc\n/usr/bin/make\n/usr/bin/curl\n/usr/bin/tar\n",
+  "stderr": "",
+  "ended_at": "2026-10-12T08:08:03.606855+00:00"
+}

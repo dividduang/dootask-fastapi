@@ -1,0 +1,551 @@
+{
+  "created_at_utc": "2026-10-12T05:52:54.768921+00:00",
+  "purpose": "evidence artifact identity, not application verification",
+  "files": [
+    {
+      "path": "asgi-http-ws.extracted.txt",
+      "sha256": "76f675119fa1755c3d5401fecdace5cdc23c643a6a9670ba899b0bc4a881f74e",
+      "bytes": 22084,
+      "lines": 424
+    },
+    {
+      "path": "asgi-http-ws.txt",
+      "sha256": "ca6a06d5578c67409401d6092b0ffbf0d210b86817d1130e5727f35ad15a70e9",
+      "bytes": 57669,
+      "lines": 617
+    },
+    {
+      "path": "dependency-and-license-decisions.json",
+      "sha256": "1ec29eca57b43c663aa3a6c1aa0427e6b78f2af5cfa0dbfa84b7311615cb0198",
+      "bytes": 2152,
+      "lines": 60
+    },
+    {
+      "path": "dootask-master-license.txt",
+      "sha256": "76a97c878c9c7a8321bb395c2b44d3fe2f8d81314d219b20138ed0e2dddd5182",
+      "bytes": 34520,
+      "lines": 661
+    },
+    {
+      "path": "dootask-offline-deploy.extracted.txt",
+      "sha256": "769b9e3636e4ce0856711b1862652ab1d140684f7baf89bfd6c79224f183124c",
+      "bytes": 6353,
+      "lines": 145
+    },
+    {
+      "path": "dootask-offline-deploy.txt",
+      "sha256": "5f1cd3cb85b3127bcc23106889b6afa389fef3c14d39b709d06a24661214eeaf",
+      "bytes": 48506,
+      "lines": 42
+    },
+    {
+      "path": "dootask-price-alt.extracted.txt",
+      "sha256": "49fbe8535913651db86b925d8668fed6d389082a94883ef9013c43fd6de6d564",
+      "bytes": 5441,
+      "lines": 345
+    },
+    {
+      "path": "dootask-price-alt.txt",
+      "sha256": "579c35da6c20bde02bfd54c8bbea30f72497a8e84932d1b33618f98e5b72ac8f",
+      "bytes": 86690,
+      "lines": 58
+    },
+    {
+      "path": "dootask-price.extracted.txt",
+      "sha256": "49fbe8535913651db86b925d8668fed6d389082a94883ef9013c43fd6de6d564",
+      "bytes": 5441,
+      "lines": 345
+    },
+    {
+      "path": "dootask-price.txt",
+      "sha256": "b2adf65e97d128786b2e112692fea77746e66e5ad195c1bd1d178b1a83e0c828",
+      "bytes": 86781,
+      "lines": 58
+    },
+    {
+      "path": "dootask-release.txt",
+      "sha256": "fed2b5862c9c2c28a4ce8a0715ec740bad6cf2de275d1897774673d101ecb967",
+      "bytes": 32448,
+      "lines": 1
+    },
+    {
+      "path": "dootask-repo-tree.txt",
+      "sha256": "1e5459d04d5fa6142fa2cb0f9a5659e26d163c41d992242e4ef2909b919e0815",
+      "bytes": 1284637,
+      "lines": 1
+    },
+    {
+      "path": "dootask-tag-composer.txt",
+      "sha256": "ac36f1af3672de83e857e633e7a52b60aea9d449ac62d8a311128505dfe335e7",
+      "bytes": 2957,
+      "lines": 101
+    },
+    {
+      "path": "dootask-tag-electron.txt",
+      "sha256": "03d38082f89628985f812a480a9b08e709f1b11675646b615c34cae6fb64096e",
+      "bytes": 5719,
+      "lines": 183
+    },
+    {
+      "path": "dootask-tag-license.txt",
+      "sha256": "76a97c878c9c7a8321bb395c2b44d3fe2f8d81314d219b20138ed0e2dddd5182",
+      "bytes": 34520,
+      "lines": 661
+    },
+    {
+      "path": "dootask-tag-package.txt",
+      "sha256": "6a381cbde41f1c0ee5e4cadc1aae24b7591aa124370d6c9ad9ba47e5a7654e4b",
+      "bytes": 3245,
+      "lines": 102
+    },
+    {
+      "path": "dootask-tag-readme.txt",
+      "sha256": "2fd19323824a8d051debd859e9d7829505220b4bf1fbae71bc5fd0d2a827abc5",
+      "bytes": 3152,
+      "lines": 159
+    },
+    {
+      "path": "dootask-tag-ref.txt",
+      "sha256": "3375357e358cbb9030187eec34b6b15f1b91e8ef0e2900d70d40a167ed751806",
+      "bytes": 341,
+      "lines": 1
+    },
+    {
+      "path": "dootask-tools-readme.txt",
+      "sha256": "6e9a3a4bd9ceb47b096ed857b2bf662ae9a73db379b98ed6820b948c3bd4804b",
+      "bytes": 20624,
+      "lines": 503
+    },
+    {
+      "path": "dootask-tools-repo.txt",
+      "sha256": "7f47b657d5ed96904cda44db989d0c025945b0dbd23a2e705becfc59fbde9696",
+      "bytes": 5993,
+      "lines": 1
+    },
+    {
+      "path": "dootask-tools-tree.txt",
+      "sha256": "1fe615944be06bfe3eb493011da95e9867faac5c4239ca9f10a431b959488b20",
+      "bytes": 28306,
+      "lines": 1
+    },
+    {
+      "path": "electron-38.4.0.extracted.txt",
+      "sha256": "507f3b57099b4bfba0643e2cf1defbde012ad111fceb560c835068937d423102",
+      "bytes": 1221,
+      "lines": 26
+    },
+    {
+      "path": "electron-38.4.0.txt",
+      "sha256": "b831be57d59c3160e8807d375c8771abe210f83a92c54405e80588008be68228",
+      "bytes": 39512,
+      "lines": 150
+    },
+    {
+      "path": "electron-license.txt",
+      "sha256": "5154e165bd6c2cc0cfbcd8916498c7abab0497923bafcd5cb07673fe8480087d",
+      "bytes": 1096,
+      "lines": 21
+    },
+    {
+      "path": "electron-support.extracted.txt",
+      "sha256": "838483be8ffb432e665b4b89b82fc66164f88ab5e7607739b347bcd274aff133",
+      "bytes": 5996,
+      "lines": 136
+    },
+    {
+      "path": "electron-support.txt",
+      "sha256": "05716452870e649ed4582406c268ad9afed0499fd44d2af92eb714163ab1e992",
+      "bytes": 36586,
+      "lines": 68
+    },
+    {
+      "path": "fastapi-applications.txt",
+      "sha256": "e16035df3fbc35d8f2e457c8e4e8a90f058c2e620fd4cee5ee6aa96288b4bab1",
+      "bytes": 185937,
+      "lines": 4838
+    },
+    {
+      "path": "fastapi-license.txt",
+      "sha256": "4ec89ffc81485b97fec584b2d4a961032eeffe834453894fd9c1274906cc744e",
+      "bytes": 1086,
+      "lines": 21
+    },
+    {
+      "path": "fastapi-pyproject.txt",
+      "sha256": "1e1dd3dc00bf7707a9f5fa5ea5296f5b1dd752428339b9717c87d70c6432abdc",
+      "bytes": 12202,
+      "lines": 418
+    },
+    {
+      "path": "fastapi-versions-source.txt",
+      "sha256": "be142679260fcd584d5b67d82099ef853ff095b0ba9b436d464794c08ab20432",
+      "bytes": 3510,
+      "lines": 93
+    },
+    {
+      "path": "gnu-agpl.txt",
+      "sha256": "0d96a4ff68ad6d4b6f1f30f713b18d5184912ba8dd389f86aa7710db079abcb0",
+      "bytes": 34523,
+      "lines": 661
+    },
+    {
+      "path": "laravel-license.txt",
+      "sha256": "7b4f9149597fbae2ce689bc9317d1869e17f1b3fa5f01c289998c108f8c37cf7",
+      "bytes": 1075,
+      "lines": 21
+    },
+    {
+      "path": "laravel13-releases.txt",
+      "sha256": "c3e96f462edc318d0a9f51146fc380a53f675d99d44e65302918b06e2be22947",
+      "bytes": 8504,
+      "lines": 185
+    },
+    {
+      "path": "laravels-composer.txt",
+      "sha256": "494c2fa99cd10e03355b74db1a7719e4f720335759851140b9e9f9700572b50f",
+      "bytes": 1558,
+      "lines": 76
+    },
+    {
+      "path": "laravels-license.txt",
+      "sha256": "3ddf5cbbd55e962e91c3a606ec52bc617dd532df407b07649d9bb7e3367c1662",
+      "bytes": 1063,
+      "lines": 21
+    },
+    {
+      "path": "license-comparison.json",
+      "sha256": "c352e73250cc555fba3ba5a24f6d892035ec44e024db0d929180814b36e74725",
+      "bytes": 2242,
+      "lines": 49
+    },
+    {
+      "path": "local-manifests.json",
+      "sha256": "ef9b40417039b8dfa2762374712c491bb2f32391b1fe3aeb662d0dceffbfbbea",
+      "bytes": 17763,
+      "lines": 482
+    },
+    {
+      "path": "local-protocol-hashes.json",
+      "sha256": "1aa17ad0b4e1f34dda920bcf8bcefc366e9578aac3fc864e92c39f0a65593524",
+      "bytes": 1344,
+      "lines": 37
+    },
+    {
+      "path": "official-final-index.json",
+      "sha256": "5d4033d1dae7a16d30e21e21c9680a525565a6a030ae2b6140eeeb781050bf67",
+      "bytes": 5439,
+      "lines": 84
+    },
+    {
+      "path": "official-framework-index.json",
+      "sha256": "16ed657597f9293e525af1ee23a75d2c280f77005d254bd9e52c3ee92acb4b89",
+      "bytes": 26800,
+      "lines": 419
+    },
+    {
+      "path": "official-license-index.json",
+      "sha256": "9c305883b6eb18c7507a65e2a9e2705548e30a2c41f3a7e8f19d7d4910831c9b",
+      "bytes": 13832,
+      "lines": 292
+    },
+    {
+      "path": "official-native-distribution-index.json",
+      "sha256": "b1c6b59a47c32c6ed63908d921934b6642073557b0bcd9ff900e51fb531a0176",
+      "bytes": 2779,
+      "lines": 61
+    },
+    {
+      "path": "official-native-rights-index.json",
+      "sha256": "f3adac7796f09e0fc037e8ac6368a38b44ee5e0157226fcce5f1d8d58c6e51ba",
+      "bytes": 6728,
+      "lines": 124
+    },
+    {
+      "path": "official-protocol-index.json",
+      "sha256": "33a9cec4638fd7172e8631650a542791a5bf6b39e3f6a53b9ac2d6d201d7c5c8",
+      "bytes": 20090,
+      "lines": 403
+    },
+    {
+      "path": "official-python-release-index.json",
+      "sha256": "e1f3f6020e7ea62f48eb27e7918750629462000269a110e85651808398f0272d",
+      "bytes": 2148,
+      "lines": 36
+    },
+    {
+      "path": "official-retry-index.json",
+      "sha256": "f87137b1787e9bdc6997b13933227c83088632264293109c26d4f2f72bd9d8f8",
+      "bytes": 8424,
+      "lines": 180
+    },
+    {
+      "path": "official-supplement-index.json",
+      "sha256": "9e41bf9dabd5b83badf731979215a5d76e48f3837bbace47d6957f7cd548b2df",
+      "bytes": 19695,
+      "lines": 361
+    },
+    {
+      "path": "official-supplement-retry-index.json",
+      "sha256": "077ba9632c86c05b2856a71759e869c3c7c65e45e6a02566c777c2c3ffa59209",
+      "bytes": 10111,
+      "lines": 224
+    },
+    {
+      "path": "openapi-3.1.1.txt",
+      "sha256": "a612d2b72d422925616b2cabfa7acc0419ffaaf4b0eb42bfb11dc9b804f92749",
+      "bytes": 212540,
+      "lines": 4626
+    },
+    {
+      "path": "pydantic-license.txt",
+      "sha256": "a9e186f3ca16b5eef84318e7a701721351a00cb7b8ae3a4394b67b49e3529ef3",
+      "bytes": 1129,
+      "lines": 21
+    },
+    {
+      "path": "pydantic-pyproject.txt",
+      "sha256": "81eaba7a3ac5a1cfc64bdc7e31d34ffa174e4afd8d6f05353b5eaae1ca9d74b3",
+      "bytes": 9336,
+      "lines": 311
+    },
+    {
+      "path": "pypi-fastapi.txt",
+      "sha256": "4ca5690a478568a701a62ae25c40cb0345042ea5fbb1a170e2083c43ef47a8e0",
+      "bytes": 527280,
+      "lines": 1
+    },
+    {
+      "path": "pypi-pydantic-core.txt",
+      "sha256": "e93d77eaf72dda287409887550bda890a4067311ea072bf9b274df9ce6d96804",
+      "bytes": 128266,
+      "lines": 1
+    },
+    {
+      "path": "pypi-pydantic.txt",
+      "sha256": "1a4aab1e7e64c5f341717f2d3f3e863dcd7cc53cfe704addd053b738368e6b34",
+      "bytes": 1852382,
+      "lines": 1
+    },
+    {
+      "path": "pypi-python-multipart.txt",
+      "sha256": "ebff10e4e7b3813346e7ea814024598d7c23faf9fbeb1c31fe2a5ffd24ada2c2",
+      "bytes": 53097,
+      "lines": 1
+    },
+    {
+      "path": "pypi-starlette.txt",
+      "sha256": "efa27d0ed98bc0f5ae5bd9ede971a34dabdcf5559506e33115cfe5aa308598d3",
+      "bytes": 240787,
+      "lines": 1
+    },
+    {
+      "path": "pypi-uvicorn.txt",
+      "sha256": "f42e1a8b18d6a39d33ba83271d8de49cdb9ecab9d6f3276dbddf20a12e4b9eb4",
+      "bytes": 233469,
+      "lines": 1
+    },
+    {
+      "path": "pypi-websockets.txt",
+      "sha256": "498e41c1f3bcbdeccc4f94bf4a1120c8d23d0bfcd703c349f58a76b80cf01c18",
+      "bytes": 2146015,
+      "lines": 1
+    },
+    {
+      "path": "python-3.14.8.extracted.txt",
+      "sha256": "62e00ac5ceffd23721275b728c3cee3bd0e36fc2c3bc39457a204e2c9d4c0082",
+      "bytes": 9422,
+      "lines": 318
+    },
+    {
+      "path": "python-3.14.8.txt",
+      "sha256": "c02d6dfa65ea9516c2610552767f69c53e8c34e670ffe123429572e3ff059a51",
+      "bytes": 57294,
+      "lines": 1154
+    },
+    {
+      "path": "python-license.extracted.txt",
+      "sha256": "9f500568ab668991f861b77b141ecefbe6f540c0910a2423c0e52a8d6f0d2d4f",
+      "bytes": 58898,
+      "lines": 1172
+    },
+    {
+      "path": "python-license.txt",
+      "sha256": "11a34bb69799d6689857a3e5d986420e108454f765fedd1e7821cd7bac03a3ec",
+      "bytes": 95023,
+      "lines": 1687
+    },
+    {
+      "path": "python-package-summary.json",
+      "sha256": "a4dfff7e8551d3cb380125b78212b7a0c0364b0bd3afec584936e465f83dea93",
+      "bytes": 48968,
+      "lines": 1113
+    },
+    {
+      "path": "python-release-feed-summary.json",
+      "sha256": "3ff046467fe2f1812d76e3bf236493b9f0aeee391c1e8e593a9b872df37ca538",
+      "bytes": 2272,
+      "lines": 62
+    },
+    {
+      "path": "python-release-feed.txt",
+      "sha256": "483235f5c521fc1297f0db999e2caae9956c11d26ac9448d603e82dd505c683d",
+      "bytes": 3412,
+      "lines": 2
+    },
+    {
+      "path": "python-release-page-transport.json",
+      "sha256": "9b516200aa5bfc3d80c146c178d20985d5ccd5020cbe644ceeaac4f837da5660",
+      "bytes": 19624,
+      "lines": 27
+    },
+    {
+      "path": "python-versions.extracted.txt",
+      "sha256": "8f5dba8d67840895f6c439b35e3054328d6ca4308184a17ecb8b6d9b0e5535e9",
+      "bytes": 5897,
+      "lines": 498
+    },
+    {
+      "path": "python-versions.txt",
+      "sha256": "e20bf297665e138f16c620129bc1132c7354a8b786072966f945408b899abd5c",
+      "bytes": 125319,
+      "lines": 3492
+    },
+    {
+      "path": "rfc4918.txt",
+      "sha256": "619ad705b4c0e26af2d0652bb48ca1fa9bd080546993d46730d604b9fe2bdf25",
+      "bytes": 276352,
+      "lines": 7115
+    },
+    {
+      "path": "rfc6265.txt",
+      "sha256": "dc4177094813e85a44a7897b892b76bc09160b3a03aea44f0f511f3a98f91933",
+      "bytes": 79724,
+      "lines": 2075
+    },
+    {
+      "path": "rfc6455.txt",
+      "sha256": "765775326aee0ecca9b04bde3fd1f52932d498e33e34e428bd61b8a24da0fa3b",
+      "bytes": 162067,
+      "lines": 3979
+    },
+    {
+      "path": "rfc7578.txt",
+      "sha256": "813277f91c6c65c9047da9e9a8f1f0c19c1fb4bb1aaeea944bcf3bbdcc2eef49",
+      "bytes": 30240,
+      "lines": 843
+    },
+    {
+      "path": "rfc7617.txt",
+      "sha256": "bc941321da9912fbb1bc92ad1820848ddfd3283dbfbc30f26ea2800bdaf541db",
+      "bytes": 30163,
+      "lines": 843
+    },
+    {
+      "path": "rfc8259.txt",
+      "sha256": "61a5378f4255c720beb2a4b4a63b29540147c140f36988bf086291989b4cd2d7",
+      "bytes": 28360,
+      "lines": 899
+    },
+    {
+      "path": "rfc9110.txt",
+      "sha256": "ad3b38b7806783d5066714f7ac9aadcba8cec1605a400c7380173737a8adf902",
+      "bytes": 502938,
+      "lines": 10785
+    },
+    {
+      "path": "rfc9112.txt",
+      "sha256": "348b9a820813b5b25d21f756334a8490da121b0084c4d5ef874372977e73e08c",
+      "bytes": 109910,
+      "lines": 2461
+    },
+    {
+      "path": "starlette-license.txt",
+      "sha256": "dcb95677a02240243187e964f941847d19b17821cf99e5afae684fab328c19bf",
+      "bytes": 1518,
+      "lines": 27
+    },
+    {
+      "path": "starlette-pyproject.txt",
+      "sha256": "18aa32ce211b93055054cfe4962d87f352d7b622f8950615b7a07b4f95fbab01",
+      "bytes": 3960,
+      "lines": 135
+    },
+    {
+      "path": "swoole-license.txt",
+      "sha256": "d0764616053bc4b1bd1e74a26bedd16a04f1bf979ecff92fe77ff114892852ae",
+      "bytes": 11357,
+      "lines": 202
+    },
+    {
+      "path": "swoole-readme.txt",
+      "sha256": "62de56f157377fc04cb915fef10b5beecf3b28e1aa673409fce2301536724f5d",
+      "bytes": 11255,
+      "lines": 183
+    },
+    {
+      "path": "swoole-supported.txt",
+      "sha256": "0420696f0d261055ec4dff9ee890cfb5eb5cf86649bf44ef5592d5e6f2f8b95f",
+      "bytes": 3115,
+      "lines": 37
+    },
+    {
+      "path": "uvicorn-license.txt",
+      "sha256": "efe1acf3e62fb99c288b0ec73e5a773b7268ef4320fe757ea994214e4b63c371",
+      "bytes": 1526,
+      "lines": 27
+    },
+    {
+      "path": "uvicorn-pyproject.txt",
+      "sha256": "fb4ee2c9dc7954ef88ffcebbcb831336cc7d62e27868cdfebfeb687277c692ba",
+      "bytes": 5415,
+      "lines": 189
+    },
+    {
+      "path": "uvicorn-settings-alt.txt",
+      "sha256": "e40d7b31ef278aea50e57eeda437778dc2ce5e6a90dcef7862cdda33c58de67f",
+      "bytes": 12458,
+      "lines": 154
+    },
+    {
+      "path": "vite-license.txt",
+      "sha256": "29b68325fe026047d13e187b44c33b2acacf7dc647dec4583702e59f235e13b5",
+      "bytes": 1103,
+      "lines": 21
+    },
+    {
+      "path": "vite2-guide.extracted.txt",
+      "sha256": "c2eb20f504473128b594cc92d7fba00f8335de07abaebb14c40dcd09facf625a",
+      "bytes": 6525,
+      "lines": 140
+    },
+    {
+      "path": "vite2-guide.txt",
+      "sha256": "408a514a7940976255923f3204a86fe72ca669979ebd4c8dfb161882dcc32e52",
+      "bytes": 41275,
+      "lines": 57
+    },
+    {
+      "path": "vue-eol.extracted.txt",
+      "sha256": "6f23f1dbd4a3026598c0d40d596a89f9425585ab3163a2d22d8d27df668455b0",
+      "bytes": 5387,
+      "lines": 133
+    },
+    {
+      "path": "vue-eol.txt",
+      "sha256": "cee8170c31e430aed26c4f36fbd71a2fcfb08b86e8237d53279c0a21590f712b",
+      "bytes": 25665,
+      "lines": 508
+    },
+    {
+      "path": "vue-license.txt",
+      "sha256": "17fb24bc303763f3fe1911ee24e5225c7ad59f0e3a5d8123e9b730c100a306a6",
+      "bytes": 1091,
+      "lines": 21
+    }
+  ],
+  "report": {
+    "path": "../../2026101204-官方协议版本与许可核验-feat.md",
+    "sha256": "e334d6aa5f82ac45404a45f76a338cadece232c7d49aec93099c4b898b268a38",
+    "bytes": 25521
+  }
+}

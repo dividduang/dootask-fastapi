@@ -1,0 +1,324 @@
+.page-login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f8f8f8;
+    .login-body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 32px 0;
+        width: 100%;
+        max-height: 100%;
+        overflow: auto;
+        .login-logo {
+            flex-shrink: 0;
+            width: 84px;
+            height: 84px;
+            background: url("../images/logo.svg") no-repeat center center;
+            background-size: contain;
+            &.can-click {
+                cursor: pointer;
+            }
+        }
+        .login-box {
+            flex-shrink: 0;
+            position: relative;
+            margin-top: 36px;
+            width: 400px;
+            max-width: 90%;
+            border-radius: 12px;
+            background-color: #ffffff;
+            box-shadow: 0 0 10px #e6ecfa;
+            overflow: hidden;
+            .login-mode-switch {
+                position: absolute;
+                top: 4px;
+                right: 4px;
+                z-index: 1;
+                border-radius: 8px;
+                overflow: hidden;
+                .login-mode-switch-box {
+                    width: 80px;
+                    height: 80px;
+                    transform: translate(40px,-40px) rotate(45deg);
+                    cursor: pointer;
+                    background-color: rgba($primary-color, 0.8);
+                    transition: background-color .3s;
+                    overflow: hidden;
+                    &:hover {
+                        background-color: $primary-color;
+                    }
+                    .login-mode-switch-icon {
+                        position: absolute;
+                        font-size: 32px;
+                        width: 50px;
+                        height: 50px;
+                        color: #ffffff;
+                        bottom: -20px;
+                        left: 16px;
+                        transform: rotate(-45deg);
+                        display: flex;
+                        align-items: flex-start;
+                        justify-content: flex-start;
+                        > svg {
+                            width: 32px;
+                            height: 32px;
+                            margin-left: 13px;
+                            margin-top: 3px;
+                        }
+                    }
+                }
+            }
+            .login-title {
+                font-size: 24px;
+                font-weight: 600;
+                text-align: center;
+                margin-top: 46px;
+            }
+            .login-subtitle {
+                font-size: 14px;
+                text-align: center;
+                margin-top: 12px;
+                padding: 0 12px;
+                color: #AAAAAA;
+            }
+            .login-qrcode {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: 50px auto 51px;
+            }
+            .login-access {
+                margin: 26px 40px 30px;
+                > * {
+                    margin-top: 26px;
+                }
+                .ivu-input {
+                    border-color: #f1f1f1;
+                    &[readonly="readonly"] {
+                        background-color: #f5f5f5;
+                    }
+                }
+                .ivu-input-large {
+                    font-size: 15px;
+                }
+                .login-code {
+                    .ivu-input-group-prepend,
+                    .ivu-input-group-append {
+                        font-size: 16px;
+                        background: transparent;
+                        border-color: #f1f1f1;
+                        > span {
+                            font-size: 14px;
+                        }
+                    }
+                    .ivu-input-group-prepend {
+                        padding-right: 0;
+                    }
+                    .ivu-input {
+                        border-left-color: transparent;
+                        box-shadow: none;
+                    }
+                    .login-code-end {
+                        margin: -6px -7px;
+                        height: 38px;
+                        overflow: hidden;
+                        cursor: pointer;
+                        .code-load,
+                        .code-error {
+                            height: 100%;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            width: 20px;
+                            margin: 0 20px;
+                        }
+                        .code-error {
+                            width: auto;
+                            font-size: 14px;
+                            opacity: 0.8;
+                        }
+                        img {
+                            height: 100%;
+                            min-width: 60px;
+                        }
+                    }
+                }
+                .login-switch {
+                    color: #aaaaaa;
+                }
+                > .ivu-poptip {
+                    width: 100%;
+                    > .ivu-poptip-rel {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+        .login-bottom {
+            margin-top: 18px;
+            display: flex;
+            align-items: center;
+            width: 388px;
+            max-width: 90%;
+            .login-setting {
+                flex-shrink: 0;
+                display: flex;
+                align-items: center;
+                cursor: pointer;
+                color: $primary-text-color;
+                .taskfont {
+                    margin-top: 1px;
+                    margin-left: 3px;
+                    transform: scale(0.8);
+                    font-size: 12px;
+                }
+            }
+            .login-setting-menu {
+                display: flex;
+                flex-direction: column;
+            }
+            .login-setting-item {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                .ivu-icon {
+                    color: $primary-text-color;
+                    padding-left: 6px;
+                    margin-right: -6px;
+                }
+            }
+            .login-forgot {
+                flex: 1;
+                padding-left: 24px;
+                color: #aaaaaa;
+                text-align: right;
+            }
+        }
+    }
+}
+
+.privacy-content {
+    margin-bottom: 12px;
+    line-height: 26px;
+    font-size: 16px;
+    > p {
+        text-indent: 2rem;
+    }
+}
+
+body.window-portrait {
+    .page-login {
+        .login-body {
+            padding: 0 0 110px;
+
+            .login-logo {
+                margin-top: 24px;
+                width: 76px;
+                height: 76px;
+            }
+
+            .login-box {
+                margin-top: 0;
+                width: 100%;
+                max-width: 460px;
+                border-radius: 12px;
+                background-color: transparent;
+                box-shadow: none;
+
+                .login-mode-switch {
+                    display: none;
+                }
+
+                .login-title {
+                    font-size: 26px;
+                }
+
+                .login-subtitle {
+                    margin-top: 4px;
+                }
+
+                .login-access {
+                    margin: 20px 36px;
+
+                    .ivu-input-large {
+                        height: 44px;
+                    }
+
+                    .ivu-input-with-prefix {
+                        padding-left: 40px;
+                    }
+
+                    .ivu-input-prefix,
+                    .ivu-input-suffix {
+                        width: 44px;
+                    }
+
+                    .ivu-input-wrapper-large {
+                        .ivu-input-prefix i,
+                        .ivu-input-suffix i {
+                            font-size: 20px;
+                            line-height: 44px;
+                        }
+                        .ivu-input-icon {
+                            height: 44px;
+                            line-height: 44px;
+                        }
+                    }
+
+                    .login-code {
+                        .ivu-input-group-prepend,
+                        .ivu-input-group-append {
+                            font-size: 18px;
+                            background: #ffffff;
+                            .login-code-end {
+                                height: 42px;
+                            }
+                        }
+                        .ivu-input-group-prepend {
+                            padding-left: 12px;
+                            padding-right: 2px;
+                        }
+                    }
+                }
+            }
+
+            .login-bottom {
+                margin-top: 8px;
+                width: 100%;
+                max-width: 460px;
+                padding: 0 36px;
+            }
+        }
+    }
+}
+
+@media screen and (max-height: 720px) {
+    .page-login {
+        .login-body {
+            .login-box {
+                .login-title {
+                    margin-top: 16px;
+                }
+                .login-access {
+                    > * {
+                        margin-top: 14px;
+                    }
+                }
+            }
+        }
+    }
+    body.window-portrait {
+        .page-login {
+            .login-body {
+                .login-box {
+                    .login-access {
+                        margin-top: 12px;
+                        margin-bottom: 12px;
+                    }
+                }
+            }
+        }
+    }
+}

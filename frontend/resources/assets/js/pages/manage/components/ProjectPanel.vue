@@ -1,0 +1,2316 @@
+<template>
+    <div class="project-panel" :class="[tabTypeActive]">
+        <PageTitle :title="projectData.name"/>
+        <div class="project-titbox">
+            <div class="project-title">
+                <div class="project-back" @click="onBack">
+                    <i class="taskfont">&#xe676;</i>
+                </div>
+                <h1 @click="showName" class="user-select-auto" v-html="transformEmojiToHtml(projectData.name)"></h1>
+                <div v-if="loading" class="project-load"><Loading/></div>
+            </div>
+            <ul class="project-icons">
+                <li class="project-avatar" :class="{'cursor-default': !isOwnerOrDeputy || isDepartmentReadonly}" @click="projectDropdown('user')">
+                    <ul>
+                        <li>
+                            <UserAvatarTip :userid="projectData.owner_userid" :size="36" :borderWidth="2" :openDelay="0">
+                                <p>{{$L('项目负责人')}}</p>
+                            </UserAvatarTip>
+                            <Badge v-if="(windowWidth <= 980 || projectData.cacheParameter.chat) && projectUser.length > 0" type="normal" :overflow-count="999" :count="projectData.project_user.length"/>
+                        </li>
+                        <template v-if="!(windowWidth <= 980 || projectData.cacheParameter.chat) && projectUser.length > 0" v-for="item in projectUser">
+                            <li v-if="item.userid === -1" class="more">
+                                <ETooltip :disabled="$isEEUIApp || windowTouch" :content="$L('共(*)个成员', projectData.project_user.length)">
+                                    <Icon type="ios-more"/>
+                                </ETooltip>
+                            </li>
+                            <li v-else :class="{'is-deputy': isDeputyUid(item.userid)}">
+                                <UserAvatarTip :userid="item.userid" :size="36" :borderWidth="2" :openDelay="0">
+                                    <p v-if="isDeputyUid(item.userid)">{{$L('项目管理员')}}</p>
+                                </UserAvatarTip>
+                            </li>
+                        </template>
+                    </ul>
+                </li>
+                <li v-if="!projectData.department_readonly" class="project-icon" @click="addTaskOpen(0)">
+                    <ETooltip :disabled="$isEEUIApp || windowTouch" :content="$L('添加任务')">
+                        <Icon class="menu-icon" type="md-add" />
+                    </ETooltip>
+                </li>
+                <li :class="['project-icon', searchText!='' ? 'active' : '']">
+                    <Tooltip :always="searchText!=''" @on-popper-show="searchFocus" theme="light" :rawIndex="10">
+                        <Icon class="menu-icon" type="ios-search" @click="searchFocus" />
+                        <div slot="content">
+                            <Input v-model="searchText" ref="searchInput" :placeholder="$L('ID、名称、描述...')" class="search-input" clearable/>
+                        </div>
+                    </Tooltip>
+                </li>
+                <li :class="['project-icon', windowLandscape && projectData.cacheParameter.chat ? 'active' : '']" @click="toggleParameter('chat')">
+                    <Icon class="menu-icon" type="ios-chatbubbles" />
+                    <Badge class="menu-badge" :overflow-count="999" :count="msgUnread"></Badge>
+                </li>
+                <li class="project-icon">
+                    <EDropdown @command="projectDropdown" trigger="click" transfer>
+                        <Icon class="menu-icon" type="ios-more" />
+                        <EDropdownMenu v-if="isDepartmentReadonly" slot="dropdown" class="project-panel-project-menu-dropdown">
+                            <EDropdownItem command="favorite">{{$L(projectData.favorited ? '取消收藏' : '收藏项目')}}</EDropdownItem>
+                            <EDropdownItem command="log" divided>{{$L('项目动态')}}</EDropdownItem>
+                            <EDropdownItem command="archived_task">{{$L('已归档任务')}}</EDropdownItem>
+                            <EDropdownItem command="deleted_task">{{$L('已删除任务')}}</EDropdownItem>
+                        </EDropdownMenu>
+                        <EDropdownMenu v-else-if="isOwnerOrDeputy" slot="dropdown" class="project-panel-project-menu-dropdown">
+                            <EDropdownItem command="setting">{{$L('项目设置')}}</EDropdownItem>
+                            <EDropdownItem command="permissions">{{$L('权限设置')}}</EDropdownItem>
+                            <EDropdownItem command="task_template">{{$L('任务模板')}}</EDropdownItem>
+                            <EDropdownItem command="task_tag">{{$L('任务标签')}}</EDropdownItem>
+                            <EDropdownItem command="workflow">{{$L('工作流设置')}}</EDropdownItem>
+                            <EDropdownItem command="user" divided>{{$L('成员管理')}}</EDropdownItem>
+                            <EDropdownItem command="invite">{{$L('邀请链接')}}</EDropdownItem>
+                            <EDropdownItem command="favorite" divided>{{$L(projectData.favorited ? '取消收藏' : '收藏项目')}}</EDropdownItem>
+                            <EDropdownItem command="log">{{$L('项目动态')}}</EDropdownItem>
+                            <EDropdownItem command="archived_task">{{$L('已归档任务')}}</EDropdownItem>
+                            <EDropdownItem command="deleted_task">{{$L('已删除任务')}}</EDropdownItem>
+                            <EDropdownItem command="archived" divided>{{$L('归档项目')}}</EDropdownItem>
+                            <!--主独占（仅主负责人可见）-->
+                            <template v-if="canManageDeputy">
+                                <EDropdownItem command="transfer">{{$L('移交项目')}}</EDropdownItem>
+                                <EDropdownItem command="delete" style="color:#f40">{{$L('删除项目')}}</EDropdownItem>
+                            </template>
+                        </EDropdownMenu>
+                        <EDropdownMenu v-else slot="dropdown">
+                            <EDropdownItem command="task_tag">{{$L('任务标签')}}</EDropdownItem>
+                            <EDropdownItem command="favorite" divided>{{$L(projectData.favorited ? '取消收藏' : '收藏项目')}}</EDropdownItem>
+                            <EDropdownItem command="log">{{$L('项目动态')}}</EDropdownItem>
+                            <EDropdownItem command="archived_task">{{$L('已归档任务')}}</EDropdownItem>
+                            <EDropdownItem command="deleted_task">{{$L('已删除任务')}}</EDropdownItem>
+                            <EDropdownItem command="exit" divided style="color:#f40">{{$L('退出项目')}}</EDropdownItem>
+                        </EDropdownMenu>
+                    </EDropdown>
+                </li>
+            </ul>
+        </div>
+        <Alert v-if="projectData.department_readonly" class="project-readonly-alert" type="info" show-icon>
+            {{$L('当前为负责人视角：你可查看项目和任务，并参与讨论，但不能编辑项目或任务。')}}
+        </Alert>
+        <div class="project-subbox">
+            <div class="project-subtitle user-select-auto" @click="showDesc">
+                <VMPreviewNostyle ref="descPreview" :value="projectData.desc"/>
+            </div>
+            <div class="project-switch">
+                <div v-if="completedCount > 0" class="project-checkbox">
+                    <Checkbox :value="projectData.cacheParameter.completedTask" @on-change="toggleParameter('completedTask')">{{$L('显示已完成')}}</Checkbox>
+                </div>
+                <div class="project-select">
+                    <ProjectFlowFilterDropdown
+                        v-model="flowFilterOpen"
+                        :touch="$isEEUIApp || windowTouch"
+                        :groups="flowFilterGroups"
+                        :selected="flowFilter"
+                        :total="flowFilterTotal"
+                        @change="flowFilterChange"
+                        @clear="flowFilterClear">
+                        <span :class="['project-flow', flowTrigger.class]" :style="flowTrigger.style">
+                            <span class="project-flow-text">{{ flowTrigger.title }}</span>
+                            <Icon v-if="flowFilterTotal > 0" type="ios-close-circle" class="project-flow-clear" @click.native.stop="flowFilterClear()"/>
+                        </span>
+                    </ProjectFlowFilterDropdown>
+                </div>
+                <ProjectTableGroupDropdown
+                    v-if="tabTypeActive === 'table'"
+                    v-model="tableGroupsOpen"
+                    class="project-table-settings"
+                    :touch="$isEEUIApp || windowTouch"
+                    :selected="visibleTableGroups"
+                    :counts="tableGroupsOpen ? tableGroupCounts : null"
+                    @change="setTableGroupVisible">
+                    <button type="button" class="project-table-settings-icon">
+                        <Icon type="md-funnel"/>
+                    </button>
+                </ProjectTableGroupDropdown>
+                <div class="project-switch-button">
+                    <div class="slider" :style="tabTypeStyle"></div>
+                    <div @click="tabTypeChange('column')" :class="{ 'active': tabTypeActive === 'column'}"><i class="taskfont">&#xe60c;</i></div>
+                    <div @click="tabTypeChange('table')" :class="{ 'active': tabTypeActive === 'table'}"><i class="taskfont">&#xe66a;</i></div>
+                    <div @click="tabTypeChange('gantt')" :class="{ 'active': tabTypeActive === 'gantt'}"><i class="taskfont">&#xe797;</i></div>
+                </div>
+            </div>
+        </div>
+        <div
+            v-if="tabTypeActive === 'column'"
+            ref="projectColumn"
+            class="project-column"
+            @scroll="handleColumnScroll">
+            <Draggable
+                :list="columnList"
+                :animation="150"
+                :disabled="sortDisabled || isDepartmentReadonly || $isEEUIApp || windowTouch"
+                class="column-list"
+                tag="ul"
+                draggable=".column-item"
+                @sort="sortUpdate(true)">
+                <li
+                    v-for="column in columnList"
+                    :ref="`column_${column.id}`"
+                    :key="column.id"
+                    :data-id="column.id"
+                    class="column-item">
+                    <div
+                        :class="['column-head', column.color ? 'custom-color' : '']"
+                        :style="column.color ? {backgroundColor: column.color} : {}">
+                        <div class="column-head-title">
+                            <AutoTip v-html="transformEmojiToHtml(column.name)"></AutoTip>
+                            <em>({{panelTask(column.tasks).length}})</em>
+                        </div>
+                        <div class="column-head-icon">
+                            <div v-if="columnLoad[column.id] === true" class="loading"><Loading /></div>
+                            <EDropdown
+                                v-else-if="!isDepartmentReadonly"
+                                trigger="click"
+                                size="medium"
+                                @command="dropColumn(column, $event)">
+                                <Icon type="ios-more" />
+                                <EDropdownMenu slot="dropdown" class="project-panel-more-dropdown-menu">
+                                    <li class="project-panel-more-dropdown-warp">
+                                        <ul>
+                                            <EDropdownItem command="title">
+                                                <div class="item">
+                                                    <Icon type="md-create" />{{$L('修改')}}
+                                                </div>
+                                            </EDropdownItem>
+                                            <EDropdownItem command="archive_completed">
+                                                <div class="item">
+                                                    <Icon type="ios-filing" />{{$L('归档')}}
+                                                </div>
+                                            </EDropdownItem>
+                                            <EDropdownItem command="remove">
+                                                <div class="item">
+                                                    <Icon type="md-trash" />{{$L('删除')}}
+                                                </div>
+                                            </EDropdownItem>
+                                            <EDropdownItem v-for="(c, k) in $store.state.columnColorList" :key="k" :divided="k==0" :command="c">
+                                                <div class="item">
+                                                    <i class="taskfont" :style="{color:c.color||'#ddd'}" v-html="c.color == column.color ? '&#xe61d;' : '&#xe61c;'"></i>{{$L(c.name)}}
+                                                </div>
+                                            </EDropdownItem>
+                                        </ul>
+                                    </li>
+                                </EDropdownMenu>
+                            </EDropdown>
+                            <Icon v-if="!isDepartmentReadonly" class="last" type="md-add" @click="addTopShow(column.id, true)" />
+                        </div>
+                    </div>
+                    <Scrollbar
+                        class="column-task"
+                        class-name="task-scrollbar"
+                        @on-scroll="handleTaskScroll">
+                        <div v-if="!isDepartmentReadonly && !!columnTopShow[column.id]" class="task-item additem">
+                            <TaskAddSimple
+                                :column-id="column.id"
+                                :project-id="projectId"
+                                :add-top="true"
+                                @on-close="addTopShow(column.id, false)"
+                                @on-priority="addTaskOpen"
+                                auto-active/>
+                        </div>
+                        <Draggable
+                            :list="column.tasks"
+                            :animation="150"
+                            :disabled="sortDisabled || isDepartmentReadonly || $isEEUIApp || windowTouch"
+                            class="task-list"
+                            draggable=".task-draggable"
+                            filter=".complete"
+                            group="task"
+                            @sort="sortUpdate"
+                            @remove="sortUpdate">
+                            <div
+                                v-for="item in column.tasks"
+                                :key="`${column.id}_${item.id}`"
+                                :data-id="item.id"
+                                :class="['task-item task-draggable', item.complete_at ? 'complete' : '', taskIsHidden(item) ? 'hidden' : '']"
+                                :style="$A.generateColorVarStyle(item.flow_item_color, [10], 'flow-item-custom-color', taskItemStyle(item))"
+                                @click="openTask(item)">
+                                <template v-if="taskItemVisible(item)">
+                                    <div :class="['task-head', item.desc ? 'has-desc' : '']">
+                                        <div class="task-title">
+                                            <!--工作流状态-->
+                                            <span v-if="item.flow_item_name" :class="item.flow_item_status" @click.stop="openMenu($event, item)">{{item.flow_item_name}}</span>
+                                            <!--任务描述-->
+                                            <pre>{{item.name}}</pre>
+                                        </div>
+                                        <div class="task-menu" @click.stop="">
+                                            <TaskMenu v-if="!isDepartmentReadonly" :ref="`taskMenu_${item.id}`" :task="item" icon="ios-more"/>
+                                        </div>
+                                    </div>
+                                    <template v-if="!item.complete_at">
+                                        <div v-if="item.desc" class="task-desc"><pre v-html="item.desc"></pre></div>
+                                        <TaskTag v-if="item.task_tag.length > 0" class="task-tags" :tags="item.task_tag"/>
+                                        <div class="task-users">
+                                            <ul>
+                                                <li v-for="(user, keyu) in ownerUser(item.task_user)" :key="keyu">
+                                                    <UserAvatar :userid="user.userid" size="32" :borderWidth="2" :borderColor="item.color"/>
+                                                </li>
+                                                <li v-if="ownerUser(item.task_user).length === 0" class="no-owner">
+                                                    <Button type="primary" size="small" ghost @click.stop="openTask(item, true)">{{$L('领取任务')}}</Button>
+                                                </li>
+                                            </ul>
+                                            <div v-if="item.file_num > 0" class="task-icon">{{item.file_num}}<Icon type="ios-link-outline" /></div>
+                                            <div v-if="item.msg_num > 0" class="task-icon">{{item.msg_num}}<Icon type="ios-chatbubbles-outline" /></div>
+                                        </div>
+                                        <div class="task-progress">
+                                            <div v-if="item.sub_num > 0" class="task-sub-num">{{item.sub_complete}}/{{item.sub_num}}</div>
+                                            <Progress :percent="item.percent" :stroke-width="6" />
+                                            <ETooltip
+                                                v-if="item.end_at"
+                                                :class="['task-time', item.today ? 'today' : '', item.overdue ? 'overdue' : '']"
+                                                :disabled="$isEEUIApp || windowTouch"
+                                                :open-delay="600"
+                                                :content="item.end_at">
+                                                <div v-if="!item.complete_at"><i class="taskfont">&#xe71d;</i>{{ expiresFormat(item.end_at) }}</div>
+                                            </ETooltip>
+                                        </div>
+                                        <em v-if="item.p_name" class="priority-color" :style="{backgroundColor:item.p_color}"></em>
+                                    </template>
+                                </template>
+                            </div>
+                            <div v-if="!isDepartmentReadonly" class="task-item additem">
+                                <TaskAddSimple
+                                    :column-id="column.id"
+                                    :project-id="projectId"
+                                    @on-priority="addTaskOpen"/>
+                            </div>
+                        </Draggable>
+                    </Scrollbar>
+                </li>
+                <li v-if="!isDepartmentReadonly" :class="['add-column', addColumnShow ? 'show-input' : '']">
+                    <div class="add-column-text" @click="addColumnOpen">
+                        <Icon type="md-add" />{{$L('添加列表')}}
+                    </div>
+                    <div class="add-column-input">
+                        <Input
+                            ref="addColumnName"
+                            v-model="addColumnName"
+                            @on-blur="addColumnBlur"
+                            @on-keydown="onAddColumnKeydown"
+                            @on-clear="addColumnShow=false"
+                            :placeholder="$L('列表名称，回车创建')"
+                            clearable/>
+                    </div>
+                </li>
+            </Draggable>
+        </div>
+        <Scrollbar
+            v-else-if="tabTypeActive === 'table'"
+            ref="projectTableScroll"
+            class="project-table"
+            enable-x
+            @on-scroll="handleTaskScroll">
+            <div class="project-table-head">
+                <Row class="task-row">
+                    <Col span="12">
+                        <div class="ellipsis"># {{$L('任务名称')}}</div>
+                    </Col>
+                    <Col span="3">
+                        <div class="ellipsis">{{$L('列表')}}</div>
+                    </Col>
+                    <Col span="3">
+                        <div class="sort" @click="onSort('level')">
+                            <div class="head-title">{{$L('优先级')}}</div>
+                            <div class="head-sort">
+                                <Icon :class="{on:sortField=='level' && sortType=='asc'}" type="md-arrow-dropup" />
+                                <Icon :class="{on:sortField=='level' && sortType=='desc'}" type="md-arrow-dropdown" />
+                            </div>
+                        </div>
+                    </Col>
+                    <Col span="3">
+                        <div class="ellipsis">{{$L('负责人')}}</div>
+                    </Col>
+                    <Col span="3">
+                        <div class="sort" @click="onSort('end_at')">
+                            <div class="head-title">{{$L('到期时间')}}</div>
+                            <div class="head-sort">
+                                <Icon :class="{on:sortField=='end_at' && sortType=='asc'}" type="md-arrow-dropup" />
+                                <Icon :class="{on:sortField=='end_at' && sortType=='desc'}" type="md-arrow-dropdown" />
+                            </div>
+                        </div>
+                    </Col>
+                </Row>
+            </div>
+            <!--我的任务-->
+            <div v-if="visibleTableGroups.includes('my')" data-table-group="my" :class="['project-table-body', !projectData.cacheParameter.showMy ? 'project-table-hide' : '']">
+                <Row class="task-row">
+                    <Col span="12" class="row-title">
+                        <i class="taskfont" @click="toggleParameter('showMy')">&#xe689;</i>
+                        <div class="row-h1">{{$L('我的任务')}}</div>
+                        <div class="row-num">({{myList.length}})</div>
+                    </Col>
+                    <Col span="3"></Col>
+                    <Col span="3"></Col>
+                    <Col span="3"></Col>
+                    <Col span="3"></Col>
+                </Row>
+                <TaskRow
+                    v-if="projectData.cacheParameter.showMy"
+                    :list="transforTasks(myList)"
+                    :task-visibilitys="taskRowVisibilitys"
+                    :readonly="isDepartmentReadonly"
+                    open-key="my"
+                    @on-priority="addTaskOpen"
+                    fast-add-task/>
+                <div v-if="projectData.cacheParameter.showMy && !myList.length && isDepartmentReadonly" class="project-table-empty">{{$L('暂无任务')}}</div>
+            </div>
+            <!--协助的任务-->
+            <div v-if="visibleTableGroups.includes('help')" data-table-group="help" :class="['project-table-body', !projectData.cacheParameter.showHelp ? 'project-table-hide' : '']">
+                <Row class="task-row">
+                    <Col span="12" class="row-title">
+                        <i class="taskfont" @click="toggleParameter('showHelp')">&#xe689;</i>
+                        <div class="row-h1">{{$L('协助的任务')}}</div>
+                        <div class="row-num">({{helpList.length}})</div>
+                    </Col>
+                    <Col span="3"></Col>
+                    <Col span="3"></Col>
+                    <Col span="3"></Col>
+                    <Col span="3"></Col>
+                </Row>
+                <TaskRow
+                    v-if="projectData.cacheParameter.showHelp"
+                    :list="helpList"
+                    :task-visibilitys="taskRowVisibilitys"
+                    :readonly="isDepartmentReadonly"
+                    open-key="help"
+                    @on-priority="addTaskOpen"/>
+                <div v-if="projectData.cacheParameter.showHelp && !helpList.length" class="project-table-empty">{{$L('暂无任务')}}</div>
+            </div>
+            <!--未完成任务-->
+            <div v-if="visibleTableGroups.includes('undone')" data-table-group="undone" :class="['project-table-body', !projectData.cacheParameter.showUndone ? 'project-table-hide' : '']">
+                <Row class="task-row">
+                    <Col span="12" class="row-title">
+                        <i class="taskfont" @click="toggleParameter('showUndone')">&#xe689;</i>
+                        <div class="row-h1">{{$L('未完成任务')}}</div>
+                        <div class="row-num">({{unList.length}})</div>
+                    </Col>
+                    <Col span="3"></Col>
+                    <Col span="3"></Col>
+                    <Col span="3"></Col>
+                    <Col span="3"></Col>
+                </Row>
+                <TaskRow
+                    v-if="projectData.cacheParameter.showUndone"
+                    :list="unList"
+                    :task-visibilitys="taskRowVisibilitys"
+                    :readonly="isDepartmentReadonly"
+                    open-key="undone"
+                    @on-priority="addTaskOpen"/>
+                <div v-if="projectData.cacheParameter.showUndone && !unList.length" class="project-table-empty">{{$L('暂无任务')}}</div>
+            </div>
+            <!--已完成任务-->
+            <div v-if="visibleTableGroups.includes('completed')" data-table-group="completed" :class="['project-table-body', !projectData.cacheParameter.showCompleted ? 'project-table-hide' : '']">
+                <Row class="task-row">
+                    <Col span="12" class="row-title">
+                        <i class="taskfont" @click="toggleParameter('showCompleted')">&#xe689;</i>
+                        <div class="row-h1">{{$L('已完成任务')}}</div>
+                        <div class="row-num">({{completedList.length}})</div>
+                    </Col>
+                    <Col span="3"></Col>
+                    <Col span="3"></Col>
+                    <Col span="3"></Col>
+                    <Col span="3">
+                        <div class="ellipsis">{{projectData.cacheParameter.showCompleted ? $L('完成时间') : ''}}</div>
+                    </Col>
+                </Row>
+                <TaskRow
+                    v-if="projectData.cacheParameter.showCompleted"
+                    :list="completedList"
+                    :task-visibilitys="taskRowVisibilitys"
+                    :readonly="isDepartmentReadonly"
+                    open-key="completed"
+                    @on-priority="addTaskOpen"
+                    showCompleteAt/>
+                <div v-if="projectData.cacheParameter.showCompleted && !completedList.length" class="project-table-empty">{{$L('暂无任务')}}</div>
+            </div>
+            <div
+                v-for="group in additionalTableGroups"
+                :key="group.key"
+                :data-table-group="group.key"
+                :class="['project-table-body', !projectData.cacheParameter[group.expandedKey] ? 'project-table-hide' : '']">
+                <Row class="task-row">
+                    <Col span="12" class="row-title">
+                        <i class="taskfont" @click="toggleParameter(group.expandedKey)">&#xe689;</i>
+                        <div class="row-h1">{{$L(group.title)}}</div>
+                        <div class="row-num">({{group.tasks.length}})</div>
+                    </Col>
+                    <Col span="3"></Col>
+                    <Col span="3"></Col>
+                    <Col span="3"></Col>
+                    <Col span="3"></Col>
+                </Row>
+                <TaskRow
+                    v-if="projectData.cacheParameter[group.expandedKey]"
+                    :list="group.tasks"
+                    :task-visibilitys="taskRowVisibilitys"
+                    :readonly="isDepartmentReadonly"
+                    :open-key="group.key"
+                    @on-priority="addTaskOpen"/>
+                <div v-if="projectData.cacheParameter[group.expandedKey] && !group.tasks.length" class="project-table-empty">{{$L('暂无任务')}}</div>
+            </div>
+        </Scrollbar>
+        <div v-else-if="tabTypeActive === 'gantt'" class="project-gantt">
+            <!--甘特图-->
+            <ProjectGantt :projectColumn="columnList" :flowFilter="flowFilter" :readonly="isDepartmentReadonly"/>
+        </div>
+
+        <!--项目设置-->
+        <DrawerOverlay
+            v-model="settingShow"
+            placement="right"
+            :size="720"
+            class-name="project-setting-drawer"
+            :mask-closable="false">
+            <template #title>{{$L('项目设置')}}</template>
+            <Form class="project-setting-content" :model="settingData" v-bind="formOptions" @submit.native.prevent>
+                <FormItem prop="name" :label="$L('项目名称')">
+                    <Input type="text" v-model="settingData.name" :maxlength="32" :placeholder="$L('必填')"></Input>
+                </FormItem>
+                <FormItem prop="desc" :label="$L('项目介绍')">
+                    <Input ref="projectDesc" type="textarea" :autosize="{ minRows: 3, maxRows: 5 }" v-model="settingData.desc" :maxlength="255" :placeholder="`${$L('选填')} (${$L('支持 Markdown 格式')})`"></Input>
+                </FormItem>
+                <FormItem :label="$L('自动归档')" prop="archive_method">
+                    <RadioGroup :value="settingData.archive_method" @on-change="formArchived">
+                        <Radio label="system">{{$L('系统默认')}}</Radio>
+                        <Radio label="custom">{{$L('自定义')}}</Radio>
+                    </RadioGroup>
+                    <div v-if="settingData.archive_method==='system'" class="form-tip">{{$L('根据系统设置的自动归档规则执行')}}</div>
+                    <template v-else-if="settingData.archive_method=='custom'">
+                        <div class="form-tip">{{$L('任务完成(*)天后自动归档。', settingData.archive_days || 'n')}}</div>
+                        <div class="setting-auto-day">
+                            <Input v-model="settingData.archive_days" type="number">
+                                <span slot="append">{{$L('[day_unit].天')}}</span>
+                            </Input>
+                        </div>
+                    </template>
+                </FormItem>
+                <FormItem v-if="aiVisible" :label="$L('AI任务分析')" prop="ai_auto_analyze">
+                    <RadioGroup v-model="settingData.ai_auto_analyze">
+                        <Radio label="open" :disabled="systemConfig.task_ai_auto_analyze === 'close'">{{$L('开启')}}</Radio>
+                        <Radio label="close">{{$L('关闭')}}</Radio>
+                    </RadioGroup>
+                    <div v-if="systemConfig.ai_auto_analyze === 'close'" class="form-tip">{{$L('系统已关闭AI任务分析功能。')}}</div>
+                    <div v-else-if="settingData.ai_auto_analyze === 'open'" class="form-tip">{{$L('新建任务后AI自动分析并给出建议。')}}</div>
+                    <div v-else class="form-tip">{{$L('关闭后本项目将不再自动分析任务。')}}</div>
+                </FormItem>
+                <FormItem :label="$L('共享模板')" prop="task_template_share">
+                    <RadioGroup v-model="settingData.task_template_share">
+                        <Radio label="open">{{$L('开启')}}</Radio>
+                        <Radio label="close">{{$L('关闭')}}</Radio>
+                    </RadioGroup>
+                    <div v-if="settingData.task_template_share === 'open'" class="form-tip">{{$L('开启后，添加任务时可使用其他项目共享的任务模板。')}}</div>
+                    <div v-else class="form-tip">{{$L('关闭后，添加任务时仅加载本项目模板，不显示其他项目共享模板。')}}</div>
+                </FormItem>
+                <FormItem v-if="systemConfig.department_owner_project_view === 'open'" :label="$L('负责人视角')" prop="department_owner_view">
+                    <RadioGroup v-model="settingData.department_owner_view">
+                        <Radio label="open">{{$L('开启')}}</Radio>
+                        <Radio label="close">{{$L('关闭')}}</Radio>
+                    </RadioGroup>
+                    <div v-if="settingData.department_owner_view === 'open'" class="form-tip">{{$L('开启后，部门负责人可只读查看本项目及其全员可见任务。')}}</div>
+                    <div v-else class="form-tip">{{$L('关闭后，本项目及其群聊对部门负责人视角隐藏。')}}</div>
+                </FormItem>
+            </Form>
+            <div class="project-setting-footer">
+                <Button type="default" @click="settingShow=false">{{$L('取消')}}</Button>
+                <Button type="primary" :loading="settingLoad > 0" @click="onSetting">{{$L('保存')}}</Button>
+            </div>
+        </DrawerOverlay>
+
+        <!--项目权限-->
+        <DrawerOverlay
+            v-model="permissionShow"
+            placement="right"
+            :size="800">
+            <ProjectPermission ref="permission" v-if="permissionShow" @close="()=>{ this.permissionShow = false }" :project-id="projectId"/>
+        </DrawerOverlay>
+
+        <!--成员管理-->
+        <Modal
+            v-model="userShow"
+            :title="$L('成员管理')"
+            :mask-closable="false">
+            <Form :model="userData" v-bind="formOptions" @submit.native.prevent>
+                <FormItem v-if="canManageDeputy" prop="deputy_userids" :label="$L('项目管理员')">
+                    <UserSelect
+                        v-model="userData.deputy_userids"
+                        :uncancelable="deputyRowUncancelable"
+                        :disabledChoice="deputyRowDisabledChoice"
+                        :multiple="true"
+                        :multiple-max="20"
+                        :title="$L('选择项目管理员')"/>
+                </FormItem>
+                <FormItem prop="userids" :label="$L('项目成员')">
+                    <UserSelect
+                        v-model="userData.userids"
+                        :uncancelable="memberRowUncancelable"
+                        :multiple-max="100"
+                        :title="$L('选择项目成员')"/>
+                </FormItem>
+            </Form>
+            <div slot="footer" class="adaption">
+                <Button type="default" @click="userShow=false">{{$L('取消')}}</Button>
+                <Poptip
+                    v-if="userWaitRemove.length > 0 || deputyWaitDemote.length > 0"
+                    confirm
+                    placement="bottom"
+                    style="margin-left:8px"
+                    :ok-text="$L('确定')"
+                    :cancel-text="$L('取消')"
+                    @on-ok="onUser"
+                    transfer>
+                    <div slot="title">
+                        <p><strong>{{$L('请确认以下操作，注意此操作不可逆！')}}</strong></p>
+                        <template v-if="userWaitRemove.length > 0">
+                            <p>{{$L('移除成员负责的任务将变成无负责人。')}}</p>
+                            <ul class="project-panel-wait-remove">
+                                <li>{{$L('即将移除')}}：</li>
+                                <li v-for="id in userWaitRemove" :key="'r'+id">
+                                    <UserAvatar :userid="id" :size="20" showName/>
+                                </li>
+                            </ul>
+                        </template>
+                        <ul v-if="deputyWaitDemote.length > 0" class="project-panel-wait-remove">
+                            <li>{{$L('即将罢免项目管理员')}}：</li>
+                            <li v-for="id in deputyWaitDemote" :key="'d'+id">
+                                <UserAvatar :userid="id" :size="20" showName/>
+                            </li>
+                        </ul>
+                    </div>
+                    <Button type="primary" :loading="userLoad > 0">{{$L('保存')}}</Button>
+                </Poptip>
+                <Button v-else type="primary" :loading="userLoad > 0" @click="onUser">{{$L('保存')}}</Button>
+            </div>
+        </Modal>
+
+        <!--邀请链接-->
+        <Modal
+            v-model="inviteShow"
+            :title="$L('邀请链接')"
+            :mask-closable="false">
+            <Form :model="inviteData" v-bind="formOptions" @submit.native.prevent>
+                <FormItem :label="$L('链接地址')">
+                    <Input ref="inviteInput" v-model="inviteData.url" type="textarea" :rows="3" @on-focus="inviteFocus" readonly/>
+                    <div class="form-tip">
+                        {{$L('可通过此链接直接加入项目。')}}
+                        <Poptip
+                            confirm
+                            placement="bottom"
+                            :ok-text="$L('确定')"
+                            :cancel-text="$L('取消')"
+                            @on-ok="inviteGet(true)"
+                            transfer>
+                            <div slot="title">
+                                <p><strong>{{$L('注意：刷新将导致原来的邀请链接失效！')}}</strong></p>
+                            </div>
+                            <a href="javascript:void(0)">{{$L('刷新链接')}}</a>
+                        </Poptip>
+                    </div>
+                </FormItem>
+            </Form>
+            <div slot="footer" class="adaption">
+                <Button type="default" @click="inviteShow=false">{{$L('取消')}}</Button>
+                <Button type="primary" :loading="inviteLoad > 0" @click="inviteCopy">{{$L('复制')}}</Button>
+            </div>
+        </Modal>
+
+        <!--移交项目-->
+        <Modal
+            v-model="transferShow"
+            :title="$L('移交项目')"
+            :mask-closable="false">
+            <Form :model="transferData" v-bind="formOptions" @submit.native.prevent>
+                <FormItem prop="owner_userid" :label="$L('新项目负责人')">
+                    <UserSelect v-model="transferData.owner_userid" :multiple-max="1" :title="$L('选择项目负责人')"/>
+                </FormItem>
+            </Form>
+            <div slot="footer" class="adaption">
+                <Button type="default" @click="transferShow=false">{{$L('取消')}}</Button>
+                <Button type="primary" :loading="transferLoad > 0" @click="onTransfer">{{$L('移交')}}</Button>
+            </div>
+        </Modal>
+
+        <!--任务模板-->
+        <DrawerOverlay
+            v-model="taskTemplateShow"
+            placement="right"
+            :size="720">
+            <ProjectTaskTemplate ref="taskTemplate" v-if="taskTemplateShow" :project-id="projectId"/>
+        </DrawerOverlay>
+
+        <!--任务标签-->
+        <DrawerOverlay
+            v-model="taskTagShow"
+            placement="right"
+            :beforeClose="taskTagBeforeClose"
+            :size="720">
+            <ProjectTaskTag ref="taskTag" v-if="taskTagShow" :project-id="projectId"/>
+        </DrawerOverlay>
+
+        <!--工作流程设置-->
+        <DrawerOverlay
+            v-model="workflowShow"
+            placement="right"
+            :beforeClose="workflowBeforeClose"
+            :size="1280">
+            <ProjectWorkflow ref="workflow" v-if="workflowShow" :project-id="projectId"/>
+        </DrawerOverlay>
+
+        <!--查看项目动态-->
+        <DrawerOverlay
+            v-model="logShow"
+            placement="right"
+            :size="720">
+            <ProjectLog v-if="logShow" :project-id="projectId"/>
+        </DrawerOverlay>
+
+        <!--查看归档任务-->
+        <DrawerOverlay
+            v-model="archivedTaskShow"
+            placement="right"
+            :size="1180">
+            <TaskArchived v-if="archivedTaskShow" :project-id="projectId"/>
+        </DrawerOverlay>
+
+        <!--查看已删除任务-->
+        <DrawerOverlay
+            v-model="deletedTaskShow"
+            placement="right"
+            :size="1180">
+            <TaskDeleted v-if="deletedTaskShow" :project-id="projectId"/>
+        </DrawerOverlay>
+    </div>
+</template>
+
+<script>
+import {debounce} from "lodash";
+import Draggable from 'vuedraggable'
+import TaskPriority from "./TaskPriority";
+import {mapGetters, mapState} from "vuex";
+import TaskAddSimple from "./TaskAddSimple";
+import TaskRow from "./TaskRow";
+import TaskArchived from "./TaskArchived";
+import ProjectLog from "./ProjectLog";
+import DrawerOverlay from "../../../components/DrawerOverlay";
+import ProjectTaskTag from "./ProjectTaskTag";
+import ProjectTaskTemplate from "./ProjectTaskTemplate";
+import ProjectWorkflow from "./ProjectWorkflow";
+import ProjectPermission from "./ProjectPermission";
+import TaskMenu from "./TaskMenu";
+import TaskDeleted from "./TaskDeleted";
+import TaskTag from "./ProjectTaskTag/tags.vue";
+import ProjectGantt from "./ProjectGantt";
+import ProjectTableGroupDropdown from "./ProjectTableGroupDropdown.vue";
+import ProjectFlowFilterDropdown from "./ProjectFlowFilterDropdown.vue";
+import UserSelect from "../../../components/UserSelect.vue";
+import UserAvatarTip from "../../../components/UserAvatar/tip.vue";
+import VMPreviewNostyle from "../../../components/VMEditor/nostyle.vue";
+import emitter from "../../../store/events";
+import transformEmojiToHtml from "../../../utils/emoji";
+import {projectTableGroups, normalizeProjectTableGroups, projectWeekRanges, taskMatchesProjectGroup} from "../../../utils/projectTableGroups";
+import {scrollToStableTarget} from "../../../utils/scrollToStableTarget";
+import {emptyProjectFlowFilter, projectFlowFilterCount, taskMatchesProjectFlowFilter} from "../../../utils/projectFlowFilter";
+
+export default {
+    name: "ProjectPanel",
+    components: {
+        VMPreviewNostyle,
+        UserAvatarTip,
+        UserSelect,
+        TaskMenu,
+        ProjectTaskTag,
+        ProjectTaskTemplate,
+        ProjectWorkflow,
+        ProjectPermission,
+        DrawerOverlay,
+        ProjectLog,
+        TaskArchived,
+        TaskRow,
+        Draggable,
+        TaskAddSimple,
+        TaskPriority,
+        TaskDeleted,
+        TaskTag,
+        ProjectGantt,
+        ProjectTableGroupDropdown,
+        ProjectFlowFilterDropdown,
+    },
+    data() {
+        return {
+            loading: false,
+
+            nowTime: $A.dayjs().unix(),
+            nowInterval: null,
+            tableToday: $A.daytz().format('YYYY-MM-DD'),
+            tableGroupsOpen: false,
+
+            columnLoad: {},
+            columnTopShow: {},
+
+            sortField: 'end_at',
+            sortType: 'desc',
+
+            searchText: '',
+
+            addColumnShow: false,
+            addColumnLoad: false,
+            addColumnName: '',
+
+            sortData: [],
+            sortDisabled: false,
+
+            settingShow: false,
+            settingData: {},
+            settingLoad: 0,
+
+            permissionShow: false,
+            permissionShowData: {},
+            permissionShowLoad: 0,
+
+            userShow: false,
+            userData: {},
+            userLoad: 0,
+
+            inviteShow: false,
+            inviteData: {},
+            inviteLoad: 0,
+
+            transferShow: false,
+            transferData: {},
+            transferLoad: 0,
+
+            taskTemplateShow: false,
+            taskTagShow: false,
+
+            workflowShow: false,
+            logShow: false,
+            archivedTaskShow: false,
+            deletedTaskShow: false,
+
+            flowFilter: emptyProjectFlowFilter(),
+            flowFilterOpen: false,
+            flowList: [],
+
+            columnVisibilitys: {},
+            taskVisibilitys: {},
+            taskRowVisibilitys: {},
+        }
+    },
+
+    mounted() {
+        this.nowInterval = setInterval(() => {
+            this.nowTime = $A.dayjs().unix();
+            this.tableToday = $A.daytz().format('YYYY-MM-DD');
+        }, 1000);
+    },
+
+    destroyed() {
+        this.cancelTableGroupScroll();
+        clearInterval(this.nowInterval);
+    },
+
+    computed: {
+        ...mapState([
+            'cacheDialogs',
+
+            'projectId',
+            'projectLoad',
+            'cacheTasks',
+            'cacheColumns',
+
+            'taskCompleteTemps',
+
+            'cacheUserBasic',
+
+            'formOptions',
+
+            'systemConfig',
+        ]),
+
+        ...mapGetters(['aiVisible', 'projectData', 'transforTasks']),
+
+        tabTypeActive() {
+            return this.projectData.cacheParameter.menuType
+        },
+
+        tableGroupOptions() {
+            return projectTableGroups;
+        },
+
+        visibleTableGroups() {
+            return normalizeProjectTableGroups(this.projectData.cacheParameter.tableGroups);
+        },
+
+        tableWeekRanges() {
+            return projectWeekRanges($A.dayjs(this.tableToday));
+        },
+
+        additionalTableGroups() {
+            const groups = this.tableGroupOptions.filter(group => group.kind && this.visibleTableGroups.includes(group.key));
+            if (!groups.length) return [];
+            const tasks = this.panelTask(this.parentTask);
+            const now = groups.some(group => group.kind === 'overdue') ? $A.daytz(this.nowTime).valueOf() : 0;
+            return groups.map(group => ({
+                ...group,
+                tasks: tasks.filter(task => taskMatchesProjectGroup(task, group, this.tableWeekRanges, now, $A.dayjs)).sort((a, b) => {
+                    if (this.sortType === 'asc') [a, b] = [b, a];
+                    if (this.sortField === 'level' || a.end_at === b.end_at) {
+                        return $A.sortFloat(a.p_level, b.p_level);
+                    }
+                    return $A.sortDay(a.end_at || '2099-12-31 23:59:59', b.end_at || '2099-12-31 23:59:59');
+                }),
+            }));
+        },
+
+        // 各分组任务数，与分组标题旁的数量一致（未显示的分组也计算）
+        tableGroupCounts() {
+            const counts = {
+                my: this.myList.length,
+                help: this.helpList.length,
+                undone: this.unList.length,
+                completed: this.completedList.length,
+            };
+            const groups = this.tableGroupOptions.filter(group => group.kind);
+            const tasks = this.panelTask(this.parentTask);
+            const now = $A.daytz(this.nowTime).valueOf();
+            groups.forEach(group => {
+                counts[group.key] = tasks.filter(task => taskMatchesProjectGroup(task, group, this.tableWeekRanges, now, $A.dayjs)).length;
+            });
+            return counts;
+        },
+
+        tabTypeStyle() {
+            const style = {}
+            switch (this.tabTypeActive) {
+                case 'column':
+                    style.left = '0'
+                    break
+                case 'table':
+                    style.left = '33.33%'
+                    break
+                case 'gantt':
+                    style.left = '66.66%'
+                    break
+                default:
+                    style.display = 'none'
+            }
+            return style
+        },
+
+        userWaitRemove() {
+            const {userids, useridbak} = this.userData;
+            if (!userids) {
+                return [];
+            }
+            let wait = [];
+            useridbak.some(id => {
+                if (!userids.includes(id)) {
+                    wait.push(id)
+                }
+            })
+            return wait;
+        },
+
+        deputyWaitDemote() {
+            // 所有从项目管理员列表中移出的人（即使同时被踢出项目，也在罢免段显示，避免操作隐身）
+            const {deputy_userids = [], deputy_useridbak = []} = this.userData;
+            return deputy_useridbak.filter(id => !deputy_userids.includes(id));
+        },
+
+        msgUnread() {
+            const {cacheDialogs, projectData} = this;
+            const dialog = cacheDialogs.find(({id}) => id === projectData.dialog_id);
+            return $A.getDialogNum(dialog);
+        },
+
+        panelTask() {
+            const {searchText, flowFilter} = this;
+            return function (list) {
+                if (!this.projectData.cacheParameter.completedTask) {
+                    list = list.filter(({complete_at}) => {
+                        return !complete_at;
+                    });
+                }
+                list = list.filter(task => taskMatchesProjectFlowFilter(task, flowFilter));
+                if (searchText) {
+                    list = list.filter(({id, name, desc}) => {
+                        return id == searchText || $A.strExists(`${name} ${desc}`, searchText)
+                    });
+                }
+                return list;
+            }
+        },
+
+        canManageDeputy() {
+            return this.projectData?.owner_userid === this.userId;
+        },
+
+        isDepartmentReadonly() {
+            return !!this.projectData?.department_readonly;
+        },
+
+        isOwnerOrDeputy() {
+            if (this.isDepartmentReadonly) return false;
+            if (!this.projectData) return false;
+            if (this.projectData.owner_userid === this.userId) return true;
+            return (this.projectData.deputy_userids || []).includes(this.userId);
+        },
+
+        memberRowUncancelable() {
+            // 项目成员行：负责人 + 当前项目管理员选择（响应式）都不可移除
+            if (!this.projectData) return [];
+            const deputies = (this.userData && Array.isArray(this.userData.deputy_userids))
+                ? this.userData.deputy_userids
+                : (this.projectData.deputy_userids || []);
+            return [
+                this.projectData.owner_userid,
+                ...deputies,
+            ];
+        },
+
+        deputyRowUncancelable() {
+            // 项目管理员行：防御性锁定负责人（理论上负责人不会出现在该 v-model 里）
+            if (!this.projectData) return [];
+            return [this.projectData.owner_userid];
+        },
+
+        deputyRowDisabledChoice() {
+            // 项目管理员候选：排除负责人（不能任命负责人为项目管理员）
+            if (!this.projectData) return [];
+            return [this.projectData.owner_userid];
+        },
+
+        projectMemberUserids() {
+            return (this.projectData.project_user || []).map(({userid}) => userid);
+        },
+
+        projectUser() {
+            const {projectData, windowWidth} = this;
+            if (!projectData.project_user) {
+                return [];
+            }
+            const max = windowWidth > 1200 ? 8 : 3;
+            const deputyIds = projectData.deputy_userids || [];
+            const list = projectData.project_user
+                .filter(({userid}) => userid != projectData.owner_userid)
+                .slice()
+                .sort((a, b) => {
+                    const aD = deputyIds.includes(a.userid) ? 0 : 1;
+                    const bD = deputyIds.includes(b.userid) ? 0 : 1;
+                    return aD - bD;
+                });
+            if (list.length <= max) {
+                return list;
+            }
+            const array = list.slice(0, max - 1);
+            array.push({userid: -1});
+            array.push(list[list.length - 1]);
+            return array;
+        },
+
+        allTask() {
+            const {cacheTasks, projectId} = this;
+            return cacheTasks.filter(task => {
+                if (task.archived_at || !task.created_at) {
+                    return false;
+                }
+                return task.project_id == projectId
+            })
+        },
+
+        parentTask() {
+            const {allTask} = this;
+            return allTask.filter(task => task.parent_id == 0);
+        },
+
+        columnList() {
+            const {projectId, cacheColumns, allTask} = this;
+            const list = $A.cloneJSON(cacheColumns).filter(({project_id}) => {
+                return project_id == projectId
+            }).sort((a, b) => {
+                if (a.sort != b.sort) {
+                    return $A.sortFloat(a.sort, b.sort);
+                }
+                return a.id - b.id;
+            });
+            list.forEach((column) => {
+                column.tasks = this.transforTasks(allTask.filter(task => {
+                    return task.column_id == column.id;
+                })).sort((a, b) => {
+                    if (a.complete_at || b.complete_at) {
+                        return $A.sortDay(a.complete_at, b.complete_at);
+                    }
+                    if (a.sort != b.sort) {
+                        return $A.sortFloat(a.sort, b.sort);
+                    }
+                    return a.id - b.id;
+                });
+            })
+            return list;
+        },
+
+        myList() {
+            const {allTask, taskCompleteTemps, sortField, sortType} = this;
+            let array = allTask.filter(task => this.myFilter(task));
+            if (taskCompleteTemps.length > 0) {
+                let tmps = allTask.filter(task => taskCompleteTemps.includes(task.id) && this.myFilter(task, false));
+                if (tmps.length > 0) {
+                    array = $A.cloneJSON(array)
+                    array.push(...tmps);
+                }
+            }
+            return array.sort((a, b) => {
+                if (sortType == 'asc') {
+                    [a, b] = [b, a];
+                }
+                if (sortField == 'level') {
+                    return $A.sortFloat(a.p_level, b.p_level)
+                } else if (sortField == 'end_at') {
+                    if (a.end_at == b.end_at) {
+                        return $A.sortFloat(a.p_level, b.p_level)
+                    }
+                    return $A.sortDay(a.end_at || "2099-12-31 23:59:59", b.end_at || "2099-12-31 23:59:59");
+                }
+            });
+        },
+
+        helpList() {
+            const {allTask, taskCompleteTemps, sortField, sortType} = this;
+            let array = allTask.filter(task => this.helpFilter(task));
+            if (taskCompleteTemps.length > 0) {
+                let tmps = allTask.filter(task => taskCompleteTemps.includes(task.id) && this.helpFilter(task, false));
+                if (tmps.length > 0) {
+                    array = $A.cloneJSON(array)
+                    array.push(...tmps);
+                }
+            }
+            return array.sort((a, b) => {
+                if (sortType == 'asc') {
+                    [a, b] = [b, a];
+                }
+                if (sortField == 'level') {
+                    return $A.sortFloat(a.p_level, b.p_level)
+                } else if (sortField == 'end_at') {
+                    if (a.end_at == b.end_at) {
+                        return $A.sortFloat(a.p_level, b.p_level)
+                    }
+                    return $A.sortDay(a.end_at || "2099-12-31 23:59:59", b.end_at || "2099-12-31 23:59:59");
+                }
+            });
+        },
+
+        unList() {
+            const {allTask, searchText, sortField, sortType} = this;
+            const array = allTask.filter(task => {
+                if (task.parent_id > 0) {
+                    return false;
+                }
+                if (this.flowTask(task)) {
+                    return false;
+                }
+                if (searchText) {
+                    if (task.id != searchText && !$A.strExists(task.name, searchText) && !$A.strExists(task.desc, searchText)) {
+                        return false;
+                    }
+                }
+                return !task.complete_at;
+            });
+            return array.sort((a, b) => {
+                if (sortType == 'asc') {
+                    [a, b] = [b, a];
+                }
+                if (sortField == 'level') {
+                    return $A.sortFloat(a.p_level, b.p_level)
+                } else if (sortField == 'end_at') {
+                    if (a.end_at == b.end_at) {
+                        return $A.sortFloat(a.p_level, b.p_level)
+                    }
+                    return $A.sortDay(a.end_at || "2099-12-31 23:59:59", b.end_at || "2099-12-31 23:59:59");
+                }
+            });
+        },
+
+        completedList() {
+            const {allTask, searchText} = this;
+            const array = allTask.filter(task => {
+                if (task.parent_id > 0) {
+                    return false;
+                }
+                if (this.flowTask(task)) {
+                    return false;
+                }
+                if (searchText) {
+                    if (task.id != searchText && !$A.strExists(task.name, searchText) && !$A.strExists(task.desc, searchText)) {
+                        return false;
+                    }
+                }
+                return task.complete_at;
+            });
+            return array.sort((a, b) => {
+                return $A.sortDay(b.complete_at, a.complete_at);
+            });
+        },
+
+        completedCount() {
+            const {allTask} = this;
+            return allTask.filter(task => {
+                if (task.parent_id > 0) {
+                    return false;
+                }
+                return task.complete_at;
+            }).length;
+        },
+
+        tagList() {
+            const tags = [];
+            this.allTask.forEach(({task_tag}) => {
+                task_tag.forEach(tag => {
+                    if (!tags.find(item => item.name === tag.name)) {
+                        tags.push(tag);
+                    }
+                });
+            });
+            return tags;
+        },
+
+        flowFilterTotal() {
+            return projectFlowFilterCount(this.flowFilter);
+        },
+
+        flowFilterGroups() {
+            const {flowList, allTask, cacheUserBasic, flowFilter} = this;
+            const groups = [];
+            // 状态（含未计划）
+            const flowSections = [{
+                items: [{
+                    value: -1,
+                    label: this.$L('未计划'),
+                    count: allTask.filter(({start_at, complete_at}) => !start_at && !complete_at).length,
+                }]
+            }];
+            flowList.forEach(flow => {
+                flowSections.push({
+                    title: flowList.length > 1 ? flow.name : '',
+                    items: flow.project_flow_item.map(item => ({
+                        value: item.id,
+                        label: item.name,
+                        count: allTask.filter(({flow_item_id}) => flow_item_id == item.id).length,
+                        status: item.status,
+                        style: $A.generateColorVarStyle(item.color, [10], 'flow-item-custom-color'),
+                    }))
+                });
+            });
+            groups.push({key: 'flows', title: '状态', sections: flowSections});
+            // 标签
+            if (this.tagList.length > 0) {
+                groups.push({
+                    key: 'tags',
+                    title: '标签',
+                    sections: [{
+                        items: this.tagList.map(({name, color}) => ({
+                            value: name,
+                            label: name,
+                            count: allTask.filter(({task_tag}) => task_tag.find(tag => tag.name === name)).length,
+                            color,
+                        }))
+                    }]
+                });
+            }
+            // 负责人
+            const {project_user} = this.projectData;
+            if ($A.isArray(project_user)) {
+                const userItems = project_user.map(item => {
+                    const userInfo = cacheUserBasic.find(({userid}) => userid === item.userid) || {}
+                    const count = allTask.filter(({task_user, complete_at}) => {
+                        if (!this.projectData.cacheParameter.completedTask && complete_at) {
+                            return false;
+                        }
+                        return task_user.find(({userid, owner}) => userid === item.userid && owner);
+                    }).length
+                    return {
+                        value: userInfo.userid || 0,
+                        label: userInfo.nickname,
+                        count,
+                        userid: userInfo.userid || 0,
+                    }
+                }).filter(({userid, count}) => userid > 0 && (count > 0 || flowFilter.users.includes(userid)))
+                if (userItems.length > 0) {
+                    userItems.sort((a, b) => (b.userid == this.userId) - (a.userid == this.userId))
+                    // 负责人超过 10 人时显示搜索框
+                    groups.push({key: 'users', title: '负责人', searchable: userItems.length > 10, sections: [{items: userItems}]});
+                }
+            }
+            return groups;
+        },
+
+        flowTrigger() {
+            const {flowFilter, flowFilterTotal, flowFilterGroups, allTask} = this;
+            if (flowFilterTotal === 0) {
+                return {title: `${this.$L('全部')} (${allTask.length})`};
+            }
+            if (flowFilterTotal === 1) {
+                const group = flowFilterGroups.find(({key}) => flowFilter[key].length > 0);
+                const item = group?.sections.flatMap(({items}) => items).find(({value}) => value === flowFilter[group.key][0]);
+                if (item) {
+                    const title = `${item.label} (${item.count})`;
+                    if (item.status) {
+                        return {title, class: item.status, style: item.style};
+                    }
+                    if (item.color) {
+                        return {title, class: 'active tag-dot', style: {'--bg-color': item.color}};
+                    }
+                    return {title, class: 'active'};
+                }
+            }
+            const parts = flowFilterGroups
+                .filter(({key}) => flowFilter[key].length > 0)
+                .map(({key, title}) => `${this.$L(title)}·${flowFilter[key].length}`);
+            const count = allTask.filter(task => taskMatchesProjectFlowFilter(task, flowFilter)).length;
+            return {title: `${parts.join(' / ')} (${count})`, class: 'active'};
+        },
+    },
+
+    watch: {
+        tabTypeActive(type) {
+            if (type !== 'table') {
+                this.tableGroupsOpen = false;
+                this.cancelTableGroupScroll();
+            }
+        },
+        additionalTableGroups() {
+            this.handleColumnDebounce();
+        },
+        visibleTableGroups() {
+            if (this._tableGroupScroll && !this.visibleTableGroups.includes(this._tableGroupScroll.key)) this.cancelTableGroupScroll();
+            this.handleColumnDebounce();
+        },
+        projectId: {
+            handler(id) {
+                this.cancelTableGroupScroll();
+                this.tableGroupsOpen = false;
+                if (id > 0) {
+                    this.getFlowData();
+                    this.handleColumnDebounce();
+                }
+            },
+            immediate: true,
+        },
+        'columnList.length'() {
+            this.handleColumnDebounce();
+        },
+        'parentTask.length'() {
+            this.handleColumnDebounce();
+        },
+        'projectData.task_num'() {
+            this.handleColumnDebounce();
+        },
+        searchText() {
+            this.handleColumnDebounce(true);
+        },
+        windowWidth() {
+            this.handleColumnDebounce(100);
+        },
+        'userData.deputy_userids'(newDeputies) {
+            // 项目管理员必须是项目成员：项目管理员行新增时自动并入成员行（罢免时不联动移除）
+            if (!Array.isArray(newDeputies) || !Array.isArray(this.userData.userids)) {
+                return;
+            }
+            const toAdd = newDeputies.filter(id => !this.userData.userids.includes(id));
+            if (toAdd.length > 0) {
+                this.userData.userids = [...this.userData.userids, ...toAdd];
+            }
+        },
+        projectData(newData, oldData) {
+            this.sortData = this.getSort();
+            if (newData && newData.id && (!oldData || newData.id !== oldData.id)) {
+                this.checkProjectFavoriteStatus();
+            }
+        },
+        projectLoad(n) {
+            this._loadTimeout && clearTimeout(this._loadTimeout)
+            if (n > 0) {
+                this._loadTimeout = setTimeout(() => {
+                    this.loading = true;
+                }, 1000)
+            } else {
+                this.loading = false;
+            }
+        },
+    },
+
+    methods: {
+        transformEmojiToHtml,
+        showName() {
+            if (this.windowLandscape) {
+                return;
+            }
+            $A.modalInfo({
+                language: false,
+                title: this.$L('项目名称'),
+                content: this.projectData.name
+            })
+        },
+
+        showDesc() {
+            if (this.windowLandscape) {
+                return;
+            }
+            $A.modalInfo({
+                language: false,
+                title: this.$L('项目描述'),
+                content: this.$refs.descPreview.$el.innerHTML
+            })
+        },
+
+        searchFocus() {
+            this.$nextTick(() => {
+                this.$refs.searchInput.focus({
+                    cursor: "end"
+                });
+            })
+        },
+
+        getSort() {
+            const sortData = [];
+            this.columnList.forEach((column) => {
+                sortData.push({
+                    id: column.id,
+                    task: column.tasks.map(({id}) => id)
+                });
+            })
+            return sortData;
+        },
+
+        sortUpdate(only_column) {
+            if (this.isDepartmentReadonly) {
+                return;
+            }
+            const oldSort = this.sortData;
+            const newSort = this.getSort();
+            if (JSON.stringify(oldSort) === JSON.stringify(newSort)) {
+                return;
+            }
+            this.sortData = newSort;
+            //
+            const data = {
+                project_id: this.projectId,
+                sort: this.sortData,
+                only_column: only_column === true ? 1 : 0
+            };
+            this.sortDisabled = true;
+            this.$store.dispatch("call", {
+                url: 'project/sort',
+                data,
+                method: 'post',
+            }).then(({msg}) => {
+                $A.messageSuccess(msg);
+                this.sortDisabled = false;
+                //
+                let sort,
+                    upData = [];
+                if (data.only_column) {
+                    sort = -1;
+                    data.sort.forEach((item) => {
+                        sort++;
+                        upData.push({
+                            id: item.id,
+                            sort,
+                        })
+                    })
+                    this.$store.dispatch("saveColumn", upData)
+                } else {
+                    data.sort.forEach((item) => {
+                        sort = -1;
+                        upData.push(...item.task.map(id => {
+                            sort++;
+                            upData.push(...this.allTask.filter(task => {
+                                return task.parent_id == id
+                            }).map(({id}) => {
+                                return {
+                                    id,
+                                    sort,
+                                    column_id: item.id,
+                                }
+                            }))
+                            return {
+                                id,
+                                sort,
+                                column_id: item.id,
+                            }
+                        }))
+                    })
+                    this.$store.dispatch("saveTask", upData)
+                }
+            }).catch(({msg}) => {
+                $A.modalError(msg);
+                this.sortDisabled = false;
+                this.$store.dispatch("getTaskForProject", this.projectId).catch(() => {})
+            }).finally(_ => {
+                this.handleColumnDebounce();
+            });
+        },
+
+        addTopShow(id, show) {
+            if (this.isDepartmentReadonly) {
+                return;
+            }
+            this.$set(this.columnTopShow, id, show);
+        },
+
+        addTaskOpen(params) {
+            if (this.isDepartmentReadonly) {
+                return;
+            }
+            emitter.emit('addTask', params);
+        },
+
+        addColumnOpen() {
+            if (this.isDepartmentReadonly) {
+                return;
+            }
+            this.addColumnShow = true;
+            this.$nextTick(() => {
+                this.$refs.addColumnName.focus();
+            })
+        },
+
+        addColumnBlur() {
+            if (this.addColumnName === '') {
+                this.addColumnShow = false
+            }
+        },
+
+        onAddColumnKeydown(e) {
+            if (e.isComposing || e.key === 'Process' || e.keyCode === 229) return;
+            if (e.keyCode === 13) {
+                this.addColumnSubmit();
+            }
+        },
+
+        addColumnSubmit() {
+            let name = this.addColumnName.trim();
+            if (name === '' || this.addColumnLoad) {
+                return;
+            }
+            this.addColumnLoad = true
+            this.$store.dispatch("call", {
+                url: 'project/column/add',
+                data: {
+                    project_id: this.projectId,
+                    name: name,
+                },
+                spinner: 600,
+            }).then(({data, msg}) => {
+                $A.messageSuccess(msg);
+                this.addColumnName = '';
+                this.$store.dispatch("saveColumn", data);
+            }).catch(({msg}) => {
+                $A.modalError(msg);
+            }).finally(() => {
+                this.addColumnLoad = false;
+            });
+        },
+
+        dropColumn(column, command) {
+            if (this.isDepartmentReadonly) {
+                return;
+            }
+            if (command === 'title') {
+                this.titleColumn(column);
+            }
+            else if (command === 'archive_completed') {
+                this.archiveColumnCompletedTasks(column);
+            }
+            else if (command === 'remove') {
+                this.removeColumn(column);
+            }
+            else if (command.name) {
+                this.updateColumn(column, {
+                    color: command.color
+                }).catch(e => {
+                    $A.modalError(e)
+                });
+            }
+        },
+
+        titleColumn(column) {
+            $A.modalInput({
+                value: column.name,
+                title: "修改列表",
+                placeholder: "输入列表名称",
+                onOk: (value) => {
+                    if (!value) {
+                        return '列表名称不能为空'
+                    }
+                    return this.updateColumn(column, {
+                        name: value
+                    })
+                }
+            });
+        },
+
+        updateColumn(column, updata) {
+            return new Promise((resolve, reject) => {
+                if (this.columnLoad[column.id] === true) {
+                    resolve()
+                    return;
+                }
+                this.$set(this.columnLoad, column.id, true);
+                //
+                Object.keys(updata).forEach(key => this.$set(column, key, updata[key]));
+                //
+                this.$store.dispatch("call", {
+                    url: 'project/column/update',
+                    data: Object.assign(updata, {
+                        column_id: column.id,
+                    }),
+                }).then(({data}) => {
+                    this.$set(this.columnLoad, column.id, false);
+                    this.$store.dispatch("saveColumn", data);
+                    resolve()
+                }).catch(({msg}) => {
+                    this.$set(this.columnLoad, column.id, false);
+                    this.$store.dispatch("getColumns", this.projectId).catch(() => {})
+                    reject(msg);
+                });
+            })
+        },
+
+        archiveColumnCompletedTasks(column) {
+            const tasks = this.getColumnCompletedTasks(column);
+            if (tasks.length === 0) {
+                $A.messageWarning('当前列表没有可归档的已完成任务');
+                return;
+            }
+            $A.modalConfirm({
+                title: '归档已完成任务',
+                content: `你确定将列表【${column.name}】中所有已完成的任务归档吗？`,
+                loading: true,
+                onOk: () => {
+                    return new Promise((resolve, reject) => {
+                        this.batchArchiveTasks(tasks).then(() => {
+                            $A.messageSuccess('已归档列表中所有已完成任务');
+                            resolve();
+                        }).catch(({msg}) => {
+                            $A.modalError(msg || '归档失败，请稍后再试');
+                            reject();
+                        });
+                    })
+                }
+            });
+        },
+
+        getColumnCompletedTasks(column) {
+            if (!column || !Array.isArray(column.tasks)) {
+                return [];
+            }
+            return column.tasks.filter(task => task && task.complete_at && !task.archived_at);
+        },
+
+        batchArchiveTasks(tasks) {
+            const archive = (index = 0) => {
+                if (index >= tasks.length) {
+                    return Promise.resolve();
+                }
+                const task = tasks[index];
+                return this.$store.dispatch("archivedTask", {task_id: task.id}).then(() => {
+                    this.$store.dispatch("saveTaskBrowse", task.id);
+                    return archive(index + 1);
+                });
+            }
+            return archive();
+        },
+
+        removeColumn(column) {
+            $A.modalConfirm({
+                title: '删除列表',
+                content: '你确定要删除列表【' + column.name + '】及列表内的任务吗？',
+                loading: true,
+                onOk: () => {
+                    if (this.columnLoad[column.id] === true) {
+                        return;
+                    }
+                    this.$set(this.columnLoad, column.id, true);
+                    //
+                    return new Promise((resolve, reject) => {
+                        this.$store.dispatch("removeColumn", column.id).then(({msg}) => {
+                            resolve(msg);
+                        }).catch(({msg}) => {
+                            reject(msg);
+                        }).finally(_ => {
+                            this.$set(this.columnLoad, column.id, false);
+                        });
+                    })
+                }
+            });
+        },
+
+        onSort(field) {
+            this.sortField = field;
+            this.sortType = this.sortType == 'desc' ? 'asc' : 'desc';
+            this.handleColumnDebounce();
+        },
+
+        onSetting() {
+            this.settingLoad++;
+            this.$store.dispatch("call", {
+                url: 'project/update',
+                data: Object.assign(this.settingData, {
+                    project_id: this.projectId
+                }),
+            }).then(({data, msg}) => {
+                $A.messageSuccess(msg);
+                this.settingShow = false;
+                this.$store.dispatch("saveProject", data)
+            }).catch(({msg}) => {
+                $A.modalError(msg);
+            }).finally(_ => {
+                this.settingLoad--;
+            });
+        },
+
+        onUser() {
+            this.userLoad++;
+            // 项目管理员必须是项目成员：把 deputy 并入 userid 列表（前端归一化）
+            const baseUserids = (this.userData.userids || []).slice();
+            const deputyUserids = (this.userData.deputy_userids || []).slice();
+            const mergedUserids = Array.from(new Set([...baseUserids, ...deputyUserids]));
+            //
+            const payload = {
+                project_id: this.projectId,
+                userid: mergedUserids,
+            };
+            // 仅项目负责人发送 deputy_userid；项目管理员/其他角色不发送（后端也会忽略）
+            if (this.canManageDeputy) {
+                payload.deputy_userid = deputyUserids;
+            }
+            //
+            this.$store.dispatch("call", {
+                url: 'project/user',
+                data: payload,
+            }).then(({msg}) => {
+                $A.messageSuccess(msg);
+                this.userShow = false;
+                this.$store.dispatch("getProjectOne", this.projectId).catch(() => {});
+                this.$store.dispatch("getTaskForProject", this.projectId).catch(() => {})
+            }).catch(({msg}) => {
+                $A.modalError(msg);
+            }).finally(_ => {
+                this.userLoad--;
+            });
+        },
+
+        onTransfer() {
+            this.transferLoad++;
+            this.$store.dispatch("call", {
+                url: 'project/transfer',
+                data: {
+                    project_id: this.projectId,
+                    owner_userid: this.transferData.owner_userid[0],
+                },
+            }).then(({msg}) => {
+                $A.messageSuccess(msg);
+                this.transferShow = false;
+                this.$store.dispatch("getProjectOne", this.projectId).catch(() => {});
+                this.$store.dispatch("getTaskForProject", this.projectId).catch(() => {})
+            }).catch(({msg}) => {
+                $A.modalError(msg);
+            }).finally(_ => {
+                this.transferLoad--;
+            });
+        },
+
+        onArchived() {
+            $A.modalConfirm({
+                title: '归档项目',
+                content: '你确定要归档项目【' + this.projectData.name + '】吗？',
+                loading: true,
+                onOk: () => {
+                    return new Promise((resolve, reject) => {
+                        this.$store.dispatch("archivedProject", this.projectId).then(({msg}) => {
+                            resolve(msg);
+                        }).catch(({msg}) => {
+                            reject(msg);
+                        });
+                    })
+                }
+            });
+        },
+
+        onDelete() {
+            $A.modalConfirm({
+                title: '删除项目',
+                content: '你确定要删除项目【' + this.projectData.name + '】吗？',
+                loading: true,
+                onOk: () => {
+                    return new Promise((resolve, reject) => {
+                        this.$store.dispatch("removeProject", this.projectId).then(({msg}) => {
+                            resolve(msg);
+                        }).catch(({msg}) => {
+                            reject(msg);
+                        });
+                    })
+                }
+            });
+        },
+
+        onExit() {
+            $A.modalConfirm({
+                title: '退出项目',
+                content: '你确定要退出项目【' + this.projectData.name + '】吗？',
+                loading: true,
+                onOk: () => {
+                    return new Promise((resolve, reject) => {
+                        this.$store.dispatch("exitProject", this.projectId).then(({msg}) => {
+                            resolve(msg);
+                        }).catch(({msg}) => {
+                            reject(msg);
+                        });
+                    })
+                }
+            });
+        },
+
+        projectDropdown(name) {
+            if (this.isDepartmentReadonly && !['favorite', 'log', 'archived_task', 'deleted_task'].includes(name)) {
+                return;
+            }
+            switch (name) {
+                case "favorite":
+                    this.toggleProjectFavorite();
+                    break;
+
+                case "setting":
+                    Object.assign(this.settingData, {
+                        name: this.projectData.name,
+                        desc: this.projectData.desc,
+                        archive_method: this.projectData.archive_method,
+                        archive_days: this.projectData.archive_days,
+                        ai_auto_analyze: this.projectData.ai_auto_analyze || 'open',
+                        task_template_share: this.projectData.task_template_share || 'open',
+                        department_owner_view: this.projectData.department_owner_view || 'open'
+                    });
+                    this.settingShow = true;
+                    this.$nextTick(() => {
+                        setTimeout(this.$refs.projectDesc.resizeTextarea, 0)
+                    });
+                    break;
+
+                case "permissions":
+                    this.permissionShow = true;
+                    break;
+
+                case "user":
+                    if (this.isDepartmentReadonly || !this.isOwnerOrDeputy) {
+                        return;
+                    }
+                    const userids = this.projectData.project_user.map(({userid}) => userid);
+                    const deputyUserids = [...(this.projectData.deputy_userids || [])];
+                    this.$set(this.userData, 'userids', userids);
+                    this.$set(this.userData, 'useridbak', userids);
+                    this.$set(this.userData, 'deputy_userids', deputyUserids);
+                    this.$set(this.userData, 'deputy_useridbak', deputyUserids);
+                    this.userShow = true;
+                    break;
+
+                case "invite":
+                    this.inviteData = {};
+                    this.inviteShow = true;
+                    this.inviteGet()
+                    break;
+
+                case "task_template":
+                    this.taskTemplateShow = true;
+                    break;
+
+                case "task_tag":
+                    this.taskTagShow = true;
+                    break;
+
+                case "workflow":
+                    this.workflowShow = true;
+                    break;
+
+                case "log":
+                    this.logShow = true;
+                    break;
+
+                case "archived_task":
+                    this.archivedTaskShow = true;
+                    break;
+
+                case "deleted_task":
+                    this.deletedTaskShow = true;
+                    break;
+
+                case "transfer":
+                    this.$set(this.transferData, 'owner_userid', []);
+                    this.transferShow = true;
+                    break;
+
+                case "archived":
+                    this.onArchived();
+                    break;
+
+                case "delete":
+                    this.onDelete();
+                    break;
+
+                case "exit":
+                    this.onExit();
+                    break;
+            }
+        },
+
+        isPrimaryOwnerUid(userid) {
+            return userid === this.projectData.owner_userid;
+        },
+
+        isDeputyUid(userid) {
+            return (this.projectData.deputy_userids || []).includes(userid);
+        },
+
+        openTask(task, receive) {
+            this.$store.dispatch("openTask", task)
+            if (this.isDepartmentReadonly) {
+                return;
+            }
+            if (receive === true) {
+                // 向任务窗口发送领取任务请求
+                setTimeout(() => {
+                    emitter.emit('receiveTask', true);
+                }, 300)
+            }
+        },
+
+        openMenu(event, task) {
+            const el = this.$refs[`taskMenu_${task.id}`];
+            if (el) {
+                el[0].handleClick(event)
+            }
+        },
+
+        taskIsHidden(task) {
+            const {id, name, desc, complete_at} = task;
+            const {searchText} = this;
+            if (!this.projectData.cacheParameter.completedTask) {
+                if (complete_at) {
+                    return true;
+                }
+            }
+            if (this.flowTask(task)) {
+                return true;
+            }
+            if (searchText) {
+                if (id != searchText && !$A.strExists(`${name} ${desc}`, searchText)) {
+                    return true;
+                }
+            }
+            return false;
+        },
+
+        ownerUser(list) {
+            return list.filter(({owner}) => owner == 1).sort((a, b) => {
+                return a.id - b.id;
+            });
+        },
+
+        inviteGet(refresh) {
+            this.inviteLoad++;
+            this.$store.dispatch("call", {
+                url: 'project/invite',
+                data: {
+                    project_id: this.projectId,
+                    refresh: refresh === true ? 'yes' : 'no'
+                },
+            }).then(({data}) => {
+                this.inviteData = data;
+                this.inviteCopy();
+            }).catch(({msg}) => {
+                $A.modalError(msg);
+            }).finally(_ => {
+                this.inviteLoad--;
+            });
+        },
+
+        getFlowData() {
+            this.flowFilter = emptyProjectFlowFilter();
+            this.flowFilterOpen = false;
+            this.$store.dispatch("call", {
+                url: 'project/flow/list',
+                data: {
+                    project_id: this.projectId
+                },
+            }).then(({data}) => {
+                this.flowList = data;
+            }).catch(() => {
+                this.flowList = [];
+            });
+        },
+
+        flowFilterChange(key, item, checked) {
+            const values = this.flowFilter[key].filter(value => value !== item.value);
+            if (checked) {
+                values.push(item.value);
+            }
+            this.flowFilter = {...this.flowFilter, [key]: values};
+
+            // 判断查看 "已完成流程" 但是没有显示已完成时切换显示已完成
+            if (checked && item.status === 'end' && !this.projectData.cacheParameter.completedTask) {
+                this.toggleParameter('completedTask')
+            }
+
+            this.handleColumnDebounce(true);
+        },
+
+        flowFilterClear(key) {
+            this.flowFilter = key ? {...this.flowFilter, [key]: []} : emptyProjectFlowFilter();
+            this.handleColumnDebounce(true);
+        },
+
+        inviteCopy() {
+            if (!this.inviteData.url) {
+                return;
+            }
+            this.inviteFocus();
+            this.copyText(this.inviteData.url);
+        },
+
+        inviteFocus() {
+            this.$nextTick(_ => {
+                this.$refs.inviteInput.focus({cursor:'all'});
+            });
+        },
+
+        async taskTagBeforeClose() {
+            this.$store.dispatch("getTaskForProject", this.projectId).catch(() => {})
+        },
+
+        workflowBeforeClose() {
+            return new Promise(resolve => {
+                if (!this.$refs.workflow) {
+                    resolve();
+                    return;
+                }
+                if (!this.$refs.workflow.existDiff()) {
+                    resolve()
+                    return
+                }
+                $A.modalConfirm({
+                    content: '设置尚未保存，是否放弃修改？',
+                    cancelText: '取消',
+                    okText: '放弃',
+                    onOk: () => {
+                        resolve()
+                    }
+                });
+            })
+        },
+
+        myFilter(task, chackCompleted = true) {
+            if (!this.projectData.cacheParameter.completedTask && chackCompleted === true) {
+                if (task.complete_at) {
+                    return false;
+                }
+            }
+            if (this.flowTask(task)) {
+                return false;
+            }
+            if (this.searchText) {
+                if (task.id != this.searchText && !$A.strExists(task.name, this.searchText) && !$A.strExists(task.desc, this.searchText)) {
+                    return false;
+                }
+            }
+            return task.owner == 1;
+        },
+
+        helpFilter(task, chackCompleted = true) {
+            if (task.parent_id > 0) {
+                return false;
+            }
+            if (!this.projectData.cacheParameter.completedTask && chackCompleted === true) {
+                if (task.complete_at) {
+                    return false;
+                }
+            }
+            if (this.flowTask(task)) {
+                return false;
+            }
+            if (this.searchText) {
+                if (task.id != this.searchText && !$A.strExists(task.name, this.searchText) && !$A.strExists(task.desc, this.searchText)) {
+                    return false;
+                }
+            }
+            return task.task_user && task.task_user.find(({userid, owner}) => userid == this.userId && owner == 0);
+        },
+
+        flowTask(task) {
+            return !taskMatchesProjectFlowFilter(task, this.flowFilter);
+        },
+
+        expiresFormat(date) {
+            return $A.countDownFormat(this.nowTime, date)
+        },
+
+        setTableGroupVisible(group, visible) {
+            const selected = this.visibleTableGroups;
+            if (!visible && selected.length === 1 && selected.includes(group.key)) return;
+            const tableGroups = visible
+                ? this.tableGroupOptions.filter(item => item.key === group.key || selected.includes(item.key)).map(item => item.key)
+                : selected.filter(key => key !== group.key);
+            this.toggleParameter({
+                project_id: this.projectId,
+                key: visible ? {tableGroups, [group.expandedKey]: true} : {tableGroups},
+            });
+            if (visible) this.scrollToTableGroup(group.key);
+            else this.cancelTableGroupScroll();
+        },
+
+        cancelTableGroupScroll() {
+            this._tableGroupScroll?.cancel?.();
+            this._tableGroupScroll = null;
+        },
+
+        scrollToTableGroup(key) {
+            this.cancelTableGroupScroll();
+            const projectId = this.projectId;
+            const request = {key};
+            this._tableGroupScroll = request;
+            const isActive = () => this._tableGroupScroll === request && this.projectId === projectId && this.tabTypeActive === 'table' && this.visibleTableGroups.includes(key);
+            this.$nextTick(() => {
+                if (!isActive()) return;
+                const scrollbar = this.$refs.projectTableScroll;
+                const container = scrollbar?.scrollElement();
+                const target = container?.querySelector(`[data-table-group="${key}"]`);
+                if (!target) return;
+                request.cancel = scrollToStableTarget({
+                    container, target, inputRoot: scrollbar.$el, isActive,
+                    render: async () => {
+                        await this.handleTaskScroll({target: container});
+                        await this.$nextTick();
+                    },
+                });
+            });
+        },
+
+        tabTypeChange(type) {
+            switch (type) {
+                case "column":
+                    this.toggleParameter({
+                        project_id: this.projectId,
+                        key: 'menuType',
+                        value: 'column'
+                    });
+                    break;
+                case "table":
+                    this.toggleParameter({
+                        project_id: this.projectId,
+                        key: 'menuType',
+                        value: 'table'
+                    });
+                    break;
+                case "gantt":
+                    this.toggleParameter({
+                        project_id: this.projectId,
+                        key: 'menuType',
+                        value: 'gantt'
+                    });
+                    break;
+            }
+        },
+
+        toggleParameter(data) {
+            if (data === 'chat') {
+                this.$store.dispatch('openDialog', this.projectData.dialog_id)
+                return;
+            }
+            if (data === 'completedTask') {
+                this.$store.dispatch("forgetTaskCompleteTemp", true);
+            }
+            this.$store.dispatch('toggleProjectParameter', data);
+            this.handleColumnDebounce();
+        },
+
+        onBack() {
+            const {name, params} = this.$store.state.routeHistoryLast;
+            if (name === this.routeName && /^\d+$/.test(params.projectId)) {
+                this.goForward({name: this.routeName, params: {projectId: 'all'}});
+            } else {
+                this.goBack();
+            }
+        },
+
+        formArchived(value) {
+            this.settingData = { ...this.settingData, archive_method: value };
+        },
+
+        taskItemVisible({id, column_id}) {
+            return this.columnVisibilitys[column_id] && this.taskVisibilitys[id]?.visible
+        },
+
+        taskItemStyle({id, column_id, complete_at, color}) {
+            const style = {}
+            if (color) {
+                style.backgroundColor = color;
+            }
+            if (!this.taskItemVisible({id, column_id})) {
+                style.height = (this.taskVisibilitys[id]?.height || (complete_at ? 46 :146)) + 'px';
+            }
+            return style;
+        },
+
+        handleColumnDebounce(wait = 10, needView = false) {
+            if (typeof wait === "boolean") {
+                needView = wait
+                wait = 10
+            }
+            if (this.columnDebounceWait !== wait) {
+                this.columnDebounceWait = wait;
+                if (this.columnDebounceInvoke) {
+                    this.columnDebounceInvoke.cancel();
+                    this.columnDebounceInvoke = null;
+                }
+            }
+            if (!this.columnDebounceInvoke) {
+                this.columnDebounceInvoke = debounce(needView => {
+                    this.$nextTick(_ => {
+                        switch (this.tabTypeActive) {
+                            case 'column':
+                                this.handleColumnScroll()
+                                if (needView === true) {
+                                    // 滚动到第一个可见任务
+                                    requestAnimationFrame(() => {
+                                        const mainContainer = this.$refs.projectColumn;
+                                        if (mainContainer && !mainContainer.querySelector('.task-head')) {
+                                            $A.scrollIntoViewIfNeeded(mainContainer.querySelector('.task-draggable:not(.hidden)'))
+                                        }
+                                    })
+                                }
+                                break;
+                            case 'table':
+                                this.handleTaskScroll({target: this.$refs.projectTableScroll?.$el})
+                                break;
+                        }
+                    })
+                }, wait);
+            }
+            this.columnDebounceInvoke(needView);
+        },
+
+        handleColumnScroll() {
+            this.columnList.forEach(({id}) => {
+                const ref = this.$refs[`column_${id}`];
+                ref && this.checkColumnVisibility(ref[0])
+            })
+        },
+
+        checkColumnVisibility(columnContainer = null) {
+            if (!columnContainer) {
+                return
+            }
+            const dataId = columnContainer.getAttribute('data-id')
+            if (!dataId) {
+                return
+            }
+            const mainContainer = this.$refs.projectColumn;
+            if (!mainContainer) {
+                return false;
+            }
+
+            // 获取容器的边界信息
+            const mainRect = mainContainer.getBoundingClientRect();
+            const columnRect = columnContainer.getBoundingClientRect();
+
+            // 检查元素是否在容器的可视区域内
+            const visible = (
+                columnRect.left < mainRect.right &&
+                columnRect.right > mainRect.left &&
+                columnRect.top < mainRect.bottom &&
+                columnRect.bottom > mainRect.top
+            )
+            if (visible) {
+                this.handleTaskScroll({target: columnContainer.querySelector('.task-scrollbar')})
+            }
+            this.$set(this.columnVisibilitys, dataId, visible)
+        },
+
+        async handleTaskScroll({target}) {
+            if (!target) {
+                return
+            }
+            const targetItem = target.querySelectorAll('.task-item');
+            if (!targetItem.length) {
+                return
+            }
+            let visibleType = null;
+            switch (this.tabTypeActive) {
+                case 'column':
+                    visibleType = 'taskVisibilitys'
+                    break;
+                case 'table':
+                    visibleType = 'taskRowVisibilitys'
+                    break;
+                default:
+                    return
+            }
+            const targetRect = target.getBoundingClientRect();
+            for (const item of targetItem) {
+                const dataId = item.getAttribute('data-id');
+                if (!dataId) {
+                    continue;
+                }
+                const taskRect = item.getBoundingClientRect();
+                const originalVisible = this[visibleType][dataId]?.visible || false;
+                const currentVisible = (
+                    taskRect.top >= targetRect.top - taskRect.height &&
+                    taskRect.bottom <= targetRect.bottom + taskRect.height
+                );
+                if (currentVisible === originalVisible) {
+                    continue;
+                }
+                const firstVisible = this[visibleType][dataId] === undefined && currentVisible;
+                this.$set(this[visibleType], dataId, {
+                    visible: currentVisible,
+                    height: taskRect.height
+                });
+                if (firstVisible) {
+                    await this.$nextTick();
+                }
+            }
+        },
+
+        /**
+         * 切换项目收藏状态
+         */
+        toggleProjectFavorite() {
+            if (!this.projectData.id) return;
+
+            this.$store.dispatch("toggleFavorite", {
+                type: 'project',
+                id: this.projectData.id
+            }).then(({data}) => {
+                this.$set(this.projectData, 'favorited', data.favorited);
+            });
+        },
+
+        /**
+         * 检查项目收藏状态
+         */
+        checkProjectFavoriteStatus() {
+            if (!this.projectData.id) return;
+
+            this.$store.dispatch("checkFavoriteStatus", {
+                type: 'project',
+                id: this.projectData.id
+            }).then(({data}) => {
+                this.$set(this.projectData, 'favorited', data.favorited || false);
+            }).catch(() => {
+                this.$set(this.projectData, 'favorited', false);
+            });
+        },
+    }
+}
+</script>

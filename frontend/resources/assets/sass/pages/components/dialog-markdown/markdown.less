@@ -1,0 +1,173 @@
+@import "highlight";
+@import "github";
+
+body {
+    &.dark-mode-reverse {
+        .markdown-body {
+            color: #ffffff;
+            .highlight pre,
+            pre {
+                background-color: #282c34;
+            }
+        }
+        .self {
+            .markdown-body {
+                table {
+                    color: #abb2bf;
+                }
+            }
+        }
+    }
+
+    .markdown-body {
+        color: #303133;
+        background-color: transparent;
+        font-size: 14px;
+        overflow: auto;
+
+        p {
+            white-space: pre-wrap;
+        }
+
+        ol {
+            list-style-type: decimal;
+        }
+
+        ul {
+            list-style-type: disc;
+        }
+
+        pre code,
+        pre tt {
+            line-height: 1.65;
+        }
+
+        .highlight pre,
+        pre {
+            background-color: #fff;
+        }
+
+        code.hljs {
+            padding: 0;
+        }
+
+        .code-block {
+            &-wrapper {
+                position: relative;
+                padding-top: 24px;
+            }
+
+            &-header {
+                position: absolute;
+                top: 5px;
+                right: 0;
+                width: 100%;
+                padding: 0 1rem;
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+                color: #b3b3b3;
+
+                &__copy {
+                    cursor: pointer;
+                    margin-left: 0.5rem;
+                    user-select: none;
+
+                    &:hover {
+                        color: #65a665;
+                    }
+                }
+            }
+        }
+
+        .input-blink {
+            width: 10px;
+            height: 20px;
+            position: relative;
+            &:before {
+                position: absolute;
+                content: '';
+                display: inline-block;
+                width: 2px;
+                height: 16px;
+                top: 50%;
+                transform: translateY(-50%);
+                animation: blink-animate 1.2s infinite steps(1, start);
+            }
+        }
+
+        .ai-action-buttons {
+            display: inline-flex;
+            gap: 4px;
+
+            .ai-btn {
+                display: inline-flex;
+                align-items: center;
+                padding: 0 4px;
+                text-decoration: none;
+                cursor: pointer;
+
+                &.ai-btn-apply {
+                    color: #52c41a;
+                }
+
+                &.ai-btn-dismiss {
+                    color: #909399;
+                }
+            }
+        }
+
+        .ai-status {
+            display: inline-block;
+            margin-left: 8px;
+            color: #909399;
+        }
+
+        // AI 回复内联深链 chip：把"系统设置"这类可定位词渲染成可点蓝色胶囊
+        .ai-deeplink-chip {
+            display: inline;
+            padding: 1px 6px;
+            margin: 0 1px;
+            border-radius: 5px;
+            background: rgba(22, 119, 255, 0.08);
+            color: #1677ff;
+            text-decoration: none;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: background 0.2s;
+
+            &:hover {
+                background: rgba(22, 119, 255, 0.16);
+            }
+        }
+    }
+
+    .self {
+        .markdown-body {
+            color: #ffffff;
+            table {
+                color: #383a42;
+            }
+        }
+    }
+
+    .dialog-markdown {
+        table {
+            th, td {
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+        }
+    }
+
+    @keyframes blink-animate {
+        0%,to {
+            background-color: currentColor
+        }
+
+        50% {
+            background-color: transparent
+        }
+    }
+}

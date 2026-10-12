@@ -1,0 +1,14 @@
+{
+  "sampled_at": "2026-10-12T08:13:19.443793+00:00",
+  "source_copy_exclusions": [],
+  "downloaded_submodule_exclusions": [
+    {
+      "path": "resources/mobile/platforms/android/eeuiApp/android.jks",
+      "bytes": 4099,
+      "sha256": "131bbe609bcffb0643fee0e4ab805e5f9422cbecd1940b79e72e22a38a585869",
+      "reason": "Public upstream release-signing private keystore with published password in gradle.properties:18-21; excluded from deployable frontend under no-secrets rule. Original immutable downloaded archive remains acquisition evidence, not served/staged as application assets. Operator must provision their own signing identity for builds."
+    }
+  ],
+  "permitted_static_vendor": "public/docs/vendor contains shipped Swagger UI static assets from the approved baseline, not root PHP vendor dependencies; retained for complete frontend delivery",
+  "source_git_vendor_node_modules_copied": false
+}

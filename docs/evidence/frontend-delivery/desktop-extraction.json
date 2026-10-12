@@ -1,0 +1,71 @@
+{
+  "sampled_at": "2026-10-12T08:09:44.924169+00:00",
+  "method": "zipfile exact member bytes; original complete release archives retain all third-party notices",
+  "records": [
+    {
+      "archive": "DooTask-v1.9.66-mac-arm64.zip",
+      "archive_sha256": "4cc25c1e3c614dfeba67a74919ac416af5fe10c73bc59fafd080f2c4527d5019",
+      "member": "DooTask.app/Contents/Resources/app.asar",
+      "path": "desktop-extracted/mac-arm64/DooTask.app/Contents/Resources/app.asar",
+      "bytes": 322744529,
+      "sha256": "e0d05a07f58168c18845f18f9705e6677064a019abdbbfbf775be223f7477f6b"
+    },
+    {
+      "archive": "DooTask-v1.9.66-mac-arm64.zip",
+      "archive_sha256": "4cc25c1e3c614dfeba67a74919ac416af5fe10c73bc59fafd080f2c4527d5019",
+      "member": "DooTask.app/Contents/Resources/updater/updater",
+      "path": "desktop-extracted/mac-arm64/DooTask.app/Contents/Resources/updater/updater",
+      "bytes": 12611264,
+      "sha256": "911c1fdd540b642891d057df4d34ab4106992cfca6fdd35ddd3c63b9bed5b8bb"
+    },
+    {
+      "archive": "DooTask-v1.9.66-mac-arm64.zip",
+      "archive_sha256": "4cc25c1e3c614dfeba67a74919ac416af5fe10c73bc59fafd080f2c4527d5019",
+      "member": "DooTask.app/Contents/Resources/app-update.yml",
+      "path": "desktop-extracted/mac-arm64/DooTask.app/Contents/Resources/app-update.yml",
+      "bytes": 104,
+      "sha256": "1988c5f1b70b835fc753a11d68d4cbff04288837a00e60e34d0cd0cc61070798"
+    },
+    {
+      "archive": "DooTask-v1.9.66-mac-arm64.zip",
+      "archive_sha256": "4cc25c1e3c614dfeba67a74919ac416af5fe10c73bc59fafd080f2c4527d5019",
+      "member": "DooTask.app/Contents/Info.plist",
+      "path": "desktop-extracted/mac-arm64/DooTask.app/Contents/Info.plist",
+      "bytes": 3718,
+      "sha256": "9724b61841be75abd23705d821b9b1a99b6f59cda8f1d2cd631c9d165bc552af"
+    },
+    {
+      "archive": "DooTask-v1.9.66-mac-x64.zip",
+      "archive_sha256": "7269410e2ade677c431e29abe7cacfd4144d5a53e44fd563c436052b555167ee",
+      "member": "DooTask.app/Contents/Resources/app.asar",
+      "path": "desktop-extracted/mac-x64/DooTask.app/Contents/Resources/app.asar",
+      "bytes": 322744529,
+      "sha256": "e0d05a07f58168c18845f18f9705e6677064a019abdbbfbf775be223f7477f6b"
+    },
+    {
+      "archive": "DooTask-v1.9.66-mac-x64.zip",
+      "archive_sha256": "7269410e2ade677c431e29abe7cacfd4144d5a53e44fd563c436052b555167ee",
+      "member": "DooTask.app/Contents/Resources/updater/updater",
+      "path": "desktop-extracted/mac-x64/DooTask.app/Contents/Resources/updater/updater",
+      "bytes": 13034528,
+      "sha256": "519b3bf03e37de0034a7c308a31484159152035b82129d058158a467793ebd58"
+    },
+    {
+      "archive": "DooTask-v1.9.66-mac-x64.zip",
+      "archive_sha256": "7269410e2ade677c431e29abe7cacfd4144d5a53e44fd563c436052b555167ee",
+      "member": "DooTask.app/Contents/Resources/app-update.yml",
+      "path": "desktop-extracted/mac-x64/DooTask.app/Contents/Resources/app-update.yml",
+      "bytes": 104,
+      "sha256": "1988c5f1b70b835fc753a11d68d4cbff04288837a00e60e34d0cd0cc61070798"
+    },
+    {
+      "archive": "DooTask-v1.9.66-mac-x64.zip",
+      "archive_sha256": "7269410e2ade677c431e29abe7cacfd4144d5a53e44fd563c436052b555167ee",
+      "member": "DooTask.app/Contents/Info.plist",
+      "path": "desktop-extracted/mac-x64/DooTask.app/Contents/Info.plist",
+      "bytes": 3718,
+      "sha256": "9724b61841be75abd23705d821b9b1a99b6f59cda8f1d2cd631c9d165bc552af"
+    }
+  ],
+  "executed": false
+}

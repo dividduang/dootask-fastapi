@@ -1,0 +1,95 @@
+{
+  "status": "IMPLEMENTED_NOT_VERIFIED",
+  "scope": ["backend/host.py", "backend/templates/", "docs/evidence/implementation/host-contract.json"],
+  "source_root_read_only": "D:/rpa/202610/dootask",
+  "frontend_modified": false,
+  "source_modified": false,
+  "git_writes": false,
+  "sources_read": [
+    "docs/2026101202-前端与REA制品审查-feat.md:73-81,104-116",
+    "source:AGENTS.md",
+    "source:CLAUDE.md",
+    "source:app/Http/Controllers/IndexController.php:40-101,104-289,354-522",
+    "source:resources/views/main.blade.php:1-62",
+    "source:resources/views/desktop.blade.php:1-280",
+    "source:resources/views/download.blade.php:1-98",
+    "source:resources/views/report.blade.php:1-25",
+    "source:resources/views/email/unread.blade.php:1-67",
+    "source:resources/views/ie.blade.php:1-91",
+    "source:resources/assets/js/routes.js:1-201",
+    "source:bootstrap/app.php:21-41",
+    "source:app/Module/Base.php:117-120,786-814",
+    "source:app/Helpers/Function.php:3-6",
+    "source:config/app.php:42,83",
+    "frontend/public/manifest.json:resources/assets/js/app.js"
+  ],
+  "exports": {
+    "install_host(app, settings)": "Install after all API/WS/DAV/upload/domain routers. frontend_root is the frontend tree, not public. Registers final GET/HEAD dispatch with an explicit Vue-route whitelist and read-only static root.",
+    "render_template(name, context, request=None)": "Returns HTMLResponse. Accepts main, desktop, download, report, email/unread (or email.unread), ie, and optional .html suffix. Business data is required; StrictUndefined rejects omissions. Supplying request creates/reuses signed CSRF cookie. Without request desktop/download callers must provide csrf_token. For email string use response.body.decode('utf-8').",
+    "verify_csrf(request, secret, token=None)": "Boolean check of explicit form token or X-CSRF-TOKEN against authenticated CSRF cookie; never authentication and never automatically imposed on source-exempt token APIs."
+  },
+  "required_settings_bindings": {
+    "frontend_root": "Path to copied frontend tree; reads public/manifest.json and serves only public assets.",
+    "system_alias": "IndexController.php:77 -> Base::settingFind('system', 'system_alias', 'WebPage'); main.blade.php:12,25 title. Parent supplies actual new-system configuration, not a host constant.",
+    "login_logo": "IndexController.php:78 -> Base::fillUrl(Base::settingFind('system', 'login_logo')); main.blade.php:26 loginLogo. Host expands nonempty relative values using request.base_url, leaves original absolute/root-relative/data:image values intact.",
+    "debug": "main.blade.php:27 -> config('app.debug'), config/app.php:42 -> APP_DEBUG; emitted as literal string yes/no. Host does not turn debug on to bypass encryption.",
+    "version": "IndexController.php:79 -> Base::getVersion(), Base.php:117-120 -> package version. Parent supplies actual application/version metadata.",
+    "locale": "main.blade.php:2 -> app()->getLocale(); config/app.php:83 default en. Parent supplies configured locale.",
+    "csrf_secret": "Required new-environment CSRF_SECRET, at least 32 characters, no embedded/default secret. This is a new signed-cookie session mechanism, not compatibility with old Laravel cookies."
+  },
+  "main_template_contract": {
+    "entry": "manifest['resources/assets/js/app.js']['file'] and ['css'][0]; startup requires both to be valid contained existing files",
+    "script": "js/build/app.d80882e4.js",
+    "stylesheet": "js/build/app.5b5f242d.css",
+    "preserved": ["HTML metadata and locale", "CSRF meta and window.csrfToken.csrfToken", "title/loginLogo/debug/version", "origin=window.location.origin + '/'", "homeUrl=null", "apiUrl=null", "protocol-relative asset URLs", "loading-theme.js", "iview.css/loading.css", "legacy IE6-8 fragment", "#app data-preload=init", "seven loading spans", "6000ms preload reload logic", "module script entry"],
+    "escaping": "Jinja autoescape for HTML attributes/text; tojson for all dynamic script literals, including download postMessage URL; URL filter rejects executable schemes and control characters."
+  },
+  "csrf_contract": {
+    "cookie": "dootask_csrf",
+    "format": "<64-lowercase-hex random nonce>.<64-lowercase-hex HMAC-SHA256(UTF8(secret), ASCII(nonce))>",
+    "entropy": "secrets.token_hex(32)",
+    "attributes": ["HttpOnly", "SameSite=Lax", "Path=/", "session lifetime", "Secure when request scheme is HTTPS"],
+    "injected_token": "nonce only, identical in meta and window.csrfToken",
+    "validation": "Strict hex/length and constant-time signature/token comparison; invalid cookie is replaced during rendering; HTML no-store.",
+    "source_exemptions": "bootstrap/app.php:33-41 exempts api/*, dav, dav/*, desktop/publish/. Parent API authenticates explicit token header/input rather than cookies."
+  },
+  "routing": {
+    "vue": "All concrete routes.js parent/child routes and optional parameter arities, including project/invite, file, meeting/sharekey, single file/task/dialog/apps/email/report and all setting children; trailing slash and case-insensitive matching. Source /main alias retained.",
+    "special_implemented": {"/version": "301 to request-origin /api/system/version", "/health": "text/plain ok", "/api": "301 to request-origin /docs/index.html", "/default": "empty HTML response"},
+    "special_not_registered": ["/avatar", "/desktop/publish/*", "/online/preview", "/drawio/iconsearch", "/crontab"],
+    "special_reason": "Requires real avatar rasterizer/cache, desktop upload/release storage and publish auth, attachment/preview service, external icon service, or scheduled jobs; no fake data, service or SPA fallback. Real future domain routers may register before host.",
+    "static_roots": ["assets", "audio", "css", "docs", "images", "js", "language", "tools"],
+    "static_files": ["favicon.ico", "privacy.html", "robots.txt"],
+    "static_behavior": "Starlette StaticFiles html=False and follow_symlink=False provides canonical containment, FileResponse MIME, conditional GET and ranges. Missing files/directories return 404, never HTML200. Source/config/PHP/private extensions, hidden components, traversal, Windows ADS/backslashes and residual percent escapes rejected; manifest/hot/source trees are not public URLs. Uploads/API/WS/DAV are not static-host mounts.",
+    "intentional_safety_differences": ["No arbitrary IndexController method dispatch or catch-all SPA success", "Only GET/HEAD document/static handling", "No public/hot dev-server execution", "Raw report/email strings autoescaped unless explicitly Markup", "No old Laravel session/token reuse"]
+  },
+  "secondary_templates": {
+    "structure": "Original source HTML/CSS/JS preserved while replacing PHP/Blade directives with Jinja. No PHP execution.",
+    "desktop": ["system_alias", "version", "files[{url,name,size,time}]", "is_draft", "latest_version", "other_version[{url,version}]"],
+    "download": ["name", "system_alias", "url", "button", "size"],
+    "report": ["labels", "datas"],
+    "email/unread": {"head": ["type=head", "title", "desc"], "body": ["type", "dialogName", "title", "items[{userInfo,preview,created_at}]", "dialogUrl", "button if dialogUrl"]},
+    "trusted_html": "Report cell and email preview HTML is rendered verbatim only when a real business producer explicitly supplies markupsafe.Markup for generated/sanitized content; ordinary user strings remain escaped. Nullable userInfo keeps source null-safe avatar/nickname behavior."
+  },
+  "checks": {
+    "tests": "NOT_RUN",
+    "build": "NOT_RUN",
+    "lint": "NOT_RUN",
+    "format": "NOT_RUN",
+    "smoke": "NOT_RUN",
+    "runtime_browser": "NOT_RUN",
+    "frontend_byte_parity": "NOT_RUN"
+  },
+  "future_checks": [
+    "python -m unittest backend.templates.tests_host (new stdlib unittest checks, requires real copied frontend/public and project dependencies)",
+    "Whole-app route ordering and API/WS/DAV/upload isolation, real production configuration and trusted proxy scheme/host settings",
+    "G1 actual browser cold load, history deep links and localhost hash mode, lazy JS/CSS assets and 404 MIME behavior",
+    "Domain-supplied real secondary template data, trusted report/email formatting and special-page implementation before claiming those workflows"
+  ],
+  "known_limits": [
+    "No runtime parity asserted; unchanged production public/source build identity remains G1 unknown.",
+    "No fake service data, old database/account reuse, SQLite, PHP proxy or stub endpoints.",
+    "Parent must add Jinja2 and required csrf_secret configuration; frontend branding/version fields must be bound to real new-system configuration.",
+    "Root-origin deployment contract is retained; arbitrary URL subpath deployment has not been implemented or claimed."
+  ]
+}

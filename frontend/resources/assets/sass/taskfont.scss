@@ -1,0 +1,14 @@
+@font-face {
+    font-family: 'taskfont';  /* Project id 2583385 */
+    src: url('../css/fonts/taskfont/iconfont.woff2') format('woff2'),
+    url('../css/fonts/taskfont/iconfont.woff') format('woff'),
+    url('../css/fonts/taskfont/iconfont.ttf') format('truetype');
+}
+
+.taskfont {
+    font-family: "taskfont", "serif" !important;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}

@@ -1,0 +1,318 @@
+Python Release Python 3.14.8 | Python.org
+Notice: This page displays a fallback because interactive scripts did not run. Possible causes include disabled JavaScript or failure to load scripts or stylesheets.
+Skip to content
+▼ Close
+Python
+PSF
+Docs
+PyPI
+Jobs
+Community
+▲ The Python Network
+Donate
+≡ Menu
+Search This Site
+GO
+A A
+Smaller
+Larger
+Reset
+Socialize
+LinkedIn
+Mastodon
+Chat on IRC
+Twitter
+About
+Applications
+Quotes
+Getting Started
+Help
+Downloads
+All releases
+Source code
+Windows
+macOS
+Android
+iOS
+Other Platforms
+License
+Alternative Implementations
+Documentation
+Docs
+Audio/Visual Talks
+Beginner's Guide
+FAQ
+Non-English Docs
+PEP Index
+Python Books
+Python Essays
+Community
+Diversity
+Mailing Lists
+IRC
+Forums
+PSF Annual Impact Report
+Python Conferences
+Special Interest Groups
+Python Logo
+Python Wiki
+Code of Conduct
+Community Awards
+Get Involved
+Shared Stories
+Success Stories
+Arts
+Business
+Education
+Engineering
+Government
+Scientific
+Software Development
+News
+Python News
+PSF Newsletter
+PSF News
+PyCon US News
+Python Insider
+News from the Community
+Events
+Python Events
+User Group Events
+Python Events Archive
+User Group Events Archive
+Submit an Event
+Python 3.14.8
+Release date: Sept. 30, 2026
+This is the eighth maintenance release of Python 3.14
+Python 3.14.8 is an expedited security release and the eighth maintenance release of 3.14, containing around 354 bugfixes, build improvements and documentation changes from 142 contributors since 3.14.7.
+Security content in this release
+CVE-2026-19445 gh-156293 Use-after-free of a server-side SSLContext when sni_callback switches contexts
+CVE-2026-19553 gh-156793 SSLContext.wrap_bio() missing validation of server_hostname parameter
+CVE-2026-15310 gh-156002 Memory exhaustion in zipfile in bzip2/LZMA/Zstandard decompression
+CVE-2026-19672 gh-155999 tarfile extraction filter bypass allows creation of directories outside the destination
+CVE-2026-15806 gh-155694 urllib.request.HTTPPasswordMgr credentials for one URL scheme sent over another scheme
+CVE-2026-17084 gh-155292 StringPrep algorithm considered Unicode codepoint attributes outside Unicode 3.2.0
+gh-158446 Reject float format precision near INT_MAX
+gh-157953 Update bundled Expat to 2.8.5
+gh-158010 Update bundled OpenSSL to 3.5.9 for Windows, macOS, Android and iOS
+Python 3.14 is not affected by CVE-2026-82049 (gh-157190, tarfile hard link to symlink), which is fixed in the 3.10–3.13 releases: since Python 3.14.0b1, os.link() follows symbolic links (gh-81793), which already prevented it.
+Attention macOS 27.0 IDLE or tkinter users
+When running IDLE or other GUI applications that use the tkinter module, these applications may hang when using an application's menu command that opens a dialog (for example, IDLE's About IDLE, Settings, and Open Module commands) resulting in a spinning beach ball with Force Quit needed.
+This problem is due to an operating system behavior change in macOS 27.0 that is believed to affect all current versions of the Tk graphics toolkit and thus the tkinter module in all current Python versions.
+If you depend on Tk-based applications (like IDLE) on macOS, you may want to consider deferring installing macOS 27.0 until a Tk or macOS workaround is available or testing that your application workflow is not affected. Follow issue #158053 for updates.
+Major new features of the 3.14 series, compared to 3.13
+Some of the major new features and changes in Python 3.14 are:
+New features
+PEP 779:  Free-threaded Python is officially supported
+PEP 649: The evaluation of annotations is now deferred, improving the semantics of using annotations.
+PEP 750: Template string literals (t-strings) for custom string processing, using the familiar syntax of f-strings.
+PEP 734: Multiple interpreters in the stdlib.
+PEP 784: A new module compression.zstd providing support for the Zstandard compression algorithm.
+PEP 758: except and except* expressions may now omit the brackets.
+Syntax highlighting in PyREPL, and support for color in unittest, argparse, json and calendar CLIs.
+PEP 768: A zero-overhead external debugger interface for CPython.
+UUID versions 6-8 are now supported by the uuid module, and generation of versions 3-5 are up to 40% faster.
+PEP 765: Disallow return/break/continue that exit a finally block.
+PEP 741: An improved C API for configuring Python.
+A new type of interpreter. For certain newer compilers, this interpreter provides significantly better performance. Opt-in for now, requires building from source.
+Improved error messages.
+Builtin implementation of HMAC with formally verified code from the HACL* project.
+A new command-line interface to inspect running Python processes using asynchronous tasks.
+The pdb module now supports remote attaching to a running Python process.
+For more details on the changes to Python 3.14, see What’s new in Python 3.14.
+Build changes
+PEP 761: Python 3.14 and onwards no longer provides PGP signatures for release artifacts. Instead, Sigstore is recommended for verifiers.
+Official macOS and Windows release binaries include an experimental JIT compiler.
+Official Android binary releases are now available.
+Incompatible changes, removals and new deprecations
+Incompatible changes
+Python removals and deprecations
+C API removals and deprecations
+Overview of all pending deprecations
+Python install manager
+The installer we offer for Windows is being replaced by our new install manager, which can be installed from the Windows Store or from its download page. See our documentation for more information. The JSON file available for download contains the list of all the installable packages available as part of this release, including file URLs and hashes, but is not required to install the latest release. The traditional installer will remain available throughout the 3.14 and 3.15 releases.
+More resources
+Online documentation
+PEP 745, 3.14 Release Schedule
+Report bugs at github.com/python/cpython/issues
+Help fund Python directly (or via GitHub Sponsors) and support the Python community
+Stay safe and upgrade!
+As always, upgrading is highly recommended to all users of affected versions.
+Enjoy the new releases
+Thanks to all of the many volunteers who help make Python development and these
+releases possible! Please consider supporting our efforts by volunteering yourself
+or through organisation contributions to the Python Software Foundation.
+Full Changelog
+Files
+macOS
+Download macOS installer
+Windows
+Download Python install manager
+Source release
+Download XZ compressed source tarball
+Version |
+Operating system |
+Description |
+File size |
+Sigstore |
+SBOM |
+SHA-256 checksum |
+Gzipped source tarball |
+Source release |
+|
+30.1 MB |
+.sigstore |
+SPDX |
+a65b20a728f169f4e66ae143f40b1bd3d33c38d770251663f627c9767b79b210 |
+XZ compressed source tarball |
+Source release |
+|
+23.0 MB |
+.sigstore |
+SPDX |
+c2215904f02b175596dc49351585104f4bc20341e1c47378b26a2c274360ce73 |
+Android embeddable package (aarch64) |
+Android |
+|
+21.9 MB |
+.sigstore |
+|
+11324313957da3736f44e90257304d288864321a4dd376ed0cc35a54eacf9a33 |
+Android embeddable package (x86_64) |
+Android |
+|
+22.2 MB |
+.sigstore |
+|
+58eb3b2d76ef57e076985a0a6b093cf08906d65ea4ab78cccc6d894d4250c972 |
+macOS installer |
+macOS |
+for macOS 10.15 and later |
+71.8 MB |
+.sigstore |
+|
+507fc086c5c006ff875d344a75b4e67b8fb3c401f1bc4908c6250adb673d4907 |
+Windows installer (64-bit) |
+Windows |
+Recommended |
+31.8 MB |
+.sigstore |
+SPDX |
+759be887b96e736a3ca886daf8d575f18fcae1a09efab6902f42d59e8999f8ef |
+Windows installer (32-bit) |
+Windows |
+|
+30.4 MB |
+.sigstore |
+SPDX |
+963def30c7ebc6381a1ee9056d251ddc4520b18391da2cf0602cfb58f5b80568 |
+Windows installer (ARM64) |
+Windows |
+Experimental |
+31.1 MB |
+.sigstore |
+SPDX |
+53ba74b5b4370eb823fe0005eedeab907479f7339cecb11efea0e75ab5f10cfc |
+Windows embeddable package (64-bit) |
+Windows |
+|
+12.0 MB |
+.sigstore |
+SPDX |
+a93abe456ab01bd96d7a085b3cdb6566b3063f4241360d114142fbdb07f0a310 |
+Windows embeddable package (32-bit) |
+Windows |
+|
+10.6 MB |
+.sigstore |
+SPDX |
+ff153f0044abf190d6483c02d5ade7d9666d6220fc0e2828a5e90e99be047c4c |
+Windows embeddable package (ARM64) |
+Windows |
+|
+11.4 MB |
+.sigstore |
+SPDX |
+155be84ccb57c6331cf0e39001c78a1dfac3be62f403f3ff5f2e29b80dda7ebe |
+Windows release manifest |
+Windows |
+Install with 'py install 3.14' |
+15.1 KB |
+.sigstore |
+|
+2872929c05697db23bd9d79d2c15df1031b82d853f530d69f1e7f89570419314 |
+▲ Back to Top
+About
+Applications
+Quotes
+Getting Started
+Help
+Downloads
+All releases
+Source code
+Windows
+macOS
+Android
+iOS
+Other Platforms
+License
+Alternative Implementations
+Documentation
+Docs
+Audio/Visual Talks
+Beginner's Guide
+FAQ
+Non-English Docs
+PEP Index
+Python Books
+Python Essays
+Community
+Diversity
+Mailing Lists
+IRC
+Forums
+PSF Annual Impact Report
+Python Conferences
+Special Interest Groups
+Python Logo
+Python Wiki
+Code of Conduct
+Community Awards
+Get Involved
+Shared Stories
+Success Stories
+Arts
+Business
+Education
+Engineering
+Government
+Scientific
+Software Development
+News
+Python News
+PSF Newsletter
+PSF News
+PyCon US News
+Python Insider
+News from the Community
+Events
+Python Events
+User Group Events
+Python Events Archive
+User Group Events Archive
+Submit an Event
+Contributing
+Developer's Guide
+Issue Tracker
+python-dev list
+Core Mentorship
+Report a Security Issue
+▲ Back to Top
+Help & General Contact
+Diversity Initiatives
+Submit Website Bug
+Status
+Copyright ©2001-2026.
+Python Software Foundation
+Legal Statements
+Privacy Notice

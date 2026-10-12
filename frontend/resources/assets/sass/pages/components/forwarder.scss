@@ -1,0 +1,188 @@
+.forwarder-message-modal {
+    .ivu-modal {
+        margin: 10px auto;
+
+        .ivu-modal-body {
+            .user-modal-search {
+                padding-bottom: 16px;
+
+                .search-selected {
+                    max-width: 100%;
+                }
+
+                .user-modal-avatar {
+                    display: flex;
+                    align-items: center;
+                    gap: 5px;
+
+                    .avatar-name {
+                        max-width: 90%;
+                    }
+                }
+            }
+
+            .twice-affirm-body-extend {
+                margin: 0 24px;
+
+                .forwarder-wrapper-body {
+                    .dialog-wrapper {
+                        position: relative;
+                        z-index: 1;
+
+                        &.inde-list {
+                            border-radius: 0;
+                        }
+
+                        .dialog-scroller {
+                            position: relative;
+                            padding: 0;
+
+                            .dialog-item {
+                                .dialog-view {
+                                    width: 100%;
+                                    max-width: 100%;
+                                    margin: 0;
+
+                                    &.record {
+                                        width: auto;
+                                    }
+
+                                    .dialog-head {
+                                        width: 100%;
+                                        border-radius: 8px;
+
+                                        .dialog-content {
+                                            .content-file.file {
+                                                width: 100%;
+
+                                                .file-box {
+                                                    width: 100%;
+                                                }
+                                            }
+                                        }
+
+                                        .dialog-emoji {
+                                            display: none;
+                                        }
+                                    }
+
+                                    .dialog-foot {
+                                        display: none;
+                                    }
+                                }
+
+                                .dialog-avatar {
+                                    display: none;
+                                }
+
+                            }
+
+                            .reply-item {
+                                border-bottom: 0;
+                                margin-bottom: 0;
+                            }
+                        }
+                    }
+
+                    .forward-mode-select {
+                        padding-bottom: 12px;
+
+                        .ivu-radio-group {
+                            display: flex;
+                            flex-wrap: wrap;
+                            gap: 4px;
+                        }
+                    }
+
+                    .merge-forward-preview {
+                        background: #f7f7f7;
+                        border-radius: 8px;
+                        padding: 12px;
+                        margin-bottom: 8px;
+
+                        .merge-preview-title {
+                            font-size: 13px;
+                            font-weight: 500;
+                            color: #333;
+                            margin-bottom: 8px;
+                        }
+
+                        .merge-preview-item {
+                            display: flex;
+                            align-items: center;
+                            gap: 4px;
+                            font-size: 12px;
+                            color: #666;
+                            line-height: 22px;
+                            overflow: hidden;
+                            white-space: nowrap;
+                            text-overflow: ellipsis;
+
+                            .preview-desc {
+                                overflow: hidden;
+                                text-overflow: ellipsis;
+                                white-space: nowrap;
+                            }
+                        }
+
+                        .merge-preview-count {
+                            font-size: 12px;
+                            color: #999;
+                            margin-top: 8px;
+                            padding-top: 8px;
+                            border-top: 1px solid #e8e8e8;
+                        }
+                    }
+
+                    .leave-message {
+                        position: relative;
+                        z-index: 2;
+                        padding-bottom: 16px;
+
+                        textarea {
+                            background: #f7f7f7;
+                        }
+                    }
+
+                    .radio-group {
+                        z-index: 2;
+                        display: flex;
+                        flex-direction: column;
+
+                        > li {
+                            display: flex;
+                            align-items: center;
+                            line-height: 22px;
+                            margin-bottom: 8px;
+
+                            .radio-icon {
+                                flex-shrink: 0;
+                                font-size: 22px;
+                                color: rgba($primary-desc-color, 0.7);
+                                cursor: pointer;
+                            }
+
+                            .radio-label {
+                                padding-left: 6px;
+                                overflow: hidden;
+                                text-overflow: ellipsis;
+                                white-space: nowrap;
+                                cursor: pointer;
+                            }
+
+                            &.selected {
+                                .radio-icon {
+                                    color: $primary-color;
+                                }
+                            }
+
+                            &:last-child {
+                                margin-bottom: 16px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

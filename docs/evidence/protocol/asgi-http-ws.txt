@@ -1,0 +1,617 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="readthedocs-addons-api-version" content="1"><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HTTP &amp; WebSocket ASGI Message Format &mdash; ASGI 3.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=110ea713"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/js/theme.js"></script>
+    <script src="../_static/js/versions.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Lifespan Protocol" href="lifespan.html" />
+    <link rel="prev" title="ASGI (Asynchronous Server Gateway Interface) Specification" href="main.html" /> 
+<script async type="text/javascript" src="/_/static/javascript/readthedocs-addons.js"></script><meta name="readthedocs-project-slug" content="asgi" /><meta name="readthedocs-version-slug" content="stable" /><meta name="readthedocs-resolver-filename" content="/specs/www.html" /><meta name="readthedocs-http-status" content="200" /></head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            ASGI
+          </a>
+              <div class="switch-menus">
+                <div class="version-switch"></div>
+                <div class="language-switch"></div>
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Specifications</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="main.html">ASGI Specification</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">HTTP and WebSocket protocol</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#spec-versions">Spec Versions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#http">HTTP</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#http-connection-scope">HTTP Connection Scope</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#request-receive-event">Request - <code class="docutils literal notranslate"><span class="pre">receive</span></code> event</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#response-start-send-event">Response Start - <code class="docutils literal notranslate"><span class="pre">send</span></code> event</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#response-body-send-event">Response Body - <code class="docutils literal notranslate"><span class="pre">send</span></code> event</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#disconnected-client-send-exception">Disconnected Client - <code class="docutils literal notranslate"><span class="pre">send</span></code> exception</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#disconnect-receive-event">Disconnect - <code class="docutils literal notranslate"><span class="pre">receive</span></code> event</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#websocket">WebSocket</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#websocket-connection-scope">Websocket Connection Scope</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#connect-receive-event">Connect - <code class="docutils literal notranslate"><span class="pre">receive</span></code> event</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#accept-send-event">Accept - <code class="docutils literal notranslate"><span class="pre">send</span></code> event</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#receive-receive-event">Receive - <code class="docutils literal notranslate"><span class="pre">receive</span></code> event</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#send-send-event">Send - <code class="docutils literal notranslate"><span class="pre">send</span></code> event</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#disconnect-receive-event-ws">Disconnect - <code class="docutils literal notranslate"><span class="pre">receive</span></code> event</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id2">Disconnected Client - <code class="docutils literal notranslate"><span class="pre">send</span></code> exception</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#close-send-event">Close - <code class="docutils literal notranslate"><span class="pre">send</span></code> event</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#wsgi-compatibility">WSGI Compatibility</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#wsgi-encoding-differences">WSGI encoding differences</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#version-history">Version History</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#copyright">Copyright</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="lifespan.html">Lifespan</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tls.html">TLS Extension</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../extensions.html">Extensions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementations.html">Implementations</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">ASGI</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Specifications</a></li>
+      <li class="breadcrumb-item active">HTTP &amp; WebSocket ASGI Message Format</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/specs/www.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="http-websocket-asgi-message-format">
+<h1>HTTP &amp; WebSocket ASGI Message Format<a class="headerlink" href="#http-websocket-asgi-message-format" title="Link to this heading"></a></h1>
+<p><strong>Version</strong>: 2.5 (2024-06-05)</p>
+<p>The HTTP+WebSocket ASGI sub-specification outlines how to transport HTTP/1.1,
+HTTP/2 and WebSocket connections within ASGI.</p>
+<p>It is deliberately intended and designed to be a superset of the WSGI format
+and specifies how to translate between the two for the set of requests that
+are able to be handled by WSGI.</p>
+<section id="spec-versions">
+<h2>Spec Versions<a class="headerlink" href="#spec-versions" title="Link to this heading"></a></h2>
+<p>This spec has had the following versions:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">2.0</span></code>: The first version of the spec, released with ASGI 2.0</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">2.1</span></code>: Added the <code class="docutils literal notranslate"><span class="pre">headers</span></code> key to the WebSocket Accept response</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">2.2</span></code>: Allow <code class="docutils literal notranslate"><span class="pre">None</span></code> in the second item of <code class="docutils literal notranslate"><span class="pre">server</span></code> scope value.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">2.3</span></code>: Added the <code class="docutils literal notranslate"><span class="pre">reason</span></code> key to the WebSocket close event.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">2.4</span></code>: Calling <code class="docutils literal notranslate"><span class="pre">send()</span></code> on a closed connection should raise an error</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">2.5</span></code>: Added the <code class="docutils literal notranslate"><span class="pre">reason</span></code> key to the WebSocket disconnect event.</p></li>
+</ul>
+<p>Spec versions let you understand what the server you are using understands. If
+a server tells you it only supports version <code class="docutils literal notranslate"><span class="pre">2.0</span></code> of this spec, then
+sending <code class="docutils literal notranslate"><span class="pre">headers</span></code> with a WebSocket Accept message is an error, for example.</p>
+<p>They are separate from the HTTP version or the ASGI version.</p>
+</section>
+<section id="http">
+<h2>HTTP<a class="headerlink" href="#http" title="Link to this heading"></a></h2>
+<p>The HTTP format covers HTTP/1.0, HTTP/1.1 and HTTP/2, as the changes in
+HTTP/2 are largely on the transport level. A protocol server should give
+different scopes to different requests on the same HTTP/2 connection, and
+correctly multiplex the responses back to the same stream in which they came.
+The HTTP version is available as a string in the scope.</p>
+<p>Multiple header fields with the same name are complex in HTTP. RFC 7230
+states that for any header field that can appear multiple times, it is exactly
+equivalent to sending that header field only once with all the values joined by
+commas.</p>
+<p>However, for HTTP cookies (<code class="docutils literal notranslate"><span class="pre">Cookie</span></code> and <code class="docutils literal notranslate"><span class="pre">Set-Cookie</span></code>) the allowed behaviour
+does not follow the above rule, and also varies slightly based on the HTTP
+protocol version:</p>
+<ul class="simple">
+<li><p>For the <code class="docutils literal notranslate"><span class="pre">Set-Cookie</span></code> header in HTTP/1.0, HTTP/1.1 and HTTP2.0, it may appear
+repeatedly, but cannot be concatenated by commas (or anything else) into a
+single header field.</p></li>
+<li><p>For the <code class="docutils literal notranslate"><span class="pre">Cookie</span></code> header, in HTTP/1.0 and HTTP/1.1, RFC 7230 and RFC 6265
+make it clear that the <code class="docutils literal notranslate"><span class="pre">Cookie</span></code> header must only be sent once by a
+user-agent, and must be concatenated into a single octet string using the
+two-octet delimiter of 0x3b, 0x20 (the ASCII string “; “). However in HTTP/2,
+RFC 9113 states that <code class="docutils literal notranslate"><span class="pre">Cookie</span></code> headers MAY appear repeatedly, OR be
+concatenated using the two-octet delimiter of 0x3b, 0x20
+(the ASCII string “; “).</p></li>
+</ul>
+<p>The ASGI design decision is to transport both request and response headers as
+lists of 2-element <code class="docutils literal notranslate"><span class="pre">[name,</span> <span class="pre">value]</span></code> lists and preserve headers exactly as they
+were provided.</p>
+<p>For ASGI applications that support HTTP/2, care should be taken to handle the
+special case for <code class="docutils literal notranslate"><span class="pre">Cookie</span></code> noted above.</p>
+<p>The HTTP protocol should be signified to ASGI applications with a <code class="docutils literal notranslate"><span class="pre">type</span></code>
+value of <code class="docutils literal notranslate"><span class="pre">http</span></code>.</p>
+<section id="http-connection-scope">
+<h3>HTTP Connection Scope<a class="headerlink" href="#http-connection-scope" title="Link to this heading"></a></h3>
+<p>HTTP connections have a single-request <em>connection scope</em> - that is, your
+application will be called at the start of the request, and will last until
+the end of that specific request, even if the underlying socket is still open
+and serving multiple requests.</p>
+<p>If you hold a response open for long-polling or similar, the <em>connection scope</em>
+will persist until the response closes from either the client or server side.</p>
+<p>The <em>connection scope</em> information passed in <code class="docutils literal notranslate"><span class="pre">scope</span></code> contains:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">type</span></code> (<em>Unicode string</em>) – <code class="docutils literal notranslate"><span class="pre">&quot;http&quot;</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">asgi[&quot;version&quot;]</span></code> (<em>Unicode string</em>) – Version of the ASGI spec.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">asgi[&quot;spec_version&quot;]</span></code> (<em>Unicode string</em>) – Version of the ASGI
+HTTP spec this server understands; for example: <code class="docutils literal notranslate"><span class="pre">&quot;2.0&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;2.1&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;2.2&quot;</span></code>,
+etc. Optional; if missing assume <code class="docutils literal notranslate"><span class="pre">&quot;2.0&quot;</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">http_version</span></code> (<em>Unicode string</em>) – One of <code class="docutils literal notranslate"><span class="pre">&quot;1.0&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;1.1&quot;</span></code> or <code class="docutils literal notranslate"><span class="pre">&quot;2&quot;</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">method</span></code> (<em>Unicode string</em>) – The HTTP method name, uppercased.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">scheme</span></code> (<em>Unicode string</em>) – URL scheme portion (likely <code class="docutils literal notranslate"><span class="pre">&quot;http&quot;</span></code> or
+<code class="docutils literal notranslate"><span class="pre">&quot;https&quot;</span></code>). Optional (but must not be empty); default is <code class="docutils literal notranslate"><span class="pre">&quot;http&quot;</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">path</span></code> (<em>Unicode string</em>) – HTTP request target excluding any query
+string, with percent-encoded sequences and UTF-8 byte sequences
+decoded into characters.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">raw_path</span></code> (<em>byte string</em>) – The original HTTP path component,
+excluding any query string, unmodified from the bytes that were
+received by the web server. Some web server implementations may
+be unable to provide this. Optional; if missing defaults to <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">query_string</span></code> (<em>byte string</em>) – URL portion after the <code class="docutils literal notranslate"><span class="pre">?</span></code>,
+percent-encoded.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">root_path</span></code> (<em>Unicode string</em>) – The root path this application
+is mounted at; same as <code class="docutils literal notranslate"><span class="pre">SCRIPT_NAME</span></code> in WSGI. Optional; if missing
+defaults to <code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">headers</span></code> (<em>Iterable[[byte string, byte string]]</em>) – An iterable of
+<code class="docutils literal notranslate"><span class="pre">[name,</span> <span class="pre">value]</span></code> two-item iterables, where <code class="docutils literal notranslate"><span class="pre">name</span></code> is the header name, and
+<code class="docutils literal notranslate"><span class="pre">value</span></code> is the header value. Order of header values must be preserved from
+the original HTTP request; order of header names is not important. Duplicates
+are possible and must be preserved in the message as received. Header names
+should be lowercased, but it is not required; servers should preserve header case
+on a best-effort basis. Pseudo headers (present in HTTP/2 and HTTP/3) must be
+removed; if <code class="docutils literal notranslate"><span class="pre">:authority</span></code> is present its value must be added to the start of
+the iterable with <code class="docutils literal notranslate"><span class="pre">host</span></code> as the header name or replace any existing host
+header already present.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">client</span></code> (<em>Iterable[Unicode string, int]</em>) – A two-item iterable
+of <code class="docutils literal notranslate"><span class="pre">[host,</span> <span class="pre">port]</span></code>, where <code class="docutils literal notranslate"><span class="pre">host</span></code> is the remote host’s IPv4 or
+IPv6 address, and <code class="docutils literal notranslate"><span class="pre">port</span></code> is the remote port as an
+integer. Optional; if missing defaults to <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">server</span></code> (<em>Iterable[Unicode string, Optional[int]]</em>) – Either a
+two-item iterable of <code class="docutils literal notranslate"><span class="pre">[host,</span> <span class="pre">port]</span></code>, where <code class="docutils literal notranslate"><span class="pre">host</span></code> is the
+listening address for this server, and <code class="docutils literal notranslate"><span class="pre">port</span></code> is the integer
+listening port, or <code class="docutils literal notranslate"><span class="pre">[path,</span> <span class="pre">None]</span></code> where <code class="docutils literal notranslate"><span class="pre">path</span></code> is that of the
+unix socket. Optional; if missing defaults to <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">state</span></code> Optional(<em>dict[Unicode string, Any]</em>) – A copy of the
+namespace passed into the lifespan corresponding to this request. (See <a class="reference internal" href="lifespan.html"><span class="doc">Lifespan Protocol</span></a>).
+Optional; if missing the server does not support this feature.</p></li>
+</ul>
+<p>Servers are responsible for handling inbound and outbound chunked transfer
+encodings. A request with a <code class="docutils literal notranslate"><span class="pre">chunked</span></code> encoded body should be automatically
+de-chunked by the server and presented to the application as plain body bytes;
+a response that is given to the server with no <code class="docutils literal notranslate"><span class="pre">Content-Length</span></code> may be chunked
+as the server sees fit.</p>
+</section>
+<section id="request-receive-event">
+<h3>Request - <code class="docutils literal notranslate"><span class="pre">receive</span></code> event<a class="headerlink" href="#request-receive-event" title="Link to this heading"></a></h3>
+<p>Sent to the application to indicate an incoming request. Most of the request
+information is in the connection <code class="docutils literal notranslate"><span class="pre">scope</span></code>; the body message serves as a way to
+stream large incoming HTTP bodies in chunks, and as a trigger to actually run
+request code (as you should not trigger on a connection opening alone).</p>
+<p>Note that if the request is being sent using <code class="docutils literal notranslate"><span class="pre">Transfer-Encoding:</span> <span class="pre">chunked</span></code>,
+the server is responsible for handling this encoding. The <code class="docutils literal notranslate"><span class="pre">http.request</span></code>
+messages should contain just the decoded contents of each chunk.</p>
+<p>Keys:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">type</span></code> (<em>Unicode string</em>) – <code class="docutils literal notranslate"><span class="pre">&quot;http.request&quot;</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">body</span></code> (<em>byte string</em>) – Body of the request. Optional; if
+missing defaults to <code class="docutils literal notranslate"><span class="pre">b&quot;&quot;</span></code>. If <code class="docutils literal notranslate"><span class="pre">more_body</span></code> is set, treat as start
+of body and concatenate on further chunks.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">more_body</span></code> (<em>bool</em>) – Signifies if there is additional content
+to come (as part of a Request message). If <code class="docutils literal notranslate"><span class="pre">True</span></code>, the consuming
+application should wait until it gets a chunk with this set to
+<code class="docutils literal notranslate"><span class="pre">False</span></code>. If <code class="docutils literal notranslate"><span class="pre">False</span></code>, the request is complete and should be
+processed. Optional; if missing defaults to <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p></li>
+</ul>
+</section>
+<section id="response-start-send-event">
+<h3>Response Start - <code class="docutils literal notranslate"><span class="pre">send</span></code> event<a class="headerlink" href="#response-start-send-event" title="Link to this heading"></a></h3>
+<p>Sent by the application to start sending a response to the client. Needs to be
+followed by at least one response content message.</p>
+<p>Protocol servers <em>need not</em> flush the data generated by this event to the
+send buffer until the first <em>Response Body</em> event is processed.
+This may give them more leeway to replace the response with an error response
+in case internal errors occur while handling the request.</p>
+<p>You may send a <code class="docutils literal notranslate"><span class="pre">Transfer-Encoding</span></code> header in this message, but the server
+must ignore it. Servers handle <code class="docutils literal notranslate"><span class="pre">Transfer-Encoding</span></code> themselves, and may opt
+to use <code class="docutils literal notranslate"><span class="pre">Transfer-Encoding:</span> <span class="pre">chunked</span></code> if the application presents a response
+that has no <code class="docutils literal notranslate"><span class="pre">Content-Length</span></code> set.</p>
+<p>Note that this is not the same as <code class="docutils literal notranslate"><span class="pre">Content-Encoding</span></code>, which the application
+still controls, and which is the appropriate place to set <code class="docutils literal notranslate"><span class="pre">gzip</span></code> or other
+compression flags.</p>
+<p>Keys:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">type</span></code> (<em>Unicode string</em>) – <code class="docutils literal notranslate"><span class="pre">&quot;http.response.start&quot;</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">status</span></code> (<em>int</em>) – HTTP status code.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">headers</span></code> (<em>Iterable[[byte string, byte string]]</em>) – An iterable
+of <code class="docutils literal notranslate"><span class="pre">[name,</span> <span class="pre">value]</span></code> two-item iterables, where <code class="docutils literal notranslate"><span class="pre">name</span></code> is the
+header name, and <code class="docutils literal notranslate"><span class="pre">value</span></code> is the header value. Order must be
+preserved in the HTTP response.  Header names must be
+lowercased. Optional; if missing defaults to an empty list. Pseudo
+headers (present in HTTP/2 and HTTP/3) must not be present.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">trailers</span></code> (<em>bool</em>) – Signifies if the application will send
+trailers. If <code class="docutils literal notranslate"><span class="pre">True</span></code>, the server must wait until it receives a
+<code class="docutils literal notranslate"><span class="pre">&quot;http.response.trailers&quot;</span></code> message after the <em>Response Body</em> event.
+Optional; if missing defaults to <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p></li>
+</ul>
+</section>
+<section id="response-body-send-event">
+<h3>Response Body - <code class="docutils literal notranslate"><span class="pre">send</span></code> event<a class="headerlink" href="#response-body-send-event" title="Link to this heading"></a></h3>
+<p>Continues sending a response to the client. Protocol servers must
+flush any data passed to them into the send buffer before returning from a
+send call. If <code class="docutils literal notranslate"><span class="pre">more_body</span></code> is set to <code class="docutils literal notranslate"><span class="pre">False</span></code>, and the server is not
+expecting <em>Response Trailers</em> this will complete the response.</p>
+<p>Keys:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">type</span></code> (<em>Unicode string</em>) – <code class="docutils literal notranslate"><span class="pre">&quot;http.response.body&quot;</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">body</span></code> (<em>byte string</em>) – HTTP body content. Concatenated onto any
+previous <code class="docutils literal notranslate"><span class="pre">body</span></code> values sent in this connection scope. Optional; if
+missing defaults to <code class="docutils literal notranslate"><span class="pre">b&quot;&quot;</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">more_body</span></code> (<em>bool</em>) – Signifies if there is additional content
+to come (as part of a <em>Response Body</em> message). If <code class="docutils literal notranslate"><span class="pre">False</span></code>, and the
+server is not expecting <em>Response Trailers</em> response will be taken as
+complete and closed, and any further messages on the channel will be
+ignored. Optional; if missing defaults to <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p></li>
+</ul>
+</section>
+<section id="disconnected-client-send-exception">
+<h3>Disconnected Client - <code class="docutils literal notranslate"><span class="pre">send</span></code> exception<a class="headerlink" href="#disconnected-client-send-exception" title="Link to this heading"></a></h3>
+<p>If <code class="docutils literal notranslate"><span class="pre">send()</span></code> is called on a closed connection the server should raise
+a server-specific subclass of <code class="docutils literal notranslate"><span class="pre">OSError</span></code>. This is not guaranteed, however,
+especially on older ASGI server implementations (it was introduced in spec
+version 2.4).</p>
+<p>Applications may catch this exception and do cleanup work before
+re-raising it or returning with no exception.</p>
+<p>Servers must be prepared to catch this exception if they raised it and
+should not log it as an error in their server logs.</p>
+</section>
+<section id="disconnect-receive-event">
+<h3>Disconnect - <code class="docutils literal notranslate"><span class="pre">receive</span></code> event<a class="headerlink" href="#disconnect-receive-event" title="Link to this heading"></a></h3>
+<p>Sent to the application if receive is called after a response has been
+sent or after the HTTP connection has been closed. This is mainly useful
+for long-polling, where you may want to trigger cleanup code if the
+connection closes early.</p>
+<p>Once you have received this event, you should expect future calls to <code class="docutils literal notranslate"><span class="pre">send()</span></code>
+to raise an exception, as described above. However, if you have highly
+concurrent code, you may find calls to <code class="docutils literal notranslate"><span class="pre">send()</span></code> erroring slightly before you
+receive this event.</p>
+<p>Keys:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">type</span></code> (<em>Unicode string</em>) – <code class="docutils literal notranslate"><span class="pre">&quot;http.disconnect&quot;</span></code>.</p></li>
+</ul>
+</section>
+</section>
+<section id="websocket">
+<h2>WebSocket<a class="headerlink" href="#websocket" title="Link to this heading"></a></h2>
+<p>WebSockets share some HTTP details - they have a path and headers - but also
+have more state. Again, most of that state is in the <code class="docutils literal notranslate"><span class="pre">scope</span></code>, which will live
+as long as the socket does.</p>
+<p>WebSocket protocol servers should handle PING/PONG messages themselves, and
+send PING messages as necessary to ensure the connection is alive.</p>
+<p>WebSocket protocol servers should handle message fragmentation themselves,
+and deliver complete messages to the application.</p>
+<p>The WebSocket protocol should be signified to ASGI applications with
+a <code class="docutils literal notranslate"><span class="pre">type</span></code> value of <code class="docutils literal notranslate"><span class="pre">websocket</span></code>.</p>
+<section id="websocket-connection-scope">
+<h3>Websocket Connection Scope<a class="headerlink" href="#websocket-connection-scope" title="Link to this heading"></a></h3>
+<p>WebSocket connections’ scope lives as long as the socket itself - if the
+application dies the socket should be closed, and vice-versa.</p>
+<p>The <em>connection scope</em> information passed in <code class="docutils literal notranslate"><span class="pre">scope</span></code> contains initial connection
+metadata (mostly from the HTTP request line and headers):</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">type</span></code> (<em>Unicode string</em>) – <code class="docutils literal notranslate"><span class="pre">&quot;websocket&quot;</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">asgi[&quot;version&quot;]</span></code> (<em>Unicode string</em>) – The version of the ASGI spec.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">asgi[&quot;spec_version&quot;]</span></code> (<em>Unicode string</em>) – Version of the ASGI
+HTTP spec this server understands; one of <code class="docutils literal notranslate"><span class="pre">&quot;2.0&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;2.1&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;2.2&quot;</span></code> or
+<code class="docutils literal notranslate"><span class="pre">&quot;2.3&quot;</span></code>. Optional; if missing assume <code class="docutils literal notranslate"><span class="pre">&quot;2.0&quot;</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">http_version</span></code> (<em>Unicode string</em>) – One of <code class="docutils literal notranslate"><span class="pre">&quot;1.1&quot;</span></code> or
+<code class="docutils literal notranslate"><span class="pre">&quot;2&quot;</span></code>. Optional; if missing default is <code class="docutils literal notranslate"><span class="pre">&quot;1.1&quot;</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">scheme</span></code> (<em>Unicode string</em>) – URL scheme portion (likely <code class="docutils literal notranslate"><span class="pre">&quot;ws&quot;</span></code> or
+<code class="docutils literal notranslate"><span class="pre">&quot;wss&quot;</span></code>). Optional (but must not be empty); default is <code class="docutils literal notranslate"><span class="pre">&quot;ws&quot;</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">path</span></code> (<em>Unicode string</em>) – HTTP request target excluding any query
+string, with percent-encoded sequences and UTF-8 byte sequences
+decoded into characters.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">raw_path</span></code> (<em>byte string</em>) – The original HTTP path component,
+excluding any query string, unmodified from the bytes that were
+received by the web server. Some web server implementations may
+be unable to provide this. Optional; if missing defaults to <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">query_string</span></code> (<em>byte string</em>) – URL portion after the
+<code class="docutils literal notranslate"><span class="pre">?</span></code>. Optional; if missing or <code class="docutils literal notranslate"><span class="pre">None</span></code> default is empty string.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">root_path</span></code> (<em>Unicode string</em>) – The root path this application is
+mounted at; same as <code class="docutils literal notranslate"><span class="pre">SCRIPT_NAME</span></code> in WSGI. Optional; if missing
+defaults to empty string.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">headers</span></code> (<em>Iterable[[byte string, byte string]]</em>) – An iterable of
+<code class="docutils literal notranslate"><span class="pre">[name,</span> <span class="pre">value]</span></code> two-item iterables, where <code class="docutils literal notranslate"><span class="pre">name</span></code> is the header name and
+<code class="docutils literal notranslate"><span class="pre">value</span></code> is the header value. Order should be preserved from the original
+HTTP request; duplicates are possible and must be preserved in the message
+as received. Header names should be lowercased, but it is not required;
+servers should preserve header case on a best-effort basis.
+Pseudo headers (present in HTTP/2 and HTTP/3) must be removed;
+if <code class="docutils literal notranslate"><span class="pre">:authority</span></code> is present its value must be added to the
+start of the iterable with <code class="docutils literal notranslate"><span class="pre">host</span></code> as the header name
+or replace any existing host header already present.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">client</span></code> (<em>Iterable[Unicode string, int]</em>) – A two-item iterable
+of <code class="docutils literal notranslate"><span class="pre">[host,</span> <span class="pre">port]</span></code>, where <code class="docutils literal notranslate"><span class="pre">host</span></code> is the remote host’s IPv4 or
+IPv6 address, and <code class="docutils literal notranslate"><span class="pre">port</span></code> is the remote port. Optional; if missing
+defaults to <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">server</span></code> (<em>Iterable[Unicode string, Optional[int]]</em>) – Either a
+two-item iterable of <code class="docutils literal notranslate"><span class="pre">[host,</span> <span class="pre">port]</span></code>, where <code class="docutils literal notranslate"><span class="pre">host</span></code> is the
+listening address for this server, and <code class="docutils literal notranslate"><span class="pre">port</span></code> is the integer
+listening port, or <code class="docutils literal notranslate"><span class="pre">[path,</span> <span class="pre">None]</span></code> where <code class="docutils literal notranslate"><span class="pre">path</span></code> is that of the
+unix socket. Optional; if missing defaults to <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">subprotocols</span></code> (<em>Iterable[Unicode string]</em>) – Subprotocols the
+client advertised. Optional; if missing defaults to empty list.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">state</span></code> Optional(<em>dict[Unicode string, Any]</em>) – A copy of the
+namespace passed into the lifespan corresponding to this request. (See <a class="reference internal" href="lifespan.html"><span class="doc">Lifespan Protocol</span></a>).
+Optional; if missing the server does not support this feature.</p></li>
+</ul>
+</section>
+<section id="connect-receive-event">
+<h3>Connect - <code class="docutils literal notranslate"><span class="pre">receive</span></code> event<a class="headerlink" href="#connect-receive-event" title="Link to this heading"></a></h3>
+<p>Sent to the application when the client initially opens a connection and is about
+to finish the WebSocket handshake.</p>
+<p>This message must be responded to with either an <em>Accept</em> message
+or a <em>Close</em> message before the socket will pass <code class="docutils literal notranslate"><span class="pre">websocket.receive</span></code>
+messages. The protocol server must send this message
+during the handshake phase of the WebSocket and not complete the handshake
+until it gets a reply, returning HTTP status code <code class="docutils literal notranslate"><span class="pre">403</span></code> if the connection is
+denied.</p>
+<p>Keys:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">type</span></code> (<em>Unicode string</em>) – <code class="docutils literal notranslate"><span class="pre">&quot;websocket.connect&quot;</span></code>.</p></li>
+</ul>
+</section>
+<section id="accept-send-event">
+<h3>Accept - <code class="docutils literal notranslate"><span class="pre">send</span></code> event<a class="headerlink" href="#accept-send-event" title="Link to this heading"></a></h3>
+<p>Sent by the application when it wishes to accept an incoming connection.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">type</span></code> (<em>Unicode string</em>) – <code class="docutils literal notranslate"><span class="pre">&quot;websocket.accept&quot;</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">subprotocol</span></code> (<em>Unicode string</em>) – The subprotocol the server
+wishes to accept. Optional; if missing defaults to <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">headers</span></code> (<em>Iterable[[byte string, byte string]]</em>) – An iterable
+of <code class="docutils literal notranslate"><span class="pre">[name,</span> <span class="pre">value]</span></code> two-item iterables, where <code class="docutils literal notranslate"><span class="pre">name</span></code> is the
+header name, and <code class="docutils literal notranslate"><span class="pre">value</span></code> is the header value. Order must be
+preserved in the HTTP response.  Header names must be
+lowercased. Must not include a header named
+<code class="docutils literal notranslate"><span class="pre">sec-websocket-protocol</span></code>; use the <code class="docutils literal notranslate"><span class="pre">subprotocol</span></code> key
+instead. Optional; if missing defaults to an empty list. <em>Added in
+spec version 2.1</em>. Pseudo headers (present in HTTP/2 and HTTP/3)
+must not be present.</p></li>
+</ul>
+</section>
+<section id="receive-receive-event">
+<h3>Receive - <code class="docutils literal notranslate"><span class="pre">receive</span></code> event<a class="headerlink" href="#receive-receive-event" title="Link to this heading"></a></h3>
+<p>Sent to the application when a data message is received from the client.</p>
+<p>Keys:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">type</span></code> (<em>Unicode string</em>) – <code class="docutils literal notranslate"><span class="pre">&quot;websocket.receive&quot;</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">bytes</span></code> (<em>byte string</em>) – The message content, if it was binary
+mode, or <code class="docutils literal notranslate"><span class="pre">None</span></code>. Optional; if missing, it is equivalent to
+<code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">text</span></code> (<em>Unicode string</em>) – The message content, if it was text
+mode, or <code class="docutils literal notranslate"><span class="pre">None</span></code>. Optional; if missing, it is equivalent to
+<code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
+</ul>
+<p>Exactly one of <code class="docutils literal notranslate"><span class="pre">bytes</span></code> or <code class="docutils literal notranslate"><span class="pre">text</span></code> must be non-<code class="docutils literal notranslate"><span class="pre">None</span></code>. One or both
+keys may be present, however.</p>
+</section>
+<section id="send-send-event">
+<h3>Send - <code class="docutils literal notranslate"><span class="pre">send</span></code> event<a class="headerlink" href="#send-send-event" title="Link to this heading"></a></h3>
+<p>Sent by the application to send a data message to the client.</p>
+<p>Keys:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">type</span></code> (<em>Unicode string</em>) – <code class="docutils literal notranslate"><span class="pre">&quot;websocket.send&quot;</span></code>.</p></li>
+<li><dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">bytes</span></code> (<em>byte string</em>) – Binary message content, or <code class="docutils literal notranslate"><span class="pre">None</span></code>.</dt><dd><p>Optional; if missing, it is equivalent to <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">text</span></code> (<em>Unicode string</em>) – Text message content, or <code class="docutils literal notranslate"><span class="pre">None</span></code>.</dt><dd><p>Optional; if missing, it is equivalent to <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+</dd>
+</dl>
+</li>
+</ul>
+<p>Exactly one of <code class="docutils literal notranslate"><span class="pre">bytes</span></code> or <code class="docutils literal notranslate"><span class="pre">text</span></code> must be non-<code class="docutils literal notranslate"><span class="pre">None</span></code>. One or both
+keys may be present, however.</p>
+</section>
+<section id="disconnect-receive-event-ws">
+<span id="id1"></span><h3>Disconnect - <code class="docutils literal notranslate"><span class="pre">receive</span></code> event<a class="headerlink" href="#disconnect-receive-event-ws" title="Link to this heading"></a></h3>
+<p>Sent to the application when either connection to the client is lost, either from
+the client closing the connection, the server closing the connection, or loss of the
+socket.</p>
+<p>Once you have received this event, you should expect future calls to <code class="docutils literal notranslate"><span class="pre">send()</span></code>
+to raise an exception, as described below. However, if you have highly
+concurrent code, you may find calls to <code class="docutils literal notranslate"><span class="pre">send()</span></code> erroring slightly before you
+receive this event.</p>
+<p>Keys:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">type</span></code> (<em>Unicode string</em>) – <code class="docutils literal notranslate"><span class="pre">&quot;websocket.disconnect&quot;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">code</span></code> (<em>int</em>) – The WebSocket close code, as per the WebSocket spec. If no code
+was received in the frame from the client, the server should set this to <code class="docutils literal notranslate"><span class="pre">1005</span></code>
+(the default value in the WebSocket specification).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">reason</span></code> (<em>Unicode string</em>) – A reason given for the disconnect, can
+be any string. Optional; if missing or <code class="docutils literal notranslate"><span class="pre">None</span></code> default is empty
+string.</p></li>
+</ul>
+</section>
+<section id="id2">
+<h3>Disconnected Client - <code class="docutils literal notranslate"><span class="pre">send</span></code> exception<a class="headerlink" href="#id2" title="Link to this heading"></a></h3>
+<p>If <code class="docutils literal notranslate"><span class="pre">send()</span></code> is called on a closed connection the server should raise
+a server-specific subclass of <code class="docutils literal notranslate"><span class="pre">OSError</span></code>. This is not guaranteed, however,
+especially on older ASGI server implementations (it was introduced in spec
+version 2.4).</p>
+<p>Applications may catch this exception and do cleanup work before
+re-raising it or returning with no exception.</p>
+<p>Servers must be prepared to catch this exception if they raised it and
+should not log it as an error in their server logs.</p>
+</section>
+<section id="close-send-event">
+<h3>Close - <code class="docutils literal notranslate"><span class="pre">send</span></code> event<a class="headerlink" href="#close-send-event" title="Link to this heading"></a></h3>
+<p>Sent by the application to tell the server to close the connection.</p>
+<p>If this is sent before the socket is accepted, the server
+must close the connection with a HTTP 403 error code
+(Forbidden), and not complete the WebSocket handshake; this may present on some
+browsers as a different WebSocket error code (such as 1006, Abnormal Closure).</p>
+<p>If this is sent after the socket is accepted, the server must close the socket
+with the close code passed in the message (or 1000 if none is specified).</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">type</span></code> (<em>Unicode string</em>) – <code class="docutils literal notranslate"><span class="pre">&quot;websocket.close&quot;</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">code</span></code> (<em>int</em>) – The WebSocket close code, as per the WebSocket
+spec.  Optional; if missing defaults to <code class="docutils literal notranslate"><span class="pre">1000</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">reason</span></code> (<em>Unicode string</em>) – A reason given for the closure, can
+be any string. Optional; if missing or <code class="docutils literal notranslate"><span class="pre">None</span></code> default is empty
+string.</p></li>
+</ul>
+</section>
+</section>
+<section id="wsgi-compatibility">
+<h2>WSGI Compatibility<a class="headerlink" href="#wsgi-compatibility" title="Link to this heading"></a></h2>
+<p>Part of the design of the HTTP portion of this spec is to make sure it
+aligns well with the WSGI specification, to ensure easy adaptability
+between both specifications and the ability to keep using WSGI
+applications with ASGI servers.</p>
+<p>WSGI applications, being synchronous, must be run in a threadpool in order
+to be served, but otherwise their runtime maps onto the HTTP connection scope’s
+lifetime.</p>
+<p>There is an almost direct mapping for the various special keys in
+WSGI’s <code class="docutils literal notranslate"><span class="pre">environ</span></code> variable to the <code class="docutils literal notranslate"><span class="pre">http</span></code> scope:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">REQUEST_METHOD</span></code> is the <code class="docutils literal notranslate"><span class="pre">method</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SCRIPT_NAME</span></code> is <code class="docutils literal notranslate"><span class="pre">root_path</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PATH_INFO</span></code> can be derived by stripping <code class="docutils literal notranslate"><span class="pre">root_path</span></code> from <code class="docutils literal notranslate"><span class="pre">path</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">QUERY_STRING</span></code> is <code class="docutils literal notranslate"><span class="pre">query_string</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CONTENT_TYPE</span></code> can be extracted from <code class="docutils literal notranslate"><span class="pre">headers</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CONTENT_LENGTH</span></code> can be extracted from <code class="docutils literal notranslate"><span class="pre">headers</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SERVER_NAME</span></code> and <code class="docutils literal notranslate"><span class="pre">SERVER_PORT</span></code> are in <code class="docutils literal notranslate"><span class="pre">server</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">REMOTE_HOST</span></code>/<code class="docutils literal notranslate"><span class="pre">REMOTE_ADDR</span></code> and <code class="docutils literal notranslate"><span class="pre">REMOTE_PORT</span></code> are in <code class="docutils literal notranslate"><span class="pre">client</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SERVER_PROTOCOL</span></code> is encoded in <code class="docutils literal notranslate"><span class="pre">http_version</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">wsgi.url_scheme</span></code> is <code class="docutils literal notranslate"><span class="pre">scheme</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">wsgi.input</span></code> is a <code class="docutils literal notranslate"><span class="pre">StringIO</span></code> based around the <code class="docutils literal notranslate"><span class="pre">http.request</span></code> messages</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">wsgi.errors</span></code> is directed by the wrapper as needed</p></li>
+</ul>
+<p>The <code class="docutils literal notranslate"><span class="pre">start_response</span></code> callable maps similarly to <code class="docutils literal notranslate"><span class="pre">http.response.start</span></code>:</p>
+<ul class="simple">
+<li><p>The <code class="docutils literal notranslate"><span class="pre">status</span></code> argument becomes <code class="docutils literal notranslate"><span class="pre">status</span></code>, with the reason phrase dropped.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">response_headers</span></code> maps to <code class="docutils literal notranslate"><span class="pre">headers</span></code></p></li>
+</ul>
+<p>Yielding content from the WSGI application maps to sending
+<code class="docutils literal notranslate"><span class="pre">http.response.body</span></code> messages.</p>
+</section>
+<section id="wsgi-encoding-differences">
+<h2>WSGI encoding differences<a class="headerlink" href="#wsgi-encoding-differences" title="Link to this heading"></a></h2>
+<p>The WSGI specification (as defined in PEP 3333) specifies that all strings
+sent to or from the server must be of the <code class="docutils literal notranslate"><span class="pre">str</span></code> type but only contain
+codepoints in the ISO-8859-1 (“latin-1”) range. This was due to it originally
+being designed for Python 2 and its different set of string types.</p>
+<p>The ASGI HTTP and WebSocket specifications instead specify each entry of the
+<code class="docutils literal notranslate"><span class="pre">scope</span></code> dict as either a byte string or a Unicode string. HTTP, being an
+older protocol, is sometimes imperfect at specifying encoding, so some
+decisions of what is Unicode versus bytes may not be obvious.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">path</span></code>: URLs can have both percent-encoded and UTF-8 encoded sections.
+Because decoding these is often done by the underlying server (or sometimes
+even proxies in the path), this is a Unicode string, fully decoded from both
+UTF-8 encoding and percent encodings.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">headers</span></code>: These are byte strings of the exact byte sequences sent by the
+client/to be sent by the server. While modern HTTP standards say that headers
+should be ASCII, older ones did not and allowed a wider range of characters.
+Frameworks/applications should decode headers as they deem appropriate.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">query_string</span></code>: Unlike the <code class="docutils literal notranslate"><span class="pre">path</span></code>, this is not as subject to server
+interference and so is presented as its raw byte string version,
+percent-encoded.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">root_path</span></code>: Unicode string to match <code class="docutils literal notranslate"><span class="pre">path</span></code>.</p></li>
+</ul>
+</section>
+<section id="version-history">
+<h2>Version History<a class="headerlink" href="#version-history" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>2.0 (2017-11-28): Initial non-channel-layer based ASGI spec</p></li>
+</ul>
+</section>
+<section id="copyright">
+<h2>Copyright<a class="headerlink" href="#copyright" title="Link to this heading"></a></h2>
+<p>This document has been placed in the public domain.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="main.html" class="btn btn-neutral float-left" title="ASGI (Asynchronous Server Gateway Interface) Specification" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="lifespan.html" class="btn btn-neutral float-right" title="Lifespan Protocol" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2018, ASGI Team.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

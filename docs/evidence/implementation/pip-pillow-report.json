@@ -1,0 +1,114 @@
+{
+  "version": "1",
+  "pip_version": "25.0.1",
+  "install": [
+    {
+      "download_info": {
+        "url": "https://pypi.tuna.tsinghua.edu.cn/packages/45/89/da2f7971a317f83d807fdd4065c0af40208e59e692cc43d315a71a0e96d1/pillow-12.3.0-cp312-cp312-win_amd64.whl",
+        "archive_info": {
+          "hash": "sha256=a2b55dd6b2a4c4b7d87ffa56bdb33fdc5fdb9a462173861a7bc097f17d91cb09",
+          "hashes": {
+            "sha256": "a2b55dd6b2a4c4b7d87ffa56bdb33fdc5fdb9a462173861a7bc097f17d91cb09"
+          }
+        }
+      },
+      "is_direct": false,
+      "is_yanked": false,
+      "requested": true,
+      "metadata": {
+        "metadata_version": "2.4",
+        "name": "pillow",
+        "version": "12.3.0",
+        "dynamic": [
+          "license-file"
+        ],
+        "summary": "Python Imaging Library (fork)",
+        "description": "<p align=\"center\">\r\n    <img width=\"248\" height=\"250\" src=\"https://raw.githubusercontent.com/python-pillow/pillow-logo/main/pillow-logo-248x250.png\" alt=\"Pillow logo\">\r\n</p>\r\n\r\n# Pillow\r\n\r\n## Python Imaging Library (Fork)\r\n\r\nPillow is the friendly PIL fork by [Jeffrey 'Alex' Clark and\r\ncontributors](https://github.com/python-pillow/Pillow/graphs/contributors).\r\nPIL is the Python Imaging Library by Fredrik Lundh and contributors.\r\nDevelopment is supported by:\r\n- [Tidelift](https://tidelift.com/subscription/pkg/pypi-pillow?utm_source=pypi-pillow&utm_medium=readme&utm_campaign=enterprise) (since 2018)\r\n- [Thanks.dev](https://thanks.dev) (since 2023)\r\n- [GitHub Sponsors](https://github.com/sponsors/python-pillow) (since 2026)\r\n\r\n<table>\r\n    <tr>\r\n        <th>docs</th>\r\n        <td>\r\n            <a href=\"https://pillow.readthedocs.io/?badge=latest\"><img\r\n                alt=\"Documentation Status\"\r\n                src=\"https://readthedocs.org/projects/pillow/badge/?version=latest\"></a>\r\n        </td>\r\n    </tr>\r\n    <tr>\r\n        <th>tests</th>\r\n        <td>\r\n            <a href=\"https://github.com/python-pillow/Pillow/actions/workflows/lint.yml\"><img\r\n                alt=\"GitHub Actions build status (Lint)\"\r\n                src=\"https://github.com/python-pillow/Pillow/workflows/Lint/badge.svg\"></a>\r\n            <a href=\"https://github.com/python-pillow/Pillow/actions/workflows/test.yml\"><img\r\n                alt=\"GitHub Actions build status (Test Linux and macOS)\"\r\n                src=\"https://github.com/python-pillow/Pillow/workflows/Test/badge.svg\"></a>\r\n            <a href=\"https://github.com/python-pillow/Pillow/actions/workflows/test-windows.yml\"><img\r\n                alt=\"GitHub Actions build status (Test Windows)\"\r\n                src=\"https://github.com/python-pillow/Pillow/workflows/Test%20Windows/badge.svg\"></a>\r\n            <a href=\"https://github.com/python-pillow/Pillow/actions/workflows/test-mingw.yml\"><img\r\n                alt=\"GitHub Actions build status (Test MinGW)\"\r\n                src=\"https://github.com/python-pillow/Pillow/workflows/Test%20MinGW/badge.svg\"></a>\r\n            <a href=\"https://github.com/python-pillow/Pillow/actions/workflows/test-docker.yml\"><img\r\n                alt=\"GitHub Actions build status (Test Docker)\"\r\n                src=\"https://github.com/python-pillow/Pillow/workflows/Test%20Docker/badge.svg\"></a>\r\n            <a href=\"https://github.com/python-pillow/Pillow/actions/workflows/wheels.yml\"><img\r\n                alt=\"GitHub Actions build status (Wheels)\"\r\n                src=\"https://github.com/python-pillow/Pillow/workflows/Wheels/badge.svg\"></a>\r\n            <a href=\"https://app.codecov.io/gh/python-pillow/Pillow\"><img\r\n                alt=\"Code coverage\"\r\n                src=\"https://codecov.io/gh/python-pillow/Pillow/branch/main/graph/badge.svg\"></a>\r\n            <a href=\"https://issues.oss-fuzz.com/issues?q=title:pillow\"><img\r\n                alt=\"Fuzzing Status\"\r\n                src=\"https://oss-fuzz-build-logs.storage.googleapis.com/badges/pillow.svg\"></a>\r\n        </td>\r\n    </tr>\r\n    <tr>\r\n        <th>package</th>\r\n        <td>\r\n            <a href=\"https://zenodo.org/badge/latestdoi/17549/python-pillow/Pillow\"><img\r\n                alt=\"Zenodo\"\r\n                src=\"https://zenodo.org/badge/17549/python-pillow/Pillow.svg\"></a>\r\n            <a href=\"https://tidelift.com/subscription/pkg/pypi-pillow?utm_source=pypi-pillow&utm_medium=badge\"><img\r\n                alt=\"Tidelift\"\r\n                src=\"https://tidelift.com/badges/package/pypi/pillow?style=flat\"></a>\r\n            <a href=\"https://pypi.org/project/pillow/\"><img\r\n                alt=\"Newest PyPI version\"\r\n                src=\"https://img.shields.io/pypi/v/pillow.svg\"></a>\r\n            <a href=\"https://pypi.org/project/pillow/\"><img\r\n                alt=\"Number of PyPI downloads\"\r\n                src=\"https://img.shields.io/pypi/dm/pillow.svg\"></a>\r\n            <a href=\"https://www.bestpractices.dev/projects/6331\"><img\r\n                alt=\"OpenSSF Best Practices\"\r\n                src=\"https://www.bestpractices.dev/projects/6331/badge\"></a>\r\n        </td>\r\n    </tr>\r\n    <tr>\r\n        <th>social</th>\r\n        <td>\r\n            <a href=\"https://gitter.im/python-pillow/Pillow?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge\"><img\r\n                alt=\"Join the chat at https://gitter.im/python-pillow/Pillow\"\r\n                src=\"https://badges.gitter.im/python-pillow/Pillow.svg\"></a>\r\n            <a href=\"https://fosstodon.org/@pillow\"><img\r\n                alt=\"Follow on https://fosstodon.org/@pillow\"\r\n                src=\"https://img.shields.io/badge/publish-on%20Mastodon-595aff.svg\"\r\n                rel=\"me\"></a>\r\n        </td>\r\n    </tr>\r\n</table>\r\n\r\n## Overview\r\n\r\nThe Python Imaging Library adds image processing capabilities to your Python interpreter.\r\n\r\nThis library provides extensive file format support, an efficient internal representation, and fairly powerful image processing capabilities.\r\n\r\nThe core image library is designed for fast access to data stored in a few basic pixel formats. It should provide a solid foundation for a general image processing tool.\r\n\r\n## More information\r\n\r\n- [Documentation](https://pillow.readthedocs.io/)\r\n  - [Installation](https://pillow.readthedocs.io/en/latest/installation/basic-installation.html)\r\n  - [Handbook](https://pillow.readthedocs.io/en/latest/handbook/index.html)\r\n- [Contribute](https://github.com/python-pillow/Pillow/blob/main/.github/CONTRIBUTING.md)\r\n  - [Issues](https://github.com/python-pillow/Pillow/issues)\r\n  - [Pull requests](https://github.com/python-pillow/Pillow/pulls)\r\n- [Release notes](https://pillow.readthedocs.io/en/stable/releasenotes/index.html)\r\n- [Changelog](https://github.com/python-pillow/Pillow/releases)\r\n  - [Pre-fork](https://github.com/python-pillow/Pillow/blob/main/CHANGES.rst#pre-fork)\r\n\r\n## Report a vulnerability\r\n\r\nTo report sensitive vulnerability information, report it [privately on GitHub](https://github.com/python-pillow/Pillow/security/advisories/new).\r\n\r\nIf you cannot use GitHub, use the [Tidelift security contact](https://tidelift.com/security). Tidelift will coordinate the fix and disclosure.\r\n\r\nDO NOT report sensitive vulnerability information in public.\r\n",
+        "description_content_type": "text/markdown",
+        "keywords": [
+          "Imaging"
+        ],
+        "author_email": "Jeffrey 'Alex' Clark <aclark@aclark.net>",
+        "license_expression": "MIT-CMU",
+        "license_file": [
+          "LICENSE"
+        ],
+        "classifier": [
+          "Development Status :: 6 - Mature",
+          "Programming Language :: Python :: 3 :: Only",
+          "Programming Language :: Python :: 3.10",
+          "Programming Language :: Python :: 3.11",
+          "Programming Language :: Python :: 3.12",
+          "Programming Language :: Python :: 3.13",
+          "Programming Language :: Python :: 3.14",
+          "Programming Language :: Python :: Implementation :: CPython",
+          "Programming Language :: Python :: Implementation :: PyPy",
+          "Topic :: Multimedia :: Graphics",
+          "Topic :: Multimedia :: Graphics :: Capture :: Digital Camera",
+          "Topic :: Multimedia :: Graphics :: Capture :: Screen Capture",
+          "Topic :: Multimedia :: Graphics :: Graphics Conversion",
+          "Topic :: Multimedia :: Graphics :: Viewers",
+          "Typing :: Typed"
+        ],
+        "requires_dist": [
+          "furo; extra == \"docs\"",
+          "olefile; extra == \"docs\"",
+          "sphinx>=8.2; extra == \"docs\"",
+          "sphinx-autobuild; extra == \"docs\"",
+          "sphinx-copybutton; extra == \"docs\"",
+          "sphinx-inline-tabs; extra == \"docs\"",
+          "sphinxext-opengraph; extra == \"docs\"",
+          "olefile; extra == \"fpx\"",
+          "olefile; extra == \"mic\"",
+          "arro3-compute; extra == \"test-arrow\"",
+          "arro3-core; extra == \"test-arrow\"",
+          "nanoarrow; extra == \"test-arrow\"",
+          "pyarrow; extra == \"test-arrow\"",
+          "coverage>=7.4.2; extra == \"tests\"",
+          "defusedxml; extra == \"tests\"",
+          "markdown2; extra == \"tests\"",
+          "olefile; extra == \"tests\"",
+          "packaging; extra == \"tests\"",
+          "pytest; extra == \"tests\"",
+          "pytest-cov; extra == \"tests\"",
+          "pytest-timeout; extra == \"tests\"",
+          "pytest-xdist; extra == \"tests\"",
+          "setuptools; extra == \"tests\"",
+          "trove-classifiers>=2024.10.12; extra == \"tests\"",
+          "defusedxml; extra == \"xmp\""
+        ],
+        "requires_python": ">=3.10",
+        "project_url": [
+          "Release notes, https://pillow.readthedocs.io/en/stable/releasenotes/index.html",
+          "Changelog, https://github.com/python-pillow/Pillow/releases",
+          "Documentation, https://pillow.readthedocs.io",
+          "Funding, https://tidelift.com/subscription/pkg/pypi-pillow?utm_source=pypi-pillow&utm_medium=pypi",
+          "Homepage, https://python-pillow.github.io",
+          "Mastodon, https://fosstodon.org/@pillow",
+          "Source, https://github.com/python-pillow/Pillow"
+        ],
+        "provides_extra": [
+          "docs",
+          "fpx",
+          "mic",
+          "test-arrow",
+          "tests",
+          "xmp"
+        ]
+      }
+    }
+  ],
+  "environment": {
+    "implementation_name": "cpython",
+    "implementation_version": "3.12.10",
+    "os_name": "nt",
+    "platform_machine": "AMD64",
+    "platform_release": "11",
+    "platform_system": "Windows",
+    "platform_version": "10.0.26200",
+    "python_full_version": "3.12.10",
+    "platform_python_implementation": "CPython",
+    "python_version": "3.12",
+    "sys_platform": "win32"
+  }
+}

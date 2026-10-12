@@ -1,0 +1,29 @@
+{
+  "url": "https://codeload.github.com/kuaifan/dootask-app/tar.gz/c5c5c100e742c302ae914df882af6210c80582d7",
+  "started_at": "2026-10-12T07:49:38.624146+00:00",
+  "artifact": "mobile-c5c5c100e742c302ae914df882af6210c80582d7.tar.gz",
+  "status": 200,
+  "final_url": "https://codeload.github.com/kuaifan/dootask-app/tar.gz/c5c5c100e742c302ae914df882af6210c80582d7",
+  "headers": {
+    "Access-Control-Allow-Origin": "https://render.githubusercontent.com",
+    "content-disposition": "attachment; filename=dootask-app-c5c5c100e742c302ae914df882af6210c80582d7.tar.gz",
+    "Content-Security-Policy": "default-src 'none'; style-src 'unsafe-inline'; sandbox",
+    "Content-Type": "application/x-gzip",
+    "cross-origin-resource-policy": "cross-origin",
+    "ETag": "\"8cdbabb9913027bd75e6861fbc8490310df8ecc56a092f198c39b1299eba3db0\"",
+    "Strict-Transport-Security": "max-age=31536000",
+    "Vary": "Authorization,Accept-Encoding",
+    "X-Content-Type-Options": "nosniff",
+    "X-Frame-Options": "deny",
+    "X-XSS-Protection": "1; mode=block",
+    "Date": "Mon, 12 Oct 2026 07:49:49 GMT",
+    "Transfer-Encoding": "chunked",
+    "X-GitHub-Request-Id": "2FDE:1598D:441F:B357:6ACC911C",
+    "x-github-edge-region": "southeastasia",
+    "connection": "close"
+  },
+  "bytes": 8579213,
+  "sha256": "a9c9c1899ab1403c30e94bf18f44475fbc715519d56befe300bce0d10401de75",
+  "ok": true,
+  "finished_at": "2026-10-12T07:49:41.280246+00:00"
+}

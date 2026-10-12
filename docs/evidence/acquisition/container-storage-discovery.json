@@ -1,0 +1,13 @@
+{
+  "command": [
+    "powershell.exe",
+    "-NoProfile",
+    "-Command",
+    "$names='docker','podman','nerdctl','wsl','mariadbd','mysqld','redis-server'; $names | ForEach-Object { $c=Get-Command $_ -ErrorAction SilentlyContinue; [pscustomobject]@{name=$_;paths=@($c.Source)} } | ConvertTo-Json -Depth 4; Get-Service | Where-Object {$_.Name -match 'docker|podman|maria|mysql|redis|wsl|lxss'} | Select-Object Name,Status,DisplayName | ConvertTo-Json; Get-NetTCPConnection -State Listen -ErrorAction SilentlyContinue | Where-Object {$_.LocalPort -in 13306,16379,2375,2376,3306,6379} | Select-Object LocalAddress,LocalPort,OwningProcess | ConvertTo-Json"
+  ],
+  "started_at": "2026-10-12T08:06:54.358650+00:00",
+  "exit_code": 0,
+  "stdout": "[\r\n    {\r\n        \"name\":  \"docker\",\r\n        \"paths\":  [\r\n                      null\r\n                  ]\r\n    },\r\n    {\r\n        \"name\":  \"podman\",\r\n        \"paths\":  [\r\n                      null\r\n                  ]\r\n    },\r\n    {\r\n        \"name\":  \"nerdctl\",\r\n        \"paths\":  [\r\n                      null\r\n                  ]\r\n    },\r\n    {\r\n        \"name\":  \"wsl\",\r\n        \"paths\":  [\r\n                      \"C:\\\\WINDOWS\\\\system32\\\\wsl.exe\"\r\n                  ]\r\n    },\r\n    {\r\n        \"name\":  \"mariadbd\",\r\n        \"paths\":  [\r\n                      null\r\n                  ]\r\n    },\r\n    {\r\n        \"name\":  \"mysqld\",\r\n        \"paths\":  [\r\n                      null\r\n                  ]\r\n    },\r\n    {\r\n        \"name\":  \"redis-server\",\r\n        \"paths\":  [\r\n                      null\r\n                  ]\r\n    }\r\n]\r\n{\r\n    \"Name\":  \"WSLService\",\r\n    \"Status\":  4,\r\n    \"DisplayName\":  \"WSL Service\"\r\n}\r\n",
+  "stderr": "",
+  "ended_at": "2026-10-12T08:06:56.415608+00:00"
+}

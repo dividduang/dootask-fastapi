@@ -1,0 +1,36 @@
+{
+  "python-downloads": {
+    "url": "https://www.python.org/downloads/",
+    "accessed_at_utc": "2026-10-12T05:06:36.157044+00:00",
+    "error": "'utf-8' codec can't decode byte 0x8b in position 1: invalid start byte"
+  },
+  "python-release-feed": {
+    "url": "https://www.python.org/downloads/feed.rss",
+    "final_url": "https://www.python.org/downloads/feed.rss",
+    "accessed_at_utc": "2026-10-12T05:06:36.162099+00:00",
+    "status": 200,
+    "headers": {
+      "Connection": "close",
+      "Content-Length": "3412",
+      "content-security-policy-report-only": "frame-src 'self' https://console.python.org; frame-ancestors 'self'; default-src 'self'; font-src 'self' data:; img-src 'self' data: https:; base-uri 'self'; form-action 'self'; script-src 'self' https://analytics.python.org https://media.ethicalads.io https://ajax.googleapis.com; style-src 'self' 'unsafe-inline' https://ajax.googleapis.com; object-src 'none'; connect-src 'self' https://console.python.org https://analytics.python.org https://server.ethicalads.io https://2p66nmmycsj3.statuspage.io; report-uri https://o20004.ingest.us.sentry.io/api/39935/security/?sentry_key=95f826ce8a6d47e9ab5dbb055c24eb74",
+      "last-modified": "Fri, 09 Oct 2026 14:58:02 GMT",
+      "via": "1.1 varnish, 1.1 varnish, 1.1 varnish",
+      "server": "nginx",
+      "x-frame-options": "SAMEORIGIN",
+      "cache-control": "max-age=604800, public",
+      "content-type": "application/rss+xml; charset=utf-8",
+      "Accept-Ranges": "bytes",
+      "Age": "221323",
+      "Date": "Mon, 12 Oct 2026 05:06:46 GMT",
+      "X-Served-By": "cache-iad-kiad7000045-IAD, cache-iad-kiad7000045-IAD, cache-iad-kiad7000045-IAD, cache-nrt-rjtt7900090-NRT",
+      "X-Cache": "MISS, MISS, HIT",
+      "X-Cache-Hits": "0, 0, 0",
+      "X-Timer": "S1791781607.634778,VS0,VE1",
+      "Strict-Transport-Security": "max-age=63072000; includeSubDomains; preload"
+    },
+    "sha256": "483235f5c521fc1297f0db999e2caae9956c11d26ac9448d603e82dd505c683d",
+    "bytes": 3412,
+    "snapshot": "python-release-feed.txt",
+    "saved_utf8_sha256": "483235f5c521fc1297f0db999e2caae9956c11d26ac9448d603e82dd505c683d"
+  }
+}

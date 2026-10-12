@@ -1,0 +1,26 @@
+v38.4.0 | Electron Releases
+Electron Releases
+All ReleasesHistorySchedulePR LookupDocs
+All ReleasesHistorySchedulePR LookupDocs
+Electron v38.4.0
+Released Oct 22, 2025355 days ago
+Compare to...v38.8.6v38.8.4v38.8.2v38.8.1v38.8.0v38.7.2v38.7.1v38.7.0v38.6.0v38.5.0v38.4.0v38.3.0v38.2.2v38.2.1v38.2.0v38.1.2v38.1.1v38.1.0v38.0.0v38.0.0-beta.11v38.0.0-beta.9v38.0.0-beta.8v38.0.0-beta.7v38.0.0-beta.6v38.0.0-beta.5v38.0.0-beta.4v38.0.0-beta.3v38.0.0-beta.2v38.0.0-beta.1v38.0.0-alpha.13v38.0.0-alpha.12v38.0.0-alpha.11v38.0.0-alpha.10v38.0.0-alpha.9v38.0.0-alpha.8v38.0.0-alpha.7v38.0.0-alpha.6v38.0.0-alpha.5v38.0.0-alpha.4v38.0.0-alpha.3v38.0.0-alpha.2v38.0.0-alpha.1
+npm
+npm install --save-dev electron@38.4.0
+yarn
+yarn add --dev electron@38.4.0
+Google ChromeChromium
+140.0.7339.240
+Node.jsNode.js
+22.20.0
+V8V8
+14.0.365.10
+Release Notes
+Features
+Support dynamic ESM imports in non-context isolated preloads. #48489 (Also in 39)
+Fixes
+Fixed shader-f16 to work on Windows. #48555 (Also in 37, 39)
+Fixed white flash on call to BrowserWindow.show. #48560 (Also in 37, 39)
+Titlebar buttons now appear on the correct side of windows on Wayland in Ubuntu. #48602 (Also in 39)
+Provided with ❤️ by Electron
+GitHubWebsiteBluesky

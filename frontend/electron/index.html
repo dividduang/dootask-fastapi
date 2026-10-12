@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="renderer" content="webkit">
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title></title>
+    <!--style-->
+    <link rel="stylesheet" type="text/css" href="./css/iview.css">
+    <link rel="stylesheet" type="text/css" href="./css/loading.css">
+    <script src="./js/loading-theme.js"></script>
+    <script src="./config.js"></script>
+</head>
+<body>
+
+
+<div id="app" data-preload="init">
+    <div class="app-view-loading no-dark-content">
+        <div>
+            <div>PAGE LOADING</div>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+</div>
+
+<script>
+    setTimeout(function () {
+        if (document.getElementById("app")?.getAttribute("data-preload") === "false") {
+            window.location.reload();
+        }
+    }, 6000);
+</script>
+
+<!--script-->
+
+</body>
+</html>
+

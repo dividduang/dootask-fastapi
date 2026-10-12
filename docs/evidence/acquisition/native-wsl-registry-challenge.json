@@ -1,0 +1,20 @@
+{
+  "command": [
+    "wsl.exe",
+    "-d",
+    "Ubuntu-22.04",
+    "--exec",
+    "curl",
+    "--connect-timeout",
+    "12",
+    "--max-time",
+    "25",
+    "-i",
+    "https://registry-1.docker.io/v2/kuaifan/php/manifests/swoole-8.4"
+  ],
+  "started_at": "2026-10-12T08:10:47.172996+00:00",
+  "exit_code": 28,
+  "stdout": "",
+  "stderr": "  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r  0     0    0     0    0     0      0      0 --:--:--  0:00:01 --:--:--     0\r  0     0    0     0    0     0      0      0 --:--:--  0:00:02 --:--:--     0\r  0     0    0     0    0     0      0      0 --:--:--  0:00:03 --:--:--     0\r  0     0    0     0    0     0      0      0 --:--:--  0:00:04 --:--:--     0\r  0     0    0     0    0     0      0      0 --:--:--  0:00:05 --:--:--     0\r  0     0    0     0    0     0      0      0 --:--:--  0:00:06 --:--:--     0\ncurl: (28) Failed to connect to registry-1.docker.io port 443 after 6204 ms: Connection timed out\n",
+  "ended_at": "2026-10-12T08:10:55.864217+00:00"
+}

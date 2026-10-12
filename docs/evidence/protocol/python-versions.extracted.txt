@@ -1,0 +1,498 @@
+Status of Python versions
+Contents
+Menu
+Expand
+Light mode
+Dark mode
+Auto light/dark, in light mode
+Auto light/dark, in dark mode
+Skip to content
+Python Developer's Guide
+Python Developer's Guide
+Getting started
+Quick reference
+Setup and building
+Fixing “easy” issues (and beyond)
+Git bootcamp and cheat sheet
+Lifecycle of a pull request
+Where to get help
+Guidelines for using AI tools
+Development workflow
+Following Python’s development
+Changing Python
+Development cycle
+Adding to the stdlib
+Standard library extension modules
+Changing Python’s C API
+Changing CPython’s grammar
+Porting and platform support
+Issues and triaging
+Using the issue tracker
+Triaging an issue
+GitHub labels
+Triage Team
+Documentation
+Getting started
+Helping with documentation
+Style guide
+reStructuredText markup
+Translations
+Translating
+Coordinating
+Helping with the Developer’s Guide
+Testing and buildbots
+Running and writing tests
+Silence warnings from the test suite
+Increase test coverage
+OSS-Fuzz for CPython
+Working with buildbots
+New buildbot workers
+Development tools
+Argument Clinic
+Tutorial
+How-to guides
+GDB support
+Dynamic analysis with Clang
+Tools for tracking compiler warnings
+Core team
+Responsibilities
+Accepting pull requests
+Experts index
+Team log
+Motivations and affiliations
+How to join the core team
+Memorialization
+Security
+Security policy
+Python Security Response Team (PSRT)
+Software Bill-of-Materials (SBOM)
+CPython’s internals
+Status of Python versions
+Back to top
+View this page
+Edit this page
+Status of Python versions¶
+The main branch is currently the future Python 3.16, and is the only
+branch that accepts new features.  The latest release for each Python
+version can be found on the download page.
+'19
+'20
+'21
+'22
+'23
+'24
+'25
+'26
+'27
+'28
+'29
+'30
+'31
+'32
+end-of-life
+end-of-life
+Python 2.7
+end-of-life
+end-of-life
+Python 3.7
+end-of-life
+end-of-life
+Python 3.8
+end-of-life
+end-of-life
+Python 3.9
+end-of-life
+end-of-life
+Python 3.10
+security
+security
+Python 3.11
+security
+security
+Python 3.12
+security
+security
+Python 3.13
+bugfix
+bugfix
+Python 3.14
+bugfix
+bugfix
+Python 3.15
+feature
+feature
+Python 3.16
+(See below for a chart with older versions.
+Another useful visualization is endoflife.date/python.)
+Supported versions¶
+Dates shown in italic are scheduled and can be adjusted.
+Branch
+|
+Schedule
+|
+Status
+|
+First release
+|
+End of life
+|
+Release manager
+|
+main
+|
+PEP 826
+|
+feature
+|
+2027-10-06
+|
+2032-10
+|
+Savannah Ostrowski
+|
+3.15
+|
+PEP 790
+|
+bugfix
+|
+2026-10-09
+|
+2031-10
+|
+Hugo van Kemenade
+|
+3.14
+|
+PEP 745
+|
+bugfix
+|
+2025-10-07
+|
+2030-10
+|
+Hugo van Kemenade
+|
+3.13
+|
+PEP 719
+|
+security
+|
+2024-10-07
+|
+2029-10
+|
+Thomas Wouters
+|
+3.12
+|
+PEP 693
+|
+security
+|
+2023-10-02
+|
+2028-10
+|
+Thomas Wouters
+|
+3.11
+|
+PEP 664
+|
+security
+|
+2022-10-24
+|
+2027-10
+|
+Pablo Galindo Salgado
+|
+Unsupported versions¶
+Branch
+|
+Schedule
+|
+Status
+|
+First release
+|
+End of life
+|
+Release manager
+|
+3.10
+|
+PEP 619
+|
+end-of-life
+|
+2021-10-04
+|
+2026-10-01
+|
+Pablo Galindo Salgado
+|
+3.9
+|
+PEP 596
+|
+end-of-life
+|
+2020-10-05
+|
+2025-10-31
+|
+Łukasz Langa
+|
+3.8
+|
+PEP 569
+|
+end-of-life
+|
+2019-10-14
+|
+2024-10-07
+|
+Łukasz Langa
+|
+3.7
+|
+PEP 537
+|
+end-of-life
+|
+2018-06-27
+|
+2023-06-27
+|
+Ned Deily
+|
+3.6
+|
+PEP 494
+|
+end-of-life
+|
+2016-12-23
+|
+2021-12-23
+|
+Ned Deily
+|
+3.5
+|
+PEP 478
+|
+end-of-life
+|
+2015-09-13
+|
+2020-09-30
+|
+Larry Hastings
+|
+3.4
+|
+PEP 429
+|
+end-of-life
+|
+2014-03-16
+|
+2019-03-18
+|
+Larry Hastings
+|
+3.3
+|
+PEP 398
+|
+end-of-life
+|
+2012-09-29
+|
+2017-09-29
+|
+Georg Brandl & Ned Deily (3.3.7)
+|
+3.2
+|
+PEP 392
+|
+end-of-life
+|
+2011-02-20
+|
+2016-02-20
+|
+Georg Brandl
+|
+3.1
+|
+PEP 375
+|
+end-of-life
+|
+2009-06-27
+|
+2012-04-09
+|
+Benjamin Peterson
+|
+3.0
+|
+PEP 361
+|
+end-of-life
+|
+2008-12-03
+|
+2009-06-27
+|
+Barry Warsaw
+|
+2.7
+|
+PEP 373
+|
+end-of-life
+|
+2010-07-03
+|
+2020-01-01
+|
+Benjamin Peterson
+|
+2.6
+|
+PEP 361
+|
+end-of-life
+|
+2008-10-01
+|
+2013-10-29
+|
+Barry Warsaw
+|
+Full chart¶
+'08
+'09
+'10
+'11
+'12
+'13
+'14
+'15
+'16
+'17
+'18
+'19
+'20
+'21
+'22
+'23
+'24
+'25
+'26
+'27
+'28
+'29
+'30
+'31
+'32
+end-of-life
+end-of-life
+Python 2.6
+end-of-life
+end-of-life
+Python 2.7
+end-of-life
+end-of-life
+Python 3.0
+end-of-life
+end-of-life
+Python 3.1
+end-of-life
+end-of-life
+Python 3.2
+end-of-life
+end-of-life
+Python 3.3
+end-of-life
+end-of-life
+Python 3.4
+end-of-life
+end-of-life
+Python 3.5
+end-of-life
+end-of-life
+Python 3.6
+end-of-life
+end-of-life
+Python 3.7
+end-of-life
+end-of-life
+Python 3.8
+end-of-life
+end-of-life
+Python 3.9
+end-of-life
+end-of-life
+Python 3.10
+security
+security
+Python 3.11
+security
+security
+Python 3.12
+security
+security
+Python 3.13
+bugfix
+bugfix
+Python 3.14
+bugfix
+bugfix
+Python 3.15
+feature
+feature
+Python 3.16
+Status key¶
+Python releases go through five phases, as described in PEP 602.  Release
+managers can adjust specific dates as needed.
+feature:
+Before the first beta, the next full release can accept new features,
+bug fixes, and security fixes.
+prerelease:
+After the first beta, no new features can go in, but feature fixes
+(including significant changes to new features), bug fixes, and security fixes
+are accepted for the upcoming feature release.
+bugfix:
+Once a version has been fully released, bug fixes and security fixes are
+accepted. New binaries are built and released roughly every two months. This
+phase is also called maintenance mode or stable release.
+security:
+After two years (18 months for versions before 3.13), only security
+fixes are accepted and no more binaries are released.  New source-only versions
+can be released as needed.
+end-of-life:
+Five years after a release, support ends. The release cycle is
+frozen; no further changes are allowed.
+See also the Development cycle page for more information about branches and backporting.
+Previous
+CPython’s internals
+Copyright © 2011 Python Software Foundation
+Made with Sphinx and @pradyunsg's
+Furo
+Last updated on May 27, 2026
+On this page
+Status of Python versions
+Supported versions
+Unsupported versions
+Full chart
+Status key

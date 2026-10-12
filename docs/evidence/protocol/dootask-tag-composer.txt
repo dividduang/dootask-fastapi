@@ -1,0 +1,101 @@
+{
+    "name": "laravel/laravel",
+    "type": "project",
+    "description": "The Laravel Framework.",
+    "keywords": [
+        "framework",
+        "laravel"
+    ],
+    "license": "MIT",
+    "require": {
+        "php": "^8.3",
+        "ext-curl": "*",
+        "ext-dom": "*",
+        "ext-ffi": "*",
+        "ext-fileinfo": "*",
+        "ext-gd": "*",
+        "ext-imagick": "*",
+        "ext-json": "*",
+        "ext-libxml": "*",
+        "ext-openssl": "*",
+        "ext-simplexml": "*",
+        "ext-zip": "*",
+        "directorytree/ldaprecord-laravel": "^4.0",
+        "firebase/php-jwt": "^7.1",
+        "guzzlehttp/guzzle": "^7.3.0",
+        "hedeqiang/umeng": "^2.1",
+        "laravel/framework": "^13.0",
+        "laravel/tinker": "^3.0",
+        "laravolt/avatar": "^6.5",
+        "league/commonmark": "^2.5",
+        "league/html-to-markdown": "^5.1",
+        "maatwebsite/excel": "^3.1.69",
+        "matomo/device-detector": "^6.4",
+        "mews/captcha": "^3.5",
+        "orangehill/iseed": "^3.8",
+        "overtrue/pinyin": "^5.3",
+        "phpoffice/phppresentation": "^1.2",
+        "phpoffice/phpword": "^1.4",
+        "predis/predis": "^2.3",
+        "sabre/dav": "^4.7",
+        "smalot/pdfparser": "^2.11",
+        "symfony/console": "^7.4",
+        "symfony/yaml": "^7.4"
+    },
+    "require-dev": {
+        "barryvdh/laravel-ide-helper": "^3.7",
+        "fakerphp/faker": "^1.24",
+        "hhxsv5/laravel-s": "~3.8.0",
+        "kitloong/laravel-migrations-generator": "^7.4",
+        "larastan/larastan": "^3.10",
+        "mockery/mockery": "^1.6",
+        "nunomaduro/collision": "^8.6",
+        "phpunit/phpunit": "^11.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/",
+            "Database\\Factories\\": "database/factories/",
+            "Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        },
+        "files" : [
+            "app/Helpers/Function.php"
+        ]
+    },
+    "scripts": {
+        "post-autoload-dump": [
+            "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
+            "@php artisan package:discover --ansi"
+        ],
+        "post-root-package-install": [
+            "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+        ],
+        "post-create-project-cmd": [
+            "@php artisan key:generate --ansi"
+        ],
+        "stan": "phpstan analyse --no-progress --memory-limit=-1",
+        "stan-baseline": "phpstan analyse --generate-baseline --memory-limit=-1"
+    },
+    "extra": {
+        "laravel": {
+            "dont-discover": []
+        }
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true,
+        "allow-plugins": {
+            "php-http/discovery": true
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "repositories": {
+    }
+}

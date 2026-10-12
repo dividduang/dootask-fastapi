@@ -1,0 +1,31 @@
+{
+  "scope": "New-install MariaDB schema; source read-only",
+  "status": "IMPLEMENTED_STATIC_SOURCE_DERIVATION",
+  "source_ledger": "docs/evidence/backend/schema-model-ledger.json",
+  "review": {
+    "migration_up_methods": 221,
+    "model_files": 77,
+    "persisted_model_classes": 75,
+    "final_tables": 77,
+    "final_columns": 716,
+    "indexes_including_primary": 258,
+    "foreign_keys": 8,
+    "ordinary_source_unresolved": []
+  },
+  "decisions": {
+    "table_prefix": "Empty; logical names",
+    "historical_data": "No source users, accounts, files, messages or sessions imported",
+    "seeds": "Five required settings plus one completed empty-history attachment-backfill marker",
+    "system_functions_install": "External filesystem/application provisioning; not faked by database seed",
+    "security_extensions": "Parent-owned, separate from exact source schema"
+  },
+  "evidence": ["schema-migrations.json", "schema-models.json", "schema-seeds.json", "schema-coverage.json"],
+  "checks": {
+    "database": "NOT_RUN",
+    "tests": "NOT_RUN",
+    "build": "NOT_RUN",
+    "lint": "NOT_RUN",
+    "formatter": "NOT_RUN",
+    "smoke": "NOT_RUN"
+  }
+}

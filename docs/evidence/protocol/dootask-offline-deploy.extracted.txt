@@ -1,0 +1,145 @@
+离线部署 | DooTask帮助文档
+Skip to content
+DooTask帮助文档
+搜索K
+Main Navigation 返回官网
+简体中文
+English
+简体中文
+English
+深浅模式
+Menu
+返回顶部
+Sidebar Navigation
+🗝️   快速开始
+快速了解 Dooask
+AI助手
+仪表盘
+任务日历
+🛠️   账号与设置
+账号注册
+账号登录
+个人设置
+系统设置（管理员）
+💬   即时沟通
+消息状态
+会话标记
+消息编辑
+聊天待办
+消息转发
+创建群组
+匿名消息
+表情回复消息
+群接龙
+群投票
+✅   项目与任务管理
+项目成员管理
+项目权限管理
+项目归档
+任务管理
+任务模板
+任务标签
+工作流设置
+多种任务展示模式
+📦   工具与功能模块
+签到打卡
+多种打卡方式
+签到设置(管理员)
+数据导出(管理员)
+审批中心
+提交审批
+处理审批
+数据导出(管理员)
+自定义审批流程(管理员)
+OKR管理
+OKR管理
+OKR结果分析
+团队管理
+团队管理(管理员)
+文件管理
+文件管理
+文件共享和访问权限
+文件展示方式
+工作报告
+提醒功能
+AI机器人
+🚀   部署与集成
+应用部署
+离线部署
+🤝   支持与帮助
+📚   文档完善中
+目录
+离线部署 ​
+当目标服务器无法访问外网（内网环境、专网、信创/政企隔离网络等），无法在线拉取 Docker 镜像和依赖时，可按本指南进行离线部署。
+核心思路：先在一台能联网的机器上把所有需要联网才能获取的物料（Docker 镜像、PHP 依赖、项目代码）准备好，打成离线包，再拷贝到离线服务器上加载安装。
+前置条件 ​
+离线服务器需提前安装好以下基础环境（这部分也需要离线安装，请到对应官网下载离线安装包）：
+Docker v20.10+
+Docker Compose v2.0+
+提示
+联网准备机与离线服务器的 CPU 架构必须一致（同为 x86_64/amd64 或同为 arm64）。架构不一致时导出的镜像无法在目标机运行，需在与目标机同架构的机器上准备物料。
+第一步：在联网机器上准备离线物料 ​
+1. 克隆项目代码 ​
+bashgit clone -b pro --depth=1 https://github.com/kuaifan/dootask.git
+cd dootask
+2. 导出 Docker 镜像 ​
+DooTask 依赖的镜像定义在项目根目录的 docker-compose.yml 中。镜像版本会随版本发布变化（尤其是 appstore），导出前请先核对实际版本：
+bashgrep 'image:' docker-compose.yml
+以当前版本为例，需要以下镜像（请以你 grep 出来的结果为准）：
+bashdocker pull kuaifan/php:swoole-8.4
+docker pull nginx:alpine
+docker pull redis:alpine
+docker pull mariadb:10.7.3
+docker pull dootask/appstore:0.5.3
+拉取完成后，一次性导出为离线镜像包：
+bashdocker save \
+kuaifan/php:swoole-8.4 \
+nginx:alpine \
+redis:alpine \
+mariadb:10.7.3 \
+dootask/appstore:0.5.3 \
+| gzip > dootask-images.tar.gz
+3. 预装 PHP 依赖（重要） ​
+离线安装时无法联网执行 composer install，必须提前把 vendor/ 目录准备好。在联网机器的项目目录下执行：
+bash./cmd composer install --optimize-autoloader
+执行完成后会生成完整的 vendor/ 目录。
+提示
+也可以直接从对应版本的 GitHub Release 下载附件 vendor.tar.gz，解压到项目根目录得到 vendor/，省去本地构建。注意 vendor.tar.gz 必须与项目代码版本一致。
+4. 打包整个项目目录 ​
+把包含 vendor/ 和 dootask-images.tar.gz 的整个项目目录打成压缩包，便于传输：
+bashcd ..
+tar -czf dootask-offline.tar.gz dootask/
+第二步：拷贝到离线服务器 ​
+通过 U 盘、内网传输、scp 等任意方式，把 dootask-offline.tar.gz 拷贝到离线服务器。
+bashtar -xzf dootask-offline.tar.gz
+cd dootask
+第三步：在离线服务器上加载并安装 ​
+1. 加载 Docker 镜像 ​
+bashdocker load -i dootask-images.tar.gz
+加载完成后用 docker images 确认所有镜像都已存在。
+2. 确认 PHP 依赖已就位 ​
+确认项目目录下 vendor/autoload.php 存在（即第一步准备的 vendor/ 已随包带过来）。
+3. 执行安装 ​
+bash./cmd install
+由于镜像已 docker load、vendor/ 已就位，安装过程不再需要联网（docker compose 见本地已有镜像不会再拉取，composer install 在 vendor/ 完整时是空操作）。如需指定端口：
+bash./cmd install --port 80
+后续升级 ​
+离线环境无法 git pull，升级思路是"在联网机准备新版物料 → 拷贝到离线机覆盖代码 → 本地模式升级"。
+./cmd update --local 会跳过联网拉代码和 composer install，只做数据库备份、迁移并重启服务，因此新版代码和 vendor/ 需要你手动放到位。
+联网机：在项目目录 git pull（或重新 clone）到新版本，执行 ./cmd composer install --optimize-autoloader 重新生成 vendor/；重新 grep docker-compose.yml 核对镜像版本并重新导出 dootask-images.tar.gz（新版本可能升级了镜像 tag，这步不能省）。
+离线机：先备份数据 ./cmd mysql backup。
+离线机：docker load -i dootask-images.tar.gz 加载新镜像。
+离线机：用新版本的代码和 vendor/ 覆盖现有项目目录，但保留 .env、docker/（含数据库数据）、public/uploads（上传文件）等运行时数据——即只替换程序代码，不动配置与数据。
+离线机：执行 ./cmd update --local 完成数据库迁移并重启（--local 不联网拉代码与依赖）。
+注意
+不要用新包整目录覆盖旧安装，否则会丢失 .env、数据库数据和已上传文件。务必只替换代码与 vendor/，保留上述运行时目录。升级前的 ./cmd mysql backup 也是为此兜底。
+常见问题 ​
+安装卡在"安装依赖失败" ​
+说明 vendor/ 不完整或缺失。离线机无法联网补全依赖，请回到联网机执行 ./cmd composer install --optimize-autoloader 生成完整的 vendor/ 后重新拷贝。
+docker load 后 ./cmd install 仍尝试联网拉取镜像 ​
+检查 docker-compose.yml 里的镜像 tag 与你 docker load 进来的镜像 tag 是否完全一致。tag 不一致时 Docker 会认为本地没有该镜像而尝试联网拉取。
+镜像在目标机无法启动 / 报架构错误 ​
+准备机与目标机 CPU 架构不一致。请在与目标机同架构（amd64/arm64）的机器上重新准备镜像包。
+Pager
+上一篇应用部署
+下一篇🤝   支持与帮助

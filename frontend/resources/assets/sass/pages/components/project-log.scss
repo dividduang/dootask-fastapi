@@ -1,0 +1,206 @@
+.project-log {
+    .log-title {
+        display: none;
+    }
+
+    &.is-drawer {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        padding: 20px;
+        overflow: auto;
+
+        .log-title {
+            color: $primary-title-color;
+            font-size: 20px;
+            font-weight: 500;
+            line-height: 1;
+            margin-bottom: 24px;
+        }
+    }
+
+    .logs-activity {
+        position: relative;
+        word-break: break-all;
+        padding: 12px 12px;
+
+        > li {
+            list-style: none;
+            padding-top: 0;
+
+            &.logs-loading,
+            &.logs-more,
+            &.logs-none {
+                height: 22px;
+                line-height: 22px;
+            }
+
+            &.logs-loading {
+                display: flex;
+
+                .common-loading {
+                    margin: 0;
+                }
+            }
+
+            &.logs-more {
+                cursor: pointer;
+
+                &:hover {
+                    color: #048be0;
+                }
+            }
+
+            &.logs-none {
+                cursor: pointer;
+                color: #bbbbbb;
+            }
+
+            .logs-date {
+                color: rgba(0, 0, 0, .36);
+                padding-bottom: 14px;
+            }
+
+            .logs-section {
+                margin: 4px;
+
+                .ivu-timeline {
+                    > li {
+                        padding-bottom: 8px;
+
+                        &:last-child {
+                            padding-bottom: 0;
+                        }
+
+                        .ivu-timeline-item-head-custom {
+                            position: static;
+                            left: auto;
+                            margin-top: 8px;
+                            margin-left: -13px;
+                            margin-right: 6px;
+                            width: auto;
+                            min-width: 40px;
+                        }
+
+                        .ivu-timeline-item-content {
+                            padding-left: 20px;
+                            margin-top: -5px;
+                        }
+                    }
+                }
+            }
+
+            .logs-dot {
+                width: auto;
+                height: 18px;
+                margin-left: 10px;
+                display: flex;
+
+                .avatar-name {
+                    &.auto {
+                        color: #9599a1;
+                    }
+                }
+            }
+
+            .log-summary {
+                position: relative;
+                padding: 4px 0 4px 12px;
+
+                > span,
+                > a {
+                    padding-right: 6px;
+                    word-wrap: break-word;
+                    word-break: break-word;
+                }
+
+                .log-text {
+                    display: inline-block;
+                    color: rgba(0, 0, 0, .72);
+
+                    .change-value {
+                        &:hover {
+                            border-bottom: 1px dotted rgba(0, 0, 0, .3);
+                        }
+                    }
+
+                    .subtitle-value {
+                        padding-left: 12px;
+                        color: rgba(0, 0, 0, .36);
+                    }
+
+                    .detail-user {
+                        display: inline-block;
+                        vertical-align: top;
+
+                        .detail-user-wrap {
+                            display: flex;
+
+                            .common-avatar {
+                                margin: 0 2px;
+                            }
+                        }
+                    }
+
+                    .change-tags {
+                        display: inline-block;
+                        .tags-box {
+                            gap: 6px;
+                            > li {
+                                height: 20px;
+                                padding: 0 8px;
+                                font-size: 12px;
+                            }
+                        }
+                    }
+                }
+
+                .log-operation {
+                    > button {
+                        font-size: 12px;
+                    }
+
+                    > button + button {
+                        margin-left: 4px;
+                    }
+                }
+
+                .log-time {
+                    color: rgba(0, 0, 0, .3);
+                    font-size: 12px;
+                }
+            }
+
+            .log-task {
+                display: flex;
+                margin-left: 12px;
+                padding-bottom: 4px;
+                > em {
+                    display: inline-block;
+                    font-style: normal;
+                    font-size: 12px;
+                    line-height: 18px;
+                    height: 18px;
+                    max-width: 100%;
+                    color: $primary-desc-color;
+                    border-radius: 5px;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    cursor: pointer;
+                    opacity: 0.6;
+                    &:hover {
+                        opacity: 1;
+                        color: $primary-color;
+                    }
+                }
+            }
+            .log-bottom {
+                width: 100%;
+                height: 6px;
+            }
+        }
+    }
+}

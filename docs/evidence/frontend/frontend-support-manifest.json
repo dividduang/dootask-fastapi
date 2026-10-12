@@ -1,0 +1,216 @@
+{
+  "sampled_at": "2026-10-12T13:39:47.605865+08:00",
+  "purpose": "retain source development and acceptance references; cmd remains historical PHP-coupled tooling, not new backend runtime",
+  "files": [
+    {
+      "path": ".env.example",
+      "bytes": 910,
+      "sha256": "ba5f0e9562924e700d30ba3eb612698f4d7d14aa8351dfaca575c5dcfe3f90a4"
+    },
+    {
+      "path": ".prefetch",
+      "bytes": 5654,
+      "sha256": "9e060d27726781cd01aca0bcf4fd50b82bcb0fa703de6428d4c021d85c998bab"
+    },
+    {
+      "path": "cmd",
+      "bytes": 48298,
+      "sha256": "4906e2188080a6a62727574a999d6a6118e723d38ee993bcdba2df2dae6a455f"
+    },
+    {
+      "path": "docs/events-map.md",
+      "bytes": 11012,
+      "sha256": "a6877f13fb2ed16702c3d27ce1144635afd715c2b2cad21c327a4a7a5e6c5714"
+    },
+    {
+      "path": "README_PREVIEW.md",
+      "bytes": 829,
+      "sha256": "343b9467c03e21c60f55444d92d09095f15fffaab6f086e493ac57e329fad1c6"
+    },
+    {
+      "path": "README_PUBLISH.md",
+      "bytes": 1085,
+      "sha256": "7e6f18e130b2bcbf40216e5795366a5df7753abe20cb71bc62d437c980ed8cb3"
+    },
+    {
+      "path": "tests/CreatesApplication.php",
+      "bytes": 402,
+      "sha256": "7436f8a0f94801407e431ea97cce7d911aa92dfe440d684a9794cb5249dc330d"
+    },
+    {
+      "path": "tests/deep-links-parity.mjs",
+      "bytes": 1827,
+      "sha256": "7986703dbc022befe8b98085df212c0cd2062c262d71c6236fe763cb129bece0"
+    },
+    {
+      "path": "tests/Feature/AdminCreateUserTest.php",
+      "bytes": 9415,
+      "sha256": "24d192f4add1ac0d2bde5dded7b4433df163b0efe40cc7e03bd2d94b7bf78562"
+    },
+    {
+      "path": "tests/Feature/CollaborationFileServiceTest.php",
+      "bytes": 15343,
+      "sha256": "b8417538c1088aa45850636773425d5e50d341b831311cb9b8e5df3fc0f3c53b"
+    },
+    {
+      "path": "tests/Feature/CrossProjectTaskTemplateTest.php",
+      "bytes": 17917,
+      "sha256": "e60c1bc00f31fb5ca4642ea4d802c777cab9738ee6e8596151d7316a93e3493c"
+    },
+    {
+      "path": "tests/Feature/DashboardTeamTest.php",
+      "bytes": 6822,
+      "sha256": "b490b3200630479cb5a40579c9f0cc487d8d2833f9e82a402cf4cb0ab440e736"
+    },
+    {
+      "path": "tests/Feature/DepartmentDeputyImportantTest.php",
+      "bytes": 12229,
+      "sha256": "6aa88a2fd7d230cc042b274c2f8bedeb9344082994aca051e4e63f15d10156be"
+    },
+    {
+      "path": "tests/Feature/DialogPeopleCountTest.php",
+      "bytes": 1664,
+      "sha256": "4aa8a9fdbc5e7b72f3615b7662b03dca05573e4c1ae688729738c65e84883703"
+    },
+    {
+      "path": "tests/Feature/DialogRemovePermissionTest.php",
+      "bytes": 11504,
+      "sha256": "a2410cd64df0a96dd68caa527efc237a6b3f7604f1d2084e35ea2050a79f8e76"
+    },
+    {
+      "path": "tests/Feature/ExampleTest.php",
+      "bytes": 360,
+      "sha256": "91b83b03cb96032e8ff3ae61e680ae9072750cdb5a8e8005838b63f1e8fd317b"
+    },
+    {
+      "path": "tests/Feature/LoopTaskTest.php",
+      "bytes": 7427,
+      "sha256": "6fc8138c321a23322b7c788eb82c630d64c2cd33d69efb5ddb3c037b295633eb"
+    },
+    {
+      "path": "tests/Feature/MessageAttachmentBackfillServiceTest.php",
+      "bytes": 3393,
+      "sha256": "7d69bcdd71d1aff773212b97e006f27d4ed48baf69871917808007ec9d37292a"
+    },
+    {
+      "path": "tests/Feature/MultiOwnerDepartmentTest.php",
+      "bytes": 15949,
+      "sha256": "7ad93b85f0090ecc52dc65a6fa083fa9fc61db0b3e894f99d99db5b801a562ea"
+    },
+    {
+      "path": "tests/Feature/MultiOwnerGroupTest.php",
+      "bytes": 22200,
+      "sha256": "4658adc22c5bc202725e15a44c6db705dd69f187fd90f2d6903169eb1f590e97"
+    },
+    {
+      "path": "tests/Feature/MultiOwnerProjectTest.php",
+      "bytes": 27637,
+      "sha256": "95fd3e4587d2512cc9221e1dca6e9733f93b438af186b373d6a8933164872cfc"
+    },
+    {
+      "path": "tests/Feature/ProjectMemberProtectionTest.php",
+      "bytes": 10935,
+      "sha256": "5344599bfaebf6708e766774bc472ddf27084114a34d696c932938118d9805d9"
+    },
+    {
+      "path": "tests/Feature/ProjectTaskHandoffFeatureTest.php",
+      "bytes": 18053,
+      "sha256": "298f42164f084f937dfd8aaa36b2cd5128c15a178f8d5fa608ada9191478798c"
+    },
+    {
+      "path": "tests/Feature/ProjectTaskHandoffMigrationTest.php",
+      "bytes": 1595,
+      "sha256": "13037bc951c9b44d4b6aaf7abb99978740325219e4890724e1d19ee9447f932a"
+    },
+    {
+      "path": "tests/Feature/RegistrationAvailabilityTest.php",
+      "bytes": 994,
+      "sha256": "9ae02f76e9bc9e14acff27245dbdb01511c4d385aa2a715f971ad8a890e37e53"
+    },
+    {
+      "path": "tests/Feature/SystemBrandingTest.php",
+      "bytes": 1132,
+      "sha256": "c61e87956e2baa4536f716341c5da295537d720604a1a7dda15513d6c2d8d453"
+    },
+    {
+      "path": "tests/Feature/TodoRemindTest.php",
+      "bytes": 6844,
+      "sha256": "c848b7c2b8209bfc0175519a961540d02aacab23204032f2e5652b0c0398ffa0"
+    },
+    {
+      "path": "tests/Feature/TodoSetPermissionTest.php",
+      "bytes": 12397,
+      "sha256": "08d3a98a26b3d26693a52569c6432b830110be3c2897bd36a7009e165841d966"
+    },
+    {
+      "path": "tests/Feature/UserTransferOwnerRoleTest.php",
+      "bytes": 6738,
+      "sha256": "73b2156d9df4922db5401d669e6c34365f4fbe4c0f4da3520463a9088cf0fbf6"
+    },
+    {
+      "path": "tests/Feature/WebDavContractTest.php",
+      "bytes": 13101,
+      "sha256": "11fa8ebae9109d4ad9bca209a89b80493e84c6842f6c890d1674bdd8974405f3"
+    },
+    {
+      "path": "tests/manual/chunk_cleanup_smoke.php",
+      "bytes": 1328,
+      "sha256": "3840e0daacecf325323c206c3601deae75377dfaadd0ee92234a16dc679ebd60"
+    },
+    {
+      "path": "tests/manual/chunk_upload_smoke.php",
+      "bytes": 6676,
+      "sha256": "6d53ad8cd10a4e039594bdd2fb947cd948c1d8461e5bb6ba9029236bcf9313ff"
+    },
+    {
+      "path": "tests/project-table-groups.browser.cjs",
+      "bytes": 21775,
+      "sha256": "a7c678180eb382f28b4ba7a0355cc44b6aee8dc8b2ae2f0725340b56f56b54c3"
+    },
+    {
+      "path": "tests/project-table-groups.test.mjs",
+      "bytes": 18225,
+      "sha256": "4f54a05376c4cc239c280c46d179a4a508855fc0cf38aebc9f8010112776aaf3"
+    },
+    {
+      "path": "tests/scroll-to-stable-target.test.mjs",
+      "bytes": 5079,
+      "sha256": "8aed9b6486a40b08cb70cb6812e2f532313f7daca319800d9b027a0b56c46f00"
+    },
+    {
+      "path": "tests/TestCase.php",
+      "bytes": 173,
+      "sha256": "265854028c0c14f635b8799c0820caa0d81d8e7dacea6647d11c34e46ee777bb"
+    },
+    {
+      "path": "tests/Unit/ExampleTest.php",
+      "bytes": 272,
+      "sha256": "ee78a31c9e8b821fcd23a9161be8aeff8894a366e304489e508a2da95f20cdfc"
+    },
+    {
+      "path": "tests/Unit/MessageAttachmentServiceTest.php",
+      "bytes": 3636,
+      "sha256": "c87a490aa03adbd0d08d5c187219aadb5346eedf3127a879b68924f4a53e195c"
+    },
+    {
+      "path": "tests/Unit/ProjectTaskHandoffTest.php",
+      "bytes": 3975,
+      "sha256": "c8998d7161d5a1cc8d89cdcfef47351dc6711bc48da5e386a629ac3929c4ef9c"
+    },
+    {
+      "path": "tests/Unit/ProjectTaskRefreshLoopTest.php",
+      "bytes": 4266,
+      "sha256": "760c067d7a97f16c607838fde25440be73151a93715539194d726f41d248c0ff"
+    },
+    {
+      "path": "tests/Unit/UserImportParseTest.php",
+      "bytes": 6366,
+      "sha256": "25abbddd5c0b3e0b75f10521ed7b18531f80817df1a0f7b9f9353d77c54a04f8"
+    },
+    {
+      "path": "tests/user-select.test.mjs",
+      "bytes": 3325,
+      "sha256": "9d05f5337b6db7c8368dd96880e0e484f5a3a3922a361b7fb6e6aa4fe5628150"
+    }
+  ]
+}

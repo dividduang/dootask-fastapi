@@ -1,0 +1,1154 @@
+{
+  "sampled_at": "2026-10-12T14:04:51.366814+08:00",
+  "scope_decision": {
+    "A_frontend_protocol_required": "Unchanged frontend requires login/register/key exchange, numeric ret envelope, expiry/device semantics, PGP/OpenPGP HTTP+WS behavior and license UI behavior. Native C ABI is evidence of original implementation, NOT a requirement that FastAPI reuse the same binary.",
+    "B_existing_data_conditional": "Old password hash and old token interoperability are required only if migration of existing database/users/sessions is selected. User has not explicitly selected that scope. New database may use a sound new password/token design behind unchanged frontend protocol; do not claim old-data compatibility.",
+    "C_license_separate": "Unknown binary redistribution/modification rights and license verification semantics are independent. Never remove license enforcement or fabricate success. Obtain supplier terms/specification or lawful supported integration.",
+    "native_unavailable_does_not_block_all_source_work": true,
+    "local_environment_peer_evidence": "EnvRecovery: docker/PHP/Composer not found on PATH; Docker Desktop standard docker.exe path absent; daemon/WSL/image cache NOT inspected; vendor absent. No claim that all host image caches are empty."
+  },
+  "source": "app/Module/Interface/DooSo.php:20-45",
+  "library": "/usr/lib/doo/doo.so",
+  "working_directory": "/var/www",
+  "abi_declarations": [
+    "void initialize(char* work, char* token, char* lang);",
+    "char* license();",
+    "char* licenseDecode(char* license);",
+    "char* licenseSave(char* license);",
+    "int userId();",
+    "char* userExpiredAt();",
+    "char* userEmail();",
+    "char* userEncrypt();",
+    "char* userToken();",
+    "char* userCreate(char* email, char* password);",
+    "char* tokenEncode(int userid, char* email, char* encrypt, int days);",
+    "char* tokenDecode(char* val);",
+    "char* translate(char* val, char* val);",
+    "char* md5s(char* text, char* password);",
+    "char* macs();",
+    "char* dooSN();",
+    "char* version();",
+    "char* pgpGenerateKeyPair(char* name, char* email, char* passphrase);",
+    "char* pgpEncrypt(char* plainText, char* publicKey);",
+    "char* pgpDecrypt(char* cipherText, char* privateKey, char* passphrase);"
+  ],
+  "wrappers": [
+    {
+      "name": "__construct",
+      "visibility": "public",
+      "static": false,
+      "source": "app/Module/Interface/DooSo.php",
+      "start_line": 20,
+      "end_line": 46,
+      "signature": "public function __construct($token = null, $language = null)",
+      "body": "{\n        $this->so = FFI::cdef(<<<EOF\n                void initialize(char* work, char* token, char* lang);\n                char* license();\n                char* licenseDecode(char* license);\n                char* licenseSave(char* license);\n                int userId();\n                char* userExpiredAt();\n                char* userEmail();\n                char* userEncrypt();\n                char* userToken();\n                char* userCreate(char* email, char* password);\n                char* tokenEncode(int userid, char* email, char* encrypt, int days);\n                char* tokenDecode(char* val);\n                char* translate(char* val, char* val);\n                char* md5s(char* text, char* password);\n                char* macs();\n                char* dooSN();\n                char* version();\n                char* pgpGenerateKeyPair(char* name, char* email, char* passphrase);\n                char* pgpEncrypt(char* plainText, char* publicKey);\n                char* pgpDecrypt(char* cipherText, char* privateKey, char* passphrase);\n            EOF, \"/usr/lib/doo/doo.so\");\n        $this->so->initialize(\"/var/www\", $token, $language);\n        return $this->so;\n    }",
+      "sha256": "4fd806d78db64d09ea116f41171e48cef3f5ed087aadcd40667ab2c1676d26d4"
+    },
+    {
+      "name": "string",
+      "visibility": "private",
+      "static": true,
+      "source": "app/Module/Interface/DooSo.php",
+      "start_line": 53,
+      "end_line": 64,
+      "signature": "private static function string($text): string",
+      "body": "{\n        if (!($text instanceof CData)) {\n            return \"\";\n        }\n\n        try {\n            return FFI::string($text);\n        } catch (Exception) {\n            return \"\";\n        }\n    }",
+      "sha256": "4fd806d78db64d09ea116f41171e48cef3f5ed087aadcd40667ab2c1676d26d4"
+    },
+    {
+      "name": "license",
+      "visibility": "public",
+      "static": false,
+      "source": "app/Module/Interface/DooSo.php",
+      "start_line": 70,
+      "end_line": 107,
+      "signature": "public function license(): array",
+      "body": "{\n        $array = Base::json2array(self::string($this->so->license()));\n\n        $ips = explode(\",\", $array['ip']);\n        $array['ip'] = [];\n        foreach ($ips as $ip) {\n            if (Base::is_ipv4($ip)) {\n                $array['ip'][] = $ip;\n            }\n        }\n\n        $domains = explode(\",\", $array['domain']);\n        $array['domain'] = [];\n        foreach ($domains as $domain) {\n            if (Base::is_domain($domain)) {\n                $array['domain'][] = $domain;\n            }\n        }\n\n        $macs = explode(\",\", $array['mac']);\n        $array['mac'] = [];\n        foreach ($macs as $mac) {\n            if (Base::isMac($mac)) {\n                $array['mac'][] = $mac;\n            }\n        }\n\n        $emails = explode(\",\", $array['email']);\n        $array['email'] = [];\n        foreach ($emails as $email) {\n            if (Base::isEmail($email)) {\n                $array['email'][] = $email;\n            }\n        }\n\n        return $array;\n    }",
+      "sha256": "4fd806d78db64d09ea116f41171e48cef3f5ed087aadcd40667ab2c1676d26d4"
+    },
+    {
+      "name": "licenseDecode",
+      "visibility": "public",
+      "static": false,
+      "source": "app/Module/Interface/DooSo.php",
+      "start_line": 114,
+      "end_line": 117,
+      "signature": "public function licenseDecode($license): array",
+      "body": "{\n        return Base::json2array(self::string($this->so->licenseDecode($license)));\n    }",
+      "sha256": "4fd806d78db64d09ea116f41171e48cef3f5ed087aadcd40667ab2c1676d26d4"
+    },
+    {
+      "name": "licenseSave",
+      "visibility": "public",
+      "static": false,
+      "source": "app/Module/Interface/DooSo.php",
+      "start_line": 123,
+      "end_line": 129,
+      "signature": "public function licenseSave($license): void",
+      "body": "{\n        $res = self::string($this->so->licenseSave($license));\n        if ($res != 'success') {\n            throw new ApiException($res ?: 'LICENSE 保存失败');\n        }\n    }",
+      "sha256": "4fd806d78db64d09ea116f41171e48cef3f5ed087aadcd40667ab2c1676d26d4"
+    },
+    {
+      "name": "userId",
+      "visibility": "public",
+      "static": false,
+      "source": "app/Module/Interface/DooSo.php",
+      "start_line": 135,
+      "end_line": 138,
+      "signature": "public function userId(): int",
+      "body": "{\n        return intval($this->so->userId());\n    }",
+      "sha256": "4fd806d78db64d09ea116f41171e48cef3f5ed087aadcd40667ab2c1676d26d4"
+    },
+    {
+      "name": "userExpired",
+      "visibility": "public",
+      "static": false,
+      "source": "app/Module/Interface/DooSo.php",
+      "start_line": 144,
+      "end_line": 148,
+      "signature": "public function userExpired(): bool",
+      "body": "{\n        $expiredAt = $this->userExpiredAt();\n        return $expiredAt && Carbon::parse($expiredAt)->isBefore(Carbon::now());\n    }",
+      "sha256": "4fd806d78db64d09ea116f41171e48cef3f5ed087aadcd40667ab2c1676d26d4"
+    },
+    {
+      "name": "userExpiredAt",
+      "visibility": "public",
+      "static": false,
+      "source": "app/Module/Interface/DooSo.php",
+      "start_line": 154,
+      "end_line": 158,
+      "signature": "public function userExpiredAt(): ?string",
+      "body": "{\n        $expiredAt = self::string($this->so->userExpiredAt());\n        return $expiredAt === 'forever' ? null : $expiredAt;\n    }",
+      "sha256": "4fd806d78db64d09ea116f41171e48cef3f5ed087aadcd40667ab2c1676d26d4"
+    },
+    {
+      "name": "userEmail",
+      "visibility": "public",
+      "static": false,
+      "source": "app/Module/Interface/DooSo.php",
+      "start_line": 164,
+      "end_line": 167,
+      "signature": "public function userEmail(): string",
+      "body": "{\n        return self::string($this->so->userEmail());\n    }",
+      "sha256": "4fd806d78db64d09ea116f41171e48cef3f5ed087aadcd40667ab2c1676d26d4"
+    },
+    {
+      "name": "userEncrypt",
+      "visibility": "public",
+      "static": false,
+      "source": "app/Module/Interface/DooSo.php",
+      "start_line": 173,
+      "end_line": 176,
+      "signature": "public function userEncrypt(): string",
+      "body": "{\n        return self::string($this->so->userEncrypt());\n    }",
+      "sha256": "4fd806d78db64d09ea116f41171e48cef3f5ed087aadcd40667ab2c1676d26d4"
+    },
+    {
+      "name": "userToken",
+      "visibility": "public",
+      "static": false,
+      "source": "app/Module/Interface/DooSo.php",
+      "start_line": 182,
+      "end_line": 185,
+      "signature": "public function userToken(): string",
+      "body": "{\n        return self::string($this->so->userToken());\n    }",
+      "sha256": "4fd806d78db64d09ea116f41171e48cef3f5ed087aadcd40667ab2c1676d26d4"
+    },
+    {
+      "name": "userCreate",
+      "visibility": "public",
+      "static": false,
+      "source": "app/Module/Interface/DooSo.php",
+      "start_line": 193,
+      "end_line": 212,
+      "signature": "public function userCreate($email, $password): User|null",
+      "body": "{\n        $data = Base::json2array(self::string($this->so->userCreate($email, $password)));\n        if (Base::isError($data)) {\n            throw new ApiException($data['msg'] ?: '注册失败');\n        }\n        if (DB::transactionLevel() > 0) {\n            try {\n                DB::commit();\n                DB::beginTransaction();\n            } catch (Throwable) {\n                // do nothing\n            }\n        }\n        $user = User::whereEmail($email)->first();\n        if (empty($user)) {\n            throw new ApiException('注册失败');\n        }\n        return $user;\n    }",
+      "sha256": "4fd806d78db64d09ea116f41171e48cef3f5ed087aadcd40667ab2c1676d26d4"
+    },
+    {
+      "name": "tokenEncode",
+      "visibility": "public",
+      "static": false,
+      "source": "app/Module/Interface/DooSo.php",
+      "start_line": 222,
+      "end_line": 225,
+      "signature": "public function tokenEncode($userid, $email, $encrypt, int $days = 15): string",
+      "body": "{\n        return self::string($this->so->tokenEncode($userid, $email, $encrypt, $days));\n    }",
+      "sha256": "4fd806d78db64d09ea116f41171e48cef3f5ed087aadcd40667ab2c1676d26d4"
+    },
+    {
+      "name": "tokenDecode",
+      "visibility": "public",
+      "static": false,
+      "source": "app/Module/Interface/DooSo.php",
+      "start_line": 232,
+      "end_line": 237,
+      "signature": "public function tokenDecode($token): array",
+      "body": "{\n        $array = Base::json2array(self::string($this->so->tokenDecode($token)));\n        $array['expired_at'] = $array['expired_at'] === 'forever' ? null : $array['expired_at'];\n        return $array;\n    }",
+      "sha256": "4fd806d78db64d09ea116f41171e48cef3f5ed087aadcd40667ab2c1676d26d4"
+    },
+    {
+      "name": "translate",
+      "visibility": "public",
+      "static": false,
+      "source": "app/Module/Interface/DooSo.php",
+      "start_line": 245,
+      "end_line": 254,
+      "signature": "public function translate($text, ?string $lang = \"\"): string",
+      "body": "{\n        if (empty($text)) {\n            return \"\";\n        }\n        if (empty($lang)) {\n            $lang = \"\";\n        }\n        return self::string($this->so->translate($text, $lang));\n    }",
+      "sha256": "4fd806d78db64d09ea116f41171e48cef3f5ed087aadcd40667ab2c1676d26d4"
+    },
+    {
+      "name": "md5s",
+      "visibility": "public",
+      "static": false,
+      "source": "app/Module/Interface/DooSo.php",
+      "start_line": 262,
+      "end_line": 265,
+      "signature": "public function md5s($text, string $password = \"\"): string",
+      "body": "{\n        return self::string($this->so->md5s($text, $password));\n    }",
+      "sha256": "4fd806d78db64d09ea116f41171e48cef3f5ed087aadcd40667ab2c1676d26d4"
+    },
+    {
+      "name": "macs",
+      "visibility": "public",
+      "static": false,
+      "source": "app/Module/Interface/DooSo.php",
+      "start_line": 271,
+      "end_line": 281,
+      "signature": "public function macs(): array",
+      "body": "{\n        $macs = explode(\",\", self::string($this->so->macs()));\n        $array = [];\n        foreach ($macs as $mac) {\n            if (Base::isMac($mac)) {\n                $array[] = $mac;\n            }\n        }\n        return $array;\n    }",
+      "sha256": "4fd806d78db64d09ea116f41171e48cef3f5ed087aadcd40667ab2c1676d26d4"
+    },
+    {
+      "name": "dooSN",
+      "visibility": "public",
+      "static": false,
+      "source": "app/Module/Interface/DooSo.php",
+      "start_line": 287,
+      "end_line": 290,
+      "signature": "public function dooSN(): string",
+      "body": "{\n        return self::string($this->so->dooSN());\n    }",
+      "sha256": "4fd806d78db64d09ea116f41171e48cef3f5ed087aadcd40667ab2c1676d26d4"
+    },
+    {
+      "name": "dooVersion",
+      "visibility": "public",
+      "static": false,
+      "source": "app/Module/Interface/DooSo.php",
+      "start_line": 296,
+      "end_line": 299,
+      "signature": "public function dooVersion(): string",
+      "body": "{\n        return self::string($this->so->version());\n    }",
+      "sha256": "4fd806d78db64d09ea116f41171e48cef3f5ed087aadcd40667ab2c1676d26d4"
+    },
+    {
+      "name": "pgpGenerateKeyPair",
+      "visibility": "public",
+      "static": false,
+      "source": "app/Module/Interface/DooSo.php",
+      "start_line": 308,
+      "end_line": 311,
+      "signature": "public function pgpGenerateKeyPair($name, $email, string $passphrase = \"\"): array",
+      "body": "{\n        return Base::json2array(self::string($this->so->pgpGenerateKeyPair($name, $email, $passphrase)));\n    }",
+      "sha256": "4fd806d78db64d09ea116f41171e48cef3f5ed087aadcd40667ab2c1676d26d4"
+    },
+    {
+      "name": "pgpEncrypt",
+      "visibility": "public",
+      "static": false,
+      "source": "app/Module/Interface/DooSo.php",
+      "start_line": 319,
+      "end_line": 326,
+      "signature": "public function pgpEncrypt($plaintext, $publicKey): string",
+      "body": "{\n        if (strlen($publicKey) < 50) {\n            $keyCache = Base::json2array(Cache::get(\"KeyPair::\" . $publicKey));\n            $publicKey = $keyCache['public_key'];\n        }\n        return self::string($this->so->pgpEncrypt($plaintext, $publicKey));\n    }",
+      "sha256": "4fd806d78db64d09ea116f41171e48cef3f5ed087aadcd40667ab2c1676d26d4"
+    },
+    {
+      "name": "pgpDecrypt",
+      "visibility": "public",
+      "static": false,
+      "source": "app/Module/Interface/DooSo.php",
+      "start_line": 335,
+      "end_line": 343,
+      "signature": "public function pgpDecrypt($encryptedText, $privateKey, $passphrase = null): string",
+      "body": "{\n        if (strlen($privateKey) < 50) {\n            $keyCache = Base::json2array(Cache::get(\"KeyPair::\" . $privateKey));\n            $privateKey = $keyCache['private_key'];\n            $passphrase = $keyCache['passphrase'];\n        }\n        return self::string($this->so->pgpDecrypt($encryptedText, $privateKey, $passphrase));\n    }",
+      "sha256": "4fd806d78db64d09ea116f41171e48cef3f5ed087aadcd40667ab2c1676d26d4"
+    },
+    {
+      "name": "pgpEncryptApi",
+      "visibility": "public",
+      "static": false,
+      "source": "app/Module/Interface/DooSo.php",
+      "start_line": 351,
+      "end_line": 356,
+      "signature": "public function pgpEncryptApi($plaintext, $publicKey): string",
+      "body": "{\n        $content = Base::array2json($plaintext);\n        $content = $this->pgpEncrypt($content, $publicKey);\n        return preg_replace(\"/\\s*-----(BEGIN|END) PGP MESSAGE-----\\s*/i\", \"\", $content);\n    }",
+      "sha256": "4fd806d78db64d09ea116f41171e48cef3f5ed087aadcd40667ab2c1676d26d4"
+    },
+    {
+      "name": "pgpDecryptApi",
+      "visibility": "public",
+      "static": false,
+      "source": "app/Module/Interface/DooSo.php",
+      "start_line": 365,
+      "end_line": 370,
+      "signature": "public function pgpDecryptApi($encryptedText, $privateKey, $passphrase = null): array",
+      "body": "{\n        $content = \"-----BEGIN PGP MESSAGE-----\\n\\n\" . $encryptedText . \"\\n-----END PGP MESSAGE-----\";\n        $content = $this->pgpDecrypt($content, $privateKey, $passphrase);\n        return Base::json2array($content);\n    }",
+      "sha256": "4fd806d78db64d09ea116f41171e48cef3f5ed087aadcd40667ab2c1676d26d4"
+    },
+    {
+      "name": "pgpParseStr",
+      "visibility": "public",
+      "static": false,
+      "source": "app/Module/Interface/DooSo.php",
+      "start_line": 377,
+      "end_line": 397,
+      "signature": "public function pgpParseStr($string): array",
+      "body": "{\n        $array = [\n            'encrypt_type' => '',\n            'encrypt_id' => '',\n            'client_type' => '',\n            'client_key' => '',\n        ];\n        $string = str_replace(\";\", \"&\", $string);\n        parse_str($string, $params);\n        foreach ($params as $key => $value) {\n            $key = strtolower(trim($key));\n            if ($key) {\n                $array[$key] = trim($value);\n            }\n        }\n        if ($array['client_type'] === 'pgp' && $array['client_key']) {\n            $array['client_key'] = $this->pgpPublicFormat($array['client_key']);\n        }\n        return $array;\n    }",
+      "sha256": "4fd806d78db64d09ea116f41171e48cef3f5ed087aadcd40667ab2c1676d26d4"
+    },
+    {
+      "name": "pgpPublicFormat",
+      "visibility": "public",
+      "static": false,
+      "source": "app/Module/Interface/DooSo.php",
+      "start_line": 404,
+      "end_line": 411,
+      "signature": "public function pgpPublicFormat($key): string",
+      "body": "{\n        $key = str_replace([\"-\", \"_\", \"$\"], [\"+\", \"/\", \"\\n\"], $key);\n        if (!str_contains($key, '-----BEGIN PGP PUBLIC KEY BLOCK-----')) {\n            $key = \"-----BEGIN PGP PUBLIC KEY BLOCK-----\\n\\n\" . $key . \"\\n-----END PGP PUBLIC KEY BLOCK-----\";\n        }\n        return $key;\n    }",
+      "sha256": "4fd806d78db64d09ea116f41171e48cef3f5ed087aadcd40667ab2c1676d26d4"
+    }
+  ],
+  "consumers": [
+    {
+      "source": "app/Http/Controllers/IndexController.php",
+      "line": 466,
+      "text": "'button' => Doo::translate('点击下载'),"
+    },
+    {
+      "source": "app/Http/Controllers/Api/DialogController.php",
+      "line": 1997,
+      "text": "'content' => Doo::translate(\"内容不存在\")"
+    },
+    {
+      "source": "app/Http/Controllers/Api/ProjectController.php",
+      "line": 1801,
+      "text": "$doo = Doo::load();"
+    },
+    {
+      "source": "app/Http/Controllers/Api/ProjectController.php",
+      "line": 2064,
+      "text": "$doo = Doo::load();"
+    },
+    {
+      "source": "app/Http/Controllers/Api/ProjectController.php",
+      "line": 3225,
+      "text": "->whereUserid(Doo::userId())"
+    },
+    {
+      "source": "app/Http/Controllers/Api/ProjectController.php",
+      "line": 3759,
+      "text": "$log->detail = Doo::translate($log->detail);"
+    },
+    {
+      "source": "app/Http/Controllers/Api/ProjectController.php",
+      "line": 3763,
+      "text": "'week' => Doo::translate(\"周\" . Timer::getWeek($timestamp)),"
+    },
+    {
+      "source": "app/Http/Controllers/Api/ProjectController.php",
+      "line": 3764,
+      "text": "'segment' => Doo::translate(Timer::getDayeSegment($timestamp)),"
+    },
+    {
+      "source": "app/Http/Controllers/Api/ReportController.php",
+      "line": 366,
+      "text": "Doo::translate('项目'),"
+    },
+    {
+      "source": "app/Http/Controllers/Api/ReportController.php",
+      "line": 367,
+      "text": "Doo::translate('任务'),"
+    },
+    {
+      "source": "app/Http/Controllers/Api/ReportController.php",
+      "line": 368,
+      "text": "Doo::translate('负责人'),"
+    },
+    {
+      "source": "app/Http/Controllers/Api/ReportController.php",
+      "line": 369,
+      "text": "Doo::translate('备注'),"
+    },
+    {
+      "source": "app/Http/Controllers/Api/ReportController.php",
+      "line": 389,
+      "text": "$remark = $type == Report::WEEKLY ? ('<div style=\"text-align:center\">[' . Doo::translate('周' . ['日', '一', '二', '三', '四', '五', '六'][$complete_at->dayOfWeek]) . ']</div>') : '&nbsp;';"
+    },
+    {
+      "source": "app/Http/Controllers/Api/ReportController.php",
+      "line": 407,
+      "text": "$remark = (!empty($end_at) && $end_at->lt($now_dt)) ? '<div style=\"color:#ff0000;text-align:center\">[' . Doo::translate('超期') . ']</div>' : '&nbsp;';"
+    },
+    {
+      "source": "app/Http/Controllers/Api/ReportController.php",
+      "line": 428,
+      "text": "$title = Doo::translate($title);"
+    },
+    {
+      "source": "app/Http/Controllers/Api/ReportController.php",
+      "line": 432,
+      "text": "$contents[] = '<h2>' . Doo::translate('已完成工作') . '</h2>';"
+    },
+    {
+      "source": "app/Http/Controllers/Api/ReportController.php",
+      "line": 439,
+      "text": "$contents[] = '<h2>' . Doo::translate($unfinishedTitle) . '</h2>';"
+    },
+    {
+      "source": "app/Http/Controllers/Api/ReportController.php",
+      "line": 469,
+      "text": "$contents[] = \"<h2>\" . Doo::translate(\"下周拟定计划\") . \"[\" . $next_start_time->format(\"m/d\") . \"-\" . $next_end_time->format(\"m/d\") . \"]</h2>\";"
+    },
+    {
+      "source": "app/Http/Controllers/Api/ReportController.php",
+      "line": 472,
+      "text": "Doo::translate('计划描述'),"
+    },
+    {
+      "source": "app/Http/Controllers/Api/ReportController.php",
+      "line": 473,
+      "text": "Doo::translate('计划时间'),"
+    },
+    {
+      "source": "app/Http/Controllers/Api/ReportController.php",
+      "line": 474,
+      "text": "Doo::translate('负责人'),"
+    },
+    {
+      "source": "app/Http/Controllers/Api/SystemController.php",
+      "line": 531,
+      "text": "$setting['face_remark'] = $setting['face_remark'] ?: Doo::translate('考勤机');"
+    },
+    {
+      "source": "app/Http/Controllers/Api/SystemController.php",
+      "line": 533,
+      "text": "$setting['locat_remark'] = $setting['locat_remark'] ?: Doo::translate('定位签到');"
+    },
+    {
+      "source": "app/Http/Controllers/Api/SystemController.php",
+      "line": 538,
+      "text": "$setting['manual_remark'] = $setting['manual_remark'] ?: Doo::translate('手动签到');"
+    },
+    {
+      "source": "app/Http/Controllers/Api/SystemController.php",
+      "line": 886,
+      "text": "$decoded = Doo::licenseDecode($license);"
+    },
+    {
+      "source": "app/Http/Controllers/Api/SystemController.php",
+      "line": 893,
+      "text": "Doo::licenseSave($license);"
+    },
+    {
+      "source": "app/Http/Controllers/Api/SystemController.php",
+      "line": 900,
+      "text": "'info' => Doo::license(),"
+    },
+    {
+      "source": "app/Http/Controllers/Api/SystemController.php",
+      "line": 901,
+      "text": "'macs' => Doo::macs(),"
+    },
+    {
+      "source": "app/Http/Controllers/Api/SystemController.php",
+      "line": 902,
+      "text": "'doo_sn' => Doo::dooSN(),"
+    },
+    {
+      "source": "app/Http/Controllers/Api/SystemController.php",
+      "line": 903,
+      "text": "'doo_version' => Doo::dooVersion(),"
+    },
+    {
+      "source": "app/Http/Controllers/Api/SystemController.php",
+      "line": 968,
+      "text": "'token' => Doo::userToken(),"
+    },
+    {
+      "source": "app/Http/Controllers/Api/SystemController.php",
+      "line": 1282,
+      "text": "->html('<p>' . Doo::translate('收到此电子邮件意味着您的邮箱配置正确。') . '</p>'));"
+    },
+    {
+      "source": "app/Http/Controllers/Api/SystemController.php",
+      "line": 1354,
+      "text": "$doo = Doo::load();"
+    },
+    {
+      "source": "app/Http/Controllers/Api/SystemController.php",
+      "line": 1571,
+      "text": "if (Doo::userId()) {"
+    },
+    {
+      "source": "app/Http/Controllers/Api/SystemController.php",
+      "line": 1572,
+      "text": "$array['device_count'] = UserDevice::whereUserid(Doo::userId())->count();"
+    },
+    {
+      "source": "app/Http/Controllers/Api/UsersController.php",
+      "line": 142,
+      "text": "if ($usePassword && $user->password != Doo::md5s($password, $user->encrypt)) {"
+    },
+    {
+      "source": "app/Http/Controllers/Api/UsersController.php",
+      "line": 170,
+      "text": "'name' => \"📝 \" . Doo::translate('个人项目'),"
+    },
+    {
+      "source": "app/Http/Controllers/Api/UsersController.php",
+      "line": 171,
+      "text": "'desc' => Doo::translate('注册时系统自动创建项目，你可以自由删除。'),"
+    },
+    {
+      "source": "app/Http/Controllers/Api/UsersController.php",
+      "line": 322,
+      "text": "$expired = Doo::userExpired();"
+    },
+    {
+      "source": "app/Http/Controllers/Api/UsersController.php",
+      "line": 632,
+      "text": "$verify = User::whereUserid($user->userid)->wherePassword(Doo::md5s($oldpass, Doo::userEncrypt()))->count();"
+    },
+    {
+      "source": "app/Http/Controllers/Api/UsersController.php",
+      "line": 638,
+      "text": "$user->password = Doo::md5s($newpass, $user->encrypt);"
+    },
+    {
+      "source": "app/Http/Controllers/Api/UsersController.php",
+      "line": 784,
+      "text": "$tags[] = preg_replace(\"/\\(M\\)$/\", \"\", trim($dep[0])) . Doo::translate(\"负责人\");"
+    },
+    {
+      "source": "app/Http/Controllers/Api/UsersController.php",
+      "line": 788,
+      "text": "$tags[] = Doo::translate(\"系统管理员\");"
+    },
+    {
+      "source": "app/Http/Controllers/Api/UsersController.php",
+      "line": 794,
+      "text": "$tags[] = Doo::translate(\"新帐号\");"
+    },
+    {
+      "source": "app/Http/Controllers/Api/UsersController.php",
+      "line": 1296,
+      "text": "$upArray['password'] = Doo::md5s($password, $upArray['encrypt']);"
+    },
+    {
+      "source": "app/Http/Controllers/Api/UsersController.php",
+      "line": 1649,
+      "text": "$name = $name ?: Doo::translate(\"{$user?->nickname} 发起的会议\");"
+    },
+    {
+      "source": "app/Http/Controllers/Api/UsersController.php",
+      "line": 2168,
+      "text": "if ($user->password != Doo::md5s($password, $user->encrypt)) {"
+    },
+    {
+      "source": "app/Http/Controllers/Api/UsersController.php",
+      "line": 2675,
+      "text": "$clientId = (trim(Request::input('client_id')) ?: Base::generatePassword(6)) . Doo::userId();"
+    },
+    {
+      "source": "app/Http/Controllers/Api/UsersController.php",
+      "line": 2689,
+      "text": "$name = Doo::userEmail() ?: Base::generatePassword(6);"
+    },
+    {
+      "source": "app/Http/Controllers/Api/UsersController.php",
+      "line": 2690,
+      "text": "$email = Doo::userEmail() ?: 'aa@bb.cc';"
+    },
+    {
+      "source": "app/Http/Controllers/Api/UsersController.php",
+      "line": 2691,
+      "text": "$data = Doo::pgpGenerateKeyPair($name, $email, Base::generatePassword());"
+    },
+    {
+      "source": "app/Http/Controllers/Api/UsersController.php",
+      "line": 3008,
+      "text": "'name' => Doo::translate('文件'),"
+    },
+    {
+      "source": "app/Http/Middleware/WebApi.php",
+      "line": 32,
+      "text": "Doo::load();"
+    },
+    {
+      "source": "app/Http/Middleware/WebApi.php",
+      "line": 35,
+      "text": "$userid = Doo::userId();"
+    },
+    {
+      "source": "app/Http/Middleware/WebApi.php",
+      "line": 41,
+      "text": "$encrypt = Doo::pgpParseStr($request->header('encrypt'));"
+    },
+    {
+      "source": "app/Http/Middleware/WebApi.php",
+      "line": 52,
+      "text": "$content = Doo::pgpDecryptApi($content, $encrypt['encrypt_id']);"
+    },
+    {
+      "source": "app/Http/Middleware/WebApi.php",
+      "line": 64,
+      "text": "$content = Doo::pgpEncryptApi($content, $encrypt['client_key']);"
+    },
+    {
+      "source": "app/Models/ProjectPermission.php",
+      "line": 202,
+      "text": "$desc[] = Doo::translate(self::PERMISSIONS_DESC[$permission]);"
+    },
+    {
+      "source": "app/Models/User.php",
+      "line": 115,
+      "text": "return Doo::translate($value);"
+    },
+    {
+      "source": "app/Models/User.php",
+      "line": 398,
+      "text": "if ($err = Doo::licenseBindingError(Doo::license())) {"
+    },
+    {
+      "source": "app/Models/User.php",
+      "line": 402,
+      "text": "$user = Doo::userCreate($email, $password);"
+    },
+    {
+      "source": "app/Models/User.php",
+      "line": 777,
+      "text": "if (Doo::userId() <= 0) {"
+    },
+    {
+      "source": "app/Models/User.php",
+      "line": 781,
+      "text": "if (Doo::userExpired()) {"
+    },
+    {
+      "source": "app/Models/User.php",
+      "line": 789,
+      "text": "$user = self::whereUserid(Doo::userId())->whereEmail(Doo::userEmail())->whereEncrypt(Doo::userEncrypt())->first();"
+    },
+    {
+      "source": "app/Models/User.php",
+      "line": 825,
+      "text": "if (Doo::userId() != $userinfo->userid"
+    },
+    {
+      "source": "app/Models/User.php",
+      "line": 826,
+      "text": "|| Doo::userEmail() != $userinfo->email"
+    },
+    {
+      "source": "app/Models/User.php",
+      "line": 827,
+      "text": "|| Doo::userEncrypt() != $userinfo->encrypt) {"
+    },
+    {
+      "source": "app/Models/User.php",
+      "line": 833,
+      "text": "$token = Doo::tokenEncode($userinfo->userid, $userinfo->email, $userinfo->encrypt, $days);"
+    },
+    {
+      "source": "app/Models/User.php",
+      "line": 835,
+      "text": "$token = Doo::userToken();"
+    },
+    {
+      "source": "app/Models/User.php",
+      "line": 853,
+      "text": "$token = Doo::tokenEncode($userinfo->userid, $userinfo->email, $userinfo->encrypt);"
+    },
+    {
+      "source": "app/Models/User.php",
+      "line": 923,
+      "text": "return $alias ?: Doo::translate(\"临时帐号\");"
+    },
+    {
+      "source": "app/Models/User.php",
+      "line": 1027,
+      "text": "$botUser = Doo::userCreate($email, Base::generatePassword(32));"
+    },
+    {
+      "source": "app/Models/UserBot.php",
+      "line": 173,
+      "text": "return Doo::translate($name);"
+    },
+    {
+      "source": "app/Models/UserBot.php",
+      "line": 202,
+      "text": "'label' => Doo::translate('定位签到'),"
+    },
+    {
+      "source": "app/Models/UserBot.php",
+      "line": 216,
+      "text": "'label' => Doo::translate('手动签到')"
+    },
+    {
+      "source": "app/Models/UserBot.php",
+      "line": 225,
+      "text": "'label' => Doo::translate('使用说明')"
+    },
+    {
+      "source": "app/Models/UserBot.php",
+      "line": 228,
+      "text": "'label' => Doo::translate('隐私说明')"
+    },
+    {
+      "source": "app/Models/UserBot.php",
+      "line": 239,
+      "text": "'label' => Doo::translate('新会议')"
+    },
+    {
+      "source": "app/Models/UserBot.php",
+      "line": 243,
+      "text": "'label' => Doo::translate('加入会议')"
+    },
+    {
+      "source": "app/Models/UserBot.php",
+      "line": 251,
+      "text": "'label' => Doo::translate('帮助指令')"
+    },
+    {
+      "source": "app/Models/UserBot.php",
+      "line": 254,
+      "text": "'label' => Doo::translate('API接口文档')"
+    },
+    {
+      "source": "app/Models/UserBot.php",
+      "line": 257,
+      "text": "'label' => Doo::translate('我的机器人')"
+    },
+    {
+      "source": "app/Models/UserBot.php",
+      "line": 266,
+      "text": "'label' => Doo::translate('开启新会话'),"
+    },
+    {
+      "source": "app/Models/UserBot.php",
+      "line": 270,
+      "text": "'label' => Doo::translate('历史会话'),"
+    },
+    {
+      "source": "app/Models/UserBot.php",
+      "line": 285,
+      "text": "'label' => Doo::translate('选择模型'),"
+    },
+    {
+      "source": "app/Models/UserBot.php",
+      "line": 466,
+      "text": "return Doo::translate($pre . $item);"
+    },
+    {
+      "source": "app/Models/UserDevice.php",
+      "line": 70,
+      "text": "return $this->hash === md5(Doo::userToken()) ? 1 : 0;"
+    },
+    {
+      "source": "app/Models/UserDevice.php",
+      "line": 203,
+      "text": "$token = Doo::userToken();"
+    },
+    {
+      "source": "app/Models/UserDevice.php",
+      "line": 204,
+      "text": "$userid = Doo::userId();"
+    },
+    {
+      "source": "app/Models/UserDevice.php",
+      "line": 234,
+      "text": "$token = Doo::userToken();"
+    },
+    {
+      "source": "app/Models/UserDevice.php",
+      "line": 235,
+      "text": "$userid = Doo::userId();"
+    },
+    {
+      "source": "app/Models/UserDevice.php",
+      "line": 238,
+      "text": "$info = Doo::tokenDecode($token);"
+    },
+    {
+      "source": "app/Models/UserDevice.php",
+      "line": 300,
+      "text": "$token = Doo::userToken();"
+    },
+    {
+      "source": "app/Models/UserEmailVerification.php",
+      "line": 77,
+      "text": "$subject = Doo::translate($alias . \"修改邮箱验证\");"
+    },
+    {
+      "source": "app/Models/UserEmailVerification.php",
+      "line": 79,
+      "text": "Doo::translate($user->nickname . \" 您好，您正在修改 \" . $alias . \" 的邮箱，验证码如下。请在30分钟内输入验证码\"),"
+    },
+    {
+      "source": "app/Models/UserEmailVerification.php",
+      "line": 81,
+      "text": "Doo::translate(\"如果不是本人操作，您的帐号可能存在风险，请及时修改密码！\")"
+    },
+    {
+      "source": "app/Models/UserEmailVerification.php",
+      "line": 85,
+      "text": "$subject = Doo::translate($alias . \"注销帐号验证\");"
+    },
+    {
+      "source": "app/Models/UserEmailVerification.php",
+      "line": 87,
+      "text": "Doo::translate($user->nickname . \" 您好，您正在注销 \" . $alias . \" 的帐号，验证码如下。请在30分钟内输入验证码\"),"
+    },
+    {
+      "source": "app/Models/UserEmailVerification.php",
+      "line": 89,
+      "text": "Doo::translate(\"如果不是本人操作，您的帐号可能存在风险，请及时修改密码！\")"
+    },
+    {
+      "source": "app/Models/UserEmailVerification.php",
+      "line": 94,
+      "text": "$subject = Doo::translate($alias . \"绑定邮箱验证\");"
+    },
+    {
+      "source": "app/Models/UserEmailVerification.php",
+      "line": 96,
+      "text": "Doo::translate($user->nickname . \" 您好，您正在绑定 \" . $alias . \" 的邮箱，请于30分钟之内点击以下链接完成验证:\"),"
+    },
+    {
+      "source": "app/Models/WebSocketDialog.php",
+      "line": 375,
+      "text": ": Doo::translate('全体成员');"
+    },
+    {
+      "source": "app/Models/WebSocketDialog.php",
+      "line": 839,
+      "text": ": Doo::translate('全体成员');"
+    },
+    {
+      "source": "app/Models/WebSocketDialogMsg.php",
+      "line": 217,
+      "text": "if ($msg['text'] && !in_array(Doo::userId(), $textUserid)) {"
+    },
+    {
+      "source": "app/Models/WebSocketDialogMsg.php",
+      "line": 810,
+      "text": "return $data['msg']['desc'] ? Base::cutStr($data['msg']['desc'], 50) : (\"[\" . Doo::translate(\"长文本\") . \"]\");"
+    },
+    {
+      "source": "app/Models/WebSocketDialogMsg.php",
+      "line": 813,
+      "text": "$action = Doo::translate(\"投票\");"
+    },
+    {
+      "source": "app/Models/WebSocketDialogMsg.php",
+      "line": 817,
+      "text": "$action = Doo::translate(\"接龙\");"
+    },
+    {
+      "source": "app/Models/WebSocketDialogMsg.php",
+      "line": 821,
+      "text": "$action = Doo::translate(\"语音\");"
+    },
+    {
+      "source": "app/Models/WebSocketDialogMsg.php",
+      "line": 825,
+      "text": "$action = Doo::translate(\"位置\");"
+    },
+    {
+      "source": "app/Models/WebSocketDialogMsg.php",
+      "line": 829,
+      "text": "$action = Doo::translate(\"会议\");"
+    },
+    {
+      "source": "app/Models/WebSocketDialogMsg.php",
+      "line": 836,
+      "text": "$action = Doo::translate($data['msg']['action'] === 'remove' ? '取消标注' : '标注');"
+    },
+    {
+      "source": "app/Models/WebSocketDialogMsg.php",
+      "line": 840,
+      "text": "$action = Doo::translate($data['msg']['action'] === 'remove' ? '取消置顶' : '置顶');"
+    },
+    {
+      "source": "app/Models/WebSocketDialogMsg.php",
+      "line": 844,
+      "text": "$action = Doo::translate($data['msg']['action'] === 'remove' ? '取消待办' : ($data['msg']['action'] === 'done' ? '完成' : '设待办'));"
+    },
+    {
+      "source": "app/Models/WebSocketDialogMsg.php",
+      "line": 848,
+      "text": "$notice = $data['msg']['source'] === 'api' ? $data['msg']['notice'] : Doo::translate($data['msg']['notice']);"
+    },
+    {
+      "source": "app/Models/WebSocketDialogMsg.php",
+      "line": 855,
+      "text": "return \"[\" . Doo::translate(\"聊天记录\") . \"]\";"
+    },
+    {
+      "source": "app/Models/WebSocketDialogMsg.php",
+      "line": 861,
+      "text": "$action = Doo::translate(\"未知的消息\");"
+    },
+    {
+      "source": "app/Models/WebSocketDialogMsg.php",
+      "line": 880,
+      "text": "return Doo::translate('思考中...');"
+    },
+    {
+      "source": "app/Models/WebSocketDialogMsg.php",
+      "line": 893,
+      "text": "$text = preg_replace(\"/<img\\s+class=\\\"emoticon\\\"[^>]*?>/\", \"[\" . Doo::translate('动画表情') . \"]\", $text);"
+    },
+    {
+      "source": "app/Models/WebSocketDialogMsg.php",
+      "line": 894,
+      "text": "$text = preg_replace(\"/<img\\s+class=\\\"browse\\\"[^>]*?>/\", \"[\" . Doo::translate('图片') . \"]\", $text);"
+    },
+    {
+      "source": "app/Models/WebSocketDialogMsg.php",
+      "line": 913,
+      "text": "$action = Doo::translate(\"图片\");"
+    },
+    {
+      "source": "app/Models/WebSocketDialogMsg.php",
+      "line": 916,
+      "text": "$action = Doo::translate(\"视频\");"
+    },
+    {
+      "source": "app/Models/WebSocketDialogMsg.php",
+      "line": 919,
+      "text": "$action = Doo::translate(\"文件\");"
+    },
+    {
+      "source": "app/Models/WebSocketDialogMsg.php",
+      "line": 934,
+      "text": "$title = $msg['source'] === 'api' ? $msg['title'] : Doo::translate($msg['title']);"
+    },
+    {
+      "source": "app/Models/WebSocketDialogMsg.php",
+      "line": 938,
+      "text": "return $msg['source'] === 'api' ? $msg['title'] : Doo::translate($msg['title']);"
+    },
+    {
+      "source": "app/Models/WebSocketDialogMsg.php",
+      "line": 941,
+      "text": "$content = $msg['source'] === 'api' ? $msg['content'] : Doo::translate($msg['content']);"
+    },
+    {
+      "source": "app/Models/WebSocketDialogMsg.php",
+      "line": 944,
+      "text": "return Doo::translate('未知的消息');"
+    },
+    {
+      "source": "app/Module/Base.php",
+      "line": 1383,
+      "text": "'msg' => Doo::translate($msg),"
+    },
+    {
+      "source": "app/Module/Base.php",
+      "line": 1399,
+      "text": "'msg' => Doo::translate($msg),"
+    },
+    {
+      "source": "app/Module/Base.php",
+      "line": 1415,
+      "text": "$translateMsg = Doo::translate($msg);"
+    },
+    {
+      "source": "app/Module/OnlineLicense.php",
+      "line": 94,
+      "text": "'sn' => Doo::dooSN(),"
+    },
+    {
+      "source": "app/Module/OnlineLicense.php",
+      "line": 95,
+      "text": "'macs' => implode(',', Doo::macs()),"
+    },
+    {
+      "source": "app/Module/OnlineLicense.php",
+      "line": 138,
+      "text": "Doo::licenseSave($blob); // 复用离线落地与 doo.so 校验"
+    },
+    {
+      "source": "app/Module/ProjectTaskHandoffRecord.php",
+      "line": 96,
+      "text": "'userid' => Doo::userId(),"
+    },
+    {
+      "source": "app/Module/ProjectTaskHandoffService.php",
+      "line": 27,
+      "text": "$userid = Doo::userId();"
+    },
+    {
+      "source": "app/Module/ProjectTaskHandoffService.php",
+      "line": 52,
+      "text": "$userid = Doo::userId();"
+    },
+    {
+      "source": "app/Module/SystemUpdate.php",
+      "line": 98,
+      "text": "if ($user->password != Doo::md5s($password, $user->encrypt)) {"
+    },
+    {
+      "source": "app/Services/WebSocketService.php",
+      "line": 51,
+      "text": "Doo::load($get['token'], $get['language']);"
+    },
+    {
+      "source": "app/Services/WebSocketService.php",
+      "line": 54,
+      "text": "$userid = Doo::userId();"
+    },
+    {
+      "source": "app/Services/WebSocketService.php",
+      "line": 55,
+      "text": "if ($userid > 0 && !Doo::userExpired()) {"
+    },
+    {
+      "source": "app/Services/WebSocketService.php",
+      "line": 56,
+      "text": "$count = User::whereUserid($userid)->whereEmail(Doo::userEmail())->whereEncrypt(Doo::userEncrypt())->count();"
+    },
+    {
+      "source": "app/Services/WebSocketService.php",
+      "line": 135,
+      "text": "$data['key'] = Doo::pgpPublicFormat($data['key']);"
+    },
+    {
+      "source": "app/Tasks/BotReceiveMsgTask.php",
+      "line": 296,
+      "text": "$data->password = Doo::md5s(Base::generatePassword(32), $data->encrypt);"
+    },
+    {
+      "source": "app/Tasks/EmailNoticeTask.php",
+      "line": 190,
+      "text": "'title' => Doo::translate(sprintf('%s，您好。', $user->nickname)),"
+    },
+    {
+      "source": "app/Tasks/EmailNoticeTask.php",
+      "line": 191,
+      "text": "'desc' => Doo::translate(sprintf('您有%d条未读%s消息，请及时处理。', count($messagesByDialog), $msgType)),"
+    },
+    {
+      "source": "app/Tasks/EmailNoticeTask.php",
+      "line": 228,
+      "text": "'title' => Doo::translate(sprintf('%d条未读信息', count($items))),"
+    },
+    {
+      "source": "app/Tasks/EmailNoticeTask.php",
+      "line": 229,
+      "text": "'button' => Doo::translate('回复消息'),"
+    },
+    {
+      "source": "app/Tasks/EmailNoticeTask.php",
+      "line": 238,
+      "text": "'subject' => Doo::translate($subject),"
+    },
+    {
+      "source": "app/Tasks/PushTask.php",
+      "line": 214,
+      "text": "'encrypted' => Doo::pgpEncryptApi($msg, $encrypt['key']),"
+    },
+    {
+      "source": "app/Tasks/TodoRemindTask.php",
+      "line": 36,
+      "text": "return $mentionText . Doo::translate('你有一条待办到提醒时间啦');"
+    },
+    {
+      "source": "app/Tasks/WebSocketDialogMsgTask.php",
+      "line": 194,
+      "text": "$umengTitle = ($msg->msg['nickname'] ?? '') ?: Doo::translate('AI 助手');"
+    }
+  ],
+  "known_semantics": [
+    "initialize receives workdir, token, language before all other calls",
+    "userCreate returns JSON envelope and writes DB outside PHP connection; wrapper commits/reopens existing DB transaction",
+    "tokenDecode JSON expired_at forever is normalized to null; userExpired compares date against server now",
+    "md5s algorithm is native, its name alone does not specify password hash implementation",
+    "char pointers converted with FFI::string; allocator/ownership/free contract absent; no free export declared",
+    "PGP wrappers cache short key IDs, strip/rebuild armor and json encode/decode",
+    "license SN/MAC enforcement is a separate consumer contract, not permission to disable checks"
+  ],
+  "unknowns": [
+    "ELF architecture/exports/dependencies/actual library version and SHA256",
+    "native source/license/notices and modification/distribution grant",
+    "memory lifetime, thread safety and initialize process/global-state behavior",
+    "token format/signing/key rotation, md5s algorithm/salt encoding, registration native DB effects",
+    "PGP packet algorithms/compression/encoding supported by native binary"
+  ],
+  "official_source": {
+    "url": "https://www.dootask.com/help/deploy/offline",
+    "sampled_at": "2026-10-12T14:04:51.366814+08:00",
+    "observed_instructions": [
+      "docker pull kuaifan/php:swoole-8.4",
+      "docker save kuaifan/php:swoole-8.4 ...",
+      "amd64/arm64 source and destination must match",
+      "version-matching vendor.tar.gz can be obtained from project GitHub Releases"
+    ],
+    "source_ci": " .github/workflows/tests.yml:65-69 explicitly says image includes doo.so",
+    "documentation_appstore_example": "0.5.3 differs from repository 0.6.0; repository version is relevant"
+  },
+  "attempts": [
+    {
+      "url": "https://auth.docker.io/token?service=registry.docker.io&scope=repository:kuaifan/php:pull",
+      "result": "<urlopen error [WinError 10060] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。>",
+      "sampled_at": "2026-10-12T13:46:03.273340+08:00"
+    },
+    {
+      "url": "https://hub.docker.com/v2/repositories/kuaifan/php/tags/swoole-8.4",
+      "result": "functions.read failed: Unable to connect",
+      "sampled_at": "2026-10-12T14:04:51.366814+08:00"
+    }
+  ],
+  "local_search": {
+    "scope": "D:\\rpa\\202610\\dootask",
+    "patterns": [
+      "**/*.so",
+      "**/*.dll"
+    ],
+    "matches": 0
+  },
+  "acquisition_contract": {
+    "prerequisites": [
+      "networked Docker/OCI capable Linux or Docker Desktop host; no production DB mounts",
+      "independently verify binary notices/rights; keep LICENSE; read-only extraction does not imply redistribution permission"
+    ],
+    "commands_proposed_not_executed": [
+      "docker pull --platform linux/amd64 kuaifan/php:swoole-8.4",
+      "docker image inspect kuaifan/php:swoole-8.4 --format \"{{json .RepoDigests}} {{.Id}} {{.Architecture}} {{.Os}}\"",
+      "docker create --name dootask-native-evidence --platform linux/amd64 kuaifan/php@sha256:<observed_repo_digest>",
+      "docker cp dootask-native-evidence:/usr/lib/doo <new_evidence_directory>/doo",
+      "docker export dootask-native-evidence --output <new_evidence_directory>/rootfs.tar",
+      "docker rm dootask-native-evidence"
+    ],
+    "output_requirements": [
+      "resolve placeholder only from observed digest, never invent",
+      "no docker start/run, no source mounts, no commands inside image",
+      "record tag resolution time, manifest index/platform digest, image config, binary SHA256, owner/mode, adjacent license/notice/build info and dependency files",
+      "REA inspect_binary_layout or supported provider on copied ELF; inventory exact exports and ABI against declarations",
+      "approved isolated runtime differential capture only after rights/host/DB fixture contract, with valid license and redacted tokens"
+    ],
+    "alternatives": [
+      "supplier-provided offline image export for exact source version and architecture with digest/notice",
+      "supplier-published native source or supported non-PHP SDK providing exact same token/password/PGP/license contract"
+    ],
+    "not_acceptable": [
+      "fake success / license bypass",
+      "arbitrary JWT or bcrypt called old-token compatible",
+      "PHP reverse proxy as final backend",
+      "AGPL assumption about unknown binary"
+    ]
+  }
+}

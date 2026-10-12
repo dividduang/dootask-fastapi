@@ -1,0 +1,2499 @@
+{
+  "sampled_at": "2026-10-12T12:37:50.986112+08:00",
+  "source_root": "D:\\rpa\\202610\\dootask",
+  "source_read_only": true,
+  "history_recovered": "BackendContract had no durable output",
+  "codegraph": "no index; not initialized",
+  "known_facts": [
+    "Route::any for dynamic API routes",
+    "InvokeController checks public visibility, not declaring class",
+    "api-map claims 334; this is not authoritative reachability count"
+  ],
+  "source_manifest": [
+    {
+      "path": "app/Console/Commands/BackfillMessageAttachments.php",
+      "sha256": "72e9a4c3bbab30aa88aab773e6c78c9c5fd10bb61afc12a43ddc2dd445ebd587",
+      "lines": 131
+    },
+    {
+      "path": "app/Console/Commands/DocApiMap.php",
+      "sha256": "d860af7e6cfc16c17ac5b7f220cc0027d995d8e3fe837b11d1099d9f12619fd2",
+      "lines": 163
+    },
+    {
+      "path": "app/Console/Commands/OnlineLicenseRenew.php",
+      "sha256": "cb2ef4a0987d0bf58ddce740a23a08afe8441d71db49c281512b57970118e5cb",
+      "lines": 29
+    },
+    {
+      "path": "app/Console/Commands/RetryManticoreSync.php",
+      "sha256": "7d4f29a7afb286cdd0717ff9d1d65bacc936d926e704323051cdca157f2bde87",
+      "lines": 188
+    },
+    {
+      "path": "app/Console/Commands/SyncFileToManticore.php",
+      "sha256": "3bbb2989b037707dc2235ec49f99daf5eb66df0d1412ff3dd07ced7b62a84ef4",
+      "lines": 161
+    },
+    {
+      "path": "app/Console/Commands/SyncMsgToManticore.php",
+      "sha256": "b8fe3354b18736ae5de916fdfd20672acc0e307c00620acaf4b9c5e537566942",
+      "lines": 238
+    },
+    {
+      "path": "app/Console/Commands/SyncProjectToManticore.php",
+      "sha256": "953a836026d444878232e6ae3e64c1489e016f7e1d00a2367042572de6c476bb",
+      "lines": 152
+    },
+    {
+      "path": "app/Console/Commands/SyncTaskToManticore.php",
+      "sha256": "005659dff530b9525ab5a594933c7b6ce323319b3cd997fe2e4d4e08c041d9ba",
+      "lines": 155
+    },
+    {
+      "path": "app/Console/Commands/SyncUserToManticore.php",
+      "sha256": "c8b240812827ec8011f624c01ff0c201bcdbbd7549c5c1c96b166bceb9f751c0",
+      "lines": 155
+    },
+    {
+      "path": "app/Console/Commands/Traits/ManticoreSyncLock.php",
+      "sha256": "bc21e826870ba6b0a34faa7df03db723948482da6516a9b96419bf90e674f235",
+      "lines": 99
+    },
+    {
+      "path": "app/Events/WorkerStartEvent.php",
+      "sha256": "0cbc7e6ab973b2d19f184adca500f523669b5d0e8e8c6bf894b2d3f7a32adee0",
+      "lines": 31
+    },
+    {
+      "path": "app/Exceptions/ApiException.php",
+      "sha256": "66959196fd0dcfb81e88f5a477f91e62ad11ff8b68d016c2a93da8d5b10ea4d1",
+      "lines": 51
+    },
+    {
+      "path": "app/Exceptions/ImagePathHandler.php",
+      "sha256": "884f1c327e89b79bf7830d067972b3e758f9563945d3236d83415389a4df9567",
+      "lines": 165
+    },
+    {
+      "path": "app/Helpers/Function.php",
+      "sha256": "bdab5b4170de32663ff877482bb6298eed0b2110070ae0653c73060bc953a75b",
+      "lines": 24
+    },
+    {
+      "path": "app/Http/Controllers/Controller.php",
+      "sha256": "abc695ec572ed78d3f7d3027546558f9ba53543ae4586df970abbf2351107348",
+      "lines": 13
+    },
+    {
+      "path": "app/Http/Controllers/IndexController.php",
+      "sha256": "d422ec42bdbdaa2667da695060312b61bf314b84829409474adc9459f05a121d",
+      "lines": 522
+    },
+    {
+      "path": "app/Http/Controllers/InvokeController.php",
+      "sha256": "e86bc02de51f2816cbb519f6e5c64d2354c1f2d7ff1dd9e6c9dee4c75f048573",
+      "lines": 50
+    },
+    {
+      "path": "app/Http/Controllers/WebDavProtocolController.php",
+      "sha256": "de33c4958aece3d0973707d3617d329f3d0764af415bb0f39c021480a82c6ef4",
+      "lines": 114
+    },
+    {
+      "path": "app/Http/Controllers/Api/AbstractController.php",
+      "sha256": "73459d26bbd6ce914d39bb6f488f1ec60c9ed7399ee07b6b7ae2d1923d1cafa1",
+      "lines": 14
+    },
+    {
+      "path": "app/Http/Controllers/Api/apidoc.php",
+      "sha256": "741aaa48d967d5e5c6f1572dc193893d5df4eb6be3850a7ea44757ef83f9b0aa",
+      "lines": 137
+    },
+    {
+      "path": "app/Http/Controllers/Api/AppsController.php",
+      "sha256": "ea148c165e02f2553388998878a94265f4d8e3f29f1bc618bf7234caa7bd78af",
+      "lines": 117
+    },
+    {
+      "path": "app/Http/Controllers/Api/AssistantController.php",
+      "sha256": "d47b38953faacc3c4be2fe43074ccab7609e703841a5d565ade3574dc7f8c621",
+      "lines": 569
+    },
+    {
+      "path": "app/Http/Controllers/Api/ComplaintController.php",
+      "sha256": "2bf37082f713d07249fbcb634ce3076fe42b277491eb91340845a1132d18dcbf",
+      "lines": 196
+    },
+    {
+      "path": "app/Http/Controllers/Api/ContactsController.php",
+      "sha256": "fa569b7935f2472f0575112d066ffcf4d1c846f9c30e0ca4130e4f64bad49b88",
+      "lines": 37
+    },
+    {
+      "path": "app/Http/Controllers/Api/DashboardController.php",
+      "sha256": "dd456dd52368d429407063ef04d73f8068429bf961d4cb8843e7e97d29bbfa9c",
+      "lines": 86
+    },
+    {
+      "path": "app/Http/Controllers/Api/DialogController.php",
+      "sha256": "3870360b15d91d3e0c71048ee75a910b94f5570d08bbf1ce7057a30843ecbed3",
+      "lines": 4005
+    },
+    {
+      "path": "app/Http/Controllers/Api/FileController.php",
+      "sha256": "e52f7fb5ddf66e97f6257cbe3742dd0f15e771d8aed6de95d669250d59bef884",
+      "lines": 1338
+    },
+    {
+      "path": "app/Http/Controllers/Api/FileDavController.php",
+      "sha256": "ea861b3260cc668df0fc703531808865f08599ff20bc364efd091877b1bc2c71",
+      "lines": 300
+    },
+    {
+      "path": "app/Http/Controllers/Api/LicenseController.php",
+      "sha256": "8cc3317cc0991bececcaecd4e09cb282947522d372f5fb12779304423e0bfdbf",
+      "lines": 115
+    },
+    {
+      "path": "app/Http/Controllers/Api/ProjectController.php",
+      "sha256": "a3d03cabc38d9e2a2b414340111770c243bfa151486706681666f0e1ce451e92",
+      "lines": 4637
+    },
+    {
+      "path": "app/Http/Controllers/Api/ProjectTaskHandoffController.php",
+      "sha256": "424448f595e4c86dbf3192a310d4bc558a9f6bc1498ee505593836a100c11199",
+      "lines": 91
+    },
+    {
+      "path": "app/Http/Controllers/Api/PublicController.php",
+      "sha256": "d9b742e4c96440d4a69df3dae1450ca05ecc54f1fa0ac18adf8886fe1a9ddf43",
+      "lines": 109
+    },
+    {
+      "path": "app/Http/Controllers/Api/ReportController.php",
+      "sha256": "f53ecef337e44a5bff4ae6b62aed39a2d1fcb963f4546de03fe39141a9292ddf",
+      "lines": 851
+    },
+    {
+      "path": "app/Http/Controllers/Api/SearchController.php",
+      "sha256": "5d9ef2ecde6ce0c1febe9fd68cd79f59a9638c77fda266fc2f6aa1eddea83030",
+      "lines": 619
+    },
+    {
+      "path": "app/Http/Controllers/Api/SystemController.php",
+      "sha256": "a1c5691d0c22d837c61d7e8e000baa13525a0784d4e2a65661e39f2bbb7b0cd2",
+      "lines": 1737
+    },
+    {
+      "path": "app/Http/Controllers/Api/TestController.php",
+      "sha256": "16eb534110c549df91a89674835218a2457b02bc8f2b13f1b17f7b59e553c8e9",
+      "lines": 11
+    },
+    {
+      "path": "app/Http/Controllers/Api/UploadController.php",
+      "sha256": "f35ee4847661ddfeb100ca71c8925f93c421739271593a9cef12c6724af3a540",
+      "lines": 129
+    },
+    {
+      "path": "app/Http/Controllers/Api/UsersController.php",
+      "sha256": "d3480aae25371d1e5f2d9a32a93e8a13519e0355604ab13a745fe1cfb062fd3f",
+      "lines": 3951
+    },
+    {
+      "path": "app/Http/Middleware/WebApi.php",
+      "sha256": "97addc1414432c5e00eac7411835fc18989d80c45be8ce305035e8819528a558",
+      "lines": 82
+    },
+    {
+      "path": "app/Ldap/LdapUser.php",
+      "sha256": "acb702bea5d5ef820b64cf7aed261a3b774a97007ea5b2bbacceebdc0e0dc146",
+      "lines": 317
+    },
+    {
+      "path": "app/Models/AbstractModel.php",
+      "sha256": "6a8b0853081459005a55345ad33063ce28ac7c5f09f463a6ebacc8d8c7bc0b47",
+      "lines": 377
+    },
+    {
+      "path": "app/Models/AiAssistantFeedback.php",
+      "sha256": "345724fe85e7e9218c661736076acae0463ada5825cbec6e750a17d0a135dca8",
+      "lines": 48
+    },
+    {
+      "path": "app/Models/AiAssistantSearchLog.php",
+      "sha256": "4f7d0f574502fd9b686a1781aea3907312d2812899ec88bbe09c4cb4ed44237b",
+      "lines": 50
+    },
+    {
+      "path": "app/Models/AiAssistantSession.php",
+      "sha256": "52077f2e4b19023aa906738ddf4188aeb200bff5fbddaf9ba50bbba3b37d21ce",
+      "lines": 42
+    },
+    {
+      "path": "app/Models/AppBadge.php",
+      "sha256": "ab4f981a1ae765b748ef97296183ba4d2138ecda0006aeccdcdaaf08fb32f5c6",
+      "lines": 48
+    },
+    {
+      "path": "app/Models/clearHelper.php",
+      "sha256": "52292b7d07e3c4103f16fb6f5b1bccd0bb771db326a221df43b6864b3233c3b6",
+      "lines": 29
+    },
+    {
+      "path": "app/Models/Complaint.php",
+      "sha256": "e4a5ba2fc650f76898879b6d94121147020a653a433fd3f63416b5a96bb3d9a7",
+      "lines": 41
+    },
+    {
+      "path": "app/Models/Deleted.php",
+      "sha256": "0afc50f14ec0d9655cc42f7ce6e95b0a87c473280c782bb3395e45d9176436d4",
+      "lines": 99
+    },
+    {
+      "path": "app/Models/File.php",
+      "sha256": "1ad515c4050bcfa19b7bb6f2e65148bae0bf83698136c1e9da87532572e0305e",
+      "lines": 1167
+    },
+    {
+      "path": "app/Models/FileContent.php",
+      "sha256": "a59f21ca2e2c8b5c71f25358aa444353033ff466f984e4f356c7ecaf99b39e35",
+      "lines": 195
+    },
+    {
+      "path": "app/Models/FileLink.php",
+      "sha256": "03c9dc423bf0da3d8dfce59bca8e9deebf2a4d802b13340cee36ca166fdd74a0",
+      "lines": 76
+    },
+    {
+      "path": "app/Models/FileUser.php",
+      "sha256": "d48bfdf341c20e5982f604ad15eeb499fa741d76504e28128dd47fbd950a3ba6",
+      "lines": 64
+    },
+    {
+      "path": "app/Models/ManticoreSyncFailure.php",
+      "sha256": "2cc5bf10cda5bf2e6297d739803439e5c893025a746c1585a2aefba2fc7a370b",
+      "lines": 167
+    },
+    {
+      "path": "app/Models/Meeting.php",
+      "sha256": "d6ebb445f95950a414f98905a817e4c2f37a197d4b5b96cad483a3373df58872",
+      "lines": 97
+    },
+    {
+      "path": "app/Models/MeetingMsg.php",
+      "sha256": "e6fc1cbc7583b3292e59d115cbcfeb8100aa9d517010f79051fa15f8341751b4",
+      "lines": 34
+    },
+    {
+      "path": "app/Models/Project.php",
+      "sha256": "a4f3238c3ddf84a290a74d894fb3ce5a7040a5c1d92d2c10cd618e5c6b7b4265",
+      "lines": 794
+    },
+    {
+      "path": "app/Models/ProjectColumn.php",
+      "sha256": "262756f04618b384dba0af48593c804b76efb911829f2722476301cf99f6aba2",
+      "lines": 141
+    },
+    {
+      "path": "app/Models/ProjectFlow.php",
+      "sha256": "33bff1e96c7b72f8fd2e86f70918b70ebff499d27da1e9a88e585a9917b91acf",
+      "lines": 55
+    },
+    {
+      "path": "app/Models/ProjectFlowItem.php",
+      "sha256": "5aa475c8b7c8aaba47fc09af590d2a87e6c08aeb608b7d24aaf493287051496e",
+      "lines": 100
+    },
+    {
+      "path": "app/Models/ProjectInvite.php",
+      "sha256": "7c67406629b047cc78a955475309247ec35231ea55350e7fe3b9fc6a89ef2768",
+      "lines": 61
+    },
+    {
+      "path": "app/Models/ProjectLog.php",
+      "sha256": "5e13f1e35d91daaddc9970db2100f09cc8aa3aab5a030b59f153c974a0cd4d9a",
+      "lines": 77
+    },
+    {
+      "path": "app/Models/ProjectPermission.php",
+      "sha256": "e447e27effbf6b7d9d118d44ee58219eb8de71466c223fef9bc087f8dd1fdd01",
+      "lines": 211
+    },
+    {
+      "path": "app/Models/ProjectTag.php",
+      "sha256": "7ff4fa1a2b8745a0c94bfe8c32088ee55fb3652680b548381225b70e5611d087",
+      "lines": 67
+    },
+    {
+      "path": "app/Models/ProjectTask.php",
+      "sha256": "43a060f7d92baf8bd5982471047de16caacf663fd9e05cf20d75b23db3247a92",
+      "lines": 2359
+    },
+    {
+      "path": "app/Models/ProjectTaskAiEvent.php",
+      "sha256": "0b9bcd5fe57afa52bf4b49fd270737ecc7db59c4b961576eb70aaa635167107c",
+      "lines": 176
+    },
+    {
+      "path": "app/Models/ProjectTaskContent.php",
+      "sha256": "aed3efbf2c05da01f1e9263a71842252c582b04b902db2e1c08b4291f4faec8f",
+      "lines": 106
+    },
+    {
+      "path": "app/Models/ProjectTaskFile.php",
+      "sha256": "22cc211592fb8a7df3acb019894f13d13be716c5023d3a561aa97d60488f3f27",
+      "lines": 120
+    },
+    {
+      "path": "app/Models/ProjectTaskFlowChange.php",
+      "sha256": "810294c5f7136729a8d4ce67c7035b419a44288fe15043f5fde12e42946fa630",
+      "lines": 40
+    },
+    {
+      "path": "app/Models/ProjectTaskHandoff.php",
+      "sha256": "f925b2ae6afd37d815d6391161789aae3caa36cf6788e2109f5a4e08f9c6c29a",
+      "lines": 12
+    },
+    {
+      "path": "app/Models/ProjectTaskPushLog.php",
+      "sha256": "c8871c8e72fbf99fd3f07bec5eed01416eba5160d8eeb29fac6cad0845daf44e",
+      "lines": 45
+    },
+    {
+      "path": "app/Models/ProjectTaskRelation.php",
+      "sha256": "40b4b7d3b7943fe34b767795bd9f71b6e8faaf8f134dc3162256d861856ef6fe",
+      "lines": 254
+    },
+    {
+      "path": "app/Models/ProjectTaskTag.php",
+      "sha256": "814d571ff893c8c7dcb99e4fe3dfcac5fb65094e7d53062326286a7953e43d8d",
+      "lines": 39
+    },
+    {
+      "path": "app/Models/ProjectTaskTemplate.php",
+      "sha256": "fd3b81aad6a262ea424d82399b442e8e0a44004f2e5baf52c9abfccf2245b757",
+      "lines": 105
+    },
+    {
+      "path": "app/Models/ProjectTaskUser.php",
+      "sha256": "23f864ff213418be174c929853162e361341353d2edd9d2d094491be09327b8e",
+      "lines": 101
+    },
+    {
+      "path": "app/Models/ProjectTaskVisibilityUser.php",
+      "sha256": "8459e62ed08d8fefe08189ce375d3b4f97f82273c34e9ccd1eaba02793115175",
+      "lines": 43
+    },
+    {
+      "path": "app/Models/ProjectUser.php",
+      "sha256": "acacc12257c8315fdf0fe65160a3ec3abf3db135251260f6dc322eefdf40483b",
+      "lines": 175
+    },
+    {
+      "path": "app/Models/Report.php",
+      "sha256": "230ce6544eb6e9d40498176a9c7937ceecb9ad066f4870015a6b3ba99788a45c",
+      "lines": 195
+    },
+    {
+      "path": "app/Models/ReportAnalysis.php",
+      "sha256": "61ee01456fa75f7eca558c2deae40a9e572f5c5ec4b60f89bf2be6b98fb1b463",
+      "lines": 58
+    },
+    {
+      "path": "app/Models/ReportLink.php",
+      "sha256": "f456dec4973f4ec791e041818e6de566c0f31ff67307b62217e13071eb17a3b8",
+      "lines": 86
+    },
+    {
+      "path": "app/Models/ReportReceive.php",
+      "sha256": "2267d2bed5c9cfbb0c8d0751bfb87ce135f7f90062bfab73caa8e918c89aad19",
+      "lines": 45
+    },
+    {
+      "path": "app/Models/Setting.php",
+      "sha256": "0d031387dd354f9984c039468637a15ec37a94000dd1b12d69c3303e9dfc7cbb",
+      "lines": 585
+    },
+    {
+      "path": "app/Models/TaskWorker.php",
+      "sha256": "fbd4c8ebe0e2d177281cd71d76f4104376a69aa7be9373427a62c4f1914def42",
+      "lines": 43
+    },
+    {
+      "path": "app/Models/Tmp.php",
+      "sha256": "fa273c7af1e24b048e4ede4fb103b3d3599804748009703f1b6588870ce8524f",
+      "lines": 34
+    },
+    {
+      "path": "app/Models/UmengAlias.php",
+      "sha256": "73cc158659fdcda6e186504df1f9254a183b129b6356309878160594c0b196dc",
+      "lines": 280
+    },
+    {
+      "path": "app/Models/UmengLog.php",
+      "sha256": "04afb6ea20edcbdadb80f22b4faddf6f066f696477cd935d080c3c6cac7ad52c",
+      "lines": 32
+    },
+    {
+      "path": "app/Models/User.php",
+      "sha256": "59563a996db2397f5d95e6368ea685e48b20ac1022100c72bf917c4b0aa915de",
+      "lines": 1105
+    },
+    {
+      "path": "app/Models/UserAppSort.php",
+      "sha256": "61c36582cd1c038b98da1ca3ccacf4052dbcdebecf1655146e74fe7dc9fd789b",
+      "lines": 102
+    },
+    {
+      "path": "app/Models/UserBot.php",
+      "sha256": "f611b31496b1d099242da508920725838bc051a635a431ecc6c201a6ce42486d",
+      "lines": 641
+    },
+    {
+      "path": "app/Models/UserCheckinFace.php",
+      "sha256": "6cb2e65766e8ddffe63de21e076855bdc7b83c2cd97986e3f7f912023aa70012",
+      "lines": 108
+    },
+    {
+      "path": "app/Models/UserCheckinMac.php",
+      "sha256": "a58799e09b3b64e092b6d8341f9ba6f6137fd415df7d076c5c15cac493c5aa9f",
+      "lines": 72
+    },
+    {
+      "path": "app/Models/UserCheckinRecord.php",
+      "sha256": "fbcc5e2f54144fd964df0d0e76c983e3eb11879e70c98d6d92a5cf4cd1640f78",
+      "lines": 156
+    },
+    {
+      "path": "app/Models/UserDelete.php",
+      "sha256": "0905eb33f410ccc8c78225b0dbdc07bcc4758350bf82d6346fb365209e59f3ca",
+      "lines": 84
+    },
+    {
+      "path": "app/Models/UserDepartment.php",
+      "sha256": "7b20795f4397d19b69a39b624479be95f8c58c3fa43dec900e886b249ba4a540",
+      "lines": 684
+    },
+    {
+      "path": "app/Models/UserDevice.php",
+      "sha256": "ffd8d3a9cd5a300969b0f0dbbf583da53f8b8d12ed97ab798167cc18b618accb",
+      "lines": 312
+    },
+    {
+      "path": "app/Models/UserEmailVerification.php",
+      "sha256": "0b6841f9f788f9111cfc58c1adc99e30c18188fcb8e8101a075081ead227e863",
+      "lines": 152
+    },
+    {
+      "path": "app/Models/UserFavorite.php",
+      "sha256": "45cb8746fede46cebdeeec2f35590643278a7fcfbe3ebc2d1023b3c4c8777c9d",
+      "lines": 340
+    },
+    {
+      "path": "app/Models/UserRecentItem.php",
+      "sha256": "70e0692ed84888734f924d84f5cc1699f4e19ebecb6bfdf647de502a427148e1",
+      "lines": 79
+    },
+    {
+      "path": "app/Models/UserTag.php",
+      "sha256": "5c25826faf70c933964a7938ba1dfc2fd4fd1eeee62cf88ee84e669fdcfa5e13",
+      "lines": 115
+    },
+    {
+      "path": "app/Models/UserTagRecognition.php",
+      "sha256": "afe05e099ffdc596e2bc2484b535e3d9c8d4d3f6647e8a5dbbb970c9e0aa40e3",
+      "lines": 52
+    },
+    {
+      "path": "app/Models/UserTaskBrowse.php",
+      "sha256": "ac97cb5767089c83f171956912fe3f104051158eed466a96ea915fd3890619f2",
+      "lines": 138
+    },
+    {
+      "path": "app/Models/UserTransfer.php",
+      "sha256": "d613338d081f2468668d60581fddc7fc7185886db0a9499c3e41cd28f0f82acf",
+      "lines": 111
+    },
+    {
+      "path": "app/Models/WebDavCredential.php",
+      "sha256": "9979b2661e1973c33c51d039cd00601c3aadc623aa7394dafb2062f33ce6490f",
+      "lines": 77
+    },
+    {
+      "path": "app/Models/WebDavLock.php",
+      "sha256": "74ec4379982d64cdf22433c5b105dadd6977c45d1f5b17d67e3e3c241d0d7e0f",
+      "lines": 12
+    },
+    {
+      "path": "app/Models/WebDavOperationLog.php",
+      "sha256": "822158265cb9efdf2cc29c3ed199f6a3e4ebeb2fb1e8d7841a92834ca5b205d2",
+      "lines": 10
+    },
+    {
+      "path": "app/Models/WebDavProperty.php",
+      "sha256": "ba386ab558ffdc6bf60d491b85c21af912a4acb70d2325d9109d1c0ee00374e0",
+      "lines": 12
+    },
+    {
+      "path": "app/Models/WebSocket.php",
+      "sha256": "9a52c915d8be060294d5204084ced375fb1d58a65b7139f93c610ea97adb8a85",
+      "lines": 38
+    },
+    {
+      "path": "app/Models/WebSocketDialog.php",
+      "sha256": "4334008d29f48f6da5f78931a1568111ef415cb8d3a38036c14f232e3b82bfe1",
+      "lines": 1257
+    },
+    {
+      "path": "app/Models/WebSocketDialogConfig.php",
+      "sha256": "6ac1711931f683df4fe2f9fbf84dc5db6c2e238e7a29c02011f9311969018cc7",
+      "lines": 64
+    },
+    {
+      "path": "app/Models/WebSocketDialogMsg.php",
+      "sha256": "0a763cbe5c0c882f9055968708a06c01dd60151abf6ce59b0a9cb2740bc39586",
+      "lines": 1653
+    },
+    {
+      "path": "app/Models/WebSocketDialogMsgAttachment.php",
+      "sha256": "6c30503f08dd7ca2f7b741e45ddd8d867341609e0ee8209dcb7dcbb59fde8ff9",
+      "lines": 49
+    },
+    {
+      "path": "app/Models/WebSocketDialogMsgAttachmentBackfill.php",
+      "sha256": "6ef79b8bd2d7d7a0cd29d582eadf7eb08c7488324526c35fedcb425a243331e0",
+      "lines": 52
+    },
+    {
+      "path": "app/Models/WebSocketDialogMsgRead.php",
+      "sha256": "10e1e9c9be4a996777a587bc5b9e44649cee5f51eab7af100686027eed630979",
+      "lines": 150
+    },
+    {
+      "path": "app/Models/WebSocketDialogMsgTodo.php",
+      "sha256": "73a8bb287e7f7eec3591572c523d202f1b8f32067f4e0d74aa6ab8903acd8fcc",
+      "lines": 76
+    },
+    {
+      "path": "app/Models/WebSocketDialogMsgTranslate.php",
+      "sha256": "f172db34a4eb361fad986a034a1a6bf7f9edb2dee73d760d9981866f721cc03f",
+      "lines": 36
+    },
+    {
+      "path": "app/Models/WebSocketDialogSession.php",
+      "sha256": "129ad7cbb080d2d30642f8123bbd9ce95e3b3f40bf261c464488b9af3ef0b76f",
+      "lines": 86
+    },
+    {
+      "path": "app/Models/WebSocketDialogUser.php",
+      "sha256": "8ed6812935ae0306533f597b260061366020ec48f731c56a2b5d74ead58f5e90",
+      "lines": 74
+    },
+    {
+      "path": "app/Models/WebSocketTmpMsg.php",
+      "sha256": "435e29a0008f186f24c1d3e8bac44a92fc790b8d17cc74bb5ef1d68ae6d29848",
+      "lines": 36
+    },
+    {
+      "path": "app/Module/AI.php",
+      "sha256": "60a440440a9387b689ce2bcabd24eab7edcf50b58cf37de81ef87933634ca71d",
+      "lines": 1027
+    },
+    {
+      "path": "app/Module/AiTaskSuggestion.php",
+      "sha256": "2207e867e21032c6c3ab1f46a7c8372bb57742a8c16e98cd5db52fd3ba89a4dd",
+      "lines": 858
+    },
+    {
+      "path": "app/Module/Apps.php",
+      "sha256": "0468120ecfd5c54273562a0def463fa60d7a8b9ff3553b288c4e903727bfa1ec",
+      "lines": 299
+    },
+    {
+      "path": "app/Module/Badge.php",
+      "sha256": "fdd145a43d03ba3909bd0dd457552ff3698ce32f16f3d8aa673ee21a446695ca",
+      "lines": 329
+    },
+    {
+      "path": "app/Module/Base.php",
+      "sha256": "cea42a294d669494411dc6309eba4afd9f8fb625b618d6b53c59126c5accfd26",
+      "lines": 3151
+    },
+    {
+      "path": "app/Module/BillExport.php",
+      "sha256": "5dc4b1612ee4bc0460c206ecfcb7ff999075de965f894297fd62bbf10b52977b",
+      "lines": 152
+    },
+    {
+      "path": "app/Module/BillImport.php",
+      "sha256": "554c0ffdaad95ff4114537c8d7244fce424dc6abe2b57553607bf5f05fc5099a",
+      "lines": 16
+    },
+    {
+      "path": "app/Module/BillMultipleExport.php",
+      "sha256": "6c76d4f8d3da2054ffbdfe20b0874d754b87ee5da969fb08c2a3874acbb9349d",
+      "lines": 24
+    },
+    {
+      "path": "app/Module/ChunkUpload.php",
+      "sha256": "75c6a8e8502c025f54cf44db514b95faa43fb519585f30cdeedbafc656e7b32b",
+      "lines": 511
+    },
+    {
+      "path": "app/Module/ClientContext.php",
+      "sha256": "0af524295f3c2fe1477374637d82d969ffb42c40fd390797a4d05082556cc6d1",
+      "lines": 83
+    },
+    {
+      "path": "app/Module/ContactsDepartment.php",
+      "sha256": "794d5a5ea58f50c093bf08203652aa0bb53d379e80073f28fd367b5bcdd0bb54",
+      "lines": 90
+    },
+    {
+      "path": "app/Module/DashboardTeam.php",
+      "sha256": "faeecb06cd8f0254a10a1c85a50bb1f852206ebfd9813028deca70277da0b0cd",
+      "lines": 538
+    },
+    {
+      "path": "app/Module/Doo.php",
+      "sha256": "ac6f82394b5f9a7adc1ad78a4026a59a8cda42ddec3c3711d334aba2a59b5684",
+      "lines": 381
+    },
+    {
+      "path": "app/Module/Down.php",
+      "sha256": "0421844e02f5798d0cc28dbce888eb45e08edf910961c8dbc10e3cc79b01ba7c",
+      "lines": 37
+    },
+    {
+      "path": "app/Module/Extranet.php",
+      "sha256": "e28ea47e044b1d50fc7a013c51bead586325f1d947362f94d8f0dd8c2d77d69a",
+      "lines": 141
+    },
+    {
+      "path": "app/Module/Ihttp.php",
+      "sha256": "6e85076a431d3cb047ebd2ae05efb9f403d95f2490c1ebc37b351d2a7aa09d7a",
+      "lines": 293
+    },
+    {
+      "path": "app/Module/Image.php",
+      "sha256": "c10d7063fd428e5e45a3b1c7f7c932e1e7c7bbb05fd9ef7fdda053eb01bc81f2",
+      "lines": 378
+    },
+    {
+      "path": "app/Module/Lock.php",
+      "sha256": "989d4b3c4a33db38e82776957a014081ca4d599770d588fb9e9ff2cb2b28055b",
+      "lines": 52
+    },
+    {
+      "path": "app/Module/MsgTool.php",
+      "sha256": "ebfb176114a007fbc8475d39a3fb49253ce05d27a1cf4c36bf7c2142b61545b4",
+      "lines": 136
+    },
+    {
+      "path": "app/Module/OnlineLicense.php",
+      "sha256": "be371fbaaa14ebf5155eb3a080d6d7cb9c3cad2a64b7ea352be3b70ea9d8654a",
+      "lines": 485
+    },
+    {
+      "path": "app/Module/PatchedAvatar.php",
+      "sha256": "ec2885e02797f8769ba805f6913121535466988160e7891fdfb235eb3b529e54",
+      "lines": 48
+    },
+    {
+      "path": "app/Module/ProjectTaskHandoffRecord.php",
+      "sha256": "db22c57a13f0c100f8700df167bc6175041b02e69336eee7a6f2ea30f2503b59",
+      "lines": 106
+    },
+    {
+      "path": "app/Module/ProjectTaskHandoffService.php",
+      "sha256": "f11728bfce7e7beaa2ef13cf19ddb5dc5c67e56cb8fe965e5ac3f24bb91a4b37",
+      "lines": 209
+    },
+    {
+      "path": "app/Module/ProjectTaskHandoffSettings.php",
+      "sha256": "0b6935064b7234d01f5bca87ed898cbb2072187f3d1e88559e6e8bcbd4cf68c2",
+      "lines": 30
+    },
+    {
+      "path": "app/Module/PromptPlaceholder.php",
+      "sha256": "487abd299325af06ca07a39cf86ef4a25b1dab49d17bffdb277bd4b7422e06b6",
+      "lines": 300
+    },
+    {
+      "path": "app/Module/RandomColor.php",
+      "sha256": "32357a3070ceab95d3c3cdde6e4d6971ec1adc0a4b1c9730f804dafe014ce74c",
+      "lines": 390
+    },
+    {
+      "path": "app/Module/SystemFunctions.php",
+      "sha256": "3b86523eec0070e3c02afe42393ddef624abcc6b4dddb1017de0e8d42d71e330",
+      "lines": 103
+    },
+    {
+      "path": "app/Module/SystemUpdate.php",
+      "sha256": "70f83c8394b52db23e4e8dbb5f6c495478f88c97be6c183a144a20a5b83e6052",
+      "lines": 241
+    },
+    {
+      "path": "app/Module/TextExtractor.php",
+      "sha256": "37779c9d918960f6cf7307c0e0a210d459024761d818dcf55412daecf0e531d2",
+      "lines": 266
+    },
+    {
+      "path": "app/Module/Timer.php",
+      "sha256": "77154642124bf6facc60298c60e0194b5938f5fcf32e866300688ef7c1a8c0e3",
+      "lines": 380
+    },
+    {
+      "path": "app/Module/TimeRange.php",
+      "sha256": "7832c49d21c1ff777210abc1bebe88509c35ee69e4d88224a79baef0cc10cff6",
+      "lines": 82
+    },
+    {
+      "path": "app/Module/UserImport.php",
+      "sha256": "8bc101d77486e265ad923cf592f0eddce27859ca7d1447fb7e396c0ccc7d16be",
+      "lines": 13
+    },
+    {
+      "path": "app/Module/UserImportTemplate.php",
+      "sha256": "aa2011d083f40378a1a3060a1340e23215d19690b99bdd9a21c99ce9dcfb8504",
+      "lines": 21
+    },
+    {
+      "path": "app/Module/AgoraIO/AccessToken.php",
+      "sha256": "00cfac90b8647838e8c271d1b27cb8f49632f5dcda069464a434bb7371c81834",
+      "lines": 193
+    },
+    {
+      "path": "app/Module/AgoraIO/AgoraTokenGenerator.php",
+      "sha256": "72fff4a6504bdd09b97b0c9305705397244365660acddf51f5cb940b5f86bf0f",
+      "lines": 122
+    },
+    {
+      "path": "app/Module/AgoraIO/Message.php",
+      "sha256": "7b58d14d038ecec84e56b8174dd2e5bd63e6b13574231ddff6f170c038595fb4",
+      "lines": 70
+    },
+    {
+      "path": "app/Module/Interface/DooSo.php",
+      "sha256": "4fd806d78db64d09ea116f41171e48cef3f5ed087aadcd40667ab2c1676d26d4",
+      "lines": 412
+    },
+    {
+      "path": "app/Module/Manticore/ManticoreBase.php",
+      "sha256": "f5c8b552d7e126a38e2b15b0149b1fb48c1890a354362e94d7a15605834515a5",
+      "lines": 2288
+    },
+    {
+      "path": "app/Module/Manticore/ManticoreFile.php",
+      "sha256": "d1781639100dbca5c6d4c7dded2aab6bb75a2209b9fb237fcec533b91c5f31bd",
+      "lines": 564
+    },
+    {
+      "path": "app/Module/Manticore/ManticoreKeyValue.php",
+      "sha256": "ee7e94aeffc204e4f956c681afaabc36aae69f3c78745438a329809b70f14b02",
+      "lines": 164
+    },
+    {
+      "path": "app/Module/Manticore/ManticoreMsg.php",
+      "sha256": "9b14a41b0d8d308daee5f2cd3456301c181f6f22941539c891ad47fb4adaf99d",
+      "lines": 482
+    },
+    {
+      "path": "app/Module/Manticore/ManticoreProject.php",
+      "sha256": "754c00a321729bbe4cbf24620c0c88c8f848d836e22a82dda28f1ed98d51595e",
+      "lines": 270
+    },
+    {
+      "path": "app/Module/Manticore/ManticoreTask.php",
+      "sha256": "7545343a514f572dc4cb336a534eb8e6f70baf89e6ecb8bc77477f001d8a9100",
+      "lines": 485
+    },
+    {
+      "path": "app/Module/Manticore/ManticoreUser.php",
+      "sha256": "bfa38273293b7156462a944fbd6e4958d294f5bf5c3ab200700402f9c2fcfa6a",
+      "lines": 282
+    },
+    {
+      "path": "app/Module/Table/AbstractData.php",
+      "sha256": "f5dc208bb661852d7be1e2aed54bc7144b1e75c6bd6b848db58a9d3921043dee",
+      "lines": 105
+    },
+    {
+      "path": "app/Module/Table/GlobalData.php",
+      "sha256": "d9da98c01681e196e53d795460809d7d200e5fbf5ffeddb39e6124afa090c608",
+      "lines": 7
+    },
+    {
+      "path": "app/Module/Table/OnlineData.php",
+      "sha256": "1d9fcd13bd5dbf61a4df7670d789c4ebf1b3b7fdd927a90b2619a35bd8e1224f",
+      "lines": 72
+    },
+    {
+      "path": "app/Observers/AbstractObserver.php",
+      "sha256": "2209c16f22fd6967c1ba9c0298738f10db1583cf74f464c4d76908fa8ac8fb10",
+      "lines": 48
+    },
+    {
+      "path": "app/Observers/FileObserver.php",
+      "sha256": "77d115b55b3bd1730abe0e5b1dc807bd6600f37a31703c99cd3095c9f8915fee",
+      "lines": 95
+    },
+    {
+      "path": "app/Observers/FileUserObserver.php",
+      "sha256": "358d0dce76b77956728f56c075dc837f094b3b10c3df6effe924402c49f2c745",
+      "lines": 54
+    },
+    {
+      "path": "app/Observers/ProjectObserver.php",
+      "sha256": "e32129cc9f3505692b1b8dd1ecace28e695d31f2fe097f8409e5f03128e7fa00",
+      "lines": 102
+    },
+    {
+      "path": "app/Observers/ProjectTaskContentObserver.php",
+      "sha256": "932b9b575d7713d551a6c03c101ac3e1b80ca0bc8ea3958591d3700018470c07",
+      "lines": 69
+    },
+    {
+      "path": "app/Observers/ProjectTaskObserver.php",
+      "sha256": "12a9cab7f7a4c05d4c266998d4bea558ddcb93eaa507a2a56a9420f8c596ee29",
+      "lines": 155
+    },
+    {
+      "path": "app/Observers/ProjectTaskUserObserver.php",
+      "sha256": "ef626a89ed82c3b81293d2d98ff3da70f6eb37337a98ca0c190cae2b0a147d31",
+      "lines": 98
+    },
+    {
+      "path": "app/Observers/ProjectTaskVisibilityUserObserver.php",
+      "sha256": "ad58789f0a04f3e222564b1d004a0f74e8919f1ec248b74ac426dea902eb217a",
+      "lines": 78
+    },
+    {
+      "path": "app/Observers/ProjectUserObserver.php",
+      "sha256": "6a1563d688900ca405d814cb7c63ccf07f44015fa98d3f4d068c5320a03f29c8",
+      "lines": 91
+    },
+    {
+      "path": "app/Observers/UserObserver.php",
+      "sha256": "60edd4e1332b2b144a14f3a521423c99a1f01e740a5057927e7dd6fbd18c53e7",
+      "lines": 133
+    },
+    {
+      "path": "app/Observers/UserTagObserver.php",
+      "sha256": "3c99e1aba83850f5ec696a25f9f8f0ea15a21d32032406a3c4197ee6a06532e7",
+      "lines": 69
+    },
+    {
+      "path": "app/Observers/UserTagRecognitionObserver.php",
+      "sha256": "2bba98ac84574f7797150f3761ecd4e6a953228a8d56f27825ffccc5f5ef18c3",
+      "lines": 60
+    },
+    {
+      "path": "app/Observers/WebSocketDialogMsgObserver.php",
+      "sha256": "7923e4223b633a457d9900e1fdd2d536125ea1f504932a02dea5acb1a80dcf90",
+      "lines": 78
+    },
+    {
+      "path": "app/Observers/WebSocketDialogObserver.php",
+      "sha256": "f56e311afcc3914056aa3f22a47b85f68805b56f9e68dfddac65234a4ba19dc9",
+      "lines": 75
+    },
+    {
+      "path": "app/Observers/WebSocketDialogUserObserver.php",
+      "sha256": "e9a0bfaa1e36dff3c02ba1d775e2970dcf809e50a2b4efa9a123a2e16c9618b7",
+      "lines": 107
+    },
+    {
+      "path": "app/Providers/AppServiceProvider.php",
+      "sha256": "5948055442c1cbc879b20c76f1f9518e3c83009b5fc9e6dd856ded5c8746d983",
+      "lines": 113
+    },
+    {
+      "path": "app/Services/CollaborationFileService.php",
+      "sha256": "fc57418ee06dabc27817a8276a485024713e6938a767e5a586570a0efee77aff",
+      "lines": 715
+    },
+    {
+      "path": "app/Services/MessageAttachmentBackfillService.php",
+      "sha256": "ecb1805252e227d6257036f56cbdc9e2fa6dc0f783ab9167e552b14daed9bd2c",
+      "lines": 193
+    },
+    {
+      "path": "app/Services/MessageAttachmentService.php",
+      "sha256": "a4e4a24966f23a40ba66fdd0e0f502fa2ce6d6651a3ef4e6f39aae64778f6c92",
+      "lines": 236
+    },
+    {
+      "path": "app/Services/RequestContext.php",
+      "sha256": "7f89cf0679dcb6bb2280292a8aba15ef80851c8d586123e925d8c020f803bb7e",
+      "lines": 273
+    },
+    {
+      "path": "app/Services/WebSocketService.php",
+      "sha256": "edf000be266be871cb03ecc6bb76561c48a1a36f4f15aa1b79009039415863f2",
+      "lines": 259
+    },
+    {
+      "path": "app/Services/FileSystem/FileSystemService.php",
+      "sha256": "dd40f51f92b317fe3b09ccce517c48642491051aebd53cc4db085fd87f4565b2",
+      "lines": 434
+    },
+    {
+      "path": "app/Services/WebDav/WebDavAuthenticator.php",
+      "sha256": "fb9d4cee41e784599960a75a14e4c946c19923a5091ce5a275969f9a574cfa54",
+      "lines": 52
+    },
+    {
+      "path": "app/Services/WebDav/WebDavConfig.php",
+      "sha256": "c108f284773b80bff4b747ba852dec74f52ad0e0f14fe808f9e5526d89063d7a",
+      "lines": 219
+    },
+    {
+      "path": "app/Services/WebDav/WebDavConflictService.php",
+      "sha256": "8302200b021e14918aeca5106f37e79e1d675593befaab34e90dada6fc9d4e83",
+      "lines": 62
+    },
+    {
+      "path": "app/Services/WebDav/WebDavCopyGuardPlugin.php",
+      "sha256": "ed0e5240f8e704537ce84d423ec33802e8b845433c359ec6250f846f957f90a2",
+      "lines": 44
+    },
+    {
+      "path": "app/Services/WebDav/WebDavCredentialService.php",
+      "sha256": "131bfaaa12e8e72f5e3a72136b9bb2cd2e6dab38a90e254acc4a51c941d86a60",
+      "lines": 47
+    },
+    {
+      "path": "app/Services/WebDav/WebDavExceptionMapper.php",
+      "sha256": "5bedd907d1ade887942d669093dc8f2bf5ca2eb6e187f15634762fcc13a3b102",
+      "lines": 44
+    },
+    {
+      "path": "app/Services/WebDav/WebDavLockBackend.php",
+      "sha256": "2019e33d38050f717da88a917c8d3f3efb9352ac7554e0520e0356ed7471dd9a",
+      "lines": 94
+    },
+    {
+      "path": "app/Services/WebDav/WebDavMovePlugin.php",
+      "sha256": "dae1a8a7193dcced4b826558625c8ec658311453bf0ce7b2c5b4f4b2afcf1697",
+      "lines": 111
+    },
+    {
+      "path": "app/Services/WebDav/WebDavPayloadTooLarge.php",
+      "sha256": "f07a350b2efe05b555636f20a615a54ae752daaf229fa9518b7a1c0d2d70cd43",
+      "lines": 13
+    },
+    {
+      "path": "app/Services/WebDav/WebDavPropertyBackend.php",
+      "sha256": "48374085d51383199eb4b675d07377e55c01d69601239f8ca69624f94cef83de",
+      "lines": 86
+    },
+    {
+      "path": "app/Services/WebDav/WebDavSapi.php",
+      "sha256": "67800ff497f57bf147970d8dd0970e5a7243e6c618c8fb8d792141b7378b5f15",
+      "lines": 14
+    },
+    {
+      "path": "app/Services/WebDav/WebDavServerFactory.php",
+      "sha256": "a9f47c7d1d275b9020366b1341ea71ce22182e126bfabf4c231c3a04094bcd4c",
+      "lines": 32
+    },
+    {
+      "path": "app/Services/WebDav/Nodes/AbstractFileNode.php",
+      "sha256": "53e9f025c2c140968793ed4adf4f1baacbaac224023d4a350387ed3d6c39d667",
+      "lines": 74
+    },
+    {
+      "path": "app/Services/WebDav/Nodes/DavDirectory.php",
+      "sha256": "1b35464a8961243a57c408285d63f2e8930fb9cb16beaf462961e2a91e3d4f5d",
+      "lines": 99
+    },
+    {
+      "path": "app/Services/WebDav/Nodes/DavFile.php",
+      "sha256": "3d8f59f73479102ba94c2db248d11087b7570e959d72b7b858d81b1691ddb24f",
+      "lines": 60
+    },
+    {
+      "path": "app/Services/WebDav/Nodes/DavRoot.php",
+      "sha256": "57929978bc29afd3073b65179b8915c47c827b01037b866b75f892d125b6a8e3",
+      "lines": 18
+    },
+    {
+      "path": "app/Services/WebDav/Nodes/FilesRoot.php",
+      "sha256": "f60fce87c7f7b33494948bb4aa408ddd1474cbc8acfde43a3e76727509595be5",
+      "lines": 84
+    },
+    {
+      "path": "app/Services/WebDav/Nodes/NodeFactory.php",
+      "sha256": "eef2fed0661fa8b96a910c6ec6d9293abef097d1ae7765c489169a38d059524b",
+      "lines": 22
+    },
+    {
+      "path": "app/Services/WebDav/Nodes/SharedRoot.php",
+      "sha256": "ff0bbe03f5343a365bafb14f5ddd114f374e85c3290274d685d8d1b8bf6e6ab6",
+      "lines": 61
+    },
+    {
+      "path": "app/Tasks/AbstractTask.php",
+      "sha256": "945100c5c419340ee4463174e68b89c0a9b82c97c5cf7a7fb6a7fa9221061e27",
+      "lines": 102
+    },
+    {
+      "path": "app/Tasks/AiTaskAnalyzeTask.php",
+      "sha256": "2ad8638be81810374b17f0b2c4385bf39f2370029a18e4ae632d3c500089cee1",
+      "lines": 134
+    },
+    {
+      "path": "app/Tasks/AiTaskLoopTask.php",
+      "sha256": "98044fdbf82642a23bc7c107bf4578ef33dc4ef2c125619f3c799234584da34b",
+      "lines": 125
+    },
+    {
+      "path": "app/Tasks/AppPushTask.php",
+      "sha256": "2e82be5ae6868b4e045ac35b4538034d24edf7be64674f2940ba45cc7201d579",
+      "lines": 50
+    },
+    {
+      "path": "app/Tasks/AutoArchivedTask.php",
+      "sha256": "49d9dcfba12756b96a17f157a2e5aabfe0d6e52e758c2c9e4b08e1043740cb4c",
+      "lines": 87
+    },
+    {
+      "path": "app/Tasks/BotReceiveMsgTask.php",
+      "sha256": "34fd8f5e7d71a4948ef5d55cd8d55a83693451b53d22d5a7278dcb7e5b61f988",
+      "lines": 762
+    },
+    {
+      "path": "app/Tasks/CheckinRemindTask.php",
+      "sha256": "1f1d4c4ec72ebf7feaea6e2e4080d58c8ef0f0ca862e9210ab26e43b809996ce",
+      "lines": 111
+    },
+    {
+      "path": "app/Tasks/CloseMeetingRoomTask.php",
+      "sha256": "2525fca9d402683554eed8ebd7f3b92694792e8adeee5275ac09998d73482ce2",
+      "lines": 130
+    },
+    {
+      "path": "app/Tasks/DeleteBotMsgTask.php",
+      "sha256": "05abb84000cb82c2b3dde6a4e8a817dc681110c50e461d4fdac347e384e635f0",
+      "lines": 42
+    },
+    {
+      "path": "app/Tasks/DeleteTmpTask.php",
+      "sha256": "11630f6227babdd0c283fe2b91f494ddd0d677de54a8aec9c009da61029f499b",
+      "lines": 146
+    },
+    {
+      "path": "app/Tasks/EmailNoticeTask.php",
+      "sha256": "41b91f6adef8179afddd7873a09851b85971544ad46dc9c8419da973c7999051",
+      "lines": 281
+    },
+    {
+      "path": "app/Tasks/JokeSoupTask.php",
+      "sha256": "d650e693a83cc36875f4d84a180dea1313b6c27b689a7950a03f30b584f1443e",
+      "lines": 56
+    },
+    {
+      "path": "app/Tasks/LineTask.php",
+      "sha256": "8c121795b44288493ae68f38e8ec8fc0f77b87097a0895d1de3456b5f78c2b2a",
+      "lines": 56
+    },
+    {
+      "path": "app/Tasks/LoopTask.php",
+      "sha256": "d45656455de576a5c3a0c43d857574d1d099b7d569deb4e4a5b12801e687bfa3",
+      "lines": 135
+    },
+    {
+      "path": "app/Tasks/ManticoreSyncTask.php",
+      "sha256": "4c1bca496d389b549df73174f1ad0ece4bbece75cb8aeaf891f07a4ca2134386",
+      "lines": 264
+    },
+    {
+      "path": "app/Tasks/MessageAttachmentBackfillTask.php",
+      "sha256": "f45c12daba5c26102cf253d2bea485432c58d33e2e711f061491eea967f15349",
+      "lines": 22
+    },
+    {
+      "path": "app/Tasks/PushTask.php",
+      "sha256": "e164d2e1e0604f76492b1f2f18bb808f55f196e48c16220e776c35dad28e7cb0",
+      "lines": 220
+    },
+    {
+      "path": "app/Tasks/PushUmengMsg.php",
+      "sha256": "3ad79dc6884e2cfa4c273de13a759a65c15a562c15657408ed7fa6ba23b1a5c7",
+      "lines": 103
+    },
+    {
+      "path": "app/Tasks/TodoRemindTask.php",
+      "sha256": "7e41f540d39d04bdf8692569c677fa24ac7fe2859085242886321372b96fc753",
+      "lines": 86
+    },
+    {
+      "path": "app/Tasks/UnclaimedTaskRemindTask.php",
+      "sha256": "9be0b14e9a3ea78967a0247b4b36096c9fb3f7b5e6f9e6901ca1bb317c13ea09",
+      "lines": 82
+    },
+    {
+      "path": "app/Tasks/UpdateSessionTitleViaAiTask.php",
+      "sha256": "685cb5cf263fa0c5c1bb87820442c525761dcd3f7193b8c739810b8c351e4812",
+      "lines": 51
+    },
+    {
+      "path": "app/Tasks/WebSocketDialogMsgTask.php",
+      "sha256": "4a8495d2bbf30f31d81e86128c3af4704f54fecd3870042da7837c2b102d5e39",
+      "lines": 265
+    },
+    {
+      "path": "database/factories/UserFactory.php",
+      "sha256": "4f74cf78f959c8c4ff3be4ab784e7e3e6e46eac852ebf0084e5499a438474871",
+      "lines": 47
+    },
+    {
+      "path": "database/migrations/2021_06_25_182631_create_files_table.php",
+      "sha256": "9b74152589f9c860d4e589206c142f8e83530d53160ecf59feb45e4bd545bb2f",
+      "lines": 40
+    },
+    {
+      "path": "database/migrations/2021_06_25_182631_create_file_contents_table.php",
+      "sha256": "510f3bb14bb1f8f0482856c79fe7756a3aebf368d2590fd8836a5795c15af295",
+      "lines": 37
+    },
+    {
+      "path": "database/migrations/2021_06_25_182631_create_projects_table.php",
+      "sha256": "06d7467b824f8384913e1ab6fefa03b2a7f8f23920d51ddb5b4c1ba70a8d2c4d",
+      "lines": 38
+    },
+    {
+      "path": "database/migrations/2021_06_25_182631_create_project_columns_table.php",
+      "sha256": "a0f5479e0bcbec0aa6113e33bec6779fa40bdacac6d6f7d885aa59b8edf0bfbc",
+      "lines": 36
+    },
+    {
+      "path": "database/migrations/2021_06_25_182631_create_project_logs_table.php",
+      "sha256": "8a63fc1406f79309554f69f95008c4830c66f76a973d7858dcf958dbe24f4def",
+      "lines": 36
+    },
+    {
+      "path": "database/migrations/2021_06_25_182631_create_project_tasks_table.php",
+      "sha256": "372400939a4cda93bd3bb8f6935b0601191c264109c25cfae7194c5050ee6106",
+      "lines": 49
+    },
+    {
+      "path": "database/migrations/2021_06_25_182631_create_project_task_contents_table.php",
+      "sha256": "c41050b8288e01c71738fa1facadd3b42fb8a4da2b1a3732c31e9f10972dc09a",
+      "lines": 34
+    },
+    {
+      "path": "database/migrations/2021_06_25_182631_create_project_task_files_table.php",
+      "sha256": "27604282c1a3379058c40d23d7ec8497c723ce1f135200062d21d0c5a57a208f",
+      "lines": 40
+    },
+    {
+      "path": "database/migrations/2021_06_25_182631_create_project_task_tags_table.php",
+      "sha256": "de7bb5476483c46edc19849a7059720bc1eb406f11ff0c92f1af9e9e2200729c",
+      "lines": 35
+    },
+    {
+      "path": "database/migrations/2021_06_25_182631_create_project_task_users_table.php",
+      "sha256": "7d4cabb760cbf385b4727919af5441dfa2cca193e9c2568fc3768bd743f2bd84",
+      "lines": 36
+    },
+    {
+      "path": "database/migrations/2021_06_25_182631_create_project_users_table.php",
+      "sha256": "27619528de6121481795595fdc5460fd8801795c32f6826e3a84dd413751fa40",
+      "lines": 34
+    },
+    {
+      "path": "database/migrations/2021_06_25_182631_create_settings_table.php",
+      "sha256": "71428dd55018b3524c5c51ec663e2e4da021d8db6be06112e801e907734c6f71",
+      "lines": 34
+    },
+    {
+      "path": "database/migrations/2021_06_25_182631_create_tmps_table.php",
+      "sha256": "4bfe38d5ab18e46f44cdd142775c90c61f8f950c11a985f12a01c14d47a8c2bc",
+      "lines": 34
+    },
+    {
+      "path": "database/migrations/2021_06_25_182631_create_users_table.php",
+      "sha256": "75ac6b6da7f38e24416121dc55f415afd4fde5d800ac5e16c116083dc0c6c48b",
+      "lines": 47
+    },
+    {
+      "path": "database/migrations/2021_06_25_182631_create_web_sockets_table.php",
+      "sha256": "dd13c8f6569bb7e803ce91743c362661a759f746f213171091156230b2c8adaa",
+      "lines": 35
+    },
+    {
+      "path": "database/migrations/2021_06_25_182631_create_web_socket_dialogs_table.php",
+      "sha256": "156fa5c74dfae8926ce7d6d67950b55ac4ae621a858e6a24029215e8ce45d53d",
+      "lines": 36
+    },
+    {
+      "path": "database/migrations/2021_06_25_182631_create_web_socket_dialog_msgs_table.php",
+      "sha256": "f34464a5a01a801d80a5dead224aa8ddaac3e82fd41406e0218a50e1f207df76",
+      "lines": 37
+    },
+    {
+      "path": "database/migrations/2021_06_25_182631_create_web_socket_dialog_msg_reads_table.php",
+      "sha256": "c372ed555816c2c9410ddd5eae6f08706d39ba075bd1e406b14cc8e778c6fcb9",
+      "lines": 36
+    },
+    {
+      "path": "database/migrations/2021_06_25_182631_create_web_socket_dialog_users_table.php",
+      "sha256": "9de6b8f655f4f480d6c91a509bb8d2fd28ad1de4f0250fd70c46d17a91c154cf",
+      "lines": 33
+    },
+    {
+      "path": "database/migrations/2021_06_25_182631_create_web_socket_tmp_msgs_table.php",
+      "sha256": "7af0d7d9202d1ed5df9997dad9f25e20b5d7fac0f6923627e9b63ed5ae7803b0",
+      "lines": 35
+    },
+    {
+      "path": "database/migrations/2021_07_07_085317_create_file_users_table.php",
+      "sha256": "6ce9d78d951dd7ea2eae9511570d1d3671671004065eaf13eea52ad0625a0cb2",
+      "lines": 33
+    },
+    {
+      "path": "database/migrations/2021_12_10_170751_files_add_ext.php",
+      "sha256": "98569c5fa9c0af1fad09375a233be243cf2e67aa0bb184a0c7723dd20a0618f5",
+      "lines": 47
+    },
+    {
+      "path": "database/migrations/2021_12_13_002344_project_tasks_add_archived_follow.php",
+      "sha256": "ec17cf2eaeebf4ce812b4aa849498982bcce469bf1cd70728c1a7a76dd712952",
+      "lines": 49
+    },
+    {
+      "path": "database/migrations/2021_12_27_121827_create_project_invites_table.php",
+      "sha256": "75e6b54932c8321fa49b82fac0423fb30057d2616ef1cddf11eb1ce8f5a39586",
+      "lines": 34
+    },
+    {
+      "path": "database/migrations/2021_12_29_170103_create_file_links_table.php",
+      "sha256": "249f2db21559e9e537de62e334fb6fe71b81677dd5f6d0ded7a788003a2837e5",
+      "lines": 34
+    },
+    {
+      "path": "database/migrations/2021_12_29_170409_file_users_add_permission.php",
+      "sha256": "46b41eeec81fdf8cb0d224d558fa9476b63a41a92dec1b0c6d66e099e552a819",
+      "lines": 55
+    },
+    {
+      "path": "database/migrations/2021_12_30_155338_create_reports_table.php",
+      "sha256": "b1d006bca5aba2ec8744fbd0555e8a2f3f277cf65ba06480bf64b9ee0ceeb413",
+      "lines": 39
+    },
+    {
+      "path": "database/migrations/2021_12_30_162019_create_report_receives_table.php",
+      "sha256": "3101e72f236dde6e13d3f4a71705092a2eceda7aacd35a20060d68b05625752c",
+      "lines": 38
+    },
+    {
+      "path": "database/migrations/2022_01_04_111739_add_report_sign.php",
+      "sha256": "d9506b404db4f2aca3c8dd4481043b5092460c25717b62aae9e9715037f992a4",
+      "lines": 32
+    },
+    {
+      "path": "database/migrations/2022_01_06_131020_users_add_disable_at.php",
+      "sha256": "b9bf9301a134687ff9ecfd81f1261f088a8762b339dfde9160bc486cddcad4f8",
+      "lines": 43
+    },
+    {
+      "path": "database/migrations/2022_01_06_132023_project_tasks_update_subtask_time.php",
+      "sha256": "747d8c260f55824faf1194f6f851f0d28cab59604609bf29ceb08667d21a1d9c",
+      "lines": 39
+    },
+    {
+      "path": "database/migrations/2022_01_06_164034_project_tasks_update_subtask_archived_delete.php",
+      "sha256": "1b2e488221d31932941364d89ce2b11e980fe72588e1470d4937f35ad31484f4",
+      "lines": 51
+    },
+    {
+      "path": "database/migrations/2022_01_08_171816_create_project_flows_table.php",
+      "sha256": "5b7d64b5dc227a57951fd68e88ff86147b4bcef9f22851705eeeedebb9504cfd",
+      "lines": 33
+    },
+    {
+      "path": "database/migrations/2022_01_08_171816_create_project_flow_items_table.php",
+      "sha256": "a423c3d1f32e205db257c0aade57a56bf9386045758a19360ad4c08cd652db83",
+      "lines": 38
+    },
+    {
+      "path": "database/migrations/2022_01_08_172053_project_tasks_add_flow_item_id_flow_item_name.php",
+      "sha256": "82904a2d3734e77d6edbe17b9130c514b0613a16a522dc96d248a8e42e953642",
+      "lines": 36
+    },
+    {
+      "path": "database/migrations/2022_01_11_182830_project_flow_items_add_usertype.php",
+      "sha256": "b8305cbc386c3d7a7bb6971936767aa0dbca70837f9e8242676e9eb769328ebe",
+      "lines": 42
+    },
+    {
+      "path": "database/migrations/2022_01_11_191703_project_logs_add_record.php",
+      "sha256": "fea7a8579f0b036293eae90fbd01524fc9635a3572534fd56f376ad7d2ffe16d",
+      "lines": 34
+    },
+    {
+      "path": "database/migrations/2022_01_12_153411_project_flow_items_add_userlimit.php",
+      "sha256": "e731bbfbd52b8c0f7c6518966b01ef9e70beaa32a96e4844c5dd29aaab31feac",
+      "lines": 34
+    },
+    {
+      "path": "database/migrations/2022_01_29_125829_web_socket_dialog_msgs_add_deletes.php",
+      "sha256": "0070a9f7c59f8cc09f7d875e556bd6147c03aa0161b0df3e05d9b441ad133963",
+      "lines": 34
+    },
+    {
+      "path": "database/migrations/2022_02_08_211051_insert_setting_column_template.php",
+      "sha256": "ea46c057f9bd577af42b70c7730ff05de53475d10c984e0739a68c52baa1bb44",
+      "lines": 38
+    },
+    {
+      "path": "database/migrations/2022_02_18_095253_web_socket_dialog_users_add_top_at.php",
+      "sha256": "0848885469c0852377dcdb693a37fef2bc5fbf6c508ed3ec525981cf75fc9010",
+      "lines": 34
+    },
+    {
+      "path": "database/migrations/2022_02_20_171030_files_update_type.php",
+      "sha256": "0dd4723cc2114303fbff975259a88dcdfcf37972c0f37844345a6b4c54498a24",
+      "lines": 30
+    },
+    {
+      "path": "database/migrations/2022_02_21_203230_files_update_ext.php",
+      "sha256": "6495eacd3afd30c381aa7c2565c026d710fd2d94d08ac85b9c2f6be7a1c9fb21",
+      "lines": 75
+    },
+    {
+      "path": "database/migrations/2022_02_22_142148_project_users_add_top_at.php",
+      "sha256": "9155aabe619716f1ac112b96ed634a70a57c1b29a97cb50af8b10d09932b9041",
+      "lines": 34
+    },
+    {
+      "path": "database/migrations/2022_02_27_112217_create_project_task_flow_changes_table.php",
+      "sha256": "d832b2fbb2e88fd4b132c9eab4684c32056d76e36ccc45e4730b1cbc0845b17c",
+      "lines": 37
+    },
+    {
+      "path": "database/migrations/2022_02_27_210444_rename_pre_project_task_flow_changes_item.php",
+      "sha256": "cc6320ba8dbd9ca3e8a6478249dd8ec8a28c646b674cc5f276dbb1a734e36e01",
+      "lines": 37
+    },
+    {
+      "path": "database/migrations/2022_03_02_161123_add_is_email_verity_to_users.php",
+      "sha256": "a04f7709bcaa17df91322f874fb3a443f84a2823a4af1159425ff9022ff56b9a",
+      "lines": 34
+    },
+    {
+      "path": "database/migrations/2022_03_02_172504_create_user_email_verifications_table.php",
+      "sha256": "ea5590fb19d920e735db729d10eb6fadf365e8ff67c73c44fd77b8e44c040c3c",
+      "lines": 35
+    },
+    {
+      "path": "database/migrations/2022_03_03_154459_create_project_task_mail_logs_table.php",
+      "sha256": "7a2638d6f5f1172f7bf417861f29debbe9e8865e947f5a677a6457f34bc9fe61",
+      "lines": 36
+    },
+    {
+      "path": "database/migrations/2022_03_04_154630_project_task_contents_update_content.php",
+      "sha256": "f9565b08146ac4f100bce87212ac0e1b0417f9e5298cdf9608dda1c1cc7ae30a",
+      "lines": 40
+    },
+    {
+      "path": "database/migrations/2022_03_08_124155_add_web_socket_dialog_users_add_is_mark_unread.php",
+      "sha256": "7a51e11951d2987379afa862f6c64848698fb66d2ea18060b17490be7a2275dc",
+      "lines": 34
+    },
+    {
+      "path": "database/migrations/2022_03_09_100139_add_project_task_mail_logs_add_deletes.php",
+      "sha256": "9aa38a5b61bd79340220e7d5676a912c4e446069b920fb0236be033024a08e23",
+      "lines": 34
+    },
+    {
+      "path": "database/migrations/2022_03_09_143604_add_project_tasks_deleted_userid.php",
+      "sha256": "1912ebcfb4cad8f47fc0a227d712c78554d678b4963f35d98a3b5617a71abb19",
+      "lines": 34
+    },
+    {
+      "path": "database/migrations/2022_03_17_211814_rename_pre_users_is_email_verity.php",
+      "sha256": "b04da7e3e4c1b7ffbd093ad6249ac629f5d734cb5ce366b7e4bd85c3090b29e6",
+      "lines": 46
+    },
+    {
+      "path": "database/migrations/2022_03_17_213014_rename_pre_web_socket_dialog_users_is_mark_unread.php",
+      "sha256": "2a3fb2f4b01d4f5693f31a02623590055c774d3d1706c5ac0c910d8903b05fbe",
+      "lines": 34
+    },
+    {
+      "path": "database/migrations/2022_03_30_070029_add_files_pids.php",
+      "sha256": "fca27f4a3b8bc25fe492106ae52013269945370e14659d00b4fb63537d766efe",
+      "lines": 51
+    },
+    {
+      "path": "database/migrations/2022_03_31_093754_add_file_links_userid.php",
+      "sha256": "1b0d42e799fb5ac975831158ccbd31a29cd877f64c4aa81e1968975a6b5926a7",
+      "lines": 46
+    },
+    {
+      "path": "database/migrations/2022_04_07_082526_add_project_task_mail_logs_send_error.php",
+      "sha256": "0503b340798be1809fe55bce1067691d0ad1eafd36583bf01f3f079e78783b6b",
+      "lines": 34
+    },
+    {
+      "path": "database/migrations/2022_04_12_152136_users_change_disable_at.php",
+      "sha256": "83ef57f76846be977dd6071c0650567e3cd2e1e9a7218cf3c85f63c35864508c",
+      "lines": 28
+    },
+    {
+      "path": "database/migrations/2022_04_13_195604_create_user_transfers_table.php",
+      "sha256": "3eaf67c5311299b8e694062e3dfde0c9e77e1c13264fa920b21529a0835fa551",
+      "lines": 33
+    },
+    {
+      "path": "database/migrations/2022_04_14_103139_add_web_socket_dialogs_owner_id.php",
+      "sha256": "0d9c30d76ae1c2562109cd90524258774b5918e5f5d69fe99f470de3dfd8776e",
+      "lines": 34
+    },
+    {
+      "path": "database/migrations/2022_04_16_073635_add_web_socket_dialog_msg_reads_mention.php",
+      "sha256": "62c1a4100212251cbf8fb358b4219c616bf5a91c133f5992fbc7bc0d6a5c92c6",
+      "lines": 34
+    },
+    {
+      "path": "database/migrations/2022_04_26_110223_project_logs_record_userid.php",
+      "sha256": "9a73aa2b8dbd2c9f19ef3ead725b7874ce21be071865a8ad2c52ef37ce32c518",
+      "lines": 45
+    },
+    {
+      "path": "database/migrations/2022_05_05_115726_add_web_socket_dialog_msgs_dialog_type.php",
+      "sha256": "a51a7dcb07a97fc0b2eda7a3fe6ce27708dca7d593990b85af8535292e05c202",
+      "lines": 34
+    },
+    {
+      "path": "database/migrations/2022_05_05_135535_add_web_socket_dialog_msg_reads_email.php",
+      "sha256": "e146342e8166e6c2a06e026a7cb9adb0b75e81f072f405a283d5c834464cdc10",
+      "lines": 34
+    },
+    {
+      "path": "database/migrations/2022_05_13_065531_create_umeng_alias_table.php",
+      "sha256": "a81ee7da6a5cf2ac48781661468226e3fdb7e6da3eb98c1bc0944f71abf15958",
+      "lines": 34
+    },
+    {
+      "path": "database/migrations/2022_05_22_225924_add_projects_personal.php",
+      "sha256": "d469c144549a27a577bf776a8bdeb38d88374014136be4c0ae24c75c7900a1c7",
+      "lines": 48
+    },
+    {
+      "path": "database/migrations/2022_05_23_232135_add_projects_user_simple.php",
+      "sha256": "1538db881a92b66005f88bb5ca6929dab6ad746e5d3218aa399f5aaafc44a627",
+      "lines": 46
+    },
+    {
+      "path": "database/migrations/2022_06_01_142823_create_meetings_table.php",
+      "sha256": "e32a407ba4527f5851eb081e807b8df4989aa11566dca388c384b67a46edb289",
+      "lines": 37
+    },
+    {
+      "path": "database/migrations/2022_06_04_095019_add_web_socket_dialog_msgs_emoji.php",
+      "sha256": "847097ed1f9bccd4787315a4e55eaf31067795a74771a10223a72ac0948390ab",
+      "lines": 34
+    },
+    {
+      "path": "database/migrations/2022_06_17_070224_web_socket_dialog_msgs_add_reply_id.php",
+      "sha256": "ea36f0e3061811a7ba2c2cf7bdeacb10339ef879a7d084465caad6c08e993f9a",
+      "lines": 34
+    },
+    {
+      "path": "database/migrations/2022_06_19_233120_add_web_socket_dialog_msgs_key.php",
+      "sha256": "aa2a2c82e8519f387d7f554e557ecca7bc5304421a0cb86b043602f06ff090d5",
+      "lines": 46
+    },
+    {
+      "path": "database/migrations/2022_06_22_151032_add_web_socket_dialog_users_inviter_important.php",
+      "sha256": "86b6c1147d5539733b0654ba720b01fff88a307285b95617d357ae6c0622f533",
+      "lines": 48
+    },
+    {
+      "path": "database/migrations/2022_06_23_191554_add_web_users_pinyin.php",
+      "sha256": "b64bceeaaf42f9ace650f331986e7e6c8d09edd21db3008c51d803d759d48cd9",
+      "lines": 45
+    },
+    {
+      "path": "database/migrations/2022_06_24_115034_add_project_tasks_loop_loop_at.php",
+      "sha256": "749737fd88a34489ea482a426e65350bad08207b88afb2a4dfe8423fc8a5c4c0",
+      "lines": 36
+    },
+    {
+      "path": "database/migrations/2022_06_24_205033_add_web_socket_dialog_msgs_reply_num.php",
+      "sha256": "beef95c8b948ebf54866ba582bf7368c419ada04f841dc0ac9eed7a25f9a9088",
+      "lines": 49
+    },
+    {
+      "path": "database/migrations/2022_06_30_145804_add_web_socket_dialog_msgs_tag.php",
+      "sha256": "b33ece2ccdb219f58fd850c88ac77117c3582dbb3eefa154ff0a0cd2a2fdec09",
+      "lines": 34
+    },
+    {
+      "path": "database/migrations/2022_06_30_172539_add_web_socket_dialog_msgs_mtype.php",
+      "sha256": "d8c23e4aa375c88aa50382667d669ce80d6c28b41b68907bd0fa77f1b8d3be18",
+      "lines": 56
+    },
+    {
+      "path": "database/migrations/2022_07_01_103147_add_web_socket_dialog_msgs_link.php",
+      "sha256": "f3bf5fb6bdca16ac2ed9b6021851bb8bb5ddf7ec75bc5efc2ae64aca7912f3d7",
+      "lines": 47
+    },
+    {
+      "path": "database/migrations/2022_07_01_165047_handle_web_socket_dialog_msgs_emoticon.php",
+      "sha256": "70617ff950d5a97a6071679fbc0eeadf8e2c3d3a23bb80626a4ced505610c681",
+      "lines": 30
+    },
+    {
+      "path": "database/migrations/2022_07_03_212946_add_web_socket_dialog_msgs_modify.php",
+      "sha256": "0cdfbb62a094b5653999dcb1c45c867f29bf4378ad697cd18db0921af6cbd7ee",
+      "lines": 34
+    },
+    {
+      "path": "database/migrations/2022_07_05_115200_update_web_socket_dialogs_group_name.php",
+      "sha256": "12e313272ad02f58f5211da4d3ed3137ace2fdc2e4c8256f35ffc59b61abf48d",
+      "lines": 46
+    },
+    {
+      "path": "database/migrations/2022_07_07_064824_add_web_socket_dialog_msgs_todo.php",
+      "sha256": "145da22f8151683e4ff6502a3e6ef3d66fb99e1bcca3ed557a13a7bb3f6d048c",
+      "lines": 39
+    },
+    {
+      "path": "database/migrations/2022_07_07_065607_create_web_socket_dialog_msg_todos_table.php",
+      "sha256": "954ef0f75dd1cea7b9a4bd4898d1f5951550752b2d4a6105188167d188fbfcc0",
+      "lines": 35
+    },
+    {
+      "path": "database/migrations/2022_07_08_150111_add_users_tel.php",
+      "sha256": "4cb90f432f6a043e4d5c40e5a5a533ddd3ae0dc81b23189f6ea237fded42a3dd",
+      "lines": 34
+    },
+    {
+      "path": "database/migrations/2022_07_12_104211_add_type_to_user_email_verifications_table.php",
+      "sha256": "7a230d04c03b12cdd78878d72ff0078c28c2bf7d1b8496a0725ab7f9b0b3a743",
+      "lines": 34
+    },
+    {
+      "path": "database/migrations/2022_07_13_145504_create_user_deletes_table.php",
+      "sha256": "6a15691c4bcbc520369f83f0b78e298ab8a0ecfc775b03a185848292be86b1c4",
+      "lines": 34
+    },
+    {
+      "path": "database/migrations/2022_07_15_165114_add_files_pshare.php",
+      "sha256": "c62daeb1753e32c7720c1e0ea616a52335959ca24124838fd68034df0de6c946",
+      "lines": 46
+    },
+    {
+      "path": "database/migrations/2022_07_16_161354_add_user_deletes_operator.php",
+      "sha256": "8557a39fec8e324fcb54d0e5a50a29dbd4eadac5c89447b91361664b521f68e5",
+      "lines": 34
+    },
+    {
+      "path": "database/migrations/2022_07_16_161857_add_user_deletes_cache.php",
+      "sha256": "89627552a8e3e6ffbca816c530ab49549b0d1a14cad1474fe9a8c37d6d18ce57",
+      "lines": 34
+    },
+    {
+      "path": "database/migrations/2022_11_09_144359_create_project_task_push_logs_table.php",
+      "sha256": "108b377c198b778e8cedeec9ceb5d2def12111fa5b5bfd04edb715035aa74c7e",
+      "lines": 34
+    },
+    {
+      "path": "database/migrations/2022_11_16_102059_create_task_workers_table.php",
+      "sha256": "42f9c90d841c5426212a46d4b3f273be777fc65b04574a892c75fe1ee2aa36f4",
+      "lines": 36
+    },
+    {
+      "path": "database/migrations/2022_11_16_221259_create_user_departments_table.php",
+      "sha256": "be5645edb8d3dc29ad95ad847f29d3d10c560c9f91971a0e7d47b373343b82a2",
+      "lines": 35
+    },
+    {
+      "path": "database/migrations/2022_11_17_103811_add_users_department.php",
+      "sha256": "4b5de39a5a9409df83ccb6d151bbb1b2affddf55735aa9be5c0bd8be4f3a7a6a",
+      "lines": 34
+    },
+    {
+      "path": "database/migrations/2022_12_02_092357_add_project_task_push_logs_deleted_at.php",
+      "sha256": "7fa2d34323fcbcfc4d45fb7cfd1fa50c0113d8e1e3d5e23a35c19b1a467ac84e",
+      "lines": 34
+    },
+    {
+      "path": "database/migrations/2022_12_11_214403_create_user_checkin_macs_table.php",
+      "sha256": "953fa4a6b3cda7bec83998724696e2be3f58c3f5083662648ad2d87a4b1ab6cf",
+      "lines": 37
+    },
+    {
+      "path": "database/migrations/2022_12_11_214409_create_user_checkin_records_table.php",
+      "sha256": "4858393454cfa08879c54a504bd21168a64155da731f4581831fdbe947ba8ea7",
+      "lines": 37
+    },
+    {
+      "path": "database/migrations/2022_12_13_092619_add_date_times_user_checkin_records.php",
+      "sha256": "d1cd7eef54678d6475ee39834e8996b3fd88236b4a759ee878a487ecffbbd3c6",
+      "lines": 74
+    },
+    {
+      "path": "database/migrations/2022_12_17_111737_create_user_bots_table.php",
+      "sha256": "547133390aa4bc885a5d5ffac55d544a95125c6701cbbde486979bb5374234a5",
+      "lines": 36
+    },
+    {
+      "path": "database/migrations/2022_12_17_123811_add_users_bot.php",
+      "sha256": "1e8a9ce445ee6b44c73c403582f5c7e0200e918d1fb3ec31a2c3ba3080737333",
+      "lines": 35
+    },
+    {
+      "path": "database/migrations/2023_01_17_124320_add_web_socket_dialog_users_add_silence.php",
+      "sha256": "a66c0b799ea49dda5a957fe74180294a816ad0ea129aed00c72f452fb82f114e",
+      "lines": 34
+    },
+    {
+      "path": "database/migrations/2023_01_18_181320_add_web_socket_dialog_msg_reads_add_silence.php",
+      "sha256": "7df573ae7075204e48c04a4ef83a046a09fcbbbeae151d9bf92c6b94b4b22f97",
+      "lines": 34
+    },
+    {
+      "path": "database/migrations/2023_01_30_175859_delete_project_task_mail_logs_table.php",
+      "sha256": "f4bb0b4f0c431e94b8789086bfc5b3be6c9a9f53237ca4740056252b9b746e24",
+      "lines": 28
+    },
+    {
+      "path": "database/migrations/2023_02_08_152033_add_user_bots_clear.php",
+      "sha256": "f3ffccd93cd54781785a2b1c1cf74205cf3babb739aae3e9b80fe494e6809a0b",
+      "lines": 41
+    },
+    {
+      "path": "database/migrations/2023_02_14_121233_add_user_bots_webhook.php",
+      "sha256": "fe247fa0cfb3cf9f84053b2e3b133952985bffd9de4d4f6b7b151c645cf644d0",
+      "lines": 36
+    },
+    {
+      "path": "database/migrations/2023_03_04_234016_add_web_socket_dialogs_avatar.php",
+      "sha256": "2535fdf997b8ff5c63b09f82f01de89c9c8077ea66a7bd660f63088fd1e0a23a",
+      "lines": 34
+    },
+    {
+      "path": "database/migrations/2023_03_07_131018_update_web_socket_dialog_users_updated_at.php",
+      "sha256": "7f657be7012205f7a35d9d9e83c6d4048933878e924c64208b9d51cd353370d2",
+      "lines": 34
+    },
+    {
+      "path": "database/migrations/2023_03_07_152557_create_deleteds.php",
+      "sha256": "3f46d92a3225fb0df121372b7634748b827755f2548c8054a60cbe93e13eced5",
+      "lines": 37
+    },
+    {
+      "path": "database/migrations/2023_03_16_194103_update_table_indexes.php",
+      "sha256": "9f60eae7ee571f46c598aa0f69d030d4b566d83ced7124624bb590d75a2a8982",
+      "lines": 41
+    },
+    {
+      "path": "database/migrations/2023_04_01_164418_update_file_pshare.php",
+      "sha256": "fba1181c69cbcf4930864c4c9df571f39a85ea6923e4177c9edbd1793d128603",
+      "lines": 26
+    },
+    {
+      "path": "database/migrations/2023_04_11_122557_create_approve_proc_msgs.php",
+      "sha256": "1a1cba9ef13ad249c278854851f1e1bdba90c20661344044a0f22ae90df49dcc",
+      "lines": 38
+    },
+    {
+      "path": "database/migrations/2023_06_15_093619_add_project_tasks_is_all_visible.php",
+      "sha256": "2fa46779dfd242af9ab0fde770aed43ea9971ec2f31214940ff060ba0140b96f",
+      "lines": 36
+    },
+    {
+      "path": "database/migrations/2023_07_01_212841_add_index_to_project_tasks_table.php",
+      "sha256": "bc681478a4414608b5ecc535084fe3d2cc546a89c42987c01d57ebf9be620e06",
+      "lines": 34
+    },
+    {
+      "path": "database/migrations/2023_07_03_212841_add_index_to_project_task_users_table.php",
+      "sha256": "5f0e4248379240c0701fe5d920635f1a34fc0d60121cac5eb8f1816c0ce3a62f",
+      "lines": 34
+    },
+    {
+      "path": "database/migrations/2023_07_24_093619_add_web_socket_dialogs_link_id.php",
+      "sha256": "1313e322e814b5b496b8249dfc292f037c149f335cba8be1268406012b862cb7",
+      "lines": 36
+    },
+    {
+      "path": "database/migrations/2023_07_27_145646_create_default_robot.php",
+      "sha256": "84bb27e1dd6f7ea276ffce841783654ca660ff7af80a0fe460a47f5351091bf2",
+      "lines": 32
+    },
+    {
+      "path": "database/migrations/2023_08_05_140046_setting_checkin_modes_value.php",
+      "sha256": "03c1ffad3312ba17d6f72500929e1a1d27fd5aeb2c4f98448b61bdd9d48520c6",
+      "lines": 29
+    },
+    {
+      "path": "database/migrations/2023_08_05_161411_project_flow_items_add_columnid.php",
+      "sha256": "b3c1d65f374c86db8475742f2a18fadbf36db4a2885e50f14f1e88dcf71653d6",
+      "lines": 34
+    },
+    {
+      "path": "database/migrations/2023_08_10_093619_add_web_socket_dialog_users_color.php",
+      "sha256": "22582bb1ac5964adb554da0fb9d0641bb435de4bec407861ab0f7588772b715a",
+      "lines": 36
+    },
+    {
+      "path": "database/migrations/2023_08_10_233619_repair_project_tasks_is_all_visible.php",
+      "sha256": "a17791d8db0b05aaf4fefe3800d907619af3b00ec030a67e68bcbe7847378059",
+      "lines": 42
+    },
+    {
+      "path": "database/migrations/2023_11_08_164418_rename_project_tasks_is_all_visible.php",
+      "sha256": "074f0ff5cb62ae71c506e52d691718eb4de684ec2fa69c87686d5a1f169c2346",
+      "lines": 33
+    },
+    {
+      "path": "database/migrations/2023_11_20_214409_create_project_permissions_table.php",
+      "sha256": "ebb0b55c304659ddd3cfccccc64433a4496424497746425f91aed748150628ce",
+      "lines": 36
+    },
+    {
+      "path": "database/migrations/2023_12_04_070224_web_socket_dialog_msgs_add_forward_id.php",
+      "sha256": "6384a370221c81bda217fef60b7da97263fdce7baeba16d3b096307c733605d1",
+      "lines": 38
+    },
+    {
+      "path": "database/migrations/2023_12_07_160641_add_index_some_20231217.php",
+      "sha256": "8358097af32f809558f67b263e60fb24c30d3084c6549b7b4efdefbab405ebfb",
+      "lines": 40
+    },
+    {
+      "path": "database/migrations/2023_12_07_160642_update_owner_add_index_some_20231217.php",
+      "sha256": "b778447aae08917d3fb6133b6b39523eaac745cc6ef7a1c0372a2a10d50085db",
+      "lines": 194
+    },
+    {
+      "path": "database/migrations/2023_12_20_145804_add_web_socket_dialog_msgs_top_at.php",
+      "sha256": "a78c58429e9afcd0b2166f5b3e6ff144ae7a385a424daaec2f8dabe1a0dba1cd",
+      "lines": 36
+    },
+    {
+      "path": "database/migrations/2023_12_26_182631_create_project_task_visibility_users_table.php",
+      "sha256": "435242a83a7db5aa8c4180015fd7583eba3383acbad819faa29a16ad2450257d",
+      "lines": 48
+    },
+    {
+      "path": "database/migrations/2023_12_29_145804_add_web_socket_dialogs_top.php",
+      "sha256": "ff6df9a38468b54a9ea03d948dca723911bc4b6e414a32e6e2d37f88a1a075eb",
+      "lines": 52
+    },
+    {
+      "path": "database/migrations/2024_02_05_212046_all_group_mute_handle.php",
+      "sha256": "2eb4b64da5542a6c47dee09b644eb54f6d0e13430f07f50987df584aef871308",
+      "lines": 32
+    },
+    {
+      "path": "database/migrations/2024_02_18_105804_change_charset_to_utf8mb4.php",
+      "sha256": "0a634fcc0b07b25e84f73988a76d055c4a5bfd97bc1b038d9f6360cac65dac76",
+      "lines": 44
+    },
+    {
+      "path": "database/migrations/2024_03_07_201920_add_web_socket_dialog_users_add_hide.php",
+      "sha256": "ff5f8d8136479bcea6913451c19ec5f3d756e156d19eb30c213f88ec92cdffcb",
+      "lines": 34
+    },
+    {
+      "path": "database/migrations/2024_03_15_020041_add_index_some_20240315.php",
+      "sha256": "df3358d03a4fd6de79e760141618c5cee39abbebf9e13d23a3cb66226ff06eb4",
+      "lines": 32
+    },
+    {
+      "path": "database/migrations/2024_03_17_142904_add_web_socket_dialog_users_last_at.php",
+      "sha256": "b1f21dfac4a2d4ee7234e7cc5e30e605dac38f78ca88337e6eb876dbed228fff",
+      "lines": 50
+    },
+    {
+      "path": "database/migrations/2024_03_17_160641_add_index_some_20240317.php",
+      "sha256": "10fc5a8ee3bdab786cfecbf9e8493ebd7e2d824704e709d6202e093c695f1770",
+      "lines": 31
+    },
+    {
+      "path": "database/migrations/2024_03_18_135604_change_forward_data.php",
+      "sha256": "c252f47974777dae82c0e602453c50c3211680fc5f204c6f1ae96d0529bab31e",
+      "lines": 55
+    },
+    {
+      "path": "database/migrations/2024_03_18_153504_change_reply_data.php",
+      "sha256": "44aa3a24c6c506363992f00fd1c19cc1159dfac5499b0b3c49e8a5318372d52b",
+      "lines": 49
+    },
+    {
+      "path": "database/migrations/2024_03_20_024119_add_umeng_alias_device.php",
+      "sha256": "b6769f5db6227445b9479b682927a87b8e1c8518c91320e8664a34417b484314",
+      "lines": 38
+    },
+    {
+      "path": "database/migrations/2024_04_08_082823_create_meeting_msgs_table.php",
+      "sha256": "37aa09a7a1625a50152ef8d7fe2ba825a731e76b1bde6489e47cd976081b5dda",
+      "lines": 45
+    },
+    {
+      "path": "database/migrations/2024_04_22_064219_add_project_task_contents_userid.php",
+      "sha256": "fc1bf6b796debcbd40fe1f7e4af0137f44f1cd682e869ff85ea1ded459e409f5",
+      "lines": 38
+    },
+    {
+      "path": "database/migrations/2024_04_24_145504_create_complaints_table.php",
+      "sha256": "730d0f4b3b11a6064bb98ed34423e69abcafde8643b0e1a5808040d61d456114",
+      "lines": 40
+    },
+    {
+      "path": "database/migrations/2024_05_01_105735_add_web_socket_dialog_msg_reads_dot.php",
+      "sha256": "7810a28ab3bfdf58a607a61f8d9dcdf1a442fb1847a37f250b9f4e3a1dfbb123",
+      "lines": 34
+    },
+    {
+      "path": "database/migrations/2024_05_31_084503_project_logs_add_task_only.php",
+      "sha256": "d4be4fedc47aabe9eb191ccdf52aa2ffb2bb928293b36e78639ab7b01114a884",
+      "lines": 59
+    },
+    {
+      "path": "database/migrations/2024_09_13_055518_update_project_permissions.php",
+      "sha256": "35c81e807f3cb962e90e73f54c237d85572b818e542dfea73142137679cca3ef",
+      "lines": 37
+    },
+    {
+      "path": "database/migrations/2024_09_21_162414_rename_pre_report_receives_receive_time.php",
+      "sha256": "5524e52d4151a74077cd967224ba76569fb6e1d42e7c322c5c874011494749a6",
+      "lines": 34
+    },
+    {
+      "path": "database/migrations/2024_09_27_135805_create_user_checkin_faces_table.php",
+      "sha256": "35a7c2eb88f2aa07e71215100e2b8c107e458da64ae64345ea338912f6762aee",
+      "lines": 38
+    },
+    {
+      "path": "database/migrations/2024_10_23_204404_add_web_socket_dialog_msg_reads_live.php",
+      "sha256": "2b15e75611343c40b921f112f4b44d7fa64a848d513ef3f0e1fadab0c2cbb55e",
+      "lines": 130
+    },
+    {
+      "path": "database/migrations/2024_10_24_112804_add_web_socket_dialog_msg_reads_live2.php",
+      "sha256": "af61d429d1433103ae2313dc424185982808315df0e5ea5080dd9f2c3b330226",
+      "lines": 33
+    },
+    {
+      "path": "database/migrations/2024_10_27_070707_create_web_socket_dialog_msg_translates_table.php",
+      "sha256": "1b3efcc1feb31a8e177f8ffc1c12c32c6d901168fd5e0c2ce7ac2b7f2704baf5",
+      "lines": 38
+    },
+    {
+      "path": "database/migrations/2024_10_28_211246_generate_web_socket_dialogs_default_group.php",
+      "sha256": "b0e99641b4692b05407c9f86012bfa0a67260dc401f11b108c65c2ae943e893b",
+      "lines": 41
+    },
+    {
+      "path": "database/migrations/2024_11_02_094141_add_index_some_20241102.php",
+      "sha256": "7c8bdb9b74ce30e406989acafd56dc282e8add4828558a52fb8c685339fe7c4f",
+      "lines": 37
+    },
+    {
+      "path": "database/migrations/2024_11_02_094504_remove_web_socket_dialog_msg_reads_live.php",
+      "sha256": "645504262d47e7eb3643faf99cd2bbd8ecab78e4b135dfb8edf2ec5a12befdde",
+      "lines": 36
+    },
+    {
+      "path": "database/migrations/2024_11_05_151611_add_users_lang.php",
+      "sha256": "168b5356465b4cc1611be3c51e7620749615b07d5208dce272f895dcb3267f32",
+      "lines": 35
+    },
+    {
+      "path": "database/migrations/2024_11_07_222241_add_index_some_20241107.php",
+      "sha256": "39d36ae6ebe432c49f5ecfe1ad2f5c35a2d2b256be4082108934d6799e233554",
+      "lines": 30
+    },
+    {
+      "path": "database/migrations/2024_11_12_195318_update_setting_email_settings.php",
+      "sha256": "493ed5af560b94fe63cc41094d707c209f3081cbfb6e37f6a8daa6e25d9df5ad",
+      "lines": 35
+    },
+    {
+      "path": "database/migrations/2024_12_01_104400_add_archive_fields_to_pre_projects_table.php",
+      "sha256": "3bba0d2a8b46b7d7c56898fbb7f6ff0e044a7d865dc9bd79fee1100393323a6c",
+      "lines": 42
+    },
+    {
+      "path": "database/migrations/2024_12_01_115600_create_project_task_templates_table.php",
+      "sha256": "1be165c7df9914c50c1f62abb9db6fdfa426efd079f13116bd1455790fe0b235",
+      "lines": 44
+    },
+    {
+      "path": "database/migrations/2024_12_03_021701_create_web_socket_dialog_configs_table.php",
+      "sha256": "ca39ae52b8116106e2fac0ae95e062588e396411a175e736373094e3737e5fe2",
+      "lines": 37
+    },
+    {
+      "path": "database/migrations/2024_12_07_082831_create_project_tags_table.php",
+      "sha256": "94bbc18345c0edfff5c90abf419f5e5353d41e398c1d3aec108fdd57df173975",
+      "lines": 42
+    },
+    {
+      "path": "database/migrations/2024_12_10_194356_add_fulltext_index_to_web_socket_dialog_msgs_table.php",
+      "sha256": "ef9ba77816b30fe527366ebdcfae3edf61698341516ccd62d9151db44e11a4ec",
+      "lines": 54
+    },
+    {
+      "path": "database/migrations/2024_12_10_225752_add_bot_to_web_socket_dialog_msgs.php",
+      "sha256": "4e1d424d015c709aa178754f29fdc51b818cdb9e71805f0c7d022a07982fa081",
+      "lines": 50
+    },
+    {
+      "path": "database/migrations/2024_12_12_002606_add_is_notified_to_umeng_alias.php",
+      "sha256": "613a66da41d5ff1c0192f178f31f5c73d87a4fab5b4087a3daad56800ca7e967",
+      "lines": 36
+    },
+    {
+      "path": "database/migrations/2024_12_13_122606_add_version_to_umeng_alias.php",
+      "sha256": "c7c05deff2f4992983972506942797a3653fd367f5eaf4edf61315f595dad4ad",
+      "lines": 36
+    },
+    {
+      "path": "database/migrations/2024_12_16_155707_update_project_tasks_subtask_project_id_and_column_id.php",
+      "sha256": "143771cc990adb55f0e843303daa46204ade0b5a4225892c6c46a7262096aef5",
+      "lines": 38
+    },
+    {
+      "path": "database/migrations/2024_12_21_221807_update_project_tasks_subtask_visibility.php",
+      "sha256": "fec16991083cc3f0f00ff65294792c7bec4f6baa33b4b11b65881a87654a2d9c",
+      "lines": 37
+    },
+    {
+      "path": "database/migrations/2025_01_02_125600_add_bot_to_web_socket_dialog_users_table.php",
+      "sha256": "58a1b05911df1558bd522c169a99f8552fd41684368306ab662d68b9121bd619",
+      "lines": 50
+    },
+    {
+      "path": "database/migrations/2025_02_07_163329_web_socket_dialogs_add_session_id.php",
+      "sha256": "13910769c35b951b1c6d72a2a719f8ed546b809e6ac1dd530e6d7fe7de02aaf8",
+      "lines": 34
+    },
+    {
+      "path": "database/migrations/2025_02_07_163329_web_socket_dialog_msgs_add_session_id.php",
+      "sha256": "3d895f524daa7dba75aa7de172e63c1ba9b8c0927fc55c48d4a394e3ffe19c68",
+      "lines": 34
+    },
+    {
+      "path": "database/migrations/2025_02_07_163701_create_web_socket_dialog_sessions_table.php",
+      "sha256": "5d486e96dada359d001d52c04b4854ff946f9100442c661ea8cc46719ce77fa2",
+      "lines": 58
+    },
+    {
+      "path": "database/migrations/2025_02_21_225057_update_ai_models_table.php",
+      "sha256": "8994cf06cf8661eac054272a79700fec290068b45c7db466579e2be99476ab34",
+      "lines": 50
+    },
+    {
+      "path": "database/migrations/2025_02_25_105201_update_web_socket_dialog_msgs_session_id.php",
+      "sha256": "3407e0326249d361a66564326fae823f153414c90f102feb5c3c0f148f27c560",
+      "lines": 54
+    },
+    {
+      "path": "database/migrations/2025_03_15_164703_create_report_links_table.php",
+      "sha256": "994c3adfa138a9a23490f665464d970314dd770aacc08a78aca0c5fbf6b3e5d2",
+      "lines": 35
+    },
+    {
+      "path": "database/migrations/2025_03_22_120000_create_report_ai_analyses_table.php",
+      "sha256": "3331ea7f6a0a960fbf1e3a0c2c76064f38628375368b089fac0965bf046f89ae",
+      "lines": 43
+    },
+    {
+      "path": "database/migrations/2025_04_19_084905_create_user_devices_table.php",
+      "sha256": "add994112b5e4b915acdcb442dfad9ae43c91f51c467b70486040d81800e15f8",
+      "lines": 39
+    },
+    {
+      "path": "database/migrations/2025_04_21_113033_add_device_hash_to_umeng_alias_table.php",
+      "sha256": "1f75c4442afdeb34036b0dc6eb9efbd5b1770b464166c7876002042bb2a6caa4",
+      "lines": 34
+    },
+    {
+      "path": "database/migrations/2025_07_31_231557_add_color_to_project_flow_items_table.php",
+      "sha256": "44f2d1440b73540de0bbb452b913ee3af51a47d91091fe53b011937a163fd3b6",
+      "lines": 34
+    },
+    {
+      "path": "database/migrations/2025_08_10_215202_update_files_name_length_to_200.php",
+      "sha256": "30fc5c1c5bac00294c6e88519a7faf857800d0f0af51896ed705e4550513434b",
+      "lines": 33
+    },
+    {
+      "path": "database/migrations/2025_08_19_180822_add_sort_field_to_project_users_table.php",
+      "sha256": "f68cc9f0613b6ed75367fc80c2a762ab0780d6f6759887789b68c81bd0c34d1d",
+      "lines": 38
+    },
+    {
+      "path": "database/migrations/2025_09_19_175724_add_guest_access_to_files_table.php",
+      "sha256": "e75d2c8402beebe383376f662a4776785cd0f01ffafb531996ecaa517b848043",
+      "lines": 42
+    },
+    {
+      "path": "database/migrations/2025_09_22_101500_create_user_task_browses_table.php",
+      "sha256": "afd7ec15a38c70d7ec82688e92fbe6c431a786bb24e4fb2e0c9c5979312a64d4",
+      "lines": 42
+    },
+    {
+      "path": "database/migrations/2025_09_22_101600_create_user_recent_items_table.php",
+      "sha256": "7535edf38b6531a2ef1b74e21278e898cbe5192945e18136e3534fbbad2f20d5",
+      "lines": 44
+    },
+    {
+      "path": "database/migrations/2025_09_22_102000_create_user_favorites_table.php",
+      "sha256": "90bfb2cd726b18c01011451348b7e8a6869150b5299eaa1d90d0da741487dbae",
+      "lines": 42
+    },
+    {
+      "path": "database/migrations/2025_09_22_102100_add_remark_to_user_favorites_table.php",
+      "sha256": "4093f7f8bed9a0b1bee90356c092bc19c013762db510cfadf5f70779820114a2",
+      "lines": 36
+    },
+    {
+      "path": "database/migrations/2025_09_24_201032_add_sort_to_project_tags_table.php",
+      "sha256": "dde3d4f9f669eb12884cea2238343659ecf256ea6c97a3f3fbd97d0483a81053",
+      "lines": 57
+    },
+    {
+      "path": "database/migrations/2025_09_24_202833_backfill_sort_project_task_templates.php",
+      "sha256": "f92bd5d6e63cfc3c4f5d07fbcd8079f328d8eeba764a638a01cc96cbd49c91eb",
+      "lines": 46
+    },
+    {
+      "path": "database/migrations/2025_09_24_203500_create_project_task_relations_table.php",
+      "sha256": "5ac3b33a767be938b25c33730c1f6c9af34de166705850f4745e9b0316871c3f",
+      "lines": 33
+    },
+    {
+      "path": "database/migrations/2025_10_01_000001_add_user_bots_webhook_events.php",
+      "sha256": "f253fadc3c33c7afbc5e2d048db8565a7958a02799e350e369f33b7151b25da9",
+      "lines": 39
+    },
+    {
+      "path": "database/migrations/2025_10_12_090000_add_profile_fields_to_users_table.php",
+      "sha256": "04596cedb9913d43049530747a594dfecedc6fc1795b962654fed753d08ff1fb",
+      "lines": 34
+    },
+    {
+      "path": "database/migrations/2025_10_13_000000_create_user_tags_table.php",
+      "sha256": "b50cd0865159313ac24c4e5bd60efc5a44b1a021520dbdf633a9ec2083e46986",
+      "lines": 40
+    },
+    {
+      "path": "database/migrations/2025_10_13_000100_create_user_tag_recognitions_table.php",
+      "sha256": "56b1615a2176a12690b2da93f6931dca5ae59543af9bbcf845ac6fd890b14b4b",
+      "lines": 37
+    },
+    {
+      "path": "database/migrations/2025_11_01_095600_create_umeng_logs_table.php",
+      "sha256": "ec30b9f3b64621615fd50fbf98cfb2430a3a812303c1e25333fd9ff6d27a7af6",
+      "lines": 23
+    },
+    {
+      "path": "database/migrations/2025_11_20_000000_create_user_app_sorts_table.php",
+      "sha256": "eb3b89cdd194ba5ad317b4467ed3607af2096e722d2783367c2f63a8435139be",
+      "lines": 37
+    },
+    {
+      "path": "database/migrations/2025_12_05_100000_add_web_sockets_platform.php",
+      "sha256": "dc45a98717ff6ae1e7088973e2a4d74dcb9357f31713b8d893081cca9d46612d",
+      "lines": 33
+    },
+    {
+      "path": "database/migrations/2025_12_18_000000_update_setting_microapp_menu_type.php",
+      "sha256": "1e51b5ef8a2e196a21ed38d5f4409ca5db14074a194d5f784ed01474c550b96a",
+      "lines": 79
+    },
+    {
+      "path": "database/migrations/2025_12_19_000001_reverse_done_userids_in_todo_done_msgs.php",
+      "sha256": "f04713c95c1688e5ca51a56a7958c7a226edf778016480f809efb654b1b3a186",
+      "lines": 61
+    },
+    {
+      "path": "database/migrations/2025_12_26_000000_add_indexes_to_web_socket_dialog_msgs.php",
+      "sha256": "262f30a93f8ec96121f448c9b653dbd7fda853fa866e3fafc239f1a7975630bd",
+      "lines": 40
+    },
+    {
+      "path": "database/migrations/2025_12_29_140720_add_task_list_scope_indexes.php",
+      "sha256": "c24a530d997927495f03f2f84e0d52f51818ff45afa0a846076e82c3a5feb406",
+      "lines": 34
+    },
+    {
+      "path": "database/migrations/2026_01_15_160659_create_manticore_sync_failures_table.php",
+      "sha256": "09d07a4a0952dddc918d6259222efc89400b41687693cc1f925865a1876caae8",
+      "lines": 43
+    },
+    {
+      "path": "database/migrations/2026_01_21_000000_create_project_task_ai_events_table.php",
+      "sha256": "a49a18b9becf8107883007faaab9200837eff9d7b3e463439ce2e193a22c9713",
+      "lines": 36
+    },
+    {
+      "path": "database/migrations/2026_04_02_000000_add_ai_auto_analyze_to_projects_table.php",
+      "sha256": "a21d06c8a9d3829f300266fc2705da8f9a75fc27e72b740c7c979ef21ab63458",
+      "lines": 32
+    },
+    {
+      "path": "database/migrations/2026_04_17_000001_create_ai_assistant_sessions_table.php",
+      "sha256": "fb192fb5cb4acaf100235e221746fb37fe5722aca3e070516ccdae2445590917",
+      "lines": 33
+    },
+    {
+      "path": "database/migrations/2026_04_30_000001_add_role_to_web_socket_dialog_users.php",
+      "sha256": "6c6aefb957820a8d8bc4da81e42896b0b2cc99d4b6168832ff29becfe71d0ea0",
+      "lines": 39
+    },
+    {
+      "path": "database/migrations/2026_04_30_000002_backfill_dialog_owner_role.php",
+      "sha256": "675a789942326ed94c1d2a7061c57dae706d6db04bac54cad80be81049d81055",
+      "lines": 39
+    },
+    {
+      "path": "database/migrations/2026_05_01_000001_create_user_department_owners_table.php",
+      "sha256": "5b9d7ce858edb1bf481034bce2b04f04b32c12732f6ab7803d55a8cce5f66c9a",
+      "lines": 39
+    },
+    {
+      "path": "database/migrations/2026_05_02_000001_backfill_project_dialog_primary_owner.php",
+      "sha256": "ff4d16358ef532226cc46798ad0f80d400d3981fa6164a01fae8cd58923b396e",
+      "lines": 67
+    },
+    {
+      "path": "database/migrations/2026_05_03_000001_backfill_dialog_role_consistency.php",
+      "sha256": "327d327bb420ccd52a2565ed9f7c8d909de850bc3a7d9ac3d1e74e85a19991da",
+      "lines": 56
+    },
+    {
+      "path": "database/migrations/2026_05_10_100000_add_use_count_to_project_task_templates.php",
+      "sha256": "7768a6a9699d9ebc628492c594a4d4279a5fea90eea9248b87be3bdd5a0620d1",
+      "lines": 25
+    },
+    {
+      "path": "database/migrations/2026_05_11_000001_add_task_template_share_to_projects_table.php",
+      "sha256": "05fc2995fe7d333a49d050798dbddc82a8e5a1e775b9d664bf4f5045e9ecad63",
+      "lines": 26
+    },
+    {
+      "path": "database/migrations/2026_05_21_000001_add_department_owner_view_to_projects_table.php",
+      "sha256": "3539c2ae899626463e58b81ba15276daf2fa7915b033b3e3f89ebd69bb89a3c6",
+      "lines": 26
+    },
+    {
+      "path": "database/migrations/2026_06_01_131916_add_remind_to_web_socket_dialog_msg_todos.php",
+      "sha256": "7d328fd2ca3a9a9e4b20ccb06be6920e8b3fa55166a45f26002c6fdeecec6b13",
+      "lines": 25
+    },
+    {
+      "path": "database/migrations/2026_06_10_000001_create_ai_assistant_search_logs_table.php",
+      "sha256": "e214e27ba1866a532e0acb0d4f68774fd6f50d999dd700aa51f2274ecad01c38",
+      "lines": 39
+    },
+    {
+      "path": "database/migrations/2026_06_10_000002_create_ai_assistant_feedbacks_table.php",
+      "sha256": "edbb4d65b44c418ecf52c2b242bde8c9173a24fb3cbbc30ede89402e54256813",
+      "lines": 36
+    },
+    {
+      "path": "database/migrations/2026_06_28_000001_create_app_badges_table.php",
+      "sha256": "a288b03767d21886083b4fa3bf9b39853aff7f9abae3709e3678eb39e11486a3",
+      "lines": 43
+    },
+    {
+      "path": "database/migrations/2026_06_30_001026_add_hash_to_files_table.php",
+      "sha256": "ee96912dc4d130b234300b34d9ebcadad1596322f9baeb9e4d1edc8ee7304b44",
+      "lines": 24
+    },
+    {
+      "path": "database/migrations/2026_07_18_000001_add_dashboard_team_indexes.php",
+      "sha256": "619e8fdd1bf0355a851950dc0a90f0b3da3e06dc7b1ef4ba0bca6715f24d2bb9",
+      "lines": 40
+    },
+    {
+      "path": "database/migrations/2026_07_31_000001_add_collaboration_file_query_index.php",
+      "sha256": "92283e04ad65bee62901f5989c664be8916d5d5a417c296e1e3af0318e4fa09d",
+      "lines": 25
+    },
+    {
+      "path": "database/migrations/2026_08_04_000001_create_web_socket_dialog_msg_attachments_table.php",
+      "sha256": "4fa395dbb26d321cce857129c6d380ab4e5f04d7c8be0adbe371bf283dd35895",
+      "lines": 37
+    },
+    {
+      "path": "database/migrations/2026_08_04_000002_create_web_socket_dialog_msg_attachment_backfills_table.php",
+      "sha256": "9f34edc67dfad5c741506638331a9b721c64a38d48ebb1fab380f7e3d535770c",
+      "lines": 47
+    },
+    {
+      "path": "database/migrations/2026_08_09_000001_add_collaboration_attachment_query_indexes.php",
+      "sha256": "f5167321518bdf746062f18cd756ff44872a8cad35a6e51f4f6792430ca6fd12",
+      "lines": 30
+    },
+    {
+      "path": "database/migrations/2026_08_11_000001_create_webdav_tables.php",
+      "sha256": "bc8ef49365a327ac0e23dde1e1c3ee13493120615b3ef93ecbfcd4cb8fc29b21",
+      "lines": 82
+    },
+    {
+      "path": "database/migrations/2026_09_08_000001_create_project_task_handoffs_table.php",
+      "sha256": "ad97e06cf0d06fe5fe0268d2c2598c966e3e2ef2bca174613af94d57dec99099",
+      "lines": 25
+    },
+    {
+      "path": "database/migrations/2026_09_30_000001_install_system_functions_app.php",
+      "sha256": "cf8923ec102430f71ea02a97396e4b020efb87966846b6ffc177455f8e1717f7",
+      "lines": 68
+    },
+    {
+      "path": "database/seeders/DatabaseSeeder.php",
+      "sha256": "a05ecb1d435872ad223f305346ef50e7a9d526a4ffc8df74d460d739b9e39d62",
+      "lines": 37
+    },
+    {
+      "path": "database/seeders/FileContentsTableSeeder.php",
+      "sha256": "daa2387dacc4ae7651876d8960795c10b1a6620ebbdd0ff9920ca21fc5415e47",
+      "lines": 603
+    },
+    {
+      "path": "database/seeders/FilesTableSeeder.php",
+      "sha256": "eed6b1f7183822eb3f0300d1288d2614c11f0a9b44e4c0fd2d0168f83047f3a5",
+      "lines": 337
+    },
+    {
+      "path": "database/seeders/FileUsersTableSeeder.php",
+      "sha256": "a16c524446c7ba35a9668a319318ed1f72601248d6f4a842b41af29e59a10a57",
+      "lines": 82
+    },
+    {
+      "path": "database/seeders/ProjectColumnsTableSeeder.php",
+      "sha256": "8b7c314c173a57df3daa638042ae99d484d7e674583043e7151fd11a1e3b7623",
+      "lines": 490
+    },
+    {
+      "path": "database/seeders/ProjectFlowItemsTableSeeder.php",
+      "sha256": "68682209b15eb8a718328b69c7dc35f629741f5676542de8a867f440fce5ef21",
+      "lines": 478
+    },
+    {
+      "path": "database/seeders/ProjectFlowsTableSeeder.php",
+      "sha256": "52e743d950cbaf97f6ddaf84fed5608a391a390e308ae9fc6610062c11f31e73",
+      "lines": 76
+    },
+    {
+      "path": "database/seeders/ProjectLogsTableSeeder.php",
+      "sha256": "6ef378ff76628928425a5974faa0597989f83c97cff6a163373c1bfab82bfa26",
+      "lines": 4266
+    },
+    {
+      "path": "database/seeders/ProjectsTableSeeder.php",
+      "sha256": "167108a6e6e02c19af6f60ec7b4ca01041ab8e2a8dd5440ea5ba825c1a9c2b70",
+      "lines": 130
+    },
+    {
+      "path": "database/seeders/ProjectTaskContentsTableSeeder.php",
+      "sha256": "e10cf6cd901d10c662671fe6f6276d7df6f04a028818020eb5c6575572a334d9",
+      "lines": 320
+    },
+    {
+      "path": "database/seeders/ProjectTasksTableSeeder.php",
+      "sha256": "3a2fcac8314841e84c190fcaa94de31c40d2143512868d521a84456a5215e105",
+      "lines": 2478
+    },
+    {
+      "path": "database/seeders/ProjectTaskUsersTableSeeder.php",
+      "sha256": "3c6db574b7cf7f7ee6597deaa48f39ba8c14d7434e001b33e9cf35864249871e",
+      "lines": 798
+    },
+    {
+      "path": "database/seeders/ProjectUsersTableSeeder.php",
+      "sha256": "240965e752c5c5e7a18a3f85d54bbe7dd1a8c0c2295d202790ce876cf74f8b3c",
+      "lines": 127
+    },
+    {
+      "path": "database/seeders/SettingsTableSeeder.php",
+      "sha256": "8997339fc419a22942b7a9c1ca7edc947145000928d6b7d2ea997959f5e5abc0",
+      "lines": 48
+    },
+    {
+      "path": "database/seeders/UsersTableSeeder.php",
+      "sha256": "2f53465031995e7c6dd078c8075f18e6141bda94789dc15d1d0134a2daf2818e",
+      "lines": 74
+    },
+    {
+      "path": "database/seeders/WebSocketDialogMsgReadsTableSeeder.php",
+      "sha256": "3a066a04e7764ff93021fe95f3b7b9e5945459ad217c518f021f09fb06f54962",
+      "lines": 262
+    },
+    {
+      "path": "database/seeders/WebSocketDialogMsgsTableSeeder.php",
+      "sha256": "ce8aaa71930f688f170f0fb0e0a07b468610f7a1759ba61dabef69d096f31989",
+      "lines": 364
+    },
+    {
+      "path": "database/seeders/WebSocketDialogsTableSeeder.php",
+      "sha256": "a8de33b6dd901e8d94385e8cd2e5f256d90a107d1625512dfb8183074f1b22cc",
+      "lines": 223
+    },
+    {
+      "path": "database/seeders/WebSocketDialogUsersTableSeeder.php",
+      "sha256": "a0d147c54b03607b1a6acacf8eecb60ebacc0fe3d545cd1e20ced293e9fe99c4",
+      "lines": 262
+    },
+    {
+      "path": "database/seeders/WebSocketsTableSeeder.php",
+      "sha256": "32c74c767bda40087e56e9af760279677185d631586536beb3f247a600ef0b71",
+      "lines": 55
+    },
+    {
+      "path": "config/ai.php",
+      "sha256": "a0a9c92717bbf65c9a0b8a8939586fe465cc5fb56e97dbc4f527bca969f3b86c",
+      "lines": 48
+    },
+    {
+      "path": "config/app.php",
+      "sha256": "dfa83c79c29b8a98e104e12dba4f84d9f5f23fdcb38ac3157ca43f8a81d072cd",
+      "lines": 126
+    },
+    {
+      "path": "config/auth.php",
+      "sha256": "337063e5ec76da99d899cddc0b66f38f94849deb30d404e40e2364201d31b880",
+      "lines": 117
+    },
+    {
+      "path": "config/broadcasting.php",
+      "sha256": "89fd0d50adee6b47b82f8503dfc80565dcb11e9103a395fce3a3e07e44797a0d",
+      "lines": 64
+    },
+    {
+      "path": "config/cache.php",
+      "sha256": "eb0705bb9694aea101bf0423a1079a988dd86aeea9bc60a8b5f48e9fb4bb4453",
+      "lines": 110
+    },
+    {
+      "path": "config/captcha.php",
+      "sha256": "f7c74df1a773d056a1e47af533d9829acbf22fbbdd0255a03359a8c029c48b57",
+      "lines": 48
+    },
+    {
+      "path": "config/cors.php",
+      "sha256": "edeb2f01a40e40c28b84d673febccd7926d0890b91f3331fa0889f8e67e37d71",
+      "lines": 34
+    },
+    {
+      "path": "config/database.php",
+      "sha256": "c39d30c4dabe537340f6d230473007f19b7b8d0bfc3d3a138c60de4216685006",
+      "lines": 147
+    },
+    {
+      "path": "config/dootask.php",
+      "sha256": "b7e694748a73988ee606a7604c6cdeae791e181b488dd853065a9235978249b0",
+      "lines": 67
+    },
+    {
+      "path": "config/filesystems.php",
+      "sha256": "2d1266276a3378f68261412a868c0b30ea5a9b8dc593de00e6f0721deb1b7a88",
+      "lines": 72
+    },
+    {
+      "path": "config/hashing.php",
+      "sha256": "bd0ee94a29955b3e3430d9264cc1a851c267de04c7db4e9664ec119d040e2e6a",
+      "lines": 52
+    },
+    {
+      "path": "config/laravels.php",
+      "sha256": "1d8297ff0e36cf1a9d9b83f3496db8e26315c01c3cfd192c5a73b841e48a2cf7",
+      "lines": 346
+    },
+    {
+      "path": "config/ldap.php",
+      "sha256": "68076f69c6061021821653732633601018552fcff7f541141c2f8061a16978fb",
+      "lines": 74
+    },
+    {
+      "path": "config/logging.php",
+      "sha256": "35de4a9930dcd97fd0576761feba7958bd4005cee5bcb4a000c1aa6fcbf944e0",
+      "lines": 105
+    },
+    {
+      "path": "config/mail.php",
+      "sha256": "828c85b63331b2d57f80532adfa9120ab59cad67c8795815d820acd68dcf4237",
+      "lines": 110
+    },
+    {
+      "path": "config/queue.php",
+      "sha256": "4eff07c115f47536003a16838d01011eb4e4abe82cacdade9c1819b553fabaad",
+      "lines": 93
+    },
+    {
+      "path": "config/services.php",
+      "sha256": "9636dfb3ce6eb9304d369dae8f275d42f0e5f3d7aaca5819ee902c889e859fbd",
+      "lines": 33
+    },
+    {
+      "path": "config/session.php",
+      "sha256": "4c32b48be9a8b3676c3cdc6e47d46cdac6c91364732babb9017969f27abccac9",
+      "lines": 201
+    },
+    {
+      "path": "config/view.php",
+      "sha256": "a264968539852b5f5f6e411bf517cf14cce19b27c31e5e9a1fc0348e016a74b7",
+      "lines": 36
+    },
+    {
+      "path": "routes/api-map.md",
+      "sha256": "36f6ac24ac1a98138908690e5aa94b0cda4bc0adf25f3a4aa225d65c15f13841",
+      "lines": 437
+    },
+    {
+      "path": "routes/api.php",
+      "sha256": "f7918497688328d0ab6f584cb57ceca872ff1b2ef1e44da32a7aa6b89d9be4e9",
+      "lines": 19
+    },
+    {
+      "path": "routes/channels.php",
+      "sha256": "9f7635e811d7c58c49c852a4dcc1311b3356a63fa5b3ae36ba3b709755d30b37",
+      "lines": 18
+    },
+    {
+      "path": "routes/console.php",
+      "sha256": "bc3eada22c141d58b73763a4a1e27bdb8817fc2be19a098cbcdd82fdf95af00b",
+      "lines": 19
+    },
+    {
+      "path": "routes/web.php",
+      "sha256": "4c0c3eb7edfb11ba6d795c5f7b470b84925db26e39c1b65e32eed588bb8c0414",
+      "lines": 111
+    },
+    {
+      "path": "composer.json",
+      "sha256": "1ce5a57adb938310896a2d8e1319094ff44a0c84e56dae2f694d01b30d1c222a",
+      "lines": 101
+    },
+    {
+      "path": "composer.lock",
+      "sha256": "bdf2c11f8d77abd0b3585c7477b4f7678d34308e3aaace771e7885eb1c420b4a",
+      "lines": 11208
+    },
+    {
+      "path": "bootstrap/app.php",
+      "sha256": "d5fd84bde3266ec9c89cd589796500275224debe6fc11b05f11cbb33fc9560c4",
+      "lines": 77
+    },
+    {
+      "path": "docker-compose.yml",
+      "sha256": "87a699e23d5a39615f5cd745b7d2616c8e7cb33fd4b8adcc3780edfc1d99bfd0",
+      "lines": 127
+    }
+  ]
+}

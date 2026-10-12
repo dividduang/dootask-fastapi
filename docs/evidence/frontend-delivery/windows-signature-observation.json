@@ -1,0 +1,15 @@
+{
+  "started_at": "2026-10-12T08:11:43.306979+00:00",
+  "finished_at": "2026-10-12T08:11:45.103353+00:00",
+  "command": [
+    "powershell.exe",
+    "-NoProfile",
+    "-NonInteractive",
+    "-Command",
+    "$OutputEncoding=[Console]::OutputEncoding=[System.Text.UTF8Encoding]::new(); @('D:/rpa/202610/dootask-fastapi/docs/evidence/frontend-delivery/DooTask-v1.9.66-win-x64.exe','D:/rpa/202610/dootask-fastapi/docs/evidence/frontend-delivery/DooTask-v1.9.66-win-arm64.exe') | ForEach-Object { $s=Get-AuthenticodeSignature -LiteralPath $_; [PSCustomObject]@{Path=$_; Status=[string]$s.Status; StatusMessage=$s.StatusMessage; SignerSubject=$s.SignerCertificate.Subject; SignerThumbprint=$s.SignerCertificate.Thumbprint; TimestampSubject=$s.TimeStamperCertificate.Subject} } | ConvertTo-Json -Depth 4"
+  ],
+  "exit_code": 0,
+  "stdout": "[\n    {\n        \"Path\":  \"D:/rpa/202610/dootask-fastapi/docs/evidence/frontend-delivery/DooTask-v1.9.66-win-x64.exe\",\n        \"Status\":  \"NotSigned\",\n        \"StatusMessage\":  \"The file D:\\\\rpa\\\\202610\\\\dootask-fastapi\\\\docs\\\\evidence\\\\frontend-delivery\\\\DooTask-v1.9.66-win-x64.exe is not digitally signed. You cannot run this script on the current system. For more information about running scripts and setting execution policy, see about_Execution_Policies at https:/go.microsoft.com/fwlink/?LinkID=135170\",\n        \"SignerSubject\":  null,\n        \"SignerThumbprint\":  null,\n        \"TimestampSubject\":  null\n    },\n    {\n        \"Path\":  \"D:/rpa/202610/dootask-fastapi/docs/evidence/frontend-delivery/DooTask-v1.9.66-win-arm64.exe\",\n        \"Status\":  \"NotSigned\",\n        \"StatusMessage\":  \"The file D:\\\\rpa\\\\202610\\\\dootask-fastapi\\\\docs\\\\evidence\\\\frontend-delivery\\\\DooTask-v1.9.66-win-arm64.exe is not digitally signed. You cannot run this script on the current system. For more information about running scripts and setting execution policy, see about_Execution_Policies at https:/go.microsoft.com/fwlink/?LinkID=135170\",\n        \"SignerSubject\":  null,\n        \"SignerThumbprint\":  null,\n        \"TimestampSubject\":  null\n    }\n]\n",
+  "stderr": "",
+  "downloaded_executables_launched": false
+}

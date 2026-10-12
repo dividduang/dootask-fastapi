@@ -1,0 +1,643 @@
+.project-workflow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    .workflow-title {
+        color: $primary-title-color;
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 1;
+        padding: 20px 20px 24px;
+        display: flex;
+        align-items: center;
+        .title-icon {
+            display: flex;
+            align-items: center;
+            width: 14px;
+            height: 14px;
+            margin-left: 4px;
+            margin-top: 2px;
+            > i {
+                cursor: pointer;
+            }
+        }
+    }
+    .workflow-content {
+        flex: 1;
+        padding: 0 20px;
+        overflow: auto;
+        margin-bottom: 20px;
+        height: 100%;
+
+        .ivu-collapse {
+            min-width: 700px;
+            height: 100%;
+            .ivu-collapse-item{
+                height: 100%;
+                .ivu-collapse-content{
+                    height: calc(100% - 38px);
+                    overflow: auto;
+                }
+            }
+        }
+
+        .ivu-collapse-header {
+            display: flex;
+            align-items: center;
+        }
+
+        .workflow-item {
+            flex: 1;
+            display: flex;
+            align-items: center;
+
+            .workflow-name {
+                flex-shrink: 0;
+                margin-right: 24px;
+            }
+            .workflow-status {
+                flex: 1;
+                display: flex;
+                align-items: center;
+                > div {
+                    height: 24px;
+                    line-height: 22px;
+                    margin-right: 8px;
+                    padding: 0 8px;
+                    border: 1px solid #e8eaec;
+                    border-radius: 3px;
+                    background: #f7f7f7;
+                    font-size: 12px;
+                    vertical-align: middle;
+                    overflow: hidden;
+                    &.start {
+                        background-color: var(--flow-item-custom-color-10, rgba($flow-status-start-color, 0.1));
+                        border-color: var(--flow-item-custom-color-10, rgba($flow-status-start-color, 0.1));
+                        color: var(--flow-item-custom-color-100, $flow-status-start-color);
+                    }
+                    &.progress {
+                        background-color: var(--flow-item-custom-color-10, rgba($flow-status-progress-color, 0.1));
+                        border-color: var(--flow-item-custom-color-10, rgba($flow-status-progress-color, 0.1));
+                        color: var(--flow-item-custom-color-100, $flow-status-progress-color);
+                    }
+                    &.test {
+                        background-color: var(--flow-item-custom-color-10, rgba($flow-status-test-color, 0.1));
+                        border-color: var(--flow-item-custom-color-10, rgba($flow-status-test-color, 0.1));
+                        color: var(--flow-item-custom-color-100, $flow-status-test-color);
+                    }
+                    &.end {
+                        background-color: var(--flow-item-custom-color-10, rgba($flow-status-end-color, 0.1));
+                        border-color: var(--flow-item-custom-color-10, rgba($flow-status-end-color, 0.1));
+                        color: var(--flow-item-custom-color-100, $flow-status-end-color);
+                    }
+                }
+            }
+            .workflow-save {
+                flex-shrink: 0;
+                display: flex;
+                align-items: center;
+                margin: 0 8px;
+                > button {
+                    height: 26px;
+                    line-height: 24px;
+                    padding: 0 13px;
+                    font-size: 13px;
+                    margin-left: 8px;
+                }
+            }
+        }
+    }
+
+    .workflow-no {
+        flex: 1;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: $primary-text-color;
+        > button {
+            margin-top: 18px;
+        }
+    }
+
+    .taskflow-config {
+        display: flex;
+        flex-direction: column;
+        max-height: 100%;
+
+        .taskflow-config-rules {
+            flex-shrink: 0;
+            padding: 12px 20px;
+            margin-bottom: 12px;
+            background-color: #f7f8fa;
+            border-radius: 4px;
+            .rules-title {
+                display: flex;
+                align-items: center;
+                margin-bottom: 8px;
+                font-size: 13px;
+                font-weight: 500;
+                color: $primary-title-color;
+                > i {
+                    margin-right: 4px;
+                    font-size: 16px;
+                    color: #1890ff;
+                }
+            }
+            .rules-list {
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+            }
+            .rules-item {
+                display: flex;
+                align-items: center;
+                flex-wrap: wrap;
+                gap: 4px;
+                font-size: 13px;
+                color: #666;
+                line-height: 24px;
+                .rule-status {
+                    flex-shrink: 0;
+                    padding: 2px 8px;
+                    border-radius: 3px;
+                    font-size: 12px;
+                    &.start {
+                        background-color: rgba($flow-status-start-color, 0.1);
+                        color: $flow-status-start-color;
+                    }
+                    &.progress {
+                        background-color: rgba($flow-status-progress-color, 0.1);
+                        color: $flow-status-progress-color;
+                    }
+                    &.test {
+                        background-color: rgba($flow-status-test-color, 0.1);
+                        color: $flow-status-test-color;
+                    }
+                    &.end {
+                        background-color: rgba($flow-status-end-color, 0.1);
+                        color: $flow-status-end-color;
+                    }
+                }
+                .rule-column {
+                    padding: 2px 8px;
+                    background-color: rgba(#1890ff, 0.1);
+                    color: #1890ff;
+                    border-radius: 3px;
+                    font-size: 12px;
+                }
+                .common-avatar {
+                    margin: 0 2px;
+                }
+            }
+        }
+
+        .taskflow-config-table {
+            display: flex;
+            width: 100%;
+            border-radius: 4px;
+            box-shadow: 1px 0 3px rgba(0, 0, 0, 0.1);
+
+            .taskflow-config-table-left-container {
+                position: relative;
+                flex-shrink: 0;
+                width: 246px;
+                padding-top: 16px;
+                padding-bottom: 16px;
+                overflow-x: scroll;
+                -ms-overflow-style: none;
+                &:after {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    z-index: 1;
+                    border-right: 1px solid #f4f4f5;
+                }
+            }
+
+            .taskflow-config-table-column-header {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                height: 58px;
+                padding: 0 20px;
+                font-size: 16px;
+                font-weight: 700;
+                line-height: 58px;
+
+                &.left-header {
+                    top: 16px
+                }
+            }
+
+            .taskflow-config-table-column-body {
+                margin-top: 58px;
+                height: calc(100% - 58px);
+            }
+
+            .taskflow-config-table-block {
+                width: 100%;
+                padding: 12px 0;
+
+
+                &.hr {
+                    position: relative;
+                    &:after {
+                        content: "";
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        right: 0;
+                        z-index: 1;
+                        border-top: 1px solid #f4f4f5;
+                    }
+                }
+
+                .taskflow-config-table-block-title {
+                    padding: 0 20px;
+                    height: 40px;
+                    color: #8c8c8c;
+                    line-height: 40px
+                }
+
+                .ivu-radio-group {
+                    display: block;
+                    text-align: center;
+                    .ivu-radio-group-item {
+                        position: relative;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        width: 100%;
+                        padding: 0 20px;
+                        height: 58px;
+                    }
+                }
+
+                .ivu-checkbox-group {
+                    display: block;
+                    text-align: center;
+                    .ivu-checkbox-group-item {
+                        position: relative;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        width: 100%;
+                        padding: 0 20px;
+                        height: 58px;
+                    }
+                }
+
+                .taskflow-config-table-block-item {
+                    position: relative;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    width: 100%;
+                    padding: 0 20px;
+                    height: 58px;
+
+                    &.with-indicator:before {
+                        content: "";
+                        position: absolute;
+                        left: 0;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        height: 20px;
+                        width: 4px;
+                        border-radius: 4px
+                    }
+
+                    .title {
+                        font-weight: 700;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        white-space: nowrap
+                    }
+
+                    .subtitle {
+                        margin-top: 2px;
+                        font-size: 12px;
+                        color: #8c8c8c;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        white-space: nowrap
+                    }
+
+                    &.center {
+                        align-items: center
+                    }
+
+                    &.radio-item>span {
+                        display: none
+                    }
+
+                    .transform-status-name {
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        white-space: nowrap
+                    }
+                }
+            }
+
+            .taskflow-config-table-right-container {
+                flex-grow: 1;
+                flex-direction: row;
+                padding-top: 16px;
+                padding-bottom: 16px;
+                overflow-x: auto;
+                overflow-y: hidden;
+            }
+
+            .taskflow-config-table-list-wrapper,
+            .taskflow-config-table-right-container {
+                display: flex
+            }
+
+
+            .taskflow-config-table-status-column {
+                position: relative;
+                flex-shrink: 0;
+                width: 210px;
+                height: 100%;
+                margin-bottom: 16px;
+                margin-right: 16px;
+                border-radius: 4px;
+
+                &:first-child {
+                    margin-left: 20px
+                }
+
+                &:hover {
+                    .status-label-with-menu {
+                        .more {
+                            opacity: 1;
+                        }
+                    }
+                }
+
+                &.addnew {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    border: 1px dashed #d9d9d9;
+                    cursor: pointer;
+                    color: #8c8c8c;
+
+                    &:hover {
+                        color: #777777;
+                        border-color: #bfbfbf
+                    }
+                }
+
+                &.column-border {
+                    border-width: 1px;
+                    border-style: solid
+                }
+
+                &.start {
+                    border-color: var(--flow-item-custom-color-20, rgba($flow-status-start-color, 0.2));
+                    &:hover {
+                        border-color: var(--flow-item-custom-color-70, rgba($flow-status-start-color, 0.7));
+                    }
+                    .ivu-radio-checked .ivu-radio-inner {
+                        border-color: var(--flow-item-custom-color-100, $flow-status-start-color);
+                        box-shadow: none;
+                    }
+                    .ivu-radio-inner::after {
+                        background-color: var(--flow-item-custom-color-100, $flow-status-start-color);
+                    }
+                    .ivu-checkbox-checked .ivu-checkbox-inner {
+                        border-color: var(--flow-item-custom-color-100, $flow-status-start-color);
+                        background-color: var(--flow-item-custom-color-100, $flow-status-start-color);
+                    }
+                }
+
+                &.progress {
+                    border-color: var(--flow-item-custom-color-20, rgba($flow-status-progress-color, 0.2));
+                    &:hover {
+                        border-color: var(--flow-item-custom-color-70, rgba($flow-status-progress-color, 0.7));
+                    }
+                    .ivu-radio-checked .ivu-radio-inner {
+                        border-color: var(--flow-item-custom-color-100, $flow-status-progress-color);
+                        box-shadow: none;
+                    }
+                    .ivu-radio-inner::after {
+                        background-color: var(--flow-item-custom-color-100, $flow-status-progress-color);
+                    }
+                    .ivu-checkbox-checked .ivu-checkbox-inner {
+                        border-color: var(--flow-item-custom-color-100, $flow-status-progress-color);
+                        background-color: var(--flow-item-custom-color-100, $flow-status-progress-color);
+                    }
+                }
+
+                &.test {
+                    border-color: var(--flow-item-custom-color-20, rgba($flow-status-test-color, 0.2));
+                    &:hover {
+                        border-color: var(--flow-item-custom-color-70, rgba($flow-status-test-color, 0.7));
+                    }
+                    .ivu-radio-checked .ivu-radio-inner {
+                        border-color: var(--flow-item-custom-color-100, $flow-status-test-color);
+                        box-shadow: none;
+                    }
+                    .ivu-radio-inner::after {
+                        background-color: var(--flow-item-custom-color-100, $flow-status-test-color);
+                    }
+                    .ivu-checkbox-checked .ivu-checkbox-inner {
+                        border-color: var(--flow-item-custom-color-100, $flow-status-test-color);
+                        background-color: var(--flow-item-custom-color-100, $flow-status-test-color);
+                    }
+                }
+
+                &.end {
+                    border-color: var(--flow-item-custom-color-20, rgba($flow-status-end-color, 0.2));
+                    &:hover {
+                        border-color: var(--flow-item-custom-color-70, rgba($flow-status-end-color, 0.7));
+                    }
+                    .ivu-radio-checked .ivu-radio-inner {
+                        border-color: var(--flow-item-custom-color-100, $flow-status-end-color);
+                        box-shadow: none;
+                    }
+                    .ivu-radio-inner::after {
+                        background-color: var(--flow-item-custom-color-100, $flow-status-end-color);
+                    }
+                    .ivu-checkbox-checked .ivu-checkbox-inner {
+                        border-color: var(--flow-item-custom-color-100, $flow-status-end-color);
+                        background-color: var(--flow-item-custom-color-100, $flow-status-end-color);
+                    }
+                }
+
+                .ivu-checkbox-disabled.ivu-checkbox-checked .ivu-checkbox-inner {
+                    background-color: #f3f3f3 !important;
+                    border-color: #dcdee2 !important;
+                }
+            }
+
+            .taskflow-config-table-status-item {
+                display: flex;
+                align-items: center;
+                padding: 8px;
+                height: 58px;
+                line-height: 58px;
+                cursor: move
+            }
+
+            .status-label-with-menu {
+                max-width: 100%;
+                display: inline-flex;
+                align-items: center;
+                border-radius: 4px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                position: relative;
+                padding: 0 32px;
+                width: 200px;
+                height: 36px;
+                line-height: 32px;
+                font-size: 14px;
+                font-weight: 400;
+                justify-content: center;
+
+                &:hover {
+                    font-weight: 700;
+                }
+
+                &.start {
+                    background-color: var(--flow-item-custom-color-10, rgba($flow-status-start-color, 0.1));
+                    color: var(--flow-item-custom-color-100, $flow-status-start-color);
+                }
+                &.progress {
+                    background-color: var(--flow-item-custom-color-10, rgba($flow-status-progress-color, 0.1));
+                    color: var(--flow-item-custom-color-100, $flow-status-progress-color);
+                }
+                &.test {
+                    background-color: var(--flow-item-custom-color-10, rgba($flow-status-test-color, 0.1));
+                    color: var(--flow-item-custom-color-100, $flow-status-test-color);
+                }
+                &.end {
+                    background-color: var(--flow-item-custom-color-10, rgba($flow-status-end-color, 0.1));
+                    color: var(--flow-item-custom-color-100, $flow-status-end-color);
+                }
+
+                .name {
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap
+                }
+
+                .more {
+                    cursor: pointer;
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 38px;
+                    font-size: 18px;
+                    font-weight: normal !important;
+                    opacity: 0.2;
+                    transition: opacity,transform 0.3s;
+                    &.opacity {
+                        opacity: 1;
+                    }
+                    &:hover {
+                        transform: scale(1.1);
+                    }
+                    .more-icon {
+                        display: flex;
+                        align-items: center;
+                        .ivu-badge-dot {
+                            top: 4px;
+                            right: -6px;
+                            width: 6px;
+                            height: 6px;
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+}
+.workflow-setting-box {
+    position: relative;
+    padding: 44px 24px 4px;
+    margin: 24px 0 12px;
+    border-radius: 8px;
+    border: 1px solid #eeeeee;
+    transition: box-shadow 0.3s;
+    &:hover {
+        box-shadow: 0 0 10px #e6ecfa;
+    }
+    h3 {
+        position: absolute;
+        top: 0;
+        left: 24px;
+        padding: 4px 10px;
+        border-radius: 4px;
+        display: inline-block;
+        background-color: #ffffff;
+        border: 1px solid #eeeeee;
+        font-size: 15px;
+        font-weight: 500;
+        transform: translateY(-50%);
+    }
+
+    .form-box {
+        overflow: auto;
+    }
+
+    .ivu-form-item {
+        .ivu-form {
+            padding: 12px 0 0 0;
+            .ivu-form-item {
+                margin-bottom: 8px;
+                .ivu-form-item-content {
+                    display: flex;
+                    align-items: center;
+                }
+            }
+        }
+    }
+}
+.taskflow-config-more-dropdown-menu {
+    .taskflow-config-more-dropdown-warp {
+        height: 400px;
+        min-height: 180px;
+        max-height: calc(var(--window-height) - var(--status-bar-height) - var(--navigation-bar-height) - 250px);
+        overflow-y: auto;
+        list-style: none;
+    }
+    .users {
+        display: flex;
+        padding: 6px 0;
+        margin: 0 -8px;
+        overflow: auto;
+        .common-avatar {
+            max-width: 100%;
+            margin-right: -5px;
+        }
+    }
+    .item {
+        display: flex;
+        align-items: center;
+        .ivu-badge-dot {
+            top: 4px;
+        }
+    }
+    .delete {
+        color: #f00;
+    }
+}

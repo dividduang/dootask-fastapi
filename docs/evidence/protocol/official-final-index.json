@@ -1,0 +1,84 @@
+{
+  "python-3.14.8": {
+    "url": "https://www.python.org/downloads/release/python-3148/",
+    "accessed_at_utc": "2026-10-12T05:30:47.662060+00:00",
+    "error": "'utf-8' codec can't decode byte 0x8b in position 1: invalid start byte"
+  },
+  "pypi-pydantic-core": {
+    "url": "https://pypi.org/pypi/pydantic-core/2.50.1/json",
+    "final_url": "https://pypi.org/pypi/pydantic-core/2.50.1/json",
+    "accessed_at_utc": "2026-10-12T05:30:47.677123+00:00",
+    "status": 200,
+    "headers": {
+      "Connection": "close",
+      "Content-Length": "128266",
+      "access-control-max-age": "86400",
+      "access-control-allow-origin": "*",
+      "access-control-expose-headers": "X-PyPI-Last-Serial",
+      "etag": "\"AyeHW18II0h7+SGZULMmEg\"",
+      "referrer-policy": "origin-when-cross-origin",
+      "content-security-policy": "base-uri 'self'; connect-src 'self' https://api.github.com/repos/ https://api.github.com/search/issues https://gitlab.com/api/ https://analytics.python.org *.ethicalads.io https://api.pwnedpasswords.com https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/sre/mathmaps/ https://2p66nmmycsj3.statuspage.io; default-src 'none'; font-src 'self'; form-action 'self' https://checkout.stripe.com https://billing.stripe.com; frame-ancestors 'none'; frame-src 'none'; img-src 'self' https://pypi-camo.freetls.fastly.net/ *.ethicalads.io ethicalads.blob.core.windows.net; script-src 'self' https://analytics.python.org *.ethicalads.io 'sha256-U3hKDidudIaxBDEzwGJApJgPEf2mWk6cfMWghrAa6i0=' https://cdn.jsdelivr.net/npm/mathjax@3.2.2/ 'sha256-1CldwzdEg2k1wTmf7s5RWVd7NMXI/7nxxjJM2C4DqII='; style-src 'self' *.ethicalads.io 'sha256-2YHqZokjiizkHi1Zt+6ar0XJ0OeEy/egBnlm+MDMtrM=' 'sha256-47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=' 'sha256-JLEjeN9e5dGsz5475WyRaoA4eQOdNPxDIeUhclnJDCE=' 'sha256-mQyxHEuwZJqpxCw3SLmc4YOySNKXunyu2Oiz1r3/wAE=' 'sha256-OCf+kv5Asiwp++8PIevKBYSgnNLNUZvxAp4a7wMLuKA=' 'sha256-h5LOiLhk6wiJrGsG5ItM0KimwzWQH/yAcmoJDJL//bY='",
+      "x-pypi-last-serial": "42100681",
+      "server": "gunicorn",
+      "cache-control": "max-age=900, public",
+      "access-control-allow-methods": "GET",
+      "content-type": "application/json",
+      "access-control-allow-headers": "Content-Type, If-Match, If-Modified-Since, If-None-Match, If-Unmodified-Since",
+      "Accept-Ranges": "bytes",
+      "Date": "Mon, 12 Oct 2026 05:30:58 GMT",
+      "X-Served-By": "cache-iad-kiad7000024-IAD, cache-iad-kiad7000215-IAD, cache-nrt-rjtt7900084-NRT",
+      "X-Cache": "MISS, HIT, HIT",
+      "X-Cache-Hits": "0, 7, 0",
+      "X-Timer": "S1791783058.163706,VS0,VE1",
+      "Vary": "Accept-Encoding",
+      "Strict-Transport-Security": "max-age=31536000; includeSubDomains; preload",
+      "X-Frame-Options": "deny",
+      "X-XSS-Protection": "1; mode=block",
+      "X-Content-Type-Options": "nosniff",
+      "X-Permitted-Cross-Domain-Policies": "none",
+      "Permissions-Policy": "publickey-credentials-create=(self),publickey-credentials-get=(self),accelerometer=(),ambient-light-sensor=(),autoplay=(),battery=(),camera=(),display-capture=(),document-domain=(),encrypted-media=(),execution-while-not-rendered=(),execution-while-out-of-viewport=(),fullscreen=(),gamepad=(),geolocation=(),gyroscope=(),hid=(),identity-credentials-get=(),idle-detection=(),local-fonts=(),magnetometer=(),microphone=(),midi=(),otp-credentials=(),payment=(),picture-in-picture=(),screen-wake-lock=(),serial=(),speaker-selection=(),storage-access=(),usb=(),web-share=(),xr-spatial-tracking=()"
+    },
+    "sha256": "e93d77eaf72dda287409887550bda890a4067311ea072bf9b274df9ce6d96804",
+    "bytes": 128266,
+    "snapshot": "pypi-pydantic-core.txt",
+    "saved_utf8_sha256": "e93d77eaf72dda287409887550bda890a4067311ea072bf9b274df9ce6d96804"
+  },
+  "dootask-price": {
+    "url": "https://www.dootask.com/zh/price",
+    "final_url": "https://www.dootask.com/zh/price",
+    "accessed_at_utc": "2026-10-12T05:30:47.693470+00:00",
+    "status": 200,
+    "headers": {
+      "Content-Length": "86781",
+      "Content-Type": "text/html;charset=utf-8",
+      "Date": "Mon, 12 Oct 2026 05:30:57 GMT",
+      "Set-Cookie": "i18n_redirected=zh; Path=/; Expires=Tue, 12 Oct 2027 05:30:57 GMT; SameSite=Lax",
+      "X-Powered-By": "Nuxt",
+      "X-Robots-Tag": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "Connection": "close"
+    },
+    "sha256": "b2adf65e97d128786b2e112692fea77746e66e5ad195c1bd1d178b1a83e0c828",
+    "bytes": 86781,
+    "snapshot": "dootask-price.txt",
+    "saved_utf8_sha256": "b2adf65e97d128786b2e112692fea77746e66e5ad195c1bd1d178b1a83e0c828"
+  },
+  "dootask-price-alt": {
+    "url": "https://www.dootask.com/price",
+    "final_url": "https://www.dootask.com/price",
+    "accessed_at_utc": "2026-10-12T05:30:47.710164+00:00",
+    "status": 200,
+    "headers": {
+      "Content-Length": "86690",
+      "Content-Type": "text/html;charset=utf-8",
+      "Date": "Mon, 12 Oct 2026 05:30:57 GMT",
+      "Set-Cookie": "i18n_redirected=zh; Path=/; Expires=Tue, 12 Oct 2027 05:30:57 GMT; SameSite=Lax",
+      "X-Powered-By": "Nuxt",
+      "X-Robots-Tag": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "Connection": "close"
+    },
+    "sha256": "579c35da6c20bde02bfd54c8bbea30f72497a8e84932d1b33618f98e5b72ac8f",
+    "bytes": 86690,
+    "snapshot": "dootask-price-alt.txt",
+    "saved_utf8_sha256": "579c35da6c20bde02bfd54c8bbea30f72497a8e84932d1b33618f98e5b72ac8f"
+  }
+}

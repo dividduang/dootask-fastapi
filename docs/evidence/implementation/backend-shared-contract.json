@@ -1,0 +1,220 @@
+{
+  "status": "FROZEN_IMPLEMENTED_NOT_VERIFIED",
+  "frozen_at": "2026-10-12T08:34:31.945360+00:00",
+  "source_commit": "6f111cd97dcbdaea23bf28768cd15dfa38bcae63",
+  "database": {
+    "engine": "MariaDB >=10.7; runtime candidate 11.7.2",
+    "driver": "SQLAlchemy 2.0.54 Core synchronous/PyMySQL1.2.3",
+    "schema_files": [
+      "backend/schema.sql",
+      "backend/security.sql",
+      "backend/schema_seed.sql"
+    ],
+    "base_schema_tables": [
+      "file_contents",
+      "files",
+      "project_columns",
+      "project_logs",
+      "project_task_contents",
+      "project_task_files",
+      "project_task_tags",
+      "project_task_users",
+      "project_tasks",
+      "project_users",
+      "projects",
+      "settings",
+      "tmps",
+      "users",
+      "web_socket_dialog_msg_reads",
+      "web_socket_dialog_msgs",
+      "web_socket_dialog_users",
+      "web_socket_dialogs",
+      "web_socket_tmp_msgs",
+      "web_sockets",
+      "file_users",
+      "project_invites",
+      "file_links",
+      "reports",
+      "report_receives",
+      "project_flow_items",
+      "project_flows",
+      "project_task_flow_changes",
+      "user_email_verifications",
+      "user_transfers",
+      "umeng_alias",
+      "meetings",
+      "web_socket_dialog_msg_todos",
+      "user_deletes",
+      "project_task_push_logs",
+      "task_workers",
+      "user_departments",
+      "user_checkin_macs",
+      "user_checkin_records",
+      "user_bots",
+      "deleteds",
+      "approve_proc_msgs",
+      "project_permissions",
+      "project_task_visibility_users",
+      "meeting_msgs",
+      "complaints",
+      "user_checkin_faces",
+      "web_socket_dialog_msg_translates",
+      "project_task_templates",
+      "web_socket_dialog_configs",
+      "project_tags",
+      "web_socket_dialog_sessions",
+      "report_links",
+      "report_ai_analyses",
+      "user_devices",
+      "user_task_browses",
+      "user_recent_items",
+      "user_favorites",
+      "project_task_relations",
+      "user_tags",
+      "user_tag_recognitions",
+      "umeng_logs",
+      "user_app_sorts",
+      "manticore_sync_failures",
+      "project_task_ai_events",
+      "ai_assistant_sessions",
+      "user_department_owners",
+      "ai_assistant_search_logs",
+      "ai_assistant_feedbacks",
+      "app_badges",
+      "web_socket_dialog_msg_attachments",
+      "web_socket_dialog_msg_attachment_backfills",
+      "webdav_credentials",
+      "webdav_locks",
+      "webdav_properties",
+      "webdav_operation_logs",
+      "project_task_handoffs"
+    ],
+    "security_tables": [
+      "auth_credentials",
+      "auth_sessions",
+      "auth_pgp_keys",
+      "auth_limits",
+      "auth_captchas"
+    ],
+    "intentional_extension": "users last_ip/line_ip/created_ip widened VARCHAR45 for IPv6",
+    "configuration": [
+      "DB_HOST",
+      "DB_PORT",
+      "DB_DATABASE",
+      "DB_USERNAME",
+      "DB_PASSWORD",
+      "REDIS_URL",
+      "CSRF_SECRET",
+      "PGP_STORAGE_KEY"
+    ],
+    "transaction_contract": "db.transaction() -> contextmanager Connection; commits normal exit, rolls back exceptions. Services MUST accept the same Connection and never independently commit. No automatic observers; domain owner must orchestrate source side effects. Auth abuse quota/captcha transactions are deliberately independent. DDL auto-commits, init-db refuses nonempty DB. UTC database session."
+  },
+  "exports": {
+    "backend.config": "Settings.from_env() -> Settings; immutable dataclass source includes config fields, mandatory DB_PASSWORD/CSRF_SECRET/PGP_STORAGE_KEY; appstore_root Path / appstore_url / app_key / ai_url from APPSTORE_ROOT/APPSTORE_URL/APP_KEY/AI_URL; blank app_key is not authorization",
+    "backend.db": [
+      "configure(settings) -> Engine (startup reflection)",
+      "tables: dict[str, sqlalchemy.Table] populated once on configure",
+      "transaction() -> contextmanager[Connection]",
+      "setting(connection,name,key=None,default=None) -> original JSON array/object when key=None; keyed access requires object",
+      "insert_row(connection, table_name, **values) -> primary key; inserts actual timestamps; no ACL/observer/event magic"
+    ],
+    "backend.context": [
+      "RequestContext(request_id,language=\"zh\",platform=\"web\",version=\"\",fd=\"\",token=\"\",ip=\"\",user_agent=\"\",base_url=\"\",actor=None,pgp={},headers={}); headers actual lower-case request mapping, untrusted",
+      "current_context: ContextVar[RequestContext]",
+      "utcnow() -> naive UTC datetime"
+    ],
+    "backend.errors": [
+      "ApiError(message: str, ret: int=0, data=None); .message/.ret/.data; default data=[]",
+      "success(data=None,message=\"操作成功\") -> numeric ret/msg/data",
+      "failure(error) -> ret/msg/data",
+      "json_default(value) -> source date serialization",
+      "load_translations(path); translate(message) from preserved frontend language/translate.json"
+    ],
+    "backend.auth": [
+      "Actor(userid:int,user:dict,credential:dict,session:dict); .identities property; NEVER serialize credential/session",
+      "authenticate(connection,context) -> Actor; obtains user row lock; disabled/expiry/device/generation/email checks; sets context.actor",
+      "require_admin(actor) -> None or ApiError",
+      "register(connection,context,email,password,invite=\"\") -> userid; BLOCKED_LICENSE, fails closed before insert",
+      "login(connection,context,email,password,*,registration=False,invite=\"\") -> user response dict",
+      "info(connection,context) -> detailed user dict",
+      "logout(connection,context) -> None; actual device/session revocation",
+      "change_password(connection,context,old_password,new_password) -> user dict with new token",
+      "token_expire(connection,context,refresh=False) -> expiry data",
+      "issue_token(connection,user,credential,context) -> raw opaque token; credential dict required; caller must hold account row lock",
+      "user_data(connection,user,token,context,*,detailed=False) -> safe response dict"
+    ],
+    "backend.crypto": [
+      "parse_header(value) -> dict; semicolon/query encoding, NOT JSON",
+      "key_exchange(connection,client_id,userid,email,storage_key) -> {type,id,key}",
+      "decrypt_request(connection,encrypted,key_id,storage_key) -> dict",
+      "encrypt_response(payload,public_key) -> {encrypted}; OpenPGP armored body stripped",
+      "public_key_format(value) -> armor; -/_/$ map to +/slash/newline"
+    ],
+    "backend.collaboration": [
+      "create_personal_project(connection,userid) -> project_id; actual project/owner/default-column/dialog/member/log, includes soft-deleted project check; NOT general create project API; no pretend search/webhook/WS delivery"
+    ],
+    "backend.storage": [
+      "confined_path(root:Path,relative:str) -> Path; confinement only, not ACL",
+      "atomic_write(root:Path,relative:str,data:bytes) -> Path; private service-account storage; not DB/files distributed transaction"
+    ],
+    "backend.host": [
+      "install_host(app,settings) -> None; last route registration",
+      "render_template(name,context,request=None) -> HTMLResponse; genuine business data required",
+      "verify_csrf(request,secret,token=None) -> bool; token APIs do not accept cookie authentication"
+    ],
+    "backend.main": [
+      "create_app(settings=None) -> FastAPI factory",
+      "ALLOWLIST exact source path/alias -> handler label",
+      "field(data,key,default=\"\") -> stripped scalar string",
+      "read_inputs(request) -> await dict from bounded query/json/form/multipart",
+      "dispatch(handler,data,context,settings,request) -> Response; current implemented shared identity only",
+      "handle(handler,data,context,settings,captcha_cookie) -> envelope or binary Response; explicit branches"
+    ],
+    "backend.security": [
+      "password_hash(password); password_verify(password,encoded)",
+      "consume_limit(scope,limit,seconds) -> None or ApiError; persistent separate transaction",
+      "create_captcha(secret) -> (key,png_bytes)",
+      "verify_captcha(key,answer,secret) -> None; one-use independent transaction"
+    ],
+    "backend.avatar": [
+      "install_avatar(app,settings) -> None; real PNG with original font; deterministic dark-color difference recorded"
+    ]
+  },
+  "routes": {
+    "implemented_source_handlers": [
+      "users/login (login branch; reg blocked license)",
+      "users/logout",
+      "users/info",
+      "users/editpass",
+      "users/key/client",
+      "users/token/expire",
+      "users/reg/needinvite",
+      "users/login/needcode",
+      "users/login/codejson",
+      "users/login/codeimg"
+    ],
+    "aliases": "exact method__action plus resource/method/action, case-insensitive source names; GET HEAD POST PUT PATCH DELETE OPTIONS",
+    "next_domain_contract": "New domains own backend/domains/<domain>.py functions accepting Connection, RequestContext, data dict (request uploads may be UploadFile). Domain must declare explicit route mapping for integration owner to add to main.ALLOWLIST/handle; no auto-discovery or reflection. No nonexistent dynamic plugin hook is claimed. Main entry and transport remain sole integration-owner owned. Domain non-JSON routes must be installed explicitly before host, with own transport contract.",
+    "unimplemented": "All remaining business handlers, WS/DAV/SSE and external proxies remain unregistered, not empty success."
+  },
+  "events": {
+    "implemented_emitters": [],
+    "implemented_consumers": [],
+    "owner_next": "Realtime/jobs domain must implement durable outbox delivery, acknowledgements, failures and worker shutdown. No current event sink or mark-delivered function exists. Creation helper persists only direct new-account collaboration state; source external hooks/search/WS remain ledger obligations.",
+    "next_batch_files": "DomainMessaging subsequently created jobs.py/realtime.py/outbox.sql; not part of this shared commit, not yet installed/registered/lifecycled. Next integration owner must use actual domain handoff, do not interpret as current app delivery."
+  },
+  "identity_gate": {
+    "status": "BLOCKED_LICENSE",
+    "cause": "Source User::reg:397-402 checks official license and native userCreate enforces unknown seat policy. No trusted verifier keys/license samples/authorized integration. No CLI bootstrap, fake license or default seat grant.",
+    "complete_path_verified": false
+  },
+  "source_bindings": [
+    "docs/evidence/backend/migration-contracts.json",
+    "docs/evidence/backend/schema-model-ledger.json",
+    "docs/evidence/implementation/schema-review.json",
+    "docs/evidence/implementation/host-contract.json"
+  ],
+  "verification": "ALL_NOT_RUN; no build/lint/tests/formatter/smoke. pip dependency installation only.",
+  "dependencies": "requirements.lock; 28 exact installed versions/official-PyPI-matched hashes; CPython3.12.10 win_amd64",
+  "index_avatar": "Implemented after host task; installed before host fallback; dynamic PNG, bounds 16..512"
+}

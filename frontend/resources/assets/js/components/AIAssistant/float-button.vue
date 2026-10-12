@@ -1,0 +1,674 @@
+<template>
+    <transition name="fade">
+        <div
+            v-if="visible"
+            class="ai-float-button-wrapper"
+            :class="wrapperClass"
+            :style="wrapperStyle"
+            @mouseenter="onMouseEnter"
+            @mouseleave="onMouseLeave">
+            <div
+                ref="floatBtn"
+                class="ai-float-button"
+                :class="btnClass"
+                :style="btnStyle"
+                @mousedown.stop.prevent="onMouseDown"
+                @touchstart.stop="onTouchStart">
+                <!-- 完整图标 -->
+                <svg class="ai-float-button-icon no-dark-content" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M385.80516777 713.87417358c-12.76971517 0-24.13100586-7.79328205-28.82575409-19.62404756l-48.91927648-123.9413531c-18.40341303-46.75969229-55.77360888-84.0359932-102.53330118-102.53330117l-123.94135309-48.91927649c-11.83076552-4.69474822-19.62404757-16.05603892-19.62404757-28.8257541s7.79328205-24.13100586 19.62404757-28.82575407l123.94135309-48.91927649c46.75969229-18.40341303 84.0359932-55.77360888 102.53330118-102.53330119l48.91927648-123.94135308c4.69474822-11.83076552 16.05603892-19.62404757 28.8257541-19.62404757s24.13100586 7.79328205 28.82575408 19.62404757l48.91927648 123.94135308c18.40341303 46.75969229 55.77360888 84.0359932 102.53330118 102.53330119l123.94135309 48.91927649c11.83076552 4.69474822 19.62404757 16.05603892 19.62404757 28.82575407 0 12.76971517-7.79328205 24.13100586-19.62404757 28.8257541l-123.94135309 48.91927649c-46.75969229 18.40341303-84.0359932 55.77360888-102.53330118 102.53330117l-48.91927648 123.9413531c-4.69474822 11.83076552-16.14993388 19.62404757-28.82575408 19.62404756zM177.45224165 390.12433614l50.89107073 20.0935224c62.62794129 24.69437565 112.67395736 74.74039171 137.368333 137.36833299l20.09352239 50.89107073 20.0935224-50.89107073c24.69437565-62.62794129 74.74039171-112.67395736 137.368333-137.36833299l50.89107072-20.0935224-50.89107073-20.09352239c-62.62794129-24.69437565-112.67395736-74.74039171-137.36833299-137.36833301l-20.09352239-50.89107074-20.0935224 50.89107074c-24.69437565 62.62794129-74.74039171 112.67395736-137.368333 137.36833301l-50.89107073 20.09352239zM771.33789183 957.62550131c-12.76971517 0-24.13100586-7.79328205-28.82575409-19.62404758l-26.6661699-67.6043744c-8.63833672-21.87752672-26.10280012-39.34199011-47.98032684-47.98032684l-67.60437441-26.6661699c-11.83076552-4.69474822-19.62404757-16.05603892-19.62404757-28.82575409s7.79328205-24.13100586 19.62404757-28.82575409l67.60437441-26.6661699c21.87752672-8.63833672 39.34199011-26.10280012 47.98032684-47.98032685l26.6661699-67.6043744c4.69474822-11.83076552 16.05603892-19.62404757 28.82575409-19.62404757s24.13100586 7.79328205 28.82575409 19.62404757l26.66616991 67.6043744c8.63833672 21.87752672 26.10280012 39.34199011 47.98032684 47.98032685l67.6043744 26.6661699c11.83076552 4.69474822 19.62404757 16.05603892 19.62404757 28.82575409s-7.79328205 24.13100586-19.62404757 28.82575409l-67.6043744 26.6661699c-21.87752672 8.63833672-39.34199011 26.10280012-47.98032684 47.98032684l-26.66616991 67.6043744c-4.69474822 11.83076552-16.14993388 19.62404757-28.82575409 19.62404758z m-75.58544639-190.70067281c33.61439727 14.83540438 60.75004201 41.87715415 75.49155143 75.49155143 14.83540438-33.61439727 41.87715415-60.75004201 75.49155142-75.49155143-33.61439727-14.83540438-60.75004201-41.87715415-75.49155142-75.49155143-14.74150942 33.61439727-41.87715415 60.75004201-75.49155143 75.49155143z"/>
+                </svg>
+            </div>
+        </div>
+    </transition>
+</template>
+
+<script>
+import {mapGetters} from "vuex";
+import emitter from "../../store/events";
+import {createOperationModule} from "./operation-module";
+import {loadFloatButtonVisible} from "./float-button-preference";
+
+export default {
+    name: 'AIAssistantFloatButton',
+
+    data() {
+        return {
+            // 位置存储：只保存两个距离（水平一个、垂直一个）
+            position: {
+                x: 24,          // 水平距离值
+                y: 24,          // 垂直距离值
+                fromRight: true,  // true: 距右边, false: 距左边
+                fromBottom: true, // true: 距底部, false: 距顶部
+                collapsed: false, // 是否收起到边缘
+            },
+            dragging: false,
+            positionLoaded: false,
+            visibilityLoaded: false,
+            floatButtonVisible: true,
+            cacheKey: 'aiAssistant.floatButtonPosition',
+            btnSize: 44,
+            collapsedHeight: 48,  // 收起时的高度
+            collapseThreshold: 12, // 触发收起的边缘距离阈值
+            collapseDelayDesktop: 1000, // 桌面端收起延迟（毫秒）
+            collapseDelayMobile: 5000,  // 移动端收起延迟（毫秒）
+            collapseTimer: null,        // 收起定时器
+            record: {},
+            // 前端操作模块
+            operationModule: null,
+            operationSessionId: null,
+        };
+    },
+
+    computed: {
+        ...mapGetters(['aiVisible']),
+
+        visible() {
+            return this.aiVisible &&
+                this.userId > 0 &&
+                this.positionLoaded &&
+                this.visibilityLoaded &&
+                this.floatButtonVisible &&
+                this.routeName !== 'login' &&
+                !this.$parent?.showModal;
+        },
+
+        collapsed() {
+            return this.position.collapsed;
+        },
+
+        clientWidth() {
+            return this.windowWidth || document.documentElement.clientWidth;
+        },
+
+        clientHeight() {
+            return this.windowHeight || document.documentElement.clientHeight;
+        },
+
+        // wrapper 宽度：包含按钮所有可能位置（边缘到 position.x 的距离）
+        wrapperWidth() {
+            return this.btnSize + this.position.x;
+        },
+
+        // wrapper 左边位置
+        wrapperLeft() {
+            if (this.position.fromRight) {
+                // 右侧：从 (屏幕宽 - wrapper宽度) 开始
+                return this.clientWidth - this.wrapperWidth;
+            }
+            // 左侧：从 0 开始
+            return 0;
+        },
+
+        wrapperTop() {
+            // 基于按钮中心计算，确保收起/展开时中心位置不变
+            const centerY = this.position.fromBottom
+                ? this.clientHeight - this.btnSize / 2 - this.position.y
+                : this.position.y + this.btnSize / 2;
+            return centerY - this.wrapperHeight / 2;
+        },
+
+        wrapperClass() {
+            return {
+                'is-left': !this.position.fromRight,
+                'is-right': this.position.fromRight,
+                'is-dragging': this.dragging,
+                'is-collapsed': this.collapsed,
+            };
+        },
+
+        wrapperHeight() {
+            return this.collapsed ? this.collapsedHeight : this.btnSize;
+        },
+
+        wrapperStyle() {
+            return {
+                left: `${this.wrapperLeft}px`,
+                top: `${this.wrapperTop}px`,
+                width: `${this.wrapperWidth}px`,
+                height: `${this.wrapperHeight}px`,
+                zIndex: this.$parent?.topZIndex || 2000,
+            };
+        },
+
+        btnClass() {
+            return {
+                'is-collapsed': this.collapsed,
+            };
+        },
+
+        btnStyle() {
+            // 收起时按钮在边缘（不偏移），展开时向内偏移 position.x
+            if (this.collapsed) {
+                return { transform: 'translateX(0)' };
+            }
+            // 右侧向左偏移（负值），左侧向右偏移（正值）
+            const offset = this.position.fromRight ? -this.position.x : this.position.x;
+            return { transform: `translateX(${offset}px)` };
+        },
+    },
+
+    mounted() {
+        this.loadPosition();
+        window.addEventListener('resize', this.onResize);
+        emitter.on('openAIAssistantGlobal', this.onClick);
+        emitter.on('aiAssistantClosed', this.onAssistantClosed);
+        emitter.on('aiOperationRequest', this.onOperationRequest);
+        emitter.on('aiAssistantFloatButtonVisibilityChanged', this.onVisibilityChanged);
+        this.initOperationModule();
+    },
+
+    beforeDestroy() {
+        window.removeEventListener('resize', this.onResize);
+        emitter.off('openAIAssistantGlobal', this.onClick);
+        emitter.off('aiAssistantClosed', this.onAssistantClosed);
+        emitter.off('aiOperationRequest', this.onOperationRequest);
+        emitter.off('aiAssistantFloatButtonVisibilityChanged', this.onVisibilityChanged);
+        document.removeEventListener('mousemove', this.onMouseMove);
+        document.removeEventListener('mouseup', this.onMouseUp);
+        document.removeEventListener('contextmenu', this.onContextMenu);
+        document.removeEventListener('touchmove', this.onTouchMove);
+        document.removeEventListener('touchend', this.onTouchEnd);
+        document.removeEventListener('touchcancel', this.onTouchEnd);
+        this.clearCollapseTimer();
+        this.destroyOperationModule();
+    },
+
+    watch: {
+        userId: {
+            handler(userId) {
+                this.loadVisibility(userId);
+            },
+            immediate: true,
+        },
+    },
+
+    methods: {
+        async loadVisibility(userId) {
+            this.visibilityLoaded = false;
+            const visible = await loadFloatButtonVisible(userId);
+            if (this.userId === userId) {
+                this.floatButtonVisible = visible;
+                this.visibilityLoaded = userId > 0;
+            }
+        },
+
+        onVisibilityChanged({userId, visible}) {
+            if (this.userId === userId) {
+                this.floatButtonVisible = visible;
+                this.visibilityLoaded = true;
+            }
+        },
+
+        /**
+         * 加载保存的位置
+         */
+        async loadPosition() {
+            try {
+                const saved = await $A.IDBString(this.cacheKey);
+                if (saved) {
+                    const pos = JSON.parse(saved);
+                    if (pos && typeof pos.x === 'number' && typeof pos.y === 'number') {
+                        // 兼容旧格式，确保有 collapsed 字段
+                        this.position = {...pos, collapsed: pos.collapsed ?? false};
+                        this.$nextTick(() => {
+                            this.checkBounds();
+                            this.positionLoaded = true;
+                            this.scheduleCollapse();
+                        });
+                        return;
+                    }
+                }
+            } catch (e) {
+                // ignore
+            }
+            // 默认位置:桌面端右下避开热区,移动端贴边居中下
+            this.position = this.windowPortrait
+                ? {x: 12, y: Math.max(Math.round(this.clientHeight / 4), 100), fromRight: true, fromBottom: true, collapsed: false}
+                : {x: 24, y: 100, fromRight: true, fromBottom: true, collapsed: false};
+            this.positionLoaded = true;
+            this.scheduleCollapse();
+        },
+
+        /**
+         * 保存位置
+         */
+        savePosition() {
+            $A.IDBSave(this.cacheKey, JSON.stringify(this.position));
+        },
+
+        /**
+         * 根据当前 left/top 更新 position 对象
+         */
+        updatePositionFromCoords(left, top) {
+            const centerX = left + this.btnSize / 2;
+            const centerY = top + this.btnSize / 2;
+
+            // 判断在哪个半区
+            const fromRight = centerX >= this.clientWidth / 2;
+            const fromBottom = centerY >= this.clientHeight / 2;
+
+            // 计算距离
+            const x = fromRight ? (this.clientWidth - this.btnSize - left) : left;
+            const y = fromBottom ? (this.clientHeight - this.btnSize - top) : top;
+
+            this.position = {x, y, fromRight, fromBottom, collapsed: this.position.collapsed};
+        },
+
+        /**
+         * 鼠标按下
+         */
+        onMouseDown(e) {
+            // 只响应鼠标左键
+            if (e.button !== 0) return;
+
+            this.clearCollapseTimer();
+
+            // 收起状态下点击直接打开 AI 助手
+            if (this.collapsed) {
+                this.onClick();
+                return;
+            }
+
+            // 按钮的实际视觉位置
+            const btnRect = this.$refs.floatBtn.getBoundingClientRect();
+            this.record = {
+                time: Date.now(),
+                startLeft: btnRect.left,
+                startTop: btnRect.top,
+                offsetX: e.clientX - btnRect.left,
+                offsetY: e.clientY - btnRect.top,
+            };
+            this.dragging = true;
+
+            document.addEventListener('mousemove', this.onMouseMove);
+            document.addEventListener('mouseup', this.onMouseUp);
+            document.addEventListener('contextmenu', this.onContextMenu);
+        },
+
+        /**
+         * 右键菜单弹出时取消拖动
+         */
+        onContextMenu() {
+            if (this.dragging) {
+                this.onMouseUp();
+            }
+        },
+
+        /**
+         * 鼠标移动
+         */
+        onMouseMove(e) {
+            if (!this.dragging) return;
+
+            const minMargin = 12;
+            let newLeft = e.clientX - this.record.offsetX;
+            let newTop = e.clientY - this.record.offsetY;
+
+            // 边界限制（最小边距12px）
+            newLeft = Math.max(minMargin, Math.min(newLeft, this.clientWidth - this.btnSize - minMargin));
+            newTop = Math.max(minMargin, Math.min(newTop, this.clientHeight - this.btnSize - minMargin));
+
+            this.updatePositionFromCoords(newLeft, newTop);
+        },
+
+        /**
+         * 鼠标松开
+         */
+        onMouseUp() {
+            document.removeEventListener('mousemove', this.onMouseMove);
+            document.removeEventListener('mouseup', this.onMouseUp);
+            document.removeEventListener('contextmenu', this.onContextMenu);
+
+            const btnRect = this.$refs.floatBtn.getBoundingClientRect();
+            const moveDistance = Math.abs(btnRect.left - this.record.startLeft) + Math.abs(btnRect.top - this.record.startTop);
+            const duration = Date.now() - this.record.time;
+
+            this.savePosition();
+            this.dragging = false;
+
+            // 判断是否为点击（移动距离小于5px 且 按下时间小于200ms）
+            if (moveDistance < 5 && duration < 200) {
+                this.onClick();
+            }
+
+            // 检测是否靠近左右边缘，延迟收起
+            this.scheduleCollapse();
+        },
+
+        /**
+         * 触摸开始
+         */
+        onTouchStart(e) {
+            if (e.touches.length !== 1) return;
+
+            this.clearCollapseTimer();
+
+            const touch = e.touches[0];
+            const btnRect = this.$refs.floatBtn.getBoundingClientRect();
+            this.record = {
+                time: Date.now(),
+                startLeft: btnRect.left,
+                startTop: btnRect.top,
+                offsetX: touch.clientX - btnRect.left,
+                offsetY: touch.clientY - btnRect.top,
+                startCollapsed: this.collapsed,
+            };
+            this.dragging = true;
+
+            document.addEventListener('touchmove', this.onTouchMove, {passive: false});
+            document.addEventListener('touchend', this.onTouchEnd);
+            document.addEventListener('touchcancel', this.onTouchEnd);
+        },
+
+        /**
+         * 触摸移动
+         */
+        onTouchMove(e) {
+            if (!this.dragging || e.touches.length !== 1) return;
+            e.preventDefault();
+            const touch = e.touches[0];
+
+            // 拖动开始就展开成完整按钮,便于跟手
+            if (this.position.collapsed) {
+                this.position.collapsed = false;
+            }
+
+            let newLeft = touch.clientX - this.record.offsetX;
+            let newTop = touch.clientY - this.record.offsetY;
+
+            // 限制最少保留三分之一按钮在视口内
+            const minVisible = this.btnSize / 3;
+            const maxOverflow = this.btnSize - minVisible;
+            newLeft = Math.max(-maxOverflow, Math.min(newLeft, this.clientWidth - minVisible));
+            newTop = Math.max(-maxOverflow, Math.min(newTop, this.clientHeight - minVisible));
+
+            this.updatePositionFromCoords(newLeft, newTop);
+        },
+
+        /**
+         * 触摸松开
+         */
+        onTouchEnd() {
+            document.removeEventListener('touchmove', this.onTouchMove);
+            document.removeEventListener('touchend', this.onTouchEnd);
+            document.removeEventListener('touchcancel', this.onTouchEnd);
+
+            if (!this.dragging) return;
+
+            const btnRect = this.$refs.floatBtn.getBoundingClientRect();
+            const moveDistance = Math.abs(btnRect.left - this.record.startLeft) + Math.abs(btnRect.top - this.record.startTop);
+            const duration = Date.now() - this.record.time;
+
+            this.dragging = false;
+
+            // 判断是否为点击（移动距离小于5px 且 按下时间小于200ms）
+            if (moveDistance < 5 && duration < 200) {
+                if (this.record.startCollapsed) {
+                    // 从细条点击:仅展开,统一离边 12,启动 5s 自动收起
+                    this.position.collapsed = false;
+                    this.position.x = 12;
+                    this.scheduleCollapse();
+                } else {
+                    this.onClick();
+                }
+                this.savePosition();
+                return;
+            }
+
+            // 距最近边 < 12 直接收成竖条,否则贴到 12px 启动 5s 自动收起
+            if (this.position.x < 12) {
+                this.position.collapsed = true;
+            } else {
+                this.position.x = 12;
+                this.scheduleCollapse();
+            }
+            this.savePosition();
+        },
+
+        /**
+         * 鼠标进入
+         */
+        onMouseEnter() {
+            this.clearCollapseTimer();
+            // 如果是收起状态，展开
+            if (this.collapsed) {
+                this.position.collapsed = false;
+                this.savePosition();
+            }
+        },
+
+        /**
+         * 鼠标离开
+         */
+        onMouseLeave() {
+            // 拖拽期间不处理
+            if (this.dragging) return;
+            // 延迟检测是否需要收起
+            this.scheduleCollapse();
+        },
+
+        /**
+         * 计划收起（延迟执行）
+         */
+        scheduleCollapse() {
+            this.clearCollapseTimer();
+            // 移动端松手即视为贴边,跳过 collapseThreshold 检查
+            if (this.windowPortrait || this.position.x <= this.collapseThreshold) {
+                const delay = this.windowPortrait ? this.collapseDelayMobile : this.collapseDelayDesktop;
+                this.collapseTimer = setTimeout(() => {
+                    this.position.collapsed = true;
+                    this.savePosition();
+                }, delay);
+            }
+        },
+
+        /**
+         * 清除收起定时器
+         */
+        clearCollapseTimer() {
+            if (this.collapseTimer) {
+                clearTimeout(this.collapseTimer);
+                this.collapseTimer = null;
+            }
+        },
+
+        /**
+         * 检查边界（仅在加载和窗口变化时调用）
+         */
+        checkBounds() {
+            const minMargin = 12;
+            // 确保距离在有效范围内（最小12px，最大不超出屏幕）
+            const maxX = this.clientWidth - this.btnSize - minMargin;
+            const maxY = this.clientHeight - this.btnSize - minMargin;
+            this.position.x = Math.max(minMargin, Math.min(this.position.x, maxX));
+            this.position.y = Math.max(minMargin, Math.min(this.position.y, maxY));
+        },
+
+        /**
+         * 窗口大小改变
+         */
+        onResize() {
+            this.$nextTick(() => {
+                this.checkBounds();
+            });
+        },
+
+        /**
+         * 点击按钮
+         */
+        onClick() {
+            // 启用前端操作模块
+            this.enableOperationModule();
+
+            emitter.emit('openAIAssistant', {
+                displayMode: 'chat',
+                sessionKey: 'global',
+                showApplyButton: false,
+                // 每次发送时动态附加 system(operationSessionId 是会话级临时标识,不入库)
+                onDynamicSystem: () => {
+                    if (this.operationSessionId) {
+                        return `页面操作会话 operation_session_id=${this.operationSessionId}。\n当调用需要绑定当前页面操作会话的工具时，传入该 ID；普通回答不要提及它，不要修改或臆造它。`;
+                    }
+                    return null;
+                },
+            });
+        },
+
+        /**
+         * AI 助手关闭事件
+         */
+        onAssistantClosed() {
+            this.disableOperationModule();
+        },
+
+        /**
+         * 初始化操作模块
+         */
+        initOperationModule() {
+            if (this.operationModule) {
+                return;
+            }
+            this.operationModule = createOperationModule({
+                store: this.$store,
+                router: this.$router,
+            });
+        },
+
+        /**
+         * 启用操作模块（绑定当前 WebSocket 会话 fd 作为页面操作会话）
+         */
+        enableOperationModule() {
+            this.operationSessionId = $A.getSessionStorageString("userWsFd") || null;
+        },
+
+        /**
+         * 禁用操作模块
+         */
+        disableOperationModule() {
+            this.operationSessionId = null;
+        },
+
+        /**
+         * 销毁操作模块
+         */
+        destroyOperationModule() {
+            this.operationModule = null;
+            this.operationSessionId = null;
+        },
+
+        /**
+         * 收到后端派发的页面操作（type=operation），执行后经 /ws 回包
+         */
+        async onOperationRequest(data) {
+            const {requestId, action, payload} = data || {};
+            if (!requestId || !action) {
+                return;
+            }
+            if (!this.operationModule) {
+                this.initOperationModule();
+            }
+            try {
+                const result = await this.operationModule.handleRequest(action, payload);
+                this.$store.dispatch('websocketSend', {
+                    type: 'operationResult',
+                    data: {requestId, success: true, result},
+                }).catch(_ => {});
+            } catch (e) {
+                // catch 必须回发失败，让 doo 端快速失败而非干等超时
+                this.$store.dispatch('websocketSend', {
+                    type: 'operationResult',
+                    data: {requestId, success: false, error: e?.message || '操作执行失败'},
+                }).catch(_ => {});
+            }
+        },
+    },
+};
+</script>
+
+<style lang="scss">
+$btn-size: 44px;
+$collapsed-width: 12px;
+$collapsed-height: 48px;
+$snap-dur: 0.8s;
+$snap-ease: cubic-bezier(0.16, 1, 0.3, 1);
+
+.ai-float-button-wrapper {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    transition: left $snap-dur $snap-ease, top $snap-dur $snap-ease, width $snap-dur $snap-ease;
+    will-change: left, top;
+    transform: translateZ(0);
+
+    // 右侧：按钮默认在右边（屏幕边缘），展开时通过 transform 向左移动
+    &.is-right {
+        justify-content: flex-end;
+    }
+
+    // 左侧：按钮默认在左边（屏幕边缘），展开时通过 transform 向右移动
+    &.is-left {
+        justify-content: flex-start;
+    }
+
+    &.is-dragging {
+        transition: none;
+        .ai-float-button {
+            transition: box-shadow 0.2s, width $snap-dur $snap-ease, height $snap-dur $snap-ease, border-radius 0.25s ease-out !important;
+        }
+    }
+}
+
+.ai-float-button {
+    width: $btn-size;
+    height: $btn-size;
+    border-radius: 50%;
+    background: #8bcf70;
+    box-shadow: 0 4px 12px lch(77 53.3 131.54 / 0.4);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform $snap-dur $snap-ease, box-shadow 0.2s, width $snap-dur $snap-ease, height $snap-dur $snap-ease, border-radius 0.25s ease-out;
+    user-select: none;
+    flex-shrink: 0;
+
+    &:not(.is-collapsed):hover {
+        box-shadow: 0 6px 16px lch(77 53.3 131.54 / 0.5);
+    }
+
+    .ai-float-button-icon {
+        width: 24px;
+        height: 24px;
+        fill: #fff;
+    }
+
+    // 收起状态
+    &.is-collapsed {
+        width: $collapsed-width;
+        height: $collapsed-height;
+        box-shadow: 0 2px 8px lch(77 53.3 131.54 / 0.3);
+
+        .ai-float-button-icon {
+            display: none;
+        }
+    }
+
+    .is-left &.is-collapsed {
+        border-radius: 0 6px 6px 0;
+    }
+
+    .is-right &.is-collapsed {
+        border-radius: 6px 0 0 6px;
+    }
+}
+
+body.dark-mode-reverse {
+    .ai-float-button {
+        box-shadow: none;
+        &:hover {
+            box-shadow: none;
+        }
+    }
+}
+</style>

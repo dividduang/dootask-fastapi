@@ -1,0 +1,61 @@
+{
+  "dootask-offline-deploy": {
+    "url": "https://www.dootask.com/help/deploy/offline",
+    "final_url": "https://www.dootask.com/help/deploy/offline",
+    "accessed_at_utc": "2026-10-12T05:46:58.159039+00:00",
+    "status": 200,
+    "headers": {
+      "Content-Length": "48506",
+      "Content-Type": "text/html; charset=utf-8",
+      "Date": "Mon, 12 Oct 2026 05:47:08 GMT",
+      "X-Robots-Tag": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "Connection": "close"
+    },
+    "sha256": "5f1cd3cb85b3127bcc23106889b6afa389fef3c14d39b709d06a24661214eeaf",
+    "bytes": 48506,
+    "snapshot": "dootask-offline-deploy.txt",
+    "saved_utf8_sha256": "5f1cd3cb85b3127bcc23106889b6afa389fef3c14d39b709d06a24661214eeaf"
+  },
+  "dootask-tools-readme": {
+    "url": "https://raw.githubusercontent.com/dootask/tools/main/README.md",
+    "final_url": "https://raw.githubusercontent.com/dootask/tools/main/README.md",
+    "accessed_at_utc": "2026-10-12T05:46:58.175173+00:00",
+    "status": 200,
+    "headers": {
+      "Connection": "close",
+      "Content-Length": "20624",
+      "Cache-Control": "max-age=300",
+      "Content-Security-Policy": "default-src 'none'; style-src 'unsafe-inline'; sandbox",
+      "Content-Type": "text/plain; charset=utf-8",
+      "ETag": "\"1f43a750a47e94f9f110bbfa6b3da1c5ef0bb1c6d3ccefd2517da5537359957a\"",
+      "Strict-Transport-Security": "max-age=31536000",
+      "X-Content-Type-Options": "nosniff",
+      "X-Frame-Options": "deny",
+      "X-XSS-Protection": "1; mode=block",
+      "X-GitHub-Request-Id": "B128:15DD28:5CF768:BF560F:6ACC7412",
+      "x-github-edge-region": "japaneast",
+      "Accept-Ranges": "bytes",
+      "Date": "Mon, 12 Oct 2026 05:47:08 GMT",
+      "Via": "1.1 varnish",
+      "X-Served-By": "cache-itm1220027-ITM",
+      "X-Cache": "HIT",
+      "X-Cache-Hits": "0",
+      "X-Timer": "S1791784028.486624,VS0,VE2",
+      "Vary": "Authorization,Accept-Encoding",
+      "Access-Control-Allow-Origin": "*",
+      "Cross-Origin-Resource-Policy": "cross-origin",
+      "X-Fastly-Request-ID": "6c76276c2d261815d8b86a96c23ca932eeebda7c",
+      "Expires": "Mon, 12 Oct 2026 05:52:08 GMT",
+      "Source-Age": "73"
+    },
+    "sha256": "6e9a3a4bd9ceb47b096ed857b2bf662ae9a73db379b98ed6820b948c3bd4804b",
+    "bytes": 20624,
+    "snapshot": "dootask-tools-readme.txt",
+    "saved_utf8_sha256": "6e9a3a4bd9ceb47b096ed857b2bf662ae9a73db379b98ed6820b948c3bd4804b"
+  },
+  "dockerhub-php-description-alt": {
+    "url": "https://hub.docker.com/v2/namespaces/kuaifan/repositories/php/",
+    "accessed_at_utc": "2026-10-12T05:46:58.191395+00:00",
+    "error": "<urlopen error [WinError 10060] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。>"
+  }
+}

@@ -1,0 +1,1113 @@
+{
+  "fastapi": {
+    "version": "0.143.0",
+    "requires_python": ">=3.10",
+    "requires_dist": [
+      "starlette>=0.46.0",
+      "pydantic>=2.9.0",
+      "typing-extensions>=4.8.0",
+      "typing-inspection>=0.4.2",
+      "annotated-doc>=0.0.2",
+      "opentelemetry-api>=1.44.0",
+      "opentelemetry-sdk>=1.44.0; extra == \"opentelemetry\"",
+      "opentelemetry-exporter-otlp-proto-http>=1.44.0; extra == \"opentelemetry\"",
+      "opentelemetry-sdk>=1.44.0; extra == \"standard\"",
+      "opentelemetry-exporter-otlp-proto-http>=1.44.0; extra == \"standard\"",
+      "fastapi-cli[standard]>=0.0.32; extra == \"standard\"",
+      "fastar>=0.9.0; extra == \"standard\"",
+      "httpx<1.0.0,>=0.23.0; extra == \"standard\"",
+      "jinja2>=3.1.5; extra == \"standard\"",
+      "python-multipart>=0.0.18; extra == \"standard\"",
+      "email-validator>=2.0.0; extra == \"standard\"",
+      "uvicorn[standard]>=0.12.0; extra == \"standard\"",
+      "pydantic-settings>=2.0.0; extra == \"standard\"",
+      "pydantic-extra-types>=2.0.0; extra == \"standard\"",
+      "opentelemetry-sdk>=1.44.0; extra == \"standard-no-fastapi-cloud-cli\"",
+      "opentelemetry-exporter-otlp-proto-http>=1.44.0; extra == \"standard-no-fastapi-cloud-cli\"",
+      "fastapi-cli[standard-no-fastapi-cloud-cli]>=0.0.32; extra == \"standard-no-fastapi-cloud-cli\"",
+      "httpx<1.0.0,>=0.23.0; extra == \"standard-no-fastapi-cloud-cli\"",
+      "jinja2>=3.1.5; extra == \"standard-no-fastapi-cloud-cli\"",
+      "python-multipart>=0.0.18; extra == \"standard-no-fastapi-cloud-cli\"",
+      "email-validator>=2.0.0; extra == \"standard-no-fastapi-cloud-cli\"",
+      "uvicorn[standard]>=0.12.0; extra == \"standard-no-fastapi-cloud-cli\"",
+      "pydantic-settings>=2.0.0; extra == \"standard-no-fastapi-cloud-cli\"",
+      "pydantic-extra-types>=2.0.0; extra == \"standard-no-fastapi-cloud-cli\"",
+      "opentelemetry-sdk>=1.44.0; extra == \"all\"",
+      "opentelemetry-exporter-otlp-proto-http>=1.44.0; extra == \"all\"",
+      "fastapi-cli[standard]>=0.0.32; extra == \"all\"",
+      "httpx<1.0.0,>=0.23.0; extra == \"all\"",
+      "jinja2>=3.1.5; extra == \"all\"",
+      "python-multipart>=0.0.18; extra == \"all\"",
+      "itsdangerous>=1.1.0; extra == \"all\"",
+      "pyyaml>=5.3.1; extra == \"all\"",
+      "email-validator>=2.0.0; extra == \"all\"",
+      "uvicorn[standard]>=0.12.0; extra == \"all\"",
+      "pydantic-settings>=2.0.0; extra == \"all\"",
+      "pydantic-extra-types>=2.0.0; extra == \"all\""
+    ],
+    "license": null,
+    "license_expression": "MIT",
+    "project_urls": {
+      "Changelog": "https://fastapi.tiangolo.com/release-notes/",
+      "Documentation": "https://fastapi.tiangolo.com/",
+      "Homepage": "https://github.com/fastapi/fastapi",
+      "Issues": "https://github.com/fastapi/fastapi/issues",
+      "Repository": "https://github.com/fastapi/fastapi"
+    },
+    "artifact_uploaded_at": [
+      {
+        "filename": "fastapi-0.143.0-py3-none-any.whl",
+        "uploaded_at": "2026-10-08T12:29:44.853354Z",
+        "sha256": "3e9395fd35276425b61b516a31fdd7c77fe2af83e41b4da22e30696fb1304c5d",
+        "yanked": false
+      },
+      {
+        "filename": "fastapi-0.143.0.tar.gz",
+        "uploaded_at": "2026-10-08T12:29:46.540767Z",
+        "sha256": "1acffe48206a80917cf7dac21992b5c44b25384e8902bf745c1fd9dabcf6c51f",
+        "yanked": false
+      }
+    ]
+  },
+  "starlette": {
+    "version": "1.7.0",
+    "requires_python": ">=3.10",
+    "requires_dist": [
+      "anyio<5,>=4.0.0",
+      "typing-extensions>=4.10.0; python_version < \"3.13\"",
+      "httpx2>=2.0.0; extra == \"full\"",
+      "httpx<0.29.0,>=0.27.0; extra == \"full\"",
+      "itsdangerous; extra == \"full\"",
+      "jinja2; extra == \"full\"",
+      "opentelemetry-api; extra == \"full\"",
+      "python-multipart>=0.0.18; extra == \"full\"",
+      "pyyaml; extra == \"full\""
+    ],
+    "license": null,
+    "license_expression": "BSD-3-Clause",
+    "project_urls": {
+      "Changelog": "https://starlette.dev/release-notes/",
+      "Documentation": "https://starlette.dev/",
+      "Funding": "https://github.com/sponsors/Kludex",
+      "Homepage": "https://github.com/Kludex/starlette",
+      "Source": "https://github.com/Kludex/starlette"
+    },
+    "artifact_uploaded_at": [
+      {
+        "filename": "starlette-1.7.0-py3-none-any.whl",
+        "uploaded_at": "2026-09-23T07:30:24.567239Z",
+        "sha256": "67f8e99895493dd2911a03f11314af6ceebeae4e704bb9f43dfc6a9db151c93e",
+        "yanked": false
+      },
+      {
+        "filename": "starlette-1.7.0.tar.gz",
+        "uploaded_at": "2026-09-23T07:30:26.350228Z",
+        "sha256": "c79f74ea63cff761804fbbfb182f1e0b440c2d07b164d24700c5a1bab5d6ff5d",
+        "yanked": false
+      }
+    ]
+  },
+  "pydantic": {
+    "version": "2.14.1",
+    "requires_python": ">=3.10",
+    "requires_dist": [
+      "annotated-types>=0.6.0",
+      "pydantic-core==2.50.1",
+      "typing-extensions>=4.16.0",
+      "typing-inspection>=0.4.4",
+      "email-validator>=2.0.0; extra == \"email\"",
+      "tzdata; platform_system == \"Windows\" and extra == \"timezone\""
+    ],
+    "license": null,
+    "license_expression": "MIT",
+    "project_urls": {
+      "Changelog": "https://pydantic.dev/docs/validation/latest/get-started/changelog/",
+      "Documentation": "https://pydantic.dev/docs/validation/latest/get-started/",
+      "Funding": "https://github.com/sponsors/samuelcolvin",
+      "Homepage": "https://github.com/pydantic/pydantic",
+      "Source": "https://github.com/pydantic/pydantic"
+    },
+    "artifact_uploaded_at": [
+      {
+        "filename": "pydantic-2.14.1-py3-none-any.whl",
+        "uploaded_at": "2026-10-11T18:37:53.437059Z",
+        "sha256": "9195d967ec791692a04438115466764fb8b9a27b31f14a760437694f40d6b454",
+        "yanked": false
+      },
+      {
+        "filename": "pydantic-2.14.1.tar.gz",
+        "uploaded_at": "2026-10-11T18:37:55.396662Z",
+        "sha256": "94f478203dd03404682a1ada216965651dd74b1d2d5ffd62e00e0837caab5c26",
+        "yanked": false
+      }
+    ]
+  },
+  "uvicorn": {
+    "version": "0.54.0",
+    "requires_python": ">=3.10",
+    "requires_dist": [
+      "click>=7.0",
+      "h11>=0.8",
+      "typing-extensions>=4.0; python_version < \"3.11\"",
+      "httptools>=0.8.0; extra == \"standard\"",
+      "python-dotenv>=0.13; extra == \"standard\"",
+      "pyyaml>=5.1; extra == \"standard\"",
+      "uvloop>=0.15.1; (sys_platform != \"win32\" and (sys_platform != \"cygwin\" and platform_python_implementation != \"PyPy\")) and extra == \"standard\"",
+      "watchfiles>=0.20; extra == \"standard\"",
+      "websockets>=13.0; extra == \"standard\""
+    ],
+    "license": null,
+    "license_expression": "BSD-3-Clause",
+    "project_urls": {
+      "Changelog": "https://uvicorn.dev/release-notes",
+      "Funding": "https://github.com/sponsors/Kludex",
+      "Homepage": "https://uvicorn.dev/",
+      "Source": "https://github.com/Kludex/uvicorn"
+    },
+    "artifact_uploaded_at": [
+      {
+        "filename": "uvicorn-0.54.0-py3-none-any.whl",
+        "uploaded_at": "2026-09-25T06:52:35.829563Z",
+        "sha256": "505bdb0f318731d45f1f712071fc781a8981f6847a31c902c9f5e652d4f67faf",
+        "yanked": false
+      },
+      {
+        "filename": "uvicorn-0.54.0.tar.gz",
+        "uploaded_at": "2026-09-25T06:52:37.601479Z",
+        "sha256": "a2e33cbfaa0306f8e6b0c13e0cb89d7d7a2da3e62b90c66e18c33d9807b28620",
+        "yanked": false
+      }
+    ]
+  },
+  "python-multipart": {
+    "version": "0.0.32",
+    "requires_python": ">=3.10",
+    "requires_dist": null,
+    "license": null,
+    "license_expression": "Apache-2.0",
+    "project_urls": {
+      "Changelog": "https://github.com/Kludex/python-multipart/blob/master/CHANGELOG.md",
+      "Documentation": "https://kludex.github.io/python-multipart/",
+      "Homepage": "https://github.com/Kludex/python-multipart",
+      "Source": "https://github.com/Kludex/python-multipart"
+    },
+    "artifact_uploaded_at": [
+      {
+        "filename": "python_multipart-0.0.32-py3-none-any.whl",
+        "uploaded_at": "2026-06-04T16:18:57.319904Z",
+        "sha256": "ff6d3f776f16878c894e52e107296ffc890e913c611b1a4ec6c44e2821fe2e23",
+        "yanked": false
+      },
+      {
+        "filename": "python_multipart-0.0.32.tar.gz",
+        "uploaded_at": "2026-06-04T16:18:58.647906Z",
+        "sha256": "be54b7f3fa167bb83e4fcd936b887b708f4e57fe75911c02aebf53efaf8d938e",
+        "yanked": false
+      }
+    ]
+  },
+  "websockets": {
+    "version": "17.2",
+    "requires_python": ">=3.11",
+    "requires_dist": null,
+    "license": null,
+    "license_expression": "BSD-3-Clause",
+    "project_urls": {
+      "Changelog": "https://websockets.readthedocs.io/en/stable/project/changelog.html",
+      "Documentation": "https://websockets.readthedocs.io/",
+      "Funding": "https://tidelift.com/subscription/pkg/pypi-websockets?utm_source=pypi-websockets&utm_medium=referral&utm_campaign=readme",
+      "Homepage": "https://github.com/python-websockets/websockets",
+      "Tracker": "https://github.com/python-websockets/websockets/issues"
+    },
+    "artifact_uploaded_at": [
+      {
+        "filename": "websockets-17.2-cp311-cp311-macosx_10_9_universal2.whl",
+        "uploaded_at": "2026-10-03T14:52:50.797260Z",
+        "sha256": "569ed5db651e420b13279f9333443bb5b84a436cc66b599cbc535697ae4434a0",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-cp311-cp311-macosx_10_9_x86_64.whl",
+        "uploaded_at": "2026-10-03T14:52:52.715832Z",
+        "sha256": "3892d76754b5f36fb40619f3ef09c68e5c3091f1ab8840964518ae5a41f30952",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-cp311-cp311-macosx_11_0_arm64.whl",
+        "uploaded_at": "2026-10-03T14:52:54.173940Z",
+        "sha256": "5436ffea003adb50e283ca0684a3fcaa1396104f841736c3322ee6582bd09e98",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-cp311-cp311-manylinux1_i686.manylinux_2_28_i686.manylinux_2_5_i686.whl",
+        "uploaded_at": "2026-10-03T14:52:56.132088Z",
+        "sha256": "9df9d048def11365d170b375b6ffc8b23a7f188c3560acd4418ba088ca2e2705",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-cp311-cp311-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl",
+        "uploaded_at": "2026-10-03T14:52:57.671044Z",
+        "sha256": "376a693697ddb695ea282ead76060f4847f90e564b12b4389f2c7589e6fadb9e",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-cp311-cp311-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl",
+        "uploaded_at": "2026-10-03T14:52:59.114886Z",
+        "sha256": "ecd63d0c7ed0d3d719c91b5a3861f0f0b3cec9bf223033ddf69d17aaac74bb6d",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-cp311-cp311-manylinux2014_armv7l.manylinux_2_17_armv7l.manylinux_2_31_armv7l.whl",
+        "uploaded_at": "2026-10-03T14:53:00.601040Z",
+        "sha256": "48997ed4431d8006988788ef4b62e1fd3f053c7463b4fa793aa6c4f9e96a3bb7",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-cp311-cp311-manylinux2014_ppc64le.manylinux_2_17_ppc64le.manylinux_2_28_ppc64le.whl",
+        "uploaded_at": "2026-10-03T14:53:02.235154Z",
+        "sha256": "4e312e07557a5ad348f4e83d3419773527f6e790c7f97928b1911d767b6ea1c7",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-cp311-cp311-manylinux2014_s390x.manylinux_2_17_s390x.manylinux_2_28_s390x.whl",
+        "uploaded_at": "2026-10-03T14:53:03.768059Z",
+        "sha256": "902ce8cafca2dc14cef9558a6fc3b45dbf7f121d1404bf2ad18a1c894555e48c",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-cp311-cp311-manylinux_2_31_riscv64.manylinux_2_39_riscv64.whl",
+        "uploaded_at": "2026-10-03T14:53:05.700919Z",
+        "sha256": "e53d950e16d4bb672a5ff41fe3131e65a4e5d688d694e1c7074c8c9990bb3ceb",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-cp311-cp311-musllinux_1_2_aarch64.whl",
+        "uploaded_at": "2026-10-03T14:53:07.281985Z",
+        "sha256": "946ac2164d646e733004946ae39536b5af473853183d81da5962e29d36e3ad35",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-cp311-cp311-musllinux_1_2_armv7l.whl",
+        "uploaded_at": "2026-10-03T14:53:08.893549Z",
+        "sha256": "660aa158127035e741d4b1835dbe79ae18a1fbb21ecd236655f31d60110e68d5",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-cp311-cp311-musllinux_1_2_i686.whl",
+        "uploaded_at": "2026-10-03T14:53:10.495743Z",
+        "sha256": "4733fc2d99fe888261417b7e29995403a72d9ffa78629902882325ea141177f2",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-cp311-cp311-musllinux_1_2_ppc64le.whl",
+        "uploaded_at": "2026-10-03T14:53:11.976446Z",
+        "sha256": "c2ec7e51157a3fa0e9cfdb1a8969bab38d1c22ad1ace7c6cea006383b43a1ad4",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-cp311-cp311-musllinux_1_2_riscv64.whl",
+        "uploaded_at": "2026-10-03T14:53:13.864700Z",
+        "sha256": "ada04d0262ab06527054a2a497f384d102698ff39b3865dc566a7d24b6f4058c",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-cp311-cp311-musllinux_1_2_s390x.whl",
+        "uploaded_at": "2026-10-03T14:53:15.411060Z",
+        "sha256": "9c393a202df08e96ed619310f0cd78be700e532a57d9a6ceee5f80b4e35bef14",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-cp311-cp311-musllinux_1_2_x86_64.whl",
+        "uploaded_at": "2026-10-03T14:53:16.930804Z",
+        "sha256": "af4c565b923bb5975401b8e4cedc2e17b2fdbf33b905737ee12384e6a6fd9507",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-cp311-cp311-win32.whl",
+        "uploaded_at": "2026-10-03T14:53:18.376505Z",
+        "sha256": "c81d6cdbacccda7e0eef3b076a457fd14c3835cdbc5993d2881580c2fb1f5f26",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-cp311-cp311-win_amd64.whl",
+        "uploaded_at": "2026-10-03T14:53:19.947652Z",
+        "sha256": "55c5b9eab079540bfb639b40b07b7b467e5c5a7ecf97a65cc8665781381c9856",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-cp311-cp311-win_arm64.whl",
+        "uploaded_at": "2026-10-03T14:53:21.417566Z",
+        "sha256": "55f9a808a0e072473337c240c939849818276e288e2374b832255b5b791b0851",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-cp312-cp312-macosx_10_13_universal2.whl",
+        "uploaded_at": "2026-10-03T14:53:23.029136Z",
+        "sha256": "916ebdfd82e7fc68041d36b2b5f60361b9abce1e087454da15f8bd004839e090",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-cp312-cp312-macosx_10_13_x86_64.whl",
+        "uploaded_at": "2026-10-03T14:53:24.531702Z",
+        "sha256": "3621f3686397708b8eeabfd0a9d75267c1f29a7537d2fe31e65d099e71587fa4",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-cp312-cp312-macosx_11_0_arm64.whl",
+        "uploaded_at": "2026-10-03T14:53:26.226312Z",
+        "sha256": "a81e19710d48da88653473b6b9c366d47e99fe4f58e37ce415be47966748f31f",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-cp312-cp312-manylinux1_i686.manylinux_2_28_i686.manylinux_2_5_i686.whl",
+        "uploaded_at": "2026-10-03T14:53:27.744109Z",
+        "sha256": "f2731f9067976c8c4127212c0d2f2ada42d497d935e470419e029802365b12bb",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-cp312-cp312-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl",
+        "uploaded_at": "2026-10-03T14:53:29.171155Z",
+        "sha256": "6627b913b8586b1c06db9516b31dd0dfbc621de3bb9312616d92a7e44f268a5b",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-cp312-cp312-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl",
+        "uploaded_at": "2026-10-03T14:53:31.635767Z",
+        "sha256": "0198c4ec6a3406a2f7557c032967de426474c2c995c81076585e09d29a9f407b",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-cp312-cp312-manylinux2014_armv7l.manylinux_2_17_armv7l.manylinux_2_31_armv7l.whl",
+        "uploaded_at": "2026-10-03T14:53:33.061268Z",
+        "sha256": "88c6a42c2632ff469e84155e44f6ed92cb15ccb047bf5fcb59225ae5a12fd33d",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-cp312-cp312-manylinux2014_ppc64le.manylinux_2_17_ppc64le.manylinux_2_28_ppc64le.whl",
+        "uploaded_at": "2026-10-03T14:53:34.502641Z",
+        "sha256": "eb0023e6cdb4b8ece0b33875188dd16104ad8c335361d396a98394f99e30ff7a",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-cp312-cp312-manylinux2014_s390x.manylinux_2_17_s390x.manylinux_2_28_s390x.whl",
+        "uploaded_at": "2026-10-03T14:53:36.071969Z",
+        "sha256": "c1c09d5d4646eb96bda2cfb97493bcea21a0956a981de116e6b1f4a9de07f3fd",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-cp312-cp312-manylinux_2_31_riscv64.manylinux_2_39_riscv64.whl",
+        "uploaded_at": "2026-10-03T14:53:37.528510Z",
+        "sha256": "0360c4dc13ac569cc245e0efa2f4d4b1e4733d24c47b8ab3f3747227b1356348",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-cp312-cp312-musllinux_1_2_aarch64.whl",
+        "uploaded_at": "2026-10-03T14:53:38.959082Z",
+        "sha256": "76693a16dead737946b651375ee3109d7db7ad9569a1c55c60aaed3ef85cfcc6",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-cp312-cp312-musllinux_1_2_armv7l.whl",
+        "uploaded_at": "2026-10-03T14:53:40.496036Z",
+        "sha256": "77a42cc507993ec5471b5283f7eef869239173b6000031543e3938a86d1af0fd",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-cp312-cp312-musllinux_1_2_i686.whl",
+        "uploaded_at": "2026-10-03T14:53:42.061501Z",
+        "sha256": "3bbc5543e39ee025d524077c5c15c2d67bc11c9f6676afe5b531839e24d701f6",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-cp312-cp312-musllinux_1_2_ppc64le.whl",
+        "uploaded_at": "2026-10-03T14:53:43.575395Z",
+        "sha256": "8da58558bfb0ca6ccac2419773521f1111e40654038b1afabdfc69c02cb82614",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-cp312-cp312-musllinux_1_2_riscv64.whl",
+        "uploaded_at": "2026-10-03T14:53:45.077634Z",
+        "sha256": "01420cb1cb47433e8e7075d32cb8017ad3ffed0654bd1e48c0251b865920dec3",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-cp312-cp312-musllinux_1_2_s390x.whl",
+        "uploaded_at": "2026-10-03T14:53:46.800316Z",
+        "sha256": "c49c9edd47d0e44d360299e2d8865e2950d2fcf1b4098782c9d7dcd070919e5a",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-cp312-cp312-musllinux_1_2_x86_64.whl",
+        "uploaded_at": "2026-10-03T14:53:48.382193Z",
+        "sha256": "96f6c8d0fe21930d1f982bfce2382789d2e8d005d2ab63d21280660f95ef8fe1",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-cp312-cp312-win32.whl",
+        "uploaded_at": "2026-10-03T14:53:49.867349Z",
+        "sha256": "b25659ab2d655d742701487d5591e3f98e8f8b329fc999e05e3d59691ab344a1",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-cp312-cp312-win_amd64.whl",
+        "uploaded_at": "2026-10-03T14:53:51.486442Z",
+        "sha256": "faa763b677e96f1beccc6b4d7e8c079dfeed2f249f57a19debc321b519ee64ec",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-cp312-cp312-win_arm64.whl",
+        "uploaded_at": "2026-10-03T14:53:52.938061Z",
+        "sha256": "63499fc49efe48bccc2fca40723bc7adb198866cbe159093dd979905316994b6",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-cp313-cp313-macosx_10_13_universal2.whl",
+        "uploaded_at": "2026-10-03T14:53:54.590735Z",
+        "sha256": "b24b83fbb34b2d8de06cf0f0d4bd7737344ef854482a614826d4356c0c3f0c12",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-cp313-cp313-macosx_10_13_x86_64.whl",
+        "uploaded_at": "2026-10-03T14:53:56.034753Z",
+        "sha256": "8a829db795e3f87053904493d184b185c8eb1f497c852f434168ec856aa6f997",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-cp313-cp313-macosx_11_0_arm64.whl",
+        "uploaded_at": "2026-10-03T14:53:57.587814Z",
+        "sha256": "cf8811d285acc91216368df7fb55cc8c9bf6fcd90eea42429c7186c7385a12b9",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-cp313-cp313-manylinux1_i686.manylinux_2_28_i686.manylinux_2_5_i686.whl",
+        "uploaded_at": "2026-10-03T14:53:59.081823Z",
+        "sha256": "89c4898da776193577279173dcf9860487590611d7320d379435a145881b048d",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-cp313-cp313-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl",
+        "uploaded_at": "2026-10-03T14:54:00.610741Z",
+        "sha256": "d87091c4347daadbcc0833b65812ff38d7350c67339625d4e4a512cf38e3e8ef",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-cp313-cp313-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl",
+        "uploaded_at": "2026-10-03T14:54:02.098153Z",
+        "sha256": "1110fbfd530c447380e6e6db88b7e43ffe33d54178f5b0ff0aaa5a280301e668",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-cp313-cp313-manylinux2014_armv7l.manylinux_2_17_armv7l.manylinux_2_31_armv7l.whl",
+        "uploaded_at": "2026-10-03T14:54:03.545705Z",
+        "sha256": "83abd8beab056aa77a116364811f8fc262dffbcc7abea48de0c85ccbfc6f1428",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-cp313-cp313-manylinux2014_ppc64le.manylinux_2_17_ppc64le.manylinux_2_28_ppc64le.whl",
+        "uploaded_at": "2026-10-03T14:54:05.045666Z",
+        "sha256": "876da8ca5520d65b5d0f2ca6b4e7a00d35bb90ccda35cb2ce3cda4b6c711e84a",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-cp313-cp313-manylinux2014_s390x.manylinux_2_17_s390x.manylinux_2_28_s390x.whl",
+        "uploaded_at": "2026-10-03T14:54:06.810209Z",
+        "sha256": "8462395df8f224d2daa3d80db3ae4450d9d4b7243c8483ac79a82862f1599dd6",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-cp313-cp313-manylinux_2_31_riscv64.manylinux_2_39_riscv64.whl",
+        "uploaded_at": "2026-10-03T14:54:08.583601Z",
+        "sha256": "6e9a04e69456015e6ae5e0d486d995137fd435794442122b00ce5f9526ea3ba8",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-cp313-cp313-musllinux_1_2_aarch64.whl",
+        "uploaded_at": "2026-10-03T14:54:10.254711Z",
+        "sha256": "8a2321bcb73758c44c8076509024d02c15ee484fe77ce04edea4bf4d257492cc",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-cp313-cp313-musllinux_1_2_armv7l.whl",
+        "uploaded_at": "2026-10-03T14:54:11.911206Z",
+        "sha256": "8be4a87b3baca380ec3c7b1643b2dd268ac9d42c5097c0e8dc9a49342faf4774",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-cp313-cp313-musllinux_1_2_i686.whl",
+        "uploaded_at": "2026-10-03T14:54:13.489748Z",
+        "sha256": "eb7b737ce8d18c8a08beb68f751572b7bf6a18093ecd1406ca1256b50592552e",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-cp313-cp313-musllinux_1_2_ppc64le.whl",
+        "uploaded_at": "2026-10-03T14:54:15.046824Z",
+        "sha256": "d6605630c2808b33f362d6d08582e79821f77ed2bd3f49f9d467ea70defea06d",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-cp313-cp313-musllinux_1_2_riscv64.whl",
+        "uploaded_at": "2026-10-03T14:54:16.574980Z",
+        "sha256": "dd9252828073fd0d69e7667af4275a1b17c18d0833b1ab7f59db272f194a6b9a",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-cp313-cp313-musllinux_1_2_s390x.whl",
+        "uploaded_at": "2026-10-03T14:54:18.143737Z",
+        "sha256": "06c7386128a9d85de4e1960114604f3031c084d2f4eee8db382637f1634cbab1",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-cp313-cp313-musllinux_1_2_x86_64.whl",
+        "uploaded_at": "2026-10-03T14:54:19.679411Z",
+        "sha256": "98f2d03df74977fd252831c997c388cd6c3f691a8a9d022b266d3cbd9849838f",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-cp313-cp313-win32.whl",
+        "uploaded_at": "2026-10-03T14:54:21.232998Z",
+        "sha256": "5b43a1f7e4853ce08c3f6d3bf69799ee5b46548bfb71792a8158f7e45d66b547",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-cp313-cp313-win_amd64.whl",
+        "uploaded_at": "2026-10-03T14:54:23.025459Z",
+        "sha256": "27c7a59b5352a8f741b422820adfe89dfe47c8f2d84fb32111e76111edaa0e83",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-cp313-cp313-win_arm64.whl",
+        "uploaded_at": "2026-10-03T14:54:24.857845Z",
+        "sha256": "533b7c82bb1eafbeb921dfe131c9f88e55451ddc328d84bde1c9340ba72d2808",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-cp314-cp314-macosx_10_15_universal2.whl",
+        "uploaded_at": "2026-10-03T14:54:26.381809Z",
+        "sha256": "ecb748910e9ba4624ebe2057791df51dcbffb48c37108ab94a3c593472023c9e",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-cp314-cp314-macosx_10_15_x86_64.whl",
+        "uploaded_at": "2026-10-03T14:54:27.962600Z",
+        "sha256": "2ab9af5cb7265899e659f079eb71691375a1025b6d5fbd3caa495dd08f70833a",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-cp314-cp314-macosx_11_0_arm64.whl",
+        "uploaded_at": "2026-10-03T14:54:29.523043Z",
+        "sha256": "06e46da092bca3a52e98f0458c66b247993ce501a07cd09c858be3296511ab7d",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-cp314-cp314-manylinux1_i686.manylinux_2_28_i686.manylinux_2_5_i686.whl",
+        "uploaded_at": "2026-10-03T14:54:31.278593Z",
+        "sha256": "fcce735ffd72ac4056db05325d9f0232382b74826f0196eb6a15ca903abdaa0f",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-cp314-cp314-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl",
+        "uploaded_at": "2026-10-03T14:54:32.917093Z",
+        "sha256": "42cbca10f82a8b2fb1536e8a0830ca6ceeb6bb3d8d64b766e0795369135654a8",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-cp314-cp314-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl",
+        "uploaded_at": "2026-10-03T14:54:34.833536Z",
+        "sha256": "c63ff5a21f26bd0e6a8464b53fadbe174825c8718ac14180df45665eaacdb6af",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-cp314-cp314-manylinux2014_armv7l.manylinux_2_17_armv7l.manylinux_2_31_armv7l.whl",
+        "uploaded_at": "2026-10-03T14:54:36.424056Z",
+        "sha256": "63f543463601c1558b755f8dd7618b6ec3dd0934dda051d3b7030d8c76e54de2",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-cp314-cp314-manylinux2014_ppc64le.manylinux_2_17_ppc64le.manylinux_2_28_ppc64le.whl",
+        "uploaded_at": "2026-10-03T14:54:38.010893Z",
+        "sha256": "4c32eb565ad9ce8a6444248e5b7a19dbb86a81c811fe5fcc2fba7a735aed5163",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-cp314-cp314-manylinux2014_s390x.manylinux_2_17_s390x.manylinux_2_28_s390x.whl",
+        "uploaded_at": "2026-10-03T14:54:39.613706Z",
+        "sha256": "5d459bbb6c22f26dcebea56924a362aba50d453b9867912862c970434fcf0d94",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-cp314-cp314-manylinux_2_31_riscv64.manylinux_2_39_riscv64.whl",
+        "uploaded_at": "2026-10-03T14:54:41.165585Z",
+        "sha256": "f19ca1a21871f024e38faf4107b433047df27558dff1b72a1dac31481e2c1fe5",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-cp314-cp314-musllinux_1_2_aarch64.whl",
+        "uploaded_at": "2026-10-03T14:54:42.779160Z",
+        "sha256": "c76b4bcbf0f713194591673fc86a42820e14da6bbd1bb445d3d002cc4d1e4521",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-cp314-cp314-musllinux_1_2_armv7l.whl",
+        "uploaded_at": "2026-10-03T14:54:44.410125Z",
+        "sha256": "30201a7f69833b015556c72feb69ea501b645986fd0b90dab13f589e995ff428",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-cp314-cp314-musllinux_1_2_i686.whl",
+        "uploaded_at": "2026-10-03T14:54:46.063161Z",
+        "sha256": "0c8600aec354cc259f1691b0b42816f04a9886a953f82cb227246df76057f97a",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-cp314-cp314-musllinux_1_2_ppc64le.whl",
+        "uploaded_at": "2026-10-03T14:54:47.672029Z",
+        "sha256": "307fc22ea496be8542d67b82ae8c867a978dfd19ac35573d4f15943fd9277dfe",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-cp314-cp314-musllinux_1_2_riscv64.whl",
+        "uploaded_at": "2026-10-03T14:54:49.537814Z",
+        "sha256": "9c88697fa943bd4ef67cc919a17d81de6581846f52bfa8c6f64a916098986556",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-cp314-cp314-musllinux_1_2_s390x.whl",
+        "uploaded_at": "2026-10-03T14:54:51.075631Z",
+        "sha256": "f7eac84d4969da82166d5e90d9c38d2f416fe24f9708a7013569b193745b9a31",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-cp314-cp314-musllinux_1_2_x86_64.whl",
+        "uploaded_at": "2026-10-03T14:54:52.675284Z",
+        "sha256": "313f6703023d53baabab6d6c5c37cf637b2c4fee255acf2ed5e92ad69e28f1b7",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-cp314-cp314t-macosx_10_15_universal2.whl",
+        "uploaded_at": "2026-10-03T14:54:58.943356Z",
+        "sha256": "a69ce25be5f1330ee1c74eb6fabbbceaa96b384beedd2627cecded7546490c40",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-cp314-cp314t-macosx_10_15_x86_64.whl",
+        "uploaded_at": "2026-10-03T14:55:00.674530Z",
+        "sha256": "8e24b878cf54843a63985d90480f163ca7f692689fbcbe9cdbd8165521083a8b",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-cp314-cp314t-macosx_11_0_arm64.whl",
+        "uploaded_at": "2026-10-03T14:55:02.379023Z",
+        "sha256": "f33c7908a6885dcae9f462a4a8347b637053b4ff2b96beb4c23fba1cf7818e5f",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-cp314-cp314t-manylinux1_i686.manylinux_2_28_i686.manylinux_2_5_i686.whl",
+        "uploaded_at": "2026-10-03T14:55:03.966830Z",
+        "sha256": "c796a1bb3e4015249639849f30e8e680df8a431b45d417ba8acf843d2451d95f",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-cp314-cp314t-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl",
+        "uploaded_at": "2026-10-03T14:55:05.797640Z",
+        "sha256": "983bcdc898662f6ba9d6a025c30d29946ff0986d9ad60d400af0da3671f7cbf3",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-cp314-cp314t-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl",
+        "uploaded_at": "2026-10-03T14:55:07.626991Z",
+        "sha256": "35e0f088ddfd9d9bc5019e27ff3767411779e92b59db5bb1507f2731a5b61158",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-cp314-cp314t-manylinux2014_armv7l.manylinux_2_17_armv7l.manylinux_2_31_armv7l.whl",
+        "uploaded_at": "2026-10-03T14:55:09.321636Z",
+        "sha256": "19e2511412ad3393191de652513bc7a0ca3c93af143b32d96d46e59fbbddf1d4",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-cp314-cp314t-manylinux2014_ppc64le.manylinux_2_17_ppc64le.manylinux_2_28_ppc64le.whl",
+        "uploaded_at": "2026-10-03T14:55:10.935343Z",
+        "sha256": "cb5e2bf969ac99a6ae3c71208a5eb05cfde973192540ffa6e1068b57fb78c4f8",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-cp314-cp314t-manylinux2014_s390x.manylinux_2_17_s390x.manylinux_2_28_s390x.whl",
+        "uploaded_at": "2026-10-03T14:55:12.536811Z",
+        "sha256": "691780fca2be3dec512cb603cb91060271968cb4af86b51d07c57445c5754a37",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-cp314-cp314t-manylinux_2_31_riscv64.manylinux_2_39_riscv64.whl",
+        "uploaded_at": "2026-10-03T14:55:14.164799Z",
+        "sha256": "2d39c19b1ba6a6791050383fd69efdd3b63533e2254693d0263879cd5f5921ba",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-cp314-cp314t-musllinux_1_2_aarch64.whl",
+        "uploaded_at": "2026-10-03T14:55:15.796932Z",
+        "sha256": "e48ac2b302986c6f55cf61e8e36b4dd97d0132c5078a713a697a940934ba422e",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-cp314-cp314t-musllinux_1_2_armv7l.whl",
+        "uploaded_at": "2026-10-03T14:55:17.661002Z",
+        "sha256": "e136197f1262620ef2e507afc3ea759c1ae7d221886da20eec5f4c9f2618c2aa",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-cp314-cp314t-musllinux_1_2_i686.whl",
+        "uploaded_at": "2026-10-03T14:55:19.607957Z",
+        "sha256": "3eb44019a2b0b3b91bac95998f1e4e5589730421170e060fe654a2b7be727dc7",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-cp314-cp314t-musllinux_1_2_ppc64le.whl",
+        "uploaded_at": "2026-10-03T14:55:21.274694Z",
+        "sha256": "e5855e574804398859c5fbaf4fc7882b96278b7f6572a3d889627e6eb6cfca59",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-cp314-cp314t-musllinux_1_2_riscv64.whl",
+        "uploaded_at": "2026-10-03T14:55:22.874024Z",
+        "sha256": "5dc29815520c329f5662f6eb3ebadecf0d4f8c82dfa416d4d6efbf8f39245559",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-cp314-cp314t-musllinux_1_2_s390x.whl",
+        "uploaded_at": "2026-10-03T14:55:24.443367Z",
+        "sha256": "d1a4f9462da6496b6cb79bbb09c60d17f7e63e8a1df136797b3afabec9560e4d",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-cp314-cp314t-musllinux_1_2_x86_64.whl",
+        "uploaded_at": "2026-10-03T14:55:26.033762Z",
+        "sha256": "9496bff5541086478264678bac73c0a75b2fde94fdf6568893bca1f7c6d50d18",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-cp314-cp314t-win32.whl",
+        "uploaded_at": "2026-10-03T14:55:27.681425Z",
+        "sha256": "e1e3bc8090a7eae79fdf634b63bdbfa3c93999991023c37c6fd3b469fc8ff5dc",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-cp314-cp314t-win_amd64.whl",
+        "uploaded_at": "2026-10-03T14:55:29.314930Z",
+        "sha256": "65a89a5bde227bfe908016f35b5bd347970cd1e5b0360f389502eba1c7fde6e0",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-cp314-cp314t-win_arm64.whl",
+        "uploaded_at": "2026-10-03T14:55:31.001229Z",
+        "sha256": "1c27339934109dfaca83f18ab2c23db06714e9d5deca2c8e37e8f492ab90d20b",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-cp314-cp314-win32.whl",
+        "uploaded_at": "2026-10-03T14:54:54.247443Z",
+        "sha256": "08d90cf344bdb971ba3a826b78d4da9bfd56cc6a97a604d9b88cbd40bfa6c735",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-cp314-cp314-win_amd64.whl",
+        "uploaded_at": "2026-10-03T14:54:55.845713Z",
+        "sha256": "dac93bf7a9beb215be3282b8441173cd50806c41c007b8be9bb24e03c60ad563",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-cp314-cp314-win_arm64.whl",
+        "uploaded_at": "2026-10-03T14:54:57.376178Z",
+        "sha256": "2ab742249f953d148a9ba696c8b9944361e8cb92e8bc61ba2dd53a178403afd3",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-cp315-cp315-macosx_10_15_universal2.whl",
+        "uploaded_at": "2026-10-03T14:55:32.674343Z",
+        "sha256": "a7c4bb26de6ef496d24822aee4f6a305d97cd33d21a2b85f290292d69ba1c25e",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-cp315-cp315-macosx_10_15_x86_64.whl",
+        "uploaded_at": "2026-10-03T14:55:34.338774Z",
+        "sha256": "c08da1f15040bd1e1a6074bd4518a6ef20e67b1594ecfb0aa75e5b45f87e6d6d",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-cp315-cp315-macosx_11_0_arm64.whl",
+        "uploaded_at": "2026-10-03T14:55:35.918581Z",
+        "sha256": "3117abfd32b183bdb6194df9317766d32c6517f3d1c0aa8c62d5c6ccfda0b4a8",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-cp315-cp315-manylinux1_i686.manylinux_2_28_i686.manylinux_2_5_i686.whl",
+        "uploaded_at": "2026-10-03T14:55:37.777243Z",
+        "sha256": "a046227daa7f191e843d26b911c1146233e9a33d249e0c954dcb3ac7c398710e",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-cp315-cp315-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl",
+        "uploaded_at": "2026-10-03T14:55:39.364640Z",
+        "sha256": "2901bdf24f20bc884124b3e88c61f7ece260c20c81e610f2196007395264a4aa",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-cp315-cp315-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl",
+        "uploaded_at": "2026-10-03T14:55:40.942138Z",
+        "sha256": "f60e39adfecf998488166aca8ff24ab1ac406c9ecbecbcf9b3bcfc43cb1ec9a1",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-cp315-cp315-manylinux2014_armv7l.manylinux_2_17_armv7l.manylinux_2_31_armv7l.whl",
+        "uploaded_at": "2026-10-03T14:55:42.540814Z",
+        "sha256": "d4df62fd8448a85c752bbea1803cb3a2785e6fc8352009ab64ad7447af079b3c",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-cp315-cp315-manylinux2014_ppc64le.manylinux_2_17_ppc64le.manylinux_2_28_ppc64le.whl",
+        "uploaded_at": "2026-10-03T14:55:44.251949Z",
+        "sha256": "c8eea55fdfa9ba65c6981eea38bd20c800bce2f092a2803d82de764ecf0f071a",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-cp315-cp315-manylinux2014_s390x.manylinux_2_17_s390x.manylinux_2_28_s390x.whl",
+        "uploaded_at": "2026-10-03T14:55:45.842992Z",
+        "sha256": "3f0def1279644acaa9bc861d4234af3f82ea9cee7e460dffac5cb63e691501e9",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-cp315-cp315-manylinux_2_31_riscv64.manylinux_2_39_riscv64.whl",
+        "uploaded_at": "2026-10-03T14:55:47.450499Z",
+        "sha256": "fb78fb4158c12f77a934a003006784108a27a6553cfc0c6f10483c9c02e94f48",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-cp315-cp315-musllinux_1_2_aarch64.whl",
+        "uploaded_at": "2026-10-03T14:55:49.126793Z",
+        "sha256": "f8969ad228115ad8869b5fed801f899e52ab8ad376fdb165ba4760a277c8258a",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-cp315-cp315-musllinux_1_2_armv7l.whl",
+        "uploaded_at": "2026-10-03T14:55:50.674098Z",
+        "sha256": "4a49ca342efc0800e6ae94ed5c9cbdcb319308f75e73c21181e4c24d6710e8dd",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-cp315-cp315-musllinux_1_2_i686.whl",
+        "uploaded_at": "2026-10-03T14:55:52.393166Z",
+        "sha256": "06fa3ce9c3154826c33d4395b225b2994aa64f1f3bcd8be8ed932019175d9268",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-cp315-cp315-musllinux_1_2_ppc64le.whl",
+        "uploaded_at": "2026-10-03T14:55:54.127580Z",
+        "sha256": "50644d8715be7e0ec0682f9d7744b63008e199c5e1618a48fa153756a332235f",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-cp315-cp315-musllinux_1_2_riscv64.whl",
+        "uploaded_at": "2026-10-03T14:55:55.856005Z",
+        "sha256": "60deca33e584c09e91f70f8b55a0b1de7d671d6a63f051d154920f48bed717c7",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-cp315-cp315-musllinux_1_2_s390x.whl",
+        "uploaded_at": "2026-10-03T14:55:57.497712Z",
+        "sha256": "b5f79366a8d8dbb981d53ba800bb54a95454595ab8a4548c2b95501b32a08326",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-cp315-cp315-musllinux_1_2_x86_64.whl",
+        "uploaded_at": "2026-10-03T14:55:59.338823Z",
+        "sha256": "f2bbf3f28d0b63157577c8b774b9136f076afa6797e1a52a2ecd477f23cad3a8",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-cp315-cp315t-macosx_10_15_universal2.whl",
+        "uploaded_at": "2026-10-03T14:56:06.336127Z",
+        "sha256": "9a2a60a7f0ea5f239efb6391d2b28630a640d82dad63e3bee47cf2c623c4495d",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-cp315-cp315t-macosx_10_15_x86_64.whl",
+        "uploaded_at": "2026-10-03T14:56:08.035155Z",
+        "sha256": "cca2fcb72c007103740fa4fc3df19fdb1a318c641c69f3b0cc47ed63a889336e",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-cp315-cp315t-macosx_11_0_arm64.whl",
+        "uploaded_at": "2026-10-03T14:56:09.852580Z",
+        "sha256": "b789356bc4e2e6c20ba52817f92c3fed74e24657654237ecd536c54843b80c6c",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-cp315-cp315t-manylinux1_i686.manylinux_2_28_i686.manylinux_2_5_i686.whl",
+        "uploaded_at": "2026-10-03T14:56:11.850940Z",
+        "sha256": "222fb626fa15701a850eccc778be17312142b2f6a0e16aea80770b7459adb784",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-cp315-cp315t-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl",
+        "uploaded_at": "2026-10-03T14:56:13.548382Z",
+        "sha256": "4497e87c34a2d21cbec1227858fec3af8e514dd70c47625557a122fcebc081dc",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-cp315-cp315t-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl",
+        "uploaded_at": "2026-10-03T14:56:15.143021Z",
+        "sha256": "6281c171557ce0e408e19d9a223f22d915117ac38a5a7f32ed83809e7492316c",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-cp315-cp315t-manylinux2014_armv7l.manylinux_2_17_armv7l.manylinux_2_31_armv7l.whl",
+        "uploaded_at": "2026-10-03T14:56:17.086284Z",
+        "sha256": "08d97098644728bd1895caa7ecf3090b8e563d70809870d2adb33a107bd061d0",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-cp315-cp315t-manylinux2014_ppc64le.manylinux_2_17_ppc64le.manylinux_2_28_ppc64le.whl",
+        "uploaded_at": "2026-10-03T14:56:18.716074Z",
+        "sha256": "1fdb8d5a1660307dc6d36d0b7fc725213cbd7f80800904dc4896aa3208b89121",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-cp315-cp315t-manylinux2014_s390x.manylinux_2_17_s390x.manylinux_2_28_s390x.whl",
+        "uploaded_at": "2026-10-03T14:56:20.412373Z",
+        "sha256": "18b0a46e5e9b315e2b54ce8c3bafdeef0e1388ca363114fa868e6aab2dc58512",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-cp315-cp315t-manylinux_2_31_riscv64.manylinux_2_39_riscv64.whl",
+        "uploaded_at": "2026-10-03T14:56:22.257523Z",
+        "sha256": "7f115d5d804a2163dd89245710049078b0e726a58c1f44a1f86c2c6e79055d76",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-cp315-cp315t-musllinux_1_2_aarch64.whl",
+        "uploaded_at": "2026-10-03T14:56:23.909515Z",
+        "sha256": "1d829946a2e7630f92f9d7b45b62f3abe9f393cc2dea6a35edb3988f865e75f2",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-cp315-cp315t-musllinux_1_2_armv7l.whl",
+        "uploaded_at": "2026-10-03T14:56:25.689769Z",
+        "sha256": "6c274fc1572edf7c197094a0eb1887d45fdc95254bc80597dc7599550486c06a",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-cp315-cp315t-musllinux_1_2_i686.whl",
+        "uploaded_at": "2026-10-03T14:56:27.246714Z",
+        "sha256": "4173a4b8a025ae44313d9d9b4ecf31e886c7b7faf45386d51a8ca4ff2dcf3f2a",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-cp315-cp315t-musllinux_1_2_ppc64le.whl",
+        "uploaded_at": "2026-10-03T14:56:28.811708Z",
+        "sha256": "d8cfe9522ad69b6abb26b413ed1deca43cb915cefc588433d557cb3ae1c783e2",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-cp315-cp315t-musllinux_1_2_riscv64.whl",
+        "uploaded_at": "2026-10-03T14:56:30.578885Z",
+        "sha256": "908d81d88bb16141613a6275059b5114656d5c2f0b5400b421d54fe6f1943507",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-cp315-cp315t-musllinux_1_2_s390x.whl",
+        "uploaded_at": "2026-10-03T14:56:32.320531Z",
+        "sha256": "c6590e1eb624ff6b15b872421bc9a10bc6d2057635d69c6cd244ac3f928f85c6",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-cp315-cp315t-musllinux_1_2_x86_64.whl",
+        "uploaded_at": "2026-10-03T14:56:34.142486Z",
+        "sha256": "61040f6f7da5a279d2f77496c69d51132aba75f701c52bded400d4c639277b18",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-cp315-cp315t-win32.whl",
+        "uploaded_at": "2026-10-03T14:56:36.204137Z",
+        "sha256": "f90bad2839c185a1edf8ee22a257cfc8a39e0e337a0490ab185dfa76ef04d1bd",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-cp315-cp315t-win_amd64.whl",
+        "uploaded_at": "2026-10-03T14:56:37.790102Z",
+        "sha256": "315551f4ccedbbf9fd4f7e8bf037a5948c976ade0e919ba5d8f581d465f6f725",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-cp315-cp315t-win_arm64.whl",
+        "uploaded_at": "2026-10-03T14:56:39.427208Z",
+        "sha256": "0a6220bdf8d5f11af71251a599092d89ac1d6bfac691c7f5951c5b07953947a0",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-cp315-cp315-win32.whl",
+        "uploaded_at": "2026-10-03T14:56:01.307292Z",
+        "sha256": "74836317b7010b579522bb52426f1e225608b042c9e78cbe2493522bebb8a318",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-cp315-cp315-win_amd64.whl",
+        "uploaded_at": "2026-10-03T14:56:02.914776Z",
+        "sha256": "aaead3d926e9ab4124ada727d20cd62d396649917822df4f771d1f07f1079b40",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-cp315-cp315-win_arm64.whl",
+        "uploaded_at": "2026-10-03T14:56:04.604876Z",
+        "sha256": "40960554e60eb60c3eec4ff9e42a80f84f8cd3ca9bc80a5481a61f1e64d807c9",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-pp311-pypy311_pp73-macosx_10_15_x86_64.whl",
+        "uploaded_at": "2026-10-03T14:56:41.037417Z",
+        "sha256": "2de1ccf298f5c9e0f27113836d742edb95f015eee3148f004ac386f7ba9a05b1",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-pp311-pypy311_pp73-macosx_11_0_arm64.whl",
+        "uploaded_at": "2026-10-03T14:56:43.097716Z",
+        "sha256": "761cde41439f0be761aa460e1451a31e2e14baf4a46db6fe4913e5a06a90df66",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-pp311-pypy311_pp73-manylinux1_i686.manylinux_2_28_i686.manylinux_2_5_i686.whl",
+        "uploaded_at": "2026-10-03T14:56:44.979228Z",
+        "sha256": "15a7101b660a9f15fac34108c92cefc9848f6753a50acef8869e3cd94148fdb7",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-pp311-pypy311_pp73-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl",
+        "uploaded_at": "2026-10-03T14:56:46.771947Z",
+        "sha256": "214da56dba368f61b3d745c77630b2d03c61c02da7b42fe80ef6efba079d3077",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-pp311-pypy311_pp73-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl",
+        "uploaded_at": "2026-10-03T14:56:48.654051Z",
+        "sha256": "80cbc645af23ac5c12096545c161626960114a1bc10f864760558d3b3e82ba18",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-pp311-pypy311_pp73-win_amd64.whl",
+        "uploaded_at": "2026-10-03T14:56:50.287067Z",
+        "sha256": "063508ce9e0db745f30ab52fc652f4e59efc79c2b74934b3837d5cdb974da620",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2-py3-none-any.whl",
+        "uploaded_at": "2026-10-03T14:56:51.898495Z",
+        "sha256": "6aa59f0ef92e796b2db6f5f26550c4713c0e4036899fadf02f55e2ed4db0b7ae",
+        "yanked": false
+      },
+      {
+        "filename": "websockets-17.2.tar.gz",
+        "uploaded_at": "2026-10-03T14:56:53.500209Z",
+        "sha256": "36c2fb94c990cc2545143b12690e2de6c16300f9dbe5b4f33fa300cf57dc8792",
+        "yanked": false
+      }
+    ]
+  }
+}

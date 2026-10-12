@@ -1,0 +1,202 @@
+{
+  "recorded_at": "2026-10-12T08:20:47.459364+00:00",
+  "algorithm": "SHA-256",
+  "secret_exclusion": [
+    ".runtime/runtime.env",
+    ".runtime/redis.conf"
+  ],
+  "files": [
+    {
+      "path": "docs/evidence/acquisition/compose-version.json",
+      "bytes": 323,
+      "sha256": "5338a8f815dca4e16a86b611f1572f912045e15b4585cd1664901776452aea9d"
+    },
+    {
+      "path": "docs/evidence/acquisition/container-storage-discovery.json",
+      "bytes": 1897,
+      "sha256": "6c4d2372399022bdfcec4233dc3b0489d7c45ee0b0e2ee5921b0659f5393ad97"
+    },
+    {
+      "path": "docs/evidence/acquisition/native-acquisition-ledger.json",
+      "bytes": 3072,
+      "sha256": "228d53a3326f246abf6e0e356b9c224a44bc7923d7b92bd40748a52c168b2333"
+    },
+    {
+      "path": "docs/evidence/acquisition/native-build-config.body",
+      "bytes": 62,
+      "sha256": "8fd424c6c2c222da069f1182f97de5d0eb6540ff755a5adaff43ecea17e6462d"
+    },
+    {
+      "path": "docs/evidence/acquisition/native-build-config.json",
+      "bytes": 1671,
+      "sha256": "76156aab024ee4a7a0a130e2b52c83a26fd26707c9839d6148bd21602b9ebf35"
+    },
+    {
+      "path": "docs/evidence/acquisition/native-build-workflow.body",
+      "bytes": 8129,
+      "sha256": "317caf17cc5f3a517a12b86d887ef89a6ee1b8bc89414009b360c6feaf3a960f"
+    },
+    {
+      "path": "docs/evidence/acquisition/native-build-workflow.json",
+      "bytes": 1690,
+      "sha256": "6825d2cea2137cc8dbdbe0d9398ae1eccd4873d562fb874b8d131d538f07173b"
+    },
+    {
+      "path": "docs/evidence/acquisition/native-dockerfile-readme.body",
+      "bytes": 1817,
+      "sha256": "17e55cb47ccb906c24b4aab24b348ecf313aa3a628c58270f87698172f9ec34c"
+    },
+    {
+      "path": "docs/evidence/acquisition/native-dockerfile-readme.json",
+      "bytes": 1658,
+      "sha256": "a2a9054ea65569af9d4e6a98d96e26ee33a0d53144de46230ca929987b2f3d3a"
+    },
+    {
+      "path": "docs/evidence/acquisition/native-dockerfile-tree.body",
+      "bytes": 12327,
+      "sha256": "96e363646a92f760b539df0fce6d633cc1f4ad3b7bc6cc825893532fb3cdb4c8"
+    },
+    {
+      "path": "docs/evidence/acquisition/native-dockerfile-tree.json",
+      "bytes": 2050,
+      "sha256": "7868a289e159c04849a8a6403c3badcd929ffa49c2d6b33e02f8fdfde4ee10f0"
+    },
+    {
+      "path": "docs/evidence/acquisition/native-dockerfile.body",
+      "bytes": 1846,
+      "sha256": "091f6f203bb56052f5d6e92ae51461781f241c8da02f879c4b423f2344b39a3b"
+    },
+    {
+      "path": "docs/evidence/acquisition/native-dockerfile.json",
+      "bytes": 1694,
+      "sha256": "914c49556ac6ded87eb911c259613cb67dd0d747792f32646a7afb0d337ca1e4"
+    },
+    {
+      "path": "docs/evidence/acquisition/native-dooso-metadata.body",
+      "bytes": 118,
+      "sha256": "4f50e254a719a6b1b06b529bdaa08980e4acf0878aad0090cba7771f6ebdf0b9"
+    },
+    {
+      "path": "docs/evidence/acquisition/native-dooso-metadata.json",
+      "bytes": 1744,
+      "sha256": "9567257bb5f6ccfea6255b5b852726222913aff26e97d6b4dd2da15f64bb513e"
+    },
+    {
+      "path": "docs/evidence/acquisition/native-github-repositories.body",
+      "bytes": 240279,
+      "sha256": "7bad9855eee75bcec4784d16e67e6261950a353074e0dab48184401c8551ed08"
+    },
+    {
+      "path": "docs/evidence/acquisition/native-github-repositories.json",
+      "bytes": 1989,
+      "sha256": "e45953a1dc36b8e3a212569c47ed8673ba02df14da9f1fce2a0ea99fc06d62d5"
+    },
+    {
+      "path": "docs/evidence/acquisition/native-official-offline.body",
+      "bytes": 48506,
+      "sha256": "5f1cd3cb85b3127bcc23106889b6afa389fef3c14d39b709d06a24661214eeaf"
+    },
+    {
+      "path": "docs/evidence/acquisition/native-official-offline.json",
+      "bytes": 666,
+      "sha256": "d5484df7894e133737efa8f5fb032aaae82da379edea688a06d620431a84b38b"
+    },
+    {
+      "path": "docs/evidence/acquisition/native-registry-alternate.json",
+      "bytes": 241,
+      "sha256": "cdbede0e2dd6195fed6113be7767385751c7d95f27dc224391928abcff79cec9"
+    },
+    {
+      "path": "docs/evidence/acquisition/native-registry-challenge.json",
+      "bytes": 360,
+      "sha256": "e061d752fbd1765a43649e327d6daa0dfd26c155fab8222e195d41abd696fe10"
+    },
+    {
+      "path": "docs/evidence/acquisition/native-repository-releases.body",
+      "bytes": 2,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "path": "docs/evidence/acquisition/native-repository-releases.json",
+      "bytes": 1976,
+      "sha256": "9093325997526118b1d942d945dacc1694b30e8c95034e639a2ce28bcf7a28cb"
+    },
+    {
+      "path": "docs/evidence/acquisition/native-wsl-registry-challenge.json",
+      "bytes": 1230,
+      "sha256": "51d3834d052647282be40c00596252f2c7f9abe80fe9c09aec14b51ab9410a20"
+    },
+    {
+      "path": "docs/evidence/acquisition/runtime-image-identities.json",
+      "bytes": 9178,
+      "sha256": "76e2cb3577bfedb557032d25c287ee3a66835e77d70d2e8da712540f76066ded"
+    },
+    {
+      "path": "docs/evidence/acquisition/runtime-plan.json",
+      "bytes": 5485,
+      "sha256": "b50ca296e14612565bbb97836b7a63c738077d37f821439a3e188335f34fb07b"
+    },
+    {
+      "path": "docs/evidence/acquisition/wsl-container-inventory.json",
+      "bytes": 18099,
+      "sha256": "028a2047b5ab5d7a57b407e3dc02161503cd68c219bb0e4674ae06a012479cc3"
+    },
+    {
+      "path": "docs/evidence/acquisition/wsl-discovery.json",
+      "bytes": 314,
+      "sha256": "96dac6dc389624c90e9c61663bdbdde76042cc2727158bd15eec6d0d826c77e0"
+    },
+    {
+      "path": "docs/evidence/acquisition/wsl-owned-ports.json",
+      "bytes": 1560,
+      "sha256": "2311221379b54e61602c009282c2ee48bfae158e7da09ff0b2980acebb96696d"
+    },
+    {
+      "path": "docs/evidence/acquisition/wsl-redis-binary.json",
+      "bytes": 387,
+      "sha256": "5ecae66f91945673bc794f39073f4f10366fb0588e9ac484a88a62724c7518a0"
+    },
+    {
+      "path": "docs/evidence/acquisition/wsl-runtime-inventory.json",
+      "bytes": 5204,
+      "sha256": "e8dfaa2bec747c9355be994a19dfcb4bcf4a281445d6cc8b3f74a15d1d891efb"
+    },
+    {
+      "path": ".runtime/.gitignore",
+      "bytes": 28,
+      "sha256": "f6751c5119e778f02ae3776f7ab1485dad5cd42ed5268e2f29c6a748f1b99771"
+    },
+    {
+      "path": ".runtime/compose.yaml",
+      "bytes": 1468,
+      "sha256": "ddc0098ce187936f92c740a4175aeaf1216058d28e73ce28c025479d214845d2"
+    },
+    {
+      "path": "docs/2026101209-隔离运行依赖与原生制品获取-feat.md",
+      "bytes": 13536,
+      "sha256": "94d1f053ac2b6f6f4772956a672a466afa9bbab0db83ed35803940335139a07f"
+    }
+  ],
+  "source_inputs": [
+    {
+      "path": "docs/evidence/backend/native-boundary-contract.json",
+      "bytes": 47072,
+      "sha256": "f540c445bbe5f2824e15d73c5aeb817034c3e32196e680afc1b1eb67f807646f"
+    },
+    {
+      "path": "docs/evidence/backend/native-image-acquisition.json",
+      "bytes": 308,
+      "sha256": "2cbbaa40dd4aa31d4e733798487995da24e78363c7041c031f179c45fb798d42"
+    },
+    {
+      "path": "docs/2026101205-Windows环境时间与验收基线-feat.md",
+      "bytes": 15798,
+      "sha256": "019117b1766807bb4f2f771c2f6dbd7074120000e9be5eb2e8872fc9aace3568"
+    },
+    {
+      "path": "docs/2026101204-官方协议版本与许可核验-feat.md",
+      "bytes": 25521,
+      "sha256": "e334d6aa5f82ac45404a45f76a338cadece232c7d49aec93099c4b898b268a38"
+    }
+  ]
+}

@@ -1,0 +1,2645 @@
+{
+  "basis": "Static source derivation; not a live schema dump or database test",
+  "counts": {
+    "tables": 77,
+    "columns": 716,
+    "indexes_including_primary": 258,
+    "foreign_keys": 8,
+    "reviewed_migration_up_methods": 221,
+    "reviewed_model_files": 77
+  },
+  "final_table_coverage": [
+    {
+      "table": "file_contents",
+      "columns": [
+        "id",
+        "fid",
+        "content",
+        "text",
+        "size",
+        "userid",
+        "created_at",
+        "updated_at",
+        "deleted_at"
+      ],
+      "primary_key": [
+        "id"
+      ],
+      "indexes": [
+        "PRIMARY",
+        "file_contents_fid_index",
+        "file_contents_userid_index"
+      ],
+      "foreign_keys": [],
+      "source": {
+        "source": "database/migrations/2021_06_25_182631_create_file_contents_table.php",
+        "sha256": "510f3bb14bb1f8f0482856c79fe7756a3aebf368d2590fd8836a5795c15af295",
+        "start_line": 16,
+        "end_line": 16
+      },
+      "models": [
+        "FileContent"
+      ]
+    },
+    {
+      "table": "files",
+      "columns": [
+        "id",
+        "pid",
+        "pids",
+        "cid",
+        "name",
+        "type",
+        "ext",
+        "size",
+        "hash",
+        "userid",
+        "share",
+        "guest_access",
+        "pshare",
+        "created_id",
+        "created_at",
+        "updated_at",
+        "deleted_at"
+      ],
+      "primary_key": [
+        "id"
+      ],
+      "indexes": [
+        "PRIMARY",
+        "files_pid_index",
+        "files_cid_index",
+        "files_hash_index"
+      ],
+      "foreign_keys": [],
+      "source": {
+        "source": "database/migrations/2021_06_25_182631_create_files_table.php",
+        "sha256": "9b74152589f9c860d4e589206c142f8e83530d53160ecf59feb45e4bd545bb2f",
+        "start_line": 16,
+        "end_line": 16
+      },
+      "models": [
+        "File"
+      ]
+    },
+    {
+      "table": "project_columns",
+      "columns": [
+        "id",
+        "project_id",
+        "name",
+        "color",
+        "sort",
+        "created_at",
+        "updated_at",
+        "deleted_at"
+      ],
+      "primary_key": [
+        "id"
+      ],
+      "indexes": [
+        "PRIMARY"
+      ],
+      "foreign_keys": [],
+      "source": {
+        "source": "database/migrations/2021_06_25_182631_create_project_columns_table.php",
+        "sha256": "a0f5479e0bcbec0aa6113e33bec6779fa40bdacac6d6f7d885aa59b8edf0bfbc",
+        "start_line": 16,
+        "end_line": 16
+      },
+      "models": [
+        "ProjectColumn"
+      ]
+    },
+    {
+      "table": "project_logs",
+      "columns": [
+        "id",
+        "project_id",
+        "column_id",
+        "task_id",
+        "task_only",
+        "userid",
+        "detail",
+        "record",
+        "created_at",
+        "updated_at"
+      ],
+      "primary_key": [
+        "id"
+      ],
+      "indexes": [
+        "PRIMARY",
+        "project_logs_project_id_index",
+        "project_logs_task_id_index",
+        "project_logs_task_only_index"
+      ],
+      "foreign_keys": [],
+      "source": {
+        "source": "database/migrations/2021_06_25_182631_create_project_logs_table.php",
+        "sha256": "8a63fc1406f79309554f69f95008c4830c66f76a973d7858dcf958dbe24f4def",
+        "start_line": 16,
+        "end_line": 16
+      },
+      "models": [
+        "ProjectLog"
+      ]
+    },
+    {
+      "table": "project_task_contents",
+      "columns": [
+        "id",
+        "project_id",
+        "task_id",
+        "userid",
+        "desc",
+        "content",
+        "created_at",
+        "updated_at"
+      ],
+      "primary_key": [
+        "id"
+      ],
+      "indexes": [
+        "PRIMARY",
+        "project_task_contents_project_id_index",
+        "project_task_contents_task_id_index"
+      ],
+      "foreign_keys": [],
+      "source": {
+        "source": "database/migrations/2021_06_25_182631_create_project_task_contents_table.php",
+        "sha256": "c41050b8288e01c71738fa1facadd3b42fb8a4da2b1a3732c31e9f10972dc09a",
+        "start_line": 16,
+        "end_line": 16
+      },
+      "models": [
+        "ProjectTaskContent"
+      ]
+    },
+    {
+      "table": "project_task_files",
+      "columns": [
+        "id",
+        "project_id",
+        "task_id",
+        "name",
+        "size",
+        "ext",
+        "path",
+        "thumb",
+        "userid",
+        "download",
+        "created_at",
+        "updated_at"
+      ],
+      "primary_key": [
+        "id"
+      ],
+      "indexes": [
+        "PRIMARY",
+        "project_task_files_project_id_index",
+        "project_task_files_task_id_index"
+      ],
+      "foreign_keys": [],
+      "source": {
+        "source": "database/migrations/2021_06_25_182631_create_project_task_files_table.php",
+        "sha256": "27604282c1a3379058c40d23d7ec8497c723ce1f135200062d21d0c5a57a208f",
+        "start_line": 16,
+        "end_line": 16
+      },
+      "models": [
+        "ProjectTaskFile"
+      ]
+    },
+    {
+      "table": "project_task_tags",
+      "columns": [
+        "id",
+        "project_id",
+        "task_id",
+        "name",
+        "color",
+        "created_at",
+        "updated_at"
+      ],
+      "primary_key": [
+        "id"
+      ],
+      "indexes": [
+        "PRIMARY",
+        "project_task_tags_project_id_index",
+        "project_task_tags_task_id_index"
+      ],
+      "foreign_keys": [],
+      "source": {
+        "source": "database/migrations/2021_06_25_182631_create_project_task_tags_table.php",
+        "sha256": "de7bb5476483c46edc19849a7059720bc1eb406f11ff0c92f1af9e9e2200729c",
+        "start_line": 16,
+        "end_line": 16
+      },
+      "models": [
+        "ProjectTaskTag"
+      ]
+    },
+    {
+      "table": "project_task_users",
+      "columns": [
+        "id",
+        "project_id",
+        "task_id",
+        "task_pid",
+        "userid",
+        "owner",
+        "created_at",
+        "updated_at"
+      ],
+      "primary_key": [
+        "id"
+      ],
+      "indexes": [
+        "PRIMARY",
+        "project_task_users_userid_index",
+        "project_task_users_task_id_index",
+        "project_task_users_task_pid_index",
+        "project_task_users_task_id_userid_index",
+        "project_task_users_owner_index",
+        "idx_ptu_task_owner_user",
+        "idx_ptu_user_owner_task"
+      ],
+      "foreign_keys": [],
+      "source": {
+        "source": "database/migrations/2021_06_25_182631_create_project_task_users_table.php",
+        "sha256": "7d4cabb760cbf385b4727919af5441dfa2cca193e9c2568fc3768bd743f2bd84",
+        "start_line": 16,
+        "end_line": 16
+      },
+      "models": [
+        "ProjectTaskUser"
+      ]
+    },
+    {
+      "table": "project_tasks",
+      "columns": [
+        "id",
+        "parent_id",
+        "project_id",
+        "column_id",
+        "dialog_id",
+        "flow_item_id",
+        "flow_item_name",
+        "name",
+        "color",
+        "desc",
+        "start_at",
+        "end_at",
+        "archived_at",
+        "archived_userid",
+        "archived_follow",
+        "complete_at",
+        "userid",
+        "visibility",
+        "p_level",
+        "p_name",
+        "p_color",
+        "sort",
+        "loop",
+        "loop_at",
+        "created_at",
+        "updated_at",
+        "deleted_at",
+        "deleted_userid"
+      ],
+      "primary_key": [
+        "id"
+      ],
+      "indexes": [
+        "PRIMARY",
+        "project_tasks_parent_id_deleted_at_index",
+        "project_tasks_project_id_index",
+        "project_tasks_visibility_index",
+        "project_tasks_parent_id_index",
+        "project_tasks_dialog_id_index",
+        "project_tasks_userid_index",
+        "project_tasks_project_id_archived_at_deleted_at_id_index",
+        "idx_pt_dashboard_due",
+        "idx_pt_dashboard_priority"
+      ],
+      "foreign_keys": [],
+      "source": {
+        "source": "database/migrations/2021_06_25_182631_create_project_tasks_table.php",
+        "sha256": "372400939a4cda93bd3bb8f6935b0601191c264109c25cfae7194c5050ee6106",
+        "start_line": 16,
+        "end_line": 16
+      },
+      "models": [
+        "ProjectTask"
+      ]
+    },
+    {
+      "table": "project_users",
+      "columns": [
+        "id",
+        "project_id",
+        "userid",
+        "owner",
+        "top_at",
+        "sort",
+        "created_at",
+        "updated_at"
+      ],
+      "primary_key": [
+        "id"
+      ],
+      "indexes": [
+        "PRIMARY",
+        "project_users_userid_index",
+        "project_users_project_id_index",
+        "project_users_project_id_userid_index",
+        "project_users_owner_index",
+        "project_users_userid_project_id_index"
+      ],
+      "foreign_keys": [],
+      "source": {
+        "source": "database/migrations/2021_06_25_182631_create_project_users_table.php",
+        "sha256": "27619528de6121481795595fdc5460fd8801795c32f6826e3a84dd413751fa40",
+        "start_line": 16,
+        "end_line": 16
+      },
+      "models": [
+        "ProjectUser"
+      ]
+    },
+    {
+      "table": "projects",
+      "columns": [
+        "id",
+        "name",
+        "desc",
+        "userid",
+        "personal",
+        "archive_method",
+        "archive_days",
+        "ai_auto_analyze",
+        "task_template_share",
+        "department_owner_view",
+        "user_simple",
+        "dialog_id",
+        "archived_at",
+        "archived_userid",
+        "created_at",
+        "updated_at",
+        "deleted_at"
+      ],
+      "primary_key": [
+        "id"
+      ],
+      "indexes": [
+        "PRIMARY",
+        "projects_userid_index",
+        "projects_dialog_id_index",
+        "projects_archive_method_index"
+      ],
+      "foreign_keys": [],
+      "source": {
+        "source": "database/migrations/2021_06_25_182631_create_projects_table.php",
+        "sha256": "06d7467b824f8384913e1ab6fefa03b2a7f8f23920d51ddb5b4c1ba70a8d2c4d",
+        "start_line": 16,
+        "end_line": 16
+      },
+      "models": [
+        "Project"
+      ]
+    },
+    {
+      "table": "settings",
+      "columns": [
+        "id",
+        "name",
+        "desc",
+        "setting",
+        "created_at",
+        "updated_at"
+      ],
+      "primary_key": [
+        "id"
+      ],
+      "indexes": [
+        "PRIMARY",
+        "pre_setting_title_index"
+      ],
+      "foreign_keys": [],
+      "source": {
+        "source": "database/migrations/2021_06_25_182631_create_settings_table.php",
+        "sha256": "71428dd55018b3524c5c51ec663e2e4da021d8db6be06112e801e907734c6f71",
+        "start_line": 16,
+        "end_line": 16
+      },
+      "models": [
+        "Setting"
+      ]
+    },
+    {
+      "table": "tmps",
+      "columns": [
+        "id",
+        "name",
+        "value",
+        "content",
+        "created_at",
+        "updated_at"
+      ],
+      "primary_key": [
+        "id"
+      ],
+      "indexes": [
+        "PRIMARY",
+        "pre_tmp_title_index"
+      ],
+      "foreign_keys": [],
+      "source": {
+        "source": "database/migrations/2021_06_25_182631_create_tmps_table.php",
+        "sha256": "4bfe38d5ab18e46f44cdd142775c90c61f8f950c11a985f12a01c14d47a8c2bc",
+        "start_line": 16,
+        "end_line": 16
+      },
+      "models": [
+        "Tmp"
+      ]
+    },
+    {
+      "table": "users",
+      "columns": [
+        "userid",
+        "identity",
+        "department",
+        "az",
+        "pinyin",
+        "email",
+        "tel",
+        "nickname",
+        "profession",
+        "birthday",
+        "address",
+        "introduction",
+        "userimg",
+        "encrypt",
+        "password",
+        "changepass",
+        "login_num",
+        "last_ip",
+        "last_at",
+        "line_ip",
+        "line_at",
+        "task_dialog_id",
+        "created_ip",
+        "disable_at",
+        "email_verity",
+        "bot",
+        "lang",
+        "created_at",
+        "updated_at"
+      ],
+      "primary_key": [
+        "userid"
+      ],
+      "indexes": [
+        "PRIMARY",
+        "users_email_unique"
+      ],
+      "foreign_keys": [],
+      "source": {
+        "source": "database/migrations/2021_06_25_182631_create_users_table.php",
+        "sha256": "75ac6b6da7f38e24416121dc55f415afd4fde5d800ac5e16c116083dc0c6c48b",
+        "start_line": 16,
+        "end_line": 16
+      },
+      "models": [
+        "User"
+      ]
+    },
+    {
+      "table": "web_socket_dialog_msg_reads",
+      "columns": [
+        "id",
+        "dialog_id",
+        "msg_id",
+        "userid",
+        "mention",
+        "silence",
+        "email",
+        "after",
+        "dot",
+        "read_at"
+      ],
+      "primary_key": [
+        "id"
+      ],
+      "indexes": [
+        "PRIMARY",
+        "web_socket_dialog_msg_reads_msg_id_userid_unique",
+        "web_socket_dialog_msg_reads_userid_read_at_dialog_id_index",
+        "web_socket_dialog_msg_reads_dialog_id_index",
+        "IDEX_dialog_id_userid_read_at_msg_id",
+        "idx_ws_msg_reads_userid_silence_read_at",
+        "idx_ws_msg_reads_dialog_user_mention_read_at"
+      ],
+      "foreign_keys": [],
+      "source": {
+        "source": "database/migrations/2021_06_25_182631_create_web_socket_dialog_msg_reads_table.php",
+        "sha256": "c372ed555816c2c9410ddd5eae6f08706d39ba075bd1e406b14cc8e778c6fcb9",
+        "start_line": 16,
+        "end_line": 16
+      },
+      "models": [
+        "WebSocketDialogMsgRead"
+      ]
+    },
+    {
+      "table": "web_socket_dialog_msgs",
+      "columns": [
+        "id",
+        "dialog_id",
+        "dialog_type",
+        "session_id",
+        "userid",
+        "type",
+        "mtype",
+        "msg",
+        "emoji",
+        "key",
+        "read",
+        "send",
+        "tag",
+        "todo",
+        "link",
+        "modify",
+        "bot",
+        "reply_num",
+        "reply_id",
+        "forward_id",
+        "forward_num",
+        "created_at",
+        "updated_at",
+        "deleted_at"
+      ],
+      "primary_key": [
+        "id"
+      ],
+      "indexes": [
+        "PRIMARY",
+        "web_socket_dialog_msgs_dialog_id_index",
+        "web_socket_dialog_msgs_dialog_type_index",
+        "web_socket_dialog_msgs_userid_index",
+        "web_socket_dialog_msgs_deleted_at_index",
+        "web_socket_dialog_msgs_dialog_id_deleted_at_index",
+        "web_socket_dialog_msgs_key_fulltext",
+        "web_socket_dialog_msgs_bot_index",
+        "web_socket_dialog_msgs_session_id_index",
+        "web_socket_dialog_msgs_dialog_id_deleted_at_id_index",
+        "web_socket_dialog_msgs_reply_id_deleted_at_index",
+        "idx_dialog_file_lists"
+      ],
+      "foreign_keys": [],
+      "source": {
+        "source": "database/migrations/2021_06_25_182631_create_web_socket_dialog_msgs_table.php",
+        "sha256": "f34464a5a01a801d80a5dead224aa8ddaac3e82fd41406e0218a50e1f207df76",
+        "start_line": 16,
+        "end_line": 16
+      },
+      "models": [
+        "WebSocketDialogMsg"
+      ]
+    },
+    {
+      "table": "web_socket_dialog_users",
+      "columns": [
+        "id",
+        "dialog_id",
+        "userid",
+        "role",
+        "bot",
+        "top_at",
+        "last_at",
+        "mark_unread",
+        "silence",
+        "hide",
+        "inviter",
+        "important",
+        "color",
+        "created_at",
+        "updated_at"
+      ],
+      "primary_key": [
+        "id"
+      ],
+      "indexes": [
+        "PRIMARY",
+        "web_socket_dialog_users_dialog_id_index",
+        "web_socket_dialog_users_userid_dialog_id_index",
+        "web_socket_dialog_users_bot_index",
+        "idx_dialog_role"
+      ],
+      "foreign_keys": [],
+      "source": {
+        "source": "database/migrations/2021_06_25_182631_create_web_socket_dialog_users_table.php",
+        "sha256": "9de6b8f655f4f480d6c91a509bb8d2fd28ad1de4f0250fd70c46d17a91c154cf",
+        "start_line": 16,
+        "end_line": 16
+      },
+      "models": [
+        "WebSocketDialogUser"
+      ]
+    },
+    {
+      "table": "web_socket_dialogs",
+      "columns": [
+        "id",
+        "type",
+        "group_type",
+        "session_id",
+        "name",
+        "avatar",
+        "owner_id",
+        "link_id",
+        "top_userid",
+        "top_msg_id",
+        "created_at",
+        "updated_at",
+        "deleted_at"
+      ],
+      "primary_key": [
+        "id"
+      ],
+      "indexes": [
+        "PRIMARY",
+        "web_socket_dialogs_owner_id_index",
+        "web_socket_dialogs_link_id_index",
+        "web_socket_dialogs_deleted_at_index",
+        "web_socket_dialogs_session_id_index"
+      ],
+      "foreign_keys": [],
+      "source": {
+        "source": "database/migrations/2021_06_25_182631_create_web_socket_dialogs_table.php",
+        "sha256": "156fa5c74dfae8926ce7d6d67950b55ac4ae621a858e6a24029215e8ce45d53d",
+        "start_line": 16,
+        "end_line": 16
+      },
+      "models": [
+        "WebSocketDialog"
+      ]
+    },
+    {
+      "table": "web_socket_tmp_msgs",
+      "columns": [
+        "id",
+        "md5",
+        "msg",
+        "send",
+        "create_id",
+        "created_at",
+        "updated_at"
+      ],
+      "primary_key": [
+        "id"
+      ],
+      "indexes": [
+        "PRIMARY",
+        "pre_ws_tmp_msgs_md5_unique",
+        "pre_ws_tmp_msgs_send_index",
+        "pre_ws_tmp_msgs_create_id_index"
+      ],
+      "foreign_keys": [],
+      "source": {
+        "source": "database/migrations/2021_06_25_182631_create_web_socket_tmp_msgs_table.php",
+        "sha256": "7af0d7d9202d1ed5df9997dad9f25e20b5d7fac0f6923627e9b63ed5ae7803b0",
+        "start_line": 16,
+        "end_line": 16
+      },
+      "models": [
+        "WebSocketTmpMsg"
+      ]
+    },
+    {
+      "table": "web_sockets",
+      "columns": [
+        "id",
+        "key",
+        "fd",
+        "path",
+        "platform",
+        "userid",
+        "created_at",
+        "updated_at"
+      ],
+      "primary_key": [
+        "id"
+      ],
+      "indexes": [
+        "PRIMARY",
+        "pre_ws_key_unique",
+        "pre_ws_userid_index"
+      ],
+      "foreign_keys": [],
+      "source": {
+        "source": "database/migrations/2021_06_25_182631_create_web_sockets_table.php",
+        "sha256": "dd13c8f6569bb7e803ce91743c362661a759f746f213171091156230b2c8adaa",
+        "start_line": 16,
+        "end_line": 16
+      },
+      "models": [
+        "WebSocket"
+      ]
+    },
+    {
+      "table": "file_users",
+      "columns": [
+        "id",
+        "file_id",
+        "userid",
+        "permission",
+        "created_at",
+        "updated_at"
+      ],
+      "primary_key": [
+        "id"
+      ],
+      "indexes": [
+        "PRIMARY",
+        "file_users_file_id_index",
+        "file_users_userid_index"
+      ],
+      "foreign_keys": [],
+      "source": {
+        "source": "database/migrations/2021_07_07_085317_create_file_users_table.php",
+        "sha256": "6ce9d78d951dd7ea2eae9511570d1d3671671004065eaf13eea52ad0625a0cb2",
+        "start_line": 16,
+        "end_line": 16
+      },
+      "models": [
+        "FileUser"
+      ]
+    },
+    {
+      "table": "project_invites",
+      "columns": [
+        "id",
+        "project_id",
+        "num",
+        "code",
+        "created_at",
+        "updated_at"
+      ],
+      "primary_key": [
+        "id"
+      ],
+      "indexes": [
+        "PRIMARY"
+      ],
+      "foreign_keys": [],
+      "source": {
+        "source": "database/migrations/2021_12_27_121827_create_project_invites_table.php",
+        "sha256": "75e6b54932c8321fa49b82fac0423fb30057d2616ef1cddf11eb1ce8f5a39586",
+        "start_line": 16,
+        "end_line": 16
+      },
+      "models": [
+        "ProjectInvite"
+      ]
+    },
+    {
+      "table": "file_links",
+      "columns": [
+        "id",
+        "file_id",
+        "num",
+        "code",
+        "userid",
+        "created_at",
+        "updated_at"
+      ],
+      "primary_key": [
+        "id"
+      ],
+      "indexes": [
+        "PRIMARY",
+        "file_links_file_id_index",
+        "file_links_userid_index"
+      ],
+      "foreign_keys": [],
+      "source": {
+        "source": "database/migrations/2021_12_29_170103_create_file_links_table.php",
+        "sha256": "249f2db21559e9e537de62e334fb6fe71b81677dd5f6d0ded7a788003a2837e5",
+        "start_line": 16,
+        "end_line": 16
+      },
+      "models": [
+        "FileLink"
+      ]
+    },
+    {
+      "table": "reports",
+      "columns": [
+        "id",
+        "created_at",
+        "updated_at",
+        "title",
+        "type",
+        "userid",
+        "content",
+        "sign"
+      ],
+      "primary_key": [
+        "id"
+      ],
+      "indexes": [
+        "PRIMARY",
+        "reports_userid_created_at_index"
+      ],
+      "foreign_keys": [],
+      "source": {
+        "source": "database/migrations/2021_12_30_155338_create_reports_table.php",
+        "sha256": "b1d006bca5aba2ec8744fbd0555e8a2f3f277cf65ba06480bf64b9ee0ceeb413",
+        "start_line": 19,
+        "end_line": 19
+      },
+      "models": [
+        "Report"
+      ]
+    },
+    {
+      "table": "report_receives",
+      "columns": [
+        "id",
+        "rid",
+        "receive_at",
+        "userid",
+        "read"
+      ],
+      "primary_key": [
+        "id"
+      ],
+      "indexes": [
+        "PRIMARY",
+        "report_receives_userid_receive_time_index",
+        "report_receives_userid_read_rid_index"
+      ],
+      "foreign_keys": [],
+      "source": {
+        "source": "database/migrations/2021_12_30_162019_create_report_receives_table.php",
+        "sha256": "3101e72f236dde6e13d3f4a71705092a2eceda7aacd35a20060d68b05625752c",
+        "start_line": 19,
+        "end_line": 19
+      },
+      "models": [
+        "ReportReceive"
+      ]
+    },
+    {
+      "table": "project_flow_items",
+      "columns": [
+        "id",
+        "project_id",
+        "flow_id",
+        "name",
+        "status",
+        "color",
+        "turns",
+        "userids",
+        "usertype",
+        "userlimit",
+        "columnid",
+        "sort",
+        "created_at",
+        "updated_at"
+      ],
+      "primary_key": [
+        "id"
+      ],
+      "indexes": [
+        "PRIMARY"
+      ],
+      "foreign_keys": [],
+      "source": {
+        "source": "database/migrations/2022_01_08_171816_create_project_flow_items_table.php",
+        "sha256": "a423c3d1f32e205db257c0aade57a56bf9386045758a19360ad4c08cd652db83",
+        "start_line": 16,
+        "end_line": 16
+      },
+      "models": [
+        "ProjectFlowItem"
+      ]
+    },
+    {
+      "table": "project_flows",
+      "columns": [
+        "id",
+        "project_id",
+        "name",
+        "created_at",
+        "updated_at"
+      ],
+      "primary_key": [
+        "id"
+      ],
+      "indexes": [
+        "PRIMARY"
+      ],
+      "foreign_keys": [],
+      "source": {
+        "source": "database/migrations/2022_01_08_171816_create_project_flows_table.php",
+        "sha256": "5b7d64b5dc227a57951fd68e88ff86147b4bcef9f22851705eeeedebb9504cfd",
+        "start_line": 16,
+        "end_line": 16
+      },
+      "models": [
+        "ProjectFlow"
+      ]
+    },
+    {
+      "table": "project_task_flow_changes",
+      "columns": [
+        "id",
+        "task_id",
+        "userid",
+        "before_flow_item_id",
+        "before_flow_item_name",
+        "after_flow_item_id",
+        "after_flow_item_name",
+        "created_at",
+        "updated_at"
+      ],
+      "primary_key": [
+        "id"
+      ],
+      "indexes": [
+        "PRIMARY",
+        "project_task_flow_changes_userid_index",
+        "project_task_flow_changes_task_id_index"
+      ],
+      "foreign_keys": [],
+      "source": {
+        "source": "database/migrations/2022_02_27_112217_create_project_task_flow_changes_table.php",
+        "sha256": "d832b2fbb2e88fd4b132c9eab4684c32056d76e36ccc45e4730b1cbc0845b17c",
+        "start_line": 16,
+        "end_line": 16
+      },
+      "models": [
+        "ProjectTaskFlowChange"
+      ]
+    },
+    {
+      "table": "user_email_verifications",
+      "columns": [
+        "id",
+        "userid",
+        "code",
+        "email",
+        "status",
+        "type",
+        "created_at",
+        "updated_at"
+      ],
+      "primary_key": [
+        "id"
+      ],
+      "indexes": [
+        "PRIMARY"
+      ],
+      "foreign_keys": [],
+      "source": {
+        "source": "database/migrations/2022_03_02_172504_create_user_email_verifications_table.php",
+        "sha256": "ea5590fb19d920e735db729d10eb6fadf365e8ff67c73c44fd77b8e44c040c3c",
+        "start_line": 16,
+        "end_line": 16
+      },
+      "models": [
+        "UserEmailVerification"
+      ]
+    },
+    {
+      "table": "user_transfers",
+      "columns": [
+        "id",
+        "original_userid",
+        "new_userid",
+        "created_at",
+        "updated_at"
+      ],
+      "primary_key": [
+        "id"
+      ],
+      "indexes": [
+        "PRIMARY"
+      ],
+      "foreign_keys": [],
+      "source": {
+        "source": "database/migrations/2022_04_13_195604_create_user_transfers_table.php",
+        "sha256": "3eaf67c5311299b8e694062e3dfde0c9e77e1c13264fa920b21529a0835fa551",
+        "start_line": 16,
+        "end_line": 16
+      },
+      "models": [
+        "UserTransfer"
+      ]
+    },
+    {
+      "table": "umeng_alias",
+      "columns": [
+        "id",
+        "userid",
+        "alias",
+        "platform",
+        "device",
+        "device_hash",
+        "version",
+        "ua",
+        "is_notified",
+        "created_at",
+        "updated_at"
+      ],
+      "primary_key": [
+        "id"
+      ],
+      "indexes": [
+        "PRIMARY",
+        "umeng_alias_device_hash_index"
+      ],
+      "foreign_keys": [],
+      "source": {
+        "source": "database/migrations/2022_05_13_065531_create_umeng_alias_table.php",
+        "sha256": "a81ee7da6a5cf2ac48781661468226e3fdb7e6da3eb98c1bc0944f71abf15958",
+        "start_line": 16,
+        "end_line": 16
+      },
+      "models": [
+        "UmengAlias"
+      ]
+    },
+    {
+      "table": "meetings",
+      "columns": [
+        "id",
+        "meetingid",
+        "name",
+        "channel",
+        "userid",
+        "created_at",
+        "updated_at",
+        "end_at",
+        "deleted_at"
+      ],
+      "primary_key": [
+        "id"
+      ],
+      "indexes": [
+        "PRIMARY",
+        "meetings_meetingid_unique"
+      ],
+      "foreign_keys": [],
+      "source": {
+        "source": "database/migrations/2022_06_01_142823_create_meetings_table.php",
+        "sha256": "e32a407ba4527f5851eb081e807b8df4989aa11566dca388c384b67a46edb289",
+        "start_line": 16,
+        "end_line": 16
+      },
+      "models": [
+        "Meeting"
+      ]
+    },
+    {
+      "table": "web_socket_dialog_msg_todos",
+      "columns": [
+        "id",
+        "dialog_id",
+        "msg_id",
+        "userid",
+        "done_at",
+        "remind_at",
+        "reminded_at"
+      ],
+      "primary_key": [
+        "id"
+      ],
+      "indexes": [
+        "PRIMARY",
+        "web_socket_dialog_msg_todos_dialog_id_userid_done_at_index",
+        "web_socket_dialog_msg_todos_msg_id_index",
+        "web_socket_dialog_msg_todos_userid_index",
+        "idx_todo_remind"
+      ],
+      "foreign_keys": [],
+      "source": {
+        "source": "database/migrations/2022_07_07_065607_create_web_socket_dialog_msg_todos_table.php",
+        "sha256": "954ef0f75dd1cea7b9a4bd4898d1f5951550752b2d4a6105188167d188fbfcc0",
+        "start_line": 16,
+        "end_line": 16
+      },
+      "models": [
+        "WebSocketDialogMsgTodo"
+      ]
+    },
+    {
+      "table": "user_deletes",
+      "columns": [
+        "id",
+        "operator",
+        "userid",
+        "email",
+        "reason",
+        "cache",
+        "created_at",
+        "updated_at"
+      ],
+      "primary_key": [
+        "id"
+      ],
+      "indexes": [
+        "PRIMARY"
+      ],
+      "foreign_keys": [],
+      "source": {
+        "source": "database/migrations/2022_07_13_145504_create_user_deletes_table.php",
+        "sha256": "6a15691c4bcbc520369f83f0b78e298ab8a0ecfc775b03a185848292be86b1c4",
+        "start_line": 16,
+        "end_line": 16
+      },
+      "models": [
+        "UserDelete"
+      ]
+    },
+    {
+      "table": "project_task_push_logs",
+      "columns": [
+        "id",
+        "userid",
+        "task_id",
+        "type",
+        "created_at",
+        "updated_at",
+        "deleted_at"
+      ],
+      "primary_key": [
+        "id"
+      ],
+      "indexes": [
+        "PRIMARY",
+        "project_task_push_logs_userid_index",
+        "project_task_push_logs_task_id_index"
+      ],
+      "foreign_keys": [],
+      "source": {
+        "source": "database/migrations/2022_11_09_144359_create_project_task_push_logs_table.php",
+        "sha256": "108b377c198b778e8cedeec9ceb5d2def12111fa5b5bfd04edb715035aa74c7e",
+        "start_line": 16,
+        "end_line": 16
+      },
+      "models": [
+        "ProjectTaskPushLog"
+      ]
+    },
+    {
+      "table": "task_workers",
+      "columns": [
+        "id",
+        "args",
+        "error",
+        "start_at",
+        "end_at",
+        "created_at",
+        "updated_at",
+        "deleted_at"
+      ],
+      "primary_key": [
+        "id"
+      ],
+      "indexes": [
+        "PRIMARY",
+        "task_workers_deleted_at_index"
+      ],
+      "foreign_keys": [],
+      "source": {
+        "source": "database/migrations/2022_11_16_102059_create_task_workers_table.php",
+        "sha256": "42f9c90d841c5426212a46d4b3f273be777fc65b04574a892c75fe1ee2aa36f4",
+        "start_line": 16,
+        "end_line": 16
+      },
+      "models": [
+        "TaskWorker"
+      ]
+    },
+    {
+      "table": "user_departments",
+      "columns": [
+        "id",
+        "name",
+        "dialog_id",
+        "parent_id",
+        "owner_userid",
+        "created_at",
+        "updated_at"
+      ],
+      "primary_key": [
+        "id"
+      ],
+      "indexes": [
+        "PRIMARY"
+      ],
+      "foreign_keys": [],
+      "source": {
+        "source": "database/migrations/2022_11_16_221259_create_user_departments_table.php",
+        "sha256": "be5645edb8d3dc29ad95ad847f29d3d10c560c9f91971a0e7d47b373343b82a2",
+        "start_line": 16,
+        "end_line": 16
+      },
+      "models": [
+        "UserDepartment"
+      ]
+    },
+    {
+      "table": "user_checkin_macs",
+      "columns": [
+        "id",
+        "userid",
+        "mac",
+        "remark",
+        "created_at",
+        "updated_at"
+      ],
+      "primary_key": [
+        "id"
+      ],
+      "indexes": [
+        "PRIMARY"
+      ],
+      "foreign_keys": [],
+      "source": {
+        "source": "database/migrations/2022_12_11_214403_create_user_checkin_macs_table.php",
+        "sha256": "953fa4a6b3cda7bec83998724696e2be3f58c3f5083662648ad2d87a4b1ab6cf",
+        "start_line": 19,
+        "end_line": 19
+      },
+      "models": [
+        "UserCheckinMac"
+      ]
+    },
+    {
+      "table": "user_checkin_records",
+      "columns": [
+        "id",
+        "userid",
+        "mac",
+        "date",
+        "times",
+        "report_time",
+        "created_at",
+        "updated_at"
+      ],
+      "primary_key": [
+        "id"
+      ],
+      "indexes": [
+        "PRIMARY",
+        "idx_user_checkin_records_userid_mac_date"
+      ],
+      "foreign_keys": [],
+      "source": {
+        "source": "database/migrations/2022_12_11_214409_create_user_checkin_records_table.php",
+        "sha256": "4858393454cfa08879c54a504bd21168a64155da731f4581831fdbe947ba8ea7",
+        "start_line": 19,
+        "end_line": 19
+      },
+      "models": [
+        "UserCheckinRecord"
+      ]
+    },
+    {
+      "table": "user_bots",
+      "columns": [
+        "id",
+        "userid",
+        "bot_id",
+        "clear_day",
+        "clear_at",
+        "webhook_url",
+        "webhook_num",
+        "webhook_events",
+        "created_at",
+        "updated_at"
+      ],
+      "primary_key": [
+        "id"
+      ],
+      "indexes": [
+        "PRIMARY"
+      ],
+      "foreign_keys": [],
+      "source": {
+        "source": "database/migrations/2022_12_17_111737_create_user_bots_table.php",
+        "sha256": "547133390aa4bc885a5d5ffac55d544a95125c6701cbbde486979bb5374234a5",
+        "start_line": 19,
+        "end_line": 19
+      },
+      "models": [
+        "UserBot"
+      ]
+    },
+    {
+      "table": "deleteds",
+      "columns": [
+        "id",
+        "type",
+        "did",
+        "userid",
+        "created_at"
+      ],
+      "primary_key": [
+        "id"
+      ],
+      "indexes": [
+        "PRIMARY",
+        "deleteds_type_did_userid_unique",
+        "deleteds_type_userid_index",
+        "deleteds_type_userid_created_at_index"
+      ],
+      "foreign_keys": [],
+      "source": {
+        "source": "database/migrations/2023_03_07_152557_create_deleteds.php",
+        "sha256": "3f46d92a3225fb0df121372b7634748b827755f2548c8054a60cbe93e13eced5",
+        "start_line": 16,
+        "end_line": 16
+      },
+      "models": [
+        "Deleted"
+      ]
+    },
+    {
+      "table": "approve_proc_msgs",
+      "columns": [
+        "id",
+        "proc_inst_id",
+        "userid",
+        "msg_id",
+        "created_at",
+        "updated_at"
+      ],
+      "primary_key": [
+        "id"
+      ],
+      "indexes": [
+        "PRIMARY"
+      ],
+      "foreign_keys": [],
+      "source": {
+        "source": "database/migrations/2023_04_11_122557_create_approve_proc_msgs.php",
+        "sha256": "1a1cba9ef13ad249c278854851f1e1bdba90c20661344044a0f22ae90df49dcc",
+        "start_line": 17,
+        "end_line": 17
+      },
+      "models": []
+    },
+    {
+      "table": "project_permissions",
+      "columns": [
+        "id",
+        "project_id",
+        "permissions",
+        "created_at",
+        "updated_at"
+      ],
+      "primary_key": [
+        "id"
+      ],
+      "indexes": [
+        "PRIMARY"
+      ],
+      "foreign_keys": [],
+      "source": {
+        "source": "database/migrations/2023_11_20_214409_create_project_permissions_table.php",
+        "sha256": "ebb0b55c304659ddd3cfccccc64433a4496424497746425f91aed748150628ce",
+        "start_line": 19,
+        "end_line": 19
+      },
+      "models": [
+        "ProjectPermission"
+      ]
+    },
+    {
+      "table": "project_task_visibility_users",
+      "columns": [
+        "id",
+        "project_id",
+        "task_id",
+        "userid",
+        "created_at",
+        "updated_at"
+      ],
+      "primary_key": [
+        "id"
+      ],
+      "indexes": [
+        "PRIMARY",
+        "project_task_visibility_users_project_id_index",
+        "project_task_visibility_users_task_id_index",
+        "project_task_visibility_users_userid_index"
+      ],
+      "foreign_keys": [],
+      "source": {
+        "source": "database/migrations/2023_12_26_182631_create_project_task_visibility_users_table.php",
+        "sha256": "435242a83a7db5aa8c4180015fd7583eba3383acbad819faa29a16ad2450257d",
+        "start_line": 16,
+        "end_line": 16
+      },
+      "models": [
+        "ProjectTaskVisibilityUser"
+      ]
+    },
+    {
+      "table": "meeting_msgs",
+      "columns": [
+        "id",
+        "meetingid",
+        "dialog_id",
+        "msg_id"
+      ],
+      "primary_key": [
+        "id"
+      ],
+      "indexes": [
+        "PRIMARY"
+      ],
+      "foreign_keys": [],
+      "source": {
+        "source": "database/migrations/2024_04_08_082823_create_meeting_msgs_table.php",
+        "sha256": "37aa09a7a1625a50152ef8d7fe2ba825a731e76b1bde6489e47cd976081b5dda",
+        "start_line": 18,
+        "end_line": 18
+      },
+      "models": [
+        "MeetingMsg"
+      ]
+    },
+    {
+      "table": "complaints",
+      "columns": [
+        "id",
+        "dialog_id",
+        "userid",
+        "type",
+        "reason",
+        "imgs",
+        "status",
+        "created_at",
+        "updated_at"
+      ],
+      "primary_key": [
+        "id"
+      ],
+      "indexes": [
+        "PRIMARY"
+      ],
+      "foreign_keys": [],
+      "source": {
+        "source": "database/migrations/2024_04_24_145504_create_complaints_table.php",
+        "sha256": "730d0f4b3b11a6064bb98ed34423e69abcafde8643b0e1a5808040d61d456114",
+        "start_line": 19,
+        "end_line": 19
+      },
+      "models": [
+        "Complaint"
+      ]
+    },
+    {
+      "table": "user_checkin_faces",
+      "columns": [
+        "id",
+        "userid",
+        "faceimg",
+        "status",
+        "remark",
+        "created_at",
+        "updated_at"
+      ],
+      "primary_key": [
+        "id"
+      ],
+      "indexes": [
+        "PRIMARY"
+      ],
+      "foreign_keys": [],
+      "source": {
+        "source": "database/migrations/2024_09_27_135805_create_user_checkin_faces_table.php",
+        "sha256": "35a7c2eb88f2aa07e71215100e2b8c107e458da64ae64345ea338912f6762aee",
+        "start_line": 19,
+        "end_line": 19
+      },
+      "models": [
+        "UserCheckinFace"
+      ]
+    },
+    {
+      "table": "web_socket_dialog_msg_translates",
+      "columns": [
+        "id",
+        "dialog_id",
+        "msg_id",
+        "language",
+        "content"
+      ],
+      "primary_key": [
+        "id"
+      ],
+      "indexes": [
+        "PRIMARY",
+        "web_socket_dialog_msg_translates_msg_id_language_index"
+      ],
+      "foreign_keys": [],
+      "source": {
+        "source": "database/migrations/2024_10_27_070707_create_web_socket_dialog_msg_translates_table.php",
+        "sha256": "1b3efcc1feb31a8e177f8ffc1c12c32c6d901168fd5e0c2ce7ac2b7f2704baf5",
+        "start_line": 19,
+        "end_line": 19
+      },
+      "models": [
+        "WebSocketDialogMsgTranslate"
+      ]
+    },
+    {
+      "table": "project_task_templates",
+      "columns": [
+        "id",
+        "project_id",
+        "name",
+        "title",
+        "content",
+        "sort",
+        "is_default",
+        "use_count",
+        "last_used_at",
+        "userid",
+        "created_at",
+        "updated_at"
+      ],
+      "primary_key": [
+        "id"
+      ],
+      "indexes": [
+        "PRIMARY",
+        "project_task_templates_project_id_index",
+        "project_task_templates_userid_index",
+        "idx_template_usage"
+      ],
+      "foreign_keys": [
+        "project_task_templates_project_id_foreign",
+        "project_task_templates_userid_foreign"
+      ],
+      "source": {
+        "source": "database/migrations/2024_12_01_115600_create_project_task_templates_table.php",
+        "sha256": "1be165c7df9914c50c1f62abb9db6fdfa426efd079f13116bd1455790fe0b235",
+        "start_line": 17,
+        "end_line": 17
+      },
+      "models": [
+        "ProjectTaskTemplate"
+      ]
+    },
+    {
+      "table": "web_socket_dialog_configs",
+      "columns": [
+        "id",
+        "dialog_id",
+        "userid",
+        "type",
+        "value",
+        "created_at",
+        "updated_at"
+      ],
+      "primary_key": [
+        "id"
+      ],
+      "indexes": [
+        "PRIMARY",
+        "web_socket_dialog_configs_dialog_id_index",
+        "web_socket_dialog_configs_userid_index"
+      ],
+      "foreign_keys": [],
+      "source": {
+        "source": "database/migrations/2024_12_03_021701_create_web_socket_dialog_configs_table.php",
+        "sha256": "ca39ae52b8116106e2fac0ae95e062588e396411a175e736373094e3737e5fe2",
+        "start_line": 17,
+        "end_line": 17
+      },
+      "models": [
+        "WebSocketDialogConfig"
+      ]
+    },
+    {
+      "table": "project_tags",
+      "columns": [
+        "id",
+        "project_id",
+        "name",
+        "desc",
+        "color",
+        "sort",
+        "userid",
+        "created_at",
+        "updated_at"
+      ],
+      "primary_key": [
+        "id"
+      ],
+      "indexes": [
+        "PRIMARY",
+        "project_tags_project_id_index",
+        "project_tags_userid_index"
+      ],
+      "foreign_keys": [
+        "project_tags_project_id_foreign"
+      ],
+      "source": {
+        "source": "database/migrations/2024_12_07_082831_create_project_tags_table.php",
+        "sha256": "94bbc18345c0edfff5c90abf419f5e5353d41e398c1d3aec108fdd57df173975",
+        "start_line": 19,
+        "end_line": 19
+      },
+      "models": [
+        "ProjectTag"
+      ]
+    },
+    {
+      "table": "web_socket_dialog_sessions",
+      "columns": [
+        "id",
+        "dialog_id",
+        "title",
+        "created_at",
+        "updated_at"
+      ],
+      "primary_key": [
+        "id"
+      ],
+      "indexes": [
+        "PRIMARY",
+        "web_socket_dialog_sessions_dialog_id_index"
+      ],
+      "foreign_keys": [],
+      "source": {
+        "source": "database/migrations/2025_02_07_163701_create_web_socket_dialog_sessions_table.php",
+        "sha256": "5d486e96dada359d001d52c04b4854ff946f9100442c661ea8cc46719ce77fa2",
+        "start_line": 23,
+        "end_line": 23
+      },
+      "models": [
+        "WebSocketDialogSession"
+      ]
+    },
+    {
+      "table": "report_links",
+      "columns": [
+        "id",
+        "rid",
+        "num",
+        "code",
+        "userid",
+        "created_at",
+        "updated_at"
+      ],
+      "primary_key": [
+        "id"
+      ],
+      "indexes": [
+        "PRIMARY",
+        "report_links_rid_index",
+        "report_links_userid_index"
+      ],
+      "foreign_keys": [],
+      "source": {
+        "source": "database/migrations/2025_03_15_164703_create_report_links_table.php",
+        "sha256": "994c3adfa138a9a23490f665464d970314dd770aacc08a78aca0c5fbf6b3e5d2",
+        "start_line": 16,
+        "end_line": 16
+      },
+      "models": [
+        "ReportLink"
+      ]
+    },
+    {
+      "table": "report_ai_analyses",
+      "columns": [
+        "id",
+        "rid",
+        "userid",
+        "model",
+        "analysis_text",
+        "meta",
+        "created_at",
+        "updated_at"
+      ],
+      "primary_key": [
+        "id"
+      ],
+      "indexes": [
+        "PRIMARY",
+        "uk_report_ai_analysis_rid_userid",
+        "idx_report_ai_analysis_user_updated"
+      ],
+      "foreign_keys": [],
+      "source": {
+        "source": "database/migrations/2025_03_22_120000_create_report_ai_analyses_table.php",
+        "sha256": "3331ea7f6a0a960fbf1e3a0c2c76064f38628375368b089fac0965bf046f89ae",
+        "start_line": 20,
+        "end_line": 20
+      },
+      "models": [
+        "ReportAnalysis"
+      ]
+    },
+    {
+      "table": "user_devices",
+      "columns": [
+        "id",
+        "userid",
+        "hash",
+        "detail",
+        "expired_at",
+        "created_at",
+        "updated_at",
+        "deleted_at"
+      ],
+      "primary_key": [
+        "id"
+      ],
+      "indexes": [
+        "PRIMARY",
+        "user_devices_userid_index",
+        "user_devices_hash_index"
+      ],
+      "foreign_keys": [],
+      "source": {
+        "source": "database/migrations/2025_04_19_084905_create_user_devices_table.php",
+        "sha256": "add994112b5e4b915acdcb442dfad9ae43c91f51c467b70486040d81800e15f8",
+        "start_line": 19,
+        "end_line": 19
+      },
+      "models": [
+        "UserDevice"
+      ]
+    },
+    {
+      "table": "user_task_browses",
+      "columns": [
+        "id",
+        "userid",
+        "task_id",
+        "browsed_at",
+        "created_at",
+        "updated_at"
+      ],
+      "primary_key": [
+        "id"
+      ],
+      "indexes": [
+        "PRIMARY",
+        "user_task_browses_userid_index",
+        "user_task_browses_task_id_index",
+        "user_task_browses_browsed_at_index",
+        "user_task_browses_userid_browsed_at_index",
+        "user_task_browses_userid_task_id_unique"
+      ],
+      "foreign_keys": [],
+      "source": {
+        "source": "database/migrations/2025_09_22_101500_create_user_task_browses_table.php",
+        "sha256": "afd7ec15a38c70d7ec82688e92fbe6c431a786bb24e4fb2e0c9c5979312a64d4",
+        "start_line": 19,
+        "end_line": 19
+      },
+      "models": [
+        "UserTaskBrowse"
+      ]
+    },
+    {
+      "table": "user_recent_items",
+      "columns": [
+        "id",
+        "userid",
+        "target_type",
+        "target_id",
+        "source_type",
+        "source_id",
+        "browsed_at",
+        "created_at",
+        "updated_at"
+      ],
+      "primary_key": [
+        "id"
+      ],
+      "indexes": [
+        "PRIMARY",
+        "user_recent_items_userid_index",
+        "user_recent_items_browsed_at_index",
+        "user_recent_items_userid_browsed_at_index",
+        "recent_unique"
+      ],
+      "foreign_keys": [],
+      "source": {
+        "source": "database/migrations/2025_09_22_101600_create_user_recent_items_table.php",
+        "sha256": "7535edf38b6531a2ef1b74e21278e898cbe5192945e18136e3534fbbad2f20d5",
+        "start_line": 20,
+        "end_line": 20
+      },
+      "models": [
+        "UserRecentItem"
+      ]
+    },
+    {
+      "table": "user_favorites",
+      "columns": [
+        "id",
+        "userid",
+        "favoritable_type",
+        "favoritable_id",
+        "remark",
+        "created_at",
+        "updated_at"
+      ],
+      "primary_key": [
+        "id"
+      ],
+      "indexes": [
+        "PRIMARY",
+        "user_favorites_userid_index",
+        "user_favorites_favoritable_type_index",
+        "user_favorites_favoritable_id_index",
+        "user_favorites_userid_favoritable_type_index",
+        "user_favorites_unique"
+      ],
+      "foreign_keys": [],
+      "source": {
+        "source": "database/migrations/2025_09_22_102000_create_user_favorites_table.php",
+        "sha256": "90bfb2cd726b18c01011451348b7e8a6869150b5299eaa1d90d0da741487dbae",
+        "start_line": 19,
+        "end_line": 19
+      },
+      "models": [
+        "UserFavorite"
+      ]
+    },
+    {
+      "table": "project_task_relations",
+      "columns": [
+        "id",
+        "task_id",
+        "related_task_id",
+        "direction",
+        "dialog_id",
+        "msg_id",
+        "userid",
+        "created_at",
+        "updated_at"
+      ],
+      "primary_key": [
+        "id"
+      ],
+      "indexes": [
+        "PRIMARY",
+        "project_task_relations_unique",
+        "project_task_relations_task_id_direction_index",
+        "project_task_relations_related_task_id_index",
+        "project_task_relations_dialog_id_index",
+        "project_task_relations_msg_id_index"
+      ],
+      "foreign_keys": [],
+      "source": {
+        "source": "database/migrations/2025_09_24_203500_create_project_task_relations_table.php",
+        "sha256": "5ac3b33a767be938b25c33730c1f6c9af34de166705850f4745e9b0316871c3f",
+        "start_line": 11,
+        "end_line": 11
+      },
+      "models": [
+        "ProjectTaskRelation"
+      ]
+    },
+    {
+      "table": "user_tags",
+      "columns": [
+        "id",
+        "user_id",
+        "name",
+        "created_by",
+        "updated_by",
+        "created_at",
+        "updated_at"
+      ],
+      "primary_key": [
+        "id"
+      ],
+      "indexes": [
+        "PRIMARY",
+        "user_tags_user_id_index",
+        "user_tags_created_by_index",
+        "user_tags_unique_name",
+        "user_tags_updated_by_foreign"
+      ],
+      "foreign_keys": [
+        "user_tags_user_id_foreign",
+        "user_tags_created_by_foreign",
+        "user_tags_updated_by_foreign"
+      ],
+      "source": {
+        "source": "database/migrations/2025_10_13_000000_create_user_tags_table.php",
+        "sha256": "b50cd0865159313ac24c4e5bd60efc5a44b1a021520dbdf633a9ec2083e46986",
+        "start_line": 16,
+        "end_line": 16
+      },
+      "models": [
+        "UserTag"
+      ]
+    },
+    {
+      "table": "user_tag_recognitions",
+      "columns": [
+        "id",
+        "tag_id",
+        "user_id",
+        "created_at",
+        "updated_at"
+      ],
+      "primary_key": [
+        "id"
+      ],
+      "indexes": [
+        "PRIMARY",
+        "user_tag_recognitions_tag_id_index",
+        "user_tag_recognitions_user_id_index",
+        "user_tag_recognitions_unique"
+      ],
+      "foreign_keys": [
+        "user_tag_recognitions_tag_id_foreign",
+        "user_tag_recognitions_user_id_foreign"
+      ],
+      "source": {
+        "source": "database/migrations/2025_10_13_000100_create_user_tag_recognitions_table.php",
+        "sha256": "56b1615a2176a12690b2da93f6931dca5ae59543af9bbcf845ac6fd890b14b4b",
+        "start_line": 16,
+        "end_line": 16
+      },
+      "models": [
+        "UserTagRecognition"
+      ]
+    },
+    {
+      "table": "umeng_logs",
+      "columns": [
+        "id",
+        "request",
+        "response",
+        "created_at",
+        "updated_at"
+      ],
+      "primary_key": [
+        "id"
+      ],
+      "indexes": [
+        "PRIMARY"
+      ],
+      "foreign_keys": [],
+      "source": {
+        "source": "database/migrations/2025_11_01_095600_create_umeng_logs_table.php",
+        "sha256": "ec30b9f3b64621615fd50fbf98cfb2430a3a812303c1e25333fd9ff6d27a7af6",
+        "start_line": 11,
+        "end_line": 11
+      },
+      "models": [
+        "UmengLog"
+      ]
+    },
+    {
+      "table": "user_app_sorts",
+      "columns": [
+        "id",
+        "userid",
+        "sorts",
+        "created_at",
+        "updated_at"
+      ],
+      "primary_key": [
+        "id"
+      ],
+      "indexes": [
+        "PRIMARY",
+        "user_app_sorts_userid_unique"
+      ],
+      "foreign_keys": [],
+      "source": {
+        "source": "database/migrations/2025_11_20_000000_create_user_app_sorts_table.php",
+        "sha256": "eb3b89cdd194ba5ad317b4467ed3607af2096e722d2783367c2f63a8435139be",
+        "start_line": 20,
+        "end_line": 20
+      },
+      "models": [
+        "UserAppSort"
+      ]
+    },
+    {
+      "table": "manticore_sync_failures",
+      "columns": [
+        "id",
+        "data_type",
+        "data_id",
+        "action",
+        "error_message",
+        "retry_count",
+        "last_retry_at",
+        "created_at",
+        "updated_at"
+      ],
+      "primary_key": [
+        "id"
+      ],
+      "indexes": [
+        "PRIMARY",
+        "uk_type_id_action",
+        "idx_retry"
+      ],
+      "foreign_keys": [],
+      "source": {
+        "source": "database/migrations/2026_01_15_160659_create_manticore_sync_failures_table.php",
+        "sha256": "09d07a4a0952dddc918d6259222efc89400b41687693cc1f925865a1876caae8",
+        "start_line": 19,
+        "end_line": 19
+      },
+      "models": [
+        "ManticoreSyncFailure"
+      ]
+    },
+    {
+      "table": "project_task_ai_events",
+      "columns": [
+        "id",
+        "task_id",
+        "event_type",
+        "status",
+        "retry_count",
+        "result",
+        "error",
+        "msg_id",
+        "executed_at",
+        "created_at",
+        "updated_at"
+      ],
+      "primary_key": [
+        "id"
+      ],
+      "indexes": [
+        "PRIMARY",
+        "uk_task_event",
+        "idx_status",
+        "idx_created"
+      ],
+      "foreign_keys": [],
+      "source": {
+        "source": "database/migrations/2026_01_21_000000_create_project_task_ai_events_table.php",
+        "sha256": "a49a18b9becf8107883007faaab9200837eff9d7b3e463439ce2e193a22c9713",
+        "start_line": 14,
+        "end_line": 14
+      },
+      "models": [
+        "ProjectTaskAiEvent"
+      ]
+    },
+    {
+      "table": "ai_assistant_sessions",
+      "columns": [
+        "id",
+        "userid",
+        "session_key",
+        "session_id",
+        "scene_key",
+        "title",
+        "data",
+        "images",
+        "created_at",
+        "updated_at"
+      ],
+      "primary_key": [
+        "id"
+      ],
+      "indexes": [
+        "PRIMARY",
+        "idx_userid",
+        "uk_user_session"
+      ],
+      "foreign_keys": [],
+      "source": {
+        "source": "database/migrations/2026_04_17_000001_create_ai_assistant_sessions_table.php",
+        "sha256": "fb192fb5cb4acaf100235e221746fb37fe5722aca3e070516ccdae2445590917",
+        "start_line": 14,
+        "end_line": 14
+      },
+      "models": [
+        "AiAssistantSession"
+      ]
+    },
+    {
+      "table": "user_department_owners",
+      "columns": [
+        "id",
+        "department_id",
+        "userid",
+        "created_at"
+      ],
+      "primary_key": [
+        "id"
+      ],
+      "indexes": [
+        "PRIMARY",
+        "uniq_dept_user",
+        "idx_userid"
+      ],
+      "foreign_keys": [],
+      "source": {
+        "source": "database/migrations/2026_05_01_000001_create_user_department_owners_table.php",
+        "sha256": "5b9d7ce858edb1bf481034bce2b04f04b32c12732f6ab7803d55a8cce5f66c9a",
+        "start_line": 17,
+        "end_line": 17
+      },
+      "models": []
+    },
+    {
+      "table": "ai_assistant_search_logs",
+      "columns": [
+        "id",
+        "userid",
+        "dialog_id",
+        "context_key",
+        "source",
+        "query",
+        "locale",
+        "source_ids",
+        "top_score",
+        "result_count",
+        "duration_ms",
+        "empty",
+        "created_at",
+        "updated_at"
+      ],
+      "primary_key": [
+        "id"
+      ],
+      "indexes": [
+        "PRIMARY",
+        "idx_userid",
+        "idx_context_key",
+        "idx_empty_created",
+        "idx_created_at"
+      ],
+      "foreign_keys": [],
+      "source": {
+        "source": "database/migrations/2026_06_10_000001_create_ai_assistant_search_logs_table.php",
+        "sha256": "e214e27ba1866a532e0acb0d4f68774fd6f50d999dd700aa51f2274ecad01c38",
+        "start_line": 14,
+        "end_line": 14
+      },
+      "models": [
+        "AiAssistantSearchLog"
+      ]
+    },
+    {
+      "table": "ai_assistant_feedbacks",
+      "columns": [
+        "id",
+        "userid",
+        "session_key",
+        "session_id",
+        "local_id",
+        "feedback",
+        "prompt",
+        "answer_digest",
+        "answer",
+        "source_ids",
+        "model",
+        "created_at",
+        "updated_at"
+      ],
+      "primary_key": [
+        "id"
+      ],
+      "indexes": [
+        "PRIMARY",
+        "uk_user_entry",
+        "idx_feedback_created"
+      ],
+      "foreign_keys": [],
+      "source": {
+        "source": "database/migrations/2026_06_10_000002_create_ai_assistant_feedbacks_table.php",
+        "sha256": "edbb4d65b44c418ecf52c2b242bde8c9173a24fb3cbbc30ede89402e54256813",
+        "start_line": 14,
+        "end_line": 14
+      },
+      "models": [
+        "AiAssistantFeedback"
+      ]
+    },
+    {
+      "table": "app_badges",
+      "columns": [
+        "id",
+        "app_id",
+        "menu_key",
+        "userid",
+        "count",
+        "dot",
+        "updated_at"
+      ],
+      "primary_key": [
+        "id"
+      ],
+      "indexes": [
+        "PRIMARY",
+        "app_badges_unique",
+        "app_badges_userid"
+      ],
+      "foreign_keys": [],
+      "source": {
+        "source": "database/migrations/2026_06_28_000001_create_app_badges_table.php",
+        "sha256": "a288b03767d21886083b4fa3bf9b39853aff7f9abae3709e3678eb39e11486a3",
+        "start_line": 20,
+        "end_line": 20
+      },
+      "models": [
+        "AppBadge"
+      ]
+    },
+    {
+      "table": "web_socket_dialog_msg_attachments",
+      "columns": [
+        "id",
+        "msg_id",
+        "dialog_id",
+        "source_type",
+        "kind",
+        "position",
+        "name",
+        "ext",
+        "path",
+        "thumb",
+        "size",
+        "width",
+        "height",
+        "created_at",
+        "updated_at",
+        "cursor_msg_id"
+      ],
+      "primary_key": [
+        "id"
+      ],
+      "indexes": [
+        "PRIMARY",
+        "uniq_ws_msg_attachment_position",
+        "idx_ws_msg_attachment_dialog",
+        "idx_ws_msg_attachment_kind",
+        "idx_ws_msg_attachment_cursor",
+        "idx_ws_msg_attachment_ext_msg"
+      ],
+      "foreign_keys": [],
+      "source": {
+        "source": "database/migrations/2026_08_04_000001_create_web_socket_dialog_msg_attachments_table.php",
+        "sha256": "4fa395dbb26d321cce857129c6d380ab4e5f04d7c8be0adbe371bf283dd35895",
+        "start_line": 11,
+        "end_line": 11
+      },
+      "models": [
+        "WebSocketDialogMsgAttachment"
+      ]
+    },
+    {
+      "table": "web_socket_dialog_msg_attachment_backfills",
+      "columns": [
+        "id",
+        "status",
+        "before_msg_id",
+        "last_msg_id",
+        "processed_count",
+        "attachment_count",
+        "empty_count",
+        "failure_count",
+        "retry_count",
+        "last_error",
+        "started_at",
+        "completed_at",
+        "next_retry_at",
+        "created_at",
+        "updated_at"
+      ],
+      "primary_key": [
+        "id"
+      ],
+      "indexes": [
+        "PRIMARY",
+        "idx_ws_msg_attachment_backfill_pending"
+      ],
+      "foreign_keys": [],
+      "source": {
+        "source": "database/migrations/2026_08_04_000002_create_web_socket_dialog_msg_attachment_backfills_table.php",
+        "sha256": "9f34edc67dfad5c741506638331a9b721c64a38d48ebb1fab380f7e3d535770c",
+        "start_line": 12,
+        "end_line": 12
+      },
+      "models": [
+        "WebSocketDialogMsgAttachmentBackfill"
+      ]
+    },
+    {
+      "table": "webdav_credentials",
+      "columns": [
+        "id",
+        "public_id",
+        "userid",
+        "name",
+        "password_hash",
+        "password_suffix",
+        "expires_at",
+        "last_used_at",
+        "last_used_ip",
+        "last_user_agent",
+        "revoked_at",
+        "created_at",
+        "updated_at"
+      ],
+      "primary_key": [
+        "id"
+      ],
+      "indexes": [
+        "PRIMARY",
+        "webdav_credentials_public_id_unique",
+        "webdav_credentials_userid_index",
+        "webdav_credentials_expires_at_index",
+        "webdav_credentials_revoked_at_index"
+      ],
+      "foreign_keys": [],
+      "source": {
+        "source": "database/migrations/2026_08_11_000001_create_webdav_tables.php",
+        "sha256": "bc8ef49365a327ac0e23dde1e1c3ee13493120615b3ef93ecbfcd4cb8fc29b21",
+        "start_line": 11,
+        "end_line": 11
+      },
+      "models": [
+        "WebDavCredential"
+      ]
+    },
+    {
+      "table": "webdav_locks",
+      "columns": [
+        "id",
+        "token",
+        "userid",
+        "credential_id",
+        "file_id",
+        "uri",
+        "uri_hash",
+        "owner",
+        "scope",
+        "depth",
+        "timeout_at",
+        "created_at",
+        "updated_at"
+      ],
+      "primary_key": [
+        "id"
+      ],
+      "indexes": [
+        "PRIMARY",
+        "webdav_locks_token_unique",
+        "webdav_locks_userid_index",
+        "webdav_locks_credential_id_index",
+        "webdav_locks_file_id_index",
+        "webdav_locks_uri_hash_index",
+        "webdav_locks_timeout_at_index"
+      ],
+      "foreign_keys": [],
+      "source": {
+        "source": "database/migrations/2026_08_11_000001_create_webdav_tables.php",
+        "sha256": "bc8ef49365a327ac0e23dde1e1c3ee13493120615b3ef93ecbfcd4cb8fc29b21",
+        "start_line": 26,
+        "end_line": 26
+      },
+      "models": [
+        "WebDavLock"
+      ]
+    },
+    {
+      "table": "webdav_properties",
+      "columns": [
+        "id",
+        "userid",
+        "path",
+        "path_hash",
+        "name",
+        "property_hash",
+        "value_type",
+        "value",
+        "created_at",
+        "updated_at"
+      ],
+      "primary_key": [
+        "id"
+      ],
+      "indexes": [
+        "PRIMARY",
+        "webdav_properties_userid_index",
+        "webdav_properties_path_hash_index",
+        "webdav_properties_user_path_property_unique"
+      ],
+      "foreign_keys": [],
+      "source": {
+        "source": "database/migrations/2026_08_11_000001_create_webdav_tables.php",
+        "sha256": "bc8ef49365a327ac0e23dde1e1c3ee13493120615b3ef93ecbfcd4cb8fc29b21",
+        "start_line": 41,
+        "end_line": 41
+      },
+      "models": [
+        "WebDavProperty"
+      ]
+    },
+    {
+      "table": "webdav_operation_logs",
+      "columns": [
+        "id",
+        "request_id",
+        "userid",
+        "credential_id",
+        "method",
+        "uri",
+        "file_id",
+        "status",
+        "result",
+        "bytes",
+        "ip",
+        "user_agent",
+        "duration_ms",
+        "created_at"
+      ],
+      "primary_key": [
+        "id"
+      ],
+      "indexes": [
+        "PRIMARY",
+        "webdav_operation_logs_request_id_index",
+        "webdav_operation_logs_userid_index",
+        "webdav_operation_logs_credential_id_index",
+        "webdav_operation_logs_file_id_index",
+        "webdav_operation_logs_status_index",
+        "webdav_operation_logs_created_at_index"
+      ],
+      "foreign_keys": [],
+      "source": {
+        "source": "database/migrations/2026_08_11_000001_create_webdav_tables.php",
+        "sha256": "bc8ef49365a327ac0e23dde1e1c3ee13493120615b3ef93ecbfcd4cb8fc29b21",
+        "start_line": 57,
+        "end_line": 57
+      },
+      "models": [
+        "WebDavOperationLog"
+      ]
+    },
+    {
+      "table": "project_task_handoffs",
+      "columns": [
+        "id",
+        "task_id",
+        "userid",
+        "source",
+        "record",
+        "created_at",
+        "updated_at"
+      ],
+      "primary_key": [
+        "id"
+      ],
+      "indexes": [
+        "PRIMARY",
+        "project_task_handoffs_task_id_id_index"
+      ],
+      "foreign_keys": [],
+      "source": {
+        "source": "database/migrations/2026_09_08_000001_create_project_task_handoffs_table.php",
+        "sha256": "ad97e06cf0d06fe5fe0268d2c2598c966e3e2ef2bca174613af94d57dec99099",
+        "start_line": 10,
+        "end_line": 10
+      },
+      "models": [
+        "ProjectTaskHandoff"
+      ]
+    }
+  ],
+  "dropped_tables": [
+    {
+      "table": "project_task_mail_logs",
+      "source": {
+        "source": "database/migrations/2023_01_30_175859_delete_project_task_mail_logs_table.php",
+        "sha256": "f4bb0b4f0c431e94b8789086bfc5b3be6c9a9f53237ca4740056252b9b746e24",
+        "start_line": 16,
+        "end_line": 16
+      }
+    }
+  ],
+  "ledger_literal_names_not_in_final_schema": [
+    "deleted",
+    "project_task_mail_logs"
+  ],
+  "nonliteral_plugin_table_conversion": [
+    {
+      "kind": "conditional_external_schema_conversion",
+      "empty_database": "approve_proc_msgs exists and already uses utf8mb4_unicode_ci; ten plugin-owned approval tables are absent and must not be fabricated",
+      "tables_from_source": [
+        "approve_execution",
+        "approve_execution_history",
+        "approve_identitylink",
+        "approve_identitylink_history",
+        "approve_proc_inst",
+        "approve_proc_inst_history",
+        "approve_proc_msgs",
+        "approve_procdef",
+        "approve_procdef_history",
+        "approve_task",
+        "approve_task_history"
+      ]
+    }
+  ],
+  "source_config": [
+    {
+      "source": "config/database.php",
+      "sha256": "c39d30c4dabe537340f6d230473007f19b7b8d0bfc3d3a138c60de4216685006",
+      "start_line": 46,
+      "end_line": 64
+    },
+    {
+      "source": "docker/mysql/conf.d/docker.cnf",
+      "sha256": "be714d3167155d08e5a3f2b5d81f83096bdd68f10541944dfacb146805daba07",
+      "start_line": 1,
+      "end_line": 25
+    }
+  ],
+  "server_semantics": [
+    {
+      "column": "webdav_locks.timeout_at",
+      "behavior": "Explicit DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP preserves source MariaDB 10.7 implicit first non-null TIMESTAMP default, avoiding a different result on newer MariaDB defaults",
+      "authority": "https://mariadb.com/docs/server/reference/data-types/date-and-time-data-types/timestamp",
+      "status": "STATIC_DERIVATION_NOT_RUNTIME_OBSERVED"
+    },
+    {
+      "columns": "json typed columns",
+      "behavior": "MariaDB JSON alias supplies LONGTEXT utf8mb4_bin storage and JSON_VALID constraints. Metadata records declared JSON type; DB reflection may return LONGTEXT and generated CHECK metadata."
+    },
+    {
+      "index": "user_tags_updated_by_foreign",
+      "behavior": "InnoDB creates a supporting index for the source foreign key; represented explicitly in checked-in DDL and metadata."
+    },
+    {
+      "column": "web_socket_dialog_msg_attachments.cursor_msg_id",
+      "behavior": "Signed BIGINT stored generated expression -`msg_id`, retained with cursor index order from migration217."
+    },
+    {
+      "columns": "web_socket_dialog_users.created_at,updated_at",
+      "behavior": "TIMESTAMP(3) retained; all other migration timestamps default to precision zero."
+    }
+  ],
+  "deliverables": [
+    {
+      "path": "backend/schema.sql",
+      "sha256": "a18b77cbc31dc239c961170456404b4cb06f26ba3b336d93ce4c3181b797776a"
+    },
+    {
+      "path": "backend/schema_seed.sql",
+      "sha256": "74e843435f3f1b0b4b58d06637ce38265ee977fa04f67821971dbd392709b9cd"
+    },
+    {
+      "path": "backend/schema_metadata.json",
+      "sha256": "b7f8ddbc9217a8e3adf2b9815284cf3c7bc6d77c7b4599294e5320a4bcd2d758"
+    }
+  ],
+  "ordinary_source_unresolved": [],
+  "integration_obligations": [
+    {
+      "migration": "database/migrations/2026_09_30_000001_install_system_functions_app.php",
+      "owner": "application integration implementation",
+      "requirement": "Real system-functions application provisioning, existing config preservation, no fake installed seed state"
+    }
+  ],
+  "checks": {
+    "database": "NOT_RUN",
+    "tests": "NOT_RUN",
+    "build": "NOT_RUN",
+    "lint": "NOT_RUN",
+    "formatter": "NOT_RUN",
+    "smoke": "NOT_RUN"
+  },
+  "recommended_checks_not_run": [
+    "Apply schema.sql then schema_seed.sql in an isolated empty pinned MariaDB database owned by this new app",
+    "Reflect information_schema and compare all 77 tables / 716 columns / 258 indexes including PRIMARY / 8 foreign keys against metadata, accounting for MariaDB JSON aliases and generated constraints",
+    "Confirm 5 settings rows, one completed zero-history backfill row, zero users/business rows and no app installation claim",
+    "Exercise nullable/default/unique/FK cascade behavior, millisecond timestamps, FULLTEXT and stored cursor expression with rollback-only disposable data"
+  ],
+  "runnable_check_not_run": "SELECT CASE WHEN (SELECT COUNT(*) FROM information_schema.tables WHERE table_schema = DATABASE() AND table_type = 'BASE TABLE') = 77 AND (SELECT COUNT(*) FROM information_schema.columns WHERE table_schema = DATABASE()) = 716 AND (SELECT COUNT(*) FROM settings) = 5 AND (SELECT COUNT(*) FROM users) = 0 AND (SELECT COUNT(*) FROM web_socket_dialog_msg_attachment_backfills WHERE status = 'completed' AND before_msg_id = 0 AND last_msg_id = 0) = 1 THEN 'PASS' ELSE 'FAIL' END AS new_install_schema_baseline;",
+  "runnable_check_scope": "Run immediately after source schema/seed, before parent-owned security/infrastructure tables are added; this baseline is not an exhaustive schema comparison"
+}

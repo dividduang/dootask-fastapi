@@ -1,0 +1,8 @@
+{
+  "archive": "DooTask-v1.9.66-mac-arm64.zip",
+  "members": [
+    "DooTask.app/Contents/Resources/app.asar",
+    "DooTask.app/Contents/Resources/updater/updater",
+    "DooTask.app/Contents/Resources/app-update.yml"
+  ]
+}

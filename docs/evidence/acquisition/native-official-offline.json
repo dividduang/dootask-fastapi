@@ -1,0 +1,17 @@
+{
+  "url": "https://www.dootask.com/help/deploy/offline",
+  "requested_at": "2026-10-12T08:10:04.993149+00:00",
+  "status": 200,
+  "final_url": "https://www.dootask.com/help/deploy/offline",
+  "headers": {
+    "Content-Length": "48506",
+    "Content-Type": "text/html; charset=utf-8",
+    "Date": "Mon, 12 Oct 2026 08:10:15 GMT",
+    "X-Robots-Tag": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+    "Connection": "close"
+  },
+  "size": 48506,
+  "sha256": "5f1cd3cb85b3127bcc23106889b6afa389fef3c14d39b709d06a24661214eeaf",
+  "body": "native-official-offline.body",
+  "ended_at": "2026-10-12T08:10:05.401297+00:00"
+}

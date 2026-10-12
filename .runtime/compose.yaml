@@ -1,0 +1,48 @@
+name: dootask-fastapi-isolated
+services:
+  mariadb:
+    image: sha256:a914eff5d2eb4c650a4e787e453d52a4ffba977632bd624cc6e63d0c9c4c2d65
+    platform: linux/amd64
+    pull_policy: never
+    restart: "no"
+    ports:
+      - "127.0.0.1:13306:3306"
+    environment:
+      MARIADB_DATABASE: dootask_fastapi
+      MARIADB_USER: dootask_app
+      MARIADB_PASSWORD: ${DB_PASSWORD:?Load .runtime/runtime.env}
+      MARIADB_ROOT_PASSWORD: ${MARIADB_ROOT_PASSWORD:?Load .runtime/runtime.env}
+    command:
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_unicode_ci
+      - --default-storage-engine=InnoDB
+      - --default-time-zone=+00:00
+    volumes:
+      - mariadb-data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      interval: 5s
+      timeout: 5s
+      retries: 24
+      start_period: 30s
+  redis:
+    image: sha256:2724e40d4303391e1a46884134da358e20a6d0b03f32ee6c412079ddb4ac6783
+    platform: linux/amd64
+    pull_policy: never
+    restart: "no"
+    ports:
+      - "127.0.0.1:16379:6379"
+    environment:
+      REDISCLI_AUTH: ${REDIS_PASSWORD:?Load .runtime/runtime.env}
+    command: ["redis-server", "/usr/local/etc/redis/redis.conf"]
+    volumes:
+      - redis-data:/data
+      - ./redis.conf:/usr/local/etc/redis/redis.conf:ro
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 5s
+      retries: 12
+volumes:
+  mariadb-data:
+  redis-data:

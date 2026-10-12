@@ -1,0 +1,25 @@
+<table style="border-collapse: collapse; width: 100%;" border="1">
+    <thead>
+    <tr>
+        {% for label in labels %}
+            <th><strong>{{ label }}</strong></th>
+        {% endfor %}
+    </tr>
+    </thead>
+    <tbody>
+    {% for data in datas %}
+        <tr>
+            {% for item in data %}
+                <td>{{ item }}</td>
+            {% endfor %}
+        </tr>
+    {% else %}
+        <tr>
+            {% for label in labels %}
+                <td>&nbsp;</td>
+            {% endfor %}
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+

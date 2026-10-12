@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Untitled</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <script src="./assets/js/vue.global.min.js"></script>
+    <script src="./assets/js/Sortable.min.js"></script>
+</head>
+<body>
+<div id="app" class="app">
+    <div class="nav">
+        <div class="nav-controls">
+            <div class="nav-back" :class="{disabled: !canGoBack}" @click="goBack">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+            </div>
+            <div class="nav-forward" :class="{disabled: !canGoForward}" @click="goForward">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+            </div>
+            <div class="nav-refresh" @click="loadingState ? stop() : refresh()">
+                <svg v-if="loadingState" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+                <svg v-else xmlns="http://www.w3.org/2000/svg" style="transform:scale(0.99)" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-9-9c2.52 0 4.93 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/></svg>
+            </div>
+        </div>
+        <ul class="nav-tabs">
+            <li v-for="item in tabs" :key="item.id" :data-id="item.id" :class="{active: activeId === item.id}" @click="onSwitch(item)">
+                <div :class="['tab-icon', item.state === 'loading' ? 'loading' : null]" :style="iconStyle(item)"></div>
+                <div class="tab-title" :title="item.title">{{tabTitle(item)}}</div>
+                <div class="tab-close" @click.stop="onClose(item)"></div>
+            </li>
+        </ul>
+        <div class="nav-more" @click="onShowMenu">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><g fill="none"><path d="M9.5 16a2.5 2.5 0 1 1-5 0a2.5 2.5 0 0 1 5 0zm9 0a2.5 2.5 0 1 1-5 0a2.5 2.5 0 0 1 5 0zm6.5 2.5a2.5 2.5 0 1 0 0-5a2.5 2.5 0 0 0 0 5z" fill="currentColor"></path></g></svg>
+        </div>
+    </div>
+</div>
+
+<script>
+    const App = {
+        data() {
+            return {
+                // 当前窗口ID
+                windowId: null,
+
+                // 当前激活的标签页ID
+                activeId: 0,
+
+                // 标签页列表
+                tabs: [],
+
+                // 停止定时器
+                stopTimer: null,
+
+                // 是否可以后退
+                canGoBack: false,
+
+                // 是否可以前进
+                canGoForward: false,
+
+                // 是否正在拖拽（用于跳过 watch 同步）
+                isDragging: false,
+
+                // 拖拽状态
+                dragState: {
+                    tabId: null,
+                    startX: 0,
+                    startY: 0,
+                    startScreenX: 0,
+                    startScreenY: 0,
+                },
+
+                // 其他窗口信息（用于拖入检测）
+                otherWindows: [],
+            }
+        },
+        beforeCreate() {
+            document.body.classList.add(window.process.platform)
+        },
+        mounted() {
+            // 从 URL 参数获取窗口ID
+            const urlParams = new URLSearchParams(window.location.search);
+            this.windowId = parseInt(urlParams.get('windowId')) || null;
+
+            // 初始化 Sortable 拖拽排序
+            this.initSortable()
+
+            window.__onDispatchEvent = (detail) => {
+                const {id, event} = detail
+                switch (event) {
+                    // 创建标签页
+                    case 'create':
+                        // 检查是否已存在该标签
+                        if (this.tabs.some(t => t.id === id)) {
+                            break
+                        }
+                        const newTab = {
+                            id,
+                            title: detail.title || '',
+                            url: detail.url || '',
+                            favicon: detail.favicon || '',
+                            state: detail.state || 'loading'
+                        }
+
+                        // 确定插入位置
+                        let insertIndex = this.tabs.length
+                        if (typeof detail.insertIndex === 'number') {
+                            insertIndex = Math.max(0, Math.min(detail.insertIndex, this.tabs.length))
+                        } else if (detail.afterId) {
+                            const afterIndex = this.tabs.findIndex(item => item.id === detail.afterId)
+                            if (afterIndex > -1) {
+                                insertIndex = afterIndex + 1
+                            }
+                        }
+
+                        // 插入到指定位置
+                        this.tabs.splice(insertIndex, 0, newTab)
+                        break
+
+                    // 关闭标签页
+                    case 'close':
+                        const closeIndex = this.tabs.findIndex(item => item.id === id)
+                        if (closeIndex > -1) {
+                            this.tabs.splice(closeIndex, 1)
+                        }
+                        break
+
+                    // 切换标签页
+                    case 'switch':
+                        this.activeId = id
+                        this.scrollTabActive()
+                        this.updateNavigationState()
+                        break
+
+                    // 页面标题
+                    case 'title':
+                        if (["HitoseaTask", "DooTask", "about:blank"].includes(detail.title)) {
+                            return
+                        }
+                        const titleItem = this.tabs.find(item => item.id === id)
+                        if (titleItem) {
+                            titleItem.title = detail.title
+                            titleItem.url = detail.url
+                        }
+                        break
+
+                    // 页面图标
+                    case 'favicon':
+                        const faviconItem = this.tabs.find(item => item.id === id)
+                        if (faviconItem) {
+                            faviconItem.favicon = detail.favicon || ''
+                        }
+                        break
+
+                    // 开始加载
+                    case 'start-loading':
+                        const startItem = this.tabs.find(item => item.id === id)
+                        if (startItem) {
+                            this.stopTimer && clearTimeout(this.stopTimer)
+                            startItem.state = 'loading'
+                        }
+                        break
+
+                    // 停止加载
+                    case 'stop-loading':
+                        this.stopTimer = setTimeout(_ => {
+                            const stopItem = this.tabs.find(item => item.id === id)
+                            if (stopItem) {
+                                stopItem.state = 'loaded'
+                            }
+                            if (id === this.activeId) {
+                                this.updateNavigationState()
+                            }
+                        }, 300)
+                        break
+
+                    // 导航状态
+                    case 'navigation-state':
+                        if (id === this.activeId) {
+                            this.canGoBack = detail.canGoBack
+                            this.canGoForward = detail.canGoForward
+                        }
+                        break
+
+                    // 进入全屏
+                    case 'enter-full-screen':
+                        document.body.classList.add('full-screen')
+                        break
+
+                    // 离开全屏
+                    case 'leave-full-screen':
+                        document.body.classList.remove('full-screen')
+                        break
+                }
+            }
+            window.__openDevTools = () => {
+                this.sendMessage('webTabOpenDevTools')
+            }
+        },
+        computed: {
+            /**
+             * 获取当前激活的标签页
+             * @returns {object|null}
+             */
+            activeItem() {
+                if (this.tabs.length === 0) {
+                    return null
+                }
+                return this.tabs.find(item => item.id === this.activeId)
+            },
+            /**
+             * 获取页面标题
+             * @returns {string}
+             */
+            pageTitle() {
+                return this.activeItem ? this.activeItem.title : 'Untitled'
+            },
+            /**
+             * 获取加载状态
+             * @returns {boolean}
+             */
+            loadingState() {
+                return this.activeItem ? this.activeItem.state === 'loading' : false
+            }
+        },
+        watch: {
+            /**
+             * 监听页面标题
+             * @param title
+             */
+            pageTitle(title) {
+                document.title = title;
+            },
+            /**
+             * 监听标签列表变化，同步 Sortable 顺序
+             */
+            tabs: {
+                handler() {
+                    // 拖拽过程中跳过同步，由 onEnd 处理
+                    if (this.isDragging) return
+                    this.$nextTick(() => {
+                        if (this.sortable) {
+                            // 根据 Vue 数据顺序同步 Sortable 的 DOM 顺序
+                            const order = this.tabs.map(t => String(t.id))
+                            this.sortable.sort(order, true)
+                        }
+                    })
+                },
+                deep: false
+            }
+        },
+        methods: {
+            /**
+             * 初始化 Sortable 拖拽排序
+             */
+            initSortable() {
+                const el = document.querySelector('.nav-tabs')
+                if (!el) return
+
+                this.sortable = new Sortable(el, {
+                    animation: 150,
+                    delay: 50,
+                    delayOnTouchOnly: true,
+                    ghostClass: 'sortable-ghost',
+                    chosenClass: 'sortable-chosen',
+                    dragClass: 'sortable-drag',
+                    // 使用 fallback 模式，在 Electron 中更稳定
+                    forceFallback: true,
+                    fallbackClass: 'sortable-fallback',
+                    fallbackOnBody: true,
+                    fallbackTolerance: 3,
+                    // 拖拽开始时激活该标签
+                    onStart: (evt) => {
+                        this.isDragging = true
+                        const item = this.tabs[evt.oldIndex]
+                        if (item) {
+                            // 记录拖拽起始状态
+                            this.dragState.tabId = item.id
+                            this.dragState.startX = evt.originalEvent.clientX
+                            this.dragState.startY = evt.originalEvent.clientY
+                            this.dragState.startScreenX = evt.originalEvent.screenX
+                            this.dragState.startScreenY = evt.originalEvent.screenY
+
+                            if (this.activeId !== item.id) {
+                                this.sendMessage('webTabActivate', {windowId: this.windowId, tabId: item.id})
+                            }
+
+                            // 获取所有窗口信息（用于拖入检测）
+                            this.fetchAllWindowsInfo()
+                        }
+                    },
+                    // 拖拽移动时检测边界
+                    onMove: (evt, originalEvent) => {
+                        if (!originalEvent) return true
+                        this.checkDragBoundary(originalEvent)
+                        return true
+                    },
+                    // 拖拽结束回调
+                    onEnd: (evt) => {
+                        const { oldIndex, newIndex } = evt
+                        const originalEvent = evt.originalEvent
+
+                        // 检查是否拖出了窗口边界
+                        if (this.dragState.tabId && originalEvent) {
+                            const shouldDetach = this.checkDetachCondition(originalEvent)
+                            const targetWindow = this.findTargetWindow(originalEvent.screenX, originalEvent.screenY)
+
+                            if (targetWindow && targetWindow.windowId !== this.windowId) {
+                                // 拖入其他窗口
+                                this.attachToWindow(this.dragState.tabId, targetWindow.windowId, originalEvent.screenX)
+                                this.resetDragState()
+                                this.$nextTick(() => {
+                                    this.isDragging = false
+                                })
+                                return
+                            } else if (shouldDetach) {
+                                // 拖出创建新窗口
+                                this.detachTab(this.dragState.tabId, originalEvent.screenX, originalEvent.screenY)
+                                this.resetDragState()
+                                this.$nextTick(() => {
+                                    this.isDragging = false
+                                })
+                                return
+                            }
+                        }
+
+                        // 正常的窗口内排序
+                        if (oldIndex !== newIndex) {
+                            // 先将 DOM 恢复到原始位置，让 Vue 来控制渲染
+                            const parent = evt.from
+                            const children = Array.from(parent.children)
+                            if (oldIndex < newIndex) {
+                                parent.insertBefore(evt.item, children[oldIndex])
+                            } else {
+                                parent.insertBefore(evt.item, children[oldIndex + 1] || null)
+                            }
+
+                            // 更新 Vue 数据（触发响应式更新）
+                            const item = this.tabs.splice(oldIndex, 1)[0]
+                            this.tabs.splice(newIndex, 0, item)
+
+                            // 通知主进程同步顺序
+                            this.sendMessage('webTabReorder', {windowId: this.windowId, newOrder: this.tabs.map(t => t.id)})
+                        }
+
+                        this.resetDragState()
+
+                        // 延迟重置标志，确保 Vue 渲染完成
+                        this.$nextTick(() => {
+                            this.isDragging = false
+                        })
+                    }
+                })
+            },
+
+            /**
+             * 获取所有窗口信息
+             */
+            async fetchAllWindowsInfo() {
+                try {
+                    const windows = await electron?.sendAsync('webTabGetAllWindows')
+                    this.otherWindows = (windows || []).filter(w => w.windowId !== this.windowId)
+                } catch (e) {
+                    this.otherWindows = []
+                }
+            },
+
+            /**
+             * 检查拖拽边界
+             */
+            checkDragBoundary(event) {
+                // 实时视觉反馈
+                const fallbackEl = document.querySelector('.sortable-fallback')
+                if (fallbackEl) {
+                    const isOutside = this.checkDetachCondition(event)
+                    fallbackEl.classList.toggle('detaching', isOutside)
+                }
+            },
+
+            /**
+             * 检查是否满足分离条件
+             */
+            checkDetachCondition(event) {
+                // 检查鼠标是否超出窗口边界
+                const windowBounds = {
+                    x: window.screenX,
+                    y: window.screenY,
+                    width: window.outerWidth,
+                    height: window.outerHeight
+                }
+
+                const screenX = event.screenX
+                const screenY = event.screenY
+
+                // 检查是否在窗口范围外（左右上）
+                const isOutsideHorizontal = screenX < windowBounds.x ||
+                    screenX > windowBounds.x + windowBounds.width
+                const isOutsideTop = screenY < windowBounds.y
+                const isOutsideBottom = screenY > windowBounds.y + windowBounds.height
+
+                // 检查垂直移动距离（用于向下拖动检测）
+                const verticalMove = Math.abs(screenY - this.dragState.startScreenY)
+                const tabBarHeight = 40
+                const detachThreshold = tabBarHeight + 20 // 超过标签栏高度 + 20px 触发分离
+
+                // 向下拖动超过阈值也触发分离
+                const isDownwardDetach = screenY > this.dragState.startScreenY + detachThreshold
+
+                return isOutsideHorizontal || isOutsideTop || isOutsideBottom || isDownwardDetach
+            },
+
+            /**
+             * 查找目标窗口（用于拖入）
+             */
+            findTargetWindow(screenX, screenY) {
+                for (const win of this.otherWindows) {
+                    const tb = win.tabBarBounds
+                    // 检查是否在目标窗口的标签栏区域内
+                    if (screenX >= tb.x && screenX <= tb.x + tb.width &&
+                        screenY >= tb.y && screenY <= tb.y + tb.height) {
+                        return win
+                    }
+                }
+                return null
+            },
+
+            /**
+             * 分离标签到新窗口
+             */
+            detachTab(tabId, screenX, screenY) {
+                this.sendMessage('webTabDetach', {
+                    windowId: this.windowId,
+                    tabId: tabId,
+                    screenX: screenX,
+                    screenY: screenY
+                })
+            },
+
+            /**
+             * 将标签附加到目标窗口
+             */
+            attachToWindow(tabId, targetWindowId, screenX) {
+                // 查找目标窗口信息
+                const targetWindow = this.otherWindows.find(w => w.windowId === targetWindowId)
+                let insertIndex = null
+
+                if (targetWindow && targetWindow.tabCount > 0) {
+                    // 计算插入位置
+                    // 导航区域宽度（macOS 约 140px，Windows 约 100px）
+                    const navAreaWidth = navigator.platform.includes('Mac') ? 140 : 100
+                    const tabBarX = targetWindow.tabBarBounds.x
+                    const tabBarWidth = targetWindow.tabBarBounds.width
+                    const tabCount = targetWindow.tabCount
+
+                    // 标签区域的起始位置和宽度
+                    const tabAreaStartX = tabBarX + navAreaWidth
+                    const tabAreaWidth = tabBarWidth - navAreaWidth - 150 // 减去右侧操作按钮区域
+
+                    // 计算每个标签的平均宽度
+                    const tabWidth = Math.min(180, tabAreaWidth / tabCount) // 最大标签宽度 180px
+
+                    // 鼠标相对于标签区域起始位置的偏移
+                    const relativeX = screenX - tabAreaStartX
+
+                    if (relativeX <= 0) {
+                        insertIndex = 0
+                    } else {
+                        // 计算鼠标位于第几个标签位置
+                        insertIndex = Math.min(Math.floor(relativeX / tabWidth), tabCount)
+                    }
+                }
+
+                this.sendMessage('webTabAttach', {
+                    sourceWindowId: this.windowId,
+                    tabId,
+                    targetWindowId,
+                    insertIndex
+                })
+            },
+
+            /**
+             * 重置拖拽状态
+             */
+            resetDragState() {
+                this.dragState.tabId = null
+                this.dragState.startX = 0
+                this.dragState.startY = 0
+                this.dragState.startScreenX = 0
+                this.dragState.startScreenY = 0
+                this.otherWindows = []
+            },
+
+            /**
+             * 切换标签页
+             * @param item
+             */
+            onSwitch(item) {
+                this.sendMessage('webTabActivate', {windowId: this.windowId, tabId: item.id})
+            },
+
+            /**
+             * 关闭标签页
+             * @param item
+             */
+            onClose(item) {
+                this.sendMessage('webTabClose', {windowId: this.windowId, tabId: item.id});
+            },
+
+            /**
+             * 显示更多菜单
+             */
+            onShowMenu() {
+                const btn = document.querySelector('.nav-more')
+                const rect = btn.getBoundingClientRect()
+                this.sendMessage('webTabShowMenu', {
+                    windowId: this.windowId,
+                    tabId: this.activeId,
+                    x: Math.round(rect.left),
+                    y: Math.round(rect.bottom)
+                })
+            },
+
+            /**
+             * 获取标签页图标样式
+             * @param item
+             * @returns {string}
+             */
+            iconStyle(item) {
+                return item.favicon ? `--tab-icon-image: url(${item.favicon})` : ''
+            },
+
+            /**
+             * 获取标签页标题
+             * @param item
+             * @returns {string}
+             */
+            tabTitle(item) {
+                if (item.title) {
+                    return item.title
+                }
+                if (item.state === 'loading') {
+                    return 'Loading...'
+                }
+                if (item.url) {
+                    if (/localhost:/.test(item.url)) {
+                        return 'Loading...'
+                    }
+                    return `${item.url}`.replace(/^https?:\/\//, '')
+                }
+            },
+
+            /**
+             * 滚动到当前激活的标签页
+             */
+            scrollTabActive() {
+                setTimeout(() => {
+                    try {
+                        const child = document.querySelector(`.nav-tabs li[data-id="${this.activeId}"]`)
+                        if (child) {
+                            child.scrollIntoView({behavior: 'smooth', block: 'nearest'})
+                        }
+                    } catch (e) {
+                        //
+                    }
+                }, 0)
+            },
+
+            /**
+             * 发送消息
+             * @param event
+             * @param args
+             */
+            sendMessage(event, args) {
+                electron?.sendMessage(event, args)
+            },
+
+            /**
+             * 后退
+             */
+            goBack() {
+                if (!this.canGoBack) return
+                this.sendMessage('webTabGoBack')
+            },
+
+            /**
+             * 前进
+             */
+            goForward() {
+                if (!this.canGoForward) return
+                this.sendMessage('webTabGoForward')
+            },
+
+            /**
+             * 停止
+             */
+            stop() {
+                this.sendMessage('webTabStop')
+            },
+
+            /**
+             * 刷新
+             */
+            refresh() {
+                this.sendMessage('webTabReload')
+            },
+
+            /**
+             * 更新导航状态
+             */
+            updateNavigationState() {
+                this.sendMessage('webTabGetNavigationState')
+            }
+        },
+    }
+    Vue.createApp(App).mount('#app')
+</script>
+</body>
+</html>

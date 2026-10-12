@@ -1,0 +1,1601 @@
+{
+  "source_ledger": "docs/evidence/backend/schema-model-ledger.json",
+  "counts": {
+    "source_model_files": 77,
+    "persisted_model_classes": 75,
+    "shared_base_classes": 1,
+    "non_model_maintenance_scripts": 1
+  },
+  "models": [
+    {
+      "source": "app/Models/AbstractModel.php",
+      "sha256": "6a8b0853081459005a55345ad33063ce28ac7c5f09f463a6ebacc8d8c7bc0b47",
+      "start_line": 1,
+      "end_line": 377,
+      "ledger_class": "AbstractModel",
+      "classification": "shared_model_base",
+      "table": null
+    },
+    {
+      "source": "app/Models/AiAssistantFeedback.php",
+      "sha256": "345724fe85e7e9218c661736076acae0463ada5825cbec6e750a17d0a135dca8",
+      "start_line": 1,
+      "end_line": 48,
+      "ledger_class": "AiAssistantFeedback",
+      "classification": "persisted_model",
+      "table": "ai_assistant_feedbacks",
+      "primary_key": "id",
+      "soft_delete_trait": false,
+      "schema_has_deleted_at": false,
+      "created_at": true,
+      "updated_at": true,
+      "storage_declarations": [
+        {
+          "start_line": 47,
+          "end_line": 47,
+          "text": "protected $table = 'ai_assistant_feedbacks';"
+        }
+      ]
+    },
+    {
+      "source": "app/Models/AiAssistantSearchLog.php",
+      "sha256": "4f7d0f574502fd9b686a1781aea3907312d2812899ec88bbe09c4cb4ed44237b",
+      "start_line": 1,
+      "end_line": 50,
+      "ledger_class": "AiAssistantSearchLog",
+      "classification": "persisted_model",
+      "table": "ai_assistant_search_logs",
+      "primary_key": "id",
+      "soft_delete_trait": false,
+      "schema_has_deleted_at": false,
+      "created_at": true,
+      "updated_at": true,
+      "storage_declarations": [
+        {
+          "start_line": 49,
+          "end_line": 49,
+          "text": "protected $table = 'ai_assistant_search_logs';"
+        }
+      ]
+    },
+    {
+      "source": "app/Models/AiAssistantSession.php",
+      "sha256": "52077f2e4b19023aa906738ddf4188aeb200bff5fbddaf9ba50bbba3b37d21ce",
+      "start_line": 1,
+      "end_line": 42,
+      "ledger_class": "AiAssistantSession",
+      "classification": "persisted_model",
+      "table": "ai_assistant_sessions",
+      "primary_key": "id",
+      "soft_delete_trait": false,
+      "schema_has_deleted_at": false,
+      "created_at": true,
+      "updated_at": true,
+      "storage_declarations": [
+        {
+          "start_line": 41,
+          "end_line": 41,
+          "text": "protected $table = 'ai_assistant_sessions';"
+        }
+      ]
+    },
+    {
+      "source": "app/Models/AppBadge.php",
+      "sha256": "ab4f981a1ae765b748ef97296183ba4d2138ecda0006aeccdcdaaf08fb32f5c6",
+      "start_line": 1,
+      "end_line": 48,
+      "ledger_class": "AppBadge",
+      "classification": "persisted_model",
+      "table": "app_badges",
+      "primary_key": "id",
+      "soft_delete_trait": false,
+      "schema_has_deleted_at": false,
+      "created_at": false,
+      "updated_at": true,
+      "storage_declarations": [
+        {
+          "start_line": 31,
+          "end_line": 31,
+          "text": "protected $table = 'app_badges';"
+        },
+        {
+          "start_line": 35,
+          "end_line": 41,
+          "text": "protected $fillable = [\n        'app_id',\n        'menu_key',\n        'userid',\n        'count',\n        'dot',\n    ];"
+        },
+        {
+          "start_line": 43,
+          "end_line": 47,
+          "text": "protected $casts = [\n        'userid' => 'integer',\n        'count' => 'integer',\n        'dot' => 'boolean',\n    ];"
+        }
+      ]
+    },
+    {
+      "source": "app/Models/clearHelper.php",
+      "sha256": "52292b7d07e3c4103f16fb6f5b1bccd0bb771db326a221df43b6864b3233c3b6",
+      "start_line": 1,
+      "end_line": 29,
+      "ledger_class": "clearHelper",
+      "classification": "source_maintenance_script_not_model",
+      "table": null,
+      "note": "clearHelper.php is counted by the original 77-file ledger but declares no model class; never executed"
+    },
+    {
+      "source": "app/Models/Complaint.php",
+      "sha256": "e4a5ba2fc650f76898879b6d94121147020a653a433fd3f63416b5a96bb3d9a7",
+      "start_line": 1,
+      "end_line": 41,
+      "ledger_class": "Complaint",
+      "classification": "persisted_model",
+      "table": "complaints",
+      "primary_key": "id",
+      "soft_delete_trait": false,
+      "schema_has_deleted_at": false,
+      "created_at": true,
+      "updated_at": true,
+      "storage_declarations": []
+    },
+    {
+      "source": "app/Models/Deleted.php",
+      "sha256": "0afc50f14ec0d9655cc42f7ce6e95b0a87c473280c782bb3395e45d9176436d4",
+      "start_line": 1,
+      "end_line": 99,
+      "ledger_class": "Deleted",
+      "classification": "persisted_model",
+      "table": "deleteds",
+      "primary_key": "id",
+      "soft_delete_trait": false,
+      "schema_has_deleted_at": false,
+      "created_at": true,
+      "updated_at": false,
+      "storage_declarations": []
+    },
+    {
+      "source": "app/Models/File.php",
+      "sha256": "1ad515c4050bcfa19b7bb6f2e65148bae0bf83698136c1e9da87532572e0305e",
+      "start_line": 1,
+      "end_line": 1167,
+      "ledger_class": "File",
+      "classification": "persisted_model",
+      "table": "files",
+      "primary_key": "id",
+      "soft_delete_trait": true,
+      "schema_has_deleted_at": true,
+      "created_at": true,
+      "updated_at": true,
+      "storage_declarations": []
+    },
+    {
+      "source": "app/Models/FileContent.php",
+      "sha256": "a59f21ca2e2c8b5c71f25358aa444353033ff466f984e4f356c7ecaf99b39e35",
+      "start_line": 1,
+      "end_line": 195,
+      "ledger_class": "FileContent",
+      "classification": "persisted_model",
+      "table": "file_contents",
+      "primary_key": "id",
+      "soft_delete_trait": true,
+      "schema_has_deleted_at": true,
+      "created_at": true,
+      "updated_at": true,
+      "storage_declarations": []
+    },
+    {
+      "source": "app/Models/FileLink.php",
+      "sha256": "03c9dc423bf0da3d8dfce59bca8e9deebf2a4d802b13340cee36ca166fdd74a0",
+      "start_line": 1,
+      "end_line": 76,
+      "ledger_class": "FileLink",
+      "classification": "persisted_model",
+      "table": "file_links",
+      "primary_key": "id",
+      "soft_delete_trait": false,
+      "schema_has_deleted_at": false,
+      "created_at": true,
+      "updated_at": true,
+      "storage_declarations": []
+    },
+    {
+      "source": "app/Models/FileUser.php",
+      "sha256": "d48bfdf341c20e5982f604ad15eeb499fa741d76504e28128dd47fbd950a3ba6",
+      "start_line": 1,
+      "end_line": 64,
+      "ledger_class": "FileUser",
+      "classification": "persisted_model",
+      "table": "file_users",
+      "primary_key": "id",
+      "soft_delete_trait": false,
+      "schema_has_deleted_at": false,
+      "created_at": true,
+      "updated_at": true,
+      "storage_declarations": []
+    },
+    {
+      "source": "app/Models/ManticoreSyncFailure.php",
+      "sha256": "2cc5bf10cda5bf2e6297d739803439e5c893025a746c1585a2aefba2fc7a370b",
+      "start_line": 1,
+      "end_line": 167,
+      "ledger_class": "ManticoreSyncFailure",
+      "classification": "persisted_model",
+      "table": "manticore_sync_failures",
+      "primary_key": "id",
+      "soft_delete_trait": false,
+      "schema_has_deleted_at": false,
+      "created_at": true,
+      "updated_at": true,
+      "storage_declarations": [
+        {
+          "start_line": 39,
+          "end_line": 39,
+          "text": "protected $table = 'manticore_sync_failures';"
+        },
+        {
+          "start_line": 41,
+          "end_line": 48,
+          "text": "protected $fillable = [\n        'data_type',\n        'data_id',\n        'action',\n        'error_message',\n        'retry_count',\n        'last_retry_at',\n    ];"
+        },
+        {
+          "start_line": 50,
+          "end_line": 52,
+          "text": "protected $casts = [\n        'last_retry_at' => 'datetime',\n    ];"
+        }
+      ]
+    },
+    {
+      "source": "app/Models/Meeting.php",
+      "sha256": "d6ebb445f95950a414f98905a817e4c2f37a197d4b5b96cad483a3373df58872",
+      "start_line": 1,
+      "end_line": 97,
+      "ledger_class": "Meeting",
+      "classification": "persisted_model",
+      "table": "meetings",
+      "primary_key": "id",
+      "soft_delete_trait": false,
+      "schema_has_deleted_at": true,
+      "created_at": true,
+      "updated_at": true,
+      "storage_declarations": []
+    },
+    {
+      "source": "app/Models/MeetingMsg.php",
+      "sha256": "e6fc1cbc7583b3292e59d115cbcfeb8100aa9d517010f79051fa15f8341751b4",
+      "start_line": 1,
+      "end_line": 34,
+      "ledger_class": "MeetingMsg",
+      "classification": "persisted_model",
+      "table": "meeting_msgs",
+      "primary_key": "id",
+      "soft_delete_trait": false,
+      "schema_has_deleted_at": false,
+      "created_at": false,
+      "updated_at": false,
+      "storage_declarations": []
+    },
+    {
+      "source": "app/Models/Project.php",
+      "sha256": "a4f3238c3ddf84a290a74d894fb3ce5a7040a5c1d92d2c10cd618e5c6b7b4265",
+      "start_line": 1,
+      "end_line": 794,
+      "ledger_class": "Project",
+      "classification": "persisted_model",
+      "table": "projects",
+      "primary_key": "id",
+      "soft_delete_trait": true,
+      "schema_has_deleted_at": true,
+      "created_at": true,
+      "updated_at": true,
+      "storage_declarations": [
+        {
+          "start_line": 81,
+          "end_line": 83,
+          "text": "protected $hidden = [\n        'deleted_at',\n    ];"
+        },
+        {
+          "start_line": 85,
+          "end_line": 88,
+          "text": "protected $appends = [\n        'owner_userid',\n        'deputy_userids',\n    ];"
+        }
+      ]
+    },
+    {
+      "source": "app/Models/ProjectColumn.php",
+      "sha256": "262756f04618b384dba0af48593c804b76efb911829f2722476301cf99f6aba2",
+      "start_line": 1,
+      "end_line": 141,
+      "ledger_class": "ProjectColumn",
+      "classification": "persisted_model",
+      "table": "project_columns",
+      "primary_key": "id",
+      "soft_delete_trait": true,
+      "schema_has_deleted_at": true,
+      "created_at": true,
+      "updated_at": true,
+      "storage_declarations": []
+    },
+    {
+      "source": "app/Models/ProjectFlow.php",
+      "sha256": "33bff1e96c7b72f8fd2e86f70918b70ebff499d27da1e9a88e585a9917b91acf",
+      "start_line": 1,
+      "end_line": 55,
+      "ledger_class": "ProjectFlow",
+      "classification": "persisted_model",
+      "table": "project_flows",
+      "primary_key": "id",
+      "soft_delete_trait": false,
+      "schema_has_deleted_at": false,
+      "created_at": true,
+      "updated_at": true,
+      "storage_declarations": []
+    },
+    {
+      "source": "app/Models/ProjectFlowItem.php",
+      "sha256": "5aa475c8b7c8aaba47fc09af590d2a87e6c08aeb608b7d24aaf493287051496e",
+      "start_line": 1,
+      "end_line": 100,
+      "ledger_class": "ProjectFlowItem",
+      "classification": "persisted_model",
+      "table": "project_flow_items",
+      "primary_key": "id",
+      "soft_delete_trait": false,
+      "schema_has_deleted_at": false,
+      "created_at": true,
+      "updated_at": true,
+      "storage_declarations": [
+        {
+          "start_line": 52,
+          "end_line": 55,
+          "text": "protected $hidden = [\n        'created_at',\n        'updated_at',\n    ];"
+        }
+      ]
+    },
+    {
+      "source": "app/Models/ProjectInvite.php",
+      "sha256": "7c67406629b047cc78a955475309247ec35231ea55350e7fe3b9fc6a89ef2768",
+      "start_line": 1,
+      "end_line": 61,
+      "ledger_class": "ProjectInvite",
+      "classification": "persisted_model",
+      "table": "project_invites",
+      "primary_key": "id",
+      "soft_delete_trait": false,
+      "schema_has_deleted_at": false,
+      "created_at": true,
+      "updated_at": true,
+      "storage_declarations": [
+        {
+          "start_line": 35,
+          "end_line": 37,
+          "text": "protected $appends = [\n        'already',\n    ];"
+        }
+      ]
+    },
+    {
+      "source": "app/Models/ProjectLog.php",
+      "sha256": "5e13f1e35d91daaddc9970db2100f09cc8aa3aab5a030b59f153c974a0cd4d9a",
+      "start_line": 1,
+      "end_line": 77,
+      "ledger_class": "ProjectLog",
+      "classification": "persisted_model",
+      "table": "project_logs",
+      "primary_key": "id",
+      "soft_delete_trait": false,
+      "schema_has_deleted_at": false,
+      "created_at": true,
+      "updated_at": true,
+      "storage_declarations": [
+        {
+          "start_line": 45,
+          "end_line": 47,
+          "text": "protected $hidden = [\n        'task_only',\n    ];"
+        }
+      ]
+    },
+    {
+      "source": "app/Models/ProjectPermission.php",
+      "sha256": "e447e27effbf6b7d9d118d44ee58219eb8de71466c223fef9bc087f8dd1fdd01",
+      "start_line": 1,
+      "end_line": 211,
+      "ledger_class": "ProjectPermission",
+      "classification": "persisted_model",
+      "table": "project_permissions",
+      "primary_key": "id",
+      "soft_delete_trait": false,
+      "schema_has_deleted_at": false,
+      "created_at": true,
+      "updated_at": true,
+      "storage_declarations": [
+        {
+          "start_line": 69,
+          "end_line": 69,
+          "text": "protected $fillable = ['project_id', 'permissions'];"
+        }
+      ]
+    },
+    {
+      "source": "app/Models/ProjectTag.php",
+      "sha256": "7ff4fa1a2b8745a0c94bfe8c32088ee55fb3652680b548381225b70e5611d087",
+      "start_line": 1,
+      "end_line": 67,
+      "ledger_class": "ProjectTag",
+      "classification": "persisted_model",
+      "table": "project_tags",
+      "primary_key": "id",
+      "soft_delete_trait": false,
+      "schema_has_deleted_at": false,
+      "created_at": true,
+      "updated_at": true,
+      "storage_declarations": [
+        {
+          "start_line": 40,
+          "end_line": 42,
+          "text": "protected $hidden = [\n        'updated_at',\n    ];"
+        },
+        {
+          "start_line": 49,
+          "end_line": 56,
+          "text": "protected $fillable = [\n        'project_id',\n        'name',\n        'desc',\n        'color',\n        'sort',\n        'userid'\n    ];"
+        }
+      ]
+    },
+    {
+      "source": "app/Models/ProjectTask.php",
+      "sha256": "43a060f7d92baf8bd5982471047de16caacf663fd9e05cf20d75b23db3247a92",
+      "start_line": 1,
+      "end_line": 2359,
+      "ledger_class": "ProjectTask",
+      "classification": "persisted_model",
+      "table": "project_tasks",
+      "primary_key": "id",
+      "soft_delete_trait": true,
+      "schema_has_deleted_at": true,
+      "created_at": true,
+      "updated_at": true,
+      "storage_declarations": [
+        {
+          "start_line": 115,
+          "end_line": 123,
+          "text": "protected $appends = [\n        'file_num',\n        'msg_num',\n        'sub_num',\n        'sub_complete',\n        'percent',\n        'today',\n        'overdue',\n    ];"
+        }
+      ]
+    },
+    {
+      "source": "app/Models/ProjectTaskAiEvent.php",
+      "sha256": "0b9bcd5fe57afa52bf4b49fd270737ecc7db59c4b961576eb70aaa635167107c",
+      "start_line": 1,
+      "end_line": 176,
+      "ledger_class": "ProjectTaskAiEvent",
+      "classification": "persisted_model",
+      "table": "project_task_ai_events",
+      "primary_key": "id",
+      "soft_delete_trait": false,
+      "schema_has_deleted_at": false,
+      "created_at": true,
+      "updated_at": true,
+      "storage_declarations": [
+        {
+          "start_line": 61,
+          "end_line": 61,
+          "text": "protected $table = 'project_task_ai_events';"
+        },
+        {
+          "start_line": 63,
+          "end_line": 72,
+          "text": "protected $fillable = [\n        'task_id',\n        'event_type',\n        'status',\n        'retry_count',\n        'result',\n        'error',\n        'msg_id',\n        'executed_at',\n    ];"
+        },
+        {
+          "start_line": 74,
+          "end_line": 77,
+          "text": "protected $casts = [\n        'result' => 'array',\n        'executed_at' => 'datetime',\n    ];"
+        }
+      ]
+    },
+    {
+      "source": "app/Models/ProjectTaskContent.php",
+      "sha256": "aed3efbf2c05da01f1e9263a71842252c582b04b902db2e1c08b4291f4faec8f",
+      "start_line": 1,
+      "end_line": 106,
+      "ledger_class": "ProjectTaskContent",
+      "classification": "persisted_model",
+      "table": "project_task_contents",
+      "primary_key": "id",
+      "soft_delete_trait": false,
+      "schema_has_deleted_at": false,
+      "created_at": true,
+      "updated_at": true,
+      "storage_declarations": [
+        {
+          "start_line": 40,
+          "end_line": 42,
+          "text": "protected $hidden = [\n        'updated_at',\n    ];"
+        }
+      ]
+    },
+    {
+      "source": "app/Models/ProjectTaskFile.php",
+      "sha256": "22cc211592fb8a7df3acb019894f13d13be716c5023d3a561aa97d60488f3f27",
+      "start_line": 1,
+      "end_line": 120,
+      "ledger_class": "ProjectTaskFile",
+      "classification": "persisted_model",
+      "table": "project_task_files",
+      "primary_key": "id",
+      "soft_delete_trait": false,
+      "schema_has_deleted_at": false,
+      "created_at": true,
+      "updated_at": true,
+      "storage_declarations": [
+        {
+          "start_line": 50,
+          "end_line": 53,
+          "text": "protected $appends = [\n        'width',\n        'height',\n    ];"
+        }
+      ]
+    },
+    {
+      "source": "app/Models/ProjectTaskFlowChange.php",
+      "sha256": "810294c5f7136729a8d4ce67c7035b419a44288fe15043f5fde12e42946fa630",
+      "start_line": 1,
+      "end_line": 40,
+      "ledger_class": "ProjectTaskFlowChange",
+      "classification": "persisted_model",
+      "table": "project_task_flow_changes",
+      "primary_key": "id",
+      "soft_delete_trait": false,
+      "schema_has_deleted_at": false,
+      "created_at": true,
+      "updated_at": true,
+      "storage_declarations": []
+    },
+    {
+      "source": "app/Models/ProjectTaskHandoff.php",
+      "sha256": "f925b2ae6afd37d815d6391161789aae3caa36cf6788e2109f5a4e08f9c6c29a",
+      "start_line": 1,
+      "end_line": 12,
+      "ledger_class": "ProjectTaskHandoff",
+      "classification": "persisted_model",
+      "table": "project_task_handoffs",
+      "primary_key": "id",
+      "soft_delete_trait": false,
+      "schema_has_deleted_at": false,
+      "created_at": true,
+      "updated_at": true,
+      "storage_declarations": [
+        {
+          "start_line": 7,
+          "end_line": 7,
+          "text": "protected $table = 'project_task_handoffs';"
+        },
+        {
+          "start_line": 9,
+          "end_line": 11,
+          "text": "protected $casts = [\n        'record' => 'array',\n    ];"
+        }
+      ]
+    },
+    {
+      "source": "app/Models/ProjectTaskPushLog.php",
+      "sha256": "c8871c8e72fbf99fd3f07bec5eed01416eba5160d8eeb29fac6cad0845daf44e",
+      "start_line": 1,
+      "end_line": 45,
+      "ledger_class": "ProjectTaskPushLog",
+      "classification": "persisted_model",
+      "table": "project_task_push_logs",
+      "primary_key": "id",
+      "soft_delete_trait": true,
+      "schema_has_deleted_at": true,
+      "created_at": true,
+      "updated_at": true,
+      "storage_declarations": []
+    },
+    {
+      "source": "app/Models/ProjectTaskRelation.php",
+      "sha256": "40b4b7d3b7943fe34b767795bd9f71b6e8faaf8f134dc3162256d861856ef6fe",
+      "start_line": 1,
+      "end_line": 254,
+      "ledger_class": "ProjectTaskRelation",
+      "classification": "persisted_model",
+      "table": "project_task_relations",
+      "primary_key": "id",
+      "soft_delete_trait": false,
+      "schema_has_deleted_at": false,
+      "created_at": true,
+      "updated_at": true,
+      "storage_declarations": [
+        {
+          "start_line": 47,
+          "end_line": 54,
+          "text": "protected $fillable = [\n        'task_id',\n        'related_task_id',\n        'direction',\n        'dialog_id',\n        'msg_id',\n        'userid',\n    ];"
+        }
+      ]
+    },
+    {
+      "source": "app/Models/ProjectTaskTag.php",
+      "sha256": "814d571ff893c8c7dcb99e4fe3dfcac5fb65094e7d53062326286a7953e43d8d",
+      "start_line": 1,
+      "end_line": 39,
+      "ledger_class": "ProjectTaskTag",
+      "classification": "persisted_model",
+      "table": "project_task_tags",
+      "primary_key": "id",
+      "soft_delete_trait": false,
+      "schema_has_deleted_at": false,
+      "created_at": true,
+      "updated_at": true,
+      "storage_declarations": [
+        {
+          "start_line": 35,
+          "end_line": 38,
+          "text": "protected $hidden = [\n        'created_at',\n        'updated_at',\n    ];"
+        }
+      ]
+    },
+    {
+      "source": "app/Models/ProjectTaskTemplate.php",
+      "sha256": "fd3b81aad6a262ea424d82399b442e8e0a44004f2e5baf52c9abfccf2245b757",
+      "start_line": 1,
+      "end_line": 105,
+      "ledger_class": "ProjectTaskTemplate",
+      "classification": "persisted_model",
+      "table": "project_task_templates",
+      "primary_key": "id",
+      "soft_delete_trait": false,
+      "schema_has_deleted_at": false,
+      "created_at": true,
+      "updated_at": true,
+      "storage_declarations": [
+        {
+          "start_line": 52,
+          "end_line": 62,
+          "text": "protected $fillable = [\n        'project_id',\n        'name',\n        'title',\n        'content',\n        'sort',\n        'is_default',\n        'userid',\n        'use_count',\n        'last_used_at'\n    ];"
+        },
+        {
+          "start_line": 69,
+          "end_line": 71,
+          "text": "protected $casts = [\n        'last_used_at' => 'datetime',\n    ];"
+        }
+      ]
+    },
+    {
+      "source": "app/Models/ProjectTaskUser.php",
+      "sha256": "23f864ff213418be174c929853162e361341353d2edd9d2d094491be09327b8e",
+      "start_line": 1,
+      "end_line": 101,
+      "ledger_class": "ProjectTaskUser",
+      "classification": "persisted_model",
+      "table": "project_task_users",
+      "primary_key": "id",
+      "soft_delete_trait": false,
+      "schema_has_deleted_at": false,
+      "created_at": true,
+      "updated_at": true,
+      "storage_declarations": []
+    },
+    {
+      "source": "app/Models/ProjectTaskVisibilityUser.php",
+      "sha256": "8459e62ed08d8fefe08189ce375d3b4f97f82273c34e9ccd1eaba02793115175",
+      "start_line": 1,
+      "end_line": 43,
+      "ledger_class": "ProjectTaskVisibilityUser",
+      "classification": "persisted_model",
+      "table": "project_task_visibility_users",
+      "primary_key": "id",
+      "soft_delete_trait": false,
+      "schema_has_deleted_at": false,
+      "created_at": true,
+      "updated_at": true,
+      "storage_declarations": []
+    },
+    {
+      "source": "app/Models/ProjectUser.php",
+      "sha256": "acacc12257c8315fdf0fe65160a3ec3abf3db135251260f6dc322eefdf40483b",
+      "start_line": 1,
+      "end_line": 175,
+      "ledger_class": "ProjectUser",
+      "classification": "persisted_model",
+      "table": "project_users",
+      "primary_key": "id",
+      "soft_delete_trait": false,
+      "schema_has_deleted_at": false,
+      "created_at": true,
+      "updated_at": true,
+      "storage_declarations": []
+    },
+    {
+      "source": "app/Models/Report.php",
+      "sha256": "230ce6544eb6e9d40498176a9c7937ceecb9ad066f4870015a6b3ba99788a45c",
+      "start_line": 1,
+      "end_line": 195,
+      "ledger_class": "Report",
+      "classification": "persisted_model",
+      "table": "reports",
+      "primary_key": "id",
+      "soft_delete_trait": false,
+      "schema_has_deleted_at": false,
+      "created_at": true,
+      "updated_at": true,
+      "storage_declarations": [
+        {
+          "start_line": 72,
+          "end_line": 77,
+          "text": "protected $fillable = [\n        \"title\",\n        \"type\",\n        \"userid\",\n        \"content\",\n    ];"
+        },
+        {
+          "start_line": 79,
+          "end_line": 81,
+          "text": "protected $appends = [\n        'receives',\n    ];"
+        }
+      ]
+    },
+    {
+      "source": "app/Models/ReportAnalysis.php",
+      "sha256": "61ee01456fa75f7eca558c2deae40a9e572f5c5ec4b60f89bf2be6b98fb1b463",
+      "start_line": 1,
+      "end_line": 58,
+      "ledger_class": "ReportAnalysis",
+      "classification": "persisted_model",
+      "table": "report_ai_analyses",
+      "primary_key": "id",
+      "soft_delete_trait": false,
+      "schema_has_deleted_at": false,
+      "created_at": true,
+      "updated_at": true,
+      "storage_declarations": [
+        {
+          "start_line": 40,
+          "end_line": 40,
+          "text": "protected $table = 'report_ai_analyses';"
+        },
+        {
+          "start_line": 42,
+          "end_line": 48,
+          "text": "protected $fillable = [\n        'rid',\n        'userid',\n        'model',\n        'analysis_text',\n        'meta',\n    ];"
+        },
+        {
+          "start_line": 50,
+          "end_line": 52,
+          "text": "protected $casts = [\n        'meta' => 'array',\n    ];"
+        }
+      ]
+    },
+    {
+      "source": "app/Models/ReportLink.php",
+      "sha256": "f456dec4973f4ec791e041818e6de566c0f31ff67307b62217e13071eb17a3b8",
+      "start_line": 1,
+      "end_line": 86,
+      "ledger_class": "ReportLink",
+      "classification": "persisted_model",
+      "table": "report_links",
+      "primary_key": "id",
+      "soft_delete_trait": false,
+      "schema_has_deleted_at": false,
+      "created_at": true,
+      "updated_at": true,
+      "storage_declarations": []
+    },
+    {
+      "source": "app/Models/ReportReceive.php",
+      "sha256": "2267d2bed5c9cfbb0c8d0751bfb87ce135f7f90062bfab73caa8e918c89aad19",
+      "start_line": 1,
+      "end_line": 45,
+      "ledger_class": "ReportReceive",
+      "classification": "persisted_model",
+      "table": "report_receives",
+      "primary_key": "id",
+      "soft_delete_trait": false,
+      "schema_has_deleted_at": false,
+      "created_at": false,
+      "updated_at": false,
+      "storage_declarations": [
+        {
+          "start_line": 37,
+          "end_line": 37,
+          "text": "public $timestamps = false;"
+        },
+        {
+          "start_line": 39,
+          "end_line": 44,
+          "text": "protected $fillable = [\n        \"rid\",\n        \"receive_at\",\n        \"userid\",\n        \"read\",\n    ];"
+        }
+      ]
+    },
+    {
+      "source": "app/Models/Setting.php",
+      "sha256": "0d031387dd354f9984c039468637a15ec37a94000dd1b12d69c3303e9dfc7cbb",
+      "start_line": 1,
+      "end_line": 585,
+      "ledger_class": "Setting",
+      "classification": "persisted_model",
+      "table": "settings",
+      "primary_key": "id",
+      "soft_delete_trait": false,
+      "schema_has_deleted_at": false,
+      "created_at": true,
+      "updated_at": true,
+      "storage_declarations": []
+    },
+    {
+      "source": "app/Models/TaskWorker.php",
+      "sha256": "fbd4c8ebe0e2d177281cd71d76f4104376a69aa7be9373427a62c4f1914def42",
+      "start_line": 1,
+      "end_line": 43,
+      "ledger_class": "TaskWorker",
+      "classification": "persisted_model",
+      "table": "task_workers",
+      "primary_key": "id",
+      "soft_delete_trait": true,
+      "schema_has_deleted_at": true,
+      "created_at": true,
+      "updated_at": true,
+      "storage_declarations": []
+    },
+    {
+      "source": "app/Models/Tmp.php",
+      "sha256": "fa273c7af1e24b048e4ede4fb103b3d3599804748009703f1b6588870ce8524f",
+      "start_line": 1,
+      "end_line": 34,
+      "ledger_class": "Tmp",
+      "classification": "persisted_model",
+      "table": "tmps",
+      "primary_key": "id",
+      "soft_delete_trait": false,
+      "schema_has_deleted_at": false,
+      "created_at": true,
+      "updated_at": true,
+      "storage_declarations": []
+    },
+    {
+      "source": "app/Models/UmengAlias.php",
+      "sha256": "73cc158659fdcda6e186504df1f9254a183b129b6356309878160594c0b196dc",
+      "start_line": 1,
+      "end_line": 280,
+      "ledger_class": "UmengAlias",
+      "classification": "persisted_model",
+      "table": "umeng_alias",
+      "primary_key": "id",
+      "soft_delete_trait": false,
+      "schema_has_deleted_at": false,
+      "created_at": true,
+      "updated_at": true,
+      "storage_declarations": [
+        {
+          "start_line": 48,
+          "end_line": 48,
+          "text": "protected $table = 'umeng_alias';"
+        }
+      ]
+    },
+    {
+      "source": "app/Models/UmengLog.php",
+      "sha256": "04afb6ea20edcbdadb80f22b4faddf6f066f696477cd935d080c3c6cac7ad52c",
+      "start_line": 1,
+      "end_line": 32,
+      "ledger_class": "UmengLog",
+      "classification": "persisted_model",
+      "table": "umeng_logs",
+      "primary_key": "id",
+      "soft_delete_trait": false,
+      "schema_has_deleted_at": false,
+      "created_at": true,
+      "updated_at": true,
+      "storage_declarations": []
+    },
+    {
+      "source": "app/Models/User.php",
+      "sha256": "59563a996db2397f5d95e6368ea685e48b20ac1022100c72bf917c4b0aa915de",
+      "start_line": 1,
+      "end_line": 1105,
+      "ledger_class": "User",
+      "classification": "persisted_model",
+      "table": "users",
+      "primary_key": "userid",
+      "soft_delete_trait": false,
+      "schema_has_deleted_at": false,
+      "created_at": true,
+      "updated_at": true,
+      "storage_declarations": [
+        {
+          "start_line": 94,
+          "end_line": 94,
+          "text": "protected $primaryKey = 'userid';"
+        },
+        {
+          "start_line": 96,
+          "end_line": 98,
+          "text": "protected $hidden = [\n        'updated_at',\n    ];"
+        }
+      ]
+    },
+    {
+      "source": "app/Models/UserAppSort.php",
+      "sha256": "61c36582cd1c038b98da1ca3ccacf4052dbcdebecf1655146e74fe7dc9fd789b",
+      "start_line": 1,
+      "end_line": 102,
+      "ledger_class": "UserAppSort",
+      "classification": "persisted_model",
+      "table": "user_app_sorts",
+      "primary_key": "id",
+      "soft_delete_trait": false,
+      "schema_has_deleted_at": false,
+      "created_at": true,
+      "updated_at": true,
+      "storage_declarations": [
+        {
+          "start_line": 31,
+          "end_line": 34,
+          "text": "protected $fillable = [\n        'userid',\n        'sorts',\n    ];"
+        },
+        {
+          "start_line": 36,
+          "end_line": 38,
+          "text": "protected $casts = [\n        'sorts' => 'array',\n    ];"
+        }
+      ]
+    },
+    {
+      "source": "app/Models/UserBot.php",
+      "sha256": "f611b31496b1d099242da508920725838bc051a635a431ecc6c201a6ce42486d",
+      "start_line": 1,
+      "end_line": 641,
+      "ledger_class": "UserBot",
+      "classification": "persisted_model",
+      "table": "user_bots",
+      "primary_key": "id",
+      "soft_delete_trait": false,
+      "schema_has_deleted_at": false,
+      "created_at": true,
+      "updated_at": true,
+      "storage_declarations": [
+        {
+          "start_line": 55,
+          "end_line": 57,
+          "text": "protected $casts = [\n        'webhook_events' => 'array',\n    ];"
+        }
+      ]
+    },
+    {
+      "source": "app/Models/UserCheckinFace.php",
+      "sha256": "6cb2e65766e8ddffe63de21e076855bdc7b83c2cd97986e3f7f912023aa70012",
+      "start_line": 1,
+      "end_line": 108,
+      "ledger_class": "UserCheckinFace",
+      "classification": "persisted_model",
+      "table": "user_checkin_faces",
+      "primary_key": "id",
+      "soft_delete_trait": false,
+      "schema_has_deleted_at": false,
+      "created_at": true,
+      "updated_at": true,
+      "storage_declarations": []
+    },
+    {
+      "source": "app/Models/UserCheckinMac.php",
+      "sha256": "a58799e09b3b64e092b6d8341f9ba6f6137fd415df7d076c5c15cac493c5aa9f",
+      "start_line": 1,
+      "end_line": 72,
+      "ledger_class": "UserCheckinMac",
+      "classification": "persisted_model",
+      "table": "user_checkin_macs",
+      "primary_key": "id",
+      "soft_delete_trait": false,
+      "schema_has_deleted_at": false,
+      "created_at": true,
+      "updated_at": true,
+      "storage_declarations": []
+    },
+    {
+      "source": "app/Models/UserCheckinRecord.php",
+      "sha256": "fbcc5e2f54144fd964df0d0e76c983e3eb11879e70c98d6d92a5cf4cd1640f78",
+      "start_line": 1,
+      "end_line": 156,
+      "ledger_class": "UserCheckinRecord",
+      "classification": "persisted_model",
+      "table": "user_checkin_records",
+      "primary_key": "id",
+      "soft_delete_trait": false,
+      "schema_has_deleted_at": false,
+      "created_at": true,
+      "updated_at": true,
+      "storage_declarations": []
+    },
+    {
+      "source": "app/Models/UserDelete.php",
+      "sha256": "0905eb33f410ccc8c78225b0dbdc07bcc4758350bf82d6346fb365209e59f3ca",
+      "start_line": 1,
+      "end_line": 84,
+      "ledger_class": "UserDelete",
+      "classification": "persisted_model",
+      "table": "user_deletes",
+      "primary_key": "id",
+      "soft_delete_trait": false,
+      "schema_has_deleted_at": false,
+      "created_at": true,
+      "updated_at": true,
+      "storage_declarations": []
+    },
+    {
+      "source": "app/Models/UserDepartment.php",
+      "sha256": "7b20795f4397d19b69a39b624479be95f8c58c3fa43dec900e886b249ba4a540",
+      "start_line": 1,
+      "end_line": 684,
+      "ledger_class": "UserDepartment",
+      "classification": "persisted_model",
+      "table": "user_departments",
+      "primary_key": "id",
+      "soft_delete_trait": false,
+      "schema_has_deleted_at": false,
+      "created_at": true,
+      "updated_at": true,
+      "storage_declarations": [
+        {
+          "start_line": 41,
+          "end_line": 43,
+          "text": "protected $appends = [\n        'deputy_userids',\n    ];"
+        }
+      ]
+    },
+    {
+      "source": "app/Models/UserDevice.php",
+      "sha256": "ffd8d3a9cd5a300969b0f0dbbf583da53f8b8d12ed97ab798167cc18b618accb",
+      "start_line": 1,
+      "end_line": 312,
+      "ledger_class": "UserDevice",
+      "classification": "persisted_model",
+      "table": "user_devices",
+      "primary_key": "id",
+      "soft_delete_trait": true,
+      "schema_has_deleted_at": true,
+      "created_at": true,
+      "updated_at": true,
+      "storage_declarations": [
+        {
+          "start_line": 52,
+          "end_line": 52,
+          "text": "protected $table = 'user_devices';"
+        },
+        {
+          "start_line": 56,
+          "end_line": 58,
+          "text": "protected $appends = [\n        'is_current',\n    ];"
+        }
+      ]
+    },
+    {
+      "source": "app/Models/UserEmailVerification.php",
+      "sha256": "0b6841f9f788f9111cfc58c1adc99e30c18188fcb8e8101a075081ead227e863",
+      "start_line": 1,
+      "end_line": 152,
+      "ledger_class": "UserEmailVerification",
+      "classification": "persisted_model",
+      "table": "user_email_verifications",
+      "primary_key": "id",
+      "soft_delete_trait": false,
+      "schema_has_deleted_at": false,
+      "created_at": true,
+      "updated_at": true,
+      "storage_declarations": []
+    },
+    {
+      "source": "app/Models/UserFavorite.php",
+      "sha256": "45cb8746fede46cebdeeec2f35590643278a7fcfbe3ebc2d1023b3c4c8777c9d",
+      "start_line": 1,
+      "end_line": 340,
+      "ledger_class": "UserFavorite",
+      "classification": "persisted_model",
+      "table": "user_favorites",
+      "primary_key": "id",
+      "soft_delete_trait": false,
+      "schema_has_deleted_at": false,
+      "created_at": true,
+      "updated_at": true,
+      "storage_declarations": [
+        {
+          "start_line": 45,
+          "end_line": 50,
+          "text": "protected $fillable = [\n        'userid',\n        'favoritable_type',\n        'favoritable_id',\n        'remark',\n    ];"
+        }
+      ]
+    },
+    {
+      "source": "app/Models/UserRecentItem.php",
+      "sha256": "70e0692ed84888734f924d84f5cc1699f4e19ebecb6bfdf647de502a427148e1",
+      "start_line": 1,
+      "end_line": 79,
+      "ledger_class": "UserRecentItem",
+      "classification": "persisted_model",
+      "table": "user_recent_items",
+      "primary_key": "id",
+      "soft_delete_trait": false,
+      "schema_has_deleted_at": false,
+      "created_at": true,
+      "updated_at": true,
+      "storage_declarations": [
+        {
+          "start_line": 51,
+          "end_line": 58,
+          "text": "protected $fillable = [\n        'userid',\n        'target_type',\n        'target_id',\n        'source_type',\n        'source_id',\n        'browsed_at',\n    ];"
+        },
+        {
+          "start_line": 60,
+          "end_line": 62,
+          "text": "protected $casts = [\n        'browsed_at' => 'datetime',\n    ];"
+        }
+      ]
+    },
+    {
+      "source": "app/Models/UserTag.php",
+      "sha256": "5c25826faf70c933964a7938ba1dfc2fd4fd1eeee62cf88ee84e669fdcfa5e13",
+      "start_line": 1,
+      "end_line": 115,
+      "ledger_class": "UserTag",
+      "classification": "persisted_model",
+      "table": "user_tags",
+      "primary_key": "id",
+      "soft_delete_trait": false,
+      "schema_has_deleted_at": false,
+      "created_at": true,
+      "updated_at": true,
+      "storage_declarations": [
+        {
+          "start_line": 41,
+          "end_line": 41,
+          "text": "protected $table = 'user_tags';"
+        },
+        {
+          "start_line": 43,
+          "end_line": 48,
+          "text": "protected $fillable = [\n        'user_id',\n        'name',\n        'created_by',\n        'updated_by',\n    ];"
+        }
+      ]
+    },
+    {
+      "source": "app/Models/UserTagRecognition.php",
+      "sha256": "afe05e099ffdc596e2bc2484b535e3d9c8d4d3f6647e8a5dbbb970c9e0aa40e3",
+      "start_line": 1,
+      "end_line": 52,
+      "ledger_class": "UserTagRecognition",
+      "classification": "persisted_model",
+      "table": "user_tag_recognitions",
+      "primary_key": "id",
+      "soft_delete_trait": false,
+      "schema_has_deleted_at": false,
+      "created_at": true,
+      "updated_at": true,
+      "storage_declarations": [
+        {
+          "start_line": 35,
+          "end_line": 35,
+          "text": "protected $table = 'user_tag_recognitions';"
+        },
+        {
+          "start_line": 37,
+          "end_line": 40,
+          "text": "protected $fillable = [\n        'tag_id',\n        'user_id',\n    ];"
+        }
+      ]
+    },
+    {
+      "source": "app/Models/UserTaskBrowse.php",
+      "sha256": "ac97cb5767089c83f171956912fe3f104051158eed466a96ea915fd3890619f2",
+      "start_line": 1,
+      "end_line": 138,
+      "ledger_class": "UserTaskBrowse",
+      "classification": "persisted_model",
+      "table": "user_task_browses",
+      "primary_key": "id",
+      "soft_delete_trait": false,
+      "schema_has_deleted_at": false,
+      "created_at": true,
+      "updated_at": true,
+      "storage_declarations": [
+        {
+          "start_line": 37,
+          "end_line": 41,
+          "text": "protected $fillable = [\n        'userid',\n        'task_id', \n        'browsed_at',\n    ];"
+        },
+        {
+          "start_line": 43,
+          "end_line": 45,
+          "text": "protected $casts = [\n        'browsed_at' => 'datetime',\n    ];"
+        }
+      ]
+    },
+    {
+      "source": "app/Models/UserTransfer.php",
+      "sha256": "d613338d081f2468668d60581fddc7fc7185886db0a9499c3e41cd28f0f82acf",
+      "start_line": 1,
+      "end_line": 111,
+      "ledger_class": "UserTransfer",
+      "classification": "persisted_model",
+      "table": "user_transfers",
+      "primary_key": "id",
+      "soft_delete_trait": false,
+      "schema_has_deleted_at": false,
+      "created_at": true,
+      "updated_at": true,
+      "storage_declarations": []
+    },
+    {
+      "source": "app/Models/WebDavCredential.php",
+      "sha256": "9979b2661e1973c33c51d039cd00601c3aadc623aa7394dafb2062f33ce6490f",
+      "start_line": 1,
+      "end_line": 77,
+      "ledger_class": "WebDavCredential",
+      "classification": "persisted_model",
+      "table": "webdav_credentials",
+      "primary_key": "id",
+      "soft_delete_trait": false,
+      "schema_has_deleted_at": false,
+      "created_at": true,
+      "updated_at": true,
+      "storage_declarations": [
+        {
+          "start_line": 21,
+          "end_line": 21,
+          "text": "protected $table = 'webdav_credentials';"
+        },
+        {
+          "start_line": 23,
+          "end_line": 23,
+          "text": "protected $hidden = ['password_hash'];"
+        },
+        {
+          "start_line": 25,
+          "end_line": 29,
+          "text": "protected $casts = [\n        'expires_at' => 'datetime',\n        'last_used_at' => 'datetime',\n        'revoked_at' => 'datetime',\n    ];"
+        }
+      ]
+    },
+    {
+      "source": "app/Models/WebDavLock.php",
+      "sha256": "74ec4379982d64cdf22433c5b105dadd6977c45d1f5b17d67e3e3c241d0d7e0f",
+      "start_line": 1,
+      "end_line": 12,
+      "ledger_class": "WebDavLock",
+      "classification": "persisted_model",
+      "table": "webdav_locks",
+      "primary_key": "id",
+      "soft_delete_trait": false,
+      "schema_has_deleted_at": false,
+      "created_at": true,
+      "updated_at": true,
+      "storage_declarations": [
+        {
+          "start_line": 7,
+          "end_line": 7,
+          "text": "protected $table = 'webdav_locks';"
+        },
+        {
+          "start_line": 9,
+          "end_line": 11,
+          "text": "protected $casts = [\n        'timeout_at' => 'datetime',\n    ];"
+        }
+      ]
+    },
+    {
+      "source": "app/Models/WebDavOperationLog.php",
+      "sha256": "822158265cb9efdf2cc29c3ed199f6a3e4ebeb2fb1e8d7841a92834ca5b205d2",
+      "start_line": 1,
+      "end_line": 10,
+      "ledger_class": "WebDavOperationLog",
+      "classification": "persisted_model",
+      "table": "webdav_operation_logs",
+      "primary_key": "id",
+      "soft_delete_trait": false,
+      "schema_has_deleted_at": false,
+      "created_at": true,
+      "updated_at": false,
+      "storage_declarations": [
+        {
+          "start_line": 7,
+          "end_line": 7,
+          "text": "protected $table = 'webdav_operation_logs';"
+        }
+      ]
+    },
+    {
+      "source": "app/Models/WebDavProperty.php",
+      "sha256": "ba386ab558ffdc6bf60d491b85c21af912a4acb70d2325d9109d1c0ee00374e0",
+      "start_line": 1,
+      "end_line": 12,
+      "ledger_class": "WebDavProperty",
+      "classification": "persisted_model",
+      "table": "webdav_properties",
+      "primary_key": "id",
+      "soft_delete_trait": false,
+      "schema_has_deleted_at": false,
+      "created_at": true,
+      "updated_at": true,
+      "storage_declarations": [
+        {
+          "start_line": 7,
+          "end_line": 7,
+          "text": "protected $table = 'webdav_properties';"
+        },
+        {
+          "start_line": 9,
+          "end_line": 11,
+          "text": "protected $casts = [\n        'value_type' => 'integer',\n    ];"
+        }
+      ]
+    },
+    {
+      "source": "app/Models/WebSocket.php",
+      "sha256": "9a52c915d8be060294d5204084ced375fb1d58a65b7139f93c610ea97adb8a85",
+      "start_line": 1,
+      "end_line": 38,
+      "ledger_class": "WebSocket",
+      "classification": "persisted_model",
+      "table": "web_sockets",
+      "primary_key": "id",
+      "soft_delete_trait": false,
+      "schema_has_deleted_at": false,
+      "created_at": true,
+      "updated_at": true,
+      "storage_declarations": []
+    },
+    {
+      "source": "app/Models/WebSocketDialog.php",
+      "sha256": "4334008d29f48f6da5f78931a1568111ef415cb8d3a38036c14f232e3b82bfe1",
+      "start_line": 1,
+      "end_line": 1257,
+      "ledger_class": "WebSocketDialog",
+      "classification": "persisted_model",
+      "table": "web_socket_dialogs",
+      "primary_key": "id",
+      "soft_delete_trait": true,
+      "schema_has_deleted_at": true,
+      "created_at": true,
+      "updated_at": true,
+      "storage_declarations": [
+        {
+          "start_line": 69,
+          "end_line": 69,
+          "text": "protected $appends = ['deputy_ids'];"
+        }
+      ]
+    },
+    {
+      "source": "app/Models/WebSocketDialogConfig.php",
+      "sha256": "6ac1711931f683df4fe2f9fbf84dc5db6c2e238e7a29c02011f9311969018cc7",
+      "start_line": 1,
+      "end_line": 64,
+      "ledger_class": "WebSocketDialogConfig",
+      "classification": "persisted_model",
+      "table": "web_socket_dialog_configs",
+      "primary_key": "id",
+      "soft_delete_trait": false,
+      "schema_has_deleted_at": false,
+      "created_at": true,
+      "updated_at": true,
+      "storage_declarations": [
+        {
+          "start_line": 42,
+          "end_line": 47,
+          "text": "protected $fillable = [\n        'dialog_id',\n        'userid',\n        'type',\n        'value',\n    ];"
+        }
+      ]
+    },
+    {
+      "source": "app/Models/WebSocketDialogMsg.php",
+      "sha256": "0a763cbe5c0c882f9055968708a06c01dd60151abf6ce59b0a9cb2740bc39586",
+      "start_line": 1,
+      "end_line": 1653,
+      "ledger_class": "WebSocketDialogMsg",
+      "classification": "persisted_model",
+      "table": "web_socket_dialog_msgs",
+      "primary_key": "id",
+      "soft_delete_trait": true,
+      "schema_has_deleted_at": true,
+      "created_at": true,
+      "updated_at": true,
+      "storage_declarations": [
+        {
+          "start_line": 92,
+          "end_line": 94,
+          "text": "protected $appends = [\n        'percentage',\n    ];"
+        },
+        {
+          "start_line": 96,
+          "end_line": 99,
+          "text": "protected $hidden = [\n        'key',\n        'updated_at',\n    ];"
+        }
+      ]
+    },
+    {
+      "source": "app/Models/WebSocketDialogMsgAttachment.php",
+      "sha256": "6c30503f08dd7ca2f7b741e45ddd8d867341609e0ee8209dcb7dcbb59fde8ff9",
+      "start_line": 1,
+      "end_line": 49,
+      "ledger_class": "WebSocketDialogMsgAttachment",
+      "classification": "persisted_model",
+      "table": "web_socket_dialog_msg_attachments",
+      "primary_key": "id",
+      "soft_delete_trait": false,
+      "schema_has_deleted_at": false,
+      "created_at": true,
+      "updated_at": true,
+      "storage_declarations": [
+        {
+          "start_line": 35,
+          "end_line": 48,
+          "text": "protected $fillable = [\n        'msg_id',\n        'dialog_id',\n        'source_type',\n        'kind',\n        'position',\n        'name',\n        'ext',\n        'path',\n        'thumb',\n        'size',\n        'width',\n        'height',\n    ];"
+        }
+      ]
+    },
+    {
+      "source": "app/Models/WebSocketDialogMsgAttachmentBackfill.php",
+      "sha256": "6ef79b8bd2d7d7a0cd29d582eadf7eb08c7488324526c35fedcb425a243331e0",
+      "start_line": 1,
+      "end_line": 52,
+      "ledger_class": "WebSocketDialogMsgAttachmentBackfill",
+      "classification": "persisted_model",
+      "table": "web_socket_dialog_msg_attachment_backfills",
+      "primary_key": "id",
+      "soft_delete_trait": false,
+      "schema_has_deleted_at": false,
+      "created_at": true,
+      "updated_at": true,
+      "storage_declarations": [
+        {
+          "start_line": 30,
+          "end_line": 30,
+          "text": "protected $table = 'web_socket_dialog_msg_attachment_backfills';"
+        },
+        {
+          "start_line": 32,
+          "end_line": 45,
+          "text": "protected $fillable = [\n        'status',\n        'before_msg_id',\n        'last_msg_id',\n        'processed_count',\n        'attachment_count',\n        'empty_count',\n        'failure_count',\n        'retry_count',\n        'last_error',\n        'started_at',\n        'completed_at',\n        'next_retry_at',\n    ];"
+        },
+        {
+          "start_line": 47,
+          "end_line": 51,
+          "text": "protected $casts = [\n        'started_at' => 'datetime',\n        'completed_at' => 'datetime',\n        'next_retry_at' => 'datetime',\n    ];"
+        }
+      ]
+    },
+    {
+      "source": "app/Models/WebSocketDialogMsgRead.php",
+      "sha256": "10e1e9c9be4a996777a587bc5b9e44649cee5f51eab7af100686027eed630979",
+      "start_line": 1,
+      "end_line": 150,
+      "ledger_class": "WebSocketDialogMsgRead",
+      "classification": "persisted_model",
+      "table": "web_socket_dialog_msg_reads",
+      "primary_key": "id",
+      "soft_delete_trait": false,
+      "schema_has_deleted_at": false,
+      "created_at": false,
+      "updated_at": false,
+      "storage_declarations": []
+    },
+    {
+      "source": "app/Models/WebSocketDialogMsgTodo.php",
+      "sha256": "73a8bb287e7f7eec3591572c523d202f1b8f32067f4e0d74aa6ab8903acd8fcc",
+      "start_line": 1,
+      "end_line": 76,
+      "ledger_class": "WebSocketDialogMsgTodo",
+      "classification": "persisted_model",
+      "table": "web_socket_dialog_msg_todos",
+      "primary_key": "id",
+      "soft_delete_trait": false,
+      "schema_has_deleted_at": false,
+      "created_at": false,
+      "updated_at": false,
+      "storage_declarations": [
+        {
+          "start_line": 38,
+          "end_line": 40,
+          "text": "protected $appends = [\n        'msg_data',\n    ];"
+        }
+      ]
+    },
+    {
+      "source": "app/Models/WebSocketDialogMsgTranslate.php",
+      "sha256": "f172db34a4eb361fad986a034a1a6bf7f9edb2dee73d760d9981866f721cc03f",
+      "start_line": 1,
+      "end_line": 36,
+      "ledger_class": "WebSocketDialogMsgTranslate",
+      "classification": "persisted_model",
+      "table": "web_socket_dialog_msg_translates",
+      "primary_key": "id",
+      "soft_delete_trait": false,
+      "schema_has_deleted_at": false,
+      "created_at": false,
+      "updated_at": false,
+      "storage_declarations": []
+    },
+    {
+      "source": "app/Models/WebSocketDialogSession.php",
+      "sha256": "129ad7cbb080d2d30642f8123bbd9ce95e3b3f40bf261c464488b9af3ef0b76f",
+      "start_line": 1,
+      "end_line": 86,
+      "ledger_class": "WebSocketDialogSession",
+      "classification": "persisted_model",
+      "table": "web_socket_dialog_sessions",
+      "primary_key": "id",
+      "soft_delete_trait": false,
+      "schema_has_deleted_at": false,
+      "created_at": true,
+      "updated_at": true,
+      "storage_declarations": [
+        {
+          "start_line": 42,
+          "end_line": 46,
+          "text": "protected $fillable = [\n        'dialog_id',\n        'userid',\n        'title',\n    ];"
+        }
+      ]
+    },
+    {
+      "source": "app/Models/WebSocketDialogUser.php",
+      "sha256": "8ed6812935ae0306533f597b260061366020ec48f731c56a2b5d74ead58f5e90",
+      "start_line": 1,
+      "end_line": 74,
+      "ledger_class": "WebSocketDialogUser",
+      "classification": "persisted_model",
+      "table": "web_socket_dialog_users",
+      "primary_key": "id",
+      "soft_delete_trait": false,
+      "schema_has_deleted_at": false,
+      "created_at": true,
+      "updated_at": true,
+      "storage_declarations": [
+        {
+          "start_line": 52,
+          "end_line": 52,
+          "text": "protected $dateFormat = 'Y-m-d H:i:s.u';"
+        }
+      ]
+    },
+    {
+      "source": "app/Models/WebSocketTmpMsg.php",
+      "sha256": "435e29a0008f186f24c1d3e8bac44a92fc790b8d17cc74bb5ef1d68ae6d29848",
+      "start_line": 1,
+      "end_line": 36,
+      "ledger_class": "WebSocketTmpMsg",
+      "classification": "persisted_model",
+      "table": "web_socket_tmp_msgs",
+      "primary_key": "id",
+      "soft_delete_trait": false,
+      "schema_has_deleted_at": false,
+      "created_at": true,
+      "updated_at": true,
+      "storage_declarations": []
+    }
+  ],
+  "source_model_schema_discrepancies": [
+    {
+      "model": "WebSocketDialogSession",
+      "field": "userid",
+      "disposition": "Model fillable/relation declaration has no corresponding column in any migration; do not invent a userid column. Session access must be derived through dialog memberships.",
+      "source": {
+        "source": "app/Models/WebSocketDialogSession.php",
+        "sha256": "129ad7cbb080d2d30642f8123bbd9ce95e3b3f40bf261c464488b9af3ef0b76f",
+        "start_line": 35,
+        "end_line": 54
+      }
+    },
+    {
+      "model": "Meeting",
+      "field": "deleted_at",
+      "disposition": "Schema has nullable deleted_at but model does not use SoftDeletes. Column retained exactly; do not add implicit soft-delete filtering solely from column name.",
+      "source": {
+        "source": "app/Models/Meeting.php",
+        "sha256": "d6ebb445f95950a414f98905a817e4c2f37a197d4b5b96cad483a3373df58872",
+        "start_line": 41,
+        "end_line": 49
+      }
+    }
+  ],
+  "tables_without_model": [
+    "approve_proc_msgs",
+    "user_department_owners"
+  ],
+  "checks": {
+    "database": "NOT_RUN",
+    "tests": "NOT_RUN",
+    "build": "NOT_RUN",
+    "lint": "NOT_RUN",
+    "formatter": "NOT_RUN",
+    "smoke": "NOT_RUN"
+  }
+}

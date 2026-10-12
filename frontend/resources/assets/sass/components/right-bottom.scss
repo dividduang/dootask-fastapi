@@ -1,0 +1,104 @@
+.common-right-bottom {
+    margin-bottom: var(--navigation-bar-height);
+    position: absolute;
+    bottom: 22px;
+    right: 26px;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    transition: bottom 0.3s;
+
+    .common-right-bottom-link {
+        display: inline-block;
+        cursor: pointer;
+        line-height: 32px;
+        height: 32px;
+        padding: 0 15px;
+        margin: 4px 0;
+        font-size: 14px;
+        border-radius: 4px;
+        color: #fff;
+        background-color: $primary-color;
+        border-color: $primary-color;
+        &:hover {
+            color: #fff;
+            opacity: 0.9;
+        }
+    }
+}
+
+.common-right-bottom-notification {
+    .ivu-modal-header {
+        padding-bottom: 8px !important;
+    }
+    .notification-head {
+        display: flex;
+        align-items: center;
+        .notification-title {
+            display: inline-block;
+            vertical-align: middle;
+            font-size: 18px;
+            color: $primary-title-color;
+            font-weight: 500;
+            margin-right: 6px;
+        }
+    }
+    .notification-body {
+        max-height: 210px;
+        margin-bottom: 16px;
+        .vuepress-markdown-body {
+            padding: 0 !important;
+            font-size: 14px;
+        }
+    }
+    .notification-tip {
+        display: inline-block;
+        color: $primary-desc-color;
+        line-height: 22px;
+        padding-top: 4px;
+        font-size: 12px;
+    }
+    .notification-link {
+        margin-top: 20px;
+        text-align: right;
+        > button + button {
+            margin-left: 6px;
+        }
+    }
+}
+
+body.window-portrait {
+    .common-right-bottom {
+        bottom: 20px;
+        right: auto;
+        left: 50%;
+        transform: translateX(-50%);
+        align-items: center;
+
+        .common-right-bottom-link {
+            color: $primary-text-color !important;
+            background-color: transparent;
+            border-color: transparent;
+        }
+    }
+}
+@media screen and (max-height: 720px) {
+    .common-right-bottom {
+        .common-right-bottom-link {
+            line-height: 24px;
+            height: 24px;
+        }
+    }
+    body.window-portrait {
+        .common-right-bottom {
+            bottom: 16px;
+        }
+    }
+}
+
+@media (height <= 600px) {
+    .common-right-bottom {
+        display: none;
+    }
+}

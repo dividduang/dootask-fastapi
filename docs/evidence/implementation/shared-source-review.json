@@ -1,0 +1,246 @@
+{
+  "sampled_at": "2026-10-12T08:38:57.911725+00:00",
+  "source_bindings": [
+    {
+      "path": "app/Http/Controllers/Api/UsersController.php",
+      "sha256": "d3480aae25371d1e5f2d9a32a93e8a13519e0355604ab13a745fe1cfb062fd3f",
+      "reviewed_ranges": [
+        [
+          75,
+          176
+        ],
+        [
+          244,
+          280
+        ],
+        [
+          293,
+          416
+        ],
+        [
+          620,
+          644
+        ],
+        [
+          2673,
+          2698
+        ]
+      ]
+    },
+    {
+      "path": "app/Models/User.php",
+      "sha256": "59563a996db2397f5d95e6368ea685e48b20ac1022100c72bf917c4b0aa915de",
+      "reviewed_ranges": [
+        [
+          380,
+          431
+        ],
+        [
+          746,
+          841
+        ],
+        [
+          989,
+          1013
+        ]
+      ]
+    },
+    {
+      "path": "app/Models/UserDevice.php",
+      "sha256": "ffd8d3a9cd5a300969b0f0dbbf583da53f8b8d12ed97ab798167cc18b618accb",
+      "reviewed_ranges": [
+        [
+          201,
+          311
+        ]
+      ]
+    },
+    {
+      "path": "app/Http/Middleware/WebApi.php",
+      "sha256": "97addc1414432c5e00eac7411835fc18989d80c45be8ce305035e8819528a558",
+      "reviewed_ranges": [
+        [
+          22,
+          80
+        ]
+      ]
+    },
+    {
+      "path": "app/Module/Interface/DooSo.php",
+      "sha256": "4fd806d78db64d09ea116f41171e48cef3f5ed087aadcd40667ab2c1676d26d4",
+      "reviewed_ranges": [
+        [
+          70,
+          126
+        ],
+        [
+          193,
+          211
+        ],
+        [
+          319,
+          410
+        ]
+      ]
+    },
+    {
+      "path": "app/Module/Doo.php",
+      "sha256": "ac6f82394b5f9a7adc1ad78a4026a59a8cda42ddec3c3711d334aba2a59b5684",
+      "reviewed_ranges": [
+        [
+          54,
+          114
+        ]
+      ]
+    },
+    {
+      "path": "app/Module/OnlineLicense.php",
+      "sha256": "be371fbaaa14ebf5155eb3a080d6d7cb9c3cad2a64b7ea352be3b70ea9d8654a",
+      "reviewed_ranges": [
+        [
+          91,
+          159
+        ],
+        [
+          165,
+          297
+        ]
+      ]
+    },
+    {
+      "path": "app/Models/Project.php",
+      "sha256": "a4f3238c3ddf84a290a74d894fb3ce5a7040a5c1d92d2c10cd618e5c6b7b4265",
+      "reviewed_ranges": [
+        [
+          654,
+          732
+        ]
+      ]
+    },
+    {
+      "path": "app/Models/WebSocketDialog.php",
+      "sha256": "4334008d29f48f6da5f78931a1568111ef415cb8d3a38036c14f232e3b82bfe1",
+      "reviewed_ranges": [
+        [
+          996,
+          1019
+        ]
+      ]
+    },
+    {
+      "path": "app/Http/Controllers/IndexController.php",
+      "sha256": "d422ec42bdbdaa2667da695060312b61bf314b84829409474adc9459f05a121d",
+      "reviewed_ranges": [
+        [
+          107,
+          233
+        ]
+      ]
+    },
+    {
+      "path": "resources/assets/js/store/actions.js",
+      "sha256": "47bd5bfc389ab8bc21f785679790673b49efdbdbcc63b4f06981e34a6a7f339b",
+      "reviewed_ranges": [
+        [
+          219,
+          410
+        ],
+        [
+          5228,
+          5352
+        ]
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "kind": "FACT",
+      "detail": "Encryption header uses semicolon/query pairs, not JSON. Public key -/_/$ mapping and armor-free encrypted field implemented."
+    },
+    {
+      "kind": "FACT",
+      "detail": "Source current-user/password/device expiry/account row state and personal project dependency reviewed; new token/password internals intentionally non-compatible with old accounts."
+    },
+    {
+      "kind": "UNVERIFIED",
+      "detail": "PGPy RSA3072 server key and curve25519 OpenPGP.js client response encryption need actual browser interop; no debug bypass."
+    },
+    {
+      "kind": "BLOCKED",
+      "detail": "Registration requires valid official license. No account bootstrap or CLI skip introduced."
+    }
+  ],
+  "license_blocker": {
+    "known_service_base": "https://appstore.dootask.com/api/v1/license/",
+    "source_config": "ONLINE_LICENSE_APPSTORE_URL",
+    "request_contracts": {
+      "email/send": [
+        "email",
+        "lang"
+      ],
+      "login": [
+        "email",
+        "code",
+        "lang",
+        "sn",
+        "macs",
+        "url",
+        "version"
+      ],
+      "login/confirm": [
+        "email",
+        "code",
+        "entitlement_id",
+        "lang",
+        "sn",
+        "macs",
+        "url",
+        "version"
+      ],
+      "trial": [
+        "email",
+        "code",
+        "lang",
+        "sn",
+        "macs",
+        "url",
+        "version"
+      ],
+      "renew": [
+        "sn",
+        "macs",
+        "url",
+        "version",
+        "Authorization: Bearer instance_token"
+      ]
+    },
+    "response_envelope": {
+      "code": 200,
+      "message": "string",
+      "data": "object"
+    },
+    "issue_response_fields": [
+      "status=issued|renewed|select_required",
+      "license (opaque signed blob)",
+      "snapshot.plan",
+      "snapshot.people",
+      "snapshot.valid_until",
+      "snapshot.lease_expired_at",
+      "instance_token",
+      "candidates"
+    ],
+    "local_verification": "OnlineLicense.applyIssue still calls Doo.licenseSave(blob); success from HTTP alone is NOT a trusted locally verified license. Source User.reg licenseBindingError checks people/sn/mac then userCreate native may enforce seats/expiry/IP/domain/email.",
+    "required_material": [
+      "Vendor-supported non-PHP license verification interface or documented blob encoding/signature algorithm/trusted verification PUBLIC key and signed valid/expired/over-limit samples; no vendor signing private key requested",
+      "Documented SN/fingerprint binding compatible with authorized new Python instance, seat-count/status restrictions and supported initialization rights",
+      "Authorized test entitlement/account with verification-mail access and endpoint configuration, or valid offline license for isolated test instance",
+      "If official native verifier is the supported route: legally usable pinned binary/platform dependencies/ABI/thread and allocation contract; no PHP business proxy"
+    ],
+    "not_unknown": [
+      "Official URL and HTTP payload/envelope are present in source",
+      "Old md5s/token interoperability is excluded by user decision"
+    ],
+    "runtime_acquisition_reference": "docs/evidence/acquisition/native-acquisition-ledger.json"
+  },
+  "checks": "NOT_RUN"
+}

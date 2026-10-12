@@ -14,3 +14,7 @@
 *.toml text working-tree-encoding=UTF-8
 *.sh text working-tree-encoding=UTF-8
 *.ps1 text working-tree-encoding=UTF-8
+# Original frontend and release artifacts retain exact upstream bytes.
+frontend/** -text !eol !working-tree-encoding
+# Evidence manifests refer to raw file digests; never normalize evidence bytes.
+docs/evidence/** -text !eol !working-tree-encoding

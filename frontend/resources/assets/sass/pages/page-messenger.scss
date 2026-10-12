@@ -1,0 +1,787 @@
+.page-messenger {
+    display: flex;
+    .messenger-wrapper {
+        flex: 1;
+        display: flex;
+        align-items: flex-start;
+        overflow: hidden;
+        .messenger-select {
+            position: relative;
+            height: 100%;
+            width: 30%;
+            min-width: 240px;
+            max-width: 320px;
+            flex-shrink: 0;
+            display: flex;
+            flex-direction: column;
+            .messenger-search {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 54px;
+                padding: 0 12px;
+                flex-shrink: 0;
+                .search-mode {
+                    flex-shrink: 0;
+                    width: 32px;
+                    height: 32px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 18px;
+                    color: #808695;
+                    cursor: pointer;
+                    border-radius: 8px;
+                    .team {
+                        font-size: 20px;
+                    }
+                    &:hover,
+                    &.active {
+                        color: #84C56A;
+                    }
+                }
+                .search-wrapper {
+                    flex: 1;
+                    background-color: #F7F7F7;
+                    padding: 0 6px;
+                    margin: 0 4px;
+                    border-radius: 12px;
+                    overflow: hidden;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    .search-pre {
+                        flex-shrink: 0;
+                        width: 32px;
+                        height: 32px;
+                        margin-right: -6px;
+                        font-size: 16px;
+                        color: #808695;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        .common-loading {
+                            width: 14px;
+                            height: 14px;
+                            margin: 0;
+                        }
+                    }
+                    .search-form {
+                        flex: 1;
+                        .ivu-input {
+                            border-color: transparent;
+                            background-color: transparent;
+                            &:hover,
+                            &:focus {
+                                box-shadow: none;
+                            }
+                        }
+                    }
+                }
+            }
+            .messenger-nav {
+                display: flex;
+                align-items: center;
+                padding: 0 10px 10px;
+                .nav-menu {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    line-height: 1;
+                    color: #888888;
+                    cursor: pointer;
+                    width: 28px;
+                    .nav-icon {
+                        width: 100%;
+                        height: 100%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        > i {
+                            font-size: 16px;
+                        }
+                    }
+                }
+                .nav-list {
+                    flex: 1;
+                    flex-shrink: 0;
+                    display: flex;
+                    align-items: center;
+                    flex-wrap: nowrap;
+                    overflow-y: hidden;
+                    overflow-x: auto;
+                    margin-top: -12px;
+                    padding-top: 12px;
+                    &::-webkit-scrollbar {
+                        display: none;
+                    }
+                    .nav-item {
+                        flex: 1;
+                        flex-shrink: 0;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        line-height: 1;
+                        padding: 2px 12px;
+                        color: #888888;
+                        cursor: pointer;
+                        .nav-title {
+                            position: relative;
+                            max-width: 100%;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            > em {
+                                font-style: normal;
+                                overflow: hidden;
+                                text-overflow: ellipsis;
+                                white-space: nowrap;
+                            }
+                            .nav-num {
+                                position: absolute;
+                                top: -12px;
+                                right: -8px;
+                                transform: scale(0.7);
+                            }
+                        }
+                        &.active {
+                            color: #555555;
+                            font-weight: 500;
+                        }
+                        &:hover {
+                            color: #777777;
+                        }
+                    }
+                }
+            }
+            .messenger-notify-permission {
+                position: sticky;
+                display: flex;
+                align-items: center;
+                padding: 6px 12px;
+                justify-content: space-between;
+                background-color: #FEF7EE;
+                border: 1px solid #FAE0B5;
+                margin: 8px 12px;
+                border-radius: 6px;
+            }
+            .messenger-list {
+                ul {
+                    > li {
+                        &.nothing {
+                            margin: 0 !important;
+                            padding: 24px !important;
+                            text-align: center;
+                            justify-content: center;
+                            height: 100%;
+                            border-radius: 0;
+                            line-height: 22px;
+                        }
+                    }
+                    &.dialog {
+                        > li {
+                            display: flex;
+                            flex-direction: row;
+                            align-items: flex-start;
+                            padding: 16px 12px;
+                            position: relative;
+                            cursor: pointer;
+                            list-style: none;
+                            .img-avatar,
+                            .user-avatar,
+                            .icon-avatar {
+                                width: 42px;
+                                height: 42px;
+                                margin: 2px;
+                                flex-grow: 0;
+                                flex-shrink: 0;
+                            }
+                            .img-avatar {
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                > img {
+                                    width: 100%;
+                                    height: 100%;
+                                }
+                            }
+                            .icon-avatar {
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                border-radius: 50%;
+                                font-size: 26px;
+                                background-color: #61B2F9;
+                                color: #ffffff;
+                                &.department {
+                                    background-color: #5BC7B0;
+                                }
+                                &.project {
+                                    background-color: #6E99EB;
+                                }
+                                &.task {
+                                    background-color: #9B96DF;
+                                    font-size: 24px;
+                                }
+                            }
+                            .dialog-box {
+                                flex: 1;
+                                width: 0;
+                                display: flex;
+                                flex-direction: column;
+                                padding-left: 12px;
+                                .dialog-title {
+                                    display: flex;
+                                    flex-direction: row;
+                                    align-items: center;
+                                    justify-content: space-between;
+                                    line-height: 24px;
+                                    .todo,
+                                    .mention,
+                                    .bot {
+                                        color: #ff0000;
+                                        background-color: transparent;
+                                        font-weight: 600;
+                                        flex-shrink: 0;
+                                        margin-right: 4px;
+                                        padding: 0;
+                                        height: auto;
+                                        width: auto;
+                                    }
+                                    .bot {
+                                        color: $primary-color;
+                                        font-size: 16px;
+                                        font-weight: normal;
+                                    }
+                                    .ivu-tag {
+                                        margin: 0 4px 0 0;
+                                        padding: 0 5px;
+                                        box-sizing: content-box;
+                                        &.ivu-tag-success {
+                                            padding: 0 6px;
+                                        }
+                                    }
+                                    > span {
+                                        flex: 1;
+                                        color: $primary-title-color;
+                                        font-size: 14px;
+                                        white-space: nowrap;
+                                        overflow: hidden;
+                                        text-overflow: ellipsis;
+                                    }
+                                    > i {
+                                        flex-shrink: 0;
+                                        margin-left: 8px;
+                                        transform: scale(0.9);
+                                        font-size: 12px;
+                                        color: $primary-color;
+                                        &.completed {
+                                            font-size: 18px;
+                                            margin: 0 4px 0 0;
+                                            transform: scale(1);
+                                        }
+                                    }
+                                    > em {
+                                        flex-shrink: 0;
+                                        margin-left: 8px;
+                                        font-style: normal;
+                                        color: $primary-desc-color;
+                                        font-size: 12px;
+                                    }
+                                }
+                                .dialog-text {
+                                    color: $primary-desc-color;
+                                    font-size: 12px;
+                                    min-height: 24px;
+                                    line-height: 24px;
+                                    display: flex;
+                                    align-items: center;
+                                    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+
+                                    .last-draft,
+                                    .common-avatar,
+                                    .last-self {
+                                        flex-shrink: 0;
+                                        padding-right: 4px;
+                                        margin-right: 4px;
+                                        position: relative;
+                                        overflow: hidden;
+                                        &:after {
+                                            content: ":";
+                                            position: absolute;
+                                            top: 50%;
+                                            transform: translateY(-50%);
+                                            right: 0;
+                                        }
+                                    }
+                                    .last-draft {
+                                        color: #ff0000;
+                                        &:after {
+                                            color: $primary-desc-color;
+                                        }
+                                    }
+                                    .common-avatar {
+                                        flex-shrink: 1;
+                                        .avatar-name {
+                                            max-width: 100%;
+                                        }
+                                    }
+                                    .last-text {
+                                        flex: 1;
+                                        display: flex;
+                                        align-items: center;
+                                        > em {
+                                            flex-shrink: 0;
+                                            background-color: rgba($primary-desc-color, 0.25);
+                                            height: 20px;
+                                            width: 26px;
+                                            line-height: 20px;
+                                            text-align: center;
+                                            border-radius: 10px;
+                                            font-size: 14px;
+                                            font-style: normal;
+                                            margin-right: 4px;
+                                        }
+                                        > span {
+                                            flex: 1;
+                                            width: 0;
+                                            white-space: nowrap;
+                                            overflow: hidden;
+                                            text-overflow: ellipsis;
+                                        }
+                                    }
+                                    .last-silence {
+                                        font-size: 15px;
+                                        padding-left: 4px;
+                                        color: rgba($primary-desc-color, 0.5);
+                                    }
+                                }
+                            }
+                            .dialog-num {
+                                position: absolute;
+                                top: 10px;
+                                left: 58px;
+                                transform: scale(0.8) translateX(-100%);
+                            }
+                            .dialog-line {
+                                display: none;
+                                position: absolute;
+                                bottom: 0;
+                                right: 0;
+                                left: 68px;
+                                height: 1px;
+                                background-color: #f2f2f2;
+                                transform: scaleY(0.5);
+                            }
+                            &:before {
+                                display: none;
+                                position: absolute;
+                                content: "";
+                                top: 0;
+                                left: 0;
+                                right: 0;
+                                bottom: 0;
+                                z-index: 1;
+                                border: 2px solid $primary-color;
+                                pointer-events: none;
+                            }
+                            &.top {
+                                background-color: #F4F5F7;
+                            }
+                            &.active {
+                                background-color: #EEEFF1;
+                            }
+                            &.operate {
+                                &:before {
+                                    display: block;
+                                }
+                            }
+                            &.completed {
+                                &:after {
+                                    content: "\f373";
+                                    font-family: Ionicons, serif;
+                                    pointer-events: none;
+                                    position: absolute;
+                                    bottom: 0;
+                                    right: 12px;
+                                    font-size: 28px;
+                                    color: #19be6b;
+                                    opacity: .2;
+                                    z-index: 2;
+                                }
+                                .dialog-box {
+                                    .dialog-text {
+                                        padding-right: 36px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    &.contacts {
+                        > li {
+                            list-style: none;
+                            margin-left: 24px;
+                            position: relative;
+                            .label {
+                                padding-left: 4px;
+                                margin-top: 6px;
+                                margin-bottom: 6px;
+                                margin-right: 2px;
+                                height: 34px;
+                                line-height: 34px;
+                                position: sticky;
+                                top: 0;
+                                z-index: 3;
+                                background: #ffffff;
+                                &:after {
+                                    content: "";
+                                    position: absolute;
+                                    bottom: 0;
+                                    right: 0;
+                                    left: 0;
+                                    height: 1px;
+                                    background-color: #f2f2f2;
+                                    transform: scaleY(0.5);
+                                }
+                                &.department-label {
+                                    display: flex;
+                                    align-items: center;
+                                    cursor: pointer;
+                                    user-select: none;
+                                    .arrow {
+                                        flex-shrink: 0;
+                                        font-size: 12px;
+                                        color: #808695;
+                                        margin-right: 6px;
+                                        transition: transform 0.2s;
+                                        &.expanded {
+                                            transform: rotate(90deg);
+                                        }
+                                    }
+                                    .name {
+                                        flex: 1;
+                                        width: 0;
+                                        overflow: hidden;
+                                        text-overflow: ellipsis;
+                                        white-space: nowrap;
+                                    }
+                                    .count {
+                                        flex-shrink: 0;
+                                        margin-left: 8px;
+                                        padding-right: 8px;
+                                        font-size: 12px;
+                                        color: #808695;
+                                    }
+                                }
+                            }
+                            &.loaded {
+                                margin: 0;
+                                height: 52px;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                            }
+                            > ul {
+                                > li.members-loading {
+                                    height: 40px;
+                                    cursor: default;
+                                    justify-content: center;
+                                }
+                                > li {
+                                    list-style: none;
+                                    display: flex;
+                                    flex-direction: row;
+                                    align-items: center;
+                                    height: 52px;
+                                    cursor: pointer;
+                                    position: relative;
+                                    .avatar {
+                                        flex-grow: 0;
+                                        flex-shrink: 0;
+                                        width: 30px;
+                                        height: 30px;
+                                    }
+                                    .nickname {
+                                        flex: 1;
+                                        width: 0;
+                                        padding-left: 12px;
+                                        font-size: 14px;
+                                        display: flex;
+                                        align-items: center;
+                                        justify-content: space-between;
+                                        flex-flow: row wrap;
+                                        align-content: flex-start;
+                                        > em {
+                                            padding-right: 12px;
+                                            font-style: normal;
+                                            white-space: nowrap;
+                                            overflow: hidden;
+                                            text-overflow: ellipsis;
+                                        }
+                                        .tags {
+                                            padding-right: 12px;
+                                            font-size: 12px;
+                                            white-space: nowrap;
+                                            overflow: hidden;
+                                            text-overflow: ellipsis;
+                                            color: $primary-desc-color;
+                                            > span + span:before {
+                                                content: "\002c\0020";
+                                            }
+                                        }
+                                    }
+                                    .loading {
+                                        margin-right: 12px;
+                                        width: 16px;
+                                        height: 16px;
+                                        display: flex;
+                                        align-items: center;
+                                        justify-content: center;
+                                    }
+                                    &:before {
+                                        display: none;
+                                        position: absolute;
+                                        content: "";
+                                        top: 0;
+                                        left: -24px;
+                                        right: 0;
+                                        bottom: 0;
+                                        z-index: 1;
+                                        border: 2px solid $primary-color;
+                                        pointer-events: none;
+                                    }
+                                    &.operate {
+                                        &:before {
+                                            display: block;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .messenger-menu {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 52px;
+                flex-shrink: 0;
+                border-top: 1px solid #f4f5f5;
+                .menu-icon {
+                    height: 100%;
+                    display: flex;
+                    align-items: center;
+                    position: relative;
+                    .menu-num {
+                        position: absolute;
+                        top: 4px;
+                        left: 50%;
+                        margin-left: 3px;
+                        transform: scale(0.8);
+                    }
+                    > i {
+                        cursor: pointer;
+                        font-size: 24px;
+                        margin: 0 24px;
+                        color: #aaaaaa;
+                        opacity: 0.9;
+                        &.active {
+                            opacity: 1;
+                            color: $primary-color;
+                        }
+                        &:hover {
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+        }
+        .messenger-line {
+            flex-shrink: 0;
+            width: 1px;
+            height: 100%;
+            background-color: #f4f5f5;
+        }
+        .messenger-msg {
+            flex: 1;
+            width: 0;
+            height: 100%;
+            display: flex;
+            position: relative;
+            .msg-dialog-bg {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                z-index: 0;
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                .msg-dialog-bg-icon {
+                    background-color: #f4f5f7;
+                    padding: 20px;
+                    border-radius: 50%;
+                    .ivu-icon {
+                        color: #d1d8dd;
+                        font-size: 46px;
+                    }
+                }
+                .msg-dialog-bg-text {
+                    margin-top: 16px;
+                    color: #bec6cc;
+                    background-color: #f4f5f7;
+                    padding: 4px 15px;
+                    border-radius: 14px;
+                }
+            }
+        }
+    }
+}
+
+.messenger-nav-menu {
+    .nav-item {
+        display: flex;
+        align-items: center;
+        min-width: 80px;
+        &.active {
+            .nav-title {
+                font-weight: bold;
+            }
+        }
+        .nav-title {
+            flex: 1;
+            max-width: 88px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            margin-right: 12px;
+        }
+        .nav-num {
+            transform: scale(0.7);
+            transform-origin: center right;
+        }
+    }
+}
+
+.messenger-dialog-operation {
+    .ivu-dropdown-item-divided {
+        &:before {
+            transform: scaleY(0.5);
+        }
+    }
+
+    .item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        > i {
+            flex-shrink: 0;
+            width: 18px;
+            height: 18px;
+            line-height: 18px;
+            font-size: 18px;
+            margin-left: 16px;
+            opacity: 0.7;
+
+            &.color {
+                opacity: 1;
+            }
+        }
+    }
+}
+
+body.window-portrait {
+    .page-messenger {
+        .messenger-wrapper {
+            .messenger-select {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                max-width: none;
+                background-color: #ffffff;
+                z-index: 48;
+                .messenger-search {
+                    background-color: #f8f8f8;
+                    .search-wrapper {
+                        background-color: #ffffff;
+                    }
+                }
+                .messenger-nav {
+                    background-color: #f8f8f8;
+                    .nav-menu {
+                        width: 46px;
+                    }
+                    .nav-list {
+                        .nav-item {
+                            min-width: 25%;
+                        }
+                    }
+                }
+                .messenger-menu {
+                    display: none;
+                }
+                .messenger-list {
+                    ul {
+                        &.dialog {
+                            > li {
+                                .user-avatar {
+                                    .common-avatar {
+                                        &:after {
+                                            content: "";
+                                            position: absolute;
+                                            top: 0;
+                                            left: 0;
+                                            right: 0;
+                                            bottom: 0;
+                                            z-index: 1;
+                                        }
+                                    }
+                                }
+                                .dialog-line {
+                                    display: block;
+                                }
+                                &:last-child {
+                                    .dialog-line {
+                                        display: none;
+                                    }
+                                }
+                            }
+                        }
+                        &.contacts {
+                            > li {
+                                &.loaded {
+                                    height: 58px;
+                                }
+                                > ul {
+                                    > li {
+                                        height: 58px;
+                                        .avatar {
+                                            width: 36px;
+                                            height: 36px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .messenger-line,
+            .messenger-msg {
+                display: none;
+            }
+        }
+    }
+    .messenger-nav-menu {
+        .nav-item {
+            min-width: 100px;
+        }
+    }
+}

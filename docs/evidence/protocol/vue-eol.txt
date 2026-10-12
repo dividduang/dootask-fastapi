@@ -1,0 +1,508 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" class="with-v3-banner">
+  <head>
+    <title>Vue.js</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Vue.js - The Progressive JavaScript Framework">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="alternate" hreflang="x-default" href="https://vuejs.org/eol/index.html">
+    <link rel="alternate" hreflang="zh" href="https://v2.cn.vuejs.org/eol/index.html">
+    <link rel="alternate" hreflang="ja" href="https://jp.vuejs.org/eol/index.html">
+    <link rel="alternate" hreflang="ru" href="https://ru.vuejs.org/eol/index.html">
+    <link rel="alternate" hreflang="ko" href="https://kr.vuejs.org/eol/index.html">
+    <link rel="alternate" hreflang="pt-BR" href="https://br.vuejs.org/eol/index.html">
+    <link rel="alternate" hreflang="fr" href="https://fr.vuejs.org/eol/index.html">
+    <link rel="alternate" hreflang="es" href="https://es.vuejs.org/eol/index.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Vue.js">
+    <meta property="og:description" content="Vue.js - The Progressive JavaScript Framework">
+    <meta property="og:image" content="https://vuejs.org/images/logo.png">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Vue.js">
+    <meta name="twitter:description" content="Vue.js - The Progressive JavaScript Framework">
+    <meta name="twitter:image" content="https://vuejs.org/images/logo.png">
+
+    <link rel="apple-touch-icon" sizes="57x57" href="/images/icons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/images/icons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/images/icons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/images/icons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/images/icons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/images/icons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/images/icons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/images/icons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/icons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/images/icons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/images/icons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/icons/favicon-16x16.png">
+    <meta name="msapplication-TileImage" content="/images/icons/ms-icon-144x144.png">
+    <link rel="icon" href="/images/logo.svg">
+
+    <meta name="msapplication-TileColor" content="#4fc08d">
+    <meta name="theme-color" content="#4fc08d">
+
+    <meta name="msapplication-config" content="browserconfig.xml">
+    <link rel="manifest" href="/manifest.json">
+
+    <link href="https://fonts.googleapis.com" rel="preconnect" crossorigin>
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+    <link href="https://maxcdn.bootstrapcdn.com" rel="preconnect" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600|Roboto|Roboto Mono&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Dosis:500&text=Vue.js&display=swap" rel="stylesheet">
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- main page styles -->
+    
+<link rel="stylesheet" href="/css/page.css">
+
+
+    <!-- this needs to be loaded before guide's inline scripts -->
+    <script src="/js/vue.js"></script>
+
+    
+
+    <script>
+      Vue.config.productionTip = false
+      window.PAGE_TYPE = ""
+    </script>
+
+    <!-- Fathom - beautiful, simple website analytics -->
+    <script src="https://cdn.usefathom.com/script.js" data-site="VNLEECSM" defer></script>
+    <!-- / Fathom -->
+
+    <!-- vimeo analytics -->
+    <script type="text/javascript" defer="defer" src="https://extend.vimeocdn.com/ga/72160148.js"></script>
+  <meta name="generator" content="Hexo 6.2.0"><link rel="alternate" href="/atom.xml" title="Vue.js" type="application/atom+xml">
+</head>
+  <body class="docs" data-v3-url="">
+
+    
+      <a id="vs-top" class="vs-hidden" href="#" target="_blank">
+  <div class="vs-background-wrapper">
+    <div class="vs-logo"></div>
+    <div class="vs-core">
+      <div class="vs-slogan-wrapper">
+        <div id="vs-slogan" class="vs-slogan"></div>
+        <div id="vs-subline" class="vs-subline"></div>
+      </div>
+      <div class="vs-button-wrapper">
+        <div id="vs-button" class="vs-button"></div>
+      </div>
+    </div>
+    <div
+      id="vs-close"
+      class="vs-close">
+      <img src="https://vueschool.io/images/close.svg" alt="Close">
+    </div>
+  </div>
+</a>
+
+    
+
+    <div id="mobile-bar" >
+      <a class="menu-button"></a>
+      <a class="logo" href="/"></a>
+    </div>
+    <div>
+  <div id="v3-banner">
+    <span class="hidden-sm">Vue 2 has reached EOL and is no longer actively maintained.</span>
+    <a target="_blank" rel="noopener" href="https://vuejs.org/">Upgrade to Vue 3</a>
+    <span class="hidden-sm"> or learn more about</span>
+    <span class="only-sm"> | </span>
+    <a href="/eol/">Vue 2 EOL</a><span class="hidden-sm">.</span>
+  </div>
+
+  <header id="header">
+    <a id="logo" href="/">
+      <img src="/images/logo.svg" alt="Vue logo">
+      <span>Vue.js</span>
+    </a>
+    <ul id="nav">
+      <li>
+  <form id="search-form">
+    <input type="text" id="search-query-nav" class="search-query st-default-search-input" aria-label="Search">
+  </form>
+</li>
+<li class="nav-dropdown-container learn">
+  <a class="nav-link">Learn</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><h4>Documentation</h4></li>
+    <li>
+      <ul>
+        <li><a href="/v2/guide/" class="nav-link">Guide</a></li>
+        <li><a href="/v2/api/" class="nav-link">API</a></li>
+        <li><a href="/v2/style-guide/" class="nav-link">Style Guide</a></li>
+        <li><a href="/v2/examples/" class="nav-link">Examples</a></li>
+        <li><a href="/v2/cookbook/" class="nav-link">Cookbook</a></li>
+      </ul>
+    </li>
+    <li><h4>Video Courses</h4></li>
+    <li>
+      <ul>
+        <li>
+          <a href="https://www.vuemastery.com/courses/" class="nav-link" target="_blank" rel="sponsored noopener">
+            Vue Mastery
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://vueschool.io/?friend=vuejs&utm_source=Vuejs.org&utm_medium=Link&utm_content=Navbar%20Dropdown"
+            class="nav-link"
+            target="_blank" rel="sponsored noopener"
+          >
+            Vue School
+          </a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</li>
+
+<li class="nav-dropdown-container ecosystem">
+  <a class="nav-link">Ecosystem</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><h4>Help</h4></li>
+    <li><ul>
+      <li><a href="https://forum.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Forum</a></li>
+      <li><a href="https://chat.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Chat</a></li>
+      <li><a href="https://events.vuejs.org/meetups/" class="nav-link" target="_blank" rel="noopener">Meetups</a></li>
+    </ul></li>
+    <li><h4>Tooling</h4></li>
+    <li>
+      <ul>
+        <li><a href="https://github.com/vuejs/vue-devtools" class="nav-link" target="_blank" rel="noopener">Devtools</a></li>
+        <li><a href="https://cli.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Vue CLI</a></li>
+        <li><a href="https://vue-loader.vuejs.org" class="nav-link" target="_blank" rel="noopener">Vue Loader</a></li>
+      </ul>
+    </li>
+    <li><h4>Core Libraries</h4></li>
+    <li><ul>
+      <li><a href="https://router.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Vue Router</a></li>
+      <li><a href="https://vuex.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Vuex</a></li>
+      <li><a href="https://v2.ssr.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Vue Server Renderer</a></li>
+    </ul></li>
+    <li><h4>News</h4></li>
+    <li><ul>
+      <li><a href="https://news.vuejs.org" class="nav-link" target="_blank" rel="noopener">Weekly News</a></li>
+      <li><a href="https://events.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Events</a></li>
+      <li><a href="https://twitter.com/vuejs" class="nav-link" target="_blank" rel="noopener">Twitter</a></li>
+      <li><a href="https://blog.vuejs.org" class="nav-link" target="_blank" rel="noopener">Blog</a></li>
+      <li><a href="https://vuejobs.com/?ref=vuejs" class="nav-link" target="_blank" rel="noopener">Jobs</a></li>
+      <li><a href="https://dev.to/t/vue" class="nav-link" target="_blank" rel="noopener">DEV Community</a></li>
+    </ul></li>
+  </ul>
+</li>
+
+<li class="nav-dropdown-container resources">
+  <a href="#" class="nav-link">Resources</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li>
+      <a
+        target="_blank" rel="noopener" href="https://vuejs.org/about/team.html"
+        class="nav-link team"
+        >Team</a
+      >
+    </li>
+    <li>
+      <a target="_blank" rel="noopener" href="https://vuejs.org/sponsor/">Sponsor</a>
+    </li>
+    <li><a target="_blank" rel="noopener" href="https://vuejs.org/partners/" class="nav-link">Partners</a></li>
+    <li>
+      <a class='nav-link' href='https://vuejs.org/resources/themes' rel='noopener' target='_blank'>Themes</a
+      >
+    </li>
+    <li>
+      <a
+        href="https://github.com/vuejs/awesome-vue"
+        class="nav-link"
+        target="_blank"
+        rel="noopener"
+        >Awesome Vue</a
+      >
+    </li>
+    <li>
+      <a
+        href="https://awesomejs.dev/for/vue/"
+        class="nav-link"
+        target="_blank"
+        rel="noopener"
+        >Browse packages for Vue</a
+      >
+    </li>
+  </ul>
+</li>
+
+<li>
+  <a href="/eol/" class="badge-parent">EOL<sup class="badge">NEW</sup></a>
+</li>
+<li class="nav-dropdown-container language">
+  <a class="nav-link">Translations</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a class='nav-link' href='https://v2.cn.vuejs.org/eol/' rel='noopener' target='_blank'>中文</a></li>
+    <li><a class='nav-link' href='https://jp.vuejs.org/eol/' rel='noopener' target='_blank'>日本語</a></li>
+    <li><a class='nav-link' href='https://ru.vuejs.org/eol/' rel='noopener' target='_blank'>Русский</a></li>
+    <li><a class='nav-link' href='https://kr.vuejs.org/eol/' rel='noopener' target='_blank'>한국어</a></li>
+    <li><a class='nav-link' href='https://br.vuejs.org/eol/' rel='noopener' target='_blank'>Português</a></li>
+    <li><a class='nav-link' href='https://fr.vuejs.org/eol/' rel='noopener' target='_blank'>Français</a></li>
+    <li><a class='nav-link' href='https://vi.vuejs.org/eol/' rel='noopener' target='_blank'>Tiếng Việt</a></li>
+    <li><a class='nav-link' href='https://es.vuejs.org/eol/' rel='noopener' target='_blank'>Español</a></li>
+    <li><a class='nav-link' href='https://docs.vuejs.id/eol/' rel='noopener' target='_blank'>Bahasa Indonesia</a></li>
+  </ul>
+</li>
+
+
+    </ul>
+  </header>
+</div>
+
+    
+      <div id="main" class="fix-sidebar">
+        
+<div class="sidebar">
+  <ul class="main-menu">
+    <li>
+  <form id="search-form">
+    <input type="text" id="search-query-sidebar" class="search-query st-default-search-input" aria-label="Search">
+  </form>
+</li>
+<li class="nav-dropdown-container learn">
+  <a class="nav-link">Learn</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><h4>Documentation</h4></li>
+    <li>
+      <ul>
+        <li><a href="/v2/guide/" class="nav-link">Guide</a></li>
+        <li><a href="/v2/api/" class="nav-link">API</a></li>
+        <li><a href="/v2/style-guide/" class="nav-link">Style Guide</a></li>
+        <li><a href="/v2/examples/" class="nav-link">Examples</a></li>
+        <li><a href="/v2/cookbook/" class="nav-link">Cookbook</a></li>
+      </ul>
+    </li>
+    <li><h4>Video Courses</h4></li>
+    <li>
+      <ul>
+        <li>
+          <a href="https://www.vuemastery.com/courses/" class="nav-link" target="_blank" rel="sponsored noopener">
+            Vue Mastery
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://vueschool.io/?friend=vuejs&utm_source=Vuejs.org&utm_medium=Link&utm_content=Navbar%20Dropdown"
+            class="nav-link"
+            target="_blank" rel="sponsored noopener"
+          >
+            Vue School
+          </a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</li>
+
+<li class="nav-dropdown-container ecosystem">
+  <a class="nav-link">Ecosystem</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><h4>Help</h4></li>
+    <li><ul>
+      <li><a href="https://forum.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Forum</a></li>
+      <li><a href="https://chat.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Chat</a></li>
+      <li><a href="https://events.vuejs.org/meetups/" class="nav-link" target="_blank" rel="noopener">Meetups</a></li>
+    </ul></li>
+    <li><h4>Tooling</h4></li>
+    <li>
+      <ul>
+        <li><a href="https://github.com/vuejs/vue-devtools" class="nav-link" target="_blank" rel="noopener">Devtools</a></li>
+        <li><a href="https://cli.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Vue CLI</a></li>
+        <li><a href="https://vue-loader.vuejs.org" class="nav-link" target="_blank" rel="noopener">Vue Loader</a></li>
+      </ul>
+    </li>
+    <li><h4>Core Libraries</h4></li>
+    <li><ul>
+      <li><a href="https://router.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Vue Router</a></li>
+      <li><a href="https://vuex.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Vuex</a></li>
+      <li><a href="https://v2.ssr.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Vue Server Renderer</a></li>
+    </ul></li>
+    <li><h4>News</h4></li>
+    <li><ul>
+      <li><a href="https://news.vuejs.org" class="nav-link" target="_blank" rel="noopener">Weekly News</a></li>
+      <li><a href="https://events.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Events</a></li>
+      <li><a href="https://twitter.com/vuejs" class="nav-link" target="_blank" rel="noopener">Twitter</a></li>
+      <li><a href="https://blog.vuejs.org" class="nav-link" target="_blank" rel="noopener">Blog</a></li>
+      <li><a href="https://vuejobs.com/?ref=vuejs" class="nav-link" target="_blank" rel="noopener">Jobs</a></li>
+      <li><a href="https://dev.to/t/vue" class="nav-link" target="_blank" rel="noopener">DEV Community</a></li>
+    </ul></li>
+  </ul>
+</li>
+
+<li class="nav-dropdown-container resources">
+  <a href="#" class="nav-link">Resources</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li>
+      <a
+        target="_blank" rel="noopener" href="https://vuejs.org/about/team.html"
+        class="nav-link team"
+        >Team</a
+      >
+    </li>
+    <li>
+      <a target="_blank" rel="noopener" href="https://vuejs.org/sponsor/">Sponsor</a>
+    </li>
+    <li><a target="_blank" rel="noopener" href="https://vuejs.org/partners/" class="nav-link">Partners</a></li>
+    <li>
+      <a class='nav-link' href='https://vuejs.org/resources/themes' rel='noopener' target='_blank'>Themes</a
+      >
+    </li>
+    <li>
+      <a
+        href="https://github.com/vuejs/awesome-vue"
+        class="nav-link"
+        target="_blank"
+        rel="noopener"
+        >Awesome Vue</a
+      >
+    </li>
+    <li>
+      <a
+        href="https://awesomejs.dev/for/vue/"
+        class="nav-link"
+        target="_blank"
+        rel="noopener"
+        >Browse packages for Vue</a
+      >
+    </li>
+  </ul>
+</li>
+
+<li>
+  <a href="/eol/" class="badge-parent">EOL<sup class="badge">NEW</sup></a>
+</li>
+<li class="nav-dropdown-container language">
+  <a class="nav-link">Translations</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a class='nav-link' href='https://v2.cn.vuejs.org/eol/' rel='noopener' target='_blank'>中文</a></li>
+    <li><a class='nav-link' href='https://jp.vuejs.org/eol/' rel='noopener' target='_blank'>日本語</a></li>
+    <li><a class='nav-link' href='https://ru.vuejs.org/eol/' rel='noopener' target='_blank'>Русский</a></li>
+    <li><a class='nav-link' href='https://kr.vuejs.org/eol/' rel='noopener' target='_blank'>한국어</a></li>
+    <li><a class='nav-link' href='https://br.vuejs.org/eol/' rel='noopener' target='_blank'>Português</a></li>
+    <li><a class='nav-link' href='https://fr.vuejs.org/eol/' rel='noopener' target='_blank'>Français</a></li>
+    <li><a class='nav-link' href='https://vi.vuejs.org/eol/' rel='noopener' target='_blank'>Tiếng Việt</a></li>
+    <li><a class='nav-link' href='https://es.vuejs.org/eol/' rel='noopener' target='_blank'>Español</a></li>
+    <li><a class='nav-link' href='https://docs.vuejs.id/eol/' rel='noopener' target='_blank'>Bahasa Indonesia</a></li>
+  </ul>
+</li>
+
+
+  </ul>
+</div>
+
+<div
+  class="content  "
+>
+     <h1 id="Vue-2-Has-Reached-End-of-Life"><a href="#Vue-2-Has-Reached-End-of-Life" class="headerlink" title="Vue 2 Has Reached End of Life"></a>Vue 2 Has Reached End of Life</h1><p>Vue 2.0 was released more than 7 years ago in 2016. It was a major milestone in Vue’s journey of becoming a mainstream framework. Many current Vue users started using Vue during the Vue 2 era, and many great things have been built with it.</p>
+<p>However, active maintenance of two major versions in parallel isn’t sustainable for us. As Vue 3 and its ecosystem have matured, it is time for the team to move on and focus our energy on the latest major version.</p>
+<p><strong>Vue 2 has reached End of Life on December 31st, 2023. It no longer receives new features, updates, or fixes. However, it is still available on all existing distribution channels (CDNs, package managers, Github, etc).</strong></p>
+<p>If you are starting a new project, please start with the <a target="_blank" rel="noopener" href="https://vuejs.org/">latest version of Vue (3.x)</a>. We also strongly recommend current Vue 2 users to upgrade (<a target="_blank" rel="noopener" href="https://v3-migration.vuejs.org/">guide</a>), but we also acknowledge that not all users have the bandwidth or incentive to do so. </p>
+<blockquote>
+<p><strong>If you have to stay on Vue 2 but also have compliance or security requirements about unmaintained software, get <a target="_blank" rel="noopener" href="https://www.herodevs.com/support/nes-vue">security updates for Vue 2 from HeroDevs</a></strong></p>
+</blockquote>
+<h2 id="What’s-Next"><a href="#What’s-Next" class="headerlink" title="What’s Next"></a>What’s Next</h2><p>Vue 3 has been the default version of Vue since February 7, 2022. Users who have migrated have enjoyed:</p>
+<ul>
+<li>Better performance with a smaller bundle size and faster rendering.</li>
+<li>Enhanced TypeScript support for easier large-scale application development.</li>
+<li>More efficient Proxy-based reactivity system.</li>
+<li>New built-in components like Fragment, Teleport, and Suspense.</li>
+<li>Improved build tooling support and Vue Devtools experience.</li>
+<li>…and more!</li>
+</ul>
+<p>When and if you can, consider migrating!</p>
+<h2 id="Still-on-Vue-2-Here-Are-Your-Options"><a href="#Still-on-Vue-2-Here-Are-Your-Options" class="headerlink" title="Still on Vue 2? Here Are Your Options."></a>Still on Vue 2? Here Are Your Options.</h2><p>Recognizing the various situations that arise during transitions, we are also fully aware that users may need other options until they’re able to migrate, or maybe migration simply isn’t a feasible path. Here are some other options to consider.</p>
+<h3 id="Update-to-the-Vue-2-Final-Release"><a href="#Update-to-the-Vue-2-Final-Release" class="headerlink" title="Update to the Vue 2 Final Release"></a>Update to the Vue 2 Final Release</h3><p>The latest release of Vue 2, 2.7.16, is the final release of Vue 2. This patch release includes a few final fixes for 2.7 features and improves type alignment with Vue 3. We strongly encourage you to update to 2.7.16. This will be the starting point for extended support mentioned below.</p>
+<h3 id="Purchase-Extended-Support-for-Vue-2"><a href="#Purchase-Extended-Support-for-Vue-2" class="headerlink" title="Purchase Extended Support for Vue 2"></a>Purchase Extended Support for Vue 2</h3><p>If you have to stay on Vue 2 post-EOL, we have partnered with HeroDevs to offer Never-Ending Support (NES). Vue 2 NES provides ongoing updates and security patches for Vue 2 even after EOL so that applications with strict compliance requirements remain secure and compliant. It also guarantees that Vue 2 applications will continue to operate effectively in modern browsers and maintain compatibility with essential libraries like Nuxt, Vuex, and Vuetify 2. Finally, Vue 2 NES has continuous security monitoring and a 14-day SLA for fixes.</p>
+<p>Vue 2 NES is the continuation of the support you’ve enjoyed during the Vue 2 LTS period — but indefinitely. For more detailed information, visit the <a target="_blank" rel="noopener" href="https://www.herodevs.com/support/nes-vue?utm_source=vuejs-org&amp;utm_medium=blog&amp;utm_campaign=eol-by-eoy">HeroDevs Vue 2 NES page</a>.</p>
+<h3 id="Notify-Your-Users-of-your-Vue-2-Post-EOL-Plan"><a href="#Notify-Your-Users-of-your-Vue-2-Post-EOL-Plan" class="headerlink" title="Notify Your Users of your Vue 2 Post-EOL Plan"></a>Notify Your Users of your Vue 2 Post-EOL Plan</h3><p>If you can’t migrate to Vue 3 or use Vue 2 NES at the moment but still remain on Vue 2, you may need to consider how you will communicate your Vue 2 security plans to your customers.</p>
+<p>This does not apply to all Vue users, but many teams are prohibited from shipping <em>unsupported software</em> by SLAs, Contracts &amp; Agreements, or other obligations to downstream parties. These could be with customers, compliance agencies, or even internal company departments. For an increasing number of industries, governing regulatory bodies are also raising expectations on what software creators are accountable for.</p>
+<p>If you work with such business requirements, You may need to let your customers, managers, CISO, or other relevant stakeholders, know about your plan to manage support and address any potential CVEs. <a href="https://v2.vuejs.org/lts/#:~:text=For%20the%20record%2C%20Vue%202%20hasn%E2%80%99t%20really%20had%20any%20real%20vulnerabilities%20in%20the%20past%2C%20but%20you%20may%20need%20a%20supported%20version%20to%20fullfil%20regulations%20or%20company%20policies.">Vue 2 hasn’t had major vulnerabilities</a> in the past, but CVEs do turn up for even the most mature EOL projects — whether directly or via compromised dependencies. Subscribing to CVE notifications through organizations like <a target="_blank" rel="noopener" href="https://www.opencve.io/">OpenCVE</a> and <a target="_blank" rel="noopener" href="https://snyk.io">Snyk</a> can be a good way to find out about vulnerabilities as soon as they’re discovered. Browsers may also ship changes that break legacy libraries - this is rare, but it does happen.</p>
+  
+  <div class="footer">
+<script src="//m.servedby-buysellads.com/monetization.js" type="text/javascript"></script>
+<div id="bsa-native"></div>
+<script>
+_bsa.init('custom', 'CKYD62QM', 'placement:vuejsorg',
+  {
+    target: '#bsa-native',
+    template: '<a class="native-box" href="##statlink##"><div class="native-sponsor">Sponsor</div><div class="native-text"><strong>##company##</strong> — ##description##</div></a>'
+  }
+);
+</script>
+
+    Caught a mistake or want to contribute to the documentation?
+    <a
+      href="https://github.com/vuejs/v2.vuejs.org/blob/master/src/eol/index.md"
+      rel="noopener"
+      target="_blank"
+    >
+      Edit this on GitHub!
+    </a>
+    Deployed on
+    <a href="https://url.netlify.com/HJ8X2mxP8" rel="noopener" target="_blank">
+      Netlify </a
+    >.
+  </div>
+</div>
+
+      </div>
+      <script src="/js/smooth-scroll.min.js"></script>
+    
+
+    <!-- main custom script for sidebars, version selects etc. -->
+    <script src="/js/css.escape.js"></script>
+    <script src="/js/common.js"></script>
+
+    <!-- search -->
+    <link href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css" rel='stylesheet' type='text/css'>
+    
+<link rel="stylesheet" href="/css/search.css">
+
+    <script src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script>
+    <script>
+    [
+      '#search-query-nav',
+      '#search-query-sidebar',
+      '#search-query-menu'
+    ].forEach(function (selector) {
+      if (!document.querySelector(selector)) return
+      // search index defaults to v2
+      var match = window.location.pathname.match(/^\/(v\d+)/)
+      var version = match ? match[1] : 'v2'
+      docsearch({
+        appId: 'ML0LEBN7FQ',
+        apiKey: 'f49cbd92a74532cc55cfbffa5e5a7d01',
+        indexName: 'vuejs',
+        inputSelector: selector,
+        algoliaOptions: { facetFilters: ["version:" + version] },
+        autocompleteOptions: { hint: false, appendTo: 'body'}
+      })
+    })
+
+    // unregister service worker
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.getRegistrations().then(function(registrations) {
+        for(let registration of registrations) {
+          registration.unregister()
+        }
+      })
+    }
+    </script>
+    <script src="/js/v3-notice.js"></script>
+  </body>
+</html>

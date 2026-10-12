@@ -1,0 +1,12 @@
+{
+  "command": [
+    "wsl.exe",
+    "--list",
+    "--verbose"
+  ],
+  "started_at": "2026-10-12T08:06:53.454626+00:00",
+  "exit_code": 0,
+  "stdout": "  NAME            STATE           VERSION\r\n* Ubuntu-22.04    Stopped         2\r\n",
+  "stderr": "",
+  "ended_at": "2026-10-12T08:06:54.358650+00:00"
+}

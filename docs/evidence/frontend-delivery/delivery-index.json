@@ -1,0 +1,82 @@
+{
+  "sampled_at": "2026-10-12T08:14:36.197906+00:00",
+  "frontend_root": "frontend",
+  "status": "DELIVERED_BYTES_RUNTIME_NOT_RUN",
+  "original_copy": {
+    "files": 4006,
+    "bytes": 165876184,
+    "source_destination_differences": 0,
+    "baseline_differences": 0,
+    "evidence": "copy-differences.json"
+  },
+  "submodules": [
+    {
+      "path": "resources/drawio",
+      "pin": "88ee1f5ab4d40603a8f3aaa0d9d6dc3794c6b3f0",
+      "retained_files": 3402,
+      "retained_bytes": 163073818,
+      "git_blob_mismatches": 0,
+      "missing": [],
+      "evidence": "drawio-git-tree-comparison.json"
+    },
+    {
+      "path": "resources/mobile",
+      "pin": "c5c5c100e742c302ae914df882af6210c80582d7",
+      "retained_files": 4909,
+      "retained_bytes": 35575818,
+      "git_blob_mismatches": 0,
+      "missing": [
+        {
+          "path": "platforms/android/eeuiApp/android.jks",
+          "reason": "excluded upstream private signing identity; explicit-exclusions.json"
+        }
+      ],
+      "evidence": "mobile-git-tree-comparison.json"
+    }
+  ],
+  "frontend_total_files": 12317,
+  "frontend_total_bytes": 364525820,
+  "release_assets": {
+    "version": "1.9.66",
+    "files": 7,
+    "bytes": 985127150,
+    "github_declared_sha256_matches": true,
+    "evidence": "official-artifacts.json"
+  },
+  "desktop_extraction": "desktop-extraction.json",
+  "rea": {
+    "inventory_evidence_id": "ev_592a505d1f397ae9eacb4c4b85e7e67b169951cae69116656c99602feb50e535",
+    "inspection_evidence_id": "ev_6c84cceba04713007f31fc5405a3230007037b2281776cfc4fc946bc2940d2b9",
+    "export": "rea-desktop-inventory.json",
+    "scope": "mac-arm64 ZIP central directory; does not prove signatures or runtime; bundle also retains prior session records"
+  },
+  "hosting": {
+    "manifest": "frontend/public/manifest.json",
+    "original_templates": "frontend/resources/views",
+    "backend_owner_notified": true,
+    "forbidden_public_paths": [
+      "public/index.php",
+      "public/.htaccess",
+      "public/web.config"
+    ],
+    "no_php_execution": true
+  },
+  "not_run": [
+    "build",
+    "lint",
+    "tests",
+    "formatter",
+    "UI",
+    "downloaded installers",
+    "updater"
+  ],
+  "remaining_boundaries": [
+    "Original Node lockfile absent; two exact-tag official channels return HTTP 404",
+    "Source/public/desktop same-build provenance not established",
+    "Installer Authenticode status NotSigned; macOS signature/notarization unverified",
+    "No iOS binary in this exact GitHub release; full pinned iOS source retained; store page is not an exact-version acquisition",
+    "Application behavior, external integrations, authorization and backend acceptance remain independent obligations"
+  ],
+  "source_modified": false,
+  "git_commands_run": false
+}

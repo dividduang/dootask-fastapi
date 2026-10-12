@@ -1,0 +1,129 @@
+.common-avatar {
+    position: relative;
+    &.avatar-wrapper {
+        display: flex;
+        align-items: center;
+        .avatar-box {
+            position: relative;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            .avatar-default {
+                background-color: transparent;
+            }
+            .avatar-text {
+                background-color: $primary-color;
+            }
+            .avatar-char {
+                display: inline-block;
+                font-size: 15px;
+                line-height: inherit;
+            }
+            .el-avatar {
+                > img {
+                    margin: 0 auto;
+                    pointer-events: none;
+                    -webkit-touch-callout: none;
+                }
+            }
+            > em {
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                width: 8px;
+                height: 8px;
+                border-radius: 50%;
+                background-color: #ff9900;
+                border: 1px solid #ffffff;
+                transform-origin: right bottom;
+                z-index: 1;
+            }
+            &.online {
+                > em {
+                    background-color: $primary-color;
+                }
+            }
+            &.disabled,
+            &.deleted {
+                &:after {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    background-color: rgba(255, 255, 255, 0.5);
+                    opacity: 0.8;
+                    border-radius: 50%;
+                }
+                > em {
+                    background-color: #cccccc;
+                }
+            }
+            &.deleted {
+                &:after {
+                    transform: rotate(-45deg);
+                }
+            }
+        }
+        .avatar-bot {
+            margin-right: -4px;
+            padding-left: 6px;
+            font-size: 16px;
+            color: $primary-color;
+        }
+        .avatar-name {
+            display: flex;
+            align-items: center;
+            margin-left: 6px;
+            line-height: normal;
+            .bot {
+                flex-shrink: 0;
+                margin-right: 3px;
+                font-size: 16px;
+                color: $primary-color;
+            }
+            > span {
+                flex: 1;
+                font-style: normal;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+        }
+    }
+    &.avatar-pointer {
+        cursor: pointer;
+    }
+}
+.common-avatar-transfer {
+    padding: 4px 2px;
+    line-height: 1.5;
+    > p {
+        padding: 1px 2px;
+        &.department-name {
+            max-width: 220px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        > em {
+            font-style: normal;
+            &.disabled,
+            &.deleted {
+                display: inline-block;
+                margin-left: 2px;
+                white-space: nowrap;
+                font-size: 12px;
+                height: 20px;
+                line-height: 20px;
+                padding: 0 6px;
+                border-radius: 3px;
+                transform: scale(0.9);
+                transform-origin: right center;
+                color: #ffffff;
+                background-color: #ED4014;
+            }
+        }
+    }
+}

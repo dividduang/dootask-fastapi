@@ -1,0 +1,251 @@
+.team-management {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+
+    .management-title {
+        color: $primary-title-color;
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 1;
+        margin-bottom: 24px;
+        display: flex;
+        align-items: center;
+
+        .title-zoom {
+            display: flex;
+            align-items: center;
+            height: 20px;
+            line-height: 20px;
+            margin-left: 12px;
+
+            > span {
+                cursor: pointer;
+                border: 1px solid #d9d9d9;
+                border-radius: 6px;
+                width: 26px;
+                height: 26px;
+                padding: 4px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                &:hover {
+                    background-color: #f5f5f5;
+                }
+
+                > svg {
+                    width: 18px;
+                    height: 18px;
+                }
+            }
+        }
+
+        .title-icon {
+            display: flex;
+            align-items: center;
+            width: 14px;
+            height: 14px;
+            margin-left: 4px;
+            margin-top: 2px;
+
+            > i {
+                cursor: pointer;
+            }
+        }
+    }
+
+    .management-box {
+        flex: 1;
+        display: flex;
+        height: 0;
+        &.min-box {
+            .management-department {
+                display: none;
+            }
+            .management-user {
+                padding-left: 0;
+            }
+        }
+        .management-department {
+            border-right: 1px solid #efefef;
+            flex-shrink: 0;
+            display: flex;
+            flex-direction: column;
+            > ul {
+                flex: 1;
+                overflow: auto;
+                > li {
+                    list-style: none;
+                    padding: 0;
+                    margin: 0;
+                    height: 40px;
+                    display: flex;
+                    align-items: center;
+                    cursor: pointer;
+                    overflow: hidden;
+                    &:hover,
+                    &.active {
+                        background-color: #ecf5ff;
+                    }
+                    &.active {
+                        font-weight: 500;
+                    }
+                    &.level-1 {
+                        font-weight: 500;
+                    }
+                    &.level-2 {
+                        margin-left: 18px;
+                    }
+                    &.level-3 {
+                        margin-left: 36px;
+                    }
+                    &.level-4 {
+                        margin-left: 54px;
+                    }
+                    .department-owner-wrap {
+                        display: flex;
+                        align-items: center;
+                        position: relative;
+                    }
+                    .department-icon {
+                        padding: 8px;
+                        font-size: 16px;
+                    }
+                    .department-owner-more {
+                        margin-left: -2px;
+                        margin-right: 4px;
+                        padding: 0 5px;
+                        height: 18px;
+                        line-height: 18px;
+                        font-size: 11px;
+                        color: #ffffff;
+                        background-color: #5a8dee;
+                        border-radius: 9px;
+                        flex-shrink: 0;
+                    }
+                    .department-title {
+                        flex: 1;
+                        flex-shrink: 0;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                    }
+                    .department-menu {
+                        display: inline-block;
+                        padding: 12px;
+                        font-size: 16px;
+                        transform: rotate(-90deg);
+                    }
+                }
+            }
+            .department-buttons {
+                margin-top: 20px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+        .management-resize {
+            width: 2px;
+        }
+        .management-user {
+            flex: 1;
+            width: 0;
+            display: flex;
+            flex-direction: column;
+            padding-left: 20px;
+        }
+    }
+
+    .team-email {
+        display: flex;
+        align-items: center;
+
+        .ivu-icon {
+            color: $primary-color;
+            margin-left: 6px;
+            font-size: 16px;
+        }
+
+        .ivu-tag {
+            height: 18px;
+            line-height: 18px;
+            padding: 0 4px;
+            margin-left: 4px;
+            zoom: 0.8;
+            flex-shrink: 0;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap
+        }
+    }
+
+    .table-page-box {
+        flex: 1;
+        height: 0;
+    }
+}
+
+.team-department-add-dialog-group {
+    display: flex;
+    align-items: center;
+    .dialog-name {
+        flex: 1;
+        width: 0;
+        padding-right: 12px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    .dialog-id {
+        flex-shrink: 0;
+        padding-right: 6px;
+        opacity: 0.6;
+        font-size: 13px;
+    }
+}
+
+.team-department-checkin-item {
+    margin-bottom: 12px;
+    > div {
+        padding-right: 12px;
+        &:last-child {
+            padding-right: 0;
+        }
+    }
+}
+
+.team-table-department-warp {
+    display: flex;
+    align-items: center;
+
+    > span {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .department-tag-num {
+        background-color: #515a6e;
+        border-radius: 9px;
+        color: #fff;
+        cursor: pointer;
+        flex-shrink: 0;
+        font-size: 12px;
+        height: 18px;
+        line-height: 18px;
+        margin-left: 4px;
+        min-width: 18px;
+        padding: 0 5px;
+        text-align: center;
+        transform: scale(0.9);
+        transform-origin: right center;
+    }
+}

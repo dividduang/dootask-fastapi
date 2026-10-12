@@ -1,0 +1,60 @@
+{
+  "recorded_at_utc": "2026-10-12T05:52:54.745199+00:00",
+  "stage": "G1 investigation only",
+  "report": "docs/2026101204-官方协议版本与许可核验-feat.md",
+  "source_read_only": true,
+  "builds_tests_installations_run": false,
+  "source_version": {
+    "declared": "1.9.66",
+    "upstream_tag": "v1.9.66",
+    "upstream_commit": "6f111cd97dcbdaea23bf28768cd15dfa38bcae63",
+    "release_published_at": "2026-10-10T10:04:15Z",
+    "full_tree_identity_proven": false
+  },
+  "license": {
+    "root": "AGPL v3 text",
+    "manifest_conflict": "composer/electron MIT also observed in same upstream tag",
+    "preserve_license_and_notices": true,
+    "corresponding_source_obligation_review": true,
+    "language_rewrite_removes_obligations": false,
+    "legal_opinion": false,
+    "native_doo_so_rights": "unresolved; official image distribution instructions are not proof of all binary redistribution/modification rights"
+  },
+  "candidate_dependencies": {
+    "python": "3.14.8",
+    "fastapi": "0.143.0",
+    "starlette_resolver_candidate_not_independent_override": "1.7.0",
+    "pydantic": "2.14.1",
+    "pydantic_core": "2.50.1",
+    "uvicorn": "0.54.0",
+    "websockets": "17.2",
+    "python_multipart": "0.0.32",
+    "compatibility_level": "declared metadata intersection and wheel availability only; not resolved, installed or executed"
+  },
+  "dav_methods": [
+    "OPTIONS",
+    "PROPFIND",
+    "PROPPATCH",
+    "HEAD",
+    "GET",
+    "PUT",
+    "MKCOL",
+    "COPY",
+    "MOVE",
+    "DELETE",
+    "LOCK",
+    "UNLOCK"
+  ],
+  "blocked_release_claims": [
+    "native binary entitlement/ABI/password/token/PGP compatibility unresolved",
+    "full recursive third-party/submodule/binary notices not established",
+    "front-end actual installed lock tree unknown",
+    "runtime and complete HTTP/WS/DAV/data migration acceptance not run"
+  ],
+  "next_gate": [
+    "native immutable artifact identity plus rights and ABI evidence",
+    "platform dependency lock with hashes and complete licenses",
+    "unchanged frontend snapshot and submodule pins",
+    "full business contract implementation and independent acceptance, not CRUD-only"
+  ]
+}

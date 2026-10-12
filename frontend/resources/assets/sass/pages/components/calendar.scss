@@ -1,0 +1,18 @@
+.calendar-wrapper {
+    flex: 1;
+    position: relative;
+    .toastui-calendar-day-name-item.toastui-calendar-week,
+    .toastui-calendar-day-names.toastui-calendar-week {
+        overflow: hidden;
+    }
+    .toastui-calendar-month-more-list {
+        .toastui-calendar-weekday-event-title {
+            > div {
+                padding: 0 2px;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+            }
+        }
+    }
+}

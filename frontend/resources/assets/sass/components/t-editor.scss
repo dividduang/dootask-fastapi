@@ -1,0 +1,153 @@
+body {
+    .teditor-box,
+    .teditor-transfer {
+        .tox {
+            &.tox-silver-sink {
+                z-index: 13000;
+            }
+        }
+    }
+
+    .teditor-box {
+        position: relative;
+        min-height: 22px;
+
+        .icon-inline {
+            color: #bbbbbb;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        textarea {
+            opacity: 0;
+        }
+
+        .tox-checklist {
+            padding-inline-start: 26px;
+        }
+
+        .tox-tinymce {
+            box-shadow: none;
+            box-sizing: border-box;
+            border-color: #dddee1;
+            border-radius: 4px;
+            overflow: hidden;
+
+            .tox-statusbar {
+                span.tox-statusbar__branding {
+                    a {
+                        display: none;
+                    }
+                }
+            }
+
+            .tox-tbtn__select-label {
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+
+            .tox-tbtn--bespoke {
+                .tox-tbtn__select-label {
+                    width: auto;
+                }
+            }
+        }
+    }
+
+    .teditor-transfer {
+        background-color: #ffffff;
+
+        .ivu-modal-wrap {
+            .ivu-modal {
+                &.ivu-modal-fullscreen {
+                    .ivu-modal-content {
+                        margin-top: 0;
+                        margin-bottom: 0;
+                    }
+                }
+            }
+        }
+
+        .tox-toolbar {
+            > div:last-child {
+                > button:last-child {
+                    margin-right: 64px;
+                }
+            }
+        }
+
+        .ivu-modal-header {
+            display: none;
+        }
+
+        .ivu-modal-close {
+            top: calc(var(--status-bar-height) + 7px);
+            z-index: 2;
+        }
+
+        .teditor-transfer-body {
+            position: absolute;
+            top: var(--status-bar-height);
+            bottom: var(--navigation-bar-height);
+            left: 0;
+            right: 0;
+            padding: 0;
+            margin: 0;
+
+            textarea {
+                opacity: 0;
+            }
+
+            .tox-tinymce {
+                border: 0;
+
+                .tox-statusbar {
+                    span.tox-statusbar__branding {
+                        a {
+                            display: none;
+                        }
+                    }
+                }
+
+                .tox-tbtn__select-label {
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                }
+
+                .tox-tbtn--bespoke {
+                    .tox-tbtn__select-label {
+                        width: auto;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.teditor-loadstyle {
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+    position: relative;
+}
+
+.teditor-loadedstyle {
+    width: 100%;
+    max-height: inherit;
+    overflow: inherit;
+    position: relative;
+}
+
+.upload-control {
+    display: none;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+}
+
+.tox-tinymce-inline {
+    z-index: 100000;
+}

@@ -1,0 +1,136 @@
+<template>
+    <div :class="{'setting-component-item': !embedded}">
+        <div>
+            <Row class="setting-template">
+                <Col span="7">{{$L('名称')}}</Col>
+                <Col span="16">{{$L('项目模板')}}</Col>
+                <Col span="1" class="setting-row-action"></Col>
+            </Row>
+            <Row v-for="(item, key) in formDatum" :key="key" class="setting-template">
+                <Col span="7">
+                    <Input
+                        v-model="item.name"
+                        :maxlength="20"
+                        :placeholder="$L('请输入名称')"/>
+                </Col>
+                <Col span="16">
+                    <TagInput v-model="item.columns"/>
+                </Col>
+                <Col span="1" class="setting-row-action">
+                    <Tooltip :content="formDatum.length > 1 ? $L('删除') : $L('至少保留一项')" placement="top" transfer>
+                        <Button
+                            type="text"
+                            icon="ios-trash-outline"
+                            :disabled="formDatum.length <= 1"
+                            @click="delDatum(key)"/>
+                    </Tooltip>
+                </Col>
+            </Row>
+            <Button class="setting-add-action" type="default" icon="md-add" @click="addDatum">{{$L('添加模板')}}</Button>
+        </div>
+        <div v-if="!embedded" class="setting-footer">
+            <Button :loading="loadIng > 0" type="primary" @click="submitForm">{{$L('提交')}}</Button>
+            <Button :loading="loadIng > 0" @click="resetForm">{{$L('重置')}}</Button>
+        </div>
+    </div>
+</template>
+
+<script>
+import {mapState} from "vuex";
+
+export default {
+    name: 'SystemColumnTemplate',
+    props: {
+        embedded: Boolean,
+    },
+    data() {
+        return {
+            loadIng: 0,
+
+            formDatum: [],
+
+            nullDatum: {
+                'name': '',
+                'columns': '',
+            }
+        }
+    },
+
+    mounted() {
+        this.systemSetting();
+    },
+
+    computed: {
+        ...mapState(['columnTemplate']),
+    },
+
+    watch: {
+        columnTemplate: {
+            handler(data) {
+                this.formDatum = $A.cloneJSON(data);
+                if (this.formDatum.length === 0) {
+                    this.addDatum();
+                }
+            },
+            immediate: true,
+        }
+    },
+
+    methods: {
+        submitForm() {
+            this.systemSetting(true);
+        },
+
+        resetForm() {
+            this.formDatum = $A.cloneJSON(this.columnTemplate);
+        },
+
+        addDatum() {
+            this.formDatum.push($A.cloneJSON(this.nullDatum));
+        },
+
+        delDatum(key) {
+            if (this.formDatum.length <= 1) {
+                return;
+            }
+            $A.modalConfirm({
+                title: '确认删除',
+                content: '确定要删除该模板吗？',
+                onOk: () => {
+                    this.formDatum.splice(key, 1);
+                },
+            });
+        },
+
+        systemSetting(save, silent = false) {
+            this.loadIng++;
+            return this.$store.dispatch("call", {
+                url: 'system/column/template?type=' + (save ? 'save' : 'get'),
+                method: 'post',
+                data: {
+                    list: this.formDatum
+                },
+            }).then(({data}) => {
+                if (save && !silent) {
+                    $A.messageSuccess('修改成功');
+                }
+                this.$store.state.columnTemplate = $A.cloneJSON(data).map(item => {
+                    if ($A.isArray(item.columns)) {
+                        item.columns = item.columns.join(",")
+                    }
+                    return item;
+                });
+            }).catch(({msg}) => {
+                if (save && !silent) {
+                    $A.modalError(msg);
+                }
+                if (silent) {
+                    return Promise.reject(msg);
+                }
+            }).finally(_ => {
+                this.loadIng--;
+            });
+        }
+    }
+}
+</script>

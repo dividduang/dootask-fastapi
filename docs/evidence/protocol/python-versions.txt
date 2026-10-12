@@ -1,0 +1,3492 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="../">
+  <head><meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta property="article:modified_time" content="2026-05-27T13:42:06+00:00" /><meta property="og:title" content="Status of Python versions" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://devguide.python.org/versions/" />
+<meta property="og:site_name" content="Python Developer's Guide" />
+<meta property="og:description" content="The main branch is currently the future Python 3.16, and is the only branch that accepts new features. The latest release for each Python version can be found on the download page.(See below for a ..." />
+<meta property="og:image" content="https://devguide.python.org/_static/og-image-200x200.png" />
+<meta property="og:image:alt" content="Python Developer's Guide" />
+<meta name="description" content="The main branch is currently the future Python 3.16, and is the only branch that accepts new features. The latest release for each Python version can be found on the download page.(See below for a ..." />
+<meta property="og:image:width" content="200">
+<meta property="og:image:height" content="200">
+<meta name="theme-color" content="#3776ab">
+<link rel="index" title="Index" href="../genindex/"><link rel="search" title="Search" href="../search/"><link rel="prev" title="CPython’s internals" href="../internals/">
+        <link rel="prefetch" href="../_static/python-logo.svg" as="image">
+
+    <link rel="shortcut icon" href="../_static/favicon.png"><!-- Generated with Sphinx 9.1.0 and Furo 2025.12.19 -->
+        <title>Status of Python versions</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d111a655" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=7bdb33bb" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/tabs.css?v=4c969af8" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=8dab3a3b" />
+    <link rel="stylesheet" type="text/css" href="../_static/devguide_overrides.css?v=628b8749" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f2f2f2;
+  --color-code-foreground: #1e1e1e;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style>
+
+
+<script defer data-domain="devguide.python.org" src="https://analytics.python.org/js/script.outbound-links.js"></script>
+
+<script async type="text/javascript" src="/_/static/javascript/readthedocs-addons.js"></script><meta name="readthedocs-project-slug" content="cpython-devguide" /><meta name="readthedocs-version-slug" content="latest" /><meta name="readthedocs-resolver-filename" content="/versions/" /><meta name="readthedocs-http-status" content="200" /></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>Auto light/dark, in light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>Auto light/dark, in dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle site navigation sidebar">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc" aria-label="Toggle table of contents sidebar">
+<label class="overlay sidebar-overlay" for="__navigation"></label>
+<label class="overlay toc-overlay" for="__toc"></label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <span class="icon"><svg><use href="#svg-menu"></use></svg></span>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../"><div class="brand">Python Developer's Guide</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../">
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="../_static/python-logo.svg" alt="Logo"/>
+  </div>
+  
+  <span class="sidebar-brand-text">Python Developer's Guide</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../search/" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <ul class="current">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../getting-started/">Getting started</a><input aria-label="Toggle navigation of Getting started" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../getting-started/quick-reference/">Quick reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../getting-started/setup-building/">Setup and building</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../getting-started/fixing-issues/">Fixing “easy” issues (and beyond)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../getting-started/git-boot-camp/">Git bootcamp and cheat sheet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../getting-started/pull-request-lifecycle/">Lifecycle of a pull request</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../getting-started/getting-help/">Where to get help</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../getting-started/ai-tools/">Guidelines for using AI tools</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../developer-workflow/">Development workflow</a><input aria-label="Toggle navigation of Development workflow" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../developer-workflow/communication-channels/">Following Python’s development</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developer-workflow/lang-changes/">Changing Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developer-workflow/development-cycle/">Development cycle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developer-workflow/stdlib/">Adding to the stdlib</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developer-workflow/extension-modules/">Standard library extension modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developer-workflow/c-api/">Changing Python’s C API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developer-workflow/grammar/">Changing CPython’s grammar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developer-workflow/porting/">Porting and platform support</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../triage/">Issues and triaging</a><input aria-label="Toggle navigation of Issues and triaging" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../triage/issue-tracker/">Using the issue tracker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../triage/triaging/">Triaging an issue</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../triage/labels/">GitHub labels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../triage/triage-team/">Triage Team</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../documentation/">Documentation</a><input aria-label="Toggle navigation of Documentation" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../documentation/start-documenting/">Getting started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../documentation/help-documenting/">Helping with documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../documentation/style-guide/">Style guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../documentation/markup/">reStructuredText markup</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../documentation/translations/">Translations</a><input aria-label="Toggle navigation of Translations" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../documentation/translations/translating/">Translating</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../documentation/translations/coordinating/">Coordinating</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../documentation/devguide/">Helping with the Developer’s Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../testing/">Testing and buildbots</a><input aria-label="Toggle navigation of Testing and buildbots" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../testing/run-write-tests/">Running and writing tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../testing/silence-warnings/">Silence warnings from the test suite</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../testing/coverage/">Increase test coverage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../testing/oss-fuzz/">OSS-Fuzz for CPython</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../testing/buildbots/">Working with buildbots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../testing/new-buildbot-worker/">New buildbot workers</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../development-tools/">Development tools</a><input aria-label="Toggle navigation of Development tools" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../development-tools/clinic/">Argument Clinic</a><input aria-label="Toggle navigation of Argument Clinic" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../development-tools/clinic/tutorial/">Tutorial</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../development-tools/clinic/howto/">How-to guides</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../development-tools/gdb/">GDB support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../development-tools/clang/">Dynamic analysis with Clang</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../development-tools/warnings/">Tools for tracking compiler warnings</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../core-team/">Core team</a><input aria-label="Toggle navigation of Core team" class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../core-team/responsibilities/">Responsibilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../core-team/committing/">Accepting pull requests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../core-team/experts/">Experts index</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../core-team/team-log/">Team log</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../core-team/motivations/">Motivations and affiliations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../core-team/join-team/">How to join the core team</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../core-team/memorialization/">Memorialization</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../security/">Security</a><input aria-label="Toggle navigation of Security" class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../security/policy/">Security policy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../security/psrt/">Python Security Response Team (PSRT)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../security/sbom/">Software Bill-of-Materials (SBOM)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../internals/">CPython’s internals</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Status of Python versions</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          <div class="view-this-page">
+  <a class="muted-link" href="https://github.com/python/devguide/blob/main/versions.rst?plain=true" title="View this page">
+    <svg><use href="#svg-eye"></use></svg>
+    <span class="visually-hidden">View this page</span>
+  </a>
+</div><div class="edit-this-page">
+  <a class="muted-link" href="https://github.com/python/devguide/edit/main/versions.rst" rel="edit" title="Edit this page">
+    <svg><use href="#svg-pencil"></use></svg>
+    <span class="visually-hidden">Edit this page</span>
+  </a>
+</div><div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+          </label>
+        </div>
+        <article role="main" id="furo-main-content">
+          <section id="status-of-python-versions">
+<span id="branchstatus"></span><span id="versions"></span><h1>Status of Python versions<a class="headerlink" href="#status-of-python-versions" title="Link to this heading">¶</a></h1>
+<p>The <code class="docutils literal notranslate"><span class="pre">main</span></code> branch is currently the future Python 3.16, and is the only
+branch that accepts new features.  The latest release for each Python
+version can be found on the <a class="reference external" href="https://www.python.org/downloads/">download page</a>.</p>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg
+    xmlns="http://www.w3.org/2000/svg"
+    class="release-cycle-chart"
+    viewBox="0 0 828 378.0"
+>
+    <style>
+        /* Embedded styles for standalone viewing */
+        .release-cycle-chart {
+            color-scheme: light;
+
+                --svg-color-foreground-primary: var(--color-foreground-primary, light-dark(#333, #fff));
+                --svg-color-background-primary: var(--color-background-primary, light-dark(#fff, #333));
+                --svg-color-brand-primary: var(--color-brand-primary, #4B8BBE);
+                --svg-color-background-item: var(--color-background-item, #e0e0e0);
+
+            font-family: var(
+                --font-stack,
+                -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica,
+                Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji);
+            width: 100%;
+
+            --blob-border-width: 1.6px;
+
+            --status-bg-color: #CCC;
+            --status-border-color: #888;
+        }
+        .background {
+            fill: var(--svg-color-background-primary);
+        }
+        .release-cycle-year-line {
+            stroke: var(--svg-color-foreground-primary);
+            stroke-width: 0.8px;
+            opacity: 75%;
+        }
+        .release-cycle-today-line {
+            stroke: var(--svg-color-brand-primary);
+            stroke-width: var(--blob-border-width);
+        }
+        .release-cycle-row-shade {
+            fill: var(--svg-color-background-item);
+            opacity: 50%;
+        }
+        .release-cycle-blob {
+            stroke-width: var(--blob-border-width);
+        }
+        .text-main {
+            fill: var(--svg-color-foreground-primary);
+
+            /* use specific colours on known backgrounds */
+            &amp;.release-cycle-status-security,
+            &amp;.release-cycle-status-bugfix {
+                fill: black;
+            }
+        }
+        .text-outline {
+            /* an outline of the background color, in case it's not set
+            correctly */
+            fill: transparent;
+            stroke: var(--svg-color-background-primary);
+            stroke-width: var(--blob-border-width);
+
+            /* use specific colours on known backgrounds */
+            &amp;.release-cycle-status-security,
+            &amp;.release-cycle-status-bugfix {
+                stroke: var(--status-bg-color);
+            }
+        }
+        .release-cycle-status-end-of-life {
+            --status-bg-color: #DD2200;
+            --status-border-color: #FF8888;
+        }
+        .release-cycle-status-security {
+            --status-bg-color: #FFDD44;
+            --status-border-color: #FF8800;
+        }
+        .release-cycle-status-bugfix {
+            --status-bg-color: #00DD22;
+            --status-border-color: #008844;
+        }
+        .release-cycle-status-prerelease {
+            --status-bg-color: teal;
+            --status-border-color: darkgreen;
+        }
+        .release-cycle-status-feature {
+            --status-bg-color: #2222EE;
+            --status-border-color: #008888;
+        }
+        .release-cycle-status-planned {
+            /* Use grey defaults */
+        }
+        .release-cycle-blob {
+            fill: var(--status-bg-color);
+            stroke: transparent;
+        }
+        .release-cycle-blob-full {
+            fill: var(--status-bg-color);
+            stroke: var(--status-border-color);
+        }
+        .release-cycle-border {
+            fill: transparent;
+            stroke: var(--status-border-color);
+            stroke-width: var(--blob-border-width);
+        }
+    </style>
+    <defs>
+        <linearGradient id="release-cycle-mask-gradient-active">
+            <stop stop-color="black" offset="0%" />
+            <stop stop-color="white" offset="100%" />
+        </linearGradient>
+    </defs>
+
+    <rect
+        class="background"
+        x="0"
+        y="0"
+        width="828"
+        height="378.0"
+    />
+
+            <!-- Row shading -->
+            <rect
+                class="release-cycle-row-shade"
+                x="0em"
+                y="6.75"
+                width="828"
+                height="27.0"
+            />
+            <!-- Row shading -->
+            <rect
+                class="release-cycle-row-shade"
+                x="0em"
+                y="60.75"
+                width="828"
+                height="27.0"
+            />
+            <!-- Row shading -->
+            <rect
+                class="release-cycle-row-shade"
+                x="0em"
+                y="114.75"
+                width="828"
+                height="27.0"
+            />
+            <!-- Row shading -->
+            <rect
+                class="release-cycle-row-shade"
+                x="0em"
+                y="168.75"
+                width="828"
+                height="27.0"
+            />
+            <!-- Row shading -->
+            <rect
+                class="release-cycle-row-shade"
+                x="0em"
+                y="222.75"
+                width="828"
+                height="27.0"
+            />
+            <!-- Row shading -->
+            <rect
+                class="release-cycle-row-shade"
+                x="0em"
+                y="276.75"
+                width="828"
+                height="27.0"
+            />
+
+        <text
+            class="release-cycle-year-text text-main"
+            x="121.77613636363637"
+            y="351.0"
+            font-size="13.5"
+            text-anchor="middle"
+        >
+            &#39;19
+        </text>
+        <line
+            class="release-cycle-year-line"
+            x1="147.90681818181818"
+            x2="147.90681818181818"
+            y1="0"
+            y2="351.0"
+            font-size="18"
+        />
+        <text
+            class="release-cycle-year-text text-main"
+            x="174.10909090909092"
+            y="351.0"
+            font-size="13.5"
+            text-anchor="middle"
+        >
+            &#39;20
+        </text>
+        <line
+            class="release-cycle-year-line"
+            x1="200.31136363636364"
+            x2="200.31136363636364"
+            y1="0"
+            y2="351.0"
+            font-size="18"
+        />
+        <text
+            class="release-cycle-year-text text-main"
+            x="226.44204545454545"
+            y="351.0"
+            font-size="13.5"
+            text-anchor="middle"
+        >
+            &#39;21
+        </text>
+        <line
+            class="release-cycle-year-line"
+            x1="252.57272727272726"
+            x2="252.57272727272726"
+            y1="0"
+            y2="351.0"
+            font-size="18"
+        />
+        <text
+            class="release-cycle-year-text text-main"
+            x="278.7034090909091"
+            y="351.0"
+            font-size="13.5"
+            text-anchor="middle"
+        >
+            &#39;22
+        </text>
+        <line
+            class="release-cycle-year-line"
+            x1="304.8340909090909"
+            x2="304.8340909090909"
+            y1="0"
+            y2="351.0"
+            font-size="18"
+        />
+        <text
+            class="release-cycle-year-text text-main"
+            x="330.9647727272727"
+            y="351.0"
+            font-size="13.5"
+            text-anchor="middle"
+        >
+            &#39;23
+        </text>
+        <line
+            class="release-cycle-year-line"
+            x1="357.0954545454545"
+            x2="357.0954545454545"
+            y1="0"
+            y2="351.0"
+            font-size="18"
+        />
+        <text
+            class="release-cycle-year-text text-main"
+            x="383.29772727272723"
+            y="351.0"
+            font-size="13.5"
+            text-anchor="middle"
+        >
+            &#39;24
+        </text>
+        <line
+            class="release-cycle-year-line"
+            x1="409.5"
+            x2="409.5"
+            y1="0"
+            y2="351.0"
+            font-size="18"
+        />
+        <text
+            class="release-cycle-year-text text-main"
+            x="435.63068181818187"
+            y="351.0"
+            font-size="13.5"
+            text-anchor="middle"
+        >
+            &#39;25
+        </text>
+        <line
+            class="release-cycle-year-line"
+            x1="461.7613636363637"
+            x2="461.7613636363637"
+            y1="0"
+            y2="351.0"
+            font-size="18"
+        />
+        <text
+            class="release-cycle-year-text text-main"
+            x="487.8920454545455"
+            y="351.0"
+            font-size="13.5"
+            text-anchor="middle"
+        >
+            &#39;26
+        </text>
+        <line
+            class="release-cycle-year-line"
+            x1="514.0227272727273"
+            x2="514.0227272727273"
+            y1="0"
+            y2="351.0"
+            font-size="18"
+        />
+        <text
+            class="release-cycle-year-text text-main"
+            x="540.153409090909"
+            y="351.0"
+            font-size="13.5"
+            text-anchor="middle"
+        >
+            &#39;27
+        </text>
+        <line
+            class="release-cycle-year-line"
+            x1="566.2840909090909"
+            x2="566.2840909090909"
+            y1="0"
+            y2="351.0"
+            font-size="18"
+        />
+        <text
+            class="release-cycle-year-text text-main"
+            x="592.4863636363636"
+            y="351.0"
+            font-size="13.5"
+            text-anchor="middle"
+        >
+            &#39;28
+        </text>
+        <line
+            class="release-cycle-year-line"
+            x1="618.6886363636364"
+            x2="618.6886363636364"
+            y1="0"
+            y2="351.0"
+            font-size="18"
+        />
+        <text
+            class="release-cycle-year-text text-main"
+            x="644.8193181818183"
+            y="351.0"
+            font-size="13.5"
+            text-anchor="middle"
+        >
+            &#39;29
+        </text>
+        <line
+            class="release-cycle-year-line"
+            x1="670.95"
+            x2="670.95"
+            y1="0"
+            y2="351.0"
+            font-size="18"
+        />
+        <text
+            class="release-cycle-year-text text-main"
+            x="697.0806818181818"
+            y="351.0"
+            font-size="13.5"
+            text-anchor="middle"
+        >
+            &#39;30
+        </text>
+        <line
+            class="release-cycle-year-line"
+            x1="723.2113636363637"
+            x2="723.2113636363637"
+            y1="0"
+            y2="351.0"
+            font-size="18"
+        />
+        <text
+            class="release-cycle-year-text text-main"
+            x="749.3420454545455"
+            y="351.0"
+            font-size="13.5"
+            text-anchor="middle"
+        >
+            &#39;31
+        </text>
+        <line
+            class="release-cycle-year-line"
+            x1="775.4727272727273"
+            x2="775.4727272727273"
+            y1="0"
+            y2="351.0"
+            font-size="18"
+        />
+        <text
+            class="release-cycle-year-text text-main"
+            x="801.675"
+            y="351.0"
+            font-size="13.5"
+            text-anchor="middle"
+        >
+            &#39;32
+        </text>
+
+    <!-- Gradient mask to fade out end-of-life versions -->
+    <mask id="release-cycle-mask-active">
+        <rect
+            x="0"
+            y="0"
+            width="126"
+            height="378.0"
+            fill="black"
+        />
+        <rect
+            x="117.0"
+            y="0"
+            width="9.0"
+            height="378.0"
+            fill="url(#release-cycle-mask-gradient-active)"
+        />
+        <rect
+            x="126"
+            y="0"
+            width="828"
+            height="378.0"
+            fill="white"
+        />
+    </mask>
+
+        <!-- Colourful blob. -->
+
+
+        <!-- bugfix/security blobs need to be split between the two phases.
+            Draw the rectangle with two path elements instead.
+            Thanks Claude.ai for the initial conversion.
+        -->
+
+            <!-- For EOL releases, use a single rounded rectangle -->
+            <rect
+                class="release-cycle-blob release-cycle-blob-full
+                       release-cycle-status-end-of-life"
+                x="-348.79090909090905"
+                y="9.0"
+                width="496.6977272727272"
+                height="22.5"
+                rx="4.5"
+                ry="4.5"
+                mask="url(#release-cycle-mask-active)"
+            />
+        <!-- Colourful blob. -->
+
+
+        <!-- bugfix/security blobs need to be split between the two phases.
+            Draw the rectangle with two path elements instead.
+            Thanks Claude.ai for the initial conversion.
+        -->
+
+            <!-- For EOL releases, use a single rounded rectangle -->
+            <rect
+                class="release-cycle-blob release-cycle-blob-full
+                       release-cycle-status-end-of-life"
+                x="68.72727272727272"
+                y="63.0"
+                width="261.45000000000005"
+                height="22.5"
+                rx="4.5"
+                ry="4.5"
+                mask="url(#release-cycle-mask-active)"
+            />
+        <!-- Colourful blob. -->
+
+
+        <!-- bugfix/security blobs need to be split between the two phases.
+            Draw the rectangle with two path elements instead.
+            Thanks Claude.ai for the initial conversion.
+        -->
+
+            <!-- For EOL releases, use a single rounded rectangle -->
+            <rect
+                class="release-cycle-blob release-cycle-blob-full
+                       release-cycle-status-end-of-life"
+                x="136.59545454545454"
+                y="90.0"
+                width="260.5909090909091"
+                height="22.5"
+                rx="4.5"
+                ry="4.5"
+                mask="url(#release-cycle-mask-active)"
+            />
+        <!-- Colourful blob. -->
+
+
+        <!-- bugfix/security blobs need to be split between the two phases.
+            Draw the rectangle with two path elements instead.
+            Thanks Claude.ai for the initial conversion.
+        -->
+
+            <!-- For EOL releases, use a single rounded rectangle -->
+            <rect
+                class="release-cycle-blob release-cycle-blob-full
+                       release-cycle-status-end-of-life"
+                x="187.71136363636367"
+                y="117.0"
+                width="265.17272727272723"
+                height="22.5"
+                rx="4.5"
+                ry="4.5"
+                mask="url(#release-cycle-mask-active)"
+            />
+        <!-- Colourful blob. -->
+
+
+        <!-- bugfix/security blobs need to be split between the two phases.
+            Draw the rectangle with two path elements instead.
+            Thanks Claude.ai for the initial conversion.
+        -->
+
+            <!-- For EOL releases, use a single rounded rectangle -->
+            <rect
+                class="release-cycle-blob release-cycle-blob-full
+                       release-cycle-status-end-of-life"
+                x="239.82954545454547"
+                y="144.0"
+                width="261.0204545454545"
+                height="22.5"
+                rx="4.5"
+                ry="4.5"
+                mask="url(#release-cycle-mask-active)"
+            />
+        <!-- Colourful blob. -->
+
+
+        <!-- bugfix/security blobs need to be split between the two phases.
+            Draw the rectangle with two path elements instead.
+            Thanks Claude.ai for the initial conversion.
+        -->
+
+            <!-- Split the blob using path operations
+                 (Move-to, Vertical/Horizontal, Arc, Z=close shape;
+                  lowercase means relative to the last point.)
+                 We start drawing from the top of the straight boundary
+                 between the half-blobs.
+             -->
+            <path
+                class="release-cycle-blob release-cycle-status-bugfix"
+                d="
+                    M373.275,171.0v22.5H299.45454545454544a4.5,4.5 90 0 1-4.5 -4.5
+                    v-13.5a4.5,4.5 90 0 14.5 -4.5
+                    Z"
+            />
+            <path
+                class="release-cycle-blob release-cycle-status-security"
+                d="
+                    M373.275,171.0v22.5H552.9068181818182a4.5,4.5 90 0 04.5 -4.5
+                    v-13.5a4.5,4.5 90 0 0-4.5 -4.5
+                    Z"
+            />
+            <!-- Add a common border -->
+            <rect
+                class="release-cycle-border release-cycle-status-security"
+                x="294.95454545454544"
+                y="171.0"
+                width="262.4522727272727"
+                height="22.5"
+                rx="4.5"
+                ry="4.5"
+            />
+        <!-- Colourful blob. -->
+
+
+        <!-- bugfix/security blobs need to be split between the two phases.
+            Draw the rectangle with two path elements instead.
+            Thanks Claude.ai for the initial conversion.
+        -->
+
+            <!-- Split the blob using path operations
+                 (Move-to, Vertical/Horizontal, Arc, Z=close shape;
+                  lowercase means relative to the last point.)
+                 We start drawing from the top of the straight boundary
+                 between the half-blobs.
+             -->
+            <path
+                class="release-cycle-blob release-cycle-status-bugfix"
+                d="
+                    M422.3863636363636,198.0v22.5H348.56590909090914a4.5,4.5 90 0 1-4.5 -4.5
+                    v-13.5a4.5,4.5 90 0 14.5 -4.5
+                    Z"
+            />
+            <path
+                class="release-cycle-blob release-cycle-status-security"
+                d="
+                    M422.3863636363636,198.0v22.5H605.3113636363636a4.5,4.5 90 0 04.5 -4.5
+                    v-13.5a4.5,4.5 90 0 0-4.5 -4.5
+                    Z"
+            />
+            <!-- Add a common border -->
+            <rect
+                class="release-cycle-border release-cycle-status-security"
+                x="344.06590909090914"
+                y="198.0"
+                width="265.74545454545444"
+                height="22.5"
+                rx="4.5"
+                ry="4.5"
+            />
+        <!-- Colourful blob. -->
+
+
+        <!-- bugfix/security blobs need to be split between the two phases.
+            Draw the rectangle with two path elements instead.
+            Thanks Claude.ai for the initial conversion.
+        -->
+
+            <!-- Split the blob using path operations
+                 (Move-to, Vertical/Horizontal, Arc, Z=close shape;
+                  lowercase means relative to the last point.)
+                 We start drawing from the top of the straight boundary
+                 between the half-blobs.
+             -->
+            <path
+                class="release-cycle-blob release-cycle-status-bugfix"
+                d="
+                    M501.7090909090909,225.0v22.5H401.68636363636364a4.5,4.5 90 0 1-4.5 -4.5
+                    v-13.5a4.5,4.5 90 0 14.5 -4.5
+                    Z"
+            />
+            <path
+                class="release-cycle-blob release-cycle-status-security"
+                d="
+                    M501.7090909090909,225.0v22.5H657.5727272727272a4.5,4.5 90 0 04.5 -4.5
+                    v-13.5a4.5,4.5 90 0 0-4.5 -4.5
+                    Z"
+            />
+            <!-- Add a common border -->
+            <rect
+                class="release-cycle-border release-cycle-status-security"
+                x="397.18636363636364"
+                y="225.0"
+                width="264.88636363636357"
+                height="22.5"
+                rx="4.5"
+                ry="4.5"
+            />
+        <!-- Colourful blob. -->
+
+
+        <!-- bugfix/security blobs need to be split between the two phases.
+            Draw the rectangle with two path elements instead.
+            Thanks Claude.ai for the initial conversion.
+        -->
+
+            <!-- Split the blob using path operations
+                 (Move-to, Vertical/Horizontal, Arc, Z=close shape;
+                  lowercase means relative to the last point.)
+                 We start drawing from the top of the straight boundary
+                 between the half-blobs.
+             -->
+            <path
+                class="release-cycle-blob release-cycle-status-bugfix"
+                d="
+                    M553.9704545454546,252.0v22.5H453.94772727272726a4.5,4.5 90 0 1-4.5 -4.5
+                    v-13.5a4.5,4.5 90 0 14.5 -4.5
+                    Z"
+            />
+            <path
+                class="release-cycle-blob release-cycle-status-security"
+                d="
+                    M553.9704545454546,252.0v22.5H709.834090909091a4.5,4.5 90 0 04.5 -4.5
+                    v-13.5a4.5,4.5 90 0 0-4.5 -4.5
+                    Z"
+            />
+            <!-- Add a common border -->
+            <rect
+                class="release-cycle-border release-cycle-status-bugfix"
+                x="449.44772727272726"
+                y="252.0"
+                width="264.8863636363637"
+                height="22.5"
+                rx="4.5"
+                ry="4.5"
+            />
+        <!-- Colourful blob. -->
+
+
+        <!-- bugfix/security blobs need to be split between the two phases.
+            Draw the rectangle with two path elements instead.
+            Thanks Claude.ai for the initial conversion.
+        -->
+
+            <!-- Split the blob using path operations
+                 (Move-to, Vertical/Horizontal, Arc, Z=close shape;
+                  lowercase means relative to the last point.)
+                 We start drawing from the top of the straight boundary
+                 between the half-blobs.
+             -->
+            <path
+                class="release-cycle-blob release-cycle-status-bugfix"
+                d="
+                    M606.5181818181819,279.0v22.5H506.49545454545455a4.5,4.5 90 0 1-4.5 -4.5
+                    v-13.5a4.5,4.5 90 0 14.5 -4.5
+                    Z"
+            />
+            <path
+                class="release-cycle-blob release-cycle-status-security"
+                d="
+                    M606.5181818181819,279.0v22.5H762.0954545454545a4.5,4.5 90 0 04.5 -4.5
+                    v-13.5a4.5,4.5 90 0 0-4.5 -4.5
+                    Z"
+            />
+            <!-- Add a common border -->
+            <rect
+                class="release-cycle-border release-cycle-status-bugfix"
+                x="501.99545454545455"
+                y="279.0"
+                width="264.5999999999999"
+                height="22.5"
+                rx="4.5"
+                ry="4.5"
+            />
+        <!-- Colourful blob. -->
+
+
+        <!-- bugfix/security blobs need to be split between the two phases.
+            Draw the rectangle with two path elements instead.
+            Thanks Claude.ai for the initial conversion.
+        -->
+
+            <!-- Split the blob using path operations
+                 (Move-to, Vertical/Horizontal, Arc, Z=close shape;
+                  lowercase means relative to the last point.)
+                 We start drawing from the top of the straight boundary
+                 between the half-blobs.
+             -->
+            <path
+                class="release-cycle-blob release-cycle-status-bugfix"
+                d="
+                    M658.35,306.0v22.5H558.3272727272728a4.5,4.5 90 0 1-4.5 -4.5
+                    v-13.5a4.5,4.5 90 0 14.5 -4.5
+                    Z"
+            />
+            <path
+                class="release-cycle-blob release-cycle-status-security"
+                d="
+                    M658.35,306.0v22.5H814.5a4.5,4.5 90 0 04.5 -4.5
+                    v-13.5a4.5,4.5 90 0 0-4.5 -4.5
+                    Z"
+            />
+            <!-- Add a common border -->
+            <rect
+                class="release-cycle-border release-cycle-status-feature"
+                x="553.8272727272728"
+                y="306.0"
+                width="265.17272727272723"
+                height="22.5"
+                rx="4.5"
+                ry="4.5"
+            />
+
+    <!-- A line for today -->
+    <line
+        class="release-cycle-today-line"
+        x1="502.2818181818182"
+        x2="502.2818181818182"
+        y1="0"
+        y2="351.0"
+        font-size="18"
+    />
+
+        <!-- Label for colourful blob -->
+
+
+        <!-- Add text before/after/inside the blob -->
+            <text
+                class="release-cycle-blob-label text-outline release-cycle-status-end-of-life"
+                font-size="13.5"
+                y="25.2"
+                    x="152.40681818181818"
+                    text-anchor="start"
+            >
+                end-of-life
+            </text>
+            <text
+                class="release-cycle-blob-label text-main release-cycle-status-end-of-life"
+                font-size="13.5"
+                y="25.2"
+                    x="152.40681818181818"
+                    text-anchor="start"
+            >
+                end-of-life
+            </text>
+
+        <!-- Legend on the left -->
+        <text
+            class="release-cycle-version-label text-main"
+            x="9.0"
+            y="27.0"
+            font-size="18"
+        >
+            Python 2.7
+        </text>
+        <!-- Label for colourful blob -->
+
+
+        <!-- Add text before/after/inside the blob -->
+            <text
+                class="release-cycle-blob-label text-outline release-cycle-status-end-of-life"
+                font-size="13.5"
+                y="79.2"
+                    x="334.67727272727274"
+                    text-anchor="start"
+            >
+                end-of-life
+            </text>
+            <text
+                class="release-cycle-blob-label text-main release-cycle-status-end-of-life"
+                font-size="13.5"
+                y="79.2"
+                    x="334.67727272727274"
+                    text-anchor="start"
+            >
+                end-of-life
+            </text>
+
+        <!-- Legend on the left -->
+        <text
+            class="release-cycle-version-label text-main"
+            x="9.0"
+            y="81.0"
+            font-size="18"
+        >
+            Python 3.7
+        </text>
+        <!-- Label for colourful blob -->
+
+
+        <!-- Add text before/after/inside the blob -->
+            <text
+                class="release-cycle-blob-label text-outline release-cycle-status-end-of-life"
+                font-size="13.5"
+                y="106.2"
+                    x="401.68636363636364"
+                    text-anchor="start"
+            >
+                end-of-life
+            </text>
+            <text
+                class="release-cycle-blob-label text-main release-cycle-status-end-of-life"
+                font-size="13.5"
+                y="106.2"
+                    x="401.68636363636364"
+                    text-anchor="start"
+            >
+                end-of-life
+            </text>
+
+        <!-- Legend on the left -->
+        <text
+            class="release-cycle-version-label text-main"
+            x="9.0"
+            y="108.0"
+            font-size="18"
+        >
+            Python 3.8
+        </text>
+        <!-- Label for colourful blob -->
+
+
+        <!-- Add text before/after/inside the blob -->
+            <text
+                class="release-cycle-blob-label text-outline release-cycle-status-end-of-life"
+                font-size="13.5"
+                y="133.2"
+                    x="457.3840909090909"
+                    text-anchor="start"
+            >
+                end-of-life
+            </text>
+            <text
+                class="release-cycle-blob-label text-main release-cycle-status-end-of-life"
+                font-size="13.5"
+                y="133.2"
+                    x="457.3840909090909"
+                    text-anchor="start"
+            >
+                end-of-life
+            </text>
+
+        <!-- Legend on the left -->
+        <text
+            class="release-cycle-version-label text-main"
+            x="9.0"
+            y="135.0"
+            font-size="18"
+        >
+            Python 3.9
+        </text>
+        <!-- Label for colourful blob -->
+
+
+        <!-- Add text before/after/inside the blob -->
+            <text
+                class="release-cycle-blob-label text-outline release-cycle-status-end-of-life"
+                font-size="13.5"
+                y="160.2"
+                    x="505.34999999999997"
+                    text-anchor="start"
+            >
+                end-of-life
+            </text>
+            <text
+                class="release-cycle-blob-label text-main release-cycle-status-end-of-life"
+                font-size="13.5"
+                y="160.2"
+                    x="505.34999999999997"
+                    text-anchor="start"
+            >
+                end-of-life
+            </text>
+
+        <!-- Legend on the left -->
+        <text
+            class="release-cycle-version-label text-main"
+            x="9.0"
+            y="162.0"
+            font-size="18"
+        >
+            Python 3.10
+        </text>
+        <!-- Label for colourful blob -->
+
+
+        <!-- Add text before/after/inside the blob -->
+            <text
+                class="release-cycle-blob-label text-outline release-cycle-status-security"
+                font-size="13.5"
+                y="187.2"
+                    x="465.34090909090907"
+                    text-anchor="middle"
+            >
+                security
+            </text>
+            <text
+                class="release-cycle-blob-label text-main release-cycle-status-security"
+                font-size="13.5"
+                y="187.2"
+                    x="465.34090909090907"
+                    text-anchor="middle"
+            >
+                security
+            </text>
+
+        <!-- Legend on the left -->
+        <text
+            class="release-cycle-version-label text-main"
+            x="9.0"
+            y="189.0"
+            font-size="18"
+        >
+            Python 3.11
+        </text>
+        <!-- Label for colourful blob -->
+
+
+        <!-- Add text before/after/inside the blob -->
+            <text
+                class="release-cycle-blob-label text-outline release-cycle-status-security"
+                font-size="13.5"
+                y="214.2"
+                    x="516.0988636363636"
+                    text-anchor="middle"
+            >
+                security
+            </text>
+            <text
+                class="release-cycle-blob-label text-main release-cycle-status-security"
+                font-size="13.5"
+                y="214.2"
+                    x="516.0988636363636"
+                    text-anchor="middle"
+            >
+                security
+            </text>
+
+        <!-- Legend on the left -->
+        <text
+            class="release-cycle-version-label text-main"
+            x="9.0"
+            y="216.0"
+            font-size="18"
+        >
+            Python 3.12
+        </text>
+        <!-- Label for colourful blob -->
+
+
+        <!-- Add text before/after/inside the blob -->
+            <text
+                class="release-cycle-blob-label text-outline release-cycle-status-security"
+                font-size="13.5"
+                y="241.2"
+                    x="581.8909090909091"
+                    text-anchor="middle"
+            >
+                security
+            </text>
+            <text
+                class="release-cycle-blob-label text-main release-cycle-status-security"
+                font-size="13.5"
+                y="241.2"
+                    x="581.8909090909091"
+                    text-anchor="middle"
+            >
+                security
+            </text>
+
+        <!-- Legend on the left -->
+        <text
+            class="release-cycle-version-label text-main"
+            x="9.0"
+            y="243.0"
+            font-size="18"
+        >
+            Python 3.13
+        </text>
+        <!-- Label for colourful blob -->
+
+
+        <!-- Add text before/after/inside the blob -->
+            <text
+                class="release-cycle-blob-label text-outline release-cycle-status-bugfix"
+                font-size="13.5"
+                y="268.2"
+                    x="501.70909090909095"
+                    text-anchor="middle"
+            >
+                bugfix
+            </text>
+            <text
+                class="release-cycle-blob-label text-main release-cycle-status-bugfix"
+                font-size="13.5"
+                y="268.2"
+                    x="501.70909090909095"
+                    text-anchor="middle"
+            >
+                bugfix
+            </text>
+
+        <!-- Legend on the left -->
+        <text
+            class="release-cycle-version-label text-main"
+            x="9.0"
+            y="270.0"
+            font-size="18"
+        >
+            Python 3.14
+        </text>
+        <!-- Label for colourful blob -->
+
+
+        <!-- Add text before/after/inside the blob -->
+            <text
+                class="release-cycle-blob-label text-outline release-cycle-status-bugfix"
+                font-size="13.5"
+                y="295.2"
+                    x="554.2568181818183"
+                    text-anchor="middle"
+            >
+                bugfix
+            </text>
+            <text
+                class="release-cycle-blob-label text-main release-cycle-status-bugfix"
+                font-size="13.5"
+                y="295.2"
+                    x="554.2568181818183"
+                    text-anchor="middle"
+            >
+                bugfix
+            </text>
+
+        <!-- Legend on the left -->
+        <text
+            class="release-cycle-version-label text-main"
+            x="9.0"
+            y="297.0"
+            font-size="18"
+        >
+            Python 3.15
+        </text>
+        <!-- Label for colourful blob -->
+
+
+        <!-- Add text before/after/inside the blob -->
+            <text
+                class="release-cycle-blob-label text-outline release-cycle-status-feature"
+                font-size="13.5"
+                y="322.2"
+                    x="549.3272727272728"
+                    text-anchor="end"
+            >
+                feature
+            </text>
+            <text
+                class="release-cycle-blob-label text-main release-cycle-status-feature"
+                font-size="13.5"
+                y="322.2"
+                    x="549.3272727272728"
+                    text-anchor="end"
+            >
+                feature
+            </text>
+
+        <!-- Legend on the left -->
+        <text
+            class="release-cycle-version-label text-main"
+            x="9.0"
+            y="324.0"
+            font-size="18"
+        >
+            Python 3.16
+        </text>
+</svg><p>(See <a class="reference internal" href="#full-chart"><span class="std std-ref">below</span></a> for a chart with older versions.
+Another useful visualization is <a class="reference external" href="https://endoflife.date/python">endoflife.date/python</a>.)</p>
+<section id="supported-versions">
+<h2>Supported versions<a class="headerlink" href="#supported-versions" title="Link to this heading">¶</a></h2>
+<p>Dates shown in <em>italic</em> are scheduled and can be adjusted.</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default" style="width: 100%">
+<thead>
+<tr class="row-odd"><th class="head"><p>Branch</p></th>
+<th class="head"><p>Schedule</p></th>
+<th class="head"><p>Status</p></th>
+<th class="head"><p>First release</p></th>
+<th class="head"><p>End of life</p></th>
+<th class="head"><p>Release manager</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>main</p></td>
+<td><p><span class="target" id="index-0"></span><a class="pep reference external" href="https://peps.python.org/pep-0826/"><strong>PEP 826</strong></a></p></td>
+<td><p>feature</p></td>
+<td><p><em>2027-10-06</em></p></td>
+<td><p><em>2032-10</em></p></td>
+<td><p>Savannah Ostrowski</p></td>
+</tr>
+<tr class="row-odd"><td><p>3.15</p></td>
+<td><p><span class="target" id="index-1"></span><a class="pep reference external" href="https://peps.python.org/pep-0790/"><strong>PEP 790</strong></a></p></td>
+<td><p>bugfix</p></td>
+<td><p>2026-10-09</p></td>
+<td><p><em>2031-10</em></p></td>
+<td><p>Hugo van Kemenade</p></td>
+</tr>
+<tr class="row-even"><td><p>3.14</p></td>
+<td><p><span class="target" id="index-2"></span><a class="pep reference external" href="https://peps.python.org/pep-0745/"><strong>PEP 745</strong></a></p></td>
+<td><p>bugfix</p></td>
+<td><p>2025-10-07</p></td>
+<td><p><em>2030-10</em></p></td>
+<td><p>Hugo van Kemenade</p></td>
+</tr>
+<tr class="row-odd"><td><p>3.13</p></td>
+<td><p><span class="target" id="index-3"></span><a class="pep reference external" href="https://peps.python.org/pep-0719/"><strong>PEP 719</strong></a></p></td>
+<td><p>security</p></td>
+<td><p>2024-10-07</p></td>
+<td><p><em>2029-10</em></p></td>
+<td><p>Thomas Wouters</p></td>
+</tr>
+<tr class="row-even"><td><p>3.12</p></td>
+<td><p><span class="target" id="index-4"></span><a class="pep reference external" href="https://peps.python.org/pep-0693/"><strong>PEP 693</strong></a></p></td>
+<td><p>security</p></td>
+<td><p>2023-10-02</p></td>
+<td><p><em>2028-10</em></p></td>
+<td><p>Thomas Wouters</p></td>
+</tr>
+<tr class="row-odd"><td><p>3.11</p></td>
+<td><p><span class="target" id="index-5"></span><a class="pep reference external" href="https://peps.python.org/pep-0664/"><strong>PEP 664</strong></a></p></td>
+<td><p>security</p></td>
+<td><p>2022-10-24</p></td>
+<td><p><em>2027-10</em></p></td>
+<td><p>Pablo Galindo Salgado</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="unsupported-versions">
+<h2>Unsupported versions<a class="headerlink" href="#unsupported-versions" title="Link to this heading">¶</a></h2>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default" style="width: 100%">
+<thead>
+<tr class="row-odd"><th class="head"><p>Branch</p></th>
+<th class="head"><p>Schedule</p></th>
+<th class="head"><p>Status</p></th>
+<th class="head"><p>First release</p></th>
+<th class="head"><p>End of life</p></th>
+<th class="head"><p>Release manager</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>3.10</p></td>
+<td><p><span class="target" id="index-6"></span><a class="pep reference external" href="https://peps.python.org/pep-0619/"><strong>PEP 619</strong></a></p></td>
+<td><p>end-of-life</p></td>
+<td><p>2021-10-04</p></td>
+<td><p>2026-10-01</p></td>
+<td><p>Pablo Galindo Salgado</p></td>
+</tr>
+<tr class="row-odd"><td><p>3.9</p></td>
+<td><p><span class="target" id="index-7"></span><a class="pep reference external" href="https://peps.python.org/pep-0596/"><strong>PEP 596</strong></a></p></td>
+<td><p>end-of-life</p></td>
+<td><p>2020-10-05</p></td>
+<td><p>2025-10-31</p></td>
+<td><p>Łukasz Langa</p></td>
+</tr>
+<tr class="row-even"><td><p>3.8</p></td>
+<td><p><span class="target" id="index-8"></span><a class="pep reference external" href="https://peps.python.org/pep-0569/"><strong>PEP 569</strong></a></p></td>
+<td><p>end-of-life</p></td>
+<td><p>2019-10-14</p></td>
+<td><p>2024-10-07</p></td>
+<td><p>Łukasz Langa</p></td>
+</tr>
+<tr class="row-odd"><td><p>3.7</p></td>
+<td><p><span class="target" id="index-9"></span><a class="pep reference external" href="https://peps.python.org/pep-0537/"><strong>PEP 537</strong></a></p></td>
+<td><p>end-of-life</p></td>
+<td><p>2018-06-27</p></td>
+<td><p>2023-06-27</p></td>
+<td><p>Ned Deily</p></td>
+</tr>
+<tr class="row-even"><td><p>3.6</p></td>
+<td><p><span class="target" id="index-10"></span><a class="pep reference external" href="https://peps.python.org/pep-0494/"><strong>PEP 494</strong></a></p></td>
+<td><p>end-of-life</p></td>
+<td><p>2016-12-23</p></td>
+<td><p>2021-12-23</p></td>
+<td><p>Ned Deily</p></td>
+</tr>
+<tr class="row-odd"><td><p>3.5</p></td>
+<td><p><span class="target" id="index-11"></span><a class="pep reference external" href="https://peps.python.org/pep-0478/"><strong>PEP 478</strong></a></p></td>
+<td><p>end-of-life</p></td>
+<td><p>2015-09-13</p></td>
+<td><p>2020-09-30</p></td>
+<td><p>Larry Hastings</p></td>
+</tr>
+<tr class="row-even"><td><p>3.4</p></td>
+<td><p><span class="target" id="index-12"></span><a class="pep reference external" href="https://peps.python.org/pep-0429/"><strong>PEP 429</strong></a></p></td>
+<td><p>end-of-life</p></td>
+<td><p>2014-03-16</p></td>
+<td><p>2019-03-18</p></td>
+<td><p>Larry Hastings</p></td>
+</tr>
+<tr class="row-odd"><td><p>3.3</p></td>
+<td><p><span class="target" id="index-13"></span><a class="pep reference external" href="https://peps.python.org/pep-0398/"><strong>PEP 398</strong></a></p></td>
+<td><p>end-of-life</p></td>
+<td><p>2012-09-29</p></td>
+<td><p>2017-09-29</p></td>
+<td><p>Georg Brandl &amp; Ned Deily (3.3.7)</p></td>
+</tr>
+<tr class="row-even"><td><p>3.2</p></td>
+<td><p><span class="target" id="index-14"></span><a class="pep reference external" href="https://peps.python.org/pep-0392/"><strong>PEP 392</strong></a></p></td>
+<td><p>end-of-life</p></td>
+<td><p>2011-02-20</p></td>
+<td><p>2016-02-20</p></td>
+<td><p>Georg Brandl</p></td>
+</tr>
+<tr class="row-odd"><td><p>3.1</p></td>
+<td><p><span class="target" id="index-15"></span><a class="pep reference external" href="https://peps.python.org/pep-0375/"><strong>PEP 375</strong></a></p></td>
+<td><p>end-of-life</p></td>
+<td><p>2009-06-27</p></td>
+<td><p>2012-04-09</p></td>
+<td><p>Benjamin Peterson</p></td>
+</tr>
+<tr class="row-even"><td><p>3.0</p></td>
+<td><p><span class="target" id="index-16"></span><a class="pep reference external" href="https://peps.python.org/pep-0361/"><strong>PEP 361</strong></a></p></td>
+<td><p>end-of-life</p></td>
+<td><p>2008-12-03</p></td>
+<td><p>2009-06-27</p></td>
+<td><p>Barry Warsaw</p></td>
+</tr>
+<tr class="row-odd"><td><p>2.7</p></td>
+<td><p><span class="target" id="index-17"></span><a class="pep reference external" href="https://peps.python.org/pep-0373/"><strong>PEP 373</strong></a></p></td>
+<td><p>end-of-life</p></td>
+<td><p>2010-07-03</p></td>
+<td><p>2020-01-01</p></td>
+<td><p>Benjamin Peterson</p></td>
+</tr>
+<tr class="row-even"><td><p>2.6</p></td>
+<td><p><span class="target" id="index-18"></span><a class="pep reference external" href="https://peps.python.org/pep-0361/"><strong>PEP 361</strong></a></p></td>
+<td><p>end-of-life</p></td>
+<td><p>2008-10-01</p></td>
+<td><p>2013-10-29</p></td>
+<td><p>Barry Warsaw</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="full-chart">
+<span id="id1"></span><h2>Full chart<a class="headerlink" href="#full-chart" title="Link to this heading">¶</a></h2>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg
+    xmlns="http://www.w3.org/2000/svg"
+    class="release-cycle-chart"
+    viewBox="0 0 828 567.0"
+>
+    <style>
+        /* Embedded styles for standalone viewing */
+        .release-cycle-chart {
+            color-scheme: light;
+
+                --svg-color-foreground-primary: var(--color-foreground-primary, light-dark(#333, #fff));
+                --svg-color-background-primary: var(--color-background-primary, light-dark(#fff, #333));
+                --svg-color-brand-primary: var(--color-brand-primary, #4B8BBE);
+                --svg-color-background-item: var(--color-background-item, #e0e0e0);
+
+            font-family: var(
+                --font-stack,
+                -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica,
+                Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji);
+            width: 100%;
+
+            --blob-border-width: 1.6px;
+
+            --status-bg-color: #CCC;
+            --status-border-color: #888;
+        }
+        .background {
+            fill: var(--svg-color-background-primary);
+        }
+        .release-cycle-year-line {
+            stroke: var(--svg-color-foreground-primary);
+            stroke-width: 0.8px;
+            opacity: 75%;
+        }
+        .release-cycle-today-line {
+            stroke: var(--svg-color-brand-primary);
+            stroke-width: var(--blob-border-width);
+        }
+        .release-cycle-row-shade {
+            fill: var(--svg-color-background-item);
+            opacity: 50%;
+        }
+        .release-cycle-blob {
+            stroke-width: var(--blob-border-width);
+        }
+        .text-main {
+            fill: var(--svg-color-foreground-primary);
+
+            /* use specific colours on known backgrounds */
+            &amp;.release-cycle-status-security,
+            &amp;.release-cycle-status-bugfix {
+                fill: black;
+            }
+        }
+        .text-outline {
+            /* an outline of the background color, in case it's not set
+            correctly */
+            fill: transparent;
+            stroke: var(--svg-color-background-primary);
+            stroke-width: var(--blob-border-width);
+
+            /* use specific colours on known backgrounds */
+            &amp;.release-cycle-status-security,
+            &amp;.release-cycle-status-bugfix {
+                stroke: var(--status-bg-color);
+            }
+        }
+        .release-cycle-status-end-of-life {
+            --status-bg-color: #DD2200;
+            --status-border-color: #FF8888;
+        }
+        .release-cycle-status-security {
+            --status-bg-color: #FFDD44;
+            --status-border-color: #FF8800;
+        }
+        .release-cycle-status-bugfix {
+            --status-bg-color: #00DD22;
+            --status-border-color: #008844;
+        }
+        .release-cycle-status-prerelease {
+            --status-bg-color: teal;
+            --status-border-color: darkgreen;
+        }
+        .release-cycle-status-feature {
+            --status-bg-color: #2222EE;
+            --status-border-color: #008888;
+        }
+        .release-cycle-status-planned {
+            /* Use grey defaults */
+        }
+        .release-cycle-blob {
+            fill: var(--status-bg-color);
+            stroke: transparent;
+        }
+        .release-cycle-blob-full {
+            fill: var(--status-bg-color);
+            stroke: var(--status-border-color);
+        }
+        .release-cycle-border {
+            fill: transparent;
+            stroke: var(--status-border-color);
+            stroke-width: var(--blob-border-width);
+        }
+    </style>
+    <defs>
+        <linearGradient id="release-cycle-mask-gradient-all">
+            <stop stop-color="black" offset="0%" />
+            <stop stop-color="white" offset="100%" />
+        </linearGradient>
+    </defs>
+
+    <rect
+        class="background"
+        x="0"
+        y="0"
+        width="828"
+        height="567.0"
+    />
+
+            <!-- Row shading -->
+            <rect
+                class="release-cycle-row-shade"
+                x="0em"
+                y="6.75"
+                width="828"
+                height="27.0"
+            />
+            <!-- Row shading -->
+            <rect
+                class="release-cycle-row-shade"
+                x="0em"
+                y="60.75"
+                width="828"
+                height="27.0"
+            />
+            <!-- Row shading -->
+            <rect
+                class="release-cycle-row-shade"
+                x="0em"
+                y="114.75"
+                width="828"
+                height="27.0"
+            />
+            <!-- Row shading -->
+            <rect
+                class="release-cycle-row-shade"
+                x="0em"
+                y="168.75"
+                width="828"
+                height="27.0"
+            />
+            <!-- Row shading -->
+            <rect
+                class="release-cycle-row-shade"
+                x="0em"
+                y="222.75"
+                width="828"
+                height="27.0"
+            />
+            <!-- Row shading -->
+            <rect
+                class="release-cycle-row-shade"
+                x="0em"
+                y="276.75"
+                width="828"
+                height="27.0"
+            />
+            <!-- Row shading -->
+            <rect
+                class="release-cycle-row-shade"
+                x="0em"
+                y="330.75"
+                width="828"
+                height="27.0"
+            />
+            <!-- Row shading -->
+            <rect
+                class="release-cycle-row-shade"
+                x="0em"
+                y="384.75"
+                width="828"
+                height="27.0"
+            />
+            <!-- Row shading -->
+            <rect
+                class="release-cycle-row-shade"
+                x="0em"
+                y="438.75"
+                width="828"
+                height="27.0"
+            />
+            <!-- Row shading -->
+            <rect
+                class="release-cycle-row-shade"
+                x="0em"
+                y="492.75"
+                width="828"
+                height="27.0"
+            />
+
+        <text
+            class="release-cycle-year-text text-main"
+            x="118.83049113233287"
+            y="540.0"
+            font-size="13.5"
+            text-anchor="middle"
+        >
+            &#39;08
+        </text>
+        <line
+            class="release-cycle-year-line"
+            x1="133.24829467939972"
+            x2="133.24829467939972"
+            y1="0"
+            y2="540.0"
+            font-size="18"
+        />
+        <text
+            class="release-cycle-year-text text-main"
+            x="147.62670532060025"
+            y="540.0"
+            font-size="13.5"
+            text-anchor="middle"
+        >
+            &#39;09
+        </text>
+        <line
+            class="release-cycle-year-line"
+            x1="162.0051159618008"
+            x2="162.0051159618008"
+            y1="0"
+            y2="540.0"
+            font-size="18"
+        />
+        <text
+            class="release-cycle-year-text text-main"
+            x="176.38352660300137"
+            y="540.0"
+            font-size="13.5"
+            text-anchor="middle"
+        >
+            &#39;10
+        </text>
+        <line
+            class="release-cycle-year-line"
+            x1="190.7619372442019"
+            x2="190.7619372442019"
+            y1="0"
+            y2="540.0"
+            font-size="18"
+        />
+        <text
+            class="release-cycle-year-text text-main"
+            x="205.14034788540243"
+            y="540.0"
+            font-size="13.5"
+            text-anchor="middle"
+        >
+            &#39;11
+        </text>
+        <line
+            class="release-cycle-year-line"
+            x1="219.518758526603"
+            x2="219.518758526603"
+            y1="0"
+            y2="540.0"
+            font-size="18"
+        />
+        <text
+            class="release-cycle-year-text text-main"
+            x="233.93656207366985"
+            y="540.0"
+            font-size="13.5"
+            text-anchor="middle"
+        >
+            &#39;12
+        </text>
+        <line
+            class="release-cycle-year-line"
+            x1="248.3543656207367"
+            x2="248.3543656207367"
+            y1="0"
+            y2="540.0"
+            font-size="18"
+        />
+        <text
+            class="release-cycle-year-text text-main"
+            x="262.73277626193726"
+            y="540.0"
+            font-size="13.5"
+            text-anchor="middle"
+        >
+            &#39;13
+        </text>
+        <line
+            class="release-cycle-year-line"
+            x1="277.11118690313776"
+            x2="277.11118690313776"
+            y1="0"
+            y2="540.0"
+            font-size="18"
+        />
+        <text
+            class="release-cycle-year-text text-main"
+            x="291.4895975443383"
+            y="540.0"
+            font-size="13.5"
+            text-anchor="middle"
+        >
+            &#39;14
+        </text>
+        <line
+            class="release-cycle-year-line"
+            x1="305.8680081855389"
+            x2="305.8680081855389"
+            y1="0"
+            y2="540.0"
+            font-size="18"
+        />
+        <text
+            class="release-cycle-year-text text-main"
+            x="320.24641882673944"
+            y="540.0"
+            font-size="13.5"
+            text-anchor="middle"
+        >
+            &#39;15
+        </text>
+        <line
+            class="release-cycle-year-line"
+            x1="334.62482946794"
+            x2="334.62482946794"
+            y1="0"
+            y2="540.0"
+            font-size="18"
+        />
+        <text
+            class="release-cycle-year-text text-main"
+            x="349.0426330150068"
+            y="540.0"
+            font-size="13.5"
+            text-anchor="middle"
+        >
+            &#39;16
+        </text>
+        <line
+            class="release-cycle-year-line"
+            x1="363.4604365620736"
+            x2="363.4604365620736"
+            y1="0"
+            y2="540.0"
+            font-size="18"
+        />
+        <text
+            class="release-cycle-year-text text-main"
+            x="377.83884720327416"
+            y="540.0"
+            font-size="13.5"
+            text-anchor="middle"
+        >
+            &#39;17
+        </text>
+        <line
+            class="release-cycle-year-line"
+            x1="392.2172578444747"
+            x2="392.2172578444747"
+            y1="0"
+            y2="540.0"
+            font-size="18"
+        />
+        <text
+            class="release-cycle-year-text text-main"
+            x="406.5956684856753"
+            y="540.0"
+            font-size="13.5"
+            text-anchor="middle"
+        >
+            &#39;18
+        </text>
+        <line
+            class="release-cycle-year-line"
+            x1="420.97407912687584"
+            x2="420.97407912687584"
+            y1="0"
+            y2="540.0"
+            font-size="18"
+        />
+        <text
+            class="release-cycle-year-text text-main"
+            x="435.35248976807634"
+            y="540.0"
+            font-size="13.5"
+            text-anchor="middle"
+        >
+            &#39;19
+        </text>
+        <line
+            class="release-cycle-year-line"
+            x1="449.7309004092769"
+            x2="449.7309004092769"
+            y1="0"
+            y2="540.0"
+            font-size="18"
+        />
+        <text
+            class="release-cycle-year-text text-main"
+            x="464.14870395634375"
+            y="540.0"
+            font-size="13.5"
+            text-anchor="middle"
+        >
+            &#39;20
+        </text>
+        <line
+            class="release-cycle-year-line"
+            x1="478.5665075034106"
+            x2="478.5665075034106"
+            y1="0"
+            y2="540.0"
+            font-size="18"
+        />
+        <text
+            class="release-cycle-year-text text-main"
+            x="492.94491814461117"
+            y="540.0"
+            font-size="13.5"
+            text-anchor="middle"
+        >
+            &#39;21
+        </text>
+        <line
+            class="release-cycle-year-line"
+            x1="507.3233287858117"
+            x2="507.3233287858117"
+            y1="0"
+            y2="540.0"
+            font-size="18"
+        />
+        <text
+            class="release-cycle-year-text text-main"
+            x="521.7017394270123"
+            y="540.0"
+            font-size="13.5"
+            text-anchor="middle"
+        >
+            &#39;22
+        </text>
+        <line
+            class="release-cycle-year-line"
+            x1="536.0801500682128"
+            x2="536.0801500682128"
+            y1="0"
+            y2="540.0"
+            font-size="18"
+        />
+        <text
+            class="release-cycle-year-text text-main"
+            x="550.4585607094133"
+            y="540.0"
+            font-size="13.5"
+            text-anchor="middle"
+        >
+            &#39;23
+        </text>
+        <line
+            class="release-cycle-year-line"
+            x1="564.8369713506138"
+            x2="564.8369713506138"
+            y1="0"
+            y2="540.0"
+            font-size="18"
+        />
+        <text
+            class="release-cycle-year-text text-main"
+            x="579.2547748976807"
+            y="540.0"
+            font-size="13.5"
+            text-anchor="middle"
+        >
+            &#39;24
+        </text>
+        <line
+            class="release-cycle-year-line"
+            x1="593.6725784447476"
+            x2="593.6725784447476"
+            y1="0"
+            y2="540.0"
+            font-size="18"
+        />
+        <text
+            class="release-cycle-year-text text-main"
+            x="608.0509890859482"
+            y="540.0"
+            font-size="13.5"
+            text-anchor="middle"
+        >
+            &#39;25
+        </text>
+        <line
+            class="release-cycle-year-line"
+            x1="622.4293997271487"
+            x2="622.4293997271487"
+            y1="0"
+            y2="540.0"
+            font-size="18"
+        />
+        <text
+            class="release-cycle-year-text text-main"
+            x="636.8078103683492"
+            y="540.0"
+            font-size="13.5"
+            text-anchor="middle"
+        >
+            &#39;26
+        </text>
+        <line
+            class="release-cycle-year-line"
+            x1="651.1862210095499"
+            x2="651.1862210095499"
+            y1="0"
+            y2="540.0"
+            font-size="18"
+        />
+        <text
+            class="release-cycle-year-text text-main"
+            x="665.5646316507505"
+            y="540.0"
+            font-size="13.5"
+            text-anchor="middle"
+        >
+            &#39;27
+        </text>
+        <line
+            class="release-cycle-year-line"
+            x1="679.943042291951"
+            x2="679.943042291951"
+            y1="0"
+            y2="540.0"
+            font-size="18"
+        />
+        <text
+            class="release-cycle-year-text text-main"
+            x="694.3608458390178"
+            y="540.0"
+            font-size="13.5"
+            text-anchor="middle"
+        >
+            &#39;28
+        </text>
+        <line
+            class="release-cycle-year-line"
+            x1="708.7786493860846"
+            x2="708.7786493860846"
+            y1="0"
+            y2="540.0"
+            font-size="18"
+        />
+        <text
+            class="release-cycle-year-text text-main"
+            x="723.1570600272851"
+            y="540.0"
+            font-size="13.5"
+            text-anchor="middle"
+        >
+            &#39;29
+        </text>
+        <line
+            class="release-cycle-year-line"
+            x1="737.5354706684857"
+            x2="737.5354706684857"
+            y1="0"
+            y2="540.0"
+            font-size="18"
+        />
+        <text
+            class="release-cycle-year-text text-main"
+            x="751.9138813096862"
+            y="540.0"
+            font-size="13.5"
+            text-anchor="middle"
+        >
+            &#39;30
+        </text>
+        <line
+            class="release-cycle-year-line"
+            x1="766.2922919508867"
+            x2="766.2922919508867"
+            y1="0"
+            y2="540.0"
+            font-size="18"
+        />
+        <text
+            class="release-cycle-year-text text-main"
+            x="780.6707025920873"
+            y="540.0"
+            font-size="13.5"
+            text-anchor="middle"
+        >
+            &#39;31
+        </text>
+        <line
+            class="release-cycle-year-line"
+            x1="795.0491132332878"
+            x2="795.0491132332878"
+            y1="0"
+            y2="540.0"
+            font-size="18"
+        />
+        <text
+            class="release-cycle-year-text text-main"
+            x="809.4669167803547"
+            y="540.0"
+            font-size="13.5"
+            text-anchor="middle"
+        >
+            &#39;32
+        </text>
+
+    <!-- Gradient mask to fade out end-of-life versions -->
+    <mask id="release-cycle-mask-all">
+        <rect
+            x="0"
+            y="0"
+            width="126"
+            height="567.0"
+            fill="black"
+        />
+        <rect
+            x="117.0"
+            y="0"
+            width="9.0"
+            height="567.0"
+            fill="url(#release-cycle-mask-gradient-all)"
+        />
+        <rect
+            x="126"
+            y="0"
+            width="828"
+            height="567.0"
+            fill="white"
+        />
+    </mask>
+
+        <!-- Colourful blob. -->
+
+
+        <!-- bugfix/security blobs need to be split between the two phases.
+            Draw the rectangle with two path elements instead.
+            Thanks Claude.ai for the initial conversion.
+        -->
+
+            <!-- For EOL releases, use a single rounded rectangle -->
+            <rect
+                class="release-cycle-blob release-cycle-blob-full
+                       release-cycle-status-end-of-life"
+                x="126.0"
+                y="9.0"
+                width="146.06889495225101"
+                height="22.5"
+                rx="4.5"
+                ry="4.5"
+                mask="url(#release-cycle-mask-all)"
+            />
+        <!-- Colourful blob. -->
+
+
+        <!-- bugfix/security blobs need to be split between the two phases.
+            Draw the rectangle with two path elements instead.
+            Thanks Claude.ai for the initial conversion.
+        -->
+
+            <!-- For EOL releases, use a single rounded rectangle -->
+            <rect
+                class="release-cycle-blob release-cycle-blob-full
+                       release-cycle-status-end-of-life"
+                x="176.42291950886766"
+                y="36.0"
+                width="273.30798090040923"
+                height="22.5"
+                rx="4.5"
+                ry="4.5"
+                mask="url(#release-cycle-mask-all)"
+            />
+        <!-- Colourful blob. -->
+
+
+        <!-- bugfix/security blobs need to be split between the two phases.
+            Draw the rectangle with two path elements instead.
+            Thanks Claude.ai for the initial conversion.
+        -->
+
+            <!-- For EOL releases, use a single rounded rectangle -->
+            <rect
+                class="release-cycle-blob release-cycle-blob-full
+                       release-cycle-status-end-of-life"
+                x="130.96350613915416"
+                y="63.0"
+                width="16.229877216916776"
+                height="22.5"
+                rx="4.5"
+                ry="4.5"
+                mask="url(#release-cycle-mask-all)"
+            />
+        <!-- Colourful blob. -->
+
+
+        <!-- bugfix/security blobs need to be split between the two phases.
+            Draw the rectangle with two path elements instead.
+            Thanks Claude.ai for the initial conversion.
+        -->
+
+            <!-- For EOL releases, use a single rounded rectangle -->
+            <rect
+                class="release-cycle-blob release-cycle-blob-full
+                       release-cycle-status-end-of-life"
+                x="147.19338335607094"
+                y="90.0"
+                width="80.12517053206"
+                height="22.5"
+                rx="4.5"
+                ry="4.5"
+                mask="url(#release-cycle-mask-all)"
+            />
+        <!-- Colourful blob. -->
+
+
+        <!-- bugfix/security blobs need to be split between the two phases.
+            Draw the rectangle with two path elements instead.
+            Thanks Claude.ai for the initial conversion.
+        -->
+
+            <!-- For EOL releases, use a single rounded rectangle -->
+            <rect
+                class="release-cycle-blob release-cycle-blob-full
+                       release-cycle-status-end-of-life"
+                x="194.7012278308322"
+                y="117.0"
+                width="143.86289222373804"
+                height="22.5"
+                rx="4.5"
+                ry="4.5"
+                mask="url(#release-cycle-mask-all)"
+            />
+        <!-- Colourful blob. -->
+
+
+        <!-- bugfix/security blobs need to be split between the two phases.
+            Draw the rectangle with two path elements instead.
+            Thanks Claude.ai for the initial conversion.
+        -->
+
+            <!-- For EOL releases, use a single rounded rectangle -->
+            <rect
+                class="release-cycle-blob release-cycle-blob-full
+                       release-cycle-status-end-of-life"
+                x="240.94849931787178"
+                y="144.0"
+                width="143.86289222373807"
+                height="22.5"
+                rx="4.5"
+                ry="4.5"
+                mask="url(#release-cycle-mask-all)"
+            />
+        <!-- Colourful blob. -->
+
+
+        <!-- bugfix/security blobs need to be split between the two phases.
+            Draw the rectangle with two path elements instead.
+            Thanks Claude.ai for the initial conversion.
+        -->
+
+            <!-- For EOL releases, use a single rounded rectangle -->
+            <rect
+                class="release-cycle-blob release-cycle-blob-full
+                       release-cycle-status-end-of-life"
+                x="282.9413369713506"
+                y="171.0"
+                width="144.02046384720325"
+                height="22.5"
+                rx="4.5"
+                ry="4.5"
+                mask="url(#release-cycle-mask-all)"
+            />
+        <!-- Colourful blob. -->
+
+
+        <!-- bugfix/security blobs need to be split between the two phases.
+            Draw the rectangle with two path elements instead.
+            Thanks Claude.ai for the initial conversion.
+        -->
+
+            <!-- For EOL releases, use a single rounded rectangle -->
+            <rect
+                class="release-cycle-blob release-cycle-blob-full
+                       release-cycle-status-end-of-life"
+                x="325.95839017735335"
+                y="198.0"
+                width="145.28103683492492"
+                height="22.5"
+                rx="4.5"
+                ry="4.5"
+                mask="url(#release-cycle-mask-all)"
+            />
+        <!-- Colourful blob. -->
+
+
+        <!-- bugfix/security blobs need to be split between the two phases.
+            Draw the rectangle with two path elements instead.
+            Thanks Claude.ai for the initial conversion.
+        -->
+
+            <!-- For EOL releases, use a single rounded rectangle -->
+            <rect
+                class="release-cycle-blob release-cycle-blob-full
+                       release-cycle-status-end-of-life"
+                x="362.7513642564802"
+                y="225.0"
+                width="143.86289222373807"
+                height="22.5"
+                rx="4.5"
+                ry="4.5"
+                mask="url(#release-cycle-mask-all)"
+            />
+        <!-- Colourful blob. -->
+
+
+        <!-- bugfix/security blobs need to be split between the two phases.
+            Draw the rectangle with two path elements instead.
+            Thanks Claude.ai for the initial conversion.
+        -->
+
+            <!-- For EOL releases, use a single rounded rectangle -->
+            <rect
+                class="release-cycle-blob release-cycle-blob-full
+                       release-cycle-status-end-of-life"
+                x="406.162346521146"
+                y="252.0"
+                width="143.86289222373807"
+                height="22.5"
+                rx="4.5"
+                ry="4.5"
+                mask="url(#release-cycle-mask-all)"
+            />
+        <!-- Colourful blob. -->
+
+
+        <!-- bugfix/security blobs need to be split between the two phases.
+            Draw the rectangle with two path elements instead.
+            Thanks Claude.ai for the initial conversion.
+        -->
+
+            <!-- For EOL releases, use a single rounded rectangle -->
+            <rect
+                class="release-cycle-blob release-cycle-blob-full
+                       release-cycle-status-end-of-life"
+                x="443.50682128240106"
+                y="279.0"
+                width="143.3901773533425"
+                height="22.5"
+                rx="4.5"
+                ry="4.5"
+                mask="url(#release-cycle-mask-all)"
+            />
+        <!-- Colourful blob. -->
+
+
+        <!-- bugfix/security blobs need to be split between the two phases.
+            Draw the rectangle with two path elements instead.
+            Thanks Claude.ai for the initial conversion.
+        -->
+
+            <!-- For EOL releases, use a single rounded rectangle -->
+            <rect
+                class="release-cycle-blob release-cycle-blob-full
+                       release-cycle-status-end-of-life"
+                x="471.6333560709413"
+                y="306.0"
+                width="145.91132332878578"
+                height="22.5"
+                rx="4.5"
+                ry="4.5"
+                mask="url(#release-cycle-mask-all)"
+            />
+        <!-- Colourful blob. -->
+
+
+        <!-- bugfix/security blobs need to be split between the two phases.
+            Draw the rectangle with two path elements instead.
+            Thanks Claude.ai for the initial conversion.
+        -->
+
+            <!-- For EOL releases, use a single rounded rectangle -->
+            <rect
+                class="release-cycle-blob release-cycle-blob-full
+                       release-cycle-status-end-of-life"
+                x="500.3113915416098"
+                y="333.0"
+                width="143.62653478854014"
+                height="22.5"
+                rx="4.5"
+                ry="4.5"
+                mask="url(#release-cycle-mask-all)"
+            />
+        <!-- Colourful blob. -->
+
+
+        <!-- bugfix/security blobs need to be split between the two phases.
+            Draw the rectangle with two path elements instead.
+            Thanks Claude.ai for the initial conversion.
+        -->
+
+            <!-- Split the blob using path operations
+                 (Move-to, Vertical/Horizontal, Arc, Z=close shape;
+                  lowercase means relative to the last point.)
+                 We start drawing from the top of the straight boundary
+                 between the half-blobs.
+             -->
+            <path
+                class="release-cycle-blob release-cycle-status-bugfix"
+                d="
+                    M573.7397680763983,360.0v22.5H535.143929058663a4.5,4.5 90 0 1-4.5 -4.5
+                    v-13.5a4.5,4.5 90 0 14.5 -4.5
+                    Z"
+            />
+            <path
+                class="release-cycle-blob release-cycle-status-security"
+                d="
+                    M573.7397680763983,360.0v22.5H670.5583219645293a4.5,4.5 90 0 04.5 -4.5
+                    v-13.5a4.5,4.5 90 0 0-4.5 -4.5
+                    Z"
+            />
+            <!-- Add a common border -->
+            <rect
+                class="release-cycle-border release-cycle-status-security"
+                x="530.643929058663"
+                y="360.0"
+                width="144.4143929058663"
+                height="22.5"
+                rx="4.5"
+                ry="4.5"
+            />
+        <!-- Colourful blob. -->
+
+
+        <!-- bugfix/security blobs need to be split between the two phases.
+            Draw the rectangle with two path elements instead.
+            Thanks Claude.ai for the initial conversion.
+        -->
+
+            <!-- Split the blob using path operations
+                 (Move-to, Vertical/Horizontal, Arc, Z=close shape;
+                  lowercase means relative to the last point.)
+                 We start drawing from the top of the straight boundary
+                 between the half-blobs.
+             -->
+            <path
+                class="release-cycle-blob release-cycle-status-bugfix"
+                d="
+                    M600.7633015006822,387.0v22.5H562.1674624829468a4.5,4.5 90 0 1-4.5 -4.5
+                    v-13.5a4.5,4.5 90 0 14.5 -4.5
+                    Z"
+            />
+            <path
+                class="release-cycle-blob release-cycle-status-security"
+                d="
+                    M600.7633015006822,387.0v22.5H699.393929058663a4.5,4.5 90 0 04.5 -4.5
+                    v-13.5a4.5,4.5 90 0 0-4.5 -4.5
+                    Z"
+            />
+            <!-- Add a common border -->
+            <rect
+                class="release-cycle-border release-cycle-status-security"
+                x="557.6674624829468"
+                y="387.0"
+                width="146.22646657571624"
+                height="22.5"
+                rx="4.5"
+                ry="4.5"
+            />
+        <!-- Colourful blob. -->
+
+
+        <!-- bugfix/security blobs need to be split between the two phases.
+            Draw the rectangle with two path elements instead.
+            Thanks Claude.ai for the initial conversion.
+        -->
+
+            <!-- Split the blob using path operations
+                 (Move-to, Vertical/Horizontal, Arc, Z=close shape;
+                  lowercase means relative to the last point.)
+                 We start drawing from the top of the straight boundary
+                 between the half-blobs.
+             -->
+            <path
+                class="release-cycle-blob release-cycle-status-bugfix"
+                d="
+                    M644.4106412005457,414.0v22.5H591.3969986357436a4.5,4.5 90 0 1-4.5 -4.5
+                    v-13.5a4.5,4.5 90 0 14.5 -4.5
+                    Z"
+            />
+            <path
+                class="release-cycle-blob release-cycle-status-security"
+                d="
+                    M644.4106412005457,414.0v22.5H728.1507503410642a4.5,4.5 90 0 04.5 -4.5
+                    v-13.5a4.5,4.5 90 0 0-4.5 -4.5
+                    Z"
+            />
+            <!-- Add a common border -->
+            <rect
+                class="release-cycle-border release-cycle-status-security"
+                x="586.8969986357436"
+                y="414.0"
+                width="145.7537517053206"
+                height="22.5"
+                rx="4.5"
+                ry="4.5"
+            />
+        <!-- Colourful blob. -->
+
+
+        <!-- bugfix/security blobs need to be split between the two phases.
+            Draw the rectangle with two path elements instead.
+            Thanks Claude.ai for the initial conversion.
+        -->
+
+            <!-- Split the blob using path operations
+                 (Move-to, Vertical/Horizontal, Arc, Z=close shape;
+                  lowercase means relative to the last point.)
+                 We start drawing from the top of the straight boundary
+                 between the half-blobs.
+             -->
+            <path
+                class="release-cycle-blob release-cycle-status-bugfix"
+                d="
+                    M673.1674624829467,441.0v22.5H620.1538199181446a4.5,4.5 90 0 1-4.5 -4.5
+                    v-13.5a4.5,4.5 90 0 14.5 -4.5
+                    Z"
+            />
+            <path
+                class="release-cycle-blob release-cycle-status-security"
+                d="
+                    M673.1674624829467,441.0v22.5H756.9075716234653a4.5,4.5 90 0 04.5 -4.5
+                    v-13.5a4.5,4.5 90 0 0-4.5 -4.5
+                    Z"
+            />
+            <!-- Add a common border -->
+            <rect
+                class="release-cycle-border release-cycle-status-bugfix"
+                x="615.6538199181446"
+                y="441.0"
+                width="145.75375170532072"
+                height="22.5"
+                rx="4.5"
+                ry="4.5"
+            />
+        <!-- Colourful blob. -->
+
+
+        <!-- bugfix/security blobs need to be split between the two phases.
+            Draw the rectangle with two path elements instead.
+            Thanks Claude.ai for the initial conversion.
+        -->
+
+            <!-- Split the blob using path operations
+                 (Move-to, Vertical/Horizontal, Arc, Z=close shape;
+                  lowercase means relative to the last point.)
+                 We start drawing from the top of the straight boundary
+                 between the half-blobs.
+             -->
+            <path
+                class="release-cycle-blob release-cycle-status-bugfix"
+                d="
+                    M702.0818553888131,468.0v22.5H649.0682128240109a4.5,4.5 90 0 1-4.5 -4.5
+                    v-13.5a4.5,4.5 90 0 14.5 -4.5
+                    Z"
+            />
+            <path
+                class="release-cycle-blob release-cycle-status-security"
+                d="
+                    M702.0818553888131,468.0v22.5H785.6643929058662a4.5,4.5 90 0 04.5 -4.5
+                    v-13.5a4.5,4.5 90 0 0-4.5 -4.5
+                    Z"
+            />
+            <!-- Add a common border -->
+            <rect
+                class="release-cycle-border release-cycle-status-bugfix"
+                x="644.5682128240109"
+                y="468.0"
+                width="145.59618008185532"
+                height="22.5"
+                rx="4.5"
+                ry="4.5"
+            />
+        <!-- Colourful blob. -->
+
+
+        <!-- bugfix/security blobs need to be split between the two phases.
+            Draw the rectangle with two path elements instead.
+            Thanks Claude.ai for the initial conversion.
+        -->
+
+            <!-- Split the blob using path operations
+                 (Move-to, Vertical/Horizontal, Arc, Z=close shape;
+                  lowercase means relative to the last point.)
+                 We start drawing from the top of the straight boundary
+                 between the half-blobs.
+             -->
+            <path
+                class="release-cycle-blob release-cycle-status-bugfix"
+                d="
+                    M730.6023192360165,495.0v22.5H677.5886766712143a4.5,4.5 90 0 1-4.5 -4.5
+                    v-13.5a4.5,4.5 90 0 14.5 -4.5
+                    Z"
+            />
+            <path
+                class="release-cycle-blob release-cycle-status-security"
+                d="
+                    M730.6023192360165,495.0v22.5H814.5a4.5,4.5 90 0 04.5 -4.5
+                    v-13.5a4.5,4.5 90 0 0-4.5 -4.5
+                    Z"
+            />
+            <!-- Add a common border -->
+            <rect
+                class="release-cycle-border release-cycle-status-feature"
+                x="673.0886766712143"
+                y="495.0"
+                width="145.91132332878567"
+                height="22.5"
+                rx="4.5"
+                ry="4.5"
+            />
+
+    <!-- A line for today -->
+    <line
+        class="release-cycle-today-line"
+        x1="644.7257844474761"
+        x2="644.7257844474761"
+        y1="0"
+        y2="540.0"
+        font-size="18"
+    />
+
+        <!-- Label for colourful blob -->
+
+
+        <!-- Add text before/after/inside the blob -->
+            <text
+                class="release-cycle-blob-label text-outline release-cycle-status-end-of-life"
+                font-size="13.5"
+                y="25.2"
+                    x="276.568894952251"
+                    text-anchor="start"
+            >
+                end-of-life
+            </text>
+            <text
+                class="release-cycle-blob-label text-main release-cycle-status-end-of-life"
+                font-size="13.5"
+                y="25.2"
+                    x="276.568894952251"
+                    text-anchor="start"
+            >
+                end-of-life
+            </text>
+
+        <!-- Legend on the left -->
+        <text
+            class="release-cycle-version-label text-main"
+            x="9.0"
+            y="27.0"
+            font-size="18"
+        >
+            Python 2.6
+        </text>
+        <!-- Label for colourful blob -->
+
+
+        <!-- Add text before/after/inside the blob -->
+            <text
+                class="release-cycle-blob-label text-outline release-cycle-status-end-of-life"
+                font-size="13.5"
+                y="52.2"
+                    x="454.2309004092769"
+                    text-anchor="start"
+            >
+                end-of-life
+            </text>
+            <text
+                class="release-cycle-blob-label text-main release-cycle-status-end-of-life"
+                font-size="13.5"
+                y="52.2"
+                    x="454.2309004092769"
+                    text-anchor="start"
+            >
+                end-of-life
+            </text>
+
+        <!-- Legend on the left -->
+        <text
+            class="release-cycle-version-label text-main"
+            x="9.0"
+            y="54.0"
+            font-size="18"
+        >
+            Python 2.7
+        </text>
+        <!-- Label for colourful blob -->
+
+
+        <!-- Add text before/after/inside the blob -->
+            <text
+                class="release-cycle-blob-label text-outline release-cycle-status-end-of-life"
+                font-size="13.5"
+                y="79.2"
+                    x="151.69338335607094"
+                    text-anchor="start"
+            >
+                end-of-life
+            </text>
+            <text
+                class="release-cycle-blob-label text-main release-cycle-status-end-of-life"
+                font-size="13.5"
+                y="79.2"
+                    x="151.69338335607094"
+                    text-anchor="start"
+            >
+                end-of-life
+            </text>
+
+        <!-- Legend on the left -->
+        <text
+            class="release-cycle-version-label text-main"
+            x="9.0"
+            y="81.0"
+            font-size="18"
+        >
+            Python 3.0
+        </text>
+        <!-- Label for colourful blob -->
+
+
+        <!-- Add text before/after/inside the blob -->
+            <text
+                class="release-cycle-blob-label text-outline release-cycle-status-end-of-life"
+                font-size="13.5"
+                y="106.2"
+                    x="231.81855388813094"
+                    text-anchor="start"
+            >
+                end-of-life
+            </text>
+            <text
+                class="release-cycle-blob-label text-main release-cycle-status-end-of-life"
+                font-size="13.5"
+                y="106.2"
+                    x="231.81855388813094"
+                    text-anchor="start"
+            >
+                end-of-life
+            </text>
+
+        <!-- Legend on the left -->
+        <text
+            class="release-cycle-version-label text-main"
+            x="9.0"
+            y="108.0"
+            font-size="18"
+        >
+            Python 3.1
+        </text>
+        <!-- Label for colourful blob -->
+
+
+        <!-- Add text before/after/inside the blob -->
+            <text
+                class="release-cycle-blob-label text-outline release-cycle-status-end-of-life"
+                font-size="13.5"
+                y="133.2"
+                    x="343.06412005457025"
+                    text-anchor="start"
+            >
+                end-of-life
+            </text>
+            <text
+                class="release-cycle-blob-label text-main release-cycle-status-end-of-life"
+                font-size="13.5"
+                y="133.2"
+                    x="343.06412005457025"
+                    text-anchor="start"
+            >
+                end-of-life
+            </text>
+
+        <!-- Legend on the left -->
+        <text
+            class="release-cycle-version-label text-main"
+            x="9.0"
+            y="135.0"
+            font-size="18"
+        >
+            Python 3.2
+        </text>
+        <!-- Label for colourful blob -->
+
+
+        <!-- Add text before/after/inside the blob -->
+            <text
+                class="release-cycle-blob-label text-outline release-cycle-status-end-of-life"
+                font-size="13.5"
+                y="160.2"
+                    x="389.31139154160985"
+                    text-anchor="start"
+            >
+                end-of-life
+            </text>
+            <text
+                class="release-cycle-blob-label text-main release-cycle-status-end-of-life"
+                font-size="13.5"
+                y="160.2"
+                    x="389.31139154160985"
+                    text-anchor="start"
+            >
+                end-of-life
+            </text>
+
+        <!-- Legend on the left -->
+        <text
+            class="release-cycle-version-label text-main"
+            x="9.0"
+            y="162.0"
+            font-size="18"
+        >
+            Python 3.3
+        </text>
+        <!-- Label for colourful blob -->
+
+
+        <!-- Add text before/after/inside the blob -->
+            <text
+                class="release-cycle-blob-label text-outline release-cycle-status-end-of-life"
+                font-size="13.5"
+                y="187.2"
+                    x="431.46180081855385"
+                    text-anchor="start"
+            >
+                end-of-life
+            </text>
+            <text
+                class="release-cycle-blob-label text-main release-cycle-status-end-of-life"
+                font-size="13.5"
+                y="187.2"
+                    x="431.46180081855385"
+                    text-anchor="start"
+            >
+                end-of-life
+            </text>
+
+        <!-- Legend on the left -->
+        <text
+            class="release-cycle-version-label text-main"
+            x="9.0"
+            y="189.0"
+            font-size="18"
+        >
+            Python 3.4
+        </text>
+        <!-- Label for colourful blob -->
+
+
+        <!-- Add text before/after/inside the blob -->
+            <text
+                class="release-cycle-blob-label text-outline release-cycle-status-end-of-life"
+                font-size="13.5"
+                y="214.2"
+                    x="475.73942701227827"
+                    text-anchor="start"
+            >
+                end-of-life
+            </text>
+            <text
+                class="release-cycle-blob-label text-main release-cycle-status-end-of-life"
+                font-size="13.5"
+                y="214.2"
+                    x="475.73942701227827"
+                    text-anchor="start"
+            >
+                end-of-life
+            </text>
+
+        <!-- Legend on the left -->
+        <text
+            class="release-cycle-version-label text-main"
+            x="9.0"
+            y="216.0"
+            font-size="18"
+        >
+            Python 3.5
+        </text>
+        <!-- Label for colourful blob -->
+
+
+        <!-- Add text before/after/inside the blob -->
+            <text
+                class="release-cycle-blob-label text-outline release-cycle-status-end-of-life"
+                font-size="13.5"
+                y="241.2"
+                    x="511.1142564802183"
+                    text-anchor="start"
+            >
+                end-of-life
+            </text>
+            <text
+                class="release-cycle-blob-label text-main release-cycle-status-end-of-life"
+                font-size="13.5"
+                y="241.2"
+                    x="511.1142564802183"
+                    text-anchor="start"
+            >
+                end-of-life
+            </text>
+
+        <!-- Legend on the left -->
+        <text
+            class="release-cycle-version-label text-main"
+            x="9.0"
+            y="243.0"
+            font-size="18"
+        >
+            Python 3.6
+        </text>
+        <!-- Label for colourful blob -->
+
+
+        <!-- Add text before/after/inside the blob -->
+            <text
+                class="release-cycle-blob-label text-outline release-cycle-status-end-of-life"
+                font-size="13.5"
+                y="268.2"
+                    x="554.5252387448841"
+                    text-anchor="start"
+            >
+                end-of-life
+            </text>
+            <text
+                class="release-cycle-blob-label text-main release-cycle-status-end-of-life"
+                font-size="13.5"
+                y="268.2"
+                    x="554.5252387448841"
+                    text-anchor="start"
+            >
+                end-of-life
+            </text>
+
+        <!-- Legend on the left -->
+        <text
+            class="release-cycle-version-label text-main"
+            x="9.0"
+            y="270.0"
+            font-size="18"
+        >
+            Python 3.7
+        </text>
+        <!-- Label for colourful blob -->
+
+
+        <!-- Add text before/after/inside the blob -->
+            <text
+                class="release-cycle-blob-label text-outline release-cycle-status-end-of-life"
+                font-size="13.5"
+                y="295.2"
+                    x="591.3969986357436"
+                    text-anchor="start"
+            >
+                end-of-life
+            </text>
+            <text
+                class="release-cycle-blob-label text-main release-cycle-status-end-of-life"
+                font-size="13.5"
+                y="295.2"
+                    x="591.3969986357436"
+                    text-anchor="start"
+            >
+                end-of-life
+            </text>
+
+        <!-- Legend on the left -->
+        <text
+            class="release-cycle-version-label text-main"
+            x="9.0"
+            y="297.0"
+            font-size="18"
+        >
+            Python 3.8
+        </text>
+        <!-- Label for colourful blob -->
+
+
+        <!-- Add text before/after/inside the blob -->
+            <text
+                class="release-cycle-blob-label text-outline release-cycle-status-end-of-life"
+                font-size="13.5"
+                y="322.2"
+                    x="622.0446793997271"
+                    text-anchor="start"
+            >
+                end-of-life
+            </text>
+            <text
+                class="release-cycle-blob-label text-main release-cycle-status-end-of-life"
+                font-size="13.5"
+                y="322.2"
+                    x="622.0446793997271"
+                    text-anchor="start"
+            >
+                end-of-life
+            </text>
+
+        <!-- Legend on the left -->
+        <text
+            class="release-cycle-version-label text-main"
+            x="9.0"
+            y="324.0"
+            font-size="18"
+        >
+            Python 3.9
+        </text>
+        <!-- Label for colourful blob -->
+
+
+        <!-- Add text before/after/inside the blob -->
+            <text
+                class="release-cycle-blob-label text-outline release-cycle-status-end-of-life"
+                font-size="13.5"
+                y="349.2"
+                    x="648.4379263301499"
+                    text-anchor="start"
+            >
+                end-of-life
+            </text>
+            <text
+                class="release-cycle-blob-label text-main release-cycle-status-end-of-life"
+                font-size="13.5"
+                y="349.2"
+                    x="648.4379263301499"
+                    text-anchor="start"
+            >
+                end-of-life
+            </text>
+
+        <!-- Legend on the left -->
+        <text
+            class="release-cycle-version-label text-main"
+            x="9.0"
+            y="351.0"
+            font-size="18"
+        >
+            Python 3.10
+        </text>
+        <!-- Label for colourful blob -->
+
+
+        <!-- Add text before/after/inside the blob -->
+            <text
+                class="release-cycle-blob-label text-outline release-cycle-status-security"
+                font-size="13.5"
+                y="376.2"
+                    x="624.3990450204637"
+                    text-anchor="middle"
+            >
+                security
+            </text>
+            <text
+                class="release-cycle-blob-label text-main release-cycle-status-security"
+                font-size="13.5"
+                y="376.2"
+                    x="624.3990450204637"
+                    text-anchor="middle"
+            >
+                security
+            </text>
+
+        <!-- Legend on the left -->
+        <text
+            class="release-cycle-version-label text-main"
+            x="9.0"
+            y="378.0"
+            font-size="18"
+        >
+            Python 3.11
+        </text>
+        <!-- Label for colourful blob -->
+
+
+        <!-- Add text before/after/inside the blob -->
+            <text
+                class="release-cycle-blob-label text-outline release-cycle-status-security"
+                font-size="13.5"
+                y="403.2"
+                    x="652.3286152796727"
+                    text-anchor="middle"
+            >
+                security
+            </text>
+            <text
+                class="release-cycle-blob-label text-main release-cycle-status-security"
+                font-size="13.5"
+                y="403.2"
+                    x="652.3286152796727"
+                    text-anchor="middle"
+            >
+                security
+            </text>
+
+        <!-- Legend on the left -->
+        <text
+            class="release-cycle-version-label text-main"
+            x="9.0"
+            y="405.0"
+            font-size="18"
+        >
+            Python 3.12
+        </text>
+        <!-- Label for colourful blob -->
+
+
+        <!-- Add text before/after/inside the blob -->
+            <text
+                class="release-cycle-blob-label text-outline release-cycle-status-security"
+                font-size="13.5"
+                y="430.2"
+                    x="688.5306957708049"
+                    text-anchor="middle"
+            >
+                security
+            </text>
+            <text
+                class="release-cycle-blob-label text-main release-cycle-status-security"
+                font-size="13.5"
+                y="430.2"
+                    x="688.5306957708049"
+                    text-anchor="middle"
+            >
+                security
+            </text>
+
+        <!-- Legend on the left -->
+        <text
+            class="release-cycle-version-label text-main"
+            x="9.0"
+            y="432.0"
+            font-size="18"
+        >
+            Python 3.13
+        </text>
+        <!-- Label for colourful blob -->
+
+
+        <!-- Add text before/after/inside the blob -->
+            <text
+                class="release-cycle-blob-label text-outline release-cycle-status-bugfix"
+                font-size="13.5"
+                y="457.2"
+                    x="644.4106412005456"
+                    text-anchor="middle"
+            >
+                bugfix
+            </text>
+            <text
+                class="release-cycle-blob-label text-main release-cycle-status-bugfix"
+                font-size="13.5"
+                y="457.2"
+                    x="644.4106412005456"
+                    text-anchor="middle"
+            >
+                bugfix
+            </text>
+
+        <!-- Legend on the left -->
+        <text
+            class="release-cycle-version-label text-main"
+            x="9.0"
+            y="459.0"
+            font-size="18"
+        >
+            Python 3.14
+        </text>
+        <!-- Label for colourful blob -->
+
+
+        <!-- Add text before/after/inside the blob -->
+            <text
+                class="release-cycle-blob-label text-outline release-cycle-status-bugfix"
+                font-size="13.5"
+                y="484.2"
+                    x="673.325034106412"
+                    text-anchor="middle"
+            >
+                bugfix
+            </text>
+            <text
+                class="release-cycle-blob-label text-main release-cycle-status-bugfix"
+                font-size="13.5"
+                y="484.2"
+                    x="673.325034106412"
+                    text-anchor="middle"
+            >
+                bugfix
+            </text>
+
+        <!-- Legend on the left -->
+        <text
+            class="release-cycle-version-label text-main"
+            x="9.0"
+            y="486.0"
+            font-size="18"
+        >
+            Python 3.15
+        </text>
+        <!-- Label for colourful blob -->
+
+
+        <!-- Add text before/after/inside the blob -->
+            <text
+                class="release-cycle-blob-label text-outline release-cycle-status-feature"
+                font-size="13.5"
+                y="511.2"
+                    x="668.5886766712143"
+                    text-anchor="end"
+            >
+                feature
+            </text>
+            <text
+                class="release-cycle-blob-label text-main release-cycle-status-feature"
+                font-size="13.5"
+                y="511.2"
+                    x="668.5886766712143"
+                    text-anchor="end"
+            >
+                feature
+            </text>
+
+        <!-- Legend on the left -->
+        <text
+            class="release-cycle-version-label text-main"
+            x="9.0"
+            y="513.0"
+            font-size="18"
+        >
+            Python 3.16
+        </text>
+</svg></section>
+<section id="status-key">
+<span id="version-status-key"></span><h2>Status key<a class="headerlink" href="#status-key" title="Link to this heading">¶</a></h2>
+<p>Python releases go through five phases, as described in <span class="target" id="index-19"></span><a class="pep reference external" href="https://peps.python.org/pep-0602/"><strong>PEP 602</strong></a>.  Release
+managers can adjust specific dates as needed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">feature<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Before the first beta, the next full release can accept new features,
+bug fixes, and security fixes.</p>
+</dd>
+<dt class="field-even">prerelease<span class="colon">:</span></dt>
+<dd class="field-even"><p>After the first beta, no new features can go in, but feature fixes
+(including significant changes to new features), bug fixes, and security fixes
+are accepted for the upcoming feature release.</p>
+</dd>
+<dt class="field-odd">bugfix<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Once a version has been fully released, bug fixes and security fixes are
+accepted. New binaries are built and released roughly every two months. This
+phase is also called <strong>maintenance</strong> mode or <strong>stable</strong> release.</p>
+</dd>
+<dt class="field-even">security<span class="colon">:</span></dt>
+<dd class="field-even"><p>After two years (18 months for versions before 3.13), only security
+fixes are accepted and no more binaries are released.  New source-only versions
+can be released as needed.</p>
+</dd>
+<dt class="field-odd">end-of-life<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Five years after a release, support ends. The release cycle is
+frozen; no further changes are allowed.</p>
+</dd>
+</dl>
+<p>See also the <a class="reference internal" href="../developer-workflow/development-cycle/#devcycle"><span class="std std-ref">Development cycle</span></a> page for more information about branches and backporting.</p>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          
+          <a class="prev-page" href="../internals/">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">CPython’s internals</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2011 Python Software Foundation
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            <div class="last-updated">
+              Last updated on May 27, 2026</div>
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Status of Python versions</a><ul>
+<li><a class="reference internal" href="#supported-versions">Supported versions</a></li>
+<li><a class="reference internal" href="#unsupported-versions">Unsupported versions</a></li>
+<li><a class="reference internal" href="#full-chart">Full chart</a></li>
+<li><a class="reference internal" href="#status-key">Status key</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="../_static/documentation_options.js?v=187304be"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/scripts/furo.js?v=46bd48cc"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=c136e461"></script>
+    <script src="../_static/tabs.js?v=3ee01567"></script>
+    <script src="../_static/activate_tab.js?v=3ac9c400"></script>
+    </body>
+</html>

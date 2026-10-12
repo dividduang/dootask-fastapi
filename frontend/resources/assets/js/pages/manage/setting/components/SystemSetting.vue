@@ -1,0 +1,564 @@
+<template>
+    <div class="setting-component-item">
+        <Form
+            ref="formDatum"
+            :model="formDatum"
+            v-bind="formOptions"
+            @submit.native.prevent>
+            <div v-if="scope === 'account'" class="block-setting-box">
+                <h3>{{ $L('帐号与安全') }}</h3>
+                <div class="form-box">
+                    <FormItem :label="$L('允许注册')" prop="reg">
+                        <RadioGroup v-model="formDatum.reg">
+                            <Radio label="open">{{$L('允许')}}</Radio>
+                            <Radio label="invite">{{$L('邀请码')}}</Radio>
+                            <Radio label="close">{{$L('禁止')}}</Radio>
+                        </RadioGroup>
+                        <div v-if="formDatum.reg == 'open'" class="form-tip">{{$L('允许：开放注册功能。')}}</div>
+                        <div v-else-if="formDatum.reg == 'close'" class="form-tip">{{$L('禁止：关闭注册功能。')}}</div>
+                        <template v-else-if="formDatum.reg == 'invite'">
+                            <div class="form-tip">{{$L('邀请码：注册时需填写下方邀请码。')}}</div>
+                            <Input v-model="formDatum.reg_invite" style="width:220px;margin-top:6px">
+                                <span slot="prepend">{{$L('邀请码')}}</span>
+                            </Input>
+                        </template>
+                    </FormItem>
+                    <FormItem v-if="['open', 'invite'].includes(formDatum.reg)" :label="$L('注册身份')" prop="reg_identity">
+                        <RadioGroup v-model="formDatum.reg_identity">
+                            <Radio label="normal">{{$L('正常帐号')}}</Radio>
+                            <Radio label="temp">{{$L('临时帐号')}}</Radio>
+                        </RadioGroup>
+                        <Input
+                            v-if="formDatum.reg_identity == 'temp'"
+                            v-model="formDatum.temp_account_alias"
+                            style="width:220px;margin-top:6px"
+                            :placeholder="$L('临时帐号')">
+                            <span slot="prepend">{{$L('别名')}}</span>
+                        </Input>
+                        <div class="form-tip form-list">
+                            <p>{{$L('临时帐号')}}：</p>
+                            <ol>
+                                <li>{{$L('禁止查看共享所有人的文件。')}}</li>
+                                <li>{{$L('禁止发起会话。')}}</li>
+                                <li>{{$L('禁止创建群聊。')}}</li>
+                                <li>{{$L('禁止拨打电话。')}}</li>
+                                <li>{{$L('禁止打包下载文件。')}}</li>
+                            </ol>
+                        </div>
+                    </FormItem>
+                    <FormItem :label="$L('登录验证码')" prop="loginCode">
+                        <RadioGroup v-model="formDatum.login_code">
+                            <Radio label="auto">{{$L('自动')}}</Radio>
+                            <Radio label="open">{{$L('开启')}}</Radio>
+                            <Radio label="close">{{$L('关闭')}}</Radio>
+                        </RadioGroup>
+                        <div v-if="formDatum.login_code == 'auto'" class="form-tip">{{$L('自动：密码输入错误后必须添加验证码。')}}</div>
+                        <div v-else-if="formDatum.login_code == 'open'" class="form-tip">{{$L('开启：每次登录都需要图形验证码。')}}</div>
+                        <div v-else-if="formDatum.login_code == 'close'" class="form-tip">{{$L('关闭：不需要输入图形验证。')}}</div>
+                    </FormItem>
+                    <FormItem :label="$L('密码策略')" prop="passwordPolicy">
+                        <RadioGroup v-model="formDatum.password_policy">
+                            <Radio label="simple">{{$L('简单')}}</Radio>
+                            <Radio label="complex">{{$L('复杂')}}</Radio>
+                        </RadioGroup>
+                        <div v-if="formDatum.password_policy == 'simple'" class="form-tip">{{$L('简单：大于或等于6个字符。')}}</div>
+                        <div v-else-if="formDatum.password_policy == 'complex'" class="form-tip">{{$L('复杂：大于或等于6个字符，包含数字、字母大小写或者特殊字符。')}}</div>
+                    </FormItem>
+                </div>
+            </div>
+            <div v-if="scope === 'project'" class="block-setting-box">
+                <h3>{{ $L('项目设置') }}</h3>
+                <div class="form-box">
+                    <FormItem :label="$L('邀请项目')" prop="projectInvite">
+                        <RadioGroup v-model="formDatum.project_invite">
+                            <Radio label="open">{{$L('开启')}}</Radio>
+                            <Radio label="close">{{$L('关闭')}}</Radio>
+                        </RadioGroup>
+                        <div v-if="formDatum.project_invite == 'open'" class="form-tip">{{$L('开启：项目管理员可生成链接邀请成员加入项目。')}}</div>
+                    </FormItem>
+                    <FormItem :label="$L('创建项目')" prop="project_add_permission">
+                        <CheckboxGroup :value="formDatum.project_add_permission || []" @on-change="onProjectAddPermissionChange">
+                            <Checkbox label="all">{{$L('所有人')}}</Checkbox>
+                            <Checkbox label="departmentOwner">{{$L('部门负责人')}}</Checkbox>
+                            <Checkbox label="appoint">{{$L('指定人员')}}</Checkbox>
+                        </CheckboxGroup>
+                        <div v-if="projectAddAll" class="form-tip">{{$L('所有人：所有成员均可创建项目。')}}</div>
+                        <div v-else class="form-tip form-list">
+                            <p>{{$L('可创建项目的人员')}}：</p>
+                            <ol>
+                                <li>{{$L('系统管理员（始终可创建，不受开关限制）。')}}</li>
+                                <li v-if="(formDatum.project_add_permission || []).includes('departmentOwner')">{{$L('部门负责人与部门管理员。')}}</li>
+                                <li v-if="(formDatum.project_add_permission || []).includes('appoint')">{{$L('下方指定的人员。')}}</li>
+                            </ol>
+                        </div>
+                        <template v-if="(formDatum.project_add_permission || []).includes('appoint')">
+                            <UserSelect v-model="formDatum.project_add_userids" :multiple-max="200" avatar-name show-disable :title="$L('请选择指定人员')" style="margin-top:6px"/>
+                            <div class="form-tip">{{$L('指定人员最多可选择200人')}}</div>
+                        </template>
+                    </FormItem>
+                    <FormItem :label="$L('部门负责人视角')" prop="department_owner_project_view">
+                        <RadioGroup v-model="formDatum.department_owner_project_view">
+                            <Radio label="open">{{$L('开启')}}</Radio>
+                            <Radio label="close">{{$L('关闭')}}</Radio>
+                        </RadioGroup>
+                        <div v-if="formDatum.department_owner_project_view == 'open'" class="form-tip">{{$L('开启后，部门负责人/部门管理员可只读查看本部门及下级部门成员参与的项目和项目内全部任务。')}}</div>
+                    </FormItem>
+                </div>
+            </div>
+            <div v-if="scope === 'project'" class="block-setting-box">
+                <h3>{{ $L('项目模板') }}</h3>
+                <div class="form-box">
+                    <SystemColumnTemplate ref="columnTemplate" embedded/>
+                </div>
+            </div>
+            <div v-if="scope === 'task'" class="block-setting-box">
+                <h3>{{ $L('任务设置') }}</h3>
+                <div class="form-box">
+                    <FormItem :label="$L('自动归档')" prop="autoArchived">
+                        <RadioGroup :value="formDatum.auto_archived" @on-change="formArchived">
+                            <Radio label="open">{{$L('开启')}}</Radio>
+                            <Radio label="close">{{$L('关闭')}}</Radio>
+                        </RadioGroup>
+                        <div class="form-tip">{{$L('任务完成后自动归档。')}}</div>
+                        <ETooltip v-if="formDatum.auto_archived=='open'" placement="right" :disabled="$isEEUIApp || windowTouch">
+                            <div class="setting-auto-day">
+                                <Input v-model="formDatum.archived_day" type="number">
+                                    <span slot="append">{{$L('[day_unit].天')}}</span>
+                                </Input>
+                            </div>
+                            <div slot="content">{{$L('任务完成(*)天后自动归档。', formDatum.archived_day || 'n')}}</div>
+                        </ETooltip>
+                    </FormItem>
+                    <FormItem :label="$L('可见性选项')" prop="taskVisible">
+                        <RadioGroup v-model="formDatum.task_visible">
+                            <Radio label="open">{{$L('保持')}}</Radio>
+                            <Radio label="close">{{$L('自动')}}</Radio>
+                        </RadioGroup>
+                        <div v-if="formDatum.task_visible == 'open'" class="form-tip">{{$L('保持：任务详情页可见性选项保持显示。')}}</div>
+                        <div v-else-if="formDatum.task_visible == 'close'" class="form-tip">{{$L('自动：默认值情况下显示在合并项目，设置时保持显示。')}}</div>
+                    </FormItem>
+                    <FormItem :label="$L('任务默认时间')" prop="taskDefaultTime">
+                        <TimePicker
+                            v-model="formDatum.task_default_time"
+                            type="timerange"
+                            format="HH:mm"
+                            :placeholder="$L('请选择默认时间')"
+                            transfer/>
+                        <div class="form-tip">{{$L('添加任务计划时间默认时分。')}}</div>
+                    </FormItem>
+                    <FormItem :label="$L('未领任务提醒')" prop="autoArchived">
+                        <RadioGroup :value="formDatum.unclaimed_task_reminder" @on-change="formTaskReminder">
+                            <Radio label="open">{{$L('开启')}}</Radio>
+                            <Radio label="close">{{$L('关闭')}}</Radio>
+                        </RadioGroup>
+                        <div class="form-tip">{{$L('开启后每天按设定的提醒时间在项目群聊中发送未领取任务通知。')}}</div>
+                        <TimePicker v-if="formDatum.unclaimed_task_reminder=='open'"
+                            v-model="formDatum.unclaimed_task_reminder_time"
+                            format="HH:mm"
+                            :placeholder="$L('请选择提醒时间')"
+                            transfer/>
+                    </FormItem>
+                    <FormItem v-if="aiVisible" :label="$L('AI任务分析')" prop="taskAiAutoAnalyze">
+                        <RadioGroup v-model="formDatum.task_ai_auto_analyze">
+                            <Radio label="open">{{$L('开启')}}</Radio>
+                            <Radio label="close">{{$L('关闭')}}</Radio>
+                        </RadioGroup>
+                        <div v-if="formDatum.task_ai_auto_analyze == 'open'" class="form-tip">{{$L('新建任务后AI自动分析并给出建议。')}}</div>
+                        <div v-else class="form-tip">{{$L('关闭后所有项目将不再自动分析任务。')}}</div>
+                    </FormItem>
+                    <FormItem :label="$L('个人任务上限')" prop="taskUserLimit">
+                        <div style="width: 110px;">
+                            <Input type="number" number v-model="formDatum.task_user_limit" @on-keyup="$A.inputNumberLimit($event, 1, 2000)">
+                                <template #append>
+                                    <span>{{$L('[task_unit].个')}}</span>
+                                </template>
+                            </Input>
+                        </div>
+                        <div class="form-tip">{{$L('负责人或协助人的未完成任务数量上限，最大2000。')}}</div>
+                    </FormItem>
+                </div>
+            </div>
+            <div v-if="scope === 'task'" class="block-setting-box">
+                <h3>{{ $L('流转设置') }}</h3>
+                <div class="form-box">
+                    <FormItem :label="$L('任务流转')">
+                        <RadioGroup v-model="formDatum.project_task_handoff">
+                            <Radio label="open">{{$L('开启')}}</Radio>
+                            <Radio label="close">{{$L('关闭')}}</Radio>
+                        </RadioGroup>
+                    </FormItem>
+                    <template v-if="formDatum.project_task_handoff === 'open'">
+                        <FormItem :label="$L('部门视角指派权限')">
+                            <RadioGroup v-model="formDatum.project_task_handoff_role">
+                                <Radio label="close">{{$L('关闭')}}</Radio>
+                                <Radio label="owner">{{$L('仅部门负责人')}}</Radio>
+                                <Radio label="managers">{{$L('部门负责人及部门管理员')}}</Radio>
+                            </RadioGroup>
+                        </FormItem>
+                        <FormItem :label="$L('可指派人员范围')">
+                            <RadioGroup v-model="formDatum.project_task_handoff_candidates">
+                                <Radio label="department">{{$L('管理部门范围内的项目成员')}}</Radio>
+                                <Radio label="project">{{$L('项目内全部成员')}}</Radio>
+                            </RadioGroup>
+                        </FormItem>
+                        <FormItem :label="$L('原负责人调整范围')">
+                            <RadioGroup v-model="formDatum.project_task_handoff_adjust">
+                                <Radio label="department">{{$L('仅调整管理范围内负责人')}}</Radio>
+                                <Radio label="all">{{$L('允许调整全部负责人')}}</Radio>
+                            </RadioGroup>
+                        </FormItem>
+                        <FormItem :label="$L('指派留言要求')">
+                            <RadioGroup v-model="formDatum.project_task_handoff_note">
+                                <Radio label="optional">{{$L('选填')}}</Radio>
+                                <Radio label="required">{{$L('必填')}}</Radio>
+                            </RadioGroup>
+                        </FormItem>
+                    </template>
+                </div>
+            </div>
+            <div v-if="scope === 'task'" class="block-setting-box">
+                <h3>{{ $L('任务优先级') }}</h3>
+                <div class="form-box">
+                    <SystemTaskPriority ref="taskPriority" embedded/>
+                </div>
+            </div>
+            <div v-if="scope === 'message'" class="block-setting-box">
+                <h3>{{ $L('消息设置') }}</h3>
+                <div class="form-box">
+                    <FormItem :label="$L('自动进入全员群')" prop="allGroupAutoin">
+                        <RadioGroup v-model="formDatum.all_group_autoin">
+                            <Radio label="yes">{{$L('自动')}}</Radio>
+                            <Radio label="no">{{$L('关闭')}}</Radio>
+                        </RadioGroup>
+                        <div v-if="formDatum.all_group_autoin == 'yes'" class="form-tip">{{$L('自动：注册成功后自动进入全员群。')}}</div>
+                        <div v-else-if="formDatum.all_group_autoin == 'no'" class="form-tip">{{$L('关闭：其他成员通过@邀请进入。')}}</div>
+                    </FormItem>
+                    <FormItem :label="$L('全员群组禁言')" prop="allGroupMute">
+                        <RadioGroup v-model="formDatum.all_group_mute">
+                            <Radio label="open">{{$L('开放')}}</Radio>
+                            <Radio label="close">{{$L('禁言')}}</Radio>
+                        </RadioGroup>
+                        <div v-if="formDatum.all_group_mute == 'open'" class="form-tip">{{$L('开放：所有人都可以在全员群组发言。')}}</div>
+                        <div v-else-if="formDatum.all_group_mute == 'close'" class="form-tip">{{$L('禁言：除管理员外所有人都禁止在全员群组发言。')}}</div>
+                    </FormItem>
+                    <FormItem :label="$L('私聊禁言')" prop="userPrivateChatMute">
+                        <RadioGroup v-model="formDatum.user_private_chat_mute">
+                            <Radio label="open">{{$L('开放')}}</Radio>
+                            <Radio label="close">{{$L('禁言')}}</Radio>
+                        </RadioGroup>
+                        <div v-if="formDatum.user_private_chat_mute == 'open'" class="form-tip">{{$L('开放：所有人都可以相互发起个人聊天。')}}</div>
+                        <div v-else-if="formDatum.user_private_chat_mute == 'close'" class="form-tip">{{$L('禁言：除管理员外所有人都禁止发起个人聊天。')}}</div>
+                    </FormItem>
+                    <FormItem :label="$L('群聊禁言')" prop="userGroupChatMute">
+                        <RadioGroup v-model="formDatum.user_group_chat_mute">
+                            <Radio label="open">{{$L('开放')}}</Radio>
+                            <Radio label="close">{{$L('禁言')}}</Radio>
+                        </RadioGroup>
+                        <div v-if="formDatum.user_group_chat_mute == 'open'" class="form-tip">{{$L('开放：允许个人群组聊天发言。')}}</div>
+                        <div v-else-if="formDatum.user_group_chat_mute == 'close'" class="form-tip form-list">
+                            <ol>
+                                <li>{{$L('除管理员外禁止个人群组聊天发言。')}}</li>
+                                <li>{{$L('注意，仅禁止个人群组，其他类型的群组不禁止，比如：部门群聊、项目群聊等系统群聊。')}}</li>
+                            </ol>
+                        </div>
+                    </FormItem>
+                    <FormItem :label="$L('聊天资料')" prop="chatInformation">
+                        <RadioGroup v-model="formDatum.chat_information">
+                            <Radio label="optional">{{$L('可选')}}</Radio>
+                            <Radio label="required">{{$L('必填')}}</Radio>
+                        </RadioGroup>
+                        <div v-if="formDatum.chat_information == 'required'" class="form-tip">{{$L('必填：发送聊天内容前必须设置昵称、电话。')}}</div>
+                        <div v-else class="form-tip">{{$L('如果必填，发送聊天前必须设置昵称、电话。')}}</div>
+                    </FormItem>
+                    <FormItem :label="$L('匿名消息')" prop="anonMessage">
+                        <RadioGroup v-model="formDatum.anon_message">
+                            <Radio label="open">{{$L('开启')}}</Radio>
+                            <Radio label="close">{{$L('关闭')}}</Radio>
+                        </RadioGroup>
+                        <div v-if="formDatum.anon_message == 'open'" class="form-tip">{{$L('允许匿名发送消息给其他成员。')}}</div>
+                        <div v-else class="form-tip">{{$L('禁止匿名发送消息。')}}</div>
+                    </FormItem>
+                    <FormItem :label="$L('待办设置权限')" prop="todoSetPermission">
+                        <RadioGroup v-model="formDatum.todo_set_permission">
+                            <Radio label="open">{{$L('允许')}}</Radio>
+                            <Radio label="close">{{$L('禁止')}}</Radio>
+                        </RadioGroup>
+                        <div v-if="formDatum.todo_set_permission == 'open'" class="form-tip">{{$L('允许：所有成员可设置/取消他人待办。')}}</div>
+                        <div v-else class="form-tip">{{$L('禁止：仅本人、系统管理员、群主（含群管理员）、项目负责人（含项目管理员）、任务负责人可设置/取消待办。')}}</div>
+                    </FormItem>
+                    <FormItem :label="$L('端到端加密')" prop="e2eMessage">
+                        <RadioGroup v-model="formDatum.e2e_message">
+                            <Radio label="open">{{$L('开启')}}</Radio>
+                            <Radio label="close">{{$L('关闭')}}</Radio>
+                        </RadioGroup>
+                        <div v-if="formDatum.e2e_message == 'open'" class="form-tip">{{$L('使用端到端加密传输数据。')}}</div>
+                        <div v-else class="form-tip">{{$L('关闭端到端加密传输数据。')}}</div>
+                    </FormItem>
+                    <FormItem :label="$L('撤回消息限制')" prop="msgRevLimit">
+                        <div style="width: 220px;">
+                            <Input type="number" number v-model="formDatum.msg_rev_limit" :placeholder="$L('默认不限制')">
+                                <template #append>
+                                    <span>{{$L('分钟')}}</span>
+                                </template>
+                            </Input>
+                        </div>
+                        <div class="form-tip">{{$L('消息发出后的可撤回时长。')}}</div>
+                    </FormItem>
+                    <FormItem :label="$L('修改消息限制')" prop="msgEditLimit">
+                        <div style="width: 220px;">
+                            <Input type="number" number v-model="formDatum.msg_edit_limit" :placeholder="$L('默认不限制')">
+                                <template #append>
+                                    <span>{{$L('分钟')}}</span>
+                                </template>
+                            </Input>
+                        </div>
+                        <div class="form-tip">{{$L('消息发出后的可修改时长。')}}</div>
+                    </FormItem>
+                </div>
+            </div>
+            <div v-if="scope === 'general'" class="block-setting-box">
+                <h3>{{ $L('基础设置') }}</h3>
+                <div class="form-box">
+                    <FormItem :label="$L('系统别名')" prop="system_alias">
+                        <div style="width: 220px;">
+                            <Input v-model="formDatum.system_alias"/>
+                        </div>
+                        <div class="form-tip">{{$L('用于网页标题、邮件发送，以及 Web 端和客户端登录页的欢迎语。')}}</div>
+                    </FormItem>
+                    <FormItem :label="$L('登录页 Logo')" prop="login_logo">
+                        <ImgUpload
+                            v-model="formDatum.login_logo"
+                            :num="1"
+                            :width="512"
+                            :height="512"
+                            whcut="percentage"/>
+                        <div class="form-tip">{{$L('用于 Web 端和客户端登录页，未设置时使用默认 Logo。')}}</div>
+                    </FormItem>
+                    <FormItem :label="$L('欢迎词')" prop="system_welcome">
+                        <div style="width: 220px;">
+                            <Input v-model="formDatum.system_welcome" :placeholder="$L('欢迎您，(*)', '{username}')"/>
+                        </div>
+                        <div class="form-tip">{{$L('仪表盘欢迎词，(*)代表用户昵称', '{username}')}}</div>
+                    </FormItem>
+                </div>
+            </div>
+            <div v-if="scope === 'file'" class="block-setting-box">
+                <h3>{{ $L('上传与媒体处理') }}</h3>
+                <div class="form-box">
+                    <FormItem :label="$L('图片优化')" prop="image_compress">
+                        <RadioGroup v-model="formDatum.image_compress">
+                            <Radio label="open">{{$L('开启')}}</Radio>
+                            <Radio label="close">{{$L('关闭')}}</Radio>
+                        </RadioGroup>
+                        <div class="form-tip">{{$L('数码相机4M的图片，优化后仅有700KB左右，而且肉眼基本看不出区别。')}}</div>
+                        <Input v-model="formDatum.image_quality" style="width:220px;margin-top:6px" :placeholder="$L('默认：90')">
+                            <span slot="prepend">{{$L('压缩质量')}}</span>
+                        </Input>
+                        <div class="form-tip">{{$L('取值范围：0-100，建议：90')}}</div>
+                    </FormItem>
+                    <FormItem :label="$L('保存网络图片')" prop="image_save_local">
+                        <RadioGroup v-model="formDatum.image_save_local">
+                            <Radio label="open">{{$L('开启')}}</Radio>
+                            <Radio label="close">{{$L('关闭')}}</Radio>
+                        </RadioGroup>
+                        <div class="form-tip">{{$L('是否将消息中的网络图片保存到本地服务器。')}}</div>
+                    </FormItem>
+                    <FormItem :label="$L('文件上传限制')" prop="fileUploadLimit">
+                        <div style="width: 220px;">
+                            <Input type="number" number v-model="formDatum.file_upload_limit" :placeholder="$L('默认 1G')">
+                                <template #append>
+                                <span>MB</span>
+                                </template>
+                            </Input>
+                        </div>
+                        <div class="form-tip">{{$L('包含消息发送的文件')}}</div>
+                    </FormItem>
+                    <FormItem :label="$L('视频转换')" prop="convertVideo">
+                        <RadioGroup v-model="formDatum.convert_video">
+                            <Radio label="open">{{$L('开启')}}</Radio>
+                            <Radio label="close">{{$L('关闭')}}</Radio>
+                        </RadioGroup>
+                        <div v-if="formDatum.convert_video == 'open'" class="form-tip">{{$L('将MOV、WEBM格式的视频转换为MP4格式。')}}</div>
+                        <div v-else class="form-tip">{{$L('关闭视频格式转换功能。')}}</div>
+                    </FormItem>
+                    <FormItem :label="$L('视频压缩')" prop="compressVideo">
+                        <RadioGroup v-model="formDatum.compress_video">
+                            <Radio label="open">{{$L('开启')}}</Radio>
+                            <Radio label="close">{{$L('关闭')}}</Radio>
+                        </RadioGroup>
+                        <div v-if="formDatum.compress_video == 'open'" class="form-tip">{{$L('对MP4格式的视频进行压缩处理。')}}</div>
+                        <div v-else class="form-tip">{{$L('关闭视频压缩功能。')}}</div>
+                    </FormItem>
+                </div>
+            </div>
+            <SystemFileSetting v-if="scope === 'file'" ref="fileSetting" embedded/>
+        </Form>
+        <div class="setting-footer">
+            <Button :loading="loadIng > 0" type="primary" @click="submitForm">{{$L('提交')}}</Button>
+            <Button :loading="loadIng > 0" @click="resetForm">{{$L('重置')}}</Button>
+        </div>
+    </div>
+</template>
+
+<script>
+import {mapGetters, mapState} from "vuex";
+import UserSelect from "../../../../components/UserSelect.vue";
+import SystemColumnTemplate from "./SystemColumnTemplate.vue";
+import SystemFileSetting from "./SystemFileSetting.vue";
+import SystemTaskPriority from "./SystemTaskPriority.vue";
+import ImgUpload from "../../../../components/ImgUpload.vue";
+
+const SCOPE_FIELDS = {
+    general: ['system_alias', 'login_logo', 'system_welcome'],
+    account: ['reg', 'reg_identity', 'reg_invite', 'temp_account_alias', 'login_code', 'password_policy'],
+    project: ['project_invite', 'project_add_permission', 'project_add_userids', 'department_owner_project_view'],
+    task: ['auto_archived', 'archived_day', 'task_visible', 'task_default_time', 'task_user_limit', 'unclaimed_task_reminder', 'unclaimed_task_reminder_time', 'task_ai_auto_analyze', 'project_task_handoff', 'project_task_handoff_role', 'project_task_handoff_candidates', 'project_task_handoff_adjust', 'project_task_handoff_note'],
+    message: ['chat_information', 'anon_message', 'e2e_message', 'msg_rev_limit', 'msg_edit_limit', 'all_group_mute', 'all_group_autoin', 'user_private_chat_mute', 'user_group_chat_mute', 'todo_set_permission'],
+    file: ['convert_video', 'compress_video', 'image_compress', 'image_quality', 'image_save_local', 'file_upload_limit'],
+};
+
+export default {
+    name: 'SystemSetting',
+
+    components: {ImgUpload, SystemTaskPriority, SystemFileSetting, SystemColumnTemplate, UserSelect},
+
+    props: {
+        scope: {
+            type: String,
+            required: true,
+        },
+    },
+
+    data() {
+        return {
+            loadIng: 0,
+
+            formDatum: {},
+        }
+    },
+
+    mounted() {
+        this.systemSetting();
+    },
+
+    computed: {
+        ...mapGetters(['aiVisible']),
+
+        ...mapState(['formOptions']),
+
+        projectAddAll() {
+            return (this.formDatum.project_add_permission || []).includes('all');
+        },
+    },
+
+    methods: {
+        onProjectAddPermissionChange(value) {
+            const prev = this.formDatum.project_add_permission || [];
+            let next = value;
+            if (value.includes('all') && value.length > 1) {
+                // “所有人”与其它范围互斥
+                next = prev.includes('all') ? value.filter(v => v !== 'all') : ['all'];
+            }
+            if (next.length === 0) {
+                next = ['all'];
+            }
+            this.$set(this.formDatum, 'project_add_permission', next);
+        },
+
+        submitForm() {
+            this.$refs.formDatum.validate((valid) => {
+                if (valid) {
+                    this.saveAll();
+                }
+            })
+        },
+
+        resetForm() {
+            this.formDatum = $A.cloneJSON(this.formDatum_bak);
+            this.$refs.columnTemplate?.resetForm();
+            this.$refs.taskPriority?.resetForm();
+            this.$refs.fileSetting?.resetForm();
+        },
+
+        saveAll() {
+            if (this.loadIng > 0) {
+                return;
+            }
+            const extra = {
+                project: () => this.$refs.columnTemplate.systemSetting(true, true),
+                task: () => this.$refs.taskPriority.systemSetting(true, true),
+                file: () => this.$refs.fileSetting.systemSetting(true, true),
+            }[this.scope];
+            this.loadIng++;
+            this.saveSystemScope()
+                .then(() => extra?.())
+                .then(() => {
+                    $A.messageSuccess('修改成功');
+                    this.$store.dispatch("getUserInfo").catch(() => {});
+                })
+                .catch(msg => $A.modalError(msg))
+                .finally(() => {
+                    this.loadIng--;
+                });
+        },
+
+        saveSystemScope() {
+            const fields = SCOPE_FIELDS[this.scope];
+            const currentValues = fields.reduce((data, field) => {
+                data[field] = $A.cloneJSON(this.formDatum[field]);
+                return data;
+            }, {});
+            return this.$store.dispatch("call", {
+                url: 'system/setting?type=all',
+                method: 'post',
+            }).then(({data}) => this.$store.dispatch("call", {
+                url: 'system/setting?type=save',
+                method: 'post',
+                data: Object.assign({}, data, currentValues),
+            })).then(({data}) => {
+                this.setSystemDatum(data);
+            }).catch(({msg}) => Promise.reject(msg));
+        },
+
+        formArchived(value) {
+            this.formDatum = { ...this.formDatum, auto_archived: value };
+        },
+
+        formTaskReminder(value) {
+            this.formDatum = { ...this.formDatum, unclaimed_task_reminder: value };
+        },
+
+        systemSetting(save, silent = false) {
+            this.loadIng++;
+            return this.$store.dispatch("call", {
+                url: 'system/setting?type=' + (save ? 'save' : 'all'),
+                method: 'post',
+                data: this.formDatum,
+            }).then(({data}) => {
+                if (save && !silent) {
+                    $A.messageSuccess('修改成功');
+                    this.$store.dispatch("getUserInfo").catch(() => {});
+                }
+                this.setSystemDatum(data);
+            }).catch(({msg}) => {
+                if (save && !silent) {
+                    $A.modalError(msg);
+                }
+                if (silent) {
+                    return Promise.reject(msg);
+                }
+            }).finally(_ => {
+                this.loadIng--;
+            });
+        },
+
+        setSystemDatum(data) {
+            this.formDatum = data;
+            this.formDatum_bak = $A.cloneJSON(data);
+            this.$store.state.systemConfig = Object.assign({}, this.formDatum_bak, {
+                __state: "success",
+            });
+        }
+    }
+}
+</script>

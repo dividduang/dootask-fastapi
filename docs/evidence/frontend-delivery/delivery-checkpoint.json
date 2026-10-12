@@ -1,0 +1,46 @@
+{
+  "sampled_at": "2026-10-12T08:04:01.928150+00:00",
+  "copied_files": 4006,
+  "copied_bytes": 165876184,
+  "copy_differences": 0,
+  "submodules": [
+    {
+      "path": "resources/drawio",
+      "pin": "88ee1f5ab4d40603a8f3aaa0d9d6dc3794c6b3f0"
+    },
+    {
+      "path": "resources/mobile",
+      "pin": "c5c5c100e742c302ae914df882af6210c80582d7"
+    }
+  ],
+  "licenses": [
+    {
+      "path": "frontend\\LICENSE",
+      "sha256": "6da1054eef20b8949622f2acc5a89c3243ff3b3d7aa8c2bb8fa5c04d15113c00"
+    },
+    {
+      "path": "frontend\\resources\\drawio\\LICENSE",
+      "sha256": "43070e2d4e532684de521b885f385d0841030efa2b1a20bafb76133a5e1379c1"
+    },
+    {
+      "path": "frontend\\resources\\mobile\\LICENSE",
+      "sha256": "d310b9037bef9d6e5d9aada01bc1e039e83614525187d499615923af08c8b901"
+    }
+  ],
+  "drawio_version": "30.0.4",
+  "mobile_package_declared_version": "2.5.1",
+  "source_changes": false,
+  "build_ui_tests": "NOT_RUN",
+  "desktop_source_floating_fetches": [
+    {
+      "path": "electron/build.js",
+      "lines": "35-47",
+      "subject": "updater latest has no source pin"
+    },
+    {
+      "path": "electron/build.js",
+      "lines": "192-206,274-288",
+      "subject": "drawio overlay latest; pinned source PreConfig exists; no build executed"
+    }
+  ]
+}

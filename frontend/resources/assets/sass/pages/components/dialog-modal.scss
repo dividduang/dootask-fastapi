@@ -1,0 +1,89 @@
+body {
+    .ivu-modal-wrap {
+        &.dialog-modal {
+            position: absolute;
+            overflow: hidden;
+
+            .ivu-modal {
+                .ivu-modal-content {
+                    background: transparent;
+
+                    .ivu-modal-body {
+                        padding: 0;
+                        display: flex;
+                        flex-direction: column;
+                    }
+                }
+
+                &.ivu-modal-fullscreen {
+                    background-color: #f8f8f8;
+                }
+            }
+        }
+
+        &.dialog-portrait {
+            position: absolute;
+            overflow: hidden;
+
+            .ivu-modal {
+                margin: 0;
+                padding: 0;
+
+                .ivu-modal-content {
+                    .ivu-modal-close {
+                        display: none;
+                    }
+                }
+            }
+        }
+
+        &.dialog-landscape {
+            .ivu-modal {
+                .ivu-modal-content {
+                    .ivu-modal-close {
+                        top: 11px;
+                        z-index: 2;
+                    }
+
+                    .ivu-modal-body {
+                        .dialog-wrapper {
+                            position: relative;
+                            border-radius: 18px;
+                            padding: 0 0 8px 0;
+
+                            .dialog-nav {
+                                .nav-wrapper {
+                                    padding: 0 20px;
+
+                                    &.completed {
+                                        &:after {
+                                            right: 102px;
+                                        }
+                                    }
+
+                                    .dialog-menu {
+                                        margin-right: 18px;
+                                    }
+
+                                    .dialog-search {
+                                        right: 40px;
+                                    }
+                                }
+                            }
+
+                            .dialog-footer {
+                                padding: 0 22px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        &.dialog-closing {
+            .ql-editor {
+                caret-color: transparent;
+            }
+        }
+    }
+}

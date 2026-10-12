@@ -1,0 +1,136 @@
+Electron Releases | Electron
+Skip to main content
+ElectronDocsAPIBlog
+Tools
+Electron Forge
+Electron Fiddle
+Community
+Governance
+Showcase
+Resources
+Releases
+English
+English
+Deutsch
+Español
+Français
+日本語
+Português
+Русский
+中文
+Search
+Get Started
+Processes in Electron
+Best Practices
+Examples
+Development
+Native Node Modules
+Distribution
+Testing And Debugging
+References
+Breaking Changes
+Electron Releases
+Electron Versioning
+Electron FAQ
+Glossary
+Contributing
+References
+Electron Releases
+On this page
+Electron Releases
+Electron frequently releases major versions alongside every other Chromium release.
+This document focuses on the release cadence and version support policy.
+tip
+See the Electron Versioning document for more details
+on how Electron is versioned.
+Timeline​
+Electron's Release Schedule lists a schedule of Electron major releases showing key milestones including alpha, beta, and stable release dates, as well as end-of-life dates and dependency versions.
+info
+Electron's official support policy is the latest 3 stable releases. Our stable
+release and end-of-life dates are determined by Chromium, and may be subject to
+change. While we try to keep our planned release and end-of-life dates frequently
+updated here, future dates may change if affected by upstream scheduling changes,
+and may not always be accurately reflected.
+See Chromium's public release schedule for
+definitive information about Chromium's scheduled release dates.
+Electron's cadence between major version releases is 8 weeks long. Before each major
+version hits stable, it goes through a four-week alpha phase and a four-week
+beta phase.
+Notes:
+Alphas are generally less stable than beta releases. The cutoff between the two
+corresponds to when the underlying Chromium version enters Chrome's Beta channel.
+The -alpha.1, -beta.1, and stable dates are our solid release dates.
+We strive for weekly alpha/beta releases, but we often release more than scheduled.
+All dates are our goals but there may be reasons for adjusting the stable deadline, such as security bugs.
+Historical changes:
+Since Electron 5, Electron has been publicizing its release dates (see blog post).
+Since Electron 6, Electron major versions have been targeting every other Chromium major version. Each Electron stable should happen on the same day as Chrome stable (see blog post).
+Since Electron 16, Electron has been releasing major versions on an 8-week cadence in accordance to Chrome's change to a 4-week release cadence (see blog post).
+Electron temporarily extended support for Electron 22 until October 10, 2023, to support an extended end-of-life for Windows 7/8/8.1
+Version support policy​
+The latest three stable major versions are supported by the Electron team.
+For example, if the latest release is 42.1.x, then the 41.0.x as well
+as the 40.2.x series are supported. We only support the latest minor release
+for each stable release series. This means that in the case of a security fix,
+42.1.x will receive the fix, but we will not release a new version of 42.0.x.
+The latest stable release unilaterally receives all fixes from main,
+and the version prior to that receives the vast majority of those fixes
+as time and bandwidth warrants. The oldest supported release line will receive
+only security fixes directly.
+Chromium version support​
+tip
+Chromium's public release schedule is here.
+Electron targets Chromium even-number versions, releasing every 8 weeks in concert
+with Chromium's 4-week release schedule. For example, Electron 26 uses Chromium 116, while Electron 27 uses Chromium 118.
+Node.js version support​
+Electron upgrades its main branch to even-number versions of Node.js when they enter Active LTS. The schedule
+is as follows:
+If Electron has recently updated its main branch to a new major version of Node.js, the next stable
+branch to be cut will be released with the new version.
+Stable release lines of Electron will receive minor and patch bumps of Node.js after they are released.
+Patch bumps to Node.js will be released in patch releases of Electron, and minor bumps to Node.js will result in a minor release of Electron.
+Security-only release branches will receive security-related changes from Node.js releases, but not the full release.
+Breaking API changes​
+When an API is changed or removed in a way that breaks existing functionality, the
+previous functionality will be supported for a minimum of two major versions when
+possible before being removed. For example, if a function takes three arguments,
+and that number is reduced to two in major version 10, the three-argument version would
+continue to work until, at minimum, major version 12. Past the minimum two-version
+threshold, we will attempt to support backwards compatibility beyond two versions
+until the maintainers feel the maintenance burden is too high to continue doing so.
+tip
+For a canonical list of breaking changes, see the Breaking Changes
+document.
+Edit this page
+Previous
+Breaking Changes
+Next
+Electron Versioning
+Timeline
+Version support policy
+Chromium version support
+Node.js version support
+Breaking API changes
+Docs
+Getting Started
+API Reference
+Checklists
+Performance
+Security
+Tools
+Electron Forge
+Electron Fiddle
+Community
+Governance
+Resources
+Bluesky
+X
+Mastodon
+Stack Overflow
+More
+GitHub
+Open Collective
+Infrastructure Dashboard
+Copyright OpenJS Foundation and Electron contributors. All rights reserved. The OpenJS Foundation has registered trademarks and uses trademarks.  For a list of trademarks of the OpenJS Foundation, please see our Trademark Policy and Trademark List.  Trademarks and logos not indicated on the list of OpenJS Foundation trademarks are trademarks™ or registered® trademarks of their respective holders. Use of them does not imply any affiliation with or endorsement by them.
+The OpenJS Foundation | Terms of Use | Privacy Policy | Bylaws | Code of Conduct | Trademark Policy | Trademark List | Cookie Policy
+Hosting and infrastructure graciously provided by

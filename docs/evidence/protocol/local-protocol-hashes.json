@@ -1,0 +1,37 @@
+[
+  {
+    "path": "D:\\rpa\\202610\\dootask\\app\\Module\\Interface\\DooSo.php",
+    "sha256": "4fd806d78db64d09ea116f41171e48cef3f5ed087aadcd40667ab2c1676d26d4",
+    "bytes": 11342,
+    "lines": 412,
+    "observed_at_utc": "2026-10-12T05:47:51.303209+00:00"
+  },
+  {
+    "path": "D:\\rpa\\202610\\dootask\\app\\Http\\Controllers\\WebDavProtocolController.php",
+    "sha256": "de33c4958aece3d0973707d3617d329f3d0764af415bb0f39c021480a82c6ef4",
+    "bytes": 4706,
+    "lines": 114,
+    "observed_at_utc": "2026-10-12T05:47:51.303209+00:00"
+  },
+  {
+    "path": "D:\\rpa\\202610\\dootask\\resources\\assets\\js\\store\\actions.js",
+    "sha256": "47bd5bfc389ab8bc21f785679790673b49efdbdbcc63b4f06981e34a6a7f339b",
+    "bytes": 205940,
+    "lines": 5589,
+    "observed_at_utc": "2026-10-12T05:47:51.303209+00:00"
+  },
+  {
+    "path": "D:\\rpa\\202610\\dootask\\resources\\assets\\js\\store\\chunkedUpload.js",
+    "sha256": "d12c3b0f0c5bea5399c49bef63d2da9909f00520ae3b65f202da8b1ea800c352",
+    "bytes": 8463,
+    "lines": 225,
+    "observed_at_utc": "2026-10-12T05:47:51.305853+00:00"
+  },
+  {
+    "path": "D:\\rpa\\202610\\dootask\\docker\\nginx\\default.conf",
+    "sha256": "a019abb064c32103c425f513a5609570f6b22d410d51dd4c6a0dd3d839341943",
+    "bytes": 4240,
+    "lines": 135,
+    "observed_at_utc": "2026-10-12T05:47:51.305853+00:00"
+  }
+]

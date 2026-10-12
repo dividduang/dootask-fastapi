@@ -1,0 +1,411 @@
+:root {
+    --tab-font-family: -apple-system, 'Segoe UI', roboto, oxygen-sans, ubuntu, cantarell, 'Helvetica Neue', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+    --tab-font-size: 12px;
+    --tab-transition: background-color 200ms ease-out, color 200ms ease-out;
+    --tab-cursor: pointer;
+    --tab-color: #5F6368;
+    --tab-background: #F1F3F4;
+    --tab-active-color: #222529;
+    --tab-active-background: #FFFFFF;
+    --tab-close-color: #9DA3AC;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    color: #333;
+}
+
+.app {
+    display: flex;
+    align-items: center;
+}
+
+.nav {
+    font-family: var(--tab-font-family);
+    font-feature-settings: 'clig', 'kern';
+    flex: 1;
+    width: 0;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    background-color: var(--tab-background);
+    cursor: default;
+    -webkit-app-region: drag;
+}
+
+/* 导航按钮 */
+.nav-controls {
+    display: flex;
+    align-items: center;
+    margin-right: 12px;
+    -webkit-app-region: none;
+}
+
+.nav-controls div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+}
+
+.nav-controls svg {
+    width: 16px;
+    height: 16px;
+    color: var(--tab-active-color);
+}
+
+.nav-controls .disabled {
+    cursor: not-allowed !important;
+}
+
+.nav-controls .disabled svg {
+    opacity: 0.3;
+}
+
+/* 标签 */
+.nav-tabs {
+    min-width: 0;
+    flex: 1;
+    display: flex;
+    gap: 8px;
+    user-select: none;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.nav-tabs::-webkit-scrollbar {
+    display: none;
+}
+
+.nav-tabs li {
+    flex: 1;
+    display: flex;
+    position: relative;
+    box-sizing: border-box;
+    align-items: center;
+    height: calc(100% - 5px);
+    padding: 7px 8px;
+    min-width: 56px;
+    max-width: 220px;
+    scroll-margin: 12px;
+    border-radius: 4px;
+    font-size: var(--tab-font-size);
+    color: var(--tab-color);
+    cursor: var(--tab-cursor);
+    transition: var(--tab-transition);
+    -webkit-app-region: none;
+}
+
+.nav-tabs li:first-child {
+    border-left: none;
+}
+
+
+.nav-tabs li.active {
+    color: var(--tab-active-color);
+    background: var(--tab-active-background);
+}
+
+.nav-tabs li.active .tab-icon::before {
+    background-image: var(--tab-icon-image, url(../image/earth/light_selected.svg));
+}
+
+
+.nav-tabs li:not(.active)::after {
+    position: absolute;
+    right: 0;
+    width: 1px;
+    height: 16px;
+    background: rgba(0, 0, 0, 0.08);
+    content: '';
+}
+
+.nav-tabs li:not(.active):last-child::after {
+    content: none;
+}
+
+/* 更多菜单 */
+.nav-more {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    padding: 0 14px;
+    margin: 0 2px;
+    cursor: pointer;
+    background-color: var(--tab-background);
+    -webkit-app-region: none;
+}
+
+.nav-more svg {
+    width: 20px;
+    height: 20px;
+    color: #000000;
+    opacity: 0.9;
+}
+
+.nav-more:hover svg {
+    opacity: 1;
+}
+
+/* 图标 */
+.tab-icon {
+    display: inline-block;
+    flex-shrink: 0;
+    width: 16px;
+    height: 16px;
+    position: relative;
+}
+
+.tab-icon::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 16px;
+    height: 16px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: var(--tab-icon-image, url(../image/earth/light.svg));
+    transition: transform 0.3s;
+}
+
+.tab-icon.loading::before {
+    transform: scale(0.75);
+    border-radius: 50%;
+}
+
+.tab-icon.loading::after {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    width: 24px;
+    height: 24px;
+    border: 2px solid #eeeeee;
+    border-bottom-color: #84C56A;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: spin 0.75s linear infinite;
+}
+
+.tab-icon img {
+    width: 16px;
+    height: 16px;
+    border-radius: 4px;
+}
+
+@keyframes spin {
+    0% {
+        transform: scale(0.8) rotate(0deg);
+    }
+
+    100% {
+        transform: scale(0.8) rotate(360deg);
+    }
+}
+
+/* 标题 */
+.tab-title {
+    display: inline-block;
+    flex: 1;
+    margin: 0 8px;
+    overflow: hidden;
+    line-height: 150%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* 关闭 */
+.tab-close {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    margin-right: 2px;
+    position: relative;
+}
+
+.tab-close::after,
+.tab-close::before {
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%) scale(0.9) rotate(45deg);
+    content: "";
+    width: 2px;
+    height: 11px;
+    border-radius: 3px;
+    background-color: var(--tab-close-color);
+}
+
+.tab-close::before {
+    transform: translate(50%, -50%) scale(0.9) rotate(-45deg);
+}
+
+/* 不同平台样式 */
+body.win32 .nav {
+    padding-left: 8px;
+    padding-right: 140px;
+}
+
+body.darwin .nav {
+    padding-left: 76px;
+}
+
+body.darwin.full-screen .nav {
+    padding-left: 8px;
+}
+
+/* Sortable 拖拽样式 */
+.nav-tabs li.sortable-ghost {
+    opacity: 0.4;
+    background: var(--tab-active-background);
+    border-radius: 4px;
+}
+
+.nav-tabs li.sortable-chosen {
+    background: var(--tab-active-background);
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.nav-tabs li.sortable-drag {
+    opacity: 1;
+}
+
+/* fallback 模式下克隆元素会被添加到 body，需要全局样式 */
+.sortable-fallback {
+    font-family: var(--tab-font-family);
+    font-size: var(--tab-font-size);
+    display: inline-flex !important;
+    align-items: center;
+    height: 30px;
+    padding: 7px 8px;
+    min-width: 100px;
+    max-width: 240px;
+    color: var(--tab-active-color);
+    background: var(--tab-active-background) !important;
+    border-radius: 4px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    opacity: 0.95 !important;
+    cursor: grabbing;
+    z-index: 9999;
+}
+
+.sortable-fallback .tab-icon {
+    display: inline-block;
+    flex-shrink: 0;
+    width: 16px;
+    height: 16px;
+    background-size: cover;
+}
+
+.sortable-fallback .tab-icon::before {
+    background-image: var(--tab-icon-image, url(../image/earth/light_selected.svg));
+}
+
+.sortable-fallback .tab-title {
+    display: inline-block;
+    flex: 1;
+    margin: 0 8px;
+    overflow: hidden;
+    line-height: 150%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.sortable-fallback .tab-close {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    margin-right: 2px;
+    position: relative;
+}
+
+.sortable-fallback .tab-close::after,
+.sortable-fallback .tab-close::before {
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%) scale(0.9) rotate(45deg);
+    content: "";
+    width: 2px;
+    height: 11px;
+    border-radius: 3px;
+    background-color: var(--tab-close-color);
+}
+
+.sortable-fallback .tab-close::before {
+    transform: translate(50%, -50%) scale(0.9) rotate(-45deg);
+}
+
+/* 拖出窗口时的视觉反馈 */
+.sortable-fallback.detaching {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+    transform: scale(1.05);
+    opacity: 0.9 !important;
+}
+
+/* 拖入目标窗口时的视觉反馈 */
+.nav-tabs.drag-target {
+    background: rgba(132, 197, 106, 0.1);
+    border-radius: 4px;
+}
+
+.nav-tabs.drag-target::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 2px dashed #84C56A;
+    border-radius: 4px;
+    pointer-events: none;
+}
+
+/* 暗黑模式 */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --tab-color: #D6D6D7;
+        --tab-background: #202124;
+        --tab-active-color: #E8EAED;
+        --tab-active-background: #323639;
+        --tab-close-color: #D6D6D7;
+    }
+
+    .nav-tabs li.active .tab-icon::before {
+        background-image: var(--tab-icon-image, url(../image/earth/dark_selected.svg));
+    }
+
+    .nav-more svg {
+        color: #C7C7C7;
+    }
+
+    .tab-icon::before {
+        background-image: var(--tab-icon-image, url(../image/earth/dark.svg));
+    }
+
+    /* 暗黑模式下 fallback 样式 */
+    .sortable-fallback {
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    }
+
+    .sortable-fallback .tab-icon::before {
+        background-image: var(--tab-icon-image, url(../image/earth/dark_selected.svg));
+    }
+}

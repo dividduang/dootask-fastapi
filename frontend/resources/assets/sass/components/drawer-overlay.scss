@@ -1,0 +1,260 @@
+// 去除 modal 默认样式
+body {
+    .ivu-modal-wrap {
+        &.common-drawer {
+            overflow: hidden;
+
+            .ivu-modal {
+                .ivu-modal-content {
+                    margin-top: 0;
+                    margin-bottom: 0;
+                    background-color: transparent;
+                }
+
+                .ivu-modal-close {
+                    display: none;
+                }
+
+                .ivu-modal-body {
+                    padding: 0;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: flex-end;
+                    align-items: flex-end;
+                }
+            }
+        }
+    }
+}
+
+// 通用抽屉样式
+.common-drawer {
+    --margin-top: 0px;
+    --margin-left: 0px;
+    --margin-right: 0px;
+    --margin-bottom: 0px;
+    --close-top: 12px;
+    --close-right: 12px;
+    --close-size: 40px;
+    --close-color: #606266;
+    --title-color: #303133;
+    --content-bg-color: #ffffff;
+    --border-radius: 0px;
+    --body-max-width: 100%;
+
+    &.file-drawer {
+        --margin-top: 40px;
+        --margin-left: 0px;
+        --margin-right: 0px;
+        --margin-bottom: 0px;
+        --close-top: 0px;
+        --close-right: 0px;
+        --close-color: #ffffff;
+        --border-radius: 16px 16px 0 0;
+
+        .file-content,
+        .file-preview {
+            border-radius: 0;
+        }
+    }
+
+    &.approve-drawer {
+        --close-top: 20px;
+        --close-right: 12px;
+    }
+
+    .overlay-body {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        max-width: var(--body-max-width);
+        max-height: 100%;
+        position: relative;
+
+        .overlay-close {
+            position: absolute;
+            z-index: 2;
+            top: var(--close-top);
+            right: var(--close-right);
+            margin-top: var(--status-bar-height);
+            width: var(--close-size);
+            height: var(--close-size);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+
+            > svg {
+                color: var(--close-color);
+                opacity: 0.8;
+                width: 24px;
+                height: 24px;
+                transition: transform 0.3s, opacity 0.3s;
+                will-change: transform, opacity;
+            }
+
+            &:hover {
+                > svg {
+                    transform: rotate(-90deg);
+                    opacity: 1;
+                }
+            }
+        }
+
+        .overlay-resize {
+            position: absolute;
+            top: 0;
+            left: var(--margin-left);
+            right: auto;
+            bottom: 0;
+            width: 5px;
+            z-index: 2;
+
+            &.bottom {
+                left: 0;
+                right: 0;
+                top: var(--margin-top);
+                bottom: 0;
+                width: 100%;
+                height: 5px;
+            }
+        }
+
+        .overlay-content {
+            flex: 1;
+            min-height: 0;
+            position: relative;
+            z-index: 1;
+            background-color: var(--content-bg-color);
+            margin: var(--margin-top) var(--margin-right) var(--margin-bottom) var(--margin-left);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            cursor: default;
+            display: flex;
+            flex-direction: column;
+
+            &-status {
+                flex-shrink: 0;
+                height: var(--status-bar-height);
+            }
+
+            &-header {
+                flex-shrink: 0;
+                padding: calc(var(--close-top) - var(--margin-top)) calc(var(--close-size) + var(--close-right)) calc(var(--close-top) - var(--margin-top)) 30px;
+                box-sizing: content-box;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                min-height: 40px;
+                gap: 12px;
+
+                &-title {
+                    flex: 1;
+                    min-width: 0;
+                    color: var(--title-color);
+                    font-size: 20px;
+                    font-weight: 500;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                }
+
+                &-more {
+                    flex-shrink: 0;
+                    margin: 0 8px;
+                }
+            }
+
+            &-body {
+                flex: 1;
+                min-height: 0;
+                position: relative;
+            }
+
+            &-navigation {
+                flex-shrink: 0;
+                height: var(--navigation-bar-height);
+            }
+        }
+    }
+}
+
+// 全屏抽屉样式
+.drawer-fullscreen {
+    --margin-top: 0px;
+    --margin-left: 0px;
+    --margin-right: 0px;
+    --margin-bottom: 0px;
+    --close-top: 8px;
+    --close-right: 8px;
+    --border-radius: 0;
+
+    &.dialog-wrapper-list {
+        --content-bg-color: #f8f8f8;
+    }
+}
+
+body.window-landscape {
+    // 横屏模式下的抽屉样式
+    .common-drawer {
+        --body-max-width: calc(100% - 80px);
+    }
+    // 底部抽屉样式
+    .drawer-bottom {
+        --body-max-width: 100%;
+    }
+    // 横屏模式下的全屏抽屉样式
+    .drawer-fullscreen {
+        --body-max-width: 100%;
+    }
+}
+body.dark-mode-reverse {
+    // 暗黑模式下的抽屉样式
+    .common-drawer {
+        &.file-drawer {
+            --close-color: #000000;
+        }
+    }
+}
+
+// 抽屉动画样式
+.drawer-animation {
+    &-fade {
+        &-enter-active,
+        &-leave-active {
+            transition: opacity .5s cubic-bezier(0.32, 0.72, 0, 1);
+        }
+
+        &-enter,
+        &-leave-to {
+            opacity: 0;
+        }
+    }
+
+    &-right {
+        &-enter-active,
+        &-leave-active {
+            transition: transform .3s cubic-bezier(0.32, 0.72, 0, 1), opacity .3s cubic-bezier(0.32, 0.72, 0, 1);
+        }
+
+        &-enter,
+        &-leave-to {
+            transform: translate(15%, 0);
+            opacity: 0;
+        }
+    }
+
+    &-bottom {
+        &-enter-active,
+        &-leave-active {
+            transition: transform .3s cubic-bezier(0.32, 0.72, 0, 1), opacity .3s cubic-bezier(0.32, 0.72, 0, 1);
+        }
+
+        &-enter,
+        &-leave-to {
+            transform: translate(0, 15%);
+            opacity: 0;
+        }
+    }
+}

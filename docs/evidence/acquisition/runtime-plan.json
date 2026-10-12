@@ -1,0 +1,111 @@
+{
+  "sampled_at": "2026-10-12T08:16:04.594493+00:00",
+  "status": "PREREQUISITES_PREPARED_NOT_STARTED",
+  "wsl_distribution": "Ubuntu-22.04",
+  "wsl_architecture": "linux/amd64",
+  "docker_version": "27.4.1",
+  "compose_version": "2.32.1",
+  "compose_file": ".runtime/compose.yaml",
+  "private_environment_file": ".runtime/runtime.env",
+  "private_redis_config": ".runtime/redis.conf",
+  "compose_project": "dootask-fastapi-isolated",
+  "database": {
+    "host": "127.0.0.1",
+    "port": 13306,
+    "database": "dootask_fastapi",
+    "user": "dootask_app",
+    "charset": "utf8mb4",
+    "collation": "utf8mb4_unicode_ci",
+    "engine": "InnoDB",
+    "timezone": "+00:00",
+    "volume": "dootask-fastapi-isolated_mariadb-data"
+  },
+  "redis": {
+    "host": "127.0.0.1",
+    "port": 16379,
+    "database": 0,
+    "authentication": "random synthetic password in ignored runtime.env and redis.conf",
+    "appendonly": true,
+    "volume": "dootask-fastapi-isolated_redis-data"
+  },
+  "images": [
+    {
+      "id": "sha256:a914eff5d2eb4c650a4e787e453d52a4ffba977632bd624cc6e63d0c9c4c2d65",
+      "repo_digests": [
+        "mariadb@sha256:310d29fbb58169dcddb384b0ff138edb081e2773d6e2eceb976b3668089f2f84"
+      ],
+      "architecture": "amd64",
+      "os": "linux",
+      "created": "2025-02-14T06:55:09Z",
+      "declared_environment": [
+        "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+        "GOSU_VERSION=1.17",
+        "LANG=C.UTF-8",
+        "MARIADB_VERSION=1:11.7.2+maria~ubu2404"
+      ],
+      "labels": {
+        "org.opencontainers.image.authors": "MariaDB Community",
+        "org.opencontainers.image.base.name": "docker.io/library/ubuntu:noble",
+        "org.opencontainers.image.description": "MariaDB Database for relational SQL",
+        "org.opencontainers.image.documentation": "https://hub.docker.com/_/mariadb/",
+        "org.opencontainers.image.licenses": "GPL-2.0",
+        "org.opencontainers.image.ref.name": "ubuntu",
+        "org.opencontainers.image.source": "https://github.com/MariaDB/mariadb-docker",
+        "org.opencontainers.image.title": "MariaDB Database",
+        "org.opencontainers.image.url": "https://github.com/MariaDB/mariadb-docker",
+        "org.opencontainers.image.vendor": "MariaDB Community",
+        "org.opencontainers.image.version": "11.7.2"
+      },
+      "layer_diff_ids": [
+        "sha256:4b7c01ed0534d4f9be9cf97d068da1598c6c20b26cb6134fad066defdb6d541d",
+        "sha256:ae3deb8193f4116f58cd4518bd730fcd0e1da7bde3dd4ab33bbc8747f81b66ca",
+        "sha256:5bdcc2c367ffe3d29d1f1579f97f593c8d8203bc967816dc0a331b7faa97af1f",
+        "sha256:df816c495f77f0ffabed479938f294bec634c4d3f7a47fdea91b373746071db2",
+        "sha256:b14a4796aaaea8c6482ec84b00630e2ddeb60c1e722a04e2aaad27f7a48b697e",
+        "sha256:5807cc98f5ef3bd84449034d0759e166a715ffad09393c1ba4382af3c5b9f522",
+        "sha256:35248c1c471e700b4222e7c2867f849f799488038843bb808cdf097449a65b47",
+        "sha256:c1e4b53f3ef4ffb0e202aa0675d1f84b34f935f0fa118cc31012c5cb22bfc1b7"
+      ]
+    },
+    {
+      "id": "sha256:2724e40d4303391e1a46884134da358e20a6d0b03f32ee6c412079ddb4ac6783",
+      "repo_digests": [
+        "redis@sha256:bb142a9c18ac18a16713c1491d779697b4e107c22a97266616099d288237ef47"
+      ],
+      "architecture": "amd64",
+      "os": "linux",
+      "created": "2024-10-04T09:56:40Z",
+      "declared_environment": [
+        "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+        "GOSU_VERSION=1.17",
+        "REDIS_VERSION=7.4.1",
+        "REDIS_DOWNLOAD_URL=http://download.redis.io/releases/redis-7.4.1.tar.gz",
+        "REDIS_DOWNLOAD_SHA=bc34b878eb89421bbfca6fa78752343bf37af312a09eb0fae47c9575977dfaa2"
+      ],
+      "labels": null,
+      "layer_diff_ids": [
+        "sha256:8b296f48696071aafb5a6286ca60d441a7e559b192fc7f94bb63ee93dae98f17",
+        "sha256:6b4bcd986b84f1ecca4ba16c3188dbb0b3a0523e3d22cd20de397fe61290d5c7",
+        "sha256:46d60c0910acff251943096c648f3fac1a70896d82b060831b7c114f1ec35171",
+        "sha256:e28732aac8345a472e2bb84daec8330b353c5c4259d4f6633f0f701ff2362098",
+        "sha256:16cf4eeb6bcc5d9fd432c1e31761952edffc23e588616f42f0e424683dac2592",
+        "sha256:f7b09a20374e1019eb0b71dcf9e845f7607328c58dff735c7e985b0bb6cca651",
+        "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+        "sha256:6e11eff9e3e8513cfacf44b6c29d44f93bf4866b8be011aeebb867d91a0bcb91"
+      ]
+    }
+  ],
+  "source_of_authority": "Existing WSL Docker cache metadata; no fresh registry validation, signature verification or service execution performed. Version fields are image declarations, not executed versions.",
+  "not_run": [
+    "compose config",
+    "container creation",
+    "service startup",
+    "database initialization",
+    "database connections",
+    "redis connections",
+    "application tests",
+    "network forwarding from Windows to WSL published localhost ports"
+  ],
+  "port_discovery": "Neither Windows pre-WSL sampling nor WSL ss sampling showed 13306/16379 listeners; resample before startup.",
+  "wsl_side_effect": "WSL was initially stopped. The first read-only shell inspection started its existing systemd environment; existing autostart services including dockerd and existing containers activated under their own configuration. No user container start/stop, database connection or system configuration change was requested."
+}

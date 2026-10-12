@@ -1,0 +1,46 @@
+{
+  "sampled_at": "2026-10-12T08:17:25.248000+00:00",
+  "requested_image": "docker.io/kuaifan/php:swoole-8.4",
+  "status": "BLOCKED_ARTIFACT_UNAVAILABLE",
+  "attempts": [
+    "wsl-container-inventory.json: complete local Docker image list has no kuaifan/php or doo image; unrelated user images were not extracted",
+    "native-registry-challenge.json: Windows HTTPS registry-1 timed out",
+    "native-wsl-registry-challenge.json: WSL curl exited 28 after connect timeout",
+    "native-registry-alternate.json: alternate official registry.hub endpoint timed out",
+    "native-official-offline.json: HTTP200, deployment instructions, not an offline artifact",
+    "native-dockerfile-tree.json: HTTP200, full public tree, truncated=false",
+    "native-repository-releases.json: HTTP200 with empty release array",
+    "native-dooso-metadata.json: unauthenticated API404; not proof repository does not exist"
+  ],
+  "official_build_source": {
+    "repository": "https://github.com/kuaifan/dockerfile",
+    "commit": "afd99f145b53cafb97da77e4230c5f8cd8ae9f98",
+    "dockerfile": "phpswoole/swoole-8.4.Dockerfile",
+    "dockerfile_sha256": "091f6f203bb56052f5d6e92ae51461781f241c8da02f879c4b423f2344b39a3b",
+    "observations": [
+      "Dockerfile:1 Go1.20.2 builder",
+      "Dockerfile:4 copies ./private-repo/dooso",
+      "Dockerfile:5-6 go build -buildmode=c-shared -o lib/doo.so main.go",
+      "Dockerfile:9 phpswoole/swoole:6.2-php8.4 base",
+      "Dockerfile:65-66 copies build lib directory into /usr/lib/doo",
+      "workflow:48 SSH_PRIVATE_KEY,53-57 private clone git@github.com:kuaifan/dooso.git"
+    ],
+    "limits": "This public build definition is not an immutable container digest or proof of which bytes were deployed in the source project."
+  },
+  "unavailable": {
+    "image_digest": null,
+    "binary_sha256": null,
+    "binary_architecture": null,
+    "actual_exported_abi": null,
+    "adjacent_license_notice": null,
+    "rea_static_evidence": null
+  },
+  "known_source_abi": "../backend/native-boundary-contract.json; PHP FFI declarations only, not extracted binary ABI",
+  "rights": "Independent doo.so license/source/redistribution rights not established; root AGPL does not supply that evidence. No execution, license decryption, bypass, private-key use, user credential use, or third-party mirror download.",
+  "minimal_external_conditions": [
+    "Reachable authenticated official Docker registry manifest/config/blob endpoints or supplier-provided OCI/docker-save archive with immutable digest and linux/amd64 identity",
+    "Supplier-provided independent doo.so LICENSE/NOTICE and legal use/redistribution scope",
+    "Actual binary then read-only extraction + SHA-256 + static ABI/REA inspection; thread-safety and string ownership contract still need supplier or lawful controlled runtime evidence"
+  ],
+  "new_database_decision": "New internal account/password/token security may proceed independently; doo.so absence does not justify fake license responses or removal of official authorization UI."
+}

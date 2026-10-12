@@ -1,0 +1,27 @@
+.task-menu-icon {
+    position: relative;
+
+    .loading {
+        width: 16px;
+        height: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .common-loading {
+            margin: 0;
+            width: 14px;
+            height: 14px;
+        }
+    }
+
+    .ivu-icon {
+        cursor: pointer;
+        font-size: 16px;
+        color: #cccccc;
+
+        &.completed {
+            color: $primary-color;
+        }
+    }
+}

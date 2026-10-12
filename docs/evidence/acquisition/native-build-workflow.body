@@ -1,0 +1,233 @@
+name: Build
+
+defaults:
+  run:
+    shell: bash
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+    inputs:
+      directory:
+        description: "要构建的目录（例如：coder）"
+        required: true
+        type: string
+      version:
+        description: "版本号（覆盖 config.ini 的 imageTag）"
+        required: true
+        type: string
+      force:
+        description: "是否强制构建（覆盖 imageForce；yes=即使镜像已存在也重新构建）"
+        required: true
+        type: choice
+        default: "no"
+        options:
+          - "no"
+          - "yes"
+
+jobs:
+  discover:
+    name: Discover directories
+    runs-on: ubuntu-latest
+    outputs:
+      base_matrix: ${{ steps.collect.outputs.base_matrix }}
+      variant_matrix: ${{ steps.collect.outputs.variant_matrix }}
+      has_base_targets: ${{ steps.collect.outputs.has_base_targets }}
+      has_variant_targets: ${{ steps.collect.outputs.has_variant_targets }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          submodules: false
+
+      - name: Set up SSH key
+        uses: webfactory/ssh-agent@v0.9.0
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+      # 多把只读 deploy key（每库一把）由上一步 webfactory/ssh-agent 按 key 注释
+      # (git@github.com:owner/repo.git) 自动配置 ~/.ssh/config 别名 + git insteadOf 分流。
+      # 不要再手动覆写 ~/.ssh/config，否则会冲掉这套分流，导致多 key 失效。
+      - name: Git clone private repo
+        run: |
+          mkdir -p private-repo
+          cd private-repo
+          git clone --depth=1 git@github.com:kuaifan/dooso.git
+          git clone --depth=1 git@github.com:cossteam/cosslan-tool.git
+          git clone --depth=1 git@github.com:cossteam/cosslan-client.git
+          find . -name ".git" -type d -exec rm -rf {} +
+
+      - name: Upload private repos
+        uses: actions/upload-artifact@v4
+        with:
+          name: private-repo
+          path: private-repo
+
+      - name: Collect build targets
+        id: collect
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          FILTER_DIR: ${{ github.event.inputs.directory }}
+        run: |
+          set -euo pipefail
+          raw="$(bash ./build.sh list)"
+          base_matrix="$(printf '%s\n' "$raw" | sed -n 's/^base_matrix=//p')"
+          variant_matrix="$(printf '%s\n' "$raw" | sed -n 's/^variant_matrix=//p')"
+          # 手动触发时，仅保留指定目录的构建目标
+          if [ "$EVENT_NAME" = "workflow_dispatch" ]; then
+            echo "::notice::手动触发，仅构建目录 ${FILTER_DIR}"
+            base_matrix="$(printf '%s' "$base_matrix" | jq -c --arg d "$FILTER_DIR" '{include: [.include[] | select(.dir == $d)]}')"
+            variant_matrix="$(printf '%s' "$variant_matrix" | jq -c --arg d "$FILTER_DIR" '{include: [.include[] | select(.dir == $d)]}')"
+          fi
+          has_base="$(printf '%s' "$base_matrix" | jq -r 'if (.include | length) > 0 then "true" else "false" end')"
+          has_variant="$(printf '%s' "$variant_matrix" | jq -r 'if (.include | length) > 0 then "true" else "false" end')"
+          if [ "$EVENT_NAME" = "workflow_dispatch" ] && [ "$has_base" = "false" ] && [ "$has_variant" = "false" ]; then
+            echo "::warning::目录 ${FILTER_DIR} 下未找到可构建的 Dockerfile，将不会构建任何镜像"
+          fi
+          {
+            echo "base_matrix=$base_matrix"
+            echo "variant_matrix=$variant_matrix"
+            echo "has_base_targets=$has_base"
+            echo "has_variant_targets=$has_variant"
+          } >> "$GITHUB_OUTPUT"
+
+  build-base:
+    needs: discover
+    name: Build ${{ matrix.label }}
+    if: ${{ needs.discover.outputs.has_base_targets == 'true' }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix: ${{ fromJson(needs.discover.outputs.base_matrix) }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          submodules: true
+          token: ${{ secrets.PERSONAL_TOKEN }}
+
+      - name: Update submodules
+        run: |
+          git submodule update --init --recursive
+          git submodule update --remote --recursive
+
+      - name: Download private repos
+        uses: actions/download-artifact@v4
+        with:
+          name: private-repo
+          path: private-repo
+
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v3
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Login to DockerHub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Override config (manual)
+        if: ${{ github.event_name == 'workflow_dispatch' }}
+        env:
+          DIR: ${{ matrix.dir }}
+          VERSION: ${{ github.event.inputs.version }}
+          FORCE: ${{ github.event.inputs.force }}
+        run: |
+          set -euo pipefail
+          cfg="${DIR}/config.ini"
+          touch "$cfg"
+          if grep -q '^imageTag=' "$cfg"; then
+            sed -i "s|^imageTag=.*|imageTag=${VERSION}|" "$cfg"
+          else
+            echo "imageTag=${VERSION}" >> "$cfg"
+          fi
+          if grep -q '^imageForce=' "$cfg"; then
+            sed -i "s|^imageForce=.*|imageForce=${FORCE}|" "$cfg"
+          else
+            echo "imageForce=${FORCE}" >> "$cfg"
+          fi
+          echo "::notice::已覆盖 ${cfg}：imageTag=${VERSION} imageForce=${FORCE}"
+          cat "$cfg"
+
+      - name: Build and Push
+        env:
+          DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
+          DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
+        run: |
+          bash ./build.sh build "${{ matrix.dir }}" "${{ matrix.dockerfile }}"
+
+  build-variants:
+    needs: [discover, build-base]
+    name: Build ${{ matrix.label }}
+    if: |
+      always() &&
+      needs.discover.outputs.has_variant_targets == 'true' &&
+      (needs.build-base.result == 'success' || needs.build-base.result == 'skipped')
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix: ${{ fromJson(needs.discover.outputs.variant_matrix) }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          submodules: true
+          token: ${{ secrets.PERSONAL_TOKEN }}
+
+      - name: Update submodules
+        run: |
+          git submodule update --init --recursive
+          git submodule update --remote --recursive
+
+      - name: Download private repos
+        uses: actions/download-artifact@v4
+        with:
+          name: private-repo
+          path: private-repo
+
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v3
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Login to DockerHub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Override config (manual)
+        if: ${{ github.event_name == 'workflow_dispatch' }}
+        env:
+          DIR: ${{ matrix.dir }}
+          VERSION: ${{ github.event.inputs.version }}
+          FORCE: ${{ github.event.inputs.force }}
+        run: |
+          set -euo pipefail
+          cfg="${DIR}/config.ini"
+          touch "$cfg"
+          if grep -q '^imageTag=' "$cfg"; then
+            sed -i "s|^imageTag=.*|imageTag=${VERSION}|" "$cfg"
+          else
+            echo "imageTag=${VERSION}" >> "$cfg"
+          fi
+          if grep -q '^imageForce=' "$cfg"; then
+            sed -i "s|^imageForce=.*|imageForce=${FORCE}|" "$cfg"
+          else
+            echo "imageForce=${FORCE}" >> "$cfg"
+          fi
+          echo "::notice::已覆盖 ${cfg}：imageTag=${VERSION} imageForce=${FORCE}"
+          cat "$cfg"
+
+      - name: Build and Push
+        env:
+          DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
+          DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
+        run: |
+          bash ./build.sh build "${{ matrix.dir }}" "${{ matrix.dockerfile }}"

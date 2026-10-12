@@ -59,3 +59,15 @@ credentials/
 .vscode/
 .DS_Store
 Thumbs.db
+
+# Evidence metadata remains tracked; acquired installers/archives stay local.
+/docs/evidence/frontend-delivery/*.zip
+/docs/evidence/frontend-delivery/*.exe
+/docs/evidence/frontend-delivery/*.apk
+/docs/evidence/frontend-delivery/*.tar.gz
+/docs/evidence/frontend-delivery/desktop-extracted/
+*.jks
+*.keystore
+# Shipped Swagger vendor resources are frontend artifacts, not PHP dependencies.
+!/frontend/public/docs/vendor/
+!/frontend/public/docs/vendor/**

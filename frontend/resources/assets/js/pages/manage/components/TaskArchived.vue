@@ -1,0 +1,520 @@
+<template>
+    <div class="task-archived">
+        <div class="archived-title">
+            {{$L('归档的任务')}}
+            <div class="title-icon">
+                <Loading v-if="loadIng > 0"/>
+            </div>
+        </div>
+        <div class="search-container lr">
+            <ul>
+                <li>
+                    <div class="search-label">
+                        {{$L("关键词")}}
+                    </div>
+                    <div class="search-content">
+                        <Input v-model="keys.name" :placeholder="$L('ID、名称、描述...')" clearable/>
+                    </div>
+                </li>
+                <li>
+                    <div class="search-label">
+                        {{$L("任务状态")}}
+                    </div>
+                    <div class="search-content">
+                        <Select v-model="keys.status" :placeholder="$L('全部')">
+                            <Option value="">{{$L('全部')}}</Option>
+                            <template v-if="flows.type==='group'">
+                                <OptionGroup v-for="(group, index) in flows.groups" :key="index" :label="group.label">
+                                    <Option v-for="(item, key) in group.items" :key="key" :value="item.id" :label="item.name">
+                                        <div
+                                            class="tag-dot"
+                                            :style="$A.generateColorVarStyle(item.color, [], 'flow-item-custom-color')"
+                                            :class="item.status">{{item.name}}</div>
+                                    </Option>
+                                </OptionGroup>
+                            </template>
+                            <template v-else>
+                                <Option v-for="(item, key) in flows.items" :key="key" :value="item.id" :label="item.name">
+                                    <div
+                                        class="tag-dot"
+                                        :style="$A.generateColorVarStyle(item.color, [], 'flow-item-custom-color')"
+                                        :class="item.status">{{item.name}}</div>
+                                </Option>
+                            </template>
+                        </Select>
+                    </div>
+                </li>
+                <li>
+                    <div class="search-label">
+                        {{$L("任务标签")}}
+                    </div>
+                    <div class="search-content">
+                        <Select v-model="keys.tag" :placeholder="$L('全部')">
+                            <Option value="">{{$L('全部')}}</Option>
+                            <Option v-for="tag in tags" :key="tag.id" :value="tag.name" :label="tag.name">
+                                <div class="tag-dot" :style="{'--bg-color': tag.color}">
+                                    {{tag.name}}
+                                </div>
+                            </Option>
+                        </Select>
+                    </div>
+                </li>
+                <li class="search-button">
+                    <SearchButton
+                        :loading="loadIng > 0"
+                        :filtering="keyIs"
+                        placement="right"
+                        @search="onSearch"
+                        @refresh="getLists"
+                        @cancelFilter="keyIs=false"/>
+                </li>
+            </ul>
+        </div>
+        <div class="table-page-box">
+            <Table
+                :columns="columns"
+                :data="list"
+                :loading="loadIng > 0"
+                :no-data-text="$L(noText)"
+                stripe/>
+            <Page
+                :total="total"
+                :current="page"
+                :page-size="pageSize"
+                :disabled="loadIng > 0"
+                :simple="windowPortrait"
+                :page-size-opts="[10,20,30,50,100]"
+                show-elevator
+                show-sizer
+                show-total
+                @on-change="setPage"
+                @on-page-size-change="setPageSize"/>
+        </div>
+    </div>
+</template>
+
+<script>
+import {mapState} from "vuex";
+import SearchButton from "../../../components/SearchButton.vue";
+
+export default {
+    name: "TaskArchived",
+    components: {SearchButton},
+    props: {
+        projectId: {
+            type: Number,
+            default: 0
+        },
+    },
+    data() {
+        return {
+            loadIng: 0,
+
+            keys: {},
+            keyIs: false,
+
+            columns: [
+                {
+                    title: 'ID',
+                    key: 'id',
+                    width: 80,
+                    render: (h, {row, column}) => {
+                        return h('TableAction', {
+                            props: {
+                                column: column,
+                                align: 'left'
+                            }
+                        }, [
+                            h("div", row.id),
+                        ]);
+                    }
+                },
+                {
+                    title: this.$L('任务名称'),
+                    key: 'name',
+                    minWidth: 200,
+                    render: (h, {row}) => {
+                        return h('AutoTip', {
+                            on: {
+                                'on-click': () => {
+                                    this.$store.dispatch("openTask", row);
+                                }
+                            }
+                        }, row.name);
+                    }
+                },
+                {
+                    title: this.$L('任务状态'),
+                    key: 'status',
+                    minWidth: 100,
+                    render: (h, {row}) => {
+                        let flow_item_name = row.flow_item_name;
+                        if (flow_item_name && flow_item_name.indexOf("|") !== -1) {
+                            [, flow_item_name] = flow_item_name.split("|")
+                        } else if (row.complete_at) {
+                            flow_item_name = this.$L('已完成');
+                        } else {
+                            flow_item_name = this.$L('未完成');
+                        }
+                        return h('AutoTip', flow_item_name);
+                    }
+                },
+                {
+                    title: this.$L('任务标签'),
+                    key: 'tags',
+                    minWidth: 100,
+                    render: (h, {row}) => {
+                        if (row.task_tag.length == 0) {
+                            return h('div', '-');
+                        }
+                        return h('AutoTip', row.task_tag.map(({name}) => name).join('、'));
+                    }
+                },
+                {
+                    title: this.$L('完成时间'),
+                    key: 'complete_at',
+                    width: 168,
+                    render: (h, {row}) => {
+                        return h('div', {
+                            style: {
+                                color: row.complete_at ? '' : '#f00'
+                            }
+                        }, row.complete_at || this.$L('未完成'));
+                    }
+                },
+                {
+                    title: this.$L('归档时间'),
+                    key: 'archived_at',
+                    width: 168,
+                },
+                {
+                    title: this.$L('归档人员'),
+                    key: 'archived_userid',
+                    minWidth: 100,
+                    render: (h, {row}) => {
+                        if (!row.archived_userid) {
+                            return h('Tag', this.$L('系统自动'));
+                        }
+                        return h('UserAvatar', {
+                            props: {
+                                userid: row.archived_userid,
+                                size: 24,
+                                showName: true
+                            }
+                        });
+                    }
+                },
+                {
+                    title: this.$L('操作'),
+                    align: 'center',
+                    width: 120,
+                    render: (h, params) => {
+                        if (this.cacheTasks.find(task => task.id == params.row.id && !task.archived_at)) {
+                            return h('div', {
+                                style: {
+                                    color: '#888',
+                                },
+                            }, this.$L('已还原'));
+                        }
+                        const vNodes = [
+                            h('span', {
+                                style: {
+                                    fontSize: '13px',
+                                    cursor: 'pointer',
+                                    color: '#84C56A',
+                                },
+                                on: {
+                                    'click': () => {
+                                        this.$store.dispatch("openTask", params.row);
+                                    }
+                                },
+                            }, this.$L('查看')),
+                            h('Poptip', {
+                                props: {
+                                    title: params.row.__restorePoptipTitle,
+                                    confirm: true,
+                                    transfer: true,
+                                    placement: 'left',
+                                    okText: this.$L('确定'),
+                                    cancelText: this.$L('取消'),
+                                    value: params.row.__restorePoptipShow,
+                                    width: 220,
+                                },
+                                style: {
+                                    marginLeft: '6px',
+                                    fontSize: '13px',
+                                    cursor: 'pointer',
+                                    color: '#84C56A',
+                                },
+                                on: {
+                                    'on-ok': () => {
+                                        this.recovery(params.row);
+                                    },
+                                    'on-popper-hide': () => {
+                                        params.row.__restorePoptipLoadIng = false;
+                                        params.row.__restorePoptipTitle = this.$L('你确定要还原归档吗？');
+                                        params.row.__restorePoptipShow = false;
+                                    },
+                                },
+                            },  [h('span', {
+                                    on: {
+                                        'click': (e) => {
+                                            e.stopPropagation();
+                                            params.row.__restorePoptipLoadIng = true
+                                            this.$store.dispatch("call", {
+                                                url: 'project/column/one',
+                                                data: {
+                                                    column_id:  params.row.column_id,
+                                                    deleted: 'all'
+                                                },
+                                            }).then(({ data }) => {
+                                                if(data.deleted_at){
+                                                    params.row.__restorePoptipTitle = this.$L('检测到所属的任务列表已被删除，该操作将会还原任务列表，你确定要还原归档吗？');
+                                                }
+                                                params.row.__restorePoptipShow = true;
+                                            }).catch(({msg}) => {
+                                                $A.modalError({content: msg});
+                                            }).finally(_ => {
+                                                params.row.__restorePoptipLoadIng = false
+                                            })
+                                        }
+                                    },
+                                },
+                                [
+                                    params.row.__restorePoptipLoadIng ? h('Loading', {
+                                        style: {
+                                            width: '26px',
+                                            height: '15px',
+                                        },
+                                    }) : this.$L('还原')
+                                ])
+                            ]),
+                            h('Poptip', {
+                                props: {
+                                    title: this.$L('你确定要删除任务吗？'),
+                                    confirm: true,
+                                    transfer: true,
+                                    placement: 'left',
+                                    okText: this.$L('确定'),
+                                    cancelText: this.$L('取消'),
+                                },
+                                style: {
+                                    marginLeft: '6px',
+                                    fontSize: '13px',
+                                    cursor: 'pointer',
+                                    color: '#f00',
+                                },
+                                on: {
+                                    'on-ok': () => {
+                                        this.delete(params.row);
+                                    }
+                                },
+                            }, this.$L('删除'))
+                        ];
+                        return h('TableAction', {
+                            props: {
+                                column: params.column
+                            }
+                        }, vNodes);
+                    }
+                }
+            ],
+            list: [],
+
+            flowList: [],
+            tags: [],
+
+            page: 1,
+            pageSize: 20,
+            total: 0,
+            noText: ''
+        }
+    },
+    mounted() {
+        this.getFlowData()
+        this.getTagData()
+    },
+    computed: {
+        ...mapState(['cacheTasks']),
+
+        flows({flowList}) {
+            const flowItems = [];
+            flowList.forEach(item1 => {
+                item1.project_flow_item.forEach(item2 => {
+                    const label = flowList.length > 1 ? item1.name + ' - ' + item2.name : item2.name;
+                    flowItems.push({
+                        ...item2,
+                        id: 'flow-' + item2.id,
+                        label,
+                    })
+                })
+            });
+            const stateItem = [
+                {
+                    id: 'completed',
+                    name: this.$L('已完成'),
+                    status: 'completed',
+                    label: this.$L('已完成'),
+                },
+                {
+                    id: 'uncompleted',
+                    name: this.$L('未完成'),
+                    status: 'uncompleted',
+                    label: this.$L('未完成'),
+                }
+            ];
+            if (flowItems.length > 0) {
+                return {
+                    type: 'group',
+                    groups: [
+                        {
+                            label: this.$L('按工作流'),
+                            items: flowItems
+                        }, {
+                            label: this.$L('按状态'),
+                            items: stateItem
+                        }
+                    ],
+                }
+            }
+            return {
+                type: 'normal',
+                items: stateItem
+            };
+        }
+    },
+    watch: {
+        projectId: {
+            handler() {
+                this.getLists();
+            },
+            immediate: true
+        },
+        keyIs(v) {
+            if (!v) {
+                this.keys = {}
+                this.setPage(1)
+            }
+        }
+    },
+    methods: {
+        onSearch() {
+            this.page = 1;
+            this.getLists();
+        },
+
+        async getFlowData() {
+            let flowList = [];
+            const project_id = this.projectId
+            try {
+                const {data} = await this.$store.dispatch("call", {
+                    url: 'project/flow/list',
+                    data: {project_id},
+                })
+                flowList = data || []
+            } catch (e) {
+                flowList = [];
+            }
+            if (project_id === this.projectId) {
+                this.flowList = flowList
+            }
+        },
+
+        async getTagData() {
+            let tags = [];
+            const project_id = this.projectId
+            try {
+                const {data} = await this.$store.dispatch("call", {
+                    url: 'project/tag/list',
+                    data: {project_id},
+                })
+                tags = data || []
+            } catch (e) {
+                tags = [];
+            }
+            if (project_id === this.projectId) {
+                this.tags = tags
+            }
+        },
+
+        getLists() {
+            if (!this.projectId) {
+                return;
+            }
+            this.loadIng++;
+            this.keyIs = $A.objImplode(this.keys) != "";
+            this.$store.dispatch("call", {
+                url: 'project/task/lists',
+                data: {
+                    keys: this.keys,
+                    project_id: this.projectId,
+                    parent_id: -1,
+                    archived: 'yes',
+                    sorts: {
+                        archived_at: 'desc'
+                    },
+                    page: Math.max(this.page, 1),
+                    pagesize: Math.max($A.runNum(this.pageSize), 10),
+                },
+            }).then(({data}) => {
+                this.page = data.current_page;
+                this.total = data.total;
+                this.list = data.data.map(h=>{
+                    h.__restorePoptipLoadIng = false;
+                    h.__restorePoptipTitle = this.$L('你确定要还原归档吗？');
+                    h.__restorePoptipShow = false;
+                    return h;
+                });
+                this.noText = '没有相关的数据';
+            }).catch(() => {
+                this.noText = '数据加载失败';
+            }).finally(_ => {
+                this.loadIng--;
+            })
+        },
+
+        setPage(page) {
+            this.page = page;
+            this.getLists();
+        },
+
+        setPageSize(pageSize) {
+            this.page = 1;
+            this.pageSize = pageSize;
+            this.getLists();
+        },
+
+        recovery(row) {
+            this.list = this.list.filter(({id}) => id != row.id);
+            this.loadIng++;
+            this.$store.dispatch("archivedTask", {
+                task_id: row.id,
+                type: 'recovery'
+            }).then(({msg}) => {
+                $A.messageSuccess(msg);
+                this.loadIng--;
+                this.getLists();
+                this.$store.dispatch("openTask", row);
+            }).catch(({msg}) => {
+                $A.modalError(msg);
+                this.loadIng--;
+                this.getLists();
+            })
+        },
+
+        delete(row) {
+            this.list = this.list.filter(({id}) => id != row.id);
+            this.loadIng++;
+            this.$store.dispatch("removeTask", {task_id: row.id}).then(({msg}) => {
+                $A.messageSuccess(msg);
+                this.loadIng--;
+                this.getLists();
+            }).catch(({msg}) => {
+                $A.modalError(msg);
+                this.loadIng--;
+                this.getLists();
+            });
+        }
+    }
+}
+</script>
