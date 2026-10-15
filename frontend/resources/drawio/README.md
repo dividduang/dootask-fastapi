@@ -1,5 +1,7 @@
 # draw.io
 
+> Local DooTask FastAPI copy: the browser editor in `src/main/webapp` is retained. Java servlet sources, Java-based build/property tools, and Ant/WAR CI have been removed. This copy does not build or run the upstream Java server; references to Docker images and WAR releases below describe upstream distributions. Existing licenses and notices remain applicable.
+
 ## About
 
 draw.io is a configurable diagramming and whiteboarding application, jointly owned and developed by draw.io Ltd (previously named JGraph) and draw.io AG. We also run a production deployment at https://app.diagrams.net.

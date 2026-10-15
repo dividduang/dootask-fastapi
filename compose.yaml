@@ -1,0 +1,81 @@
+name: dootask-fastapi
+services:
+  mariadb:
+    image: ${MARIADB_IMAGE:-mariadb:11.7.2}
+    restart: unless-stopped
+    environment:
+      MARIADB_DATABASE: dootask_fastapi
+      MARIADB_USER: dootask_app
+      MARIADB_PASSWORD: ${DB_PASSWORD:?Run python3 deploy/configure.py}
+      MARIADB_ROOT_PASSWORD: ${MARIADB_ROOT_PASSWORD:?Run python3 deploy/configure.py}
+    command: ["--character-set-server=utf8mb4", "--collation-server=utf8mb4_unicode_ci", "--default-storage-engine=InnoDB", "--default-time-zone=+00:00"]
+    volumes:
+      - mariadb-data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      interval: 5s
+      timeout: 5s
+      retries: 30
+      start_period: 30s
+  redis:
+    image: ${REDIS_IMAGE:-redis:7.4.1}
+    restart: unless-stopped
+    environment:
+      REDISCLI_AUTH: ${REDIS_PASSWORD:?Run python3 deploy/configure.py}
+    command: ["redis-server", "/usr/local/etc/redis/redis.conf"]
+    volumes:
+      - redis-data:/data
+      - ./.runtime/docker/redis.conf:/usr/local/etc/redis/redis.conf:ro
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 5s
+      retries: 15
+  app:
+    image: dootask-fastapi:${APP_IMAGE_TAG:-local}
+    build:
+      context: .
+      args:
+        PYTHON_IMAGE: ${PYTHON_IMAGE:-python:3.12-slim}
+        PIP_INDEX_URL: ${PIP_INDEX_URL:-https://pypi.org/simple}
+    init: true
+    restart: unless-stopped
+    stop_grace_period: 60s
+    environment:
+      DB_HOST: mariadb
+      DB_PORT: "3306"
+      DB_DATABASE: dootask_fastapi
+      DB_USERNAME: dootask_app
+      DB_PASSWORD: ${DB_PASSWORD:?Run python3 deploy/configure.py}
+      REDIS_URL: redis://:${REDIS_PASSWORD:?Run python3 deploy/configure.py}@redis:6379/0
+      CSRF_SECRET: ${CSRF_SECRET:?Run python3 deploy/configure.py}
+      PGP_STORAGE_KEY: ${PGP_STORAGE_KEY:?Run python3 deploy/configure.py}
+      CORRESPONDING_SOURCE_URL: ${CORRESPONDING_SOURCE_URL:-}
+    ports:
+      - "127.0.0.1:${APP_PORT:-18080}:18080"
+    volumes:
+      - app-data:/data
+    depends_on:
+      mariadb:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "python", "/app/deploy/healthcheck.py"]
+      interval: 15s
+      timeout: 10s
+      retries: 10
+      start_period: 30s
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+volumes:
+  mariadb-data:
+  redis-data:
+  app-data:

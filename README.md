@@ -6,6 +6,14 @@
 
 **部署安全门禁：仅允许loopback/受控隔离环境、可信合成内容验收；不可信多人内网及公网部署NO_GO，不是production ready。** 1223独立复核确认实际可达的Mermaid/TinyMCE及原始HTML信任边界仍未关闭；升级静态制品、第三方LTS许可与必要净化均需要额外授权和真实跨用户回归。见 `docs/2026101223-前端运行依赖风险复核-feat.md`，不可拿基本业务通过或npm聚合数量替代安全决定。
 
+## 源码范围
+
+当前分支保留 Python/FastAPI 后端、Vue/JavaScript Web 前端、Electron 桌面端代码和 draw.io 网页资源。已移除未参与 Web 部署的 Android/iOS 原生工程（含 EEUI/Weex 的 C、C++、Java、Objective-C 源码），以及 draw.io 的 Java 服务端、Java 工具和 Ant/WAR 构建工作流；不再提供原生 App 或 draw.io Java/WAR 构建。删除内容可从 Git 历史恢复，现有 Web 制品和 Docker 运行资源保持不变。
+
+## Linux Docker 部署
+
+Linux Docker Compose 部署入口见 [deploy/README.md](deploy/README.md)。包含应用、MariaDB、Redis 三个独立服务和持久数据卷，默认仅监听 `127.0.0.1:18080`。Linux 依赖锁保留当前 37 个 runtime 包的版本，并使用官方 PyPI 分发文件哈希；不使用 Windows wheel 哈希安装 Linux 二进制包。
+
 ## 独立 QA 启动
 
 本机 Windows CPython 3.12 `.venv` 的37个锁定runtime包已用于真实运行；安装来源与官方PyPI hash见 `docs/evidence/integration/`。本批未新增Python依赖。不要重复创建已有venv或对已初始化的库执行init-db。

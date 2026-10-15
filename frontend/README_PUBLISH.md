@@ -18,14 +18,10 @@ npm run build       # 编译前端
 说明：
 
 - 执行 `npm run build` 作用是生成网页端；
-- 客户端 (Windows、Mac、Android) 会通过 GitHub Actions 自动生成并发布；所以，如果要自动发布只需要提交git并推送即可；
+- 本仓库保留 Windows、Mac 的 Electron 构建脚本；自动发布需要另外配置 CI 工作流。
 - 如果想手动生成客户端执行 `./cmd electron` 根据提示选择操作。
 
 
-## 编译 App
+## 移动端范围
 
-```shell
-./cmd appbuild publish  # 编译生成App需要的资源
-```
-
-编译完后进入 `resources/mobile` EEUI框架目录内打包 Android 或 iOS 应用（Android 以实现 GitHub Actions 自动发布）
+当前 FastAPI 分支已移除 Android/iOS 原生工程、EEUI/Weex SDK 及对应构建和上传命令。手机浏览器仍使用同一套 Web 页面。需要恢复原生 App 构建时，可从 Git 历史恢复完整移动端工程。

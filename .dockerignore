@@ -1,0 +1,26 @@
+# Allowlist the runtime image context. Never send credentials or acquired archives.
+**
+!Dockerfile
+!deploy/
+!deploy/**
+!backend/
+!backend/**
+!tests/
+!tests/**
+!frontend/
+!frontend/public/
+!frontend/public/**
+!frontend/language/
+!frontend/language/**
+!frontend/resources/
+!frontend/resources/assets/
+!frontend/resources/assets/statics/
+!frontend/resources/assets/statics/fonts/
+!frontend/resources/assets/statics/fonts/**
+!frontend/package.json
+!frontend/LICENSE
+**/__pycache__/
+**/*.pyc
+**/.env*
+**/*.key
+**/*.pem

@@ -1256,24 +1256,9 @@ case "$1" in
         shift 1
         web_build prod
         ;;
-    "appbuild"|"buildapp")
-        shift 1
-        electron_operate app "$@"
-        ;;
     "electron")
         shift 1
         electron_operate "$@"
-        ;;
-    "eeui")
-        shift 1
-        cli="$@"
-        por=""
-        if [[ "$cli" == "build" ]]; then
-            cli="build --simple"
-        elif [[ "$cli" == "dev" ]]; then
-            por="-p 8880:8880"
-        fi
-        docker run $TTY_FLAG --rm -v ${WORK_DIR}/resources/mobile:/work -w /work ${por} kuaifan/eeui-cli:0.0.1 eeui ${cli}
         ;;
     "npm")
         shift 1
@@ -1281,7 +1266,6 @@ case "$1" in
         pushd electron || exit
         npm "$@"
         popd || exit
-        docker run $TTY_FLAG --rm -v ${WORK_DIR}/resources/mobile:/work -w /work --entrypoint=/bin/bash node:16 -c "npm $@"
         ;;
     "doc")
         shift 1
