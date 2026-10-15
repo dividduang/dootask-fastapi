@@ -26,21 +26,13 @@ const EXCLUDED_TEMPLATE_FILES = new Set([
     "resources/assets/js/pages/manage/components/MCPHelper.vue",
 ]);
 const ACTUAL_SOURCE_ROOTS = [
-    "app",
-    "bootstrap/app.php",
-    "bootstrap/providers.php",
-    "config",
-    "database",
     "electron",
     "resources/assets/js",
     "resources/assets/sass",
-    "resources/views",
-    "routes",
-    "bin",
 ];
 const ACTUAL_SOURCE_EXTENSIONS = new Set([
     ".cjs", ".css", ".htm", ".html", ".js", ".json", ".jsx", ".less", ".mjs",
-    ".php", ".sass", ".scss", ".sh", ".ts", ".tsx", ".vue", ".xml", ".yaml", ".yml",
+    ".sass", ".scss", ".sh", ".ts", ".tsx", ".vue", ".xml", ".yaml", ".yml",
 ]);
 const EXCLUDED_SOURCE_DIRECTORIES = new Set([
     ".git", "node_modules", "vendor", "ai-kb", "coverage", "dist", "build", "platforms", "plugins",

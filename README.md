@@ -8,7 +8,7 @@
 
 ## 源码范围
 
-当前分支保留 Python/FastAPI 后端、Vue/JavaScript Web 前端、Electron 桌面端代码和 draw.io 网页资源。已移除未参与 Web 部署的 Android/iOS 原生工程（含 EEUI/Weex 的 C、C++、Java、Objective-C 源码），以及 draw.io 的 Java 服务端、Java 工具和 Ant/WAR 构建工作流；不再提供原生 App 或 draw.io Java/WAR 构建。删除内容可从 Git 历史恢复，现有 Web 制品和 Docker 运行资源保持不变。
+当前分支保留 Python/FastAPI 后端、Vue/JavaScript Web 前端、Electron 桌面端代码和 draw.io 网页资源。已移除未参与 Web 部署的 Android/iOS 原生工程（含 EEUI/Weex 的 C、C++、Java、Objective-C 源码），以及 draw.io 的 Java 服务端、Java 工具和 Ant/WAR 构建工作流；不再提供原生 App 或 draw.io Java/WAR 构建。旧 PHP 入口、Blade 模板和 Laravel 测试也已移除，页面使用 `backend/templates/*.html`；`frontend/cmd` 仅保留 Web/Electron 命令，不再提供旧 PHP 安装、升级和迁移操作。删除内容可从 Git 历史恢复。前端构建方式见 [frontend/README_PUBLISH.md](frontend/README_PUBLISH.md)，历史报告和上游知识库中的旧部署命令不适用于当前分支。
 
 ## Linux Docker 部署
 

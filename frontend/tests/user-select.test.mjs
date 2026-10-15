@@ -6,7 +6,7 @@ import compiler from 'vue-template-compiler';
 const source = readFileSync(new URL('../resources/assets/js/components/UserSelect.vue', import.meta.url), 'utf8');
 const component = compiler.parseComponent(source);
 const options = new Function('mapState', component.script.content
-    .replace(/import .*?;\n/g, '')
+    .replace(/import .*?;\r?\n/g, '')
     .replace('export default', 'return'))(() => ({}));
 
 function fixture(selects = [1, 2, 3], uncancelable = []) {

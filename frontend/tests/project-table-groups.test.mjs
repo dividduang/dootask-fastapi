@@ -7,12 +7,14 @@ import {parse} from '@babel/parser';
 
 const read = path => readFileSync(new URL(`../${path}`, import.meta.url), 'utf8');
 const helpers = await import(`data:text/javascript;base64,${Buffer.from(read('resources/assets/js/utils/projectTableGroups.js')).toString('base64')}`);
+const flowHelpers = await import(`data:text/javascript;base64,${Buffer.from(read('resources/assets/js/utils/projectFlowFilter.js')).toString('base64')}`);
 const {projectTableGroups, normalizeProjectTableGroups, projectWeekRanges, taskMatchesProjectWeek, taskMatchesProjectGroup} = helpers;
 const component = compiler.parseComponent(read('resources/assets/js/pages/manage/components/ProjectPanel.vue'));
 const ast = parse(component.script.content, {sourceType: 'module'});
 const stableScrolls = [];
 const bindings = {
     ...helpers,
+    ...flowHelpers,
     scrollToStableTarget: options => {stableScrolls.push(options); return () => {};},
     mapState: () => ({}),
     mapGetters: () => ({}),
@@ -218,7 +220,7 @@ function weeklyContext() {
         nowTime: dayjs('2026-09-09 12:00:00').unix(),
         allTask: [task, {...task, id: 2, p_level: 2, end_at: '2026-09-08'},
             {...task, id: 3, parent_id: 1}, {...task, id: 4, complete_at: '2026-09-08'}],
-        searchText: '', flowInfo: {}, sortType: 'desc', sortField: 'end_at',
+        searchText: '', flowFilter: flowHelpers.emptyProjectFlowFilter(), sortType: 'desc', sortField: 'end_at',
         projectData: {cacheParameter: {completedTask: false}},
     };
     context.parentTask = panel.computed.parentTask.call(context);
@@ -239,12 +241,12 @@ test('weekly groups reuse completion, search, owner, tag and workflow filters', 
     context.searchText = 'not found';
     assert.deepEqual(ids(), []);
     context.searchText = '';
-    for (const flowInfo of [{value: 'tag:tag', tag_name: 'missing'}, {value: 'user:99', userid: 99}, {value: 4}, {value: -1}]) {
-        context.flowInfo = flowInfo;
+    for (const flowFilter of [{tags: ['missing']}, {users: [99]}, {flows: [4]}, {flows: [-1]}]) {
+        context.flowFilter = flowFilter;
         assert.deepEqual(ids(), []);
     }
-    for (const flowInfo of [{value: 'tag:tag', tag_name: 'tag'}, {value: 'user:2', userid: 2}, {value: 3}]) {
-        context.flowInfo = flowInfo;
+    for (const flowFilter of [{tags: ['tag']}, {users: [2]}, {flows: [3]}]) {
+        context.flowFilter = flowFilter;
         assert.equal(ids().length, 3);
     }
 });
@@ -307,7 +309,7 @@ test('attention groups exclude completed tasks even when enabled and retain exis
     context.searchText = '6';
     assert.deepEqual(groups().map(group => group.tasks.map(task => task.id)), [[], [6]]);
     context.searchText = '';
-    context.flowInfo = {value: 'tag:missing', tag_name: 'missing'};
+    context.flowFilter = {tags: ['missing']};
     assert.ok(groups().every(group => group.tasks.length === 0));
 });
 

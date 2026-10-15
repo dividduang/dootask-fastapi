@@ -11,7 +11,7 @@ const utils = require('./lib/utils');
 const r2 = require('./lib/r2');
 const { buildReleaseIndex } = require('./lib/release-index');
 const config = require('../package.json')
-const env = require('dotenv').config({ path: './.env' })
+require('dotenv').config({ path: './.env' })
 const argv = process.argv;
 const {BUILD_FRONTEND, APPLEID, APPLEIDPASS, GITHUB_TOKEN, GITHUB_REPOSITORY} = process.env;
 
@@ -477,7 +477,7 @@ async function startBuild(data) {
 
 if (["dev"].includes(argv[2])) {
     // 开发模式
-    fs.writeFileSync(devloadCachePath, utils.formatUrl("localhost:" + env.parsed.APP_PORT), 'utf8');
+    fs.writeFileSync(devloadCachePath, utils.formatUrl("127.0.0.1:" + (process.env.APP_PORT || "18080")), 'utf8');
     child_process.spawn("npx", ["vite", "--", "fromcmd", "electronDev"], {stdio: "inherit"});
     child_process.spawn("npm", ["run", "start-quiet"], {stdio: "inherit", cwd: "electron"});
 } else if (["release"].includes(argv[2])) {

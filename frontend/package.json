@@ -4,8 +4,9 @@
     "codeVerson": 245,
     "description": "DooTask is task management system.",
     "scripts": {
-        "start": "./cmd dev",
-        "build": "./cmd prod",
+        "start": "node cmd dev",
+        "build": "node cmd prod",
+        "electron": "node cmd electron",
         "lint": "eslint resources/assets/js",
         "check:lang": "node scripts/check-language.mjs",
         "events:map": "node scripts/gen-events-map.mjs"

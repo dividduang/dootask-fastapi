@@ -1,6 +1,5 @@
 import fs from "fs";
 import path from "path";
-import {execSync} from "child_process";
 import {defineConfig, loadEnv} from 'vite'
 import {createVuePlugin} from 'vite-plugin-vue2';
 import vitePluginRequire from 'vite-plugin-require'
@@ -13,33 +12,11 @@ const basePath = argv.includes('electronBuild') ? './' : '/';
 const publicPath = argv.includes('electronBuild') ? 'electron/public' : 'public';
 const staticDir = {src: path.resolve(__dirname, 'resources/assets/statics/public'), dest: path.resolve(__dirname, publicPath)}
 
-if (!argv.includes('fromcmd')) {
-    execSync(`npx ${path.resolve(__dirname, 'cmd')} ${argv.includes("build") ? "build" : "dev"}`, {stdio: "inherit"});
-    process.exit()
-}
-
 export default defineConfig(({command, mode}) => {
     const env = loadEnv(mode, process.cwd(), '')
-    const host = "0.0.0.0"
-    const port = parseInt(env['APP_DEV_PORT'])
+    const host = "127.0.0.1"
+    const port = parseInt(env['APP_DEV_PORT'] || "5173")
     const proxy_uri = env['VSCODE_PROXY_URI']
-
-    if (command === 'serve') {
-        const hotFile = path.resolve(__dirname, 'public/hot')
-        const hotClean = (exit) => {
-            if (fs.existsSync(hotFile)) {
-                fs.unlinkSync(hotFile);
-            }
-            if (exit) {
-                process.exit()
-            }
-        }
-        hotClean(false)
-        fs.writeFileSync(hotFile, JSON.stringify(env));
-        process.on('exit', () => hotClean(true));
-        process.on('SIGINT', () => hotClean(true));
-        process.on('SIGHUP', () => hotClean(true));
-    }
 
     const plugins = [
         createVuePlugin({
